@@ -4,6 +4,7 @@ export const dynamic = "force-dynamic";
 
 // This file was updated to fix a Vercel build-time error related to Resend API initialization.
 // Timestamp: 2026-03-01T18:18:00
+// Nudge for Vercel rebuild: 2026-03-01T19:28:00
 
 export async function POST(req: Request) {
   try {

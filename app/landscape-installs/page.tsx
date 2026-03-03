@@ -4,7 +4,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import { Section, ScrollReveal, Carousel } from "../components/UI";
-import JobberLeadForm from "../components/JobberLeadForm";
 
 export default function LandscapeInstallsPage() {
   const [isCtaVisible, setIsCtaVisible] = useState(false);
@@ -23,25 +22,26 @@ export default function LandscapeInstallsPage() {
   }, []);
 
   const handleScrollToForm = () => {
-    const element = document.getElementById("landscape-installs-form");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
+    window.location.href = "/contact";
   };
 
   return (
     <main className="bg-white text-black">
       {/* HERO */}
       <section className="relative min-h-[70vh] flex flex-col justify-center border-b border-black/10 overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="/Calgary-landscape-design-build-patio.JPG"
-            alt="Calgary landscape design build and patio installation"
-            fill
-            priority
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-black/50" />
+        <div className="absolute inset-0 z-0 overflow-hidden">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute min-w-full min-h-full object-cover"
+          >
+            <source src="/Landscape web page pics/calgary-landscape-installs.mov" type="video/quicktime" />
+            <source src="/Landscape web page pics/calgary-landscape-installs.mov" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          <div className="absolute inset-0 bg-black/40" />
         </div>
 
         <div className="relative z-10 mx-auto max-w-6xl px-6 pt-44 pb-24 md:pt-60 md:pb-32">
@@ -168,8 +168,8 @@ export default function LandscapeInstallsPage() {
       <Section kicker="What We Do" title="Comprehensive Landscape Services" titleClassName="text-[#017a6d]">
         <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-12">
           {[
-            { title: "Hardscapes & Retaining Walls", desc: "Engineered stone work and structural walls designed for stability and style.", image: "/images/construction.png" },
-            { title: "Paving & Stone Work", desc: "High-end patio installations, walkways, and natural stone features.", image: "/images/gallery/project-2.png" },
+            { title: "Hardscapes & Retaining Walls", desc: "Engineered stone work and structural walls designed for stability and style.", image: "/Landscape web page pics/Techo-Bloc-pavers-river-rock.JPG" },
+            { title: "Paving & Stone Work", desc: "High-end patio installations, walkways, and natural stone features.", image: "/Landscape web page pics/Exposed-aggregate-concrete.JPG" },
             { title: "Planting & Trees", desc: "Selection of hardy, Alberta-native species for a thriving mountain climate.", image: "/images/gallery/project-3.png" },
             { title: "Sod & Turf", desc: "Precision sod installation and premium synthetic turf solutions.", image: "/images/gallery/project-4.png" },
             { title: "Irrigation Systems", desc: "Efficient water management and professional system installations.", image: "/images/design.png" },
@@ -188,45 +188,59 @@ export default function LandscapeInstallsPage() {
         </div>
       </Section>
 
-      {/* CONSULTATION FORM SECTION */}
-      <Section id="landscape-installs-form" title="BOOK YOUR BUILD CONSULTATION" titleClassName="text-[#017a6d]">
-        <div className="max-w-4xl mx-auto">
-          <p className="text-center text-lg text-black/60 mb-8 font-medium italic">
-            Secure your spot in our build queue. Submit your project details below for a professional consultation.
-          </p>
-          <JobberLeadForm
-            clienthubId="41b3399e-3795-43d8-afe2-e6c38c1b3e6e-2235504"
-            formUrl="https://clienthub.getjobber.com/client_hubs/41b3399e-3795-43d8-afe2-e6c38c1b3e6e/public/work_request/embedded_work_request_form?form_id=2235504"
-          />
-        </div>
-      </Section>
-
       {/* RECENT PROJECTS (Gallery) */}
       <Section kicker="Portfolio" title="Our Recent Projects" titleClassName="text-[#017a6d]" wrapperClassName="bg-white">
         <Carousel className="mt-12">
-          {[1, 2, 3, 4, 5, 6].map((i) => (
-            <div key={i} className="min-w-[85vw] md:min-w-[400px] px-3 snap-start">
-              <ScrollReveal className="relative aspect-[4/3] rounded-lg overflow-hidden group">
-                <Image
-                  src={`/images/gallery/project-${i}.png`}
-                  alt={`Recent Project ${i}`}
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500" />
+          {[
+            { src: "/Landscape web page pics/Calgary-Concrete-pour.JPG", alt: "Calgary Concrete Pour" },
+            { src: "/Landscape web page pics/Calgary-hardscaping.JPG", alt: "Calgary Hardscaping" },
+            { src: "/Landscape web page pics/Exposed-aggregate-concrete.JPG", alt: "Exposed Aggregate Concrete" },
+            { src: "/Landscape web page pics/Finished-hardscape-project.JPG", alt: "Finished Hardscape Project" },
+            { src: "/Landscape web page pics/Hardscape-path-install.JPG", alt: "Hardscape Path Install" },
+            { src: "/Landscape web page pics/Techo-Bloc-paver-pathway.JPG", alt: "Techo-Bloc Paver Pathway" },
+            { src: "/Landscape web page pics/Techo-Bloc-pavers-river-rock.JPG", alt: "Techo-Bloc Pavers and River Rock" },
+            { src: "/Landscape web page pics/Techo-bloc-bin-pad.JPG", alt: "Techo-Bloc Bin Pad" },
+            { src: "/Landscape web page pics/base-prep-paverpath.JPG", alt: "Base Preparation for Paver Path" },
+            { src: "/Landscape web page pics/lawn-relevel-calgary.JPG", alt: "Lawn Relevel Calgary" },
+            { src: "/Landscape web page pics/rock-bed-refresh.JPG", alt: "Rock Bed Refresh" }
+          ].map((photo, i) => (
+            <div key={i} className="min-w-[85vw] md:min-w-[450px] px-4 snap-start">
+              <ScrollReveal className="relative aspect-[16/10] rounded-2xl overflow-hidden group border border-black/5 shadow-lg">
+                <Image src={photo.src} alt={photo.alt} fill className="object-cover transition-transform duration-700 group-hover:scale-110" />
+                <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500" />
               </ScrollReveal>
             </div>
           ))}
         </Carousel>
-        <div className="mt-12 text-center">
-          <Link
-            href="/portfolio"
-            className="inline-flex items-center justify-center rounded-lg border-2 border-[#017a6d] px-8 py-3 text-sm font-bold text-[#017a6d] hover:bg-[#017a6d] hover:text-white transition-all shadow-md hover:-translate-y-1"
-          >
-            VIEW FULL PORTFOLIO
-          </Link>
+      </Section>
+
+      {/* CONTACT SECTION */}
+      <Section id="landscape-installs-contact" title="START YOUR PROJECT" titleClassName="text-[#017a6d]">
+        <div className="max-w-4xl mx-auto w-full text-center">
+          <p className="text-xl text-black/60 mb-8 font-medium italic">
+            Ready to build? Contact us directly for a professional consultation and fixed-price estimate.
+          </p>
+          <div className="flex flex-col md:flex-row justify-center items-center gap-8 py-8 border-y border-black/5">
+            <a href="tel:4038913252" className="group">
+              <span className="block text-xs font-bold text-black/40 uppercase tracking-widest mb-1">Call Us</span>
+              <span className="text-3xl font-black text-[#017a6d] hover:underline">(403) 891-3252</span>
+            </a>
+            <div className="hidden md:block w-px h-12 bg-black/10"></div>
+            <a href="mailto:services@terreoak.ca" className="group">
+              <span className="block text-xs font-bold text-black/40 uppercase tracking-widest mb-1">Email Us</span>
+              <span className="text-2xl font-black text-black/60 hover:text-[#017a6d] transition-colors">services@terreoak.ca</span>
+            </a>
+          </div>
         </div>
       </Section>
+      <div className="mt-12 text-center pb-24">
+        <Link
+          href="/portfolio"
+          className="inline-flex items-center justify-center rounded-lg border-2 border-[#017a6d] px-8 py-3 text-sm font-bold text-[#017a6d] hover:bg-[#017a6d] hover:text-white transition-all shadow-md hover:-translate-y-1"
+        >
+          VIEW FULL PORTFOLIO
+        </Link>
+      </div>
 
       {/* TESTIMONIALS */}
       <Section kicker="Success Stories" title="What Our Clients Say" titleClassName="text-[#017a6d]">
@@ -289,25 +303,27 @@ export default function LandscapeInstallsPage() {
           </button>
         </div>
       </section>
-      {isCtaVisible && (
-        <div style={styles.stickyCtaContainer} className="stickyCtaWrapper animate-float-up">
-          <button
-            onClick={handleScrollToForm}
-            style={styles.stickyCtaLink}
-            className="cursor-pointer"
-          >
-            Start My Project
-          </button>
-          <button
-            onClick={() => setIsCtaVisible(false)}
-            style={styles.closeSticky}
-            aria-label="Close"
-          >
-            ✕
-          </button>
-        </div>
-      )}
-    </main>
+      {
+        isCtaVisible && (
+          <div style={styles.stickyCtaContainer} className="stickyCtaWrapper animate-float-up">
+            <button
+              onClick={handleScrollToForm}
+              style={styles.stickyCtaLink}
+              className="cursor-pointer"
+            >
+              Start My Project
+            </button>
+            <button
+              onClick={() => setIsCtaVisible(false)}
+              style={styles.closeSticky}
+              aria-label="Close"
+            >
+              ✕
+            </button>
+          </div>
+        )
+      }
+    </main >
   );
 }
 

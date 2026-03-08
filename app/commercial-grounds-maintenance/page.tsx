@@ -5,8 +5,13 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import { Section, ScrollReveal, Carousel } from "../components/UI";
 import OurBlogSection from "../components/OurBlogSection";
-import JobberLeadForm from "../components/JobberLeadForm";
 import GoogleReviewBadge from "../components/GoogleReviewBadge";
+import dynamic from "next/dynamic";
+
+const JobberLeadForm = dynamic(() => import("../components/JobberLeadForm"), {
+    loading: () => <div className="w-full h-[600px] animate-pulse bg-gray-50 rounded-3xl" />,
+    ssr: false
+});
 
 export default function CommercialGroundsMaintenancePage() {
     const [isCtaVisible, setIsCtaVisible] = useState(false);
@@ -41,6 +46,7 @@ export default function CommercialGroundsMaintenancePage() {
                         alt="Commercial grounds maintenance and snow removal in Calgary"
                         fill
                         priority
+                        sizes="100vw"
                         className="object-cover"
                     />
                     <div className="absolute inset-0 bg-black/50" />
@@ -111,6 +117,7 @@ export default function CommercialGroundsMaintenancePage() {
                                     src="/images/ASHTON-MADDEN-HEADSHOT.jpg"
                                     alt="Ashton Madden - Founder & Director"
                                     fill
+                                    sizes="(max-width: 768px) 256px, 288px"
                                     className="object-cover"
                                 />
                             </div>
@@ -130,6 +137,7 @@ export default function CommercialGroundsMaintenancePage() {
                                             src="/Ashton_Signature_.jpg"
                                             alt="Ashton Madden Signature"
                                             fill
+                                            sizes="(max-width: 768px) 240px, 320px"
                                             className="object-contain object-center md:object-right"
                                         />
                                     </div>
@@ -154,6 +162,7 @@ export default function CommercialGroundsMaintenancePage() {
                         src="/images/commercial-standards-team.jpg"
                         alt="TERREOAK Commercial Team Standards"
                         fill
+                        sizes="(max-width: 768px) 100vw, 50vw"
                         className="object-cover"
                     />
                 }
@@ -174,6 +183,7 @@ export default function CommercialGroundsMaintenancePage() {
                             alt="Calgary Skyline silhouette"
                             width={1920}
                             height={150}
+                            sizes="100vw"
                             className="w-full h-full object-cover object-bottom"
                         />
                     </div>

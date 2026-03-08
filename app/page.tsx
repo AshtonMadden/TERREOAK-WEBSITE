@@ -3,12 +3,18 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { useEffect, useRef } from "react";
 import Script from "next/script";
 import StatsCounter from "./residential-snow-removal/StatsCounter";
 import { Section, ScrollReveal, Carousel } from "./components/UI";
 import OurBlogSection from "./components/OurBlogSection";
 import GoogleReviewBadge from "./components/GoogleReviewBadge";
-import TestimonialSection from "./components/TestimonialSection";
+import dynamic from "next/dynamic";
+
+const TestimonialSection = dynamic(() => import("./components/TestimonialSection"), {
+  loading: () => <div className="py-24 animate-pulse bg-gray-50 rounded-3xl" />,
+  ssr: true
+});
 
 const serviceCategories = [
   {
@@ -72,31 +78,48 @@ const allImages = [
   { src: "/residential-snow-removalJPG.JPG", alt: "Residential Snow Removal Calgary" },
 ];
 
-const row1 = allImages.slice(0, Math.ceil(allImages.length / 2));
-const row2 = allImages.slice(Math.ceil(allImages.length / 2));
+
 
 export default function HomePage() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.play().catch(error => {
+        console.error("Autoplay failed:", error);
+      });
+    }
+  }, []);
+
   return (
     <main className="bg-white text-black">
       {/* HERO */}
       <section className="relative min-h-screen flex flex-col justify-start border-b border-black/10 overflow-hidden">
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
+          <Image
+            src="/images/gallery/project-3.png"
+            alt="Calgary Landscape Construction"
+            fill
+            priority
+            className="object-cover"
+          />
           <video
+            ref={videoRef}
             autoPlay
             loop
             muted
             playsInline
             preload="auto"
             poster="/images/gallery/project-3.png"
-            className="absolute min-w-full min-h-full object-cover transform-gpu will-change-transform"
+            className="absolute min-w-full min-h-full object-cover transform-gpu will-change-transform z-10"
           >
             <source src="/landscaping-mahogany.MOV" type="video/quicktime" />
             <source src="/landscaping-mahogany.MOV" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
           {/* 40% Dark Overlay */}
-          <div className="absolute inset-0 bg-black/40" />
+          <div className="absolute inset-0 bg-black/40 z-20" />
         </div>
 
         <div className="relative z-10 mx-auto max-w-6xl px-6 pt-48 pb-16 md:pt-56 md:pb-24 lg:pt-60 lg:pb-32 text-left">
@@ -184,6 +207,7 @@ export default function HomePage() {
                 src="/Calgary-landscape-design-build-patio.JPG"
                 alt="TERREOAK high-end landscape construction project in Calgary"
                 fill
+                sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-cover"
               />
             </div>
@@ -198,6 +222,7 @@ export default function HomePage() {
                 src="/images/ASHTON-MADDEN-HEADSHOT.jpg"
                 alt="Ashton Madden - Founder & Director"
                 fill
+                sizes="(max-width: 768px) 256px, 320px"
                 className="object-cover"
               />
             </div>
@@ -218,6 +243,7 @@ export default function HomePage() {
                     src="/Ashton_Signature_.jpg"
                     alt="Ashton Madden Signature"
                     fill
+                    sizes="(max-width: 768px) 280px, 435px"
                     className="object-contain object-center md:object-right"
                   />
                 </div>
@@ -266,6 +292,7 @@ export default function HomePage() {
                     src={cat.image}
                     alt={cat.title}
                     fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     className="object-cover"
                   />
                 </div>
@@ -347,85 +374,38 @@ export default function HomePage() {
       />
 
       {/* GALLERY */}
-      <section className="py-24 border-t border-black/5 bg-white">
-        <div className="mx-auto max-w-6xl px-6 mb-12">
-          <p className="text-[13px] font-bold tracking-widest text-[#017a6d] uppercase">Gallery</p>
-          <h2 className="mt-2 text-3xl md:text-5xl font-black text-[#017a6d]">OUR WORK</h2>
-          <p className="mt-8 max-w-3xl text-[18px] text-black/70 leading-relaxed font-medium">
-            Explore our portfolio of high-end residential landscaping and commercial grounds maintenance projects across Calgary.
-          </p>
-        </div>
-
-        <div className="space-y-8 overflow-hidden">
-          {/* ROW 1 */}
-          <div className="relative flex whitespace-nowrap">
-            <div className="flex animate-marquee">
-              {[...row1, ...row1].map((img, i) => (
-                <div key={i} className="mx-4 w-[350px] md:w-[450px] flex-shrink-0">
-                  <div className="relative aspect-[4/3] rounded-2xl overflow-hidden group shadow-xl border border-black/5">
-                    <Image
-                      src={img.src}
-                      alt={img.alt}
-                      fill
-                      className="object-cover transition-transform duration-700 group-hover:scale-110"
-                    />
-                    <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500" />
-                  </div>
-                </div>
-              ))}
+      <Section
+        kicker="Portfolio"
+        title="OUR WORK"
+        titleClassName="text-[#017a6d]"
+        wrapperClassName="bg-white"
+        hasBorder={true}
+      >
+        <Carousel className="mt-12">
+          {allImages.map((img, i) => (
+            <div key={i} className="min-w-[85vw] md:min-w-[400px] px-3 snap-start">
+              <ScrollReveal className="relative aspect-[4/3] rounded-lg overflow-hidden group border border-black/5 shadow-md">
+                <Image
+                  src={img.src}
+                  alt={img.alt}
+                  fill
+                  sizes="(max-width: 768px) 350px, 450px"
+                  className="object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500" />
+              </ScrollReveal>
             </div>
-          </div>
-
-          {/* ROW 2 */}
-          <div className="relative flex whitespace-nowrap">
-            <div className="flex animate-marquee2">
-              {[...row2, ...row2].map((img, i) => (
-                <div key={i} className="mx-4 w-[350px] md:w-[450px] flex-shrink-0">
-                  <div className="relative aspect-[4/3] rounded-2xl overflow-hidden group shadow-xl border border-black/5">
-                    <Image
-                      src={img.src}
-                      alt={img.alt}
-                      fill
-                      className="object-cover transition-transform duration-700 group-hover:scale-110"
-                    />
-                    <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500" />
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        <div className="mt-16 text-center">
+          ))}
+        </Carousel>
+        <div className="mt-12 text-center">
           <Link
             href="/portfolio"
-            className="inline-flex items-center justify-center rounded-lg border-2 border-[#01fa6d] px-10 py-4 text-[16px] font-black text-[#01fa6d] hover:bg-[#01fa6d] hover:text-black transition-all transform hover:-translate-y-1 shadow-lg shadow-[#01fa6d]/5"
+            className="inline-flex items-center justify-center rounded-lg border-2 border-[#017a6d] px-8 py-3 text-sm font-bold text-[#017a6d] hover:bg-[#017a6d] hover:text-white transition-all shadow-md hover:-translate-y-1"
           >
             VIEW FULL PORTFOLIO
           </Link>
         </div>
-
-        <style dangerouslySetInnerHTML={{
-          __html: `
-            @keyframes marquee {
-              0% { transform: translateX(0); }
-              100% { transform: translateX(-50%); }
-            }
-            @keyframes marquee2 {
-              0% { transform: translateX(-50%); }
-              100% { transform: translateX(0); }
-            }
-            .animate-marquee {
-              animation: marquee 60s linear infinite;
-            }
-            .animate-marquee2 {
-              animation: marquee2 55s linear infinite;
-            }
-            .animate-marquee:hover, .animate-marquee2:hover {
-              animation-play-state: paused;
-            }
-          ` }} />
-      </section>
+      </Section>
 
       {/* BLOG */}
       <OurBlogSection />

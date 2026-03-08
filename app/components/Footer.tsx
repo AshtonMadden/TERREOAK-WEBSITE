@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -7,7 +8,14 @@ export default function Footer() {
         {/* Column 1: Brand */}
         <div className="flex flex-col items-center md:items-start">
           <Link href="/" className="inline-block mb-6">
-            <img src="/logo.svg" alt="TERREOAK Landscaping" style={{ height: "60px", width: "auto" }} />
+            <Image
+              src="/logo.svg"
+              alt="TERREOAK Landscaping"
+              width={220}
+              height={60}
+              style={{ height: "60px", width: "auto" }}
+              className="object-contain"
+            />
           </Link>
         </div>
 

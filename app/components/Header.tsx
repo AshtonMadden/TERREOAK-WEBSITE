@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -66,10 +67,14 @@ export default function Header() {
           <div style={styles.mainInner}>
             {/* Logo = Home */}
             <Link href="/" style={styles.logoWrap} aria-label="TERREOAK Home">
-              <img
+              <Image
                 src="/logo.svg"
                 alt="TERREOAK Landscaping"
+                width={200}
+                height={54}
+                priority
                 style={{ height: "54px", width: "auto" }}
+                className="object-contain"
               />
             </Link>
 
@@ -223,10 +228,13 @@ export default function Header() {
         >
           <div style={styles.drawerHeader}>
             <Link href="/" onClick={toggleMobileMenu} style={styles.logoWrap}>
-              <img
+              <Image
                 src="/logo.svg"
                 alt="TERREOAK Landscaping"
+                width={200}
+                height={54}
                 style={{ height: "54px", width: "auto" }}
+                className="object-contain"
               />
             </Link>
             <button style={styles.closeSquare} onClick={toggleMobileMenu}>

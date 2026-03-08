@@ -6,8 +6,13 @@ import Image from "next/image";
 import { Section, ScrollReveal, Carousel } from "../components/UI";
 import OurBlogSection from "../components/OurBlogSection";
 import StatsCounter from "./StatsCounter";
-import JobberLeadForm from "../components/JobberLeadForm";
 import GoogleReviewBadge from "../components/GoogleReviewBadge";
+import dynamic from "next/dynamic";
+
+const JobberLeadForm = dynamic(() => import("../components/JobberLeadForm"), {
+  loading: () => <div className="w-full h-[600px] animate-pulse bg-gray-50 rounded-3xl" />,
+  ssr: false
+});
 
 export default function ResidentialSnowBlowingPage() {
   const [isCtaVisible, setIsCtaVisible] = useState(false);
@@ -140,6 +145,7 @@ export default function ResidentialSnowBlowingPage() {
                     alt="TERREOAK Snow Picket"
                     width={100}
                     height={100}
+                    sizes="100px"
                     className="w-full h-auto drop-shadow-lg rounded-2xl"
                   />
                 </div>
@@ -419,6 +425,7 @@ export default function ResidentialSnowBlowingPage() {
                   src={photo.src}
                   alt={photo.alt}
                   fill
+                  sizes="(max-width: 768px) 85vw, 400px"
                   className="object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500" />

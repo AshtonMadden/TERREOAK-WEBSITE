@@ -203,7 +203,7 @@ export default function LandscapeInstallsPage() {
             { title: "Hardscapes & Retaining Walls", desc: "Engineered stone work and structural walls designed for stability and style.", image: "/Landscape web page pics/Techo-Bloc-pavers-river-rock.JPG" },
             { title: "Concrete", desc: "Professional concrete pouring, patios, walkways, and decorative concrete solutions.", image: "/Landscape web page pics/Exposed-aggregate-concrete.JPG" },
             { title: "Planting & Trees", desc: "Selection of hardy, Alberta-native species for a thriving mountain climate.", image: "/images/gallery/project-3.png" },
-            { title: "Sod & Turf", desc: "Precision sod installation and premium synthetic turf solutions.", image: "/Landscape web page pics/Sod-Installation-Calgary.jpg" },
+            { title: "Sod & Turf", desc: "Precision sod installation and premium synthetic turf solutions.", image: "/Landscape web page pics/Sod-installation-calgary.jpg" },
             { title: "Irrigation Systems", desc: "Efficient water management and professional system installations.", image: "/Landscape web page pics/Calgary-lawn-irrigation.jpg" },
             { title: "Pergolas & Fencing", desc: "Custom wooden pergolas and horizontal privacy fencing designed for luxury outdoor living.", image: "/images/pergolas-fencing-new.jpg" },
             { title: "Drainage Systems", desc: "Custom engineered grading, foundation protection, and water management solutions.", image: "/Calgary-drainage-solutions.JPG" },

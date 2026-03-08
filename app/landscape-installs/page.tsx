@@ -209,15 +209,15 @@ export default function LandscapeInstallsPage() {
             { title: "Drainage Systems", desc: "Custom engineered grading, foundation protection, and water management solutions.", image: "/Calgary-drainage-solutions.JPG" },
             { title: "Landscape Design", desc: "Professional 3D landscape design and conceptual planning for your outdoor space.", image: "/images/design.png" }
           ].map((s, i) => (
-            <ScrollReveal key={i} className="group rounded-xl border border-black/10 overflow-hidden bg-white hover:border-[#017a6d] transition-colors">
+            <div key={i} className="group rounded-xl border border-black/10 overflow-hidden bg-white hover:border-[#017a6d] transition-colors">
               <div className="relative aspect-video overflow-hidden">
-                <Image src={s.image} alt={s.title} fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
+                <Image src={s.image} alt={s.title} fill className="object-cover" />
               </div>
               <div className="p-6">
                 <h3 className="font-black text-lg mb-2">{s.title}</h3>
                 <p className="text-sm text-black/60 leading-relaxed">{s.desc}</p>
               </div>
-            </ScrollReveal>
+            </div>
           ))}
         </div>
       </Section>

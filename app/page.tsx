@@ -256,9 +256,9 @@ export default function HomePage() {
 
         <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           {serviceCategories.map((cat) => (
-            <ScrollReveal
+            <div
               key={cat.title}
-              className="group rounded-xl border border-black/10 overflow-hidden bg-white hover:border-[#017a6d] transition-all transform hover:-translate-y-1 hover:shadow-xl flex flex-col"
+              className="group rounded-xl border border-black/10 overflow-hidden bg-white hover:border-[#017a6d] transition-all flex flex-col"
             >
               {cat.image && (
                 <div className="relative aspect-video overflow-hidden">
@@ -266,7 +266,7 @@ export default function HomePage() {
                     src={cat.image}
                     alt={cat.title}
                     fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    className="object-cover"
                   />
                 </div>
               )}
@@ -274,7 +274,7 @@ export default function HomePage() {
                 <h3 className="font-black text-lg mb-2 uppercase tracking-tight">{cat.title}</h3>
                 <p className="text-sm text-black/60 leading-relaxed flex-1">{cat.desc}</p>
               </div>
-            </ScrollReveal>
+            </div>
           ))}
         </div>
       </Section>

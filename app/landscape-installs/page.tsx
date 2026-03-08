@@ -37,17 +37,13 @@ export default function LandscapeInstallsPage() {
       {/* HERO */}
       <section className="relative min-h-screen flex flex-col justify-center border-b border-black/10 overflow-hidden">
         <div className="absolute inset-0 z-0 overflow-hidden">
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="absolute min-w-full min-h-full object-cover"
-          >
-            <source src="/Landscape web page pics/calgary-landscaping-2.MOV" type="video/quicktime" />
-            <source src="/Landscape web page pics/calgary-landscaping-2.MOV" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+          <Image
+            src="/images/landscaping-hero-new.jpg"
+            alt="TERREOAK Landscaping and Design Build Excellence"
+            fill
+            priority
+            className="object-cover"
+          />
           <div className="absolute inset-0 bg-black/40" />
         </div>
 

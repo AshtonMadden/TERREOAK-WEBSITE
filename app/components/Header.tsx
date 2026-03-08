@@ -65,41 +65,28 @@ export default function Header() {
         <div style={styles.mainBar}>
           <div style={styles.mainInner}>
             {/* Logo = Home */}
-            <Link href="/" style={styles.logoWrap} aria-label="TerreOak Home">
+            <Link href="/" style={styles.logoWrap} aria-label="TERREOAK Home">
               <img
                 src="/logo.svg"
-                alt="TerreOak Landscaping"
+                alt="TERREOAK Landscaping"
                 style={{ height: "54px", width: "auto" }}
               />
             </Link>
 
             {/* Desktop Nav */}
-            <nav className="nav-desktop hidden md:flex items-center gap-4">
-              {/* LANDSCAPING dropdown */}
-              <div className="navItem" style={styles.navItem}>
-                <button
-                  className="navTrigger"
-                  style={{
-                    ...styles.navLink,
-                    color: isParentActive(["/landscape-installs", "/landscape-design"]) ? "#01fa6d" : "#ffffff",
-                    textDecoration: isParentActive(["/landscape-installs", "/landscape-design"]) ? "underline" : "none",
-                    textUnderlineOffset: "8px",
-                    textDecorationThickness: "2px"
-                  }}
-                  type="button"
-                >
-                  Landscaping <span style={styles.caret}>▾</span>
-                </button>
-
-                <div className="dropdown" style={styles.dropdown}>
-                  <Link href="/landscape-installs" className="dropdownLink" style={styles.dropdownLink}>
-                    Landscape Installs
-                  </Link>
-                  <Link href="/landscape-design" className="dropdownLink" style={styles.dropdownLink}>
-                    Landscape Design
-                  </Link>
-                </div>
-              </div>
+            <nav className="nav-desktop hidden lg:flex items-center gap-4">
+              <Link
+                href="/landscape-installs"
+                style={{
+                  ...styles.navLink,
+                  color: isActive("/landscape-installs") ? "#01fa6d" : "#ffffff",
+                  textDecoration: isActive("/landscape-installs") ? "underline" : "none",
+                  textUnderlineOffset: "8px",
+                  textDecorationThickness: "2px"
+                }}
+              >
+                Landscaping
+              </Link>
 
               {/* Snowblowing stays as-is */}
               <Link
@@ -121,8 +108,8 @@ export default function Header() {
                   className="navTrigger"
                   style={{
                     ...styles.navLink,
-                    color: isParentActive(["/irrigation-blowouts", "/spring-cleanup-calgary", "/fall-cleanup", "/lawn-aeration"]) ? "#01fa6d" : "#ffffff",
-                    textDecoration: isParentActive(["/irrigation-blowouts", "/spring-cleanup-calgary", "/fall-cleanup", "/lawn-aeration"]) ? "underline" : "none",
+                    color: isParentActive(["/irrigation-blowouts", "/spring-cleanup-calgary", "/fall-cleanup"]) ? "#01fa6d" : "#ffffff",
+                    textDecoration: isParentActive(["/irrigation-blowouts", "/spring-cleanup-calgary", "/fall-cleanup"]) ? "underline" : "none",
                     textUnderlineOffset: "8px",
                     textDecorationThickness: "2px"
                   }}
@@ -140,9 +127,6 @@ export default function Header() {
                   </Link>
                   <Link href="/fall-cleanup" className="dropdownLink" style={styles.dropdownLink}>
                     Fall Clean Up
-                  </Link>
-                  <Link href="/lawn-aeration" className="dropdownLink" style={styles.dropdownLink}>
-                    Lawn Aeration
                   </Link>
                 </div>
               </div>
@@ -193,10 +177,17 @@ export default function Header() {
                 </div>
               </div>
 
-              {/* Get My Quote button replaces Request Bid */}
-              <Link href="/contact" style={styles.ctaBtn}>
-                Get My Quote
-              </Link>
+              {/* CLIENT PORTAL BUTTON */}
+              <a
+                href="https://clienthub.getjobber.com/client_hubs/41b3399e-3795-43d8-afe2-e6c38c1b3e6e/login"
+                target="_blank"
+                rel="noopener noreferrer"
+                referrerPolicy="no-referrer"
+                style={styles.portalButton}
+                className="hover:scale-105"
+              >
+                CLIENT PORTAL
+              </a>
             </nav>
 
             {/* Mobile Hamburger Button */}
@@ -204,7 +195,7 @@ export default function Header() {
               style={styles.hamburger}
               onClick={toggleMobileMenu}
               aria-label="Toggle Menu"
-              className="flex md:hidden"
+              className="flex lg:hidden"
             >
               <div style={styles.hamburgerLine}></div>
               <div style={styles.hamburgerLine}></div>
@@ -234,7 +225,7 @@ export default function Header() {
             <Link href="/" onClick={toggleMobileMenu} style={styles.logoWrap}>
               <img
                 src="/logo.svg"
-                alt="TerreOak Landscaping"
+                alt="TERREOAK Landscaping"
                 style={{ height: "54px", width: "auto" }}
               />
             </Link>
@@ -254,10 +245,15 @@ export default function Header() {
               Residential Snow
             </Link>
 
-            {/* Seasonal Clean Ups */}
+            {/* Landscaping */}
+            <Link href="/landscape-installs" style={styles.drawerLink} onClick={toggleMobileMenu}>
+              Landscaping
+            </Link>
+
+            {/* Seasonal Services */}
             <div>
               <button style={styles.accordionHeader} onClick={() => toggleSection('seasonal')}>
-                <span style={styles.drawerLinkText}>Seasonal Clean Ups</span>
+                <span style={styles.drawerLinkText}>SEASONAL SERVICES</span>
                 <div style={styles.plusIcon}>
                   {expandedSection === 'seasonal' ? '−' : '+'}
                 </div>
@@ -267,23 +263,6 @@ export default function Header() {
                   <Link href="/irrigation-blowouts" style={styles.drawerSubLink} onClick={toggleMobileMenu}>Irrigation Blowouts</Link>
                   <Link href="/spring-cleanup-calgary" style={styles.drawerSubLink} onClick={toggleMobileMenu}>Spring Clean Up</Link>
                   <Link href="/fall-cleanup" style={styles.drawerSubLink} onClick={toggleMobileMenu}>Fall Clean Up</Link>
-                  <Link href="/lawn-aeration" style={styles.drawerSubLink} onClick={toggleMobileMenu}>Lawn Aeration</Link>
-                </div>
-              )}
-            </div>
-
-            {/* Landscaping */}
-            <div>
-              <button style={styles.accordionHeader} onClick={() => toggleSection('landscaping')}>
-                <span style={styles.drawerLinkText}>Landscaping</span>
-                <div style={styles.plusIcon}>
-                  {expandedSection === 'landscaping' ? '−' : '+'}
-                </div>
-              </button>
-              {expandedSection === 'landscaping' && (
-                <div style={styles.accordionContent}>
-                  <Link href="/landscape-installs" style={styles.drawerSubLink} onClick={toggleMobileMenu}>Landscape Installs</Link>
-                  <Link href="/landscape-design" style={styles.drawerSubLink} onClick={toggleMobileMenu}>Landscape Design</Link>
                 </div>
               )}
             </div>
@@ -304,6 +283,20 @@ export default function Header() {
                   <Link href="/customer-support" style={styles.drawerSubLink} onClick={toggleMobileMenu}>Customer Support</Link>
                 </div>
               )}
+            </div>
+
+            {/* Mobile Client Portal Button */}
+            <div style={{ marginTop: 20 }}>
+              <a
+                href="https://clienthub.getjobber.com/client_hubs/41b3399e-3795-43d8-afe2-e6c38c1b3e6e/login"
+                target="_blank"
+                rel="noopener noreferrer"
+                referrerPolicy="no-referrer"
+                style={styles.drawerPortalButton}
+                onClick={toggleMobileMenu}
+              >
+                CLIENT PORTAL
+              </a>
             </div>
           </nav>
         </div>
@@ -370,7 +363,7 @@ const styles: Record<string, React.CSSProperties> = {
     background: "transparent",
     border: "none",
     cursor: "pointer",
-    padding: "8px 4px",
+    padding: "12px 10px",
     textTransform: "uppercase",
   },
   caret: { marginLeft: 4, opacity: 0.8, fontSize: 9, verticalAlign: "middle" },
@@ -384,7 +377,7 @@ const styles: Record<string, React.CSSProperties> = {
     border: "1px solid rgba(255,255,255,0.12)",
     borderRadius: 12,
     padding: 8,
-    marginTop: 10,
+    marginTop: 8,
     boxShadow: "0 10px 30px rgba(0,0,0,0.35)",
     zIndex: 50,
     display: "none",
@@ -401,20 +394,7 @@ const styles: Record<string, React.CSSProperties> = {
     textTransform: "uppercase",
   },
 
-  ctaBtn: {
-    background: "#01fa6d",
-    color: "#000000",
-    textDecoration: "none",
-    fontWeight: 800,
-    fontSize: 14,
-    padding: "10px 22px",
-    borderRadius: 999,
-    border: "2px solid rgba(255,255,255,0.08)",
-    display: "inline-flex",
-    alignItems: "center",
-    justifyContent: "center",
-    textTransform: "uppercase",
-  },
+
 
   hamburger: {
     flexDirection: "column",
@@ -531,4 +511,36 @@ const styles: Record<string, React.CSSProperties> = {
     textDecoration: "none",
     textTransform: "uppercase",
   },
+
+  portalButton: {
+    background: "#01fa6d",
+    color: "#000000",
+    fontSize: 12,
+    fontWeight: 900,
+    padding: "10px 18px",
+    borderRadius: 99,
+    textTransform: "uppercase",
+    textDecoration: "none",
+    marginLeft: 10,
+    transition: "all 0.2s ease",
+    display: "inline-flex",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+
+  drawerPortalButton: {
+    background: "#01fa6d",
+    color: "#000000",
+    fontSize: 20,
+    fontWeight: 900,
+    padding: "16px",
+    borderRadius: 12,
+    textTransform: "uppercase",
+    textDecoration: "none",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    textAlign: "center" as const,
+    width: "100%",
+  }
 };

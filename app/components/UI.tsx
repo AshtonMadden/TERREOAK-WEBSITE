@@ -106,10 +106,51 @@ export function Section({
 /**
  * Simple horizontal scroll carousel with snap points.
  */
-export function Carousel({ children, className = "" }: { children: React.ReactNode; className?: string }) {
+export function Carousel({ children, className = "", showArrows = true }: { children: React.ReactNode; className?: string; showArrows?: boolean }) {
+    const scrollRef = useRef<HTMLDivElement>(null);
+
+    const scroll = (direction: 'left' | 'right') => {
+        if (!scrollRef.current) return;
+        const container = scrollRef.current;
+        const scrollAmount = container.clientWidth * 0.8;
+        container.scrollBy({
+            left: direction === 'left' ? -scrollAmount : scrollAmount,
+            behavior: 'smooth'
+        });
+    };
+
     return (
-        <div className={`flex overflow-x-auto snap-x snap-mandatory hide-scrollbar pb-4 -mx-6 px-6 ${className}`}>
-            {children}
+        <div className="relative group">
+            <div
+                ref={scrollRef}
+                className={`flex overflow-x-auto snap-x snap-mandatory hide-scrollbar pb-4 -mx-6 px-6 ${className}`}
+            >
+                {children}
+            </div>
+
+            {showArrows && (
+                <>
+                    <button
+                        onClick={() => scroll('left')}
+                        className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 flex items-center justify-center bg-white/90 border border-black/5 rounded-full shadow-lg lg:hidden opacity-100 transition-opacity"
+                        aria-label="Previous slide"
+                    >
+                        <svg className="w-6 h-6 text-[#017a6d]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M15 19l-7-7 7-7" />
+                        </svg>
+                    </button>
+                    <button
+                        onClick={() => scroll('right')}
+                        className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 flex items-center justify-center bg-white/90 border border-black/5 rounded-full shadow-lg lg:hidden opacity-100 transition-opacity"
+                        aria-label="Next slide"
+                    >
+                        <svg className="w-6 h-6 text-[#017a6d]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M9 5l7 7-7 7" />
+                        </svg>
+                    </button>
+                </>
+            )}
+
             <style jsx>{`
                 .hide-scrollbar::-webkit-scrollbar {
                     display: none;

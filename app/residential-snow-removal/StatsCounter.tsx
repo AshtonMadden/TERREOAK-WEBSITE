@@ -80,7 +80,7 @@ export default function StatsCounter({
     const defaultStats = [
         { end: 100, label: "Happy Clients", suffix: "+" },
         { end: 75, label: "Total Properties" },
-        { end: 2, label: "TerreOak Crews" },
+        { end: 2, label: "TERREOAK Crews" },
     ];
 
     const displayStats = stats || defaultStats;
@@ -110,8 +110,8 @@ export default function StatsCounter({
 
 const styles: Record<string, React.CSSProperties> = {
     statsSection: {
-        background: "#f9fafb",
-        padding: "24px 0 48px",
+        background: "#01fa6d",
+        padding: "48px 0",
         borderBottom: "1px solid rgba(0,0,0,0.08)",
     },
     statsInner: {
@@ -132,13 +132,13 @@ const styles: Record<string, React.CSSProperties> = {
     statNumber: {
         fontSize: 43.2,
         fontWeight: 900,
-        color: "#017a6d",
+        color: "#000000",
         lineHeight: 1,
     },
     statLabel: {
         fontSize: 12.6,
         fontWeight: 700,
-        color: "rgba(0,0,0,0.6)",
+        color: "#000000",
         textTransform: "uppercase" as const,
         letterSpacing: "0.05em",
     },

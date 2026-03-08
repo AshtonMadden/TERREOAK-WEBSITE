@@ -2,8 +2,7 @@ import Link from "next/link";
 
 const links = [
   { href: "/", label: "Home" },
-  { href: "/landscape-installs", label: "Landscape Installs" },
-  { href: "/landscape-design", label: "Landscape Design" },
+  { href: "/landscape-installs", label: "Landscaping" },
   { href: "/residential-snow-removal", label: "Residential Snow" },
   { href: "/commercial-grounds-maintenance", label: "Commercial Grounds" },
   { href: "/portfolio", label: "Portfolio" },
@@ -12,10 +11,9 @@ const links = [
   { href: "/irrigation-blowouts", label: "Irrigation Blowouts" },
   { href: "/spring-cleanup-calgary", label: "Spring Clean Up" },
   { href: "/fall-cleanup", label: "Fall Clean Up" },
-  { href: "/lawn-aeration", label: "Lawn Aeration" },
   { href: "/snow-referral", label: "Snow Referral" },
   { href: "/support", label: "Support" },
-  { href: "/contact", label: "Contact" },
+
 ];
 
 export default function Nav() {

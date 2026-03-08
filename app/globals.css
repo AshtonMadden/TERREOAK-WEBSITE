@@ -14,6 +14,7 @@ html {
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --breakpoint-lg: 1280px;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -42,6 +43,17 @@ body {
   display: block !important;
 }
 
+/* Hover bridge to prevent menu from closing when moving mouse across the gap */
+.dropdown::before {
+  content: '';
+  position: absolute;
+  top: -15px;
+  left: 0;
+  right: 0;
+  height: 15px;
+  background: transparent;
+}
+
 .dropdownLink:hover {
   background: rgba(1, 149, 135, 0.18);
 }
@@ -52,7 +64,7 @@ body {
   display: flex;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1279px) {
   .nav-desktop {
     display: none !important;
   }

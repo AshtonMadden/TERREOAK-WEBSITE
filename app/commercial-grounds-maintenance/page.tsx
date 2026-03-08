@@ -3,8 +3,10 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
-import { Section, ScrollReveal } from "../components/UI";
+import { Section, ScrollReveal, Carousel } from "../components/UI";
+import OurBlogSection from "../components/OurBlogSection";
 import JobberLeadForm from "../components/JobberLeadForm";
+import GoogleReviewBadge from "../components/GoogleReviewBadge";
 
 export default function CommercialGroundsMaintenancePage() {
     const [isCtaVisible, setIsCtaVisible] = useState(false);
@@ -23,16 +25,16 @@ export default function CommercialGroundsMaintenancePage() {
     }, []);
 
     const handleScrollToForm = () => {
-        const element = document.getElementById("commercial-form");
-        if (element) {
-            element.scrollIntoView({ behavior: "smooth" });
+        const form = document.getElementById("commercial-form");
+        if (form) {
+            form.scrollIntoView({ behavior: "smooth" });
         }
     };
 
     return (
         <main className="bg-white text-black">
             {/* HERO */}
-            <section className="relative min-h-[70vh] flex flex-col justify-center border-b border-black/10 overflow-hidden">
+            <section className="relative min-h-screen flex flex-col justify-center border-b border-black/10 overflow-hidden">
                 <div className="absolute inset-0 z-0">
                     <Image
                         src="/images/commercial.png"
@@ -44,86 +46,96 @@ export default function CommercialGroundsMaintenancePage() {
                     <div className="absolute inset-0 bg-black/50" />
                 </div>
 
-                <div className="relative z-10 mx-auto max-w-6xl px-6 pt-44 pb-24 md:pt-60 md:pb-32">
+                <div className="relative z-10 mx-auto max-w-6xl px-6 pt-48 pb-16 md:pt-56 md:pb-24 lg:pt-60 lg:pb-32 text-left">
                     <p className="text-[14px] font-bold tracking-widest text-[#01fa6d] uppercase drop-shadow-md">
                         Calgary • Commercial Services
                     </p>
-                    <h1 className="mt-4 text-[42px] md:text-[64px] font-black leading-[1.1] tracking-tight text-white drop-shadow-2xl max-w-4xl uppercase">
-                        COMMERCIAL GROUNDS MAINTENANCE &<br />
-                        <span className="text-[#01fa6d]">PROPERTY MANAGEMENT.</span>
+                    <h1 className="mt-4 text-[42px] md:text-[56px] lg:text-[64px] font-black leading-[1.1] tracking-tight text-white drop-shadow-2xl max-w-4xl uppercase">
+                        CALGARY<br />
+                        <span className="text-[#01fa6d]">COMMERCIAL GROUNDS MAINTENANCE</span>
                     </h1>
                     <p className="mt-6 max-w-2xl text-[1.1rem] font-bold text-white/90 md:text-[1.3rem]">
                         Complete exterior management for commercial properties, condos, and industrial sites. Reliable. Accountable. Professional.
                     </p>
-                    <div className="mt-10 flex flex-wrap gap-4">
-                        <button
-                            onClick={handleScrollToForm}
-                            className="inline-flex items-center justify-center rounded-full bg-[#017a6d] px-12 py-[14px] text-[16px] font-extrabold text-white border-2 border-white/10 hover:opacity-90 transition-opacity cursor-pointer"
-                        >
-                            Request a Commercial Bid
-                        </button>
-                        <a
-                            href="tel:4038913252"
-                            className="inline-flex items-center justify-center rounded-full bg-white/10 backdrop-blur-sm px-12 py-[14px] text-[16px] font-extrabold text-white border-2 border-white/40 hover:bg-white/20 transition-colors"
-                        >
-                            CALL NOW
-                        </a>
-                    </div>
-
-                    {/* TRUST GRID */}
-                    <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div className="rounded-lg border border-black/10 bg-white p-[14px]">
-                            <h3 className="font-black text-[16px] text-black">Professional & Accountable</h3>
-                            <p className="mt-1.5 text-[14px] text-black/70 leading-relaxed">
-                                Fully insured and WCB-compliant. Detailed, time-stamped service logs for every visit.
-                            </p>
+                    <div className="mt-10 flex flex-col md:flex-row items-start md:items-center gap-8">
+                        <div className="flex flex-wrap gap-4">
+                            <button
+                                onClick={handleScrollToForm}
+                                className="inline-flex items-center justify-center rounded-full bg-[#01fa6d] px-12 py-[16px] text-[16px] font-extrabold text-black border-2 border-white/10 hover:opacity-90 transition-all cursor-pointer shadow-xl shadow-[#01fa6d]/20 hover:-translate-y-1"
+                            >
+                                REQUEST A COMMERCIAL BID
+                            </button>
+                            <a
+                                href="tel:+15877077648"
+                                className="inline-flex items-center justify-center rounded-full bg-white/10 backdrop-blur-sm px-12 py-[14px] text-[16px] font-extrabold text-white border-2 border-white/40 hover:bg-white/20 transition-colors"
+                            >
+                                CALL NOW
+                            </a>
                         </div>
 
-                        <div className="rounded-lg border border-black/10 bg-white p-[14px]">
-                            <h3 className="font-black text-[16px] text-black">24/7 Priority Monitoring</h3>
-                            <p className="mt-1.5 text-[14px] text-black/70 leading-relaxed">
-                                Dedicated weather monitoring and priority dispatch for commercial snow removal clients.
-                            </p>
-                        </div>
+                        <GoogleReviewBadge />
                     </div>
                 </div>
             </section>
 
-            {/* ABOUT US SECTION (Copied from homepage) */}
+            {/* INTRO SECTION */}
             <Section
-                kicker="About Us"
-                title="TERREOAK LANDSCAPING AND SNOW"
-                titleClassName="text-[#017a6d]"
-                py="pt-12 md:pt-16 pb-24"
+                kicker="Property Maintenance"
+                title="COMMERCIAL PROPERTY MAINTENANCE CALGARY"
+                titleClassName="text-[#01fa6d]"
+                py="py-24"
             >
-                <div className="flex flex-col lg:flex-row gap-12 items-center">
-                    <div className="lg:w-1/2 space-y-6 text-[18px] text-black/80 leading-relaxed font-medium">
+                <div className="max-w-4xl mx-auto space-y-8">
+                    <div className="space-y-6 text-[20px] text-black/80 leading-relaxed font-medium">
                         <p>
-                            TERREOAK is a full-service landscape construction and property maintenance company serving Calgary. Our work is built around four core divisions: landscape design, landscape construction, commercial grounds maintenance, and residential seasonal services.
+                            TERREOAK is a full-service landscape construction and property maintenance company serving Calgary. Our commercial division focus is on delivering structured scheduling, professional systems, and results built for Alberta’s extreme seasons.
                         </p>
                         <p>
-                            From new-build sod and tree installations to hardscape construction and reliable snow removal, we deliver structured scheduling, professional systems, and results built for Alberta’s extreme seasons.
+                            From complex multi-family condo sites to retail centers and industrial business parks, we ensure your exterior property standards are maintained with professional integrity all year round.
                         </p>
-                        <p>
-                            We work with homeowners, builders, and commercial property managers who expect clean execution, clear communication, and long-term value.
-                        </p>
-                        <div className="pt-4">
-                            <Link
-                                href="/about"
-                                className="inline-flex items-center justify-center rounded-lg bg-[#017a6d] px-8 py-4 text-[16px] font-black text-white hover:bg-[#01645a] transition-all transform hover:-translate-y-0.5 shadow-lg shadow-[#017a6d]/20"
-                            >
-                                Read Our Story
-                            </Link>
-                        </div>
                     </div>
-                    <div className="lg:w-1/2 w-full">
-                        <div className="relative aspect-[4/3] overflow-hidden rounded-2xl shadow-2xl border border-black/5 ring-1 ring-black/5">
-                            <Image
-                                src="/Calgary-landscape-design-build-patio.JPG"
-                                alt="TERREOAK high-end landscape project in Calgary"
-                                fill
-                                className="object-cover"
-                            />
+                    <div className="pt-8 text-center">
+                        <Link
+                            href="#commercial-form"
+                            className="inline-flex items-center justify-center rounded-lg bg-[#01fa6d] px-10 py-5 text-[18px] font-black text-black hover:opacity-90 transition-all transform hover:-translate-y-0.5 shadow-lg shadow-[#01fa6d]/20"
+                        >
+                            REQUEST A SITE WALK-THROUGH
+                        </Link>
+                    </div>
+
+                    {/* FOUNDER SPOTLIGHT */}
+                    <div className="flex flex-col md:flex-row items-center gap-12 mt-20">
+                        <div className="md:w-1/4 flex justify-center">
+                            <div className="relative w-64 h-64 md:w-72 md:h-72 rounded-full overflow-hidden border-8 border-white shadow-2xl">
+                                <Image
+                                    src="/images/ASHTON-MADDEN-HEADSHOT.jpg"
+                                    alt="Ashton Madden - Founder & Director"
+                                    fill
+                                    className="object-cover"
+                                />
+                            </div>
+                        </div>
+                        <div className="md:w-3/4 bg-white p-8 md:py-8 md:px-12 rounded-3xl shadow-xl border border-black/5 relative overflow-hidden group">
+                            <h3 className="text-3xl font-black text-[#017a6d] uppercase tracking-tight mb-4">Ashton Madden</h3>
+                            <div className="space-y-4">
+                                <p className="text-lg text-black/70 leading-relaxed font-medium">
+                                    My goal with TERREOAK is simple: build a company rooted in strong values, a great team culture, and a customer experience people can trust.
+                                </p>
+                            </div>
+
+                            <div className="mt-6 flex justify-center md:justify-end items-end">
+                                <div className="text-center md:text-right w-full flex flex-col items-center md:items-end">
+                                    <div className="relative h-20 w-full max-w-[240px] md:h-[100px] md:w-[320px] mb-1">
+                                        <Image
+                                            src="/Ashton_Signature_.jpg"
+                                            alt="Ashton Madden Signature"
+                                            fill
+                                            className="object-contain object-center md:object-right"
+                                        />
+                                    </div>
+                                    <span className="text-[10px] font-bold text-black/30 uppercase tracking-[0.2em]">Founder & Director</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -137,8 +149,17 @@ export default function CommercialGroundsMaintenancePage() {
                 titleClassName="text-white"
                 wrapperClassName="bg-[#2c2d32]"
                 py="pt-16 md:pt-24 pb-12"
+                image={
+                    <Image
+                        src="/images/commercial-standards-team.jpg"
+                        alt="TERREOAK Commercial Team Standards"
+                        fill
+                        className="object-cover"
+                    />
+                }
+                imageRight={true}
             >
-                <div className="relative z-10 max-w-3xl">
+                <div className="relative z-10 w-full">
                     <p className="text-lg text-white/80 leading-relaxed font-normal">
                         We understand the liability and safety requirements of commercial sites. From new-build sod and tree installations to reliable snow removal, we deliver structured scheduling, professional systems, and results built for Alberta’s extreme seasons.
                     </p>
@@ -160,17 +181,17 @@ export default function CommercialGroundsMaintenancePage() {
             </Section>
 
             {/* CLIENT PORTAL BANNER */}
-            <section className="bg-[#2c2d32] pb-12 md:pb-16">
+            <section className="bg-[#2c2d32] py-12 md:py-16">
                 <div className="mx-auto max-w-6xl px-6">
-                    <div className="flex flex-col md:flex-row items-center justify-between gap-8 bg-[#017a6d] rounded-2xl p-8 md:p-12 shadow-2xl relative overflow-hidden group">
+                    <div className="flex flex-col md:flex-row items-center justify-between gap-8 bg-[#01fa6d] rounded-2xl p-8 md:p-12 shadow-2xl relative overflow-hidden group">
                         {/* Background Accent */}
-                        <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -mr-32 -mt-32 transition-transform duration-700 group-hover:scale-110" />
+                        <div className="absolute top-0 right-0 w-64 h-64 bg-black/5 rounded-full -mr-32 -mt-32 transition-transform duration-700 group-hover:scale-110" />
 
                         <div className="relative z-10 text-center md:text-left">
-                            <h2 className="text-3xl md:text-4xl font-black text-white mb-4 uppercase tracking-tight leading-tight">
-                                ACCESS YOUR <span className="text-[#01fa6d]">CLIENT PORTAL</span>
+                            <h2 className="text-3xl md:text-4xl font-black text-black mb-4 uppercase tracking-tight leading-tight">
+                                ACCESS YOUR <span className="text-black/60">CLIENT PORTAL</span>
                             </h2>
-                            <p className="text-white/80 text-lg font-medium max-w-xl">
+                            <p className="text-black/80 text-lg font-medium max-w-xl">
                                 View your quotes, pay invoices, and manage your property services 24/7 through our secure Jobber portal.
                             </p>
                         </div>
@@ -180,7 +201,7 @@ export default function CommercialGroundsMaintenancePage() {
                                 href="https://clienthub.getjobber.com/client_hubs/41b3399e-3795-43d8-afe2-e6c38c1b3e6e/login"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="inline-flex items-center justify-center rounded-full bg-white px-10 py-5 text-[18px] font-black text-[#017a6d] hover:bg-gray-100 transition-all shadow-xl hover:-translate-y-1"
+                                className="inline-flex items-center justify-center rounded-full bg-black px-10 py-5 text-[18px] font-black text-white hover:bg-black/90 transition-all shadow-xl hover:-translate-y-1"
                             >
                                 LOGIN TO PORTAL
                             </a>
@@ -190,7 +211,7 @@ export default function CommercialGroundsMaintenancePage() {
             </section>
 
             {/* PROPERTY TYPES SECTION */}
-            <Section title="COMMERCIAL PROPERTIES WE SERVICE" titleClassName="text-[#017a6d]">
+            <Section title="COMMERCIAL PROPERTIES WE SERVICE" titleClassName="text-[#017a6d]" py="py-24">
                 <p className="max-w-3xl text-lg text-black/80 leading-relaxed font-normal mb-12">
                     We provide tailored maintenance and construction services for a wide range of commercial and community properties across Calgary.
                 </p>
@@ -202,9 +223,9 @@ export default function CommercialGroundsMaintenancePage() {
                         "Industrial & Business Parks",
                         "HOA & Community Sites"
                     ].map((type, i) => (
-                        <div key={i} className="flex flex-col items-center justify-center p-6 rounded-xl border border-black/10 transition-all hover:border-[#017a6d] hover:bg-gray-50 group text-center">
-                            <div className="w-12 h-12 rounded-full bg-[#017a6d]/5 flex items-center justify-center mb-4 group-hover:bg-[#017a6d] transition-colors">
-                                <svg className="w-6 h-6 text-[#017a6d] group-hover:text-white transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <div key={i} className="flex flex-col items-center justify-center p-6 rounded-xl border border-black/10 transition-all hover:border-[#01fa6d] hover:bg-gray-50 group text-center">
+                            <div className="w-12 h-12 rounded-full bg-[#01fa6d]/5 flex items-center justify-center mb-4 group-hover:bg-[#01fa6d] transition-colors">
+                                <svg className="w-6 h-6 text-[#01fa6d] group-hover:text-black transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                                 </svg>
                             </div>
@@ -213,6 +234,11 @@ export default function CommercialGroundsMaintenancePage() {
                     ))}
                 </div>
             </Section>
+
+
+
+
+
 
             {/* PROCESS */}
             <Section
@@ -231,14 +257,14 @@ export default function CommercialGroundsMaintenancePage() {
                         { step: "05", title: "Quality Audit", desc: "Regular site inspections to ensure our standards and your expectations are consistently met." }
                     ].map((p, i) => (
                         <ScrollReveal key={i} className="group relative">
-                            <div className="h-full bg-[#017a6d] p-8 rounded-2xl flex flex-col justify-center min-h-[160px] border border-white/5 shadow-xl hover:bg-[#01645a] transition-all transform hover:-translate-y-1">
+                            <div className="h-full bg-[#01fa6d] p-8 rounded-2xl flex flex-col justify-center min-h-[160px] border border-white/5 shadow-xl hover:opacity-90 transition-all transform hover:-translate-y-1">
                                 <div className="flex items-center gap-4 mb-4">
-                                    <div className="w-10 h-10 rounded-full bg-white/20 text-white flex items-center justify-center font-black text-sm shrink-0">
+                                    <div className="w-10 h-10 rounded-full bg-black/10 text-black flex items-center justify-center font-black text-sm shrink-0">
                                         {p.step}
                                     </div>
-                                    <h3 className="text-xl font-black text-white leading-tight">{p.title}</h3>
+                                    <h3 className="text-xl font-black text-black leading-tight">{p.title}</h3>
                                 </div>
-                                <p className="text-white/80 text-sm leading-relaxed">{p.desc}</p>
+                                <p className="text-black/80 text-sm leading-relaxed">{p.desc}</p>
                             </div>
                         </ScrollReveal>
                     ))}
@@ -246,20 +272,14 @@ export default function CommercialGroundsMaintenancePage() {
             </Section>
 
             {/* SERVICES */}
-            <Section kicker="What We Do" title="COMPREHENSIVE COMMERCIAL SERVICES" titleClassName="text-[#017a6d]">
-                <div className="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-12">
+            <Section kicker="What We Do" title="COMPREHENSIVE COMMERCIAL SERVICES" titleClassName="text-[#017a6d] uppercase" wrapperClassName="bg-gray-100">
+                <Carousel className="mt-12 !-mx-4 lg:!mx-0 lg:grid lg:grid-cols-3 lg:gap-8 lg:!flex-row lg:!overflow-visible">
                     {[
                         {
                             title: "Snow & Ice Management",
-                            icon: (
-                                <svg className="w-8 h-8 text-[#017a6d]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m0-12.728l.707.707m11.314 11.314l.707.707M12 8a4 4 0 100 8 4 4 0 000-8z" />
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 12h8m-4-4v8" />
-                                </svg>
-                            ),
                             bullets: [
                                 "24/7 Property Monitoring",
-                                "Parking Lot Plowing & Hauling",
+                                "Parking Lot Plowing",
                                 "Sidewalk Clearing & Ice Melt",
                                 "Sand & Salt Application",
                                 "Digital Service Logs & Photo Proof"
@@ -267,64 +287,62 @@ export default function CommercialGroundsMaintenancePage() {
                         },
                         {
                             title: "Lawn & Grounds Care",
-                            icon: (
-                                <svg className="w-8 h-8 text-[#017a6d]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 21l1.5-4.5h11L19 21M12 3v13.5M7 16.5c0-2.5 2-4.5 5-4.5s5 2 5 4.5M9 12V9m6 3V9" />
-                                </svg>
-                            ),
                             bullets: [
                                 "Scheduled Weekly Mowing",
                                 "String Trimming & Edging",
                                 "Spring & Fall Cleanups",
-                                "Fertilization & Weed Control",
+                                "Fertilization",
                                 "Litter & Debris Removal"
                             ]
                         },
                         {
                             title: "Landscaping",
-                            icon: (
-                                <svg className="w-8 h-8 text-[#017a6d]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                                </svg>
-                            ),
                             bullets: [
                                 "Commercial Sod & Tree Planting",
                                 "Retaining Walls & Hardscapes",
                                 "Irrigation System Installation",
                                 "Site Enhancements & Excavation",
+                                "Mulch Bed Revival",
                                 "Grading & Drainage Solutions"
                             ]
                         }
                     ].map((s, i) => (
-                        <ScrollReveal key={i} className="group flex flex-col h-full bg-white rounded-2xl border border-black/10 p-8 hover:border-[#017a6d] transition-all hover:shadow-xl">
-                            <div className="flex items-center gap-4 mb-8">
-                                <div className="w-14 h-14 rounded-xl bg-[#017a6d]/5 flex items-center justify-center shrink-0 group-hover:bg-[#017a6d] group-hover:text-white transition-all duration-300">
-                                    <div className="group-hover:text-white transition-colors">
-                                        {s.icon}
+                        <div key={i} className="min-w-full lg:min-w-0 px-4 lg:px-0 snap-center flex flex-col">
+                            <ScrollReveal className="flex-grow flex flex-col">
+                                <div className="h-full bg-white rounded-2xl border border-black/5 p-8 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col">
+                                    <div className="mb-8">
+                                        <h3 className="text-2xl font-black uppercase mb-1 text-black">{s.title}</h3>
                                     </div>
-                                </div>
-                                <h3 className="font-black text-xl leading-tight uppercase tracking-tight">{s.title}</h3>
-                            </div>
 
-                            <ul className="space-y-4">
-                                {s.bullets.map((bullet, idx) => (
-                                    <li key={idx} className="flex items-start gap-3 text-black/70">
-                                        <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#017a6d] shrink-0" />
-                                        <span className="text-[15px] font-medium leading-relaxed">{bullet}</span>
-                                    </li>
-                                ))}
-                            </ul>
-                        </ScrollReveal>
+                                    <ul className="space-y-4 mb-8 flex-grow">
+                                        {s.bullets.map((bullet, idx) => (
+                                            <li key={idx} className="flex items-start gap-3">
+                                                <svg className="w-5 h-5 shrink-0 text-[#017a6d]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                                                </svg>
+                                                <span className="text-[15px] font-medium leading-tight text-black/70">{bullet}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+
+                                    <button
+                                        onClick={handleScrollToForm}
+                                        className="w-full py-5 rounded-2xl text-[16px] font-black uppercase transition-all text-center block mt-auto bg-[#2c2d32] text-white hover:bg-black shadow-lg shadow-black/5"
+                                    >
+                                        REQUEST A QUOTE
+                                    </button>
+                                </div>
+                            </ScrollReveal>
+                        </div>
                     ))}
-                </div>
+                </Carousel>
             </Section>
 
-
-            {/* COMMERCIAL LEAD FORM */}
-            <Section id="commercial-form" title="SECURE YOUR SERVICE PROPOSAL" titleClassName="text-[#017a6d]">
-                <div className="max-w-4xl mx-auto">
-                    <p className="text-center text-lg text-black/60 mb-8 font-medium italic">
-                        Submit your property details below. Our commercial estimator will perform a site walkthrough within 24–48 hours to provide a fixed-price bid.
+            {/* LEAD FORM SECTION */}
+            <Section id="commercial-form" kicker="Get Started" title="SECURE YOUR SERVICE PROPOSAL" titleClassName="text-[#017a6d]">
+                <div className="max-w-5xl mx-auto">
+                    <p className="text-center text-lg text-black/60 mb-12">
+                        Fill out the form below to request a site walkthrough and professional bid for your property.
                     </p>
                     <JobberLeadForm
                         clienthubId="41b3399e-3795-43d8-afe2-e6c38c1b3e6e-2234493"
@@ -359,8 +377,11 @@ export default function CommercialGroundsMaintenancePage() {
                 </div>
             </Section>
 
+            {/* BLOG */}
+            <OurBlogSection />
+
             {isCtaVisible && (
-                <div className="fixed bottom-6 left-0 right-0 z-[1000] flex items-center bg-[#01fa6d] rounded-full p-1 shadow-2xl w-fit mx-auto md:hidden animate-float-up">
+                <div className="fixed bottom-6 left-0 right-0 z-[1000] flex items-center bg-[#01fa6d] rounded-full p-1 shadow-2xl w-fit mx-auto lg:hidden animate-float-up">
                     <button
                         onClick={handleScrollToForm}
                         className="text-black px-8 py-3 font-extrabold text-lg flex items-center justify-center whitespace-nowrap cursor-pointer"

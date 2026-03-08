@@ -4,6 +4,10 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import { Section, ScrollReveal, Carousel } from "../components/UI";
+import OurBlogSection from "../components/OurBlogSection";
+import JobberLeadForm from "../components/JobberLeadForm";
+import GoogleReviewBadge from "../components/GoogleReviewBadge";
+import TestimonialSection from "../components/TestimonialSection";
 
 export default function LandscapeInstallsPage() {
   const [isCtaVisible, setIsCtaVisible] = useState(false);
@@ -22,13 +26,16 @@ export default function LandscapeInstallsPage() {
   }, []);
 
   const handleScrollToForm = () => {
-    window.location.href = "/contact";
+    const formElement = document.getElementById('seasonal-form');
+    if (formElement) {
+      formElement.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   return (
     <main className="bg-white text-black">
       {/* HERO */}
-      <section className="relative min-h-[70vh] flex flex-col justify-center border-b border-black/10 overflow-hidden">
+      <section className="relative min-h-screen flex flex-col justify-center border-b border-black/10 overflow-hidden">
         <div className="absolute inset-0 z-0 overflow-hidden">
           <video
             autoPlay
@@ -37,48 +44,41 @@ export default function LandscapeInstallsPage() {
             playsInline
             className="absolute min-w-full min-h-full object-cover"
           >
-            <source src="/Landscape web page pics/calgary-landscape-installs.mov" type="video/quicktime" />
-            <source src="/Landscape web page pics/calgary-landscape-installs.mov" type="video/mp4" />
+            <source src="/Landscape web page pics/calgary-landscaping-2.MOV" type="video/quicktime" />
+            <source src="/Landscape web page pics/calgary-landscaping-2.MOV" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
           <div className="absolute inset-0 bg-black/40" />
         </div>
 
-        <div className="relative z-10 mx-auto max-w-6xl px-6 pt-44 pb-24 md:pt-60 md:pb-32">
+        <div className="relative z-10 mx-auto max-w-6xl px-6 pt-48 pb-16 md:pt-56 md:pb-24 lg:pt-60 lg:pb-32 text-left">
           <p className="text-[14px] font-bold tracking-widest text-[#01fa6d] uppercase drop-shadow-md">
             Calgary • Commercial & Residential
           </p>
-          <h1 className="mt-4 text-[42px] md:text-[64px] font-black leading-[1.1] tracking-tight text-white drop-shadow-2xl max-w-4xl uppercase">
-            Landscape Installs &<br />
+          <h1 className="mt-4 text-[42px] md:text-[56px] lg:text-[64px] font-black leading-[1.1] tracking-tight text-white drop-shadow-2xl max-w-4xl uppercase">
+            Landscaping &<br />
             <span className="text-[#01fa6d]">Design-Build Solutions.</span>
           </h1>
           <p className="mt-6 max-w-2xl text-[1.1rem] font-bold text-white/90 md:text-[1.3rem]">
             Engineered hardscapes, precision grading, and full-yard transformations built for Calgary&apos;s extreme climate.
           </p>
-          <div className="mt-10 flex flex-wrap gap-4">
-            <button
-              onClick={handleScrollToForm}
-              className="inline-flex items-center justify-center rounded-full bg-[#017a6d] px-12 py-[14px] text-[16px] font-extrabold text-white border-2 border-white/10 hover:opacity-90 transition-opacity cursor-pointer"
-            >
-              Request a Build Quote
-            </button>
-          </div>
-
-          {/* TRUST GRID (Advantage Cards) */}
-          <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="rounded-lg border border-black/10 bg-white p-[14px]">
-              <h3 className="font-black text-[16px] text-black">Quality & Accountability</h3>
-              <p className="mt-1.5 text-[14px] text-black/70 leading-relaxed">
-                Fully insured and WCB-compliant professional standards from start to finish.
-              </p>
+          <div className="mt-10 flex flex-col md:flex-row items-start md:items-center gap-8">
+            <div className="flex flex-wrap gap-4">
+              <button
+                onClick={handleScrollToForm}
+                className="inline-flex items-center justify-center rounded-full bg-[#01fa6d] px-12 py-[16px] text-[16px] font-extrabold text-black border-2 border-white/10 hover:opacity-90 transition-all cursor-pointer shadow-xl shadow-[#01fa6d]/20 hover:-translate-y-1"
+              >
+                REQUEST A BUILD QUOTE
+              </button>
+              <a
+                href="tel:+15877077648"
+                className="inline-flex items-center justify-center rounded-full bg-white/10 backdrop-blur-sm px-12 py-[14px] text-[16px] font-extrabold text-white border-2 border-white/40 hover:bg-white/20 transition-colors"
+              >
+                CALL NOW
+              </a>
             </div>
 
-            <div className="rounded-lg border border-black/10 bg-white p-[14px]">
-              <h3 className="font-black text-[16px] text-black">Design • Build • Maintain</h3>
-              <p className="mt-1.5 text-[14px] text-black/70 leading-relaxed">
-                Seamless experience from initial 3D design to ongoing seasonal care.
-              </p>
-            </div>
+            <GoogleReviewBadge />
           </div>
         </div>
       </section>
@@ -87,7 +87,7 @@ export default function LandscapeInstallsPage() {
       <Section
         kicker="Built for Calgary"
         kickerClassName="text-white/60"
-        title="Why Calgarians choose TerreOak for Landscape Design and Build"
+        title="Why Calgarians choose TERREOAK for Landscape Design and Build"
         titleClassName="text-white"
         wrapperClassName="bg-[#2c2d32]"
         py="py-8"
@@ -111,7 +111,7 @@ export default function LandscapeInstallsPage() {
       {/* PROPERTY TYPES SECTION */}
       <Section title="Landscaping Services for All Calgary Properties" titleClassName="text-[#017a6d]">
         <p className="max-w-3xl text-lg text-black/80 leading-relaxed font-normal mb-12">
-          From new builds to established homes, we create custom outdoor spaces designed to fit your property and lifestyle. TerreOak specializes in Calgary residential lots, infill homes, and upscale new neighborhoods, delivering complete design-build services that stand up to Alberta&apos;s extreme seasons.
+          From new builds to established homes, we create custom outdoor spaces designed to fit your property and lifestyle. TERREOAK specializes in Calgary residential lots, infill homes, and upscale new neighborhoods, delivering complete design-build services that stand up to Alberta&apos;s extreme seasons.
         </p>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -130,6 +130,42 @@ export default function LandscapeInstallsPage() {
               <h3 className="font-black text-center text-sm md:text-base">{type}</h3>
             </div>
           ))}
+        </div>
+
+        {/* FOUNDER SPOTLIGHT */}
+        <div className="flex flex-col md:flex-row items-center gap-12 mt-20">
+          <div className="md:w-1/4 flex justify-center">
+            <div className="relative w-64 h-64 md:w-72 md:h-72 rounded-full overflow-hidden border-8 border-white shadow-2xl">
+              <Image
+                src="/images/ASHTON-MADDEN-HEADSHOT.jpg"
+                alt="Ashton Madden - Founder & Director"
+                fill
+                className="object-cover"
+              />
+            </div>
+          </div>
+          <div className="md:w-3/4 bg-white p-8 md:py-8 md:px-12 rounded-3xl shadow-xl border border-black/5 relative overflow-hidden group text-left">
+            <h3 className="text-3xl font-black text-[#017a6d] uppercase tracking-tight mb-4 text-left">Ashton Madden</h3>
+            <div className="space-y-4">
+              <p className="text-lg text-black/70 leading-relaxed font-medium">
+                My goal with TERREOAK is simple: build a company rooted in strong values, a great team culture, and a customer experience people can trust.
+              </p>
+            </div>
+
+            <div className="mt-6 flex justify-center md:justify-end items-end">
+              <div className="text-center md:text-right w-full flex flex-col items-center md:items-end">
+                <div className="relative h-20 w-full max-w-[240px] md:h-[100px] md:w-[320px] mb-1">
+                  <Image
+                    src="/Ashton_Signature_.jpg"
+                    alt="Ashton Madden Signature"
+                    fill
+                    className="object-contain object-center md:object-right"
+                  />
+                </div>
+                <span className="text-[10px] font-bold text-black/30 uppercase tracking-[0.2em]">Founder & Director</span>
+              </div>
+            </div>
+          </div>
         </div>
       </Section>
 
@@ -169,11 +205,13 @@ export default function LandscapeInstallsPage() {
         <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-12">
           {[
             { title: "Hardscapes & Retaining Walls", desc: "Engineered stone work and structural walls designed for stability and style.", image: "/Landscape web page pics/Techo-Bloc-pavers-river-rock.JPG" },
-            { title: "Paving & Stone Work", desc: "High-end patio installations, walkways, and natural stone features.", image: "/Landscape web page pics/Exposed-aggregate-concrete.JPG" },
+            { title: "Concrete", desc: "Professional concrete pouring, patios, walkways, and decorative concrete solutions.", image: "/Landscape web page pics/Exposed-aggregate-concrete.JPG" },
             { title: "Planting & Trees", desc: "Selection of hardy, Alberta-native species for a thriving mountain climate.", image: "/images/gallery/project-3.png" },
-            { title: "Sod & Turf", desc: "Precision sod installation and premium synthetic turf solutions.", image: "/images/gallery/project-4.png" },
-            { title: "Irrigation Systems", desc: "Efficient water management and professional system installations.", image: "/images/design.png" },
-            { title: "Pergolas & Fencing", desc: "Custom wooden pergolas and horizontal privacy fencing designed for luxury outdoor living.", image: "/images/pergolas-fencing.png" }
+            { title: "Sod & Turf", desc: "Precision sod installation and premium synthetic turf solutions.", image: "/Landscape web page pics/Sod-Installation-Calgary.jpg" },
+            { title: "Irrigation Systems", desc: "Efficient water management and professional system installations.", image: "/Landscape web page pics/Calgary-lawn-irrigation.jpg" },
+            { title: "Pergolas & Fencing", desc: "Custom wooden pergolas and horizontal privacy fencing designed for luxury outdoor living.", image: "/images/pergolas-fencing-new.jpg" },
+            { title: "Drainage Systems", desc: "Custom engineered grading, foundation protection, and water management solutions.", image: "/Calgary-drainage-solutions.JPG" },
+            { title: "Landscape Design", desc: "Professional 3D landscape design and conceptual planning for your outdoor space.", image: "/images/design.png" }
           ].map((s, i) => (
             <ScrollReveal key={i} className="group rounded-xl border border-black/10 overflow-hidden bg-white hover:border-[#017a6d] transition-colors">
               <div className="relative aspect-video overflow-hidden">
@@ -185,6 +223,16 @@ export default function LandscapeInstallsPage() {
               </div>
             </ScrollReveal>
           ))}
+        </div>
+      </Section>
+
+      {/* JOBBER LEAD FORM */}
+      <Section id="seasonal-form" title="REQUEST AN ESTIMATE" titleClassName="text-[#01fa6d]">
+        <div className="max-w-6xl mx-auto w-full">
+          <JobberLeadForm
+            clienthubId="41b3399e-3795-43d8-afe2-e6c38c1b3e6e-2235504"
+            formUrl="https://clienthub.getjobber.com/client_hubs/41b3399e-3795-43d8-afe2-e6c38c1b3e6e/public/work_request/embedded_work_request_form?form_id=2235504"
+          />
         </div>
       </Section>
 
@@ -214,25 +262,6 @@ export default function LandscapeInstallsPage() {
         </Carousel>
       </Section>
 
-      {/* CONTACT SECTION */}
-      <Section id="landscape-installs-contact" title="START YOUR PROJECT" titleClassName="text-[#017a6d]">
-        <div className="max-w-4xl mx-auto w-full text-center">
-          <p className="text-xl text-black/60 mb-8 font-medium italic">
-            Ready to build? Contact us directly for a professional consultation and fixed-price estimate.
-          </p>
-          <div className="flex flex-col md:flex-row justify-center items-center gap-8 py-8 border-y border-black/5">
-            <a href="tel:4038913252" className="group">
-              <span className="block text-xs font-bold text-black/40 uppercase tracking-widest mb-1">Call Us</span>
-              <span className="text-3xl font-black text-[#017a6d] hover:underline">(403) 891-3252</span>
-            </a>
-            <div className="hidden md:block w-px h-12 bg-black/10"></div>
-            <a href="mailto:services@terreoak.ca" className="group">
-              <span className="block text-xs font-bold text-black/40 uppercase tracking-widest mb-1">Email Us</span>
-              <span className="text-2xl font-black text-black/60 hover:text-[#017a6d] transition-colors">services@terreoak.ca</span>
-            </a>
-          </div>
-        </div>
-      </Section>
       <div className="mt-12 text-center pb-24">
         <Link
           href="/portfolio"
@@ -243,24 +272,70 @@ export default function LandscapeInstallsPage() {
       </div>
 
       {/* TESTIMONIALS */}
-      <Section kicker="Success Stories" title="What Our Clients Say" titleClassName="text-[#017a6d]">
-        <div className="max-w-4xl mx-auto text-center mt-12">
-          <div className="flex justify-center gap-1 mb-8">
-            {[...Array(5)].map((_, i) => (
-              <svg key={i} className="w-6 h-6 text-[#017a6d]" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-              </svg>
-            ))}
-          </div>
-          <p className="text-[22px] md:text-[28px] font-medium italic leading-relaxed text-black/80">
-            &quot;I was looking for a landscape company to repair a walking path. Ashton from Terreoak answered immediately and we booked a site visit. He provided several options, samples, and photos. We were pleased with the finished product and the way he handled the process and kept us informed throughout.&quot;
-          </p>
-          <div className="mt-8">
-            <div className="font-black text-lg">Brian Williamson</div>
-            <div className="text-sm text-black/40 uppercase tracking-widest font-bold">Walking Path Repair</div>
-          </div>
-        </div>
-      </Section>
+      <TestimonialSection
+        testimonials={[
+          {
+            name: "Brian Williamson",
+            role: "Walking Path Repair",
+            text: "I was looking for a landscape company to repair a walking path. Ashton from TERREOAK answered immediately and we booked a site visit. He provided several options, samples, and photos. We were pleased with the finished product and the way he handled the process and kept us informed throughout.",
+          },
+          {
+            name: "Chris Leech",
+            role: "Lawn Aeration",
+            text: "Got these guys in to aerate my lawn for the first time. Could not be happier. Ashton and his crew did a tremendous job. They reply quickly and get the job booked and done fast. Always great to deal with a local business that actual replies.",
+          },
+          {
+            name: "Linda Hayes Conradson",
+            role: "Yard Cleanup Customer",
+            text: "I recently used TERREOAK for yard cleanup and was extremely happy with the quality of work and how courteous and considerate the onsite team was. Email communications were friendly, helpful and received quickly. Thank you to Ashton and his team. Would highly recommend!",
+          },
+          {
+            name: "George Witherley",
+            role: "Snow Removal",
+            text: "The guys from TERREOAK are amazing. They are clear on when they are coming with emails and show up every single time no matter how bad the snow fall is. They always go above and beyond clearing not only the walk way but my stairs as well. They are very polite and do an excellent job.",
+          },
+          {
+            name: "J Walker",
+            role: "Snow Removal Client",
+            text: "I currently use TERREOAK for snow removal services and have been extremely happy with their work. They always send notification of when they will be coming and are extremely prompt and courteous. Will definitely be using them again next season and would highly recommend.",
+          },
+          {
+            name: "Susan Lewis",
+            role: "Snow Removal",
+            text: "TERREOAK are doing snow removal for me this year. They send an email to advise when they are dispatching the crew each time it snows. They always get it done within the time they say. I'm very happy with their service and would highly recommend them.",
+          },
+          {
+            name: "John Vaisman",
+            role: "Spring Aeration & Clean Up",
+            text: "I used TERREOAK for spring aeration and clean up. They did a fantastic job and the lawn looked great all summer. Very professional and reasonably priced. Would recommend.",
+          },
+          {
+            name: "Justin & Ashley Lamrock",
+            role: "Power Rake and Aeration",
+            text: "If great service and professional results is what you're after, TERREOAK Landscaping is the place to go! Great pricing on power rake and aeration. Will book again next spring.",
+          },
+          {
+            name: "Chad Coopman",
+            role: "Lawn Care",
+            text: "Hands down one of the best Lawn Care Companies I've dealt with. Fast, Quality workmanship, above and beyond my expectations. I highly recommend Ashton and TERREOAK, thank you again.",
+          },
+          {
+            name: "Ewa Tybura",
+            role: "Landscaping",
+            text: "It was a great experience that I had within this company rep Ashton. They were very fast, professional and they were paying attention to all details. I will definitely using their service again.",
+          },
+          {
+            name: "Cheryl O'Brien",
+            role: "Window Washing",
+            text: "Great service from the team @ TERREOAK!! Recently had them out to wash my windows, quick, professional service. My only complaint is that now that the outside of the windows are so clean I have to clean the inside 🤣. Thanks guys great job!!",
+          },
+          {
+            name: "Shawn Gareau",
+            role: "Landscaping",
+            text: "I have relied on TERREOAK for all of my landscaping needs and they always deliver a great job in a timely manner. I highly recommend them.",
+          },
+        ]}
+      />
 
       {/* FAQ */}
       <Section kicker="Support" title="Frequently Asked Questions" titleClassName="text-[#017a6d]" wrapperClassName="bg-white">
@@ -303,6 +378,9 @@ export default function LandscapeInstallsPage() {
           </button>
         </div>
       </section>
+
+      {/* BLOG */}
+      <OurBlogSection />
       {
         isCtaVisible && (
           <div style={styles.stickyCtaContainer} className="stickyCtaWrapper animate-float-up">
@@ -311,7 +389,7 @@ export default function LandscapeInstallsPage() {
               style={styles.stickyCtaLink}
               className="cursor-pointer"
             >
-              Start My Project
+              START MY PROJECT
             </button>
             <button
               onClick={() => setIsCtaVisible(false)}

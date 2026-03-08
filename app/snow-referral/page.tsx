@@ -1,3 +1,5 @@
+"use client";
+
 export default function SnowReferralPage() {
     return (
         <main className="mx-auto max-w-4xl px-6 py-30 md:py-45">

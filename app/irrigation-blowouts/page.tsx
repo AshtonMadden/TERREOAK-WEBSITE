@@ -3,9 +3,11 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
-import { Section, ScrollReveal } from "../components/UI";
+import { Section, ScrollReveal, Carousel } from "../components/UI";
+import OurBlogSection from "../components/OurBlogSection";
 import StatsCounter from "../residential-snow-removal/StatsCounter";
 import JobberLeadForm from "../components/JobberLeadForm";
+import GoogleReviewBadge from "../components/GoogleReviewBadge";
 
 export default function IrrigationPage() {
     const [isCtaVisible, setIsCtaVisible] = useState(false);
@@ -24,67 +26,58 @@ export default function IrrigationPage() {
     }, []);
 
     const handleScrollToForm = () => {
-        const element = document.getElementById("seasonal-form");
-        if (element) {
-            element.scrollIntoView({ behavior: "smooth" });
+        const formElement = document.getElementById('seasonal-form');
+        if (formElement) {
+            formElement.scrollIntoView({ behavior: 'smooth' });
         }
     };
 
     return (
         <main>
             {/* HERO */}
-            <section style={styles.hero}>
+            <section className="relative min-h-screen flex flex-col justify-center border-b border-black/10 overflow-hidden bg-black">
                 <div className="absolute inset-0 z-0">
                     <Image
-                        src="/images/seasonal.png"
+                        src="/images/irrigation-hero.jpg"
                         alt="Professional irrigation blowout and sprinkler winterization in Calgary"
                         fill
                         priority
                         className="object-cover"
                     />
-                    <div style={styles.overlay}></div>
+                    <div className="absolute inset-0 bg-black/40 z-0"></div>
                 </div>
 
-                <div style={styles.heroInner} className="pt-56 pb-24 md:pt-64 md:pb-40">
-                    <p style={styles.kicker}>Calgary • Seasonal Services</p>
-                    <h1 style={styles.h1} className="md:!text-[72px] uppercase">
-                        IRRIGATION BLOWOUTS CALGARY
-                        <span style={{ opacity: 0.75 }}> — Protect Your Pipes.</span>
+                <div className="relative z-10 mx-auto max-w-6xl px-6 pt-48 pb-16 md:pt-56 md:pb-24 lg:pt-60 lg:pb-32 text-left">
+                    <p className="text-[14px] font-bold tracking-widest text-[#01fa6d] uppercase drop-shadow-md">
+                        Calgary • Seasonal Services
+                    </p>
+                    <h1 className="mt-4 text-[42px] md:text-[56px] lg:text-[64px] font-black leading-[1.1] tracking-tight text-white drop-shadow-2xl max-w-4xl uppercase">
+                        CALGARY<br />
+                        IRRIGATION BLOWOUTS<br />
+                        <span className="text-[#01fa6d]">Protect Your Pipes.</span>
                     </h1>
-                    <p style={styles.subhead}>
+                    <p className="mt-6 max-w-2xl text-[1.1rem] font-bold text-white/90 md:text-[1.3rem]">
                         Winterize your sprinkler system to prevent expensive freeze damage.
                         Professional blowouts with high-volume air to ensure every line is dry.
                     </p>
 
-                    <div style={styles.ctaRow}>
-                        <button
-                            onClick={handleScrollToForm}
-                            className="inline-flex items-center justify-center rounded-full bg-[#017a6d] px-12 py-[10px] text-sm font-extrabold text-white border-2 border-white/10 hover:opacity-90 transition-opacity cursor-pointer"
-                        >
-                            Book Your Blowout
-                        </button>
-                        <a
-                            href="tel:+15877077648"
-                            className="inline-flex items-center justify-center rounded-full bg-white/10 backdrop-blur-sm px-12 py-[10px] text-sm font-extrabold text-white border-2 border-white/40 hover:bg-white/20 transition-colors"
-                        >
-                            Call Now
-                        </a>
-                    </div>
+                    <div className="mt-10 flex flex-col md:flex-row items-start md:items-center gap-8">
+                        <div className="flex flex-wrap gap-4">
+                            <button
+                                onClick={handleScrollToForm}
+                                className="inline-flex items-center justify-center rounded-full bg-[#01fa6d] px-12 py-[16px] text-[16px] font-extrabold text-black border-2 border-white/10 hover:opacity-90 transition-all cursor-pointer shadow-xl shadow-[#01fa6d]/20 hover:-translate-y-1"
+                            >
+                                BOOK YOUR BLOWOUT
+                            </button>
+                            <a
+                                href="tel:+15877077648"
+                                className="inline-flex items-center justify-center rounded-full bg-white/10 backdrop-blur-sm px-12 py-[14px] text-[16px] font-extrabold text-white border-2 border-white/40 hover:bg-white/20 transition-colors"
+                            >
+                                CALL NOW
+                            </a>
+                        </div>
 
-                    {/* Trust strip */}
-                    <div style={styles.trustGrid}>
-                        <div style={styles.trustCard}>
-                            <div style={styles.trustTitle}>Reliable Scheduling</div>
-                            <div style={styles.trustText}>We stick to our dates so you can plan with confidence.</div>
-                        </div>
-                        <div style={styles.trustCard}>
-                            <div style={styles.trustTitle}>High-Volume Air</div>
-                            <div style={styles.trustText}>Commercial compressors ensure no water is left to freeze.</div>
-                        </div>
-                        <div style={styles.trustCard}>
-                            <div style={styles.trustTitle}>Fully Insured & WCB</div>
-                            <div style={styles.trustText}>Accountable, professional crews protecting your property.</div>
-                        </div>
+                        <GoogleReviewBadge />
                     </div>
                 </div>
             </section>
@@ -93,9 +86,9 @@ export default function IrrigationPage() {
             <StatsCounter />
 
             <section style={styles.offerSection}>
-                <div style={styles.inner} className="text-center md:text-left">
+                <div style={styles.inner} className="text-left">
                     <h2 style={{ ...styles.h2, color: "#fff" }} className="w-full uppercase">WHAT WE OFFER</h2>
-                    <p style={{ ...styles.p, color: "rgba(255,255,255,0.8)", marginLeft: "auto", marginRight: "auto" }} className="md:ml-0 md:mr-0">
+                    <p style={{ ...styles.p, color: "rgba(255,255,255,0.8)" }}>
                         Professional winterization services to safeguard your irrigation system.
                     </p>
 
@@ -132,7 +125,7 @@ export default function IrrigationPage() {
                         <div style={{ marginTop: 32 }}>
                             <button
                                 onClick={handleScrollToForm}
-                                className="inline-flex items-center justify-center rounded-lg bg-[#017a6d] px-10 py-4 text-sm font-black text-white hover:bg-[#01645a] transition-all transform hover:-translate-y-1 shadow-lg cursor-pointer"
+                                className="inline-flex items-center justify-center rounded-lg bg-[#01fa6d] px-10 py-4 text-sm font-black text-black hover:opacity-90 transition-all transform hover:-translate-y-1 shadow-lg cursor-pointer"
                             >
                                 BOOK YOUR BLOWOUT
                             </button>
@@ -200,11 +193,10 @@ export default function IrrigationPage() {
 
 
 
-            {/* LEAD FORM SECTION */}
-            <Section id="seasonal-form" title="REQUEST YOUR SEASONAL SERVICE ESTIMATE" titleClassName="text-[#017a6d]">
-                <div className="max-w-4xl mx-auto">
-                    <p className="text-center text-lg text-black/60 mb-8 font-medium italic">
-                        Submit your details below for a professional Irrigation Blowout estimate.
+            <Section id="seasonal-form" title="REQUEST AN ESTIMATE" titleClassName="text-[#01fa6d]">
+                <div className="max-w-4xl mx-auto w-full">
+                    <p className="text-center text-xl text-black/60 mb-8 font-medium italic">
+                        Tell us about your property and we&apos;ll get back to you with a professional estimate for your irrigation blowout.
                     </p>
                     <JobberLeadForm
                         clienthubId="41b3399e-3795-43d8-afe2-e6c38c1b3e6e-2240716"
@@ -242,10 +234,13 @@ export default function IrrigationPage() {
                     </div>
 
                     <div style={{ marginTop: 22 }}>
-                        <Link href="/support" style={styles.secondaryBtn}>Customer Support</Link>
+                        <Link href="/customer-support" style={styles.secondaryBtn}>Customer Support</Link>
                     </div>
                 </div>
             </section>
+
+            {/* BLOG */}
+            <OurBlogSection />
 
             {isCtaVisible && (
                 <div style={styles.stickyCtaContainer} className="stickyCtaWrapper animate-float-up">
@@ -381,8 +376,8 @@ const styles: Record<string, React.CSSProperties> = {
     card: { border: "1px solid rgba(0,0,0,0.10)", borderRadius: 8, padding: 16, background: "#fff" },
 
     offerSection: { padding: "70px 0", background: "#2c2d32" },
-    offerCard: { background: "#019587", borderRadius: 12, padding: "24px 20px", display: "flex", alignItems: "center", justifyContent: "center", minHeight: "80px", border: "none" },
-    offerTitle: { margin: 0, fontSize: 21.6, fontWeight: 900, color: "#fff", textAlign: "center" as const },
+    offerCard: { background: "#019587", borderRadius: 12, padding: "24px 20px", display: "flex", alignItems: "center", justifyContent: "flex-start", minHeight: "80px", border: "none" },
+    offerTitle: { margin: 0, fontSize: 21.6, fontWeight: 900, color: "#fff", textAlign: "left" as const },
 
     faq: { marginTop: 18, display: "grid", gap: 10 },
     details: { border: "1px solid rgba(0,0,0,0.10)", borderRadius: 8, padding: "10px 14px", background: "#fff" },

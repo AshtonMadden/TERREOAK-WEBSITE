@@ -3,9 +3,11 @@
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import { Section, ScrollReveal } from "../components/UI";
+import { Section, ScrollReveal, Carousel } from "../components/UI";
+import OurBlogSection from "../components/OurBlogSection";
 import StatsCounter from "./StatsCounter";
 import JobberLeadForm from "../components/JobberLeadForm";
+import GoogleReviewBadge from "../components/GoogleReviewBadge";
 
 export default function ResidentialSnowBlowingPage() {
   const [isCtaVisible, setIsCtaVisible] = useState(false);
@@ -25,34 +27,37 @@ export default function ResidentialSnowBlowingPage() {
   }, []);
 
   const handleScrollToForm = () => {
-    const element = document.getElementById("lead-form");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+    const formElement = document.getElementById('seasonal-form');
+    if (formElement) {
+      formElement.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
   return (
     <main>
-      {/* HERO (BCM-style: big claim + 2 CTAs) */}
-      <section style={styles.hero}>
+      {/* HERO */}
+      <section className="relative min-h-screen flex flex-col justify-center border-b border-black/10 overflow-hidden bg-black">
         <video
           autoPlay
           muted
           loop
           playsInline
-          style={styles.videoBackground}
+          className="absolute inset-0 w-full h-full object-cover z-0"
         >
           <source src="/Calgary-snowremoval-drone.mov" type="video/mp4" />
         </video>
-        <div style={styles.overlay}></div>
+        <div className="absolute inset-0 bg-black/40 z-0"></div>
 
-        <div style={styles.heroInner} className="pt-56 pb-24 md:pt-64 md:pb-40">
-          <p style={styles.kicker}>Calgary • Residential Snow Removal</p>
-          <h1 style={styles.h1} className="md:!text-[72px] uppercase">
-            RESIDENTIAL SNOW REMOVAL CALGARY
-            <span style={{ opacity: 0.75 }}> — Worry-free all winter.</span>
+        <div className="relative z-10 mx-auto max-w-6xl px-6 pt-48 pb-16 md:pt-56 md:pb-24 lg:pt-60 lg:pb-32 text-left">
+          <p className="text-[14px] font-bold tracking-widest text-[#01fa6d] uppercase drop-shadow-md">
+            Calgary • Residential Snow Removal
+          </p>
+          <h1 className="mt-4 text-[42px] md:text-[56px] lg:text-[64px] font-black leading-[1.1] tracking-tight text-white drop-shadow-2xl max-w-4xl uppercase">
+            CALGARY<br />
+            SNOW REMOVAL<br />
+            <span className="text-[#01fa6d]">Worry-free all winter.</span>
           </h1>
-          <p style={styles.subhead}>
+          <p className="mt-6 max-w-2xl text-[1.1rem] font-bold text-white/90 md:text-[1.3rem]">
             Unlimited driveway + front sidewalk clearing all season long, with photo logs,
             dispatch alerts, and 12–24 hour service after snowfall ends.{" "}
             <span style={{ opacity: 0.85 }}>
@@ -60,35 +65,23 @@ export default function ResidentialSnowBlowingPage() {
             </span>
           </p>
 
-          <div style={styles.ctaRow}>
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center rounded-full bg-[#017a6d] px-12 py-[10px] text-sm font-extrabold text-white border-2 border-white/10 hover:opacity-90 transition-opacity"
-            >
-              Sign Up
-            </Link>
-            <a
-              href="tel:+15877077648"
-              className="inline-flex items-center justify-center rounded-full bg-white/10 backdrop-blur-sm px-12 py-[10px] text-sm font-extrabold text-white border-2 border-white/40 hover:bg-white/20 transition-colors"
-            >
-              Call Now
-            </a>
-          </div>
+          <div className="mt-10 flex flex-col md:flex-row items-start md:items-center gap-8">
+            <div className="flex flex-wrap gap-4">
+              <button
+                onClick={handleScrollToForm}
+                className="inline-flex items-center justify-center rounded-full bg-[#01fa6d] px-12 py-[16px] text-[16px] font-extrabold text-black border-2 border-white/10 hover:opacity-90 transition-all cursor-pointer shadow-xl shadow-[#01fa6d]/20 hover:-translate-y-1"
+              >
+                SIGN UP
+              </button>
+              <a
+                href="tel:+15877077648"
+                className="inline-flex items-center justify-center rounded-full bg-white/10 backdrop-blur-sm px-12 py-[14px] text-[16px] font-extrabold text-white border-2 border-white/40 hover:bg-white/20 transition-colors"
+              >
+                CALL NOW
+              </a>
+            </div>
 
-          {/* Trust strip */}
-          <div style={styles.trustGrid}>
-            <div style={styles.trustCard}>
-              <div style={styles.trustTitle}>12–24 hour service</div>
-              <div style={styles.trustText}>We clear after snowfall ends.</div>
-            </div>
-            <div style={styles.trustCard}>
-              <div style={styles.trustTitle}>Photo service log</div>
-              <div style={styles.trustText}>Time-stamped proof after each visit.</div>
-            </div>
-            <div style={styles.trustCard}>
-              <div style={styles.trustTitle}>Local Calgary team</div>
-              <div style={styles.trustText}>Friendly, accountable, insured crews.</div>
-            </div>
+            <GoogleReviewBadge />
           </div>
         </div>
       </section>
@@ -97,9 +90,9 @@ export default function ResidentialSnowBlowingPage() {
       <StatsCounter />
 
       <section style={styles.offerSection}>
-        <div style={styles.inner} className="text-center md:text-left">
+        <div style={styles.inner} className="text-left">
           <h2 style={{ ...styles.h2, color: "#fff" }} className="w-full">WHAT WE OFFER</h2>
-          <p style={{ ...styles.p, color: "rgba(255,255,255,0.8)", marginLeft: "auto", marginRight: "auto" }} className="md:ml-0 md:mr-0">
+          <p style={{ ...styles.p, color: "rgba(255,255,255,0.8)" }}>
             Reliable, professional snow management tailored for Calgary homeowners.
           </p>
 
@@ -122,6 +115,12 @@ export default function ResidentialSnowBlowingPage() {
             <div style={styles.offerCard}>
               <h3 style={styles.offerTitle}>Photo service log</h3>
             </div>
+            <div style={styles.offerCard}>
+              <h3 style={styles.offerTitle}>Ice melt & vehicle add-ons</h3>
+            </div>
+            <div style={styles.offerCard}>
+              <h3 style={styles.offerTitle}>Snow bird / Vacation passes</h3>
+            </div>
           </div>
         </div>
       </section>
@@ -137,11 +136,11 @@ export default function ResidentialSnowBlowingPage() {
                 </h2>
                 <div className="md:hidden flex-shrink-0 w-24 animate-pulse-slow pt-2">
                   <Image
-                    src="/Snow pass sticker .png"
-                    alt="Snow Pass Sticker"
+                    src="/Snow Page web pics/TERREOAK-Snow-Picket.JPG"
+                    alt="TERREOAK Snow Picket"
                     width={100}
                     height={100}
-                    className="w-full h-auto drop-shadow-lg"
+                    className="w-full h-auto drop-shadow-lg rounded-2xl"
                   />
                 </div>
               </div>
@@ -152,21 +151,21 @@ export default function ResidentialSnowBlowingPage() {
                 Our route-based approach to snow removal allows us to deliver consistent service during and after every snowfall, even during the heaviest storms. A seasonal snow removal plan gives you predictable monthly pricing, priority service, and the confidence that your home will be taken care of all winter long.
               </p>
               <div style={{ marginTop: 32 }}>
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center justify-center rounded-lg bg-[#017a6d] px-10 py-4 text-sm font-black text-white hover:bg-[#01645a] transition-all transform hover:-translate-y-1 shadow-lg"
+                <button
+                  onClick={handleScrollToForm}
+                  className="inline-flex items-center justify-center rounded-lg bg-[#01fa6d] px-10 py-4 text-sm font-black text-black hover:opacity-90 transition-all transform hover:-translate-y-1 shadow-lg cursor-pointer"
                 >
                   RESERVE SEASON PASS
-                </Link>
+                </button>
               </div>
             </div>
             <div className="hidden md:block flex-shrink-0 w-64 md:w-96 animate-pulse-slow">
               <Image
-                src="/Snow pass sticker .png"
-                alt="Snow Pass Sticker"
+                src="/Snow Page web pics/TERREOAK-Snow-Picket.JPG"
+                alt="TERREOAK Snow Picket"
                 width={400}
                 height={400}
-                className="w-full h-auto drop-shadow-2xl grayscale-[0.2] hover:grayscale-0 transition-all duration-500"
+                className="w-full h-auto drop-shadow-2xl grayscale-[0.2] hover:grayscale-0 transition-all duration-500 rounded-2xl"
               />
             </div>
           </div>
@@ -316,13 +315,126 @@ export default function ResidentialSnowBlowingPage() {
 
 
 
-      {/* LEAD FORM */}
-      <section style={styles.section} id="lead-form" className="section-divider">
-        <div style={styles.inner}>
-          <h2 style={{ ...styles.h2, marginTop: '2rem', marginBottom: '3rem' }}>SIGN UP FOR YOUR SEASON PASS</h2>
-          <JobberLeadForm />
+      {/* SNOWBALL REFERRAL PROGRAM */}
+      <Section
+        kicker="Rewards Program"
+        kickerClassName="text-white/60"
+        title="SNOWBALL REFERRAL PROGRAM"
+        titleClassName="text-[#01fa6d] !text-[30.6px] uppercase"
+        wrapperClassName="bg-[#2c2d32]"
+        py="py-16"
+        hasBorder={false}
+      >
+        <div className="mt-8 space-y-12">
+          {/* HOW IT WORKS */}
+          <div>
+            <h3 className="text-xl font-black text-white uppercase tracking-wider mb-6 flex items-center gap-3">
+              <span className="w-8 h-px bg-[#01fa6d]"></span>
+              How it works
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="bg-white/5 border border-white/10 p-6 rounded-2xl backdrop-blur-sm">
+                <div className="text-[#01fa6d] text-2xl font-black mb-2">$25 Credit</div>
+                <p className="text-white/70 font-medium">For every new customer you refer, you get a $25 account credit applied instantly.</p>
+              </div>
+              <div className="bg-white/5 border border-white/10 p-6 rounded-2xl backdrop-blur-sm">
+                <div className="text-[#01fa6d] text-2xl font-black mb-2">$25 Discount</div>
+                <p className="text-white/70 font-medium">Your neighbor gets $25 off their first service just for signing up through you.</p>
+              </div>
+            </div>
+            <p className="mt-6 text-white/50 font-bold italic text-center">
+              The more neighbors you refer, the bigger the rewards.
+            </p>
+          </div>
+
+          {/* SNOWBALL REWARDS TIERS */}
+          <div className="pt-8 border-t border-white/10">
+            <h3 className="text-xl font-black text-white uppercase tracking-wider mb-8 text-center">Snowball Rewards</h3>
+            <Carousel className="pb-8">
+              {[
+                { count: "1 Referral", reward: "$25 credit", num: "1" },
+                { count: "2 Referrals", reward: "$50 credit", num: "2" },
+                { count: "3 Referrals", reward: "$50 credit + ice melt", num: "3" },
+                { count: "5 Referrals", reward: "Free month", num: "5" },
+                { count: "10 Referrals", reward: "25% off next season", num: "10", highlight: true }
+              ].map((tier, i) => (
+                <div key={i} className="min-w-[180px] md:min-w-[0] md:flex-1 px-2 snap-start">
+                  <div
+                    className={`p-5 rounded-xl flex flex-col items-center text-center transition-all duration-500 hover:-translate-y-1 h-full min-h-[140px] justify-center ${tier.highlight ? "bg-[#01fa6d] text-black shadow-2xl shadow-[#01fa6d]/20 border border-white/20" : "bg-white text-black shadow-lg"}`}
+                  >
+                    <div className={`w-10 h-10 rounded-full flex items-center justify-center font-black mb-3 ${tier.highlight ? "bg-black text-[#01fa6d]" : "bg-[#01fa6d] text-white"}`}>
+                      {tier.num}
+                    </div>
+                    <div className={`text-[9px] font-black uppercase tracking-widest mb-1 ${tier.highlight ? "text-black/60" : "text-[#017a6d]"}`}>
+                      {tier.count}
+                    </div>
+                    <div className="text-[13px] font-black leading-tight">
+                      {tier.reward}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </Carousel>
+          </div>
+
+          <div className="flex flex-col items-center gap-6 pt-4">
+            <div className="flex flex-wrap justify-center gap-4">
+              <a
+                href="https://clienthub.getjobber.com/client_hubs/41b3399e-3795-43d8-afe2-e6c38c1b3e6e/public/work_request/new?form_id=2232203"
+                className="inline-flex items-center justify-center rounded-lg bg-[#01fa6d] px-12 py-5 text-[16px] font-black text-black hover:opacity-90 transition-all hover:-translate-y-1 shadow-xl shadow-[#01fa6d]/20"
+              >
+                START YOUR REFERRAL CHAIN
+              </a>
+            </div>
+          </div>
         </div>
-      </section>
+      </Section>
+
+      {/* JOBBER LEAD FORM */}
+      <Section id="seasonal-form" title="SIGN UP FOR YOUR SEASON PASS" titleClassName="text-[#01fa6d]">
+        <div className="max-w-6xl mx-auto w-full">
+          <JobberLeadForm
+            clienthubId="41b3399e-3795-43d8-afe2-e6c38c1b3e6e-2232203"
+            formUrl="https://clienthub.getjobber.com/client_hubs/41b3399e-3795-43d8-afe2-e6c38c1b3e6e/public/work_request/embedded_work_request_form?form_id=2232203"
+          />
+        </div>
+      </Section>
+
+      {/* RECENT PROJECTS (Gallery) */}
+      <Section kicker="Portfolio" title="Our Recent Work" titleClassName="text-[#017a6d]" wrapperClassName="bg-white">
+        <Carousel className="mt-12">
+          {[
+            { src: "/Snow Page web pics/Ice-removal-after.JPG", alt: "Ice Removal After" },
+            { src: "/Snow Page web pics/Ice-removal-before.JPG", alt: "Ice Removal Before" },
+            { src: "/Snow Page web pics/Residential-snow-removal.JPG", alt: "Residential Snow Removal" },
+            { src: "/Snow Page web pics/South-Calgary-Snow-Removal.JPG", alt: "South Calgary Snow Removal" },
+            { src: "/Snow Page web pics/TERREOAK-Snow-Picket.JPG", alt: "TERREOAK Snow Picket" },
+            { src: "/snow-removal-okotoks-after.JPG", alt: "Snow Removal Okotoks After" },
+            { src: "/snow-removal-okotoks-before.JPG", alt: "Snow Removal Okotoks Before" },
+            { src: "/residential-snow-removalJPG.JPG", alt: "Residential Snow Removal Calgary" },
+          ].map((photo, i) => (
+            <div key={i} className="min-w-[85vw] md:min-w-[400px] px-3 snap-start">
+              <ScrollReveal className="relative aspect-[4/3] rounded-lg overflow-hidden group border border-black/5 shadow-md">
+                <Image
+                  src={photo.src}
+                  alt={photo.alt}
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500" />
+              </ScrollReveal>
+            </div>
+          ))}
+        </Carousel>
+        <div className="mt-12 text-center">
+          <Link
+            href="/portfolio"
+            className="inline-flex items-center justify-center rounded-lg border-2 border-[#017a6d] px-8 py-3 text-sm font-bold text-[#017a6d] hover:bg-[#017a6d] hover:text-white transition-all shadow-md hover:-translate-y-1"
+          >
+            VIEW FULL PORTFOLIO
+          </Link>
+        </div>
+      </Section>
 
       {/* FAQ */}
       <section style={styles.sectionAlt} className="section-divider">
@@ -352,18 +464,49 @@ export default function ResidentialSnowBlowingPage() {
             </details>
 
             <details style={styles.details}>
-              <summary style={styles.summary}>Ice melt every time?</summary>
+              <summary style={styles.summary}>Is ice melt included?</summary>
               <p style={styles.pSmall}>
-                2 vouchers included. If you want ice melt after every visit, add a monthly subscription (we can wire this later).
+                No, ice melt is no longer included in the base Season Pass. We now offer it as a monthly subscription add-on (up to 4 visits per month) for clients who want consistent traction control after every service.
+              </p>
+            </details>
+
+            <details style={styles.details}>
+              <summary style={styles.summary}>Do you blow snow off vehicles?</summary>
+              <p style={styles.pSmall}>
+                We can! Snow blowing for vehicles parked in the driveway is available as a monthly add-on to your Season Pass.
+              </p>
+            </details>
+
+            <details style={styles.details}>
+              <summary style={styles.summary}>Do you provide one-time services?</summary>
+              <p style={styles.pSmall}>
+                No, we do not provide one-time snow removal services. TERREOAK focuses exclusively on our Season Pass members to ensure we provide the highest priority and most reliable service to our committed clients throughout the entire winter season.
+              </p>
+            </details>
+
+            <details style={styles.details}>
+              <summary style={styles.summary}>Do you offer short-term vacation passes?</summary>
+              <p style={styles.pSmall}>
+                Yes! We offer "Snow Bird" and vacation passes for those who only need coverage for a shorter period. These contracts can range from 1 week up to 8 weeks, providing you with the same priority service and peace of mind while you're away.
+              </p>
+            </details>
+
+            <details style={styles.details}>
+              <summary style={styles.summary}>How does billing work? Can I pay upfront?</summary>
+              <p style={styles.pSmall}>
+                We offer total flexibility. You can pay your Season Pass fee in full upfront and receive a <strong>10% discount</strong>, or you can split the cost into <strong>5 monthly payments</strong> using our auto-billing system with a card on file. We also accept e-transfers and cheques by mail upon request.
               </p>
             </details>
           </div>
 
           <div style={{ marginTop: 22 }}>
-            <Link href="/support" style={styles.secondaryBtn}>Customer Support</Link>
+            <Link href="/customer-support" style={styles.secondaryBtn}>CUSTOMER SUPPORT</Link>
           </div>
         </div>
       </section>
+
+      {/* BLOG */}
+      <OurBlogSection />
 
       {isCtaVisible && (
         <div style={styles.stickyCtaContainer} className="stickyCtaWrapper animate-float-up">
@@ -372,7 +515,7 @@ export default function ResidentialSnowBlowingPage() {
             style={styles.stickyCtaLink}
             className="cursor-pointer"
           >
-            Sign Up!
+            SIGN UP!
           </button>
 
           <button
@@ -509,8 +652,8 @@ const styles: Record<string, React.CSSProperties> = {
   card: { border: "1px solid rgba(0,0,0,0.10)", borderRadius: 8, padding: 16, background: "#fff" },
 
   offerSection: { padding: "70px 0", background: "#2c2d32" },
-  offerCard: { background: "#019587", borderRadius: 12, padding: "24px 20px", display: "flex", alignItems: "center", justifyContent: "center", minHeight: "80px", border: "none" },
-  offerTitle: { margin: 0, fontSize: 21.6, fontWeight: 900, color: "#fff", textAlign: "center" as const },
+  offerCard: { background: "#019587", borderRadius: 12, padding: "24px 20px", display: "flex", alignItems: "center", justifyContent: "flex-start", minHeight: "80px", border: "none" },
+  offerTitle: { margin: 0, fontSize: 21.6, fontWeight: 900, color: "#fff", textAlign: "left" as const },
 
   ctaBox: {
     border: "1px solid rgba(0,0,0,0.10)",

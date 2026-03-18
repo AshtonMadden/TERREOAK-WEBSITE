@@ -53,11 +53,7 @@ export default function Header() {
         <div style={styles.topBar}>
           <div style={styles.topInner}>
             <div style={styles.topText} className="top-bar-text-container">
-              <span>MON–THU: 8AM–8PM</span>
-              <span className="hidden sm:inline opacity-30">•</span>
-              <span>FRI–SAT: 9AM–5PM</span>
-              <span className="hidden sm:inline opacity-30">•</span>
-              <span>SUN: CLOSED</span>
+              <span>OPEN 7 DAYS A WEEK: 6AM–9PM</span>
             </div>
           </div>
         </div>
@@ -156,8 +152,8 @@ export default function Header() {
                   className="navTrigger"
                   style={{
                     ...styles.navLink,
-                    color: isParentActive(["/customer-support", "/portfolio", "/blog", "/about"]) ? "#01fa6d" : "#ffffff",
-                    textDecoration: isParentActive(["/customer-support", "/portfolio", "/blog", "/about"]) ? "underline" : "none",
+                    color: isParentActive(["/customer-support", "/portfolio", "/blog", "/about", "/video-testimonials"]) ? "#01fa6d" : "#ffffff",
+                    textDecoration: isParentActive(["/customer-support", "/portfolio", "/blog", "/about", "/video-testimonials"]) ? "underline" : "none",
                     textUnderlineOffset: "8px",
                     textDecorationThickness: "2px"
                   }}
@@ -172,6 +168,9 @@ export default function Header() {
                   </Link>
                   <Link href="/portfolio" className="dropdownLink" style={styles.dropdownLink}>
                     Portfolio
+                  </Link>
+                  <Link href="/video-testimonials" className="dropdownLink" style={styles.dropdownLink}>
+                    Video Testimonials
                   </Link>
                   <Link href="/blog" className="dropdownLink" style={styles.dropdownLink}>
                     Blog
@@ -286,6 +285,7 @@ export default function Header() {
               {expandedSection === 'resources' && (
                 <div style={styles.accordionContent}>
                   <Link href="/portfolio" style={styles.drawerSubLink} onClick={toggleMobileMenu}>Portfolio</Link>
+                  <Link href="/video-testimonials" style={styles.drawerSubLink} onClick={toggleMobileMenu}>Video Testimonials</Link>
                   <Link href="/blog" style={styles.drawerSubLink} onClick={toggleMobileMenu}>Blog</Link>
                   <Link href="/about" style={styles.drawerSubLink} onClick={toggleMobileMenu}>About</Link>
                   <Link href="/customer-support" style={styles.drawerSubLink} onClick={toggleMobileMenu}>Customer Support</Link>

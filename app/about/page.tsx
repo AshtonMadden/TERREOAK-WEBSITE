@@ -99,18 +99,17 @@ export default function AboutPage() {
             >
                 <div className="space-y-24 mt-12">
                     {/* Row 1: Left Circle, Right Text */}
-                    <div className="flex flex-col md:flex-row items-center gap-12">
-                        <div className="md:w-1/3 flex justify-center">
-                            <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-8 border-white shadow-2xl">
-                                <Image
-                                    src="/images/ASHTON-MADDEN-HEADSHOT.jpg"
-                                    alt="Ashton Madden - Founder & Director"
-                                    fill
-                                    className="object-cover"
-                                />
-                            </div>
+                    <div className="flex flex-col md:flex-row items-stretch bg-white rounded-3xl shadow-xl border border-black/5 overflow-hidden group">
+                        <div className="md:w-2/5 relative min-h-[350px] md:min-h-full">
+                            <Image
+                                src="/images/Ashton-Madden-Cowboy.jpg"
+                                alt="Ashton Madden - Founder & Director"
+                                fill
+                                sizes="(max-width: 768px) 100vw, 40vw"
+                                className="object-cover object-top"
+                            />
                         </div>
-                        <div className="md:w-2/3 bg-white p-8 md:p-12 rounded-3xl shadow-xl border border-black/5 relative overflow-hidden group">
+                        <div className="md:w-3/5 p-8 md:p-12 relative flex flex-col justify-center text-left">
                             <h3 className="text-3xl font-black text-[#017a6d] uppercase tracking-tight mb-4">Ashton Madden</h3>
                             <div className="space-y-4">
                                 <p className="text-lg text-black/70 leading-relaxed font-medium">
@@ -135,14 +134,15 @@ export default function AboutPage() {
                             </div>
 
                             {/* SIGNATURE AREA */}
-                            <div className="mt-8 flex justify-center md:justify-end items-end">
-                                <div className="text-center md:text-right w-full flex flex-col items-center md:items-end">
-                                    <div className="relative h-24 w-full max-w-[280px] md:h-[136px] md:w-[435px] mb-2">
+                            <div className="mt-8 flex justify-end items-end">
+                                <div className="text-right w-full flex flex-col items-end">
+                                    <div className="relative h-20 w-[200px] md:h-[136px] md:w-[435px] mb-2">
                                         <Image
                                             src="/Ashton_Signature_.jpg"
                                             alt="Ashton Madden Signature"
                                             fill
-                                            className="object-contain object-center md:object-right"
+                                            sizes="(max-width: 768px) 200px, 435px"
+                                            className="object-contain object-right"
                                         />
                                     </div>
                                     <span className="text-[10px] font-bold text-black/30 uppercase tracking-[0.2em]">Founder & Director</span>
@@ -152,18 +152,17 @@ export default function AboutPage() {
                     </div>
 
                     {/* Row 2: Right Circle, Left Text */}
-                    <div className="flex flex-col md:flex-row-reverse items-center gap-12">
-                        <div className="md:w-1/3 flex justify-center">
-                            <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-8 border-white shadow-2xl">
-                                <Image
-                                    src="/images/KEAGAN-MADDEN-HEADSHOT.JPG"
-                                    alt="Keagan Madden - Co-Owner"
-                                    fill
-                                    className="object-cover"
-                                />
-                            </div>
+                    <div className="flex flex-col md:flex-row-reverse items-stretch bg-white rounded-3xl shadow-xl border border-black/5 overflow-hidden group">
+                        <div className="md:w-2/5 relative min-h-[350px] md:min-h-full">
+                            <Image
+                                src="/images/KEAGAN-MADDEN-HEADSHOT.JPG"
+                                alt="Keagan Madden - Co-Owner"
+                                fill
+                                sizes="(max-width: 768px) 100vw, 40vw"
+                                className="object-cover object-top"
+                            />
                         </div>
-                        <div className="md:w-2/3 bg-white p-8 md:p-12 rounded-3xl shadow-xl border border-black/5 relative overflow-hidden group">
+                        <div className="md:w-3/5 p-8 md:p-12 relative flex flex-col justify-center text-left">
                             <h3 className="text-3xl font-black text-[#017a6d] uppercase tracking-tight mb-4">Keagan Madden</h3>
                             <div className="space-y-4">
                                 <p className="text-lg text-black/70 leading-relaxed font-medium">
@@ -172,14 +171,15 @@ export default function AboutPage() {
                             </div>
 
                             {/* SIGNATURE AREA */}
-                            <div className="mt-8 flex justify-center md:justify-end items-end">
-                                <div className="text-center md:text-right w-full flex flex-col items-center md:items-end">
-                                    <div className="relative h-24 w-full max-w-[280px] md:h-[136px] md:w-[435px] mb-2">
+                            <div className="mt-8 flex justify-end items-end">
+                                <div className="text-right w-full flex flex-col items-end">
+                                    <div className="relative h-20 w-[200px] md:h-[136px] md:w-[435px] mb-2">
                                         <Image
                                             src="/Keagan_Signature_.jpg"
                                             alt="Keagan Madden Signature"
                                             fill
-                                            className="object-contain object-center md:object-right"
+                                            sizes="(max-width: 768px) 200px, 435px"
+                                            className="object-contain object-right"
                                         />
                                     </div>
                                     <span className="text-[10px] font-bold text-black/30 uppercase tracking-[0.2em]">Co-Owner & Operations Director</span>
@@ -189,18 +189,17 @@ export default function AboutPage() {
                     </div>
 
                     {/* Row 3: Left Circle, Right Text */}
-                    <div className="flex flex-col md:flex-row items-center gap-12">
-                        <div className="md:w-1/3 flex justify-center">
-                            <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-8 border-white shadow-2xl">
-                                <Image
-                                    src="/images/CAYDEN-MADDEN-HEADSHOT.jpg"
-                                    alt="Cayden Madden - Media & Content Lead"
-                                    fill
-                                    className="object-cover"
-                                />
-                            </div>
+                    <div className="flex flex-col md:flex-row items-stretch bg-white rounded-3xl shadow-xl border border-black/5 overflow-hidden group">
+                        <div className="md:w-2/5 relative min-h-[350px] md:min-h-full">
+                            <Image
+                                src="/images/CAYDEN-MADDEN-HEADSHOT.jpg"
+                                alt="Cayden Madden - Media & Content Lead"
+                                fill
+                                sizes="(max-width: 768px) 100vw, 40vw"
+                                className="object-cover object-top"
+                            />
                         </div>
-                        <div className="md:w-2/3 bg-white p-8 md:p-12 rounded-3xl shadow-xl border border-black/5 relative overflow-hidden group">
+                        <div className="md:w-3/5 p-8 md:p-12 relative flex flex-col justify-center text-left">
                             <h3 className="text-3xl font-black text-[#017a6d] uppercase tracking-tight mb-4">Cayden Madden</h3>
                             <div className="space-y-4">
                                 <p className="text-lg text-black/70 leading-relaxed font-medium">
@@ -209,14 +208,15 @@ export default function AboutPage() {
                             </div>
 
                             {/* SIGNATURE AREA */}
-                            <div className="mt-8 flex justify-center md:justify-end items-end">
-                                <div className="text-center md:text-right w-full flex flex-col items-center md:items-end">
-                                    <div className="relative h-24 w-full max-w-[280px] md:h-[136px] md:w-[435px] mb-2">
+                            <div className="mt-8 flex justify-end items-end">
+                                <div className="text-right w-full flex flex-col items-end">
+                                    <div className="relative h-20 w-[200px] md:h-[136px] md:w-[435px] mb-2">
                                         <Image
                                             src="/Cayden_Signature_ copy.jpg"
                                             alt="Cayden Madden Signature"
                                             fill
-                                            className="object-contain object-center md:object-right"
+                                            sizes="(max-width: 768px) 200px, 435px"
+                                            className="object-contain object-right"
                                         />
                                     </div>
                                     <span className="text-[10px] font-bold text-black/30 uppercase tracking-[0.2em]">Media & Content Lead</span>

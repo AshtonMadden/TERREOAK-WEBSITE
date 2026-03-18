@@ -110,19 +110,17 @@ export default function CommercialGroundsMaintenancePage() {
                     </div>
 
                     {/* FOUNDER SPOTLIGHT */}
-                    <div className="flex flex-col md:flex-row items-center gap-12 mt-20">
-                        <div className="md:w-1/4 flex justify-center">
-                            <div className="relative w-64 h-64 md:w-72 md:h-72 rounded-full overflow-hidden border-8 border-white shadow-2xl">
-                                <Image
-                                    src="/images/ASHTON-MADDEN-HEADSHOT.jpg"
-                                    alt="Ashton Madden - Founder & Director"
-                                    fill
-                                    sizes="(max-width: 768px) 256px, 288px"
-                                    className="object-cover"
-                                />
-                            </div>
+                    <div className="flex flex-col md:flex-row items-stretch bg-white rounded-3xl shadow-xl border border-black/5 overflow-hidden group mt-20">
+                        <div className="md:w-2/5 relative min-h-[350px] md:min-h-full">
+                            <Image
+                                src="/images/Ashton-Madden-Cowboy.jpg"
+                                alt="Ashton Madden - Founder & Director"
+                                fill
+                                sizes="(max-width: 768px) 100vw, 40vw"
+                                className="object-cover"
+                            />
                         </div>
-                        <div className="md:w-3/4 bg-white p-8 md:py-8 md:px-12 rounded-3xl shadow-xl border border-black/5 relative overflow-hidden group">
+                        <div className="md:w-3/5 p-8 md:p-12 relative flex flex-col justify-center text-left">
                             <h3 className="text-3xl font-black text-[#017a6d] uppercase tracking-tight mb-4">Ashton Madden</h3>
                             <div className="space-y-4">
                                 <p className="text-lg text-black/70 leading-relaxed font-medium">
@@ -130,15 +128,15 @@ export default function CommercialGroundsMaintenancePage() {
                                 </p>
                             </div>
 
-                            <div className="mt-6 flex justify-center md:justify-end items-end">
-                                <div className="text-center md:text-right w-full flex flex-col items-center md:items-end">
-                                    <div className="relative h-20 w-full max-w-[240px] md:h-[100px] md:w-[320px] mb-1">
+                            <div className="mt-8 flex justify-end items-end">
+                                <div className="text-right w-full flex flex-col items-end">
+                                    <div className="relative h-20 w-[200px] md:h-[136px] md:w-[435px] mb-2">
                                         <Image
                                             src="/Ashton_Signature_.jpg"
                                             alt="Ashton Madden Signature"
                                             fill
-                                            sizes="(max-width: 768px) 240px, 320px"
-                                            className="object-contain object-center md:object-right"
+                                            sizes="(max-width: 768px) 200px, 435px"
+                                            className="object-contain object-right"
                                         />
                                     </div>
                                     <span className="text-[10px] font-bold text-black/30 uppercase tracking-[0.2em]">Founder & Director</span>
@@ -283,10 +281,13 @@ export default function CommercialGroundsMaintenancePage() {
 
             {/* SERVICES */}
             <Section kicker="What We Do" title="COMPREHENSIVE COMMERCIAL SERVICES" titleClassName="text-[#017a6d] uppercase" wrapperClassName="bg-gray-100">
-                <Carousel className="mt-12 !-mx-4 lg:!mx-0 lg:grid lg:grid-cols-3 lg:gap-8 lg:!flex-row lg:!overflow-visible">
+                <Carousel className="mt-12 !-mx-4 lg:!mx-0 lg:grid lg:grid-cols-3 lg:gap-8 lg:!flex-row lg:!overflow-visible !items-stretch">
                     {[
                         {
                             title: "Snow & Ice Management",
+                            borderColor: "border-[#01fa6d]",
+                            iconColor: "text-[#01fa6d]",
+                            btnClass: "bg-[#01fa6d] text-black hover:opacity-90 shadow-lg shadow-[#01fa6d]/20",
                             bullets: [
                                 "24/7 Property Monitoring",
                                 "Parking Lot Plowing",
@@ -297,6 +298,9 @@ export default function CommercialGroundsMaintenancePage() {
                         },
                         {
                             title: "Lawn & Grounds Care",
+                            borderColor: "border-[#017a6d]",
+                            iconColor: "text-[#017a6d]",
+                            btnClass: "bg-[#017a6d] text-white hover:bg-[#015f55] shadow-lg shadow-[#017a6d]/20",
                             bullets: [
                                 "Scheduled Weekly Mowing",
                                 "String Trimming & Edging",
@@ -307,6 +311,9 @@ export default function CommercialGroundsMaintenancePage() {
                         },
                         {
                             title: "Landscaping",
+                            borderColor: "border-[#2c2d32]",
+                            iconColor: "text-[#2c2d32]",
+                            btnClass: "bg-[#2c2d32] text-white hover:bg-black shadow-lg shadow-black/5",
                             bullets: [
                                 "Commercial Sod & Tree Planting",
                                 "Retaining Walls & Hardscapes",
@@ -318,8 +325,8 @@ export default function CommercialGroundsMaintenancePage() {
                         }
                     ].map((s, i) => (
                         <div key={i} className="min-w-full lg:min-w-0 px-4 lg:px-0 snap-center flex flex-col">
-                            <ScrollReveal className="flex-grow flex flex-col">
-                                <div className="h-full bg-white rounded-2xl border border-black/5 p-8 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col">
+                            <ScrollReveal className="flex-grow flex flex-col h-full">
+                                <div className={`h-full bg-white rounded-2xl border-4 ${s.borderColor} p-8 shadow-sm md:hover:shadow-xl md:hover:-translate-y-1 transition-all duration-300 flex flex-col`}>
                                     <div className="mb-8">
                                         <h3 className="text-2xl font-black uppercase mb-1 text-black">{s.title}</h3>
                                     </div>
@@ -327,7 +334,7 @@ export default function CommercialGroundsMaintenancePage() {
                                     <ul className="space-y-4 mb-8 flex-grow">
                                         {s.bullets.map((bullet, idx) => (
                                             <li key={idx} className="flex items-start gap-3">
-                                                <svg className="w-5 h-5 shrink-0 text-[#017a6d]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <svg className={`w-5 h-5 shrink-0 ${s.iconColor}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                                                 </svg>
                                                 <span className="text-[15px] font-medium leading-tight text-black/70">{bullet}</span>
@@ -337,7 +344,7 @@ export default function CommercialGroundsMaintenancePage() {
 
                                     <button
                                         onClick={handleScrollToForm}
-                                        className="w-full py-5 rounded-2xl text-[16px] font-black uppercase transition-all text-center block mt-auto bg-[#2c2d32] text-white hover:bg-black shadow-lg shadow-black/5"
+                                        className={`w-full py-5 rounded-2xl text-[16px] font-black uppercase transition-all text-center block mt-auto ${s.btnClass}`}
                                     >
                                         REQUEST A QUOTE
                                     </button>

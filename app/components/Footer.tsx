@@ -25,6 +25,7 @@ export default function Footer() {
           <ul className="space-y-2 text-base text-white/70">
             <li><Link href="/about" className="hover:text-white transition-colors">About Us</Link></li>
             <li><Link href="/blog" className="hover:text-white transition-colors">News & Blog</Link></li>
+            <li><Link href="/video-testimonials" className="hover:text-white transition-colors">Video Testimonials</Link></li>
             <li><Link href="/reviews" className="hover:text-white transition-colors">Reviews</Link></li>
             <li><Link href="/terms" className="hover:text-white transition-colors">Terms of Service</Link></li>
             <li><Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link></li>
@@ -61,9 +62,7 @@ export default function Footer() {
             </li>
             <li className="pt-2">
               <span className="block text-white/40 uppercase text-xs font-bold tracking-wider mb-1">Hours</span>
-              <span className="text-sm">Mon–Thu: 8am–8pm</span><br />
-              <span className="text-sm">Fri–Sat: 9am–5pm</span><br />
-              <span className="text-sm">Sun: Closed</span>
+              <span className="text-sm">Open 7 days a week: 6am–9pm</span><br />
             </li>
           </ul>
           <div className="mt-6 flex gap-4 justify-center sm:justify-start">

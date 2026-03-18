@@ -364,7 +364,7 @@ export default function ResidentialSnowBlowingPage() {
                 { count: "5 Referrals", reward: "Free month", num: "5" },
                 { count: "10 Referrals", reward: "25% off next season", num: "10", highlight: true }
               ].map((tier, i) => (
-                <div key={i} className="min-w-[180px] md:min-w-[0] md:flex-1 px-2 snap-start">
+                <div key={i} className="min-w-[180px] md:min-w-[0] md:flex-1 px-2 snap-center">
                   <div
                     className={`p-5 rounded-xl flex flex-col items-center text-center transition-all duration-500 hover:-translate-y-1 h-full min-h-[140px] justify-center ${tier.highlight ? "bg-[#01fa6d] text-black shadow-2xl shadow-[#01fa6d]/20 border border-white/20" : "bg-white text-black shadow-lg"}`}
                   >
@@ -419,7 +419,7 @@ export default function ResidentialSnowBlowingPage() {
             { src: "/snow-removal-okotoks-before.JPG", alt: "Snow Removal Okotoks Before" },
             { src: "/residential-snow-removalJPG.JPG", alt: "Residential Snow Removal Calgary" },
           ].map((photo, i) => (
-            <div key={i} className="min-w-[85vw] md:min-w-[400px] px-3 snap-start">
+            <div key={i} className="min-w-[85vw] md:min-w-[400px] px-3 snap-center">
               <ScrollReveal className="relative aspect-[4/3] rounded-lg overflow-hidden group border border-black/5 shadow-md">
                 <Image
                   src={photo.src}

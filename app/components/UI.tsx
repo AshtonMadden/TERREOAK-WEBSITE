@@ -123,7 +123,7 @@ export function Carousel({ children, className = "", showArrows = true }: { chil
         <div className="relative group">
             <div
                 ref={scrollRef}
-                className={`flex overflow-x-auto snap-x snap-mandatory hide-scrollbar pb-4 -mx-6 px-6 ${className}`}
+                className={`flex overflow-x-auto overflow-y-hidden items-center snap-x snap-mandatory hide-scrollbar pb-4 -mx-6 px-6 ${className}`}
             >
                 {children}
             </div>

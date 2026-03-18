@@ -7,6 +7,12 @@ import { Section, ScrollReveal, Carousel } from "../components/UI";
 import OurBlogSection from "../components/OurBlogSection";
 import StatsCounter from "../residential-snow-removal/StatsCounter";
 import GoogleReviewBadge from "../components/GoogleReviewBadge";
+import dynamic from "next/dynamic";
+
+const JobberLeadForm = dynamic(() => import("../components/JobberLeadForm"), {
+    loading: () => <div className="w-full h-[600px] animate-pulse bg-gray-50 rounded-3xl" />,
+    ssr: false
+});
 
 export default function SpringCleanupPage() {
     const [isCtaVisible, setIsCtaVisible] = useState(false);
@@ -23,6 +29,14 @@ export default function SpringCleanupPage() {
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
+
+    const handleScrollToForm = () => {
+        const formElement = document.getElementById("spring-cleanup-form");
+        if (formElement) {
+            formElement.scrollIntoView({ behavior: "smooth" });
+        }
+    };
+
 
 
 
@@ -57,15 +71,12 @@ export default function SpringCleanupPage() {
 
                     <div className="mt-10 flex flex-col md:flex-row items-start md:items-center gap-8">
                         <div className="flex flex-wrap gap-4">
-                            <a
-                                href="https://clienthub.getjobber.com/booking/6ba7fcc7-4c40-4f17-9235-428046e21db6"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                referrerPolicy="no-referrer"
+                            <button
+                                onClick={handleScrollToForm}
                                 className="inline-flex items-center justify-center rounded-full bg-[#01fa6d] px-12 py-[16px] text-[16px] font-extrabold text-black border-2 border-white/10 hover:opacity-90 transition-all cursor-pointer shadow-xl shadow-[#01fa6d]/20 hover:-translate-y-1"
                             >
                                 BOOK NOW
-                            </a>
+                            </button>
                             <a
                                 href="tel:+15877077648"
                                 className="inline-flex items-center justify-center rounded-full bg-white/10 backdrop-blur-sm px-12 py-[14px] text-[16px] font-extrabold text-white border-2 border-white/40 hover:bg-white/20 transition-colors"
@@ -97,15 +108,12 @@ export default function SpringCleanupPage() {
                             From professional-grade core aeration that relieves soil compaction to thorough power raking that extracts performance-robbing thatch, we use the right equipment and techniques for Calgary&apos;s unique climate and soil conditions.
                         </p>
                         <div style={{ marginTop: 32 }}>
-                            <a
-                                href="https://clienthub.getjobber.com/booking/6ba7fcc7-4c40-4f17-9235-428046e21db6"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                referrerPolicy="no-referrer"
+                            <button
+                                onClick={handleScrollToForm}
                                 className="inline-flex items-center justify-center rounded-lg bg-[#01fa6d] px-10 py-4 text-sm font-black text-black hover:opacity-90 transition-all transform hover:-translate-y-1 shadow-lg cursor-pointer"
                             >
                                 BOOK YOUR CLEANUP
-                            </a>
+                            </button>
                         </div>
                     </div>
                     <div className="w-full md:w-1/2 relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl border-4 border-white transition-transform duration-500 hover:scale-[1.02]">
@@ -155,7 +163,7 @@ export default function SpringCleanupPage() {
                 titleClassName="text-[#017a6d] uppercase"
                 wrapperClassName="bg-gray-100"
             >
-                <Carousel className="mt-12 !-mx-4 lg:!mx-0 lg:grid lg:grid-cols-2 xl:grid-cols-4 lg:gap-6 lg:!flex-row lg:!overflow-visible">
+                <Carousel className="mt-12 !-mx-4 lg:!mx-0 lg:grid lg:grid-cols-2 xl:grid-cols-4 lg:gap-6 lg:!flex-row lg:!overflow-visible !items-stretch">
                     {[
                         {
                             name: "Quick Start Cleanup",
@@ -178,53 +186,61 @@ export default function SpringCleanupPage() {
                             features: ["Leaf & debris cleanup", "First lawn cut & trim", "Core aeration", "Power raking", "Overseed application", "Double-pass overseeding", "Bagging & removal of lawn debris"],
                             popular: false
                         }
-                    ].map((pkg, i) => (
-                        <div key={i} className="min-w-full lg:min-w-0 px-4 lg:px-0 snap-center flex flex-col">
-                            <ScrollReveal className="flex-grow flex flex-col">
-                                <div className={`h-full p-8 rounded-2xl border transition-all duration-300 flex flex-col ${pkg.popular ? "bg-[#2c2d32] border-[#01fa6d] shadow-2xl md:scale-[1.05] z-10" : "bg-white border-black/5 shadow-sm hover:shadow-xl hover:-translate-y-1"}`}>
-                                    {pkg.popular && (
-                                        <span className="bg-[#01fa6d] text-black text-[10px] font-black uppercase px-3 py-1 rounded-full mb-4 w-fit">
-                                            Most Popular
-                                        </span>
-                                    )}
-                                    <h3 className={`text-2xl font-black uppercase mb-1 ${pkg.popular ? "text-white" : "text-black"}`}>{pkg.name}</h3>
-                                    {pkg.desc && <p className={`text-xs font-bold uppercase mb-4 ${pkg.popular ? "text-[#01fa6d]" : "text-[#017a6d]"}`}>{pkg.desc}</p>}
-                                    {!pkg.desc && <div className="mb-8" />}
+                    ].map((pkg, i) => {
+                        const isGreen = pkg.name === "Lawn Revival Package";
+                        const isLightGreen = pkg.name === "Lawn Boost Package";
+                        const isOutlined = pkg.name === "Quick Start Cleanup";
+                        const isDark = pkg.popular || isGreen;
 
-                                    <ul className="space-y-4 mb-8 flex-grow">
-                                        {pkg.features.map((feature, idx) => (
-                                            <li key={idx} className="flex items-start gap-3">
-                                                <svg className={`w-5 h-5 shrink-0 ${pkg.popular ? "text-[#01fa6d]" : "text-[#017a6d]"}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                                                </svg>
-                                                <span className={`text-[15px] font-medium leading-tight ${pkg.popular ? "text-white/80" : "text-black/70"}`}>
-                                                    {feature}
-                                                </span>
-                                            </li>
-                                        ))}
-                                    </ul>
+                        return (
+                            <div key={i} className="min-w-full lg:min-w-0 px-4 lg:px-0 snap-center flex flex-col">
+                                <div className="flex-grow flex flex-col">
+                                    <div className={`h-full p-8 rounded-2xl border transition-all duration-300 flex flex-col ${pkg.popular ? "bg-[#2c2d32] border-[#01fa6d] shadow-2xl z-10" : isGreen ? "bg-[#017a6d] border-[#01fa6d] shadow-2xl z-10 md:hover:-translate-y-1" : isLightGreen ? "bg-white border-2 border-[#01fa6d] shadow-sm md:hover:shadow-xl md:hover:-translate-y-1" : isOutlined ? "bg-white border-2 border-[#017a6d] shadow-sm md:hover:shadow-xl md:hover:-translate-y-1" : "bg-white border-black/5 shadow-sm md:hover:shadow-xl md:hover:-translate-y-1"}`}>
+                                        {pkg.popular ? (
+                                            <span className="bg-[#01fa6d] text-black text-[10px] font-black uppercase px-3 py-1 rounded-full mb-4 w-fit inline-block">
+                                                Most Popular
+                                            </span>
+                                        ) : (
+                                            <span className="text-transparent text-[10px] font-black uppercase px-3 py-1 rounded-full mb-4 w-fit inline-block select-none pointer-events-none" aria-hidden="true">
+                                                Spacer
+                                            </span>
+                                        )}
+                                        <h3 className={`text-2xl font-black uppercase mb-1 ${isDark ? "text-white" : "text-black"}`}>{pkg.name}</h3>
+                                        {pkg.desc && <p className={`text-xs font-bold uppercase mb-4 ${isDark ? "text-[#01fa6d]" : "text-[#017a6d]"}`}>{pkg.desc}</p>}
+                                        {!pkg.desc && <div className="mb-8" />}
 
-                                    {!pkg.features.some(f => f.toLowerCase().includes('aeration')) && (
-                                        <p className="text-[13px] font-medium text-black/50 italic mb-6 leading-relaxed px-2">
-                                            “Most Calgary lawns benefit from aeration and power raking after winter.”
-                                        </p>
-                                    )}
+                                        <ul className="space-y-4 mb-8 flex-grow">
+                                            {pkg.features.map((feature, idx) => (
+                                                <li key={idx} className="flex items-start gap-3">
+                                                    <svg className={`w-5 h-5 shrink-0 ${isDark ? "text-[#01fa6d]" : "text-[#017a6d]"}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                                                    </svg>
+                                                    <span className={`text-[15px] font-medium leading-tight ${isDark ? "text-white/80" : "text-black/70"}`}>
+                                                        {feature}
+                                                    </span>
+                                                </li>
+                                            ))}
+                                        </ul>
 
-                                    <div className="mt-auto">
-                                        <a
-                                            href="https://clienthub.getjobber.com/booking/6ba7fcc7-4c40-4f17-9235-428046e21db6"
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            referrerPolicy="no-referrer"
-                                            className={`w-full py-5 rounded-2xl text-[16px] font-black uppercase transition-all text-center block ${pkg.popular ? "bg-[#01fa6d] text-black hover:opacity-90 shadow-lg shadow-[#01fa6d]/20" : "bg-[#2c2d32] text-white hover:bg-black shadow-lg shadow-black/5"}`}
-                                        >
-                                            Select Package
-                                        </a>
+                                        {!pkg.features.some(f => f.toLowerCase().includes('aeration')) && (
+                                            <p className="text-[13px] font-medium text-black/50 italic mb-6 leading-relaxed px-2">
+                                                “Most Calgary lawns benefit from aeration and power raking after winter.”
+                                            </p>
+                                        )}
+
+                                        <div className="mt-auto">
+                                            <button
+                                                onClick={handleScrollToForm}
+                                                className={`w-full py-5 rounded-2xl text-[16px] font-black uppercase transition-all text-center block ${pkg.popular ? "bg-[#01fa6d] text-black hover:opacity-90 shadow-lg shadow-[#01fa6d]/20" : isGreen ? "bg-white text-[#017a6d] hover:bg-gray-100 shadow-lg" : "bg-[#2c2d32] text-white hover:bg-black shadow-lg shadow-black/5"}`}
+                                            >
+                                                Select Package
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
-                            </ScrollReveal>
-                        </div>
-                    ))}
+                            </div>
+                        );
+                    })}
                 </Carousel>
             </Section>
 
@@ -251,14 +267,12 @@ export default function SpringCleanupPage() {
                                         <span className="text-[#01fa6d] font-bold">•</span> Garden bed refresh and lawn prep for spring
                                     </li>
                                 </ul>
-                                <a
-                                    href="https://clienthub.getjobber.com/booking/6ba7fcc7-4c40-4f17-9235-428046e21db6"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
+                                <button
+                                    onClick={handleScrollToForm}
                                     className="inline-flex items-center justify-center rounded-full bg-[#01fa6d] px-12 py-5 text-lg font-black text-black hover:opacity-90 transition-all transform hover:-translate-y-1 shadow-2xl shadow-[#01fa6d]/20"
                                 >
                                     BOOK YOUR WINDOW
-                                </a>
+                                </button>
                             </div>
                         </ScrollReveal>
 
@@ -290,6 +304,19 @@ export default function SpringCleanupPage() {
             </section>
 
 
+            {/* LEAD FORM SECTION */}
+            <Section id="spring-cleanup-form" kicker="Get Started" title="REQUEST A CLEANUP ESTIMATE" titleClassName="text-[#017a6d]">
+                <div className="max-w-5xl mx-auto w-full">
+                    <p className="text-center text-lg text-black/60 mb-12">
+                        Fill out the form below to request an estimate for your spring cleanup.
+                    </p>
+                    <JobberLeadForm
+                        clienthubId="41b3399e-3795-43d8-afe2-e6c38c1b3e6e-2249559"
+                        formUrl="https://clienthub.getjobber.com/client_hubs/41b3399e-3795-43d8-afe2-e6c38c1b3e6e/public/work_request/embedded_work_request_form?form_id=2249559"
+                    />
+                </div>
+            </Section>
+
             {/* PHOTO GALLERY */}
             <Section kicker="Portfolio" title="OUR RECENT CLEANUPS" titleClassName="text-[#01fa6d]">
                 <Carousel className="mt-12">
@@ -297,14 +324,15 @@ export default function SpringCleanupPage() {
                         { src: "/spring-cleanup-pics/Calgary-Core-Aeration.JPG", alt: "Calgary Core Aeration" },
                         { src: "/spring-cleanup-pics/Calgary-Leaf-Cleanup.JPG", alt: "Leaf Cleanup Calgary" },
                         { src: "/spring-cleanup-pics/City-of-Calgary-skyline.JPG", alt: "City of Calgary Skyline" },
-                        { src: "/spring-cleanup-pics/spring-cleanup-backyard.webp", alt: "Spring Cleanup Backyard Raking" },
-                        { src: "/spring-cleanup-pics/spring-cleanup-house-shadow.webp", alt: "Spring Cleanup Residential Property" },
-                        { src: "/spring-cleanup-pics/spring-cleanup-front-yard.webp", alt: "Spring Cleanup Front Yard Maintenance" },
+                        { src: "/spring-cleanup-pics/Calgary-Spring-Cleanup.jpg", alt: "Calgary Spring Cleanup" },
+                        { src: "/spring-cleanup-pics/Calgary-leaf-removal-service.jpg", alt: "Calgary Leaf Removal Service" },
+                        { src: "/spring-cleanup-pics/Cranston-leaf-cleanup.jpg", alt: "Cranston Leaf Cleanup" },
+                        { src: "/spring-cleanup-pics/Spring-Cleanup-Calgary.jpg", alt: "Spring Cleanup Calgary" },
                         { src: "/spring-cleanup-pics/Copperfield-leaf-cleanup.JPG", alt: "Copperfield leaf cleanup" },
                         { src: "/spring-cleanup-pics/Leaf-removal-Calgary.JPG", alt: "Leaf removal Calgary" },
                         { src: "/spring-cleanup-pics/Power-raking-services.JPG", alt: "Power raking services" }
                     ].map((item, i) => (
-                        <div key={i} className="min-w-[85vw] md:min-w-[400px] px-3 snap-start">
+                        <div key={i} className="min-w-[85vw] md:min-w-[400px] px-3 snap-center">
                             <ScrollReveal className="relative aspect-[4/3] rounded-lg overflow-hidden group border border-black/5 shadow-md">
                                 <Image
                                     src={item.src}
@@ -318,8 +346,6 @@ export default function SpringCleanupPage() {
                     ))}
                 </Carousel>
             </Section>
-
-            {/* CONTACT SECTION REMOVED - REPLACED BY LEAD FORM */}
 
             {/* BLOG */}
             <OurBlogSection />
@@ -360,16 +386,13 @@ export default function SpringCleanupPage() {
 
             {isCtaVisible && (
                 <div style={styles.stickyCtaContainer} className="stickyCtaWrapper animate-float-up">
-                    <a
-                        href="https://clienthub.getjobber.com/booking/6ba7fcc7-4c40-4f17-9235-428046e21db6"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        referrerPolicy="no-referrer"
+                    <button
+                        onClick={handleScrollToForm}
                         style={styles.stickyCtaLink}
-                        className="cursor-pointer"
+                        className="cursor-pointer border-none bg-transparent"
                     >
                         BOOK NOW!
-                    </a>
+                    </button>
                     <button
                         onClick={() => setIsCtaVisible(false)}
                         style={styles.closeSticky}

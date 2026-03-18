@@ -288,7 +288,7 @@ export default function FallCleanupPage() {
                         { src: "/spring-cleanup-pics/Calgary-Leaf-Cleanup.JPG", alt: "Leaf Cleanup Calgary" },
                         { src: "/spring-cleanup-pics/Leaf-removal-Calgary.JPG", alt: "Leaf removal Calgary" }
                     ].map((item, i) => (
-                        <div key={i} className="min-w-[85vw] md:min-w-[400px] px-3 snap-start">
+                        <div key={i} className="min-w-[85vw] md:min-w-[400px] px-3 snap-center">
                             <ScrollReveal className="relative aspect-[4/3] rounded-lg overflow-hidden group border border-black/5 shadow-md">
                                 <Image
                                     src={item.src}

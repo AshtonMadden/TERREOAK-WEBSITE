@@ -6,6 +6,7 @@ const links = [
   { href: "/residential-snow-removal", label: "Residential Snow" },
   { href: "/commercial-grounds-maintenance", label: "Commercial Grounds" },
   { href: "/portfolio", label: "Portfolio" },
+  { href: "/video-testimonials", label: "Video Testimonials" },
   { href: "/blog", label: "Blog" },
   { href: "/about", label: "About" },
   { href: "/irrigation-blowouts", label: "Irrigation Blowouts" },

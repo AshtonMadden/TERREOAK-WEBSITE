@@ -8,6 +8,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         '/about',
         '/blog',
         '/portfolio',
+        '/video-testimonials',
         '/customer-support',
         '/landscape-installs',
         '/residential-snow-removal',

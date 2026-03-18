@@ -79,31 +79,6 @@ export default function LandscapeInstallsPage() {
         </div>
       </section>
 
-      {/* WHY CHOOSE */}
-      <Section
-        kicker="Built for Calgary"
-        kickerClassName="text-white/60"
-        title="Why Calgarians choose TERREOAK for Landscape Design and Build"
-        titleClassName="text-white"
-        wrapperClassName="bg-[#2c2d32]"
-        py="py-8"
-      >
-        <div className="relative">
-          <p className="max-w-3xl text-lg text-white/80 leading-relaxed font-normal relative z-10">
-            Engineered for longevity and aesthetics, our design-build approach ensures your outdoor space withstands Calgary&apos;s unique climate while enhancing your lifestyle.
-          </p>
-          <div className="absolute top-2 left-1/2 -translate-x-1/2 w-screen h-[100px] opacity-10 grayscale pointer-events-none z-0 overflow-hidden">
-            <Image
-              src="/images/calgary-skyline.png"
-              alt="Calgary Skyline silhouette"
-              width={1920}
-              height={150}
-              className="w-full h-full object-cover object-bottom"
-            />
-          </div>
-        </div>
-      </Section>
-
       {/* PROPERTY TYPES SECTION */}
       <Section title="Landscaping Services for All Calgary Properties" titleClassName="text-[#017a6d]">
         <p className="max-w-3xl text-lg text-black/80 leading-relaxed font-normal mb-12">
@@ -129,18 +104,17 @@ export default function LandscapeInstallsPage() {
         </div>
 
         {/* FOUNDER SPOTLIGHT */}
-        <div className="flex flex-col md:flex-row items-center gap-12 mt-20">
-          <div className="md:w-1/4 flex justify-center">
-            <div className="relative w-64 h-64 md:w-72 md:h-72 rounded-full overflow-hidden border-8 border-white shadow-2xl">
-              <Image
-                src="/images/ASHTON-MADDEN-HEADSHOT.jpg"
-                alt="Ashton Madden - Founder & Director"
-                fill
-                className="object-cover"
-              />
-            </div>
+        <div className="flex flex-col md:flex-row items-stretch bg-white rounded-3xl shadow-xl border border-black/5 overflow-hidden group mt-20">
+          <div className="md:w-2/5 relative min-h-[350px] md:min-h-full">
+            <Image
+              src="/images/Ashton-Madden-Cowboy.jpg"
+              alt="Ashton Madden - Founder & Director"
+              fill
+              sizes="(max-width: 768px) 100vw, 40vw"
+              className="object-cover"
+            />
           </div>
-          <div className="md:w-3/4 bg-white p-8 md:py-8 md:px-12 rounded-3xl shadow-xl border border-black/5 relative overflow-hidden group text-left">
+          <div className="md:w-3/5 p-8 md:p-12 relative flex flex-col justify-center">
             <h3 className="text-3xl font-black text-[#017a6d] uppercase tracking-tight mb-4 text-left">Ashton Madden</h3>
             <div className="space-y-4">
               <p className="text-lg text-black/70 leading-relaxed font-medium">
@@ -148,14 +122,16 @@ export default function LandscapeInstallsPage() {
               </p>
             </div>
 
-            <div className="mt-6 flex justify-center md:justify-end items-end">
-              <div className="text-center md:text-right w-full flex flex-col items-center md:items-end">
-                <div className="relative h-20 w-full max-w-[240px] md:h-[100px] md:w-[320px] mb-1">
+            {/* SIGNATURE AREA */}
+            <div className="mt-8 flex justify-end items-end">
+              <div className="text-right w-full flex flex-col items-end">
+                <div className="relative h-20 w-[200px] md:h-[136px] md:w-[435px] mb-2">
                   <Image
                     src="/Ashton_Signature_.jpg"
                     alt="Ashton Madden Signature"
                     fill
-                    className="object-contain object-center md:object-right"
+                    sizes="(max-width: 768px) 200px, 435px"
+                    className="object-contain object-right"
                   />
                 </div>
                 <span className="text-[10px] font-bold text-black/30 uppercase tracking-[0.2em]">Founder & Director</span>
@@ -248,7 +224,7 @@ export default function LandscapeInstallsPage() {
             { src: "/Landscape web page pics/lawn-relevel-calgary.JPG", alt: "Lawn Relevel Calgary" },
             { src: "/Landscape web page pics/rock-bed-refresh.JPG", alt: "Rock Bed Refresh" }
           ].map((photo, i) => (
-            <div key={i} className="min-w-[85vw] md:min-w-[450px] px-4 snap-start">
+            <div key={i} className="min-w-[85vw] md:min-w-[450px] px-4 snap-center">
               <ScrollReveal className="relative aspect-[16/10] rounded-2xl overflow-hidden group border border-black/5 shadow-lg">
                 <Image src={photo.src} alt={photo.alt} fill className="object-cover transition-transform duration-700 group-hover:scale-110" />
                 <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500" />

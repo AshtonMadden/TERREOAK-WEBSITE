@@ -16,6 +16,7 @@ const JobberLeadForm = dynamic(() => import("../components/JobberLeadForm"), {
 
 export default function SpringCleanupPage() {
     const [isCtaVisible, setIsCtaVisible] = useState(false);
+    const [showAfter, setShowAfter] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -116,14 +117,31 @@ export default function SpringCleanupPage() {
                             </button>
                         </div>
                     </div>
-                    <div className="w-full md:w-1/2 relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl border-4 border-white transition-transform duration-500 hover:scale-[1.02]">
+                    <div
+                        className="w-full md:w-1/2 relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl border-4 border-white transition-transform duration-500 hover:scale-[1.02] cursor-pointer group"
+                        onClick={() => setShowAfter(!showAfter)}
+                    >
                         <Image
-                            src="/spring-cleanup-pics/Power-raking-services.JPG"
-                            alt="Professional power raking services in Calgary"
+                            src={showAfter ? "/spring-cleanup-pics/calgary-spring-cleanup-after.jpg" : "/spring-cleanup-pics/Power-raking-services.JPG"}
+                            alt={showAfter ? "Clean green lawn after professional spring cleanup" : "Professional power raking services in Calgary"}
                             fill
-                            className="object-cover"
+                            className="object-cover transition-all duration-500"
                         />
+                        <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors pointer-events-none" />
+                        <div className="absolute bottom-6 left-6 right-6 flex justify-between items-center z-20">
+                            <span className="bg-[#01fa6d] text-black px-4 py-1 rounded-full text-[12px] font-black uppercase tracking-wider shadow-lg">
+                                {showAfter ? "AFTER" : "BEFORE"}
+                            </span>
+                            <span className="bg-white/90 backdrop-blur-sm text-black px-4 py-1 rounded-full text-[10px] font-bold uppercase tracking-wide opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+                                Click to {showAfter ? "see before" : "see after"}
+                            </span>
+                        </div>
                     </div>
+                </div>
+                <div style={styles.inner} className="mt-4 text-center md:text-right md:w-full">
+                    <p className="text-[12px] font-bold text-black/40 uppercase tracking-widest animate-pulse">
+                        Click the photo above to see the results →
+                    </p>
                 </div>
             </section>
 
@@ -163,7 +181,16 @@ export default function SpringCleanupPage() {
                 titleClassName="text-[#017a6d] uppercase"
                 wrapperClassName="bg-gray-100"
             >
-                <Carousel className="mt-12 !-mx-4 lg:!mx-0 lg:grid lg:grid-cols-2 xl:grid-cols-4 lg:gap-6 lg:!flex-row lg:!overflow-visible !items-stretch">
+                <div className="mb-10 text-left">
+                    <p className="text-[20px] md:text-[22px] font-black text-black/80">
+                        Typical projects: <span className="text-[#017a6d] font-black">$189–$399</span>
+                    </p>
+                    <p className="text-[14px] md:text-[15px] font-bold text-black/50 mt-1 uppercase tracking-wide">
+                        Exact quote provided in 5 minutes
+                    </p>
+                </div>
+
+                <Carousel className="!-mx-4 lg:!mx-0 lg:grid lg:grid-cols-2 xl:grid-cols-4 lg:gap-6 lg:!flex-row lg:!overflow-visible !items-stretch">
                     {[
                         {
                             name: "Quick Start Cleanup",

@@ -10,7 +10,7 @@ import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "TERREOAK Landscaping: Grounds Maintenance & Landscaping",
-  description: "Calgary's premier landscape construction and snow removal team. We specialize in high-end residential landscaping, commercial grounds maintenance, and reliable year-round property care.",
+  description: "Calgary's premier landscaping and snow removal team. Residential landscape construction, commercial maintenance, and year-round property care.",
   metadataBase: new URL("https://terreoak.ca"),
   alternates: {
     canonical: "/",

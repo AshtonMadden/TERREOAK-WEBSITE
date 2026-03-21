@@ -96,7 +96,7 @@ export default function TestimonialSection({
                     {testimonials.map((testimonial, i) => (
                         <div
                             key={i}
-                            className="w-[85%] md:w-[calc(33.333%-16px)] flex-shrink-0 snap-start"
+                            className="w-[85%] md:w-[calc(33.333%-16px)] flex-shrink-0 snap-center"
                         >
                             <div className="h-full bg-white rounded-[32px] p-8 md:p-10 border border-black/10 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group/card hover:border-[#01fa6d]/30 min-h-[400px]">
                                 <div>

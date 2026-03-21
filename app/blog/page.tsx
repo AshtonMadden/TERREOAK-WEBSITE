@@ -62,7 +62,7 @@ export default function BlogPage() {
                     {/* Article 1 - Open Grade */}
                     <Link
                         href="/blog/why-open-grade-base-for-paver-patios"
-                        className="group flex flex-col w-[85vw] md:w-[calc(50%-24px)] flex-shrink-0 snap-start bg-white rounded-3xl border border-black/5 shadow-xl transition-all hover:shadow-2xl hover:-translate-y-1 h-full overflow-hidden"
+                        className="group flex flex-col w-[85vw] md:w-[calc(50%-24px)] flex-shrink-0 snap-center bg-white rounded-3xl border border-black/5 shadow-xl transition-all hover:shadow-2xl hover:-translate-y-1 h-full overflow-hidden"
                     >
                         <div className="relative aspect-[16/9] overflow-hidden group-hover:border-[#01fa6d] transition-colors border-b border-black/5">
                             <Image
@@ -93,7 +93,7 @@ export default function BlogPage() {
                     {/* Article 2 - Spring Cleanup */}
                     <Link
                         href="/blog/why-calgary-spring-cleanup-matters"
-                        className="group flex flex-col w-[85vw] md:w-[calc(50%-24px)] flex-shrink-0 snap-start bg-white rounded-3xl border border-black/5 shadow-xl transition-all hover:shadow-2xl hover:-translate-y-1 h-full overflow-hidden"
+                        className="group flex flex-col w-[85vw] md:w-[calc(50%-24px)] flex-shrink-0 snap-center bg-white rounded-3xl border border-black/5 shadow-xl transition-all hover:shadow-2xl hover:-translate-y-1 h-full overflow-hidden"
                     >
                         <div className="relative aspect-[16/9] overflow-hidden group-hover:border-[#01fa6d] transition-colors border-b border-black/5">
                             <Image

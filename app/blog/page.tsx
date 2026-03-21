@@ -73,14 +73,14 @@ export default function BlogPage() {
                     <div className="flex flex-col justify-center">
                         <p className="text-[#017a6d] font-black uppercase text-sm mb-4 tracking-widest">LANDSCAPE CONSTRUCTION • EXPERT TIPS</p>
                         <h2 className="text-3xl md:text-4xl font-black uppercase text-black leading-tight mb-6 group-hover:text-[#017a6d] transition-colors">
-                            Why Open Grade Base is the Gold Standard for Calgary Paver Patios
+                            Why Open Grade Base is the Gold Standard for Calgary Patio & Hardscaping
                         </h2>
                         <div className="space-y-4 text-black/70 text-lg leading-relaxed font-medium mb-8">
                             <p>
-                                In Calgary, the freeze-thaw cycle is the enemy of any structural installation. Traditional road crush can trap moisture, leading to ice expansion and "frost heave."
+                                In Calgary, the freeze-thaw cycle is the enemy of any hardscaping project. Traditional road crush can trap moisture, leading to ice expansion and "frost heave" in your patio.
                             </p>
                             <p>
-                                Learn why TERREOAK exclusively uses **Open Grade Base** to ensure your luxury patio stays level for decades.
+                                Learn why TERREOAK exclusively uses **Open Grade Base** to ensure your luxury Calgary patio stays level for decades.
                             </p>
                         </div>
                         <div className="mt-auto">

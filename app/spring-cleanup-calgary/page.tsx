@@ -182,9 +182,6 @@ export default function SpringCleanupPage() {
                 wrapperClassName="bg-gray-100"
             >
                 <div className="mb-10 text-left">
-                    <p className="text-[20px] md:text-[22px] font-black text-black/80">
-                        Typical Clean-Ups: <span className="text-[#017a6d] font-black">$189–$399</span>
-                    </p>
                     <p className="text-[14px] md:text-[15px] font-bold text-black/50 mt-1 uppercase tracking-wide">
                         Exact quote provided in 5 minutes
                     </p>

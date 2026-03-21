@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { Section } from "../components/UI";
+import { Section, Carousel } from "../components/UI";
 
 export default function BlogPage() {
     return (
@@ -58,13 +58,13 @@ export default function BlogPage() {
             </section>
 
             <Section kicker="News & Insights" title="LATEST ARTICLES" titleClassName="text-[#017a6d] uppercase">
-                <div className="space-y-16 mt-12">
+                <Carousel className="!-mx-4 lg:!mx-0 lg:grid lg:grid-cols-2 lg:gap-8 lg:!flex-row lg:!overflow-visible !items-stretch mt-12">
                     {/* Article 1 - Open Grade */}
                     <Link
                         href="/blog/why-open-grade-base-for-paver-patios"
-                        className="group block grid grid-cols-1 md:grid-cols-2 gap-12 bg-white p-6 md:p-12 rounded-3xl border border-black/5 shadow-xl transition-all hover:shadow-2xl hover:-translate-y-1"
+                        className="group flex flex-col w-[85vw] md:w-[500px] lg:w-full flex-shrink-0 snap-start bg-white rounded-3xl border border-black/5 shadow-xl transition-all hover:shadow-2xl hover:-translate-y-1 h-full overflow-hidden"
                     >
-                        <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border-4 border-gray-100 shadow-lg group-hover:border-[#01fa6d] transition-colors">
+                        <div className="relative aspect-[16/9] overflow-hidden group-hover:border-[#01fa6d] transition-colors border-b border-black/5">
                             <Image
                                 src="/Landscape web page pics/Techo-Bloc-pavers-river-rock.JPG"
                                 alt="Open grade base for Calgary patio and hardscaping"
@@ -72,21 +72,18 @@ export default function BlogPage() {
                                 className="object-cover group-hover:scale-105 transition-transform duration-700"
                             />
                         </div>
-                        <div className="flex flex-col justify-center">
-                            <p className="text-[#017a6d] font-black uppercase text-sm mb-4 tracking-widest">LANDSCAPE CONSTRUCTION • EXPERT TIPS</p>
-                            <h2 className="text-3xl md:text-4xl font-black uppercase text-black leading-tight mb-6 group-hover:text-[#017a6d] transition-colors">
+                        <div className="flex flex-col flex-grow p-8">
+                            <p className="text-[#017a6d] font-black uppercase text-xs mb-3 tracking-widest">LANDSCAPE CONSTRUCTION • EXPERT TIPS</p>
+                            <h2 className="text-2xl font-black uppercase text-black leading-tight mb-4 group-hover:text-[#017a6d] transition-colors">
                                 Why Open Grade Base is the Gold Standard for Calgary Patio & Hardscaping
                             </h2>
-                            <div className="space-y-4 text-black/70 text-lg leading-relaxed font-medium mb-8">
+                            <div className="space-y-4 text-black/70 text-base leading-relaxed font-medium mb-6">
                                 <p>
-                                    In Calgary, the freeze-thaw cycle is the enemy of any hardscaping project. Traditional road crush can trap moisture, leading to ice expansion and "frost heave" in your patio.
-                                </p>
-                                <p>
-                                    Learn why TERREOAK exclusively uses **Open Grade Base** to ensure your luxury Calgary patio stays level for decades.
+                                    In Calgary, the freeze-thaw cycle is the enemy of any hardscaping project. Traditional road crush can trap moisture...
                                 </p>
                             </div>
                             <div className="mt-auto">
-                                <span className="inline-flex items-center justify-center rounded-full bg-[#2c2d32] px-8 py-4 text-[14px] font-black text-white group-hover:bg-[#01fa6d] group-hover:text-black transition-all shadow-lg uppercase tracking-wider">
+                                <span className="inline-flex items-center justify-center rounded-full bg-[#2c2d32] px-6 py-3 text-[13px] font-black text-white group-hover:bg-[#01fa6d] group-hover:text-black transition-all shadow-lg uppercase tracking-wider">
                                     Read Full Article →
                                 </span>
                             </div>
@@ -96,9 +93,9 @@ export default function BlogPage() {
                     {/* Article 2 - Spring Cleanup */}
                     <Link
                         href="/blog/why-calgary-spring-cleanup-matters"
-                        className="group block grid grid-cols-1 md:grid-cols-2 gap-12 bg-white p-6 md:p-12 rounded-3xl border border-black/5 shadow-xl transition-all hover:shadow-2xl hover:-translate-y-1"
+                        className="group flex flex-col w-[85vw] md:w-[500px] lg:w-full flex-shrink-0 snap-start bg-white rounded-3xl border border-black/5 shadow-xl transition-all hover:shadow-2xl hover:-translate-y-1 h-full overflow-hidden"
                     >
-                        <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border-4 border-gray-100 shadow-lg group-hover:border-[#01fa6d] transition-colors">
+                        <div className="relative aspect-[16/9] overflow-hidden group-hover:border-[#01fa6d] transition-colors border-b border-black/5">
                             <Image
                                 src="/spring-cleanup-pics/Leaf-Cleanup-near-me.jpg"
                                 alt="Why spring cleanup is essential for Calgary lawns"
@@ -106,27 +103,24 @@ export default function BlogPage() {
                                 className="object-cover group-hover:scale-105 transition-transform duration-700"
                             />
                         </div>
-                        <div className="flex flex-col justify-center">
-                            <p className="text-[#017a6d] font-black uppercase text-sm mb-4 tracking-widest">SEASONAL CARE • EXPERT ADVICE</p>
-                            <h2 className="text-3xl md:text-4xl font-black uppercase text-black leading-tight mb-6 group-hover:text-[#017a6d] transition-colors">
+                        <div className="flex flex-col flex-grow p-8">
+                            <p className="text-[#017a6d] font-black uppercase text-xs mb-3 tracking-widest">SEASONAL CARE • EXPERT ADVICE</p>
+                            <h2 className="text-2xl font-black uppercase text-black leading-tight mb-4 group-hover:text-[#017a6d] transition-colors">
                                 Why a Professional Spring Cleanup is Essential for Calgary Lawns
                             </h2>
-                            <div className="space-y-4 text-black/70 text-lg leading-relaxed font-medium mb-8">
+                            <div className="space-y-4 text-black/70 text-base leading-relaxed font-medium mb-6">
                                 <p>
-                                    Between snow mold, winter salt buildup, and soil compaction, your lawn goes through massive stress during the Calgary winter.
-                                </p>
-                                <p>
-                                    Understand the **critical pain points** and the **expert solutions** required to prep your lawn for a lush, healthy summer growth.
+                                    Between snow mold, winter salt buildup, and soil compaction, your lawn goes through massive stress during the Calgary winter...
                                 </p>
                             </div>
                             <div className="mt-auto">
-                                <span className="inline-flex items-center justify-center rounded-full bg-[#2c2d32] px-8 py-4 text-[14px] font-black text-white group-hover:bg-[#01fa6d] group-hover:text-black transition-all shadow-lg uppercase tracking-wider">
+                                <span className="inline-flex items-center justify-center rounded-full bg-[#2c2d32] px-6 py-3 text-[13px] font-black text-white group-hover:bg-[#01fa6d] group-hover:text-black transition-all shadow-lg uppercase tracking-wider">
                                     Read Full Article →
                                 </span>
                             </div>
                         </div>
                     </Link>
-                </div>
+                </Carousel>
             </Section>
         </main>
     );

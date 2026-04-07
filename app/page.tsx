@@ -159,7 +159,8 @@ export default function HomePage() {
         borderBottom="none"
         padding="48px 0"
         stats={[
-          { end: 150, label: "Happy Clients", suffix: "+" },
+          { end: 185, label: "Happy Clients", suffix: "+" },
+
           { end: 5, label: "Years Experience", suffix: "+" },
           { end: 2, label: "TERREOAK Crews" }
         ]}

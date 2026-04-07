@@ -83,7 +83,12 @@ export default function IrrigationPage() {
             </section>
 
             {/* STATS COUNTER */}
-            <StatsCounter />
+            <StatsCounter stats={[
+                { end: 65, label: "Total Properties", suffix: "+" },
+                { end: 58, label: "Happy Clients", suffix: "+" },
+                { end: 2, label: "TERREOAK Crews" },
+            ]} />
+
 
             <section style={styles.offerSection}>
                 <div style={styles.inner} className="text-left">

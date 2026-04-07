@@ -93,7 +93,13 @@ export default function SpringCleanupPage() {
             </section>
 
             {/* STATS COUNTER */}
-            <StatsCounter />
+            <StatsCounter stats={[
+                { end: 225, label: "Total Properties Serviced", suffix: "+" },
+                { end: 185, label: "Happy Clients", suffix: "+" },
+
+                { end: 2, label: "TERREOAK Crews" },
+            ]} />
+
 
 
             <section style={styles.sectionAlt} className="section-divider py-16 md:py-24">

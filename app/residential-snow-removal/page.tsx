@@ -92,7 +92,15 @@ export default function ResidentialSnowBlowingPage() {
       </section>
 
       {/* STATS COUNTER */}
-      <StatsCounter />
+      <StatsCounter stats={[
+        { end: 100, label: "Total Properties Managed", suffix: "+" },
+        { end: 92, label: "Happy Clients", suffix: "+" },
+
+
+
+        { end: 2, label: "TERREOAK Crews" },
+      ]} />
+
 
       <section style={styles.offerSection}>
         <div style={styles.inner} className="text-left">

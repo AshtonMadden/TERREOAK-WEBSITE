@@ -30,6 +30,8 @@ const GoogleReviewBadge = ({ className = "" }: { className?: string }) => {
             </div>
             <p className="text-black/60 text-[12px] font-black tracking-widest uppercase">
                 TOP-RATED CALGARY LANDSCAPER • 30+ REVIEWS
+
+
             </p>
         </a>
     );

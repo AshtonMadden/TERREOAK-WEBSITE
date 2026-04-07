@@ -78,10 +78,12 @@ export default function StatsCounter({
     padding
 }: StatsCounterProps) {
     const defaultStats = [
-        { end: 100, label: "Happy Clients", suffix: "+" },
-        { end: 75, label: "Total Properties" },
+        { end: 225, label: "Total Properties Serviced", suffix: "+" },
+        { end: 185, label: "Happy Clients", suffix: "+" },
+
         { end: 2, label: "TERREOAK Crews" },
     ];
+
 
     const displayStats = stats || defaultStats;
 

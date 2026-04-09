@@ -103,7 +103,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
 
   return (
     <html lang="en" className={montserrat.variable}>
-      <head>
+      <head />
+      <body>
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-1BB7P86ZK6"
           strategy="afterInteractive"
@@ -123,8 +124,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
           strategy="afterInteractive"
         />
-      </head>
-      <body>
         <Header />
         {children}
         <Footer />

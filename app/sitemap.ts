@@ -17,6 +17,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
         '/fall-cleanup',
         '/commercial-grounds-maintenance',
         '/snow-referral',
+        '/blog/why-calgary-spring-cleanup-matters',
+        '/blog/why-open-grade-base-for-paver-patios',
     ]
 
     return routes.map((route) => ({

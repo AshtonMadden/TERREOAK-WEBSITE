@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "About TERREOAK | Calgary Landscaping & Snow Company",
+    title: "About TERREOAK",
     description: "Learn about TERREOAK Landscaping & Snow. Professional integrity and cultural excellence built for Calgary's unique seasons.",
 };
 

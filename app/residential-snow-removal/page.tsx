@@ -58,8 +58,8 @@ export default function ResidentialSnowBlowingPage() {
             Calgary • Residential Snow Removal
           </p>
           <h1 className="mt-4 text-[42px] md:text-[56px] lg:text-[64px] font-black leading-[1.1] tracking-tight text-white drop-shadow-2xl max-w-4xl uppercase">
-            CALGARY<br />
-            SNOW REMOVAL<br />
+            CALGARY RESIDENTIAL<br />
+            SNOW REMOVAL —<br />
             <span className="text-[#01fa6d]">Worry-free all winter.</span>
           </h1>
           <p className="mt-6 max-w-2xl text-[1.1rem] font-bold text-white/90 md:text-[1.3rem]">
@@ -110,30 +110,37 @@ export default function ResidentialSnowBlowingPage() {
           </p>
 
           <div style={styles.cards3}>
-            <div style={styles.offerCard}>
-              <h3 style={styles.offerTitle}>Full season coverage</h3>
-            </div>
-            <div style={styles.offerCard}>
-              <h3 style={styles.offerTitle}>Servicing at 1cm</h3>
-            </div>
-            <div style={styles.offerCard}>
-              <h3 style={styles.offerTitle}>Driveway markers</h3>
-            </div>
-            <div style={styles.offerCard}>
-              <h3 style={styles.offerTitle}>Flexible payment options</h3>
-            </div>
-            <div style={styles.offerCard}>
-              <h3 style={styles.offerTitle}>Text or email alerts</h3>
-            </div>
-            <div style={styles.offerCard}>
-              <h3 style={styles.offerTitle}>Photo service log</h3>
-            </div>
-            <div style={styles.offerCard}>
-              <h3 style={styles.offerTitle}>Ice melt & vehicle add-ons</h3>
-            </div>
-            <div style={styles.offerCard}>
-              <h3 style={styles.offerTitle}>Snow bird / Vacation passes</h3>
-            </div>
+            {[
+              {
+                title: "Full Season Coverage",
+                desc: "One flat monthly rate covers unlimited driveway and front sidewalk clearing from the first snowfall through the final melt — no per-visit fees, no surprises."
+              },
+              {
+                title: "1cm Trigger",
+                desc: "We dispatch as soon as accumulation hits 1cm. You won’t wake up to a buried driveway waiting for a contractor who services “major storms only.”"
+              },
+              {
+                title: "Photo Service Log",
+                desc: "After every visit, you receive time-stamped photos by email confirming exactly what was cleared and when. Perfect for renters, property owners, or anyone who needs documentation."
+              },
+              {
+                title: "Dispatch Alerts",
+                desc: "Email notifications sent before our crew arrives so you always know service is on the way — no guessing, no wondering."
+              },
+              {
+                title: "Driveway Markers",
+                desc: "We install free snow pickets before the season starts so our crews can clear right to the edges without damaging your lawn, garden beds, or interlock."
+              },
+              {
+                title: "Flexible Payment",
+                desc: "Pay in full upfront and save 10%, or split into 5 monthly auto-payments — whichever works for your budget."
+              }
+            ].map((offer, i) => (
+              <div key={i} style={styles.offerCard}>
+                <h3 style={styles.offerTitle}>{offer.title}</h3>
+                <p style={styles.offerDesc}>{offer.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -159,10 +166,13 @@ export default function ResidentialSnowBlowingPage() {
                 </div>
               </div>
               <p style={{ ...styles.p, fontSize: 18, marginTop: 24, color: "#333" }}>
-                At TERREOAK Landscaping & Snow, we provide professional snow removal for Calgary homeowners who want a reliable, Hands-off solution for the entire winter season. When snow starts to accumulate, our crews are dispatched through your neighbourhood to keep your driveway, sidewalks and front access clear, safe, and ready to use.
+                TERREOAK provides residential snow removal for Calgary homeowners who want a reliable, hands-off solution for the entire winter season. No wondering if your driveway got done — just consistent service, dispatch alerts before we arrive, and a photo log in your inbox after every visit.
               </p>
               <p style={{ ...styles.p, fontSize: 18, marginTop: 16, color: "#333" }}>
-                Our route-based approach to snow removal allows us to deliver consistent service during and after every snowfall, even during the heaviest storms. A seasonal snow removal plan gives you predictable monthly pricing, priority service, and the confidence that your home will be taken care of all winter long.
+                We service driveways and front sidewalks at just 1cm of accumulation, so your property stays clear and safe through every storm Calgary throws at it. Our route-based crews cover communities across SW, SE, Calgary — with capacity capped each season so service quality never slips.
+              </p>
+              <p style={{ ...styles.p, fontSize: 18, marginTop: 16, color: "#333", fontWeight: 900 }}>
+                Spots fill up before the first snowfall. Reserve your season pass early to lock in your route and your rate.
               </p>
               <div style={{ marginTop: 32 }}>
                 <button
@@ -185,6 +195,25 @@ export default function ResidentialSnowBlowingPage() {
           </div>
         </div>
       </section>
+
+      {/* NEIGHBOURHOOD COVERAGE */}
+      <Section
+        kicker="Coverage Area"
+        kickerClassName="text-[#017a6d]"
+        title="CALGARY NEIGHBOURHOODS WE SERVE"
+        titleClassName="text-black !text-[30.6px] uppercase"
+        wrapperClassName="bg-white"
+        hasBorder={true}
+      >
+        <div className="max-w-4xl">
+          <p className="text-[18px] text-black/80 leading-relaxed font-medium">
+            We run established routes across all Calgary quadrants, including <strong>Auburn Bay, Mahogany, Cranston, Copperfield, McKenzie Towne, Legacy, and Walden</strong> in the SE; <strong>Evergreen, Shawnessy, Silverado, and Chaparral</strong> in the SW.
+          </p>
+          <p className="mt-4 text-[18px] text-[#017a6d] font-bold">
+            Don’t see your neighbourhood? <a href="tel:+15877077648" className="underline underline-offset-4 decoration-2">Call us</a> — we may have availability on a nearby route.
+          </p>
+        </div>
+      </Section>
 
       <Section
         kicker="Our Process"
@@ -229,7 +258,7 @@ export default function ResidentialSnowBlowingPage() {
             <div>
               <h3 className="text-xl font-black mb-2 uppercase tracking-tight">First-Service Money-Back Guarantee</h3>
               <p className="text-[15px] text-black/60 leading-relaxed font-medium">
-                If you don’t like the service after the first visit, we refund in full. Built on trust, not fine print.
+                Not happy after your first visit? We refund you in full — no questions, no fine print. We’re confident enough in our service to put that in writing because we’ve never had to use it.
               </p>
             </div>
           </div>
@@ -245,7 +274,7 @@ export default function ResidentialSnowBlowingPage() {
             <div>
               <h3 className="text-xl font-black mb-2 uppercase tracking-tight">24-Hour Service Guarantee</h3>
               <p className="text-[15px] text-black/60 leading-relaxed font-medium">
-                If we miss the 24-hour window after snowfall ends, we send a crew back immediately at no extra cost.
+                We clear your property within 24 hours of snowfall ending. If we miss that window for any reason, we send a crew back at no charge. Calgary’s snow removal bylaw gives property owners 24 hours to clear sidewalks — we make sure you’re covered.
               </p>
             </div>
           </div>
@@ -329,80 +358,7 @@ export default function ResidentialSnowBlowingPage() {
 
 
 
-      {/* SNOWBALL REFERRAL PROGRAM */}
-      <Section
-        kicker="Rewards Program"
-        kickerClassName="text-white/60"
-        title="SNOWBALL REFERRAL PROGRAM"
-        titleClassName="text-[#01fa6d] !text-[30.6px] uppercase"
-        wrapperClassName="bg-[#2c2d32]"
-        py="py-16"
-        hasBorder={false}
-      >
-        <div className="mt-8 space-y-12">
-          {/* HOW IT WORKS */}
-          <div>
-            <h3 className="text-xl font-black text-white uppercase tracking-wider mb-6 flex items-center gap-3">
-              <span className="w-8 h-px bg-[#01fa6d]"></span>
-              How it works
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="bg-white/5 border border-white/10 p-6 rounded-2xl backdrop-blur-sm">
-                <div className="text-[#01fa6d] text-2xl font-black mb-2">$25 Credit</div>
-                <p className="text-white/70 font-medium">For every new customer you refer, you get a $25 account credit applied instantly.</p>
-              </div>
-              <div className="bg-white/5 border border-white/10 p-6 rounded-2xl backdrop-blur-sm">
-                <div className="text-[#01fa6d] text-2xl font-black mb-2">$25 Discount</div>
-                <p className="text-white/70 font-medium">Your neighbor gets $25 off their first service just for signing up through you.</p>
-              </div>
-            </div>
-            <p className="mt-6 text-white/50 font-bold italic text-center">
-              The more neighbors you refer, the bigger the rewards.
-            </p>
-          </div>
 
-          {/* SNOWBALL REWARDS TIERS */}
-          <div className="pt-8 border-t border-white/10">
-            <h3 className="text-xl font-black text-white uppercase tracking-wider mb-8 text-center">Snowball Rewards</h3>
-            <Carousel className="pb-8">
-              {[
-                { count: "1 Referral", reward: "$25 credit", num: "1" },
-                { count: "2 Referrals", reward: "$50 credit", num: "2" },
-                { count: "3 Referrals", reward: "$50 credit + ice melt", num: "3" },
-                { count: "5 Referrals", reward: "Free month", num: "5" },
-                { count: "10 Referrals", reward: "25% off next season", num: "10", highlight: true }
-              ].map((tier, i) => (
-                <div key={i} className="min-w-[180px] md:min-w-[0] md:flex-1 px-2 snap-center">
-                  <div
-                    className={`p-5 rounded-xl flex flex-col items-center text-center transition-all duration-500 hover:-translate-y-1 h-full min-h-[140px] justify-center ${tier.highlight ? "bg-[#01fa6d] text-black shadow-2xl shadow-[#01fa6d]/20 border border-white/20" : "bg-white text-black shadow-lg"}`}
-                  >
-                    <div className={`w-10 h-10 rounded-full flex items-center justify-center font-black mb-3 ${tier.highlight ? "bg-black text-[#01fa6d]" : "bg-[#01fa6d] text-white"}`}>
-                      {tier.num}
-                    </div>
-                    <div className={`text-[9px] font-black uppercase tracking-widest mb-1 ${tier.highlight ? "text-black/60" : "text-[#017a6d]"}`}>
-                      {tier.count}
-                    </div>
-                    <div className="text-[13px] font-black leading-tight">
-                      {tier.reward}
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </Carousel>
-          </div>
-
-          <div className="flex flex-col items-center gap-6 pt-4">
-            <div className="flex flex-wrap justify-center gap-4">
-              <a
-                href="https://clienthub.getjobber.com/client_hubs/41b3399e-3795-43d8-afe2-e6c38c1b3e6e/public/work_request/new?form_id=2232203"
-                className="inline-flex items-center justify-center rounded-lg bg-[#01fa6d] px-12 py-5 text-[16px] font-black text-black hover:opacity-90 transition-all hover:-translate-y-1 shadow-xl shadow-[#01fa6d]/20"
-              >
-                START YOUR REFERRAL CHAIN
-              </a>
-            </div>
-          </div>
-        </div>
-      </Section>
 
       {/* JOBBER LEAD FORM */}
       <Section id="seasonal-form" title="SIGN UP FOR YOUR SEASON PASS" titleClassName="text-[#01fa6d]">
@@ -458,58 +414,44 @@ export default function ResidentialSnowBlowingPage() {
 
           <div style={styles.faq}>
             <details style={styles.details}>
-              <summary style={styles.summary}>What counts as a service?</summary>
+              <summary style={styles.summary}>What counts as a qualifying snowfall?</summary>
               <p style={styles.pSmall}>
-                Any qualifying snowfall event in your area. We monitor storms and dispatch proactively.
+                Any snowfall event that results in 1cm or more of accumulation at your property. We monitor weather across all our service areas and dispatch crews proactively — you don’t need to call us or submit a request.
               </p>
             </details>
 
             <details style={styles.details}>
-              <summary style={styles.summary}>Do you include windrows from the city plow?</summary>
+              <summary style={styles.summary}>Do you clear windrows left by the city plow?</summary>
               <p style={styles.pSmall}>
-                No — windrows aren’t included. Everything else up to the end of your driveway is covered.
+                Windrows from city plows pushing snow back onto your driveway apron are not included in the standard season pass. If you’d like windrow clearing added, ask us about a custom pass when you sign up.
               </p>
             </details>
 
             <details style={styles.details}>
               <summary style={styles.summary}>How does the Photo Service Log work?</summary>
               <p style={styles.pSmall}>
-                After each visit, we email time-stamped photos so you have proof of service.
+                After every single visit, our crew submits time-stamped before-and-after photos through our service software. These are emailed directly to you, giving you a complete record of every service event throughout the winter. It’s especially useful for rental property owners or anyone who isn’t always home to check.
               </p>
             </details>
 
             <details style={styles.details}>
               <summary style={styles.summary}>Is ice melt included?</summary>
               <p style={styles.pSmall}>
-                No, ice melt is no longer included in the base Season Pass. We now offer it as a monthly subscription add-on (up to 4 visits per month) for clients who want consistent traction control after every service.
+                Ice melt is available as a monthly add-on subscription and is not included in the base season pass. The add-on covers automatic ice melt application after each visit, up to 4 visits per month, keeping walkways and driveways safe between snowfalls.
               </p>
             </details>
 
             <details style={styles.details}>
-              <summary style={styles.summary}>Do you blow snow off vehicles?</summary>
+              <summary style={styles.summary}>Do you offer one-time snow removal?</summary>
               <p style={styles.pSmall}>
-                We can! Snow blowing for vehicles parked in the driveway is available as a monthly add-on to your Season Pass.
+                We don’t offer one-time services. TERREOAK runs a route-based season pass model, which means our crews follow established neighbourhood routes each storm. This is what allows us to guarantee consistent 24-hour service — one-off calls would break that system for everyone on the route.
               </p>
             </details>
 
             <details style={styles.details}>
-              <summary style={styles.summary}>Do you provide one-time services?</summary>
+              <summary style={styles.summary}>What if I’m away for part of the winter?</summary>
               <p style={styles.pSmall}>
-                No, we do not provide one-time snow removal services. TERREOAK focuses exclusively on our Season Pass members to ensure we provide the highest priority and most reliable service to our committed clients throughout the entire winter season.
-              </p>
-            </details>
-
-            <details style={styles.details}>
-              <summary style={styles.summary}>Do you offer short-term vacation passes?</summary>
-              <p style={styles.pSmall}>
-                Yes! We offer "Snow Bird" and vacation passes for those who only need coverage for a shorter period. These contracts can range from 1 week up to 8 weeks, providing you with the same priority service and peace of mind while you're away.
-              </p>
-            </details>
-
-            <details style={styles.details}>
-              <summary style={styles.summary}>How does billing work? Can I pay upfront?</summary>
-              <p style={styles.pSmall}>
-                We offer total flexibility. You can pay your Season Pass fee in full upfront and receive a <strong>10% discount</strong>, or you can split the cost into <strong>5 monthly payments</strong> using our auto-billing system with a card on file. We also accept e-transfers and cheques by mail upon request.
+                We offer Snowbird and vacation passes for homeowners who only need coverage for a portion of the season. These short-term passes run from 1 to 8 weeks and include the same priority service and photo logs as a full season pass.
               </p>
             </details>
           </div>
@@ -666,9 +608,9 @@ const styles: Record<string, React.CSSProperties> = {
   cards2: { marginTop: 18, display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: 14 },
   card: { border: "1px solid rgba(0,0,0,0.10)", borderRadius: 8, padding: 16, background: "#fff" },
 
-  offerSection: { padding: "70px 0", background: "#2c2d32" },
-  offerCard: { background: "#019587", borderRadius: 12, padding: "24px 20px", display: "flex", alignItems: "center", justifyContent: "flex-start", minHeight: "80px", border: "none" },
+  offerCard: { background: "#019587", borderRadius: 12, padding: "28px 24px", display: "flex", flexDirection: "column" as const, alignItems: "flex-start", justifyContent: "flex-start", minHeight: "180px", border: "none" },
   offerTitle: { margin: 0, fontSize: 21.6, fontWeight: 900, color: "#fff", textAlign: "left" as const },
+  offerDesc: { marginTop: 12, fontSize: 15, color: "rgba(255,255,255,0.9)", lineHeight: 1.5, fontWeight: 500 },
 
   ctaBox: {
     border: "1px solid rgba(0,0,0,0.10)",

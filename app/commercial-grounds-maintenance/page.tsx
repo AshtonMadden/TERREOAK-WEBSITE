@@ -94,10 +94,10 @@ export default function CommercialGroundsMaintenancePage() {
                 <div className="max-w-4xl mx-auto space-y-8">
                     <div className="space-y-6 text-[20px] text-black/80 leading-relaxed font-medium">
                         <p>
-                            TERREOAK is a full-service landscape construction and property maintenance company serving Calgary. Our commercial division focus is on delivering structured scheduling, professional systems, and results built for Alberta’s extreme seasons.
+                            TERREOAK is Calgary’s commercial grounds maintenance and snow removal contractor for condo corporations, HOA communities, industrial business parks, and new construction sites. We manage exterior property standards year-round — from spring cleanups and weekly grounds care to 24/7 snow and ice management — so property managers and site supervisors can focus on what matters.
                         </p>
                         <p>
-                            From complex multi-family condo sites to retail centers and industrial business parks, we ensure your exterior property standards are maintained with professional integrity all year round.
+                            Every service visit is logged with time-stamped photos and digital reports, giving you bulletproof documentation for board meetings, liability claims, and contractor audits.
                         </p>
                     </div>
                     <div className="pt-8 text-center">
@@ -151,7 +151,7 @@ export default function CommercialGroundsMaintenancePage() {
             <Section
                 kicker="Commercial Standards"
                 kickerClassName="text-white/60"
-                title={<span>WHY PROPERTY MANAGERS TRUST TERREOAK<br className="hidden md:block" /> FOR COMMERCIAL GROUNDS KEEPING</span>}
+                title="WHY PROPERTY MANAGERS CHOOSE TERREOAK"
                 titleClassName="text-white"
                 wrapperClassName="bg-[#2c2d32]"
                 py="pt-16 md:pt-24 pb-12"
@@ -166,13 +166,27 @@ export default function CommercialGroundsMaintenancePage() {
                 }
                 imageRight={true}
             >
-                <div className="relative z-10 w-full">
-                    <p className="text-lg text-white/80 leading-relaxed font-normal">
-                        We understand the liability and safety requirements of commercial sites. From new-build sod and tree installations to reliable snow removal, we deliver structured scheduling, professional systems, and results built for Alberta’s extreme seasons.
-                    </p>
-                    <p className="mt-6 text-lg text-white/80 leading-relaxed font-normal">
-                        Our teams are equipped with high-volume machinery and digital tracking software to provide property managers with peace of mind and bulletproof liability protection.
-                    </p>
+                <div className="relative z-10 w-full space-y-10">
+                    <div className="space-y-3">
+                        <h3 className="text-xl md:text-2xl font-black text-[#01fa6d] uppercase tracking-tight">Full Digital Accountability — Every Visit, Every Time</h3>
+                        <p className="text-lg text-white/80 leading-relaxed font-normal">
+                            No more chasing contractors for confirmation. After every service, you receive a time-stamped photo log directly to your inbox. Know exactly what was done, when it was done, and by whom — documentation your board or insurance provider can rely on.
+                        </p>
+                    </div>
+
+                    <div className="space-y-3">
+                        <h3 className="text-xl md:text-2xl font-black text-[#01fa6d] uppercase tracking-tight">Built for Alberta’s Conditions</h3>
+                        <p className="text-lg text-white/80 leading-relaxed font-normal">
+                            We understand the liability exposure that comes with Calgary winters. Our commercial snow contracts include 24/7 weather monitoring, proactive dispatch, sand and ice melt application, and digital service records — the full paper trail you need to protect your property and your residents.
+                        </p>
+                    </div>
+
+                    <div className="space-y-3">
+                        <h3 className="text-xl md:text-2xl font-black text-[#01fa6d] uppercase tracking-tight">One Contractor. Year-Round Coverage.</h3>
+                        <p className="text-lg text-white/80 leading-relaxed font-normal">
+                            Condo boards and property managers tell us their biggest frustration is managing multiple contractors. TERREOAK handles your full exterior — summer grounds maintenance, fall cleanup, irrigation blowouts, snow removal, and landscape construction — under one contract and one point of contact.
+                        </p>
+                    </div>
 
                     {/* Skyline Silhouette Background */}
                     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-screen h-[150px] opacity-10 grayscale pointer-events-none z-0 overflow-hidden">
@@ -219,25 +233,43 @@ export default function CommercialGroundsMaintenancePage() {
             </section>
 
             {/* PROPERTY TYPES SECTION */}
-            <Section title="COMMERCIAL PROPERTIES WE SERVICE" titleClassName="text-[#017a6d]" py="py-24">
-                <p className="max-w-3xl text-lg text-black/80 leading-relaxed font-normal mb-12">
-                    We provide tailored maintenance and construction services for a wide range of commercial and community properties across Calgary.
-                </p>
-
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <Section title="WHO WE SERVE" titleClassName="text-[#017a6d]" py="py-24">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     {[
-                        "Condo & Townhome Complexes",
-                        "Retail & Shopping Centers",
-                        "Industrial & Business Parks",
-                        "HOA & Community Sites"
-                    ].map((type, i) => (
-                        <div key={i} className="flex flex-col items-center justify-center p-6 rounded-xl border border-black/10 transition-all hover:border-[#01fa6d] hover:bg-gray-50 group text-center">
-                            <div className="w-12 h-12 rounded-full bg-[#01fa6d]/5 flex items-center justify-center mb-4 group-hover:bg-[#01fa6d] transition-colors">
-                                <svg className="w-6 h-6 text-[#01fa6d] group-hover:text-black transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        {
+                            title: "Condo & HOA Property Managers",
+                            desc: "We work directly with condo corporations and HOA boards across Calgary to manage shared exterior spaces to a professional standard. Scheduled maintenance reports keep boards informed, and our digital service logs eliminate disputes over what was — or wasn’t — done.",
+                            icon: (
+                                <svg className="w-6 h-6 text-[#01fa6d]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                                 </svg>
+                            )
+                        },
+                        {
+                            title: "Industrial & Business Parks",
+                            desc: "High-traffic loading zones, large parking lots, and sprawling grounds require reliable contractors with the right equipment. TERREOAK operates commercial-grade machinery and maintains priority dispatch for industrial clients during snow events, keeping access routes clear and liability exposure low.",
+                            icon: (
+                                <svg className="w-6 h-6 text-[#01fa6d]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                </svg>
+                            )
+                        },
+                        {
+                            title: "New Construction & Builders",
+                            desc: "From rough grading and sod installation to final landscape packages and site cleanup, we work alongside builders to deliver finished exterior work that meets possession timelines. We understand build schedules and show up when we say we will.",
+                            icon: (
+                                <svg className="w-6 h-6 text-[#01fa6d]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5L6 9v4l5 4 5-4V9l-5-4zm0 0v12" />
+                                </svg>
+                            )
+                        }
+                    ].map((item, i) => (
+                        <div key={i} className="flex flex-col p-8 rounded-2xl border border-black/10 transition-all hover:border-[#01fa6d] hover:bg-gray-50 group">
+                            <div className="w-12 h-12 rounded-full bg-[#01fa6d]/5 flex items-center justify-center mb-6 group-hover:bg-[#01fa6d] transition-colors">
+                                {item.icon}
                             </div>
-                            <h3 className="font-black text-sm md:text-base">{type}</h3>
+                            <h3 className="font-black text-xl mb-4 text-[#017a6d] uppercase">{item.title}</h3>
+                            <p className="text-black/70 leading-relaxed font-medium">{item.desc}</p>
                         </div>
                     ))}
                 </div>

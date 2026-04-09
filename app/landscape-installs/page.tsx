@@ -52,8 +52,8 @@ export default function LandscapeInstallsPage() {
             Calgary • Commercial & Residential
           </p>
           <h1 className="mt-4 text-[42px] md:text-[56px] lg:text-[64px] font-black leading-[1.1] tracking-tight text-white drop-shadow-2xl max-w-4xl uppercase">
-            Landscaping &<br />
-            <span className="text-[#01fa6d]">Design-Build Solutions.</span>
+            Calgary Landscaping Company —<br />
+            <span className="text-[#01fa6d]">Design, Build & Install</span>
           </h1>
           <p className="mt-6 max-w-2xl text-[1.1rem] font-bold text-white/90 md:text-[1.3rem]">
             Engineered hardscapes, precision grading, and full-yard transformations built for Calgary&apos;s extreme climate.
@@ -81,9 +81,17 @@ export default function LandscapeInstallsPage() {
 
       {/* PROPERTY TYPES SECTION */}
       <Section title="Landscaping Services for All Calgary Properties" titleClassName="text-[#017a6d]">
-        <p className="max-w-3xl text-lg text-black/80 leading-relaxed font-normal mb-12">
-          From new builds to established homes, we create custom outdoor spaces designed to fit your property and lifestyle. TERREOAK specializes in Calgary residential lots, infill homes, and upscale new neighborhoods, delivering complete design-build services that stand up to Alberta&apos;s extreme seasons.
-        </p>
+        <div className="max-w-4xl text-lg text-black/80 leading-relaxed font-normal mb-12">
+          <p className="mb-6">
+            TERREOAK is a Calgary landscaping and design-build company specializing in complete outdoor transformations for residential and commercial properties. From engineered retaining walls and exposed aggregate concrete to sod installations, pergolas, and drainage solutions, we build outdoor spaces designed to last through Alberta’s freeze-thaw cycles, heavy snowloads, and short construction seasons.
+          </p>
+          <p className="mb-6">
+            We work with new build homeowners in Calgary’s growing south and northwest communities, established homeowners upgrading aging yards, infill townhome builders, and luxury property owners looking for a contractor who can execute a high-spec finish. Every project starts with an on-site consultation and 3D design so you can see your space before a single shovel hits the ground.
+          </p>
+          <p className="font-black text-[#017a6d]">
+            Calgary’s landscape build season fills up fast. If you’re planning a project for spring or summer, now is the time to get into the queue.
+          </p>
+        </div>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {[
@@ -141,34 +149,71 @@ export default function LandscapeInstallsPage() {
         </div>
       </Section>
 
+      {/* WHY CALGARY LANDSCAPING IS DIFFERENT */}
+      <Section
+        kicker="WHY CALGARY LANDSCAPING IS DIFFERENT"
+        title="Built for Alberta. Not Just Built."
+        titleClassName="text-[#017a6d]"
+        wrapperClassName="bg-gray-50"
+      >
+        <div className="max-w-4xl space-y-6">
+          <p className="text-xl text-black/80 leading-relaxed font-bold">
+            Landscaping in Calgary isn’t the same as landscaping in Vancouver or Toronto. Our freeze-thaw cycle, clay soils, short growing season, and chinook wind patterns all affect how outdoor spaces are designed and built. A patio base that works in Ontario will heave and crack here within two winters.
+          </p>
+          <p className="text-lg text-black/70 leading-relaxed font-medium">
+            Every TERREOAK build accounts for Calgary’s specific conditions — proper compacted gravel base depths, frost-rated materials, drainage slopes that handle spring runoff, and plant species selected for Zone 3b hardiness. It’s the difference between a yard that looks great on completion day and one that still looks great five years later.
+          </p>
+        </div>
+      </Section>
+
       {/* PROCESS */}
       <Section
-        kicker="Our Process"
+        wrapperClassName="bg-[#2c2d32] overflow-hidden"
+        kicker="How We Do It"
         kickerClassName="text-white/60"
-        title="Our proven Design & Build Process"
+        title="The Process Matters"
         titleClassName="text-white"
-        wrapperClassName="bg-[#2c2d32]"
       >
-        <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-12">
-          {[
-            { step: "01", title: "Discovery & Consultation", desc: "We meet on-site to understand your vision, budget, and property requirements." },
-            { step: "02", title: "Conceptual Design & 3D Rendering", desc: "Our designers create detailed plans and visualizations to bring your project to life." },
-            { step: "03", title: "Budgeting & Material Selection", desc: "We select climate-ready materials and finalize a transparent, fixed-price scope." },
-            { step: "04", title: "Construction Management", desc: "Our skilled crews execute the build with structured systems and daily management." },
-            { step: "05", title: "Final Walkthrough", desc: "We ensure every detail meets our 'Built Right' standard before handing over your space." }
-          ].map((p, i) => (
-            <ScrollReveal key={i} className="group relative">
-              <div className="h-full bg-[#017a6d] p-8 rounded-2xl flex flex-col justify-center min-h-[160px] border border-white/5 shadow-xl hover:bg-[#01645a] transition-all transform hover:-translate-y-1">
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="w-10 h-10 rounded-full bg-white/20 text-white flex items-center justify-center font-black text-sm shrink-0">
-                    {p.step}
+        <div className="flex flex-col xl:flex-row items-stretch gap-8 mt-12">
+          {/* LEFT: Process Step Cards Grid (Strict 3 columns on desktop) */}
+          <div className="flex-1">
+            <div className="grid grid-cols-2 lg:grid-cols-3 gap-3">
+              {[
+                "Inquiry", "Consultation", "Proposal Delivered", "Proposal Review",
+                "Deposit", "Pre-Construction Meeting", "Work on Project Begins",
+                "Walkthrough", "Warranty Period"
+              ].map((step, i) => (
+                <ScrollReveal key={i}>
+                  <div className="h-full bg-white/5 py-4 px-3 rounded-xl border border-white/10 hover:border-[#01fa6d]/50 transition-all group flex flex-col items-center text-center">
+                    <div className="w-8 h-8 rounded-full bg-[#01fa6d] text-[#2c2d32] flex items-center justify-center font-black text-xs mb-3 shrink-0 group-hover:scale-110 transition-transform shadow-lg">
+                      {i + 1}
+                    </div>
+                    <h3 className="font-black uppercase text-[9px] sm:text-[10px] text-white tracking-widest leading-tight">
+                      {step}
+                    </h3>
                   </div>
-                  <h3 className="text-xl font-black text-white leading-tight">{p.title}</h3>
-                </div>
-                <p className="text-white/80 text-sm leading-relaxed">{p.desc}</p>
-              </div>
-            </ScrollReveal>
-          ))}
+                </ScrollReveal>
+              ))}
+            </div>
+          </div>
+
+          {/* RIGHT: Text Content Box */}
+          <div className="w-full xl:w-[380px] bg-white/5 rounded-3xl p-8 border border-white/10 shadow-2xl flex flex-col justify-center">
+            <h3 className="text-2xl font-black text-[#01fa6d] mb-4 uppercase leading-tight">Quality is in the details</h3>
+            <p className="text-base text-white/90 leading-relaxed mb-4 font-bold">
+              At TERREOAK Landscaping, the entire process matters, from the first call to the moment you relax in your new yard.
+            </p>
+            <p className="text-sm text-white/60 leading-relaxed mb-8 font-medium">
+              We believe that you should not only expect to be thrilled with your final project but should also expect to enjoy the experience of working with us. Quality and trust are the foundations of our business.
+            </p>
+
+            <button
+              onClick={handleScrollToForm}
+              className="w-full inline-flex items-center justify-center rounded-xl bg-[#01fa6d] py-4 text-xs font-black text-[#2c2d32] hover:bg-white transition-all shadow-xl uppercase tracking-[0.2em]"
+            >
+              Start Project
+            </button>
+          </div>
         </div>
       </Section>
 
@@ -176,14 +221,41 @@ export default function LandscapeInstallsPage() {
       <Section kicker="What We Do" title="Comprehensive Landscape Services" titleClassName="text-[#017a6d]">
         <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-12">
           {[
-            { title: "Hardscapes & Retaining Walls", desc: "Engineered stone work and structural walls designed for stability and style.", image: "/Landscape web page pics/Techo-Bloc-pavers-river-rock.JPG" },
-            { title: "Concrete", desc: "Professional concrete pouring, patios, walkways, and decorative concrete solutions.", image: "/Landscape web page pics/Exposed-aggregate-concrete.JPG" },
-            { title: "Planting & Trees", desc: "Selection of hardy, Alberta-native species for a thriving mountain climate.", image: "/images/gallery/project-3.png" },
-            { title: "Sod & Turf", desc: "Precision sod installation and premium synthetic turf solutions.", image: "/Landscape web page pics/Sod-installation-calgary.jpg" },
-            { title: "Irrigation Systems", desc: "Efficient water management and professional system installations.", image: "/Landscape web page pics/Calgary-lawn-irrigation.jpg" },
-            { title: "Pergolas & Fencing", desc: "Custom wooden pergolas and horizontal privacy fencing designed for luxury outdoor living.", image: "/images/pergolas-fencing-new.jpg" },
-            { title: "Drainage Systems", desc: "Custom engineered grading, foundation protection, and water management solutions.", image: "/Calgary-drainage-solutions.JPG" },
-            { title: "Landscape Design", desc: "Professional 3D landscape design and conceptual planning for your outdoor space.", image: "/images/design.png" }
+            {
+              title: "Hardscapes & Retaining Walls",
+              desc: "Belgard and Techo-Bloc patios, stone pathways, bin pads, and engineered retaining walls built to handle Calgary’s frost heave and soil movement. We use structural base preparation and climate-rated materials on every install — not shortcuts that look good for one season.",
+              image: "/Landscape web page pics/Techo-Bloc-pavers-river-rock.JPG"
+            },
+            {
+              title: "Planting & Trees",
+              desc: "Hardy, Alberta-climate species selected for your sun exposure, soil type, and maintenance preferences. We source locally where possible and plant with root establishment in mind, not just curb appeal on day one.",
+              image: "/images/gallery/project-3.png"
+            },
+            {
+              title: "Sod & Turf",
+              desc: "Fresh sod installation for new builds, lawn replacements, and bare-patch repairs, plus premium synthetic turf for low-maintenance yards and high-traffic zones. We grade and prepare the base properly so your lawn establishes evenly and drains correctly.",
+              image: "/Landscape web page pics/Sod-installation-calgary.jpg"
+            },
+            {
+              title: "Irrigation Systems",
+              desc: "Full irrigation system design and installation, including drip lines for garden beds and pop-up rotors for lawn zones. Paired with our fall irrigation blowout service, your system is protected from freeze damage year after year.",
+              image: "/Landscape web page pics/Calgary-lawn-irrigation.jpg"
+            },
+            {
+              title: "Pergolas & Fencing",
+              desc: "Custom wood pergolas and horizontal privacy fencing built for outdoor living in Calgary’s wind and UV conditions. We use pressure-treated and cedar materials with proper post depths for long-term stability.",
+              image: "/images/pergolas-fencing-new.jpg"
+            },
+            {
+              title: "Drainage Systems",
+              desc: "French drains, catch basins, swales, and precision grading to redirect water away from your foundation, garage, and low-lying yard areas. Poor drainage is one of the most common and costly problems in Calgary’s clay-heavy soils — we engineer solutions that last.",
+              image: "/Calgary-drainage-solutions.JPG"
+            },
+            {
+              title: "Landscape Design",
+              desc: "Professional 3D landscape design and conceptual planning before any construction begins. We walk your property, listen to how you use your space, and deliver a visual plan with material selections, plant placements, and phasing options so you can make informed decisions.",
+              image: "/images/design.png"
+            }
           ].map((s, i) => (
             <div key={i} className="group rounded-xl border border-black/10 overflow-hidden bg-white hover:border-[#017a6d] transition-colors">
               <div className="relative aspect-video overflow-hidden">
@@ -309,14 +381,64 @@ export default function LandscapeInstallsPage() {
         ]}
       />
 
+      {/* COST & PRICING */}
+      <Section title="How Much Does Landscaping Cost in Calgary?" titleClassName="text-[#017a6d]" wrapperClassName="bg-gray-50">
+        <div className="max-w-4xl">
+          <p className="text-xl text-black/80 leading-relaxed font-bold mb-8">
+            Landscaping project costs in Calgary vary widely based on scope, materials, and site conditions. As a general guide:
+          </p>
+          <div className="grid gap-6 md:grid-cols-2 mb-12">
+            <div className="p-6 bg-white rounded-xl border border-black/5 shadow-sm">
+              <h3 className="font-black text-lg mb-2">Sod & Grading</h3>
+              <p className="text-black/70 leading-relaxed">A basic sod installation on a standard Calgary lot typically runs <strong>$2,000–$6,000</strong> depending on lawn size, grading required, and soil prep.</p>
+            </div>
+            <div className="p-6 bg-white rounded-xl border border-black/5 shadow-sm">
+              <h3 className="font-black text-lg mb-2">Patios & Hardscapes</h3>
+              <p className="text-black/70 leading-relaxed">Exposed aggregate or paver patio projects range from <strong>$8,000–$25,000+</strong> depending on size and material grade.</p>
+            </div>
+            <div className="p-6 bg-white rounded-xl border border-black/5 shadow-sm">
+              <h3 className="font-black text-lg mb-2">Retaining Walls</h3>
+              <p className="text-black/70 leading-relaxed">Retaining wall installations start around <strong>$5,000</strong> and scale with height, length, and engineering requirements.</p>
+            </div>
+            <div className="p-6 bg-white rounded-xl border border-black/5 shadow-sm">
+              <h3 className="font-black text-lg mb-2">Full Yard Transformations</h3>
+              <p className="text-black/70 leading-relaxed">Full yard design-build transformations for new homes commonly range from <strong>$20,000–$60,000+</strong>.</p>
+            </div>
+          </div>
+          <p className="text-lg text-black/70 leading-relaxed italic border-l-4 border-[#017a6d] pl-6 py-2">
+            Every TERREOAK project starts with a free on-site consultation and a detailed, fixed-price quote. We don’t do vague estimates — you’ll know exactly what you’re getting and what it costs before any work begins.
+          </p>
+        </div>
+      </Section>
+
       {/* FAQ */}
       <Section kicker="Support" title="Frequently Asked Questions" titleClassName="text-[#017a6d]" wrapperClassName="bg-white">
         <div className="mt-12 max-w-4xl mx-auto space-y-4">
           {[
-            { q: "How long does a typical landscape build take?", a: "Residential projects typically range from 1 to 4 weeks depending on complexity, materials, and property size." },
-            { q: "Do you provide 3D designs for all projects?", a: "We offer professional 3D renderings for all major landscape overhauls and design-build contracts to ensure total alignment." },
-            { q: "Is your work under warranty?", a: "Yes, all our hardscape installations are backed by our Built Right Guarantee, which covers craftsmanship and material integrity." },
-            { q: "How do you handle slope and drainage issues?", a: "Drainage is our priority. We use engineered solutions and precise grading to ensure water is directed away from your foundation." }
+            {
+              q: "How long does a typical landscaping project take in Calgary?",
+              a: "Most residential projects run between 1 and 4 weeks from start to final walkthrough, depending on scope. A sod and cleanup install might take 2–3 days. A full hardscape build with retaining walls, concrete, and planting can run 2–4 weeks. We provide a project timeline before work begins so you’re never left guessing."
+            },
+            {
+              q: "Do you work on new build lots in Calgary?",
+              a: "Yes — new build landscaping is a significant part of our work. We’re familiar with the requirements of Calgary’s new communities including grading certificates, utility locates, and builder coordination. If you’ve just taken possession and need your yard completed, we can take it from bare dirt to finished landscape."
+            },
+            {
+              q: "What’s the best time of year to book landscaping in Calgary?",
+              a: "The Calgary build season runs roughly May through October. Our schedule fills up quickly in early spring, so we recommend booking your consultation in March or April for a spring or early summer start. Fall is also a good window for hardscape and grading work before the ground freezes."
+            },
+            {
+              q: "Do you offer phased projects?",
+              a: "Yes. If budget or timing is a consideration, we can design your full yard plan and build it in phases across one or more seasons. This way the design is cohesive even if the construction happens over time."
+            },
+            {
+              q: "Is your work under warranty?",
+              a: "All hardscape installations are backed by our Built Right Guarantee covering craftsmanship and material integrity. We stand behind our work and return to address any issues that arise from our installation."
+            },
+            {
+              q: "Do you handle drainage and grading issues?",
+              a: "Drainage is one of the most common issues we solve on Calgary properties, particularly in communities with heavy clay soil. We use engineered grading, French drains, catch basins, and swales to direct water away from your foundation and prevent pooling. If you’re noticing water in your basement, garage, or yard after rain or snowmelt, a drainage assessment should be your first call."
+            }
           ].map((faq, i) => (
             <details key={i} className="group bg-white rounded-xl border border-black/5 overflow-hidden">
               <summary className="flex items-center justify-between p-6 cursor-pointer font-black text-lg hover:bg-gray-50 transition-colors">

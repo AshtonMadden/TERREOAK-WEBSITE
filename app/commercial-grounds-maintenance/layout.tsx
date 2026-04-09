@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Commercial Landscaping & Grounds Maintenance Calgary",
-  description: "Comprehensive exterior management for Calgary commercial properties. Priority snow removal, scheduled grounds maintenance, and digital reporting for total accountability.",
+  title: "Commercial Maintenance | Calgary",
+  description: "TERREOAK provides commercial grounds maintenance and snow removal in Calgary for condo complexes, industrial sites, and new construction. Fully insured. Digital reporting.",
 };
 
 export default function CommercialLayout({ children }: { children: React.ReactNode }) {

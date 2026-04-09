@@ -50,17 +50,20 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         }
       },
       {
-        "@type": "LocalBusiness",
+        "@type": "LandscapingService",
         "@id": "https://terreoak.ca/#localbusiness",
         "name": "TERREOAK Landscaping & Snow",
+        "legalName": "TERREOAK Landscaping & Snow",
         "url": "https://terreoak.ca",
         "telephone": "+1-587-707-7648",
         "email": "services@TERREOAK.ca",
         "image": "https://terreoak.ca/images/commercial.png",
         "address": {
           "@type": "PostalAddress",
+          "streetAddress": "Calgary & Surrounding Area",
           "addressLocality": "Calgary",
           "addressRegion": "AB",
+          "postalCode": "T2P",
           "addressCountry": "CA"
         },
         "geo": {
@@ -83,7 +86,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           "closes": "21:00"
         },
         "priceRange": "$$",
-        "areaServed": "Calgary & Surrounding Area",
+        "areaServed": {
+          "@type": "City",
+          "name": "Calgary"
+        },
         "serviceType": [
           "Landscape Construction",
           "Snow Removal",

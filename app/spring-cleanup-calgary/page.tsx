@@ -56,33 +56,33 @@ export default function SpringCleanupPage() {
                     <div className="absolute inset-0 bg-black/40 z-0"></div>
                 </div>
 
-                <div className="relative z-10 mx-auto max-w-6xl px-6 pt-48 pb-16 md:pt-56 md:pb-24 lg:pt-60 lg:pb-32 text-left">
+                <div className="relative z-10 mx-auto max-w-6xl px-6 pt-32 pb-12 md:pt-56 md:pb-24 lg:pt-60 lg:pb-32 text-left">
                     <p className="text-[14px] font-bold tracking-widest text-[#01fa6d] uppercase drop-shadow-md">
                         Calgary • Seasonal Services
                     </p>
-                    <h1 className="mt-4 text-[42px] md:text-[56px] lg:text-[64px] font-black leading-[1.1] tracking-tight text-white drop-shadow-2xl max-w-4xl uppercase">
+                    <h1 className="mt-2 text-[32px] md:text-[56px] lg:text-[64px] font-black leading-[1.1] tracking-tight text-white drop-shadow-2xl max-w-4xl uppercase">
                         CALGARY<br />
                         SPRING CLEANUP<br />
                         <span className="text-[#01fa6d]">Fresh Start for your Yard.</span>
                     </h1>
-                    <p className="mt-6 max-w-2xl text-[1.1rem] font-bold text-white/90 md:text-[1.3rem]">
+                    <p className="mt-4 max-w-2xl text-[1rem] font-bold text-white/90 md:text-[1.3rem]">
                         Get your yard ready for the season with professional spring cleanup services.
                         Power raking, aeration, and debris removal for a healthy, green lawn.
                     </p>
 
-                    <div className="mt-10 flex flex-col md:flex-row items-start md:items-center gap-8">
+                    <div className="mt-6 flex flex-col md:flex-row items-start md:items-center gap-8">
                         <div className="flex flex-wrap gap-4">
                             <a
                                 href="https://clienthub.getjobber.com/hubs/41b3399e-3795-43d8-afe2-e6c38c1b3e6e/public/requests/2249559/new"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="inline-flex items-center justify-center rounded-full bg-[#01fa6d] px-12 py-[16px] text-[16px] font-extrabold text-black border-2 border-white/10 hover:opacity-90 transition-all cursor-pointer shadow-xl shadow-[#01fa6d]/20 hover:-translate-y-1"
+                                className="inline-flex items-center justify-center rounded-full bg-[#01fa6d] px-8 md:px-12 py-[16px] text-[16px] font-extrabold text-black border-2 border-white/10 hover:opacity-90 transition-all cursor-pointer shadow-xl shadow-[#01fa6d]/20 hover:-translate-y-1"
                             >
-                                BOOK NOW
+                                FREE QUOTE
                             </a>
                             <a
                                 href="tel:+15877077648"
-                                className="inline-flex items-center justify-center rounded-full bg-white/10 backdrop-blur-sm px-12 py-[14px] text-[16px] font-extrabold text-white border-2 border-white/40 hover:bg-white/20 transition-colors"
+                                className="inline-flex items-center justify-center rounded-full bg-white/10 backdrop-blur-sm px-8 md:px-12 py-[14px] text-[16px] font-extrabold text-white border-2 border-white/40 hover:bg-white/20 transition-colors"
                             >
                                 CALL NOW
                             </a>
@@ -432,7 +432,7 @@ export default function SpringCleanupPage() {
                         style={styles.stickyCtaLink}
                         className="cursor-pointer border-none bg-transparent"
                     >
-                        BOOK NOW!
+                        FREE QUOTE!
                     </a>
                     <button
                         onClick={() => setIsCtaVisible(false)}

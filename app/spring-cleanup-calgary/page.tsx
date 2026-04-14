@@ -203,21 +203,22 @@ export default function SpringCleanupPage() {
                         },
                         {
                             name: "Lawn Boost Package",
-                            features: ["Leaf & debris cleanup", "First lawn cut & trim", "Core aeration", "Bagging & removal of lawn debris"],
+                            features: ["Leaf & debris cleanup", "First lawn cut & trim", "Core aeration"],
                             popular: false
                         },
                         {
                             name: "Lawn Thickening Package ⭐",
-                            features: ["Leaf & debris cleanup", "First lawn cut & trim", "Core aeration", "Power raking", "Fertilizer application", "Bagging & removal of lawn debris"],
+                            features: ["Leaf & debris cleanup", "First lawn cut & trim", "Core aeration", "Power raking", "Bagging & removal of lawn debris"],
                             popular: true
                         },
                         {
-                            name: "Lawn Revival Package",
-                            features: ["Leaf & debris cleanup", "First lawn cut & trim", "Core aeration", "Power raking", "Overseed application", "Double-pass overseeding", "Bagging & removal of lawn debris"],
+                            name: "Custom Package",
+                            desc: "Build it out yourself",
+                            features: ["Select only the services you need", "Mix and match cleanup options", "Targeted aeration & power raking", "Customized fertilization & overseeding", "Specialized garden bed detailing"],
                             popular: false
                         }
                     ].map((pkg, i) => {
-                        const isGreen = pkg.name === "Lawn Revival Package";
+                        const isGreen = pkg.name === "Custom Package";
                         const isLightGreen = pkg.name === "Lawn Boost Package";
                         const isOutlined = pkg.name === "Quick Start Cleanup";
                         const isDark = pkg.popular || isGreen;

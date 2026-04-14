@@ -16,6 +16,10 @@ const TestimonialSection = dynamic(() => import("./components/TestimonialSection
   ssr: true
 });
 
+const JobberLeadForm = dynamic(() => import("./components/JobberLeadForm"), {
+  ssr: false
+});
+
 const serviceCategories = [
   {
     title: "Landscape Construction & Irrigation",
@@ -297,6 +301,16 @@ export default function HomePage() {
         </div>
       </Section>
 
+
+      {/* JOBBER LEAD FORM */}
+      <Section id="home-form" title="REQUEST AN ESTIMATE" titleClassName="text-[#017a6d]">
+        <div className="max-w-6xl mx-auto w-full">
+          <JobberLeadForm
+            clienthubId="41b3399e-3795-43d8-afe2-e6c38c1b3e6e-2235504"
+            formUrl="https://clienthub.getjobber.com/client_hubs/41b3399e-3795-43d8-afe2-e6c38c1b3e6e/public/work_request/embedded_work_request_form?form_id=2235504"
+          />
+        </div>
+      </Section>
 
       {/* TESTIMONIALS */}
       <TestimonialSection

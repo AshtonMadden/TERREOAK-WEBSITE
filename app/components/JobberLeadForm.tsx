@@ -65,11 +65,10 @@ export default function JobberLeadForm({
     }, [clienthubId, formUrl]);
 
     return (
-        <div className="w-full mt-8 bg-white rounded-3xl p-4 md:p-10 border border-black/5 shadow-2xl min-h-[600px] relative transition-all max-w-5xl mx-auto flex flex-col">
+        <div className="w-full relative transition-all">
             {isLoading && (
-                <div className="absolute inset-0 flex flex-col items-center justify-center bg-white/90 backdrop-blur-sm z-50 rounded-3xl">
-                    <div className="w-12 h-12 border-4 border-[#01fa6d]/20 border-t-[#01fa6d] rounded-full animate-spin mb-4"></div>
-                    <p className="text-sm font-bold text-black/40 uppercase tracking-widest italic">Syncing with Jobber...</p>
+                <div className="absolute inset-0 flex flex-col items-center justify-center bg-white/50 z-50">
+                    <div className="w-12 h-12 border-4 border-[#01fa6d]/20 border-t-[#01fa6d] rounded-full animate-spin"></div>
                 </div>
             )}
 
@@ -77,21 +76,28 @@ export default function JobberLeadForm({
             <div
                 ref={containerRef}
                 id={clienthubId}
-                className="jobber-embed-container w-full min-h-[600px] block"
+                className="jobber-embed-container w-full block"
             ></div>
 
-            {/* Fallback if form is blocked by browser extensions/cors */}
-            <div className="mt-8 text-center pt-8 border-t border-black/5 opacity-50 hover:opacity-100 transition-opacity">
-                <p className="text-xs text-black/40 font-medium">Form blocked by your browser extensions? </p>
-                <a
-                    href={formUrl.replace("embedded_work_request_form", "work_request/new")}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    referrerPolicy="no-referrer"
-                    className="text-black font-bold underline text-xs hover:text-[#01fa6d]"
-                >
-                    Open request form in new tab
-                </a>
+            {/* Fallback Contact Bar */}
+            <div className="mt-8 bg-[#2c2d32] rounded-2xl p-8 md:p-10 flex flex-col items-center justify-center text-center shadow-xl border border-white/10 gap-6">
+                <p className="text-white/90 font-medium text-[16px] md:text-[18px] leading-relaxed max-w-2xl m-0">
+                    If lead form doesn't work feel free to shoot us an email or call.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 w-full justify-center mt-2">
+                    <a 
+                        href="mailto:services@terreoak.ca" 
+                        className="inline-flex items-center justify-center rounded-full bg-transparent border-2 border-[#01fa6d] text-[#01fa6d] px-10 py-4 font-black text-[16px] md:text-[18px] uppercase tracking-wide hover:bg-[#01fa6d] hover:text-black transition-all w-full sm:w-auto shadow-md"
+                    >
+                        services@terreoak.ca
+                    </a>
+                    <a 
+                        href="tel:+15877077648" 
+                        className="inline-flex items-center justify-center rounded-full bg-[#01fa6d] text-black px-10 py-4 font-black text-[16px] md:text-[18px] uppercase tracking-wide hover:bg-white transition-all shadow-lg w-full sm:w-auto"
+                    >
+                        587-707-7648
+                    </a>
+                </div>
             </div>
 
             <style jsx global>{`

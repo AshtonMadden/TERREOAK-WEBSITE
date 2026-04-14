@@ -72,12 +72,14 @@ export default function SpringCleanupPage() {
 
                     <div className="mt-10 flex flex-col md:flex-row items-start md:items-center gap-8">
                         <div className="flex flex-wrap gap-4">
-                            <button
-                                onClick={handleScrollToForm}
+                            <a
+                                href="https://clienthub.getjobber.com/hubs/41b3399e-3795-43d8-afe2-e6c38c1b3e6e/public/requests/2249559/new"
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 className="inline-flex items-center justify-center rounded-full bg-[#01fa6d] px-12 py-[16px] text-[16px] font-extrabold text-black border-2 border-white/10 hover:opacity-90 transition-all cursor-pointer shadow-xl shadow-[#01fa6d]/20 hover:-translate-y-1"
                             >
                                 BOOK NOW
-                            </button>
+                            </a>
                             <a
                                 href="tel:+15877077648"
                                 className="inline-flex items-center justify-center rounded-full bg-white/10 backdrop-blur-sm px-12 py-[14px] text-[16px] font-extrabold text-white border-2 border-white/40 hover:bg-white/20 transition-colors"
@@ -115,12 +117,14 @@ export default function SpringCleanupPage() {
                             From professional-grade core aeration that relieves soil compaction to thorough power raking that extracts performance-robbing thatch, we use the right equipment and techniques for Calgary&apos;s unique climate and soil conditions.
                         </p>
                         <div style={{ marginTop: 32 }}>
-                            <button
-                                onClick={handleScrollToForm}
+                            <a
+                                href="https://clienthub.getjobber.com/hubs/41b3399e-3795-43d8-afe2-e6c38c1b3e6e/public/requests/2249559/new"
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 className="inline-flex items-center justify-center rounded-lg bg-[#01fa6d] px-10 py-4 text-sm font-black text-black hover:opacity-90 transition-all transform hover:-translate-y-1 shadow-lg cursor-pointer"
                             >
                                 BOOK YOUR CLEANUP
-                            </button>
+                            </a>
                         </div>
                     </div>
                     <div
@@ -260,12 +264,14 @@ export default function SpringCleanupPage() {
                                         )}
 
                                         <div className="mt-auto">
-                                            <button
-                                                onClick={handleScrollToForm}
+                                            <a
+                                                href="https://clienthub.getjobber.com/hubs/41b3399e-3795-43d8-afe2-e6c38c1b3e6e/public/requests/2249559/new"
+                                                target="_blank"
+                                                rel="noopener noreferrer"
                                                 className={`w-full py-5 rounded-2xl text-[16px] font-black uppercase transition-all text-center block ${pkg.popular ? "bg-[#01fa6d] text-black hover:opacity-90 shadow-lg shadow-[#01fa6d]/20" : isGreen ? "bg-white text-[#017a6d] hover:bg-gray-100 shadow-lg" : "bg-[#2c2d32] text-white hover:bg-black shadow-lg shadow-black/5"}`}
                                             >
                                                 Select Package
-                                            </button>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -298,12 +304,14 @@ export default function SpringCleanupPage() {
                                         <span className="text-[#01fa6d] font-bold">•</span> Garden bed refresh and lawn prep for spring
                                     </li>
                                 </ul>
-                                <button
-                                    onClick={handleScrollToForm}
+                                <a
+                                    href="https://clienthub.getjobber.com/hubs/41b3399e-3795-43d8-afe2-e6c38c1b3e6e/public/requests/2249559/new"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     className="inline-flex items-center justify-center rounded-full bg-[#01fa6d] px-12 py-5 text-lg font-black text-black hover:opacity-90 transition-all transform hover:-translate-y-1 shadow-2xl shadow-[#01fa6d]/20"
                                 >
                                     BOOK YOUR WINDOW
-                                </button>
+                                </a>
                             </div>
                         </ScrollReveal>
 
@@ -417,13 +425,15 @@ export default function SpringCleanupPage() {
 
             {isCtaVisible && (
                 <div style={styles.stickyCtaContainer} className="stickyCtaWrapper animate-float-up">
-                    <button
-                        onClick={handleScrollToForm}
+                    <a
+                        href="https://clienthub.getjobber.com/hubs/41b3399e-3795-43d8-afe2-e6c38c1b3e6e/public/requests/2249559/new"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         style={styles.stickyCtaLink}
                         className="cursor-pointer border-none bg-transparent"
                     >
                         BOOK NOW!
-                    </button>
+                    </a>
                     <button
                         onClick={() => setIsCtaVisible(false)}
                         style={styles.closeSticky}

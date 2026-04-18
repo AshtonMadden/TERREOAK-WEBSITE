@@ -13,19 +13,20 @@ export default function NotFound() {
 
     return (
         <main className="bg-black min-h-screen flex flex-col items-center justify-center text-white px-6">
-            <Section wrapperClassName="bg-black">
-                <div className="max-w-4xl mx-auto text-center py-20">
+            <Section 
+                wrapperClassName="bg-black"
+                kicker="Page Not Found"
+                kickerClassName="text-[#01fa6d]"
+                title={<>LOOKS LIKE YOU&apos;RE<br />OFF THE PATH.</>}
+                titleClassName="text-white !text-4xl md:!text-6xl tracking-tight leading-tight uppercase"
+                hasBorder={false}
+            >
+                <div className="max-w-4xl mx-auto text-center">
                     <h1 className="text-[120px] md:text-[180px] font-black text-[#01fa6d] leading-none tracking-tighter opacity-20 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 select-none pointer-events-none">
                         404
                     </h1>
                     
                     <div className="relative z-10">
-                        <p className="text-[14px] font-bold tracking-[0.2em] text-[#01fa6d] uppercase mb-4">
-                            Page Not Found
-                        </p>
-                        <h2 className="text-4xl md:text-6xl font-black uppercase mb-8 tracking-tight leading-tight">
-                            LOOKS LIKE YOU&apos;RE<br />OFF THE PATH.
-                        </h2>
                         <p className="text-xl text-white/60 max-w-2xl mx-auto mb-12">
                             The page you&apos;re looking for doesn&apos;t exist or has been moved. Use the links below to get back to our core services.
                         </p>
@@ -35,7 +36,7 @@ export default function NotFound() {
                                 <Link
                                     key={service.href}
                                     href={service.href}
-                                    className="bg-white/5 border border-white/10 hover:border-[#01fa6d] p-6 rounded-2xl transition-all group"
+                                    className="bg-white/5 border border-white/10 hover:border-[#01fa6d] p-6 rounded-2xl transition-all group text-center"
                                 >
                                     <h3 className="text-sm font-black uppercase text-white group-hover:text-[#01fa6d] transition-colors">
                                         {service.name}

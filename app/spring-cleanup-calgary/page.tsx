@@ -72,17 +72,15 @@ export default function SpringCleanupPage() {
 
                     <div className="mt-6 flex flex-col md:flex-row items-start md:items-center gap-8">
                         <div className="flex flex-wrap gap-4">
-                            <a
-                                href="https://clienthub.getjobber.com/hubs/41b3399e-3795-43d8-afe2-e6c38c1b3e6e/public/requests/2249559/new"
-                                target="_blank"
-                                rel="noopener noreferrer"
+                            <button
+                                onClick={handleScrollToForm}
                                 className="inline-flex items-center justify-center rounded-full bg-[#01fa6d] px-8 md:px-12 py-[16px] text-[16px] font-extrabold text-black border-2 border-white/10 hover:opacity-90 transition-all cursor-pointer shadow-xl shadow-[#01fa6d]/20 hover:-translate-y-1"
                             >
                                 FREE QUOTE
-                            </a>
-                            <a
+                            </button>
+                             <a
                                 href="tel:+15877077648"
-                                className="inline-flex items-center justify-center rounded-full bg-white/10 backdrop-blur-sm px-8 md:px-12 py-[14px] text-[16px] font-extrabold text-white border-2 border-white/40 hover:bg-white/20 transition-colors"
+                                className="inline-flex items-center justify-center rounded-full bg-[#01fa6d] px-8 md:px-12 py-[16px] text-[16px] font-extrabold text-black border-2 border-white/10 hover:opacity-90 transition-all shadow-xl"
                             >
                                 CALL NOW
                             </a>
@@ -117,14 +115,12 @@ export default function SpringCleanupPage() {
                             From professional-grade core aeration that relieves soil compaction to thorough power raking that extracts performance-robbing thatch, we use the right equipment and techniques for Calgary&apos;s unique climate and soil conditions.
                         </p>
                         <div style={{ marginTop: 32 }}>
-                            <a
-                                href="https://clienthub.getjobber.com/hubs/41b3399e-3795-43d8-afe2-e6c38c1b3e6e/public/requests/2249559/new"
-                                target="_blank"
-                                rel="noopener noreferrer"
+                            <button
+                                onClick={handleScrollToForm}
                                 className="inline-flex items-center justify-center rounded-lg bg-[#01fa6d] px-10 py-4 text-sm font-black text-black hover:opacity-90 transition-all transform hover:-translate-y-1 shadow-lg cursor-pointer"
                             >
                                 BOOK YOUR CLEANUP
-                            </a>
+                            </button>
                         </div>
                     </div>
                     <div
@@ -155,6 +151,72 @@ export default function SpringCleanupPage() {
                 </div>
             </section>
 
+            {/* SERVICES DETAIL SECTION */}
+            <Section 
+                kicker="Service Details" 
+                title="MAINTENANCE THAT MATTERS" 
+                titleClassName="text-[#017a6d] uppercase"
+                wrapperClassName="bg-white"
+            >
+                <div className="max-w-4xl mx-auto text-center mb-16">
+                    <p className="text-xl text-black/70 font-medium">
+                        Proper spring maintenance is the foundation of a healthy lawn. Our core aeration and power raking services are designed to give your grass the best possible start after a long Calgary winter.
+                    </p>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                    {/* Core Aeration Info */}
+                    <ScrollReveal className="bg-gray-50 rounded-3xl p-8 border border-black/5 shadow-sm hover:shadow-md transition-shadow">
+                        <h3 className="text-2xl font-black uppercase text-[#017a6d] mb-4">Core Aeration</h3>
+                        <p className="text-black/70 mb-6 leading-relaxed">
+                            A process of removing small plugs of soil and thatch from the lawn to improve soil aeration and water intake.
+                        </p>
+                    </ScrollReveal>
+
+                    <ScrollReveal className="bg-[#017a6d] rounded-3xl p-8 shadow-xl border border-white/5">
+                        <h3 className="text-xl font-black uppercase text-[#01fa6d] mb-6 tracking-wide">Good For:</h3>
+                        <ul className="space-y-4">
+                            {[
+                                "Relieving soil compaction in high-traffic areas",
+                                "Enhancing water and oxygen absorption to roots",
+                                "Improving nutrient uptake from fertilizers",
+                                "Promoting deeper, healthier root systems"
+                            ].map((item, i) => (
+                                <li key={i} className="flex items-start gap-3">
+                                    <span className="text-[#01fa6d] font-bold text-xl leading-none">•</span>
+                                    <span className="text-white/90 font-medium leading-tight">{item}</span>
+                                </li>
+                            ))}
+                        </ul>
+                    </ScrollReveal>
+
+                    {/* Power Raking Info */}
+                    <ScrollReveal className="bg-gray-50 rounded-3xl p-8 border border-black/5 shadow-sm hover:shadow-md transition-shadow">
+                        <h3 className="text-2xl font-black uppercase text-[#017a6d] mb-4">Power Raking</h3>
+                        <p className="text-black/70 mb-6 leading-relaxed">
+                            A mechanical process that removes the excess layer of thatch (dead grass) from your lawn that builds up over winter.
+                        </p>
+                    </ScrollReveal>
+
+                    <ScrollReveal className="bg-[#017a6d] rounded-3xl p-8 shadow-xl border border-white/5">
+                        <h3 className="text-xl font-black uppercase text-[#01fa6d] mb-6 tracking-wide">Good For:</h3>
+                        <ul className="space-y-4">
+                            {[
+                                "Removing heavy thatch buildup after winter",
+                                "Increasing airflow and light to new growth",
+                                "Encouraging thicker, more lush grass growth",
+                                "Preparing your lawn for overseeding"
+                            ].map((item, i) => (
+                                <li key={i} className="flex items-start gap-3">
+                                    <span className="text-[#01fa6d] font-bold text-xl leading-none">•</span>
+                                    <span className="text-white/90 font-medium leading-tight">{item}</span>
+                                </li>
+                            ))}
+                        </ul>
+                    </ScrollReveal>
+                </div>
+            </Section>
+
             {/* PROCESS SECTION */}
             <Section
                 kicker="Our Process"
@@ -181,6 +243,68 @@ export default function SpringCleanupPage() {
                             </div>
                         </ScrollReveal>
                     ))}
+                </div>
+            </Section>
+
+            {/* WHY IT MATTERS SECTION */}
+            <Section 
+                kicker="The Benefits" 
+                title="WHY SPRING CLEANUP MATTERS" 
+                titleClassName="text-[#017a6d] uppercase"
+                wrapperClassName="bg-gray-50"
+            >
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                    <ScrollReveal>
+                        <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border-8 border-white">
+                            <Image
+                                src="/spring-cleanup-pics/Calgary-Spring-Cleanup.jpg"
+                                alt="Professional spring cleanup results in Calgary"
+                                fill
+                                className="object-cover"
+                            />
+                        </div>
+                    </ScrollReveal>
+                    <ScrollReveal>
+                        <div className="space-y-8">
+                            <p className="text-xl text-black/70 font-medium leading-relaxed uppercase tracking-tight">
+                                A healthy summer lawn starts with a professional spring cleanup.
+                            </p>
+                            
+                            <div className="space-y-6">
+                                {[
+                                    {
+                                        title: "Lawn Health & Disease Prevention",
+                                        desc: "Removing wet, matted leaves and debris prevents mold and snow blight from suffocating your grass."
+                                    },
+                                    {
+                                        title: "Jumpstarts New Growth",
+                                        desc: "Clearing away winter thatch and salt allows sunlight and oxygen to reach the soil, triggering early spring green-up."
+                                    },
+                                    {
+                                        title: "Optimizes Nutrient Flow",
+                                        desc: "When combined with aeration, a professional cleanup ensures that fertilizers and water reach the root zone efficiently."
+                                    }
+                                ].map((item, i) => (
+                                    <div key={i} className="flex gap-4">
+                                        <div className="mt-1.5 shrink-0 w-2 h-2 rounded-full bg-[#01fa6d]" />
+                                        <div>
+                                            <h4 className="text-lg font-black text-[#017a6d] uppercase tracking-tight">{item.title}</h4>
+                                            <p className="text-black/60 leading-relaxed mt-1">{item.desc}</p>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+
+                            <div className="pt-4">
+                                <button
+                                    onClick={handleScrollToForm}
+                                    className="inline-flex items-center justify-center rounded-full bg-[#01fa6d] px-10 py-5 text-[16px] font-black text-black hover:opacity-90 transition-all transform hover:-translate-y-1 shadow-xl"
+                                >
+                                    BOOK YOUR CLEANUP
+                                </button>
+                            </div>
+                        </div>
+                    </ScrollReveal>
                 </div>
             </Section>
 
@@ -264,14 +388,12 @@ export default function SpringCleanupPage() {
                                         )}
 
                                         <div className="mt-auto">
-                                            <a
-                                                href="https://clienthub.getjobber.com/hubs/41b3399e-3795-43d8-afe2-e6c38c1b3e6e/public/requests/2249559/new"
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                className={`w-full py-5 rounded-2xl text-[16px] font-black uppercase transition-all text-center block ${pkg.popular ? "bg-[#01fa6d] text-black hover:opacity-90 shadow-lg shadow-[#01fa6d]/20" : isGreen ? "bg-white text-[#017a6d] hover:bg-gray-100 shadow-lg" : "bg-[#2c2d32] text-white hover:bg-black shadow-lg shadow-black/5"}`}
+                                            <button
+                                                onClick={handleScrollToForm}
+                                                className="w-full py-5 rounded-2xl text-[16px] font-black uppercase transition-all text-center block bg-[#01fa6d] text-black hover:opacity-90 shadow-lg shadow-[#01fa6d]/20"
                                             >
                                                 Select Package
-                                            </a>
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
@@ -304,14 +426,12 @@ export default function SpringCleanupPage() {
                                         <span className="text-[#01fa6d] font-bold">•</span> Garden bed refresh and lawn prep for spring
                                     </li>
                                 </ul>
-                                <a
-                                    href="https://clienthub.getjobber.com/hubs/41b3399e-3795-43d8-afe2-e6c38c1b3e6e/public/requests/2249559/new"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
+                                <button
+                                    onClick={handleScrollToForm}
                                     className="inline-flex items-center justify-center rounded-full bg-[#01fa6d] px-12 py-5 text-lg font-black text-black hover:opacity-90 transition-all transform hover:-translate-y-1 shadow-2xl shadow-[#01fa6d]/20"
                                 >
                                     BOOK YOUR WINDOW
-                                </a>
+                                </button>
                             </div>
                         </ScrollReveal>
 
@@ -425,15 +545,13 @@ export default function SpringCleanupPage() {
 
             {isCtaVisible && (
                 <div style={styles.stickyCtaContainer} className="stickyCtaWrapper animate-float-up">
-                    <a
-                        href="https://clienthub.getjobber.com/hubs/41b3399e-3795-43d8-afe2-e6c38c1b3e6e/public/requests/2249559/new"
-                        target="_blank"
-                        rel="noopener noreferrer"
+                    <button
+                        onClick={handleScrollToForm}
                         style={styles.stickyCtaLink}
                         className="cursor-pointer border-none bg-transparent"
                     >
                         FREE QUOTE!
-                    </a>
+                    </button>
                     <button
                         onClick={() => setIsCtaVisible(false)}
                         style={styles.closeSticky}
@@ -484,16 +602,18 @@ const styles: Record<string, React.CSSProperties> = {
         justifyContent: "center",
     },
     secondaryBtn: {
-        border: "2px solid rgba(0,0,0,0.2)",
+        background: "#01fa6d",
         color: "#000",
-        padding: "12px 18px",
-        borderRadius: 8,
-        fontWeight: 700,
+        padding: "12px 24px",
+        borderRadius: "999px",
+        fontWeight: 900,
         textDecoration: "none",
         display: "inline-flex",
         alignItems: "center",
         justifyContent: "center",
-        background: "transparent",
+        border: "none",
+        fontSize: "14px",
+        boxShadow: "0 4px 12px rgba(1, 250, 109, 0.2)",
     },
     stickyCtaContainer: {
         position: "fixed",

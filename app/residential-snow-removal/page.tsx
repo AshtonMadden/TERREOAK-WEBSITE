@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { Section, ScrollReveal, Carousel } from "../components/UI";
+
 import OurBlogSection from "../components/OurBlogSection";
 import StatsCounter from "./StatsCounter";
 import GoogleReviewBadge from "../components/GoogleReviewBadge";
@@ -14,9 +15,38 @@ const JobberLeadForm = dynamic(() => import("../components/JobberLeadForm"), {
   ssr: false
 });
 
+const SnowflakeSVG = ({ size = 24, strokeWidth = 2, className = "" }) => (
+  <svg 
+    xmlns="http://www.w3.org/2000/svg" 
+    width={size} 
+    height={size} 
+    viewBox="0 0 24 24" 
+    fill="none" 
+    stroke="currentColor" 
+    strokeWidth={strokeWidth} 
+    strokeLinecap="round" 
+    strokeLinejoin="round" 
+    className={className}
+  >
+    <line x1="2" y1="12" x2="22" y2="12" />
+    <line x1="12" y1="2" x2="12" y2="22" />
+    <path d="m20 16-4-4 4-4" />
+    <path d="m4 8 4 4-4 4" />
+    <path d="m16 4-4 4-4-4" />
+    <path d="m8 20 4-4 4 4" />
+  </svg>
+);
+
+
 export default function ResidentialSnowBlowingPage() {
   const [isCtaVisible, setIsCtaVisible] = useState(false);
   const [isAfterOnTop, setIsAfterOnTop] = useState(false);
+  const [snowFillHeight, setSnowFillHeight] = useState("0%");
+
+  useEffect(() => {
+    const timer = setTimeout(() => setSnowFillHeight("72%"), 500);
+    return () => clearTimeout(timer);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -100,7 +130,6 @@ export default function ResidentialSnowBlowingPage() {
 
         { end: 2, label: "TERREOAK Crews" },
       ]} />
-
 
       <section style={styles.offerSection}>
         <div style={styles.inner} className="text-left">
@@ -196,22 +225,168 @@ export default function ResidentialSnowBlowingPage() {
         </div>
       </section>
 
-      {/* NEIGHBOURHOOD COVERAGE */}
+      {/* SNOW TRACKER SECTION */}
+      <section className="bg-[#2c2d32] py-12 border-b border-white/5">
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+            {/* Visual Snowflake Tracker */}
+            <ScrollReveal className="bg-black/40 rounded-3xl p-8 border border-white/10 flex flex-col items-center">
+              <p className="text-[#01fa6d] text-[12px] font-black uppercase tracking-[0.2em] mb-6">Seasonal Progress</p>
+              <div className="relative w-40 h-40 flex items-center justify-center">
+                {/* Background Snowflake (Empty) */}
+                <SnowflakeSVG size={140} strokeWidth={1} className="text-white/10" />
+                
+                {/* Filled Snowflake (Overlay) */}
+                <div 
+                  className="absolute inset-x-0 bottom-0 overflow-hidden flex items-end justify-center transition-all duration-[2500ms] ease-out" 
+                  style={{ height: snowFillHeight }}
+                >
+                  <SnowflakeSVG size={140} strokeWidth={2} className="text-[#01fa6d] mb-0" />
+                </div>
+
+                {/* CM Multiplier Label */}
+                <div className="absolute inset-0 flex flex-col items-center justify-center pt-2">
+                  <span className="text-4xl font-black text-white leading-none drop-shadow-lg">142</span>
+                  <span className="text-[11px] font-black text-[#01fa6d] uppercase tracking-[0.2em] mt-1 bg-black/50 px-2 py-0.5 rounded">CM Total</span>
+                </div>
+              </div>
+            </ScrollReveal>
+
+            {/* Stats Breakdown */}
+            <ScrollReveal className="md:col-span-2 space-y-6">
+              <div>
+                <h2 className="text-4xl font-black text-white uppercase tracking-tight leading-tight">
+                  2025-2026 <br />
+                  <span className="text-[#01fa6d]">SNOW TRACKER.</span>
+                </h2>
+                <p className="text-white/60 font-medium mt-2 max-w-xl text-lg">
+                  We track every centimeter so you don&apos;t have to. Our crews trigger at just 1cm of accumulation, ensuring your driveway is clear before the ice builds up.
+                </p>
+              </div>
+              
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                {[
+                  { label: "Season Avg", val: "129cm" },
+                  { label: "Current Total", val: "142cm", highlight: true },
+                  { label: "Last Snowfall", val: "12cm" },
+                  { label: "Visits to Date", val: "38" }
+                ].map((stat, i) => (
+                  <div key={i} className={`p-4 rounded-2xl border ${stat.highlight ? 'bg-[#01fa6d] border-[#01fa6d]' : 'bg-white/5 border-white/10'}`}>
+                    <p className={`text-[10px] font-black uppercase tracking-widest ${stat.highlight ? 'text-black' : 'text-white/40'}`}>{stat.label}</p>
+                    <p className={`text-xl font-black mt-1 ${stat.highlight ? 'text-black' : 'text-white'}`}>{stat.val}</p>
+                  </div>
+                ))}
+              </div>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
+      {/* SERVICE AREA SECTION */}
       <Section
-        kicker="Coverage Area"
-        kickerClassName="text-[#017a6d]"
-        title="CALGARY NEIGHBOURHOODS WE SERVE"
+        kicker="Service Area"
+        title="OUR CALGARY SERVICE ZONES"
         titleClassName="text-black !text-[30.6px] uppercase"
         wrapperClassName="bg-white"
         hasBorder={true}
       >
-        <div className="max-w-4xl">
-          <p className="text-[18px] text-black/80 leading-relaxed font-medium">
-            We run established routes across all Calgary quadrants, including <strong>Auburn Bay, Mahogany, Cranston, Copperfield, McKenzie Towne, Legacy, and Walden</strong> in the SE; <strong>Evergreen, Shawnessy, Silverado, and Chaparral</strong> in the SW.
-          </p>
-          <p className="mt-4 text-[18px] text-[#017a6d] font-bold">
-            Don’t see your neighbourhood? <a href="tel:+15877077648" className="underline underline-offset-4 decoration-2">Call us</a> — we may have availability on a nearby route.
-          </p>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mt-8">
+          <ScrollReveal>
+            <div className="space-y-6">
+              <p className="text-[20px] text-black/80 leading-relaxed font-bold uppercase tracking-tight">
+                High-density routes for maximum reliability.
+              </p>
+              <p className="text-[17px] text-black/70 leading-relaxed">
+                We use a tiered zone system to guarantee our 24-hour service standard. <strong>Zone 1</strong> is our core service area, where our crews are consistently active during every storm.
+              </p>
+              
+              <div className="space-y-6 pt-4">
+                <div className="flex gap-4">
+                  <div className="w-12 h-12 rounded-full bg-[#01fa6d] flex-shrink-0 flex items-center justify-center font-black text-black">1</div>
+                  <div>
+                    <h4 className="text-[#017a6d] font-black uppercase tracking-wider text-sm">Zone 1: Southeast Calgary</h4>
+                    <p className="text-sm text-black/60 mt-1">Auburn Bay, Mahogany, Cranston, Copperfield, McKenzie Towne, Legacy, and Walden.</p>
+                  </div>
+                </div>
+
+                <div className="flex gap-4">
+                  <div className="w-12 h-12 rounded-full bg-[#01fa6d]/80 flex-shrink-0 flex items-center justify-center font-black text-black">2</div>
+                  <div>
+                    <h4 className="text-[#017a6d] font-black uppercase tracking-wider text-sm">Zone 2: Southwest Calgary</h4>
+                    <p className="text-sm text-black/60 mt-1">Evergreen, Shawnessy, Silverado, Chaparral, Bridlewood, and Somerset.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="pt-6 border-t border-black/5">
+                <p className="text-[16px] text-[#017a6d] font-bold">
+                  Outside these areas? <a href="tel:+15877077648" className="underline underline-offset-4 decoration-2">Call for availability</a>
+                </p>
+              </div>
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal className="relative group/map">
+            <div className="relative aspect-square rounded-3xl overflow-hidden shadow-2xl border-4 border-gray-100 bg-white">
+              {/* Base Map Image */}
+              <Image
+                src="/calgary-base-map.png"
+                alt="Interactive Calgary Service Zones"
+                fill
+                className="object-cover transition-transform duration-700 group-hover/map:scale-[1.02]"
+              />
+              
+              {/* Interactive SVG Zones Overlay */}
+              <div className="absolute inset-0 z-10 pointer-events-none">
+                <svg viewBox="0 0 100 100" className="w-full h-full transition-all duration-700">
+                  {/* SW Zone Shape - Hugging Ring Road */}
+                  <path 
+                    d="M 50,55 L 12,55 Q 5,75 15,85 Q 25,92 50,92 Z" 
+                    fill="#01fa6d" fillOpacity="0.45" 
+                    stroke="#01fa6d" strokeWidth="0.5" 
+                    className="transition-all hover:fill-opacity-60"
+                  />
+                  
+                  {/* SE Zone Shape - Hugging Ring Road */}
+                  <path 
+                    d="M 50,55 L 88,55 Q 95,75 85,85 Q 75,92 50,92 Z" 
+                    fill="#01fa6d" fillOpacity="0.45" 
+                    stroke="#01fa6d" strokeWidth="0.5" 
+                    className="transition-all hover:fill-opacity-60"
+                  />
+                  
+                  {/* Zone Labels - Solid Black Pills */}
+                  <g className="font-black text-[3.5px] uppercase tracking-tighter">
+                    {/* SW Label (Zone 2) */}
+                    <rect x="18" y="70" width="24" height="6" rx="3" fill="#01fa6d" />
+                    <text x="30" y="74.2" textAnchor="middle" fill="black">SERVICE ZONE 2: SW</text>
+                    
+                    {/* SE Label (Zone 1) */}
+                    <rect x="58" y="70" width="24" height="6" rx="3" fill="#01fa6d" />
+                    <text x="70" y="74.2" textAnchor="middle" fill="black">SERVICE ZONE 1: SE</text>
+
+                    {/* Boundary Marker */}
+                    <line x1="50" y1="55" x2="50" y2="92" stroke="black" strokeWidth="0.2" strokeDasharray="1,1" opacity="0.3" />
+                  </g>
+                </svg>
+              </div>
+
+              {/* Legend Overlay on Map */}
+              <div className="absolute bottom-6 left-6 right-6 z-20">
+                <div className="flex justify-between items-end">
+                  <div className="bg-black text-white px-5 py-3 rounded-2xl border border-white/10 shadow-2xl">
+                    <div className="flex items-center gap-2 mb-1">
+                      <div className="w-2 h-2 rounded-full bg-[#01fa6d] animate-pulse" />
+                      <span className="text-[10px] font-black uppercase tracking-widest text-[#01fa6d]">Active Service Area</span>
+                    </div>
+                    <p className="text-[11px] font-bold text-white/90 italic">South Calgary Ring-Road Priority</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="absolute inset-0 ring-1 ring-inset ring-black/5 pointer-events-none" />
+            </div>
+          </ScrollReveal>
         </div>
       </Section>
 

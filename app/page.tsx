@@ -129,6 +129,10 @@ export default function HomePage() {
             <span className="text-[#01fa6d]">Construction & Snow Removal.</span>
           </h1>
 
+          <p className="mt-6 max-w-2xl text-[1.2rem] md:text-[1.5rem] font-black text-white italic tracking-wide drop-shadow-md">
+            "Where The Sun Meets Soil"
+          </p>
+
           <p className="mt-4 max-w-2xl text-[1rem] font-bold text-white/90 md:text-[1.2rem]">
             Commercial & Residential | Design • Build • Maintain
           </p>

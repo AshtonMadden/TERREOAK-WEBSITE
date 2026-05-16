@@ -46,13 +46,15 @@ export default function SpringCleanupPage() {
             {/* HERO */}
             <section className="relative min-h-screen flex flex-col justify-center border-b border-black/10 overflow-hidden bg-black">
                 <div className="absolute inset-0 z-0">
-                    <Image
-                        src="/spring-cleanup-pics/Leaf-Cleanup-near-me.jpg"
-                        alt="Professional spring leaf cleanup service in Calgary"
-                        fill
-                        priority
-                        className="object-cover"
-                    />
+                    <video
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        className="absolute inset-0 w-full h-full object-cover"
+                    >
+                        <source src="/videos/1B200505-8980-40F6-8F8F-D3B3CBEEAFBA.mp4" type="video/mp4" />
+                    </video>
                     <div className="absolute inset-0 bg-black/40 z-0"></div>
                 </div>
 

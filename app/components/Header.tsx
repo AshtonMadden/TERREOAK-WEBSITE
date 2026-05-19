@@ -31,7 +31,7 @@ export default function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      setIsScrolled(window.scrollY > 20 && window.innerWidth >= 1024);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -64,7 +64,7 @@ export default function Header() {
           transition: "all 0.3s ease"
         }}>
           <div style={styles.topInner}>
-            <div style={styles.topText} className="top-bar-text-container flex justify-center md:justify-start gap-4">
+            <div style={styles.topText} className="top-bar-text-container flex flex-row items-center justify-center md:justify-start gap-2 sm:gap-4 whitespace-nowrap text-[11px] sm:text-[13px]">
               <a href="tel:+15877077648" className="hover:text-white/80 transition-colors">(587) 707-7648</a>
               <span className="opacity-50">|</span>
               <a href="mailto:services@TERREOAK.ca" className="hover:text-white/80 transition-colors">services@TERREOAK.ca</a>

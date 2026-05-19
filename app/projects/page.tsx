@@ -5,7 +5,7 @@ import Image from "next/image";
 import { Section, ScrollReveal } from "../components/UI";
 import OurBlogSection from "../components/OurBlogSection";
 
-export default function PortfolioPage() {
+export default function ProjectsPage() {
     const allImages = [
         // Landscaping
         { src: "/Landscape web page pics/Calgary-Concrete-pour.JPG", alt: "Calgary Concrete Pour" },
@@ -59,7 +59,7 @@ export default function PortfolioPage() {
                         TERREOAK • Work & Results
                     </p>
                     <h1 className="mt-4 text-[42px] md:text-[56px] lg:text-[64px] font-black leading-[1.1] tracking-tight text-white max-w-4xl uppercase drop-shadow-2xl">
-                        Our Portfolio<br />
+                        Our Projects<br />
                         <span className="text-[#01fa6d]">Proven in Calgary.</span>
                     </h1>
                     <p className="mt-6 max-w-2xl text-[1.1rem] font-bold text-white/90 md:text-[1.3rem] drop-shadow-lg">

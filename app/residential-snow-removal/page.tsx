@@ -546,7 +546,7 @@ export default function ResidentialSnowBlowingPage() {
       </Section>
 
       {/* RECENT PROJECTS (Gallery) */}
-      <Section kicker="Portfolio" title="Our Recent Work" titleClassName="text-[#017a6d]" wrapperClassName="bg-white">
+      <Section kicker="Projects" title="Our Recent Work" titleClassName="text-[#017a6d]" wrapperClassName="bg-white">
         <Carousel className="mt-12">
           {[
             { src: "/Snow Page web pics/Ice-removal-after.JPG", alt: "Ice Removal After" },
@@ -574,10 +574,10 @@ export default function ResidentialSnowBlowingPage() {
         </Carousel>
         <div className="mt-12 text-center">
           <Link
-            href="/portfolio"
+            href="/projects"
             className="inline-flex items-center justify-center rounded-lg border-2 border-[#017a6d] px-8 py-3 text-sm font-bold text-[#017a6d] hover:bg-[#017a6d] hover:text-white transition-all shadow-md hover:-translate-y-1"
           >
-            VIEW FULL PORTFOLIO
+            VIEW ALL PROJECTS
           </Link>
         </div>
       </Section>

@@ -386,7 +386,7 @@ export default function SpringCleanupPage() {
             </Section>
 
             {/* PHOTO GALLERY */}
-            <Section kicker="Portfolio" title="OUR RECENT CLEANUPS" titleClassName="text-[#01fa6d]">
+            <Section kicker="Projects" title="OUR RECENT CLEANUPS" titleClassName="text-[#01fa6d]">
                 <Carousel className="mt-12">
                     {[
                         { src: "/spring-cleanup-pics/Calgary-Core-Aeration.JPG", alt: "Calgary Core Aeration" },

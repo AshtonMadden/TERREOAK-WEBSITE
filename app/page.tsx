@@ -140,7 +140,7 @@ export default function HomePage() {
           <div className="mt-6 flex flex-col md:flex-row items-start md:items-center gap-8">
             <div className="flex flex-wrap gap-4">
               <Link
-                href="/portfolio"
+                href="/projects"
                 className="inline-flex items-center justify-center rounded-full bg-[#01fa6d]/80 backdrop-blur-md px-8 md:px-12 py-[16px] text-[16px] font-extrabold text-black border-2 border-white/10 hover:bg-[#01fa6d] transition-all transform hover:-translate-y-1 shadow-xl shadow-[#01fa6d]/20"
               >
                 SEE RECENT PROJECTS
@@ -384,7 +384,7 @@ export default function HomePage() {
 
       {/* GALLERY */}
       <Section
-        kicker="Portfolio"
+        kicker="Projects"
         title="OUR WORK"
         titleClassName="text-[#017a6d]"
         wrapperClassName="bg-white"
@@ -408,10 +408,10 @@ export default function HomePage() {
         </Carousel>
         <div className="mt-12 text-center">
           <Link
-            href="/portfolio"
+            href="/projects"
             className="inline-flex items-center justify-center rounded-lg border-2 border-[#017a6d] px-8 py-3 text-sm font-bold text-[#017a6d] hover:bg-[#017a6d] hover:text-white transition-all shadow-md hover:-translate-y-1"
           >
-            VIEW FULL PORTFOLIO
+            VIEW ALL PROJECTS
           </Link>
         </div>
       </Section>

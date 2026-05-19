@@ -279,7 +279,7 @@ export default function FallCleanupPage() {
 
 
             {/* PHOTO GALLERY */}
-            <Section kicker="Portfolio" title="OUR RECENT CLEANUPS" titleClassName="text-[#01fa6d]">
+            <Section kicker="Projects" title="OUR RECENT CLEANUPS" titleClassName="text-[#01fa6d]">
                 <Carousel className="mt-12">
                     {[
                         { src: "/spring-cleanup-pics/Copperfield-leaf-cleanup.JPG", alt: "Copperfield leaf cleanup" },

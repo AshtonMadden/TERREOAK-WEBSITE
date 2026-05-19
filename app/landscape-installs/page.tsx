@@ -281,7 +281,7 @@ export default function LandscapeInstallsPage() {
       </Section>
 
       {/* RECENT PROJECTS (Gallery) */}
-      <Section kicker="Portfolio" title="Our Recent Projects" titleClassName="text-[#017a6d]" wrapperClassName="bg-white">
+      <Section kicker="Projects" title="Our Recent Projects" titleClassName="text-[#017a6d]" wrapperClassName="bg-white">
         <Carousel className="mt-12">
           {[
             { src: "/Landscape web page pics/Calgary-Concrete-pour.JPG", alt: "Calgary Concrete Pour" },
@@ -308,10 +308,10 @@ export default function LandscapeInstallsPage() {
 
       <div className="mt-12 text-center pb-24">
         <Link
-          href="/portfolio"
+          href="/projects"
           className="inline-flex items-center justify-center rounded-lg border-2 border-[#017a6d] px-8 py-3 text-sm font-bold text-[#017a6d] hover:bg-[#017a6d] hover:text-white transition-all shadow-md hover:-translate-y-1"
         >
-          VIEW FULL PORTFOLIO
+          VIEW ALL PROJECTS
         </Link>
       </div>
 

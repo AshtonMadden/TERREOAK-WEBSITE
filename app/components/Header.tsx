@@ -40,83 +40,102 @@ export default function Header() {
   const isActive = (path: string) => pathname === path;
   const isParentActive = (paths: string[]) => paths.some(path => pathname === path);
 
+  const getTextLogoSrc = () => {
+    if (pathname.includes("snow-removal")) return "/snow-text-logo.png";
+    return "/landscape-text-logo.png";
+  };
+
   return (
     <header style={styles.header}>
       <div style={{
-        background: isScrolled ? "#2c2d32" : "transparent",
+        background: "#fafafa",
         backdropFilter: isScrolled ? "none" : "blur(16px)",
         WebkitBackdropFilter: isScrolled ? "none" : "blur(16px)",
-        borderBottom: "1px solid rgba(255,255,255,0.08)",
+        borderBottom: "1px solid rgba(0,0,0,0.05)",
         transition: "background 0.3s ease, backdrop-filter 0.3s ease"
       }}>
-        {/* Top hours banner */}
-        <div style={styles.topBar}>
+        {/* Top contact banner */}
+        <div style={{
+          ...styles.topBar,
+          maxHeight: isScrolled ? 0 : 40,
+          opacity: isScrolled ? 0 : 1,
+          overflow: "hidden",
+          padding: isScrolled ? 0 : "6px 0",
+          transition: "all 0.3s ease"
+        }}>
           <div style={styles.topInner}>
-            <div style={styles.topText} className="top-bar-text-container">
-              <span>OPEN 7 DAYS A WEEK: 6AM–9PM</span>
+            <div style={styles.topText} className="top-bar-text-container flex justify-center md:justify-start gap-4">
+              <a href="tel:+15877077648" className="hover:text-white/80 transition-colors">(587) 707-7648</a>
+              <span className="opacity-50">|</span>
+              <a href="mailto:services@TERREOAK.ca" className="hover:text-white/80 transition-colors">services@TERREOAK.ca</a>
             </div>
           </div>
         </div>
 
         {/* Main nav */}
-        <div style={styles.mainBar}>
+        <div style={{ ...styles.mainBar, minHeight: isScrolled ? 55 : 80, padding: isScrolled ? "0" : "5px 0", transition: "all 0.3s ease" }}>
           <div style={styles.mainInner}>
             {/* Logo = Home */}
             <Link href="/" style={styles.logoWrap} aria-label="TERREOAK Home">
               <Image
-                src="/logo.svg"
+                src="/logo.png"
                 alt="TERREOAK Landscaping"
-                width={200}
-                height={54}
+                width={360}
+                height={70}
                 priority
-                style={{ height: "54px", width: "auto" }}
+                style={{ height: isScrolled ? "46px" : "70px", width: "auto", transition: "height 0.3s ease" }}
                 className="object-contain"
+              />
+              <Image
+                src={getTextLogoSrc()}
+                alt="TERREOAK"
+                width={360}
+                height={55}
+                priority
+                style={{ height: isScrolled ? "38px" : "55px", width: "auto", marginLeft: "-18px", transition: "height 0.3s ease" }}
+                className="object-contain hidden sm:block"
               />
             </Link>
 
             {/* Desktop Nav */}
-            <nav className="nav-desktop hidden lg:flex items-center gap-4">
+            <nav className="nav-desktop hidden lg:flex items-center gap-1 xl:gap-4">
               <Link
                 href="/landscape-installs"
+                className="group relative inline-block"
                 style={{
                   ...styles.navLink,
-                  color: isActive("/landscape-installs") ? "#01fa6d" : "#ffffff",
-                  textDecoration: isActive("/landscape-installs") ? "underline" : "none",
-                  textUnderlineOffset: "8px",
-                  textDecorationThickness: "2px"
+                  color: isActive("/landscape-installs") ? "#017a6d" : "#000000",
                 }}
               >
                 Landscaping
+                <span className={`absolute bottom-[8px] left-[10px] w-[calc(100%-20px)] h-[2px] bg-[#017a6d] origin-left transition-transform duration-300 ${isActive("/landscape-installs") ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"}`} />
               </Link>
 
               {/* Snowblowing stays as-is */}
               <Link
                 href="/residential-snow-removal"
+                className="group relative inline-block"
                 style={{
                   ...styles.navLink,
-                  color: isActive("/residential-snow-removal") ? "#01fa6d" : "#ffffff",
-                  textDecoration: isActive("/residential-snow-removal") ? "underline" : "none",
-                  textUnderlineOffset: "8px",
-                  textDecorationThickness: "2px"
+                  color: isActive("/residential-snow-removal") ? "#017a6d" : "#000000",
                 }}
               >
                 Residential Snow
+                <span className={`absolute bottom-[8px] left-[10px] w-[calc(100%-20px)] h-[2px] bg-[#017a6d] origin-left transition-transform duration-300 ${isActive("/residential-snow-removal") ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"}`} />
               </Link>
 
               {/* SEASONAL dropdown */}
               <div className="navItem" style={styles.navItem}>
                 <button
-                  className="navTrigger"
+                  className="navTrigger group relative inline-block"
                   style={{
                     ...styles.navLink,
-                    color: isParentActive(["/irrigation-blowouts", "/spring-cleanup-calgary", "/fall-cleanup"]) ? "#01fa6d" : "#ffffff",
-                    textDecoration: isParentActive(["/irrigation-blowouts", "/spring-cleanup-calgary", "/fall-cleanup"]) ? "underline" : "none",
-                    textUnderlineOffset: "8px",
-                    textDecorationThickness: "2px"
+                    color: isParentActive(["/irrigation-blowouts", "/spring-cleanup-calgary", "/fall-cleanup"]) ? "#017a6d" : "#000000",
                   }}
                   type="button"
                 >
                   Seasonal Services <span style={styles.caret}>▾</span>
+                  <span className={`absolute bottom-[8px] left-[10px] w-[calc(100%-20px)] h-[2px] bg-[#017a6d] origin-left transition-transform duration-300 ${isParentActive(["/irrigation-blowouts", "/spring-cleanup-calgary", "/fall-cleanup"]) ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"}`} />
                 </button>
 
                 <div className="dropdown" style={styles.dropdown}>
@@ -135,42 +154,36 @@ export default function Header() {
               {/* COMMERCIAL (single link now) */}
               <Link
                 href="/commercial-grounds-maintenance"
+                className="group relative inline-block"
                 style={{
                   ...styles.navLink,
-                  color: isActive("/commercial-grounds-maintenance") ? "#01fa6d" : "#ffffff",
-                  textDecoration: isActive("/commercial-grounds-maintenance") ? "underline" : "none",
-                  textUnderlineOffset: "8px",
-                  textDecorationThickness: "2px"
+                  color: isActive("/commercial-grounds-maintenance") ? "#017a6d" : "#000000",
                 }}
               >
                 Commercial
+                <span className={`absolute bottom-[8px] left-[10px] w-[calc(100%-20px)] h-[2px] bg-[#017a6d] origin-left transition-transform duration-300 ${isActive("/commercial-grounds-maintenance") ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"}`} />
               </Link>
 
               {/* MORE dropdown */}
               <div className="navItem" style={styles.navItem}>
                 <button
-                  className="navTrigger"
+                  className="navTrigger group relative inline-block"
                   style={{
                     ...styles.navLink,
-                    color: isParentActive(["/customer-support", "/portfolio", "/blog", "/about", "/video-testimonials"]) ? "#01fa6d" : "#ffffff",
-                    textDecoration: isParentActive(["/customer-support", "/portfolio", "/blog", "/about", "/video-testimonials"]) ? "underline" : "none",
-                    textUnderlineOffset: "8px",
-                    textDecorationThickness: "2px"
+                    color: isParentActive(["/customer-support", "/projects", "/blog", "/about"]) ? "#017a6d" : "#000000",
                   }}
                   type="button"
                 >
                   More <span style={styles.caret}>▾</span>
+                  <span className={`absolute bottom-[8px] left-[10px] w-[calc(100%-20px)] h-[2px] bg-[#017a6d] origin-left transition-transform duration-300 ${isParentActive(["/customer-support", "/projects", "/blog", "/about"]) ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"}`} />
                 </button>
 
                 <div className="dropdown" style={styles.dropdown}>
                   <Link href="/customer-support" className="dropdownLink" style={styles.dropdownLink}>
                     Customer Support
                   </Link>
-                  <Link href="/portfolio" className="dropdownLink" style={styles.dropdownLink}>
-                    Portfolio
-                  </Link>
-                  <Link href="/video-testimonials" className="dropdownLink" style={styles.dropdownLink}>
-                    Video Testimonials
+                  <Link href="/projects" className="dropdownLink" style={styles.dropdownLink}>
+                    Projects
                   </Link>
                   <Link href="/blog" className="dropdownLink" style={styles.dropdownLink}>
                     Blog
@@ -181,17 +194,14 @@ export default function Header() {
                 </div>
               </div>
 
-              {/* CLIENT PORTAL BUTTON */}
-              <a
-                href="https://clienthub.getjobber.com/client_hubs/41b3399e-3795-43d8-afe2-e6c38c1b3e6e/login"
-                target="_blank"
-                rel="noopener noreferrer"
-                referrerPolicy="no-referrer"
-                style={styles.portalButton}
+              {/* PRICE PROJECT BUTTON */}
+              <Link
+                href="/landscape-installs"
+                style={styles.priceProjectBtn}
                 className="hover:scale-105"
               >
-                CLIENT PORTAL
-              </a>
+                PRICE PROJECT
+              </Link>
             </nav>
 
             {/* Mobile Hamburger Button */}
@@ -228,11 +238,19 @@ export default function Header() {
           <div style={styles.drawerHeader}>
             <Link href="/" onClick={toggleMobileMenu} style={styles.logoWrap}>
               <Image
-                src="/logo.svg"
+                src="/logo.png"
                 alt="TERREOAK Landscaping"
-                width={200}
-                height={54}
-                style={{ height: "54px", width: "auto" }}
+                width={360}
+                height={70}
+                style={{ height: "70px", width: "auto" }}
+                className="object-contain"
+              />
+              <Image
+                src={getTextLogoSrc()}
+                alt="TERREOAK"
+                width={360}
+                height={55}
+                style={{ height: "55px", width: "auto", marginLeft: "-18px" }}
                 className="object-contain"
               />
             </Link>
@@ -284,8 +302,7 @@ export default function Header() {
               </button>
               {expandedSection === 'resources' && (
                 <div style={styles.accordionContent}>
-                  <Link href="/portfolio" style={styles.drawerSubLink} onClick={toggleMobileMenu}>Portfolio</Link>
-                  <Link href="/video-testimonials" style={styles.drawerSubLink} onClick={toggleMobileMenu}>Video Testimonials</Link>
+                  <Link href="/projects" style={styles.drawerSubLink} onClick={toggleMobileMenu}>Projects</Link>
                   <Link href="/blog" style={styles.drawerSubLink} onClick={toggleMobileMenu}>Blog</Link>
                   <Link href="/about" style={styles.drawerSubLink} onClick={toggleMobileMenu}>About</Link>
                   <Link href="/customer-support" style={styles.drawerSubLink} onClick={toggleMobileMenu}>Customer Support</Link>
@@ -293,18 +310,15 @@ export default function Header() {
               )}
             </div>
 
-            {/* Mobile Client Portal Button */}
+            {/* Mobile PRICE PROJECT Button */}
             <div style={{ marginTop: 20 }}>
-              <a
-                href="https://clienthub.getjobber.com/client_hubs/41b3399e-3795-43d8-afe2-e6c38c1b3e6e/login"
-                target="_blank"
-                rel="noopener noreferrer"
-                referrerPolicy="no-referrer"
-                style={styles.drawerPortalButton}
+              <Link
+                href="/landscape-installs"
+                style={styles.drawerPriceProjectBtn}
                 onClick={toggleMobileMenu}
               >
-                CLIENT PORTAL
-              </a>
+                PRICE PROJECT
+              </Link>
             </div>
           </nav>
         </div>
@@ -340,22 +354,23 @@ const styles: Record<string, React.CSSProperties> = {
   },
   mainBar: {
     background: "transparent",
-    height: 80,
+    minHeight: 80,
     display: "flex",
     alignItems: "center",
+    padding: "5px 0",
   },
   mainInner: {
-    maxWidth: 1200,
+    maxWidth: 1440,
     margin: "0 auto",
     width: "100%",
     padding: "0 20px",
     display: "flex",
     alignItems: "center",
     justifyContent: "space-between",
-    gap: 15,
+    gap: 10,
   },
 
-  logoWrap: { display: "flex", alignItems: "center", gap: 10, textDecoration: "none" },
+  logoWrap: { display: "flex", alignItems: "center", gap: 0, textDecoration: "none" },
 
   nav: {
     alignItems: "center",
@@ -363,15 +378,15 @@ const styles: Record<string, React.CSSProperties> = {
   },
   navItem: { position: "relative", display: "flex", alignItems: "center" },
   navLink: {
-    color: "#ffffff",
-    fontSize: 13.5,
+    color: "#000000",
+    fontSize: 13,
     fontWeight: 700,
-    letterSpacing: 0.2,
+    letterSpacing: 0.3,
     textDecoration: "none",
     background: "transparent",
     border: "none",
     cursor: "pointer",
-    padding: "12px 10px",
+    padding: "10px 8px",
     textTransform: "uppercase",
   },
   caret: { marginLeft: 4, opacity: 0.8, fontSize: 9, verticalAlign: "middle" },
@@ -381,7 +396,7 @@ const styles: Record<string, React.CSSProperties> = {
     top: "100%",
     left: 0,
     minWidth: 240,
-    background: "#2c2d32",
+    background: "#ffffff",
     border: "1px solid rgba(255,255,255,0.12)",
     borderRadius: 12,
     padding: 8,
@@ -394,7 +409,7 @@ const styles: Record<string, React.CSSProperties> = {
     display: "block",
     padding: "10px 12px",
     borderRadius: 10,
-    color: "#ffffff",
+    color: "#000000",
     textDecoration: "none",
     fontSize: 13.5,
     fontWeight: 600,
@@ -415,7 +430,7 @@ const styles: Record<string, React.CSSProperties> = {
   hamburgerLine: {
     width: 25,
     height: 3,
-    background: "#ffffff",
+    background: "#000000",
     borderRadius: 2,
   },
 
@@ -425,7 +440,7 @@ const styles: Record<string, React.CSSProperties> = {
     left: 0,
     width: "100%",
     height: "100%",
-    background: "#1a1b1e", // Reverting to dark grey
+    background: "#fafafa", // Softer white
     zIndex: 200,
     transition: "opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.4s",
   },
@@ -470,7 +485,7 @@ const styles: Record<string, React.CSSProperties> = {
     gap: 20,
   },
   drawerLink: {
-    color: "#ffffff", // Changed to white for dark grey background
+    color: "#000000", // Changed to black for white background
     fontSize: 28, // Matches the large bold text in image
     fontWeight: 900,
     textDecoration: "none",
@@ -478,7 +493,7 @@ const styles: Record<string, React.CSSProperties> = {
     textTransform: "uppercase",
   },
   drawerLinkText: {
-    color: "#ffffff", // Changed to white for dark grey background
+    color: "#000000", // Changed to black for white background
     fontSize: 28,
     fontWeight: 900,
     textTransform: "uppercase",
@@ -498,13 +513,13 @@ const styles: Record<string, React.CSSProperties> = {
     width: 60,
     height: 34,
     borderRadius: 99,
-    border: "1.5px solid #ffffff", // Changed to white for dark grey background
+    border: "1.5px solid #000000", // Changed to black
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
     fontSize: 24,
     fontWeight: "normal",
-    color: "#ffffff", // Ensure the +/- is white
+    color: "#000000", // Ensure the +/- is black
   },
   accordionContent: {
     display: "flex",
@@ -513,14 +528,14 @@ const styles: Record<string, React.CSSProperties> = {
     padding: "20px 0 10px 20px",
   },
   drawerSubLink: {
-    color: "rgba(255,255,255,0.8)", // Changed to light grey for dark background
+    color: "rgba(0,0,0,0.8)", // Changed to black for light background
     fontSize: 18,
     fontWeight: 700,
     textDecoration: "none",
     textTransform: "uppercase",
   },
 
-  portalButton: {
+  priceProjectBtn: {
     background: "#01fa6d",
     color: "#000000",
     fontSize: 12,
@@ -536,7 +551,7 @@ const styles: Record<string, React.CSSProperties> = {
     justifyContent: "center",
   },
 
-  drawerPortalButton: {
+  drawerPriceProjectBtn: {
     background: "#01fa6d",
     color: "#000000",
     fontSize: 20,

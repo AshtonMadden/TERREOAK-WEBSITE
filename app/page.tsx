@@ -141,7 +141,7 @@ export default function HomePage() {
             <div className="flex flex-wrap gap-4">
               <Link
                 href="/portfolio"
-                className="inline-flex items-center justify-center rounded-full bg-[#01fa6d] px-8 md:px-12 py-[16px] text-[16px] font-extrabold text-black border-2 border-white/10 hover:bg-white transition-all transform hover:-translate-y-1 shadow-xl shadow-[#01fa6d]/20"
+                className="inline-flex items-center justify-center rounded-full bg-[#01fa6d]/80 backdrop-blur-md px-8 md:px-12 py-[16px] text-[16px] font-extrabold text-black border-2 border-white/10 hover:bg-[#01fa6d] transition-all transform hover:-translate-y-1 shadow-xl shadow-[#01fa6d]/20"
               >
                 SEE RECENT PROJECTS
               </Link>

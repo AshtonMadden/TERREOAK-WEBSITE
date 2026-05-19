@@ -76,13 +76,13 @@ export default function SpringCleanupPage() {
                         <div className="flex flex-wrap gap-4">
                             <button
                                 onClick={handleScrollToForm}
-                                className="inline-flex items-center justify-center rounded-full bg-[#01fa6d] px-8 md:px-12 py-[16px] text-[16px] font-extrabold text-black border-2 border-white/10 hover:opacity-90 transition-all cursor-pointer shadow-xl shadow-[#01fa6d]/20 hover:-translate-y-1"
+                                className="inline-flex items-center justify-center rounded-full bg-[#01fa6d]/80 backdrop-blur-md px-8 md:px-12 py-[16px] text-[16px] font-extrabold text-black border-2 border-white/10 hover:bg-[#01fa6d] transition-all cursor-pointer shadow-xl shadow-[#01fa6d]/20 hover:-translate-y-1"
                             >
                                 FREE QUOTE
                             </button>
                              <a
                                 href="tel:+15877077648"
-                                className="inline-flex items-center justify-center rounded-full bg-[#01fa6d] px-8 md:px-12 py-[16px] text-[16px] font-extrabold text-black border-2 border-white/10 hover:opacity-90 transition-all shadow-xl"
+                                className="inline-flex items-center justify-center rounded-full bg-[#01fa6d]/80 backdrop-blur-md px-8 md:px-12 py-[16px] text-[16px] font-extrabold text-black border-2 border-white/10 hover:bg-[#01fa6d] transition-all shadow-xl"
                             >
                                 CALL NOW
                             </a>

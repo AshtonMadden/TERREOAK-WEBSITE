@@ -73,7 +73,7 @@ export default function Header() {
         </div>
 
         {/* Main nav */}
-        <div style={{ ...styles.mainBar, minHeight: isScrolled ? 55 : 80, padding: isScrolled ? "0" : "5px 0", transition: "all 0.3s ease" }}>
+        <div className={`flex w-full items-center transition-all duration-300 ease-in-out ${isScrolled ? 'min-h-[55px] py-0' : 'min-h-[60px] lg:min-h-[80px] py-1 lg:py-[5px]'}`} style={{ background: "transparent" }}>
           <div style={styles.mainInner}>
             {/* Logo = Home */}
             <Link href="/" style={styles.logoWrap} aria-label="TERREOAK Home">
@@ -83,8 +83,8 @@ export default function Header() {
                 width={360}
                 height={70}
                 priority
-                style={{ height: isScrolled ? "46px" : "70px", width: "auto", transition: "height 0.3s ease" }}
-                className="object-contain"
+                style={{ width: "auto", transition: "height 0.3s ease" }}
+                className={`object-contain ${isScrolled ? 'h-[46px]' : 'h-[50px] lg:h-[70px]'}`}
               />
               <Image
                 src={getTextLogoSrc()}
@@ -92,8 +92,8 @@ export default function Header() {
                 width={360}
                 height={55}
                 priority
-                style={{ height: isScrolled ? "38px" : "55px", width: "auto", marginLeft: "-18px", transition: "height 0.3s ease" }}
-                className="object-contain hidden sm:block"
+                style={{ width: "auto", marginLeft: "-18px", transition: "height 0.3s ease" }}
+                className={`object-contain ${isScrolled ? 'h-[38px]' : 'h-[32px] sm:h-[40px] lg:h-[55px]'}`}
               />
             </Link>
 
@@ -241,16 +241,16 @@ export default function Header() {
                 src="/logo.png"
                 alt="TERREOAK Landscaping"
                 width={360}
-                height={70}
-                style={{ height: "70px", width: "auto" }}
+                height={50}
+                style={{ height: "50px", width: "auto" }}
                 className="object-contain"
               />
               <Image
                 src={getTextLogoSrc()}
                 alt="TERREOAK"
                 width={360}
-                height={55}
-                style={{ height: "55px", width: "auto", marginLeft: "-18px" }}
+                height={40}
+                style={{ height: "40px", width: "auto", marginLeft: "-12px" }}
                 className="object-contain"
               />
             </Link>
@@ -428,10 +428,10 @@ const styles: Record<string, React.CSSProperties> = {
     padding: 10,
   },
   hamburgerLine: {
-    width: 25,
-    height: 3,
+    width: 28,
+    height: 4,
     background: "#000000",
-    borderRadius: 2,
+    borderRadius: 4,
   },
 
   mobileDrawerOverlay: {

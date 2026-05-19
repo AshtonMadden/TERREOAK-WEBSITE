@@ -78,12 +78,6 @@ body {
   padding: 0 10px !important;
 }
 
-@media (max-width: 480px) {
-  .top-bar-text-container {
-    flex-direction: column !important;
-    gap: 2px !important;
-  }
-}
 
 .section-divider {
   border-top: 1px solid rgba(0, 0, 0, 0.05);

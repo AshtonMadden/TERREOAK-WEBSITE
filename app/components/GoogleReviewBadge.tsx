@@ -29,7 +29,7 @@ const GoogleReviewBadge = ({ className = "" }: { className?: string }) => {
                 <span className="text-black font-black text-lg ml-1">5.0</span>
             </div>
             <p className="text-black/60 text-[12px] font-black tracking-widest uppercase">
-                TOP-RATED CALGARY LANDSCAPER • 35+ REVIEWS
+                TOP-RATED CALGARY LANDSCAPER • 39 REVIEWS
 
 
             </p>

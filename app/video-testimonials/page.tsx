@@ -9,7 +9,7 @@ import Image from "next/image";
 export default function VideoTestimonialsPage() {
     const videos: never[] = [];
     const testimonialStats = [
-        { end: 35, label: "5-Star Google Reviews", suffix: "+" },
+        { end: 39, label: "5-Star Google Reviews", suffix: "" },
         { end: 100, label: "Satisfaction Guarantee", suffix: "%" },
         { end: 98, label: "Client Retention Rate", suffix: "%" },
     ];

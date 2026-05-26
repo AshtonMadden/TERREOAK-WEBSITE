@@ -54,18 +54,16 @@ export default function ProjectsPage() {
                     <div className="absolute inset-0 bg-black/50" />
                 </div>
 
-                <div className="relative z-10 mx-auto max-w-6xl px-6 pt-48 pb-16 md:pt-56 md:pb-24 lg:pt-60 lg:pb-32 text-left">
-                    <p className="text-[14px] font-bold tracking-widest text-[#01fa6d] uppercase drop-shadow-md">
-                        TERREOAK • Work & Results
-                    </p>
-                    <h1 className="mt-4 text-[42px] md:text-[56px] lg:text-[64px] font-black leading-[1.1] tracking-tight text-white max-w-4xl uppercase drop-shadow-2xl">
-                        Our Projects<br />
-                        <span className="text-[#01fa6d]">Proven in Calgary.</span>
-                    </h1>
-                    <p className="mt-6 max-w-2xl text-[1.1rem] font-bold text-white/90 md:text-[1.3rem] drop-shadow-lg">
-                        Explore our recent projects across Calgary. From hardscape transformations to reliable seasonal care, our work is built right and maintained better.
-                    </p>
-
+                <div className="relative z-10 w-full mx-auto max-w-6xl px-6 flex flex-col justify-center min-h-[100dvh] md:min-h-0 md:block pt-48 pb-16 md:pt-56 md:pb-24 lg:pt-60 lg:pb-32 text-left">
+                    <div className="mt-auto md:mt-0">
+                        <p className="text-[14px] md:text-[17px] font-bold tracking-widest text-[#01fa6d] uppercase drop-shadow-md">
+                            TERREOAK • Work & Results
+                        </p>
+                        <h1 className="mt-4 text-[32px] md:text-[68px] lg:text-[76px] font-black leading-[1.1] tracking-tight text-white max-w-4xl uppercase drop-shadow-2xl">
+                            Our Projects<br />
+                            <span className="text-[#01fa6d]">Proven in Calgary.</span>
+                        </h1>
+                    </div>
 
                     {/* Trust Grid */}
                     <div style={styles.trustGrid}>

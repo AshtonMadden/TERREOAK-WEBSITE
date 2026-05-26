@@ -38,7 +38,7 @@ export default function LandscapeInstallsPage() {
       <section className="relative min-h-screen flex flex-col justify-center border-b border-black/10 overflow-hidden">
         <div className="absolute inset-0 z-0 overflow-hidden">
           <Image
-            src="/images/landscaping-hero-new.jpg"
+            src="/images/landscape-hero-pavers.jpg"
             alt="TERREOAK Landscaping and Design Build Excellence"
             fill
             priority
@@ -47,37 +47,86 @@ export default function LandscapeInstallsPage() {
           <div className="absolute inset-0 bg-black/40" />
         </div>
 
-        <div className="relative z-10 mx-auto max-w-6xl px-6 pt-32 pb-12 md:pt-56 md:pb-24 lg:pt-60 lg:pb-32 text-left">
-          <p className="text-[14px] font-bold tracking-widest text-[#01fa6d] uppercase drop-shadow-md">
-            Calgary • Commercial & Residential
-          </p>
-          <h1 className="mt-2 text-[32px] md:text-[56px] lg:text-[64px] font-black leading-[1.1] tracking-tight text-white drop-shadow-2xl max-w-4xl uppercase">
-            Calgary Landscaping Company —<br />
-            <span className="text-[#01fa6d]">Design, Build & Install</span>
-          </h1>
-          <p className="mt-4 max-w-2xl text-[1rem] font-bold text-white/90 md:text-[1.3rem]">
-            Engineered hardscapes, precision grading, and full-yard transformations built for Calgary&apos;s extreme climate.
-          </p>
-          <div className="mt-6 flex flex-col md:flex-row items-start md:items-center gap-8">
+        <div className="relative z-10 w-full mx-auto max-w-6xl px-6 flex flex-col justify-center min-h-[100dvh] md:min-h-0 md:block pt-32 pb-12 md:pt-56 md:pb-24 lg:pt-60 lg:pb-32 text-left animate-slide-in-left">
+          <div className="mt-auto md:mt-0">
+            <p className="text-[14px] font-bold tracking-widest text-[#01fa6d] uppercase drop-shadow-md">
+              Calgary • Commercial & Residential
+            </p>
+            <h1 className="mt-2 text-[32px] md:text-[56px] lg:text-[64px] font-black leading-[1.1] tracking-tight text-white drop-shadow-2xl max-w-4xl uppercase">
+              Calgary Landscaping Company —<br />
+              <span className="text-[#01fa6d]">Design, Build & Install</span>
+            </h1>
+          </div>
+
+          <div className="mt-auto md:mt-12 mb-8 md:mb-0 flex flex-col md:flex-row items-start md:items-center gap-8">
             <div className="flex flex-wrap gap-4">
               <button
                 onClick={handleScrollToForm}
-                className="inline-flex items-center justify-center rounded-full bg-[#01fa6d]/80 backdrop-blur-md px-8 md:px-12 py-[16px] text-[16px] font-extrabold text-black border-2 border-white/10 hover:bg-[#01fa6d] transition-all cursor-pointer shadow-xl shadow-[#01fa6d]/20 hover:-translate-y-1"
+                className="inline-flex items-center justify-center rounded-full bg-[#01fa6d]/80 backdrop-blur-md px-12 md:px-24 py-[16px] text-[16px] font-extrabold text-black border-2 border-white/10 hover:bg-[#01fa6d] transition-all cursor-pointer shadow-xl shadow-[#01fa6d]/20 hover:-translate-y-1 w-full md:w-auto text-center"
               >
                 PRICE PROJECT
               </button>
-              <a
-                href="tel:+15877077648"
-                className="inline-flex items-center justify-center rounded-full bg-white/10 backdrop-blur-sm px-8 md:px-12 py-[14px] text-[16px] font-extrabold text-white border-2 border-white/40 hover:bg-white/20 transition-colors"
-              >
-                CALL NOW
-              </a>
+
             </div>
 
             <GoogleReviewBadge />
           </div>
         </div>
       </section>
+
+      {/* FEATURED PROJECTS */}
+      <Section
+        title="FEATURED PROJECTS"
+        titleClassName="text-[#017a6d]"
+        wrapperClassName="bg-gray-50 border-y border-black/5"
+      >
+        <div className="max-w-6xl mx-auto flex flex-col gap-24">
+            {[
+              {
+                id: 1,
+                title: "Custom Landscape Design & Build",
+                desc: "Explore one of our recent high-end residential landscape construction projects. From initial 3D conceptual design to final construction, see how we transformed this outdoor space.",
+                img: "/Landscape web page pics/Finished-hardscape-project.JPG",
+                link: "/projects/featured-project-1"
+              },
+              {
+                id: 2,
+                title: "Premium Hardscape Installation",
+                desc: "A stunning transformation featuring Techo-Bloc paving stones, custom retaining walls, and a fully redesigned outdoor living area built to withstand Calgary's climate.",
+                img: "/Landscape web page pics/Techo-Bloc-pavers-river-rock.JPG",
+                link: "/projects/featured-project-2"
+              }
+            ].map((project, idx) => (
+                <div key={project.id} className={`flex flex-col md:flex-row gap-12 items-center ${idx % 2 === 1 ? 'md:flex-row-reverse' : ''}`}>
+                    <div className="w-full md:w-1/2">
+                        <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border border-black/10 group">
+                            <Image
+                                src={project.img}
+                                alt={project.title}
+                                fill
+                                sizes="(max-width: 768px) 100vw, 50vw"
+                                className="object-cover group-hover:scale-105 transition-transform duration-700"
+                            />
+                        </div>
+                    </div>
+                    <div className="w-full md:w-1/2 space-y-6">
+                        <h3 className="text-3xl md:text-4xl font-black text-[#017a6d] uppercase tracking-tight">{project.title}</h3>
+                        <p className="text-lg text-black/70 font-medium leading-relaxed">
+                            {project.desc}
+                        </p>
+                        <div className="pt-4">
+                            <Link
+                                href={project.link}
+                                className="inline-flex items-center justify-center rounded-xl bg-[#017a6d] px-8 py-4 text-[16px] font-black text-white hover:bg-[#015e54] transition-all transform hover:-translate-y-1 shadow-lg shadow-[#017a6d]/20 uppercase tracking-wide"
+                            >
+                                LEARN MORE
+                            </Link>
+                        </div>
+                    </div>
+                </div>
+            ))}
+        </div>
+      </Section>
 
       {/* PROPERTY TYPES SECTION */}
       <Section title="Landscaping Services for All Calgary Properties" titleClassName="text-[#017a6d]">
@@ -217,58 +266,8 @@ export default function LandscapeInstallsPage() {
         </div>
       </Section>
 
-      {/* SERVICES (Same as home page grid style) */}
-      <Section kicker="What We Do" title="Comprehensive Landscape Services" titleClassName="text-[#017a6d]">
-        <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-12">
-          {[
-            {
-              title: "Hardscapes & Retaining Walls",
-              desc: "Belgard and Techo-Bloc patios, stone pathways, bin pads, and engineered retaining walls built to handle Calgary’s frost heave and soil movement. We use structural base preparation and climate-rated materials on every install — not shortcuts that look good for one season.",
-              image: "/Landscape web page pics/Techo-Bloc-pavers-river-rock.JPG"
-            },
-            {
-              title: "Planting & Trees",
-              desc: "Hardy, Alberta-climate species selected for your sun exposure, soil type, and maintenance preferences. We source locally where possible and plant with root establishment in mind, not just curb appeal on day one.",
-              image: "/images/gallery/project-3.png"
-            },
-            {
-              title: "Sod & Turf",
-              desc: "Fresh sod installation for new builds, lawn replacements, and bare-patch repairs, plus premium synthetic turf for low-maintenance yards and high-traffic zones. We grade and prepare the base properly so your lawn establishes evenly and drains correctly.",
-              image: "/Landscape web page pics/Sod-installation-calgary.jpg"
-            },
-            {
-              title: "Irrigation Systems",
-              desc: "Full irrigation system design and installation, including drip lines for garden beds and pop-up rotors for lawn zones. Paired with our fall irrigation blowout service, your system is protected from freeze damage year after year.",
-              image: "/Landscape web page pics/Calgary-lawn-irrigation.jpg"
-            },
-            {
-              title: "Pergolas & Fencing",
-              desc: "Custom wood pergolas and horizontal privacy fencing built for outdoor living in Calgary’s wind and UV conditions. We use pressure-treated and cedar materials with proper post depths for long-term stability.",
-              image: "/images/pergolas-fencing-new.jpg"
-            },
-            {
-              title: "Drainage Systems",
-              desc: "French drains, catch basins, swales, and precision grading to redirect water away from your foundation, garage, and low-lying yard areas. Poor drainage is one of the most common and costly problems in Calgary’s clay-heavy soils — we engineer solutions that last.",
-              image: "/Calgary-drainage-solutions.JPG"
-            },
-            {
-              title: "Landscape Design",
-              desc: "Professional 3D landscape design and conceptual planning before any construction begins. We walk your property, listen to how you use your space, and deliver a visual plan with material selections, plant placements, and phasing options so you can make informed decisions.",
-              image: "/images/design.png"
-            }
-          ].map((s, i) => (
-            <div key={i} className="group rounded-xl border border-black/10 overflow-hidden bg-white hover:border-[#017a6d] transition-colors">
-              <div className="relative aspect-video overflow-hidden">
-                <Image src={s.image} alt={s.title} fill className="object-cover" />
-              </div>
-              <div className="p-6">
-                <h3 className="font-black text-lg mb-2">{s.title}</h3>
-                <p className="text-sm text-black/60 leading-relaxed">{s.desc}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </Section>
+
+
 
       {/* JOBBER LEAD FORM */}
       <Section id="seasonal-form" title="REQUEST AN ESTIMATE" titleClassName="text-[#01fa6d]">

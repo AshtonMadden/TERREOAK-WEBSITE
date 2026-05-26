@@ -58,34 +58,26 @@ export default function SpringCleanupPage() {
                     <div className="absolute inset-0 bg-black/40 z-0"></div>
                 </div>
 
-                <div className="relative z-10 mx-auto max-w-6xl px-6 pt-32 pb-12 md:pt-56 md:pb-24 lg:pt-60 lg:pb-32 text-left">
-                    <p className="text-[14px] font-bold tracking-widest text-[#01fa6d] uppercase drop-shadow-md">
-                        Calgary • Seasonal Services
-                    </p>
-                    <h1 className="mt-2 text-[32px] md:text-[56px] lg:text-[64px] font-black leading-[1.1] tracking-tight text-white drop-shadow-2xl max-w-4xl uppercase">
-                        CALGARY<br />
-                        SPRING CLEANUP<br />
-                        <span className="text-[#01fa6d]">Fresh Start for your Yard.</span>
-                    </h1>
-                    <p className="mt-4 max-w-2xl text-[1rem] font-bold text-white/90 md:text-[1.3rem]">
-                        Get your yard ready for the season with professional spring cleanup services.
-                        Power raking, aeration, and debris removal for a healthy, green lawn.
-                    </p>
+                <div className="relative z-10 w-full mx-auto max-w-6xl px-6 flex flex-col justify-center min-h-[100dvh] md:min-h-0 md:block pt-32 pb-12 md:pt-56 md:pb-24 lg:pt-60 lg:pb-32 text-left">
+                    <div className="mt-auto md:mt-0">
+                        <p className="text-[14px] font-bold tracking-widest text-[#01fa6d] uppercase drop-shadow-md">
+                            Calgary • Seasonal Services
+                        </p>
+                        <h1 className="mt-2 text-[32px] md:text-[56px] lg:text-[64px] font-black leading-[1.1] tracking-tight text-white drop-shadow-2xl max-w-4xl uppercase">
+                            CALGARY<br />
+                            SPRING CLEANUP<br />
+                            <span className="text-[#01fa6d]">Fresh Start for your Yard.</span>
+                        </h1>
+                    </div>
 
-                    <div className="mt-6 flex flex-col md:flex-row items-start md:items-center gap-8">
+                    <div className="mt-auto md:mt-12 mb-8 md:mb-0 flex flex-col md:flex-row items-start md:items-center gap-8">
                         <div className="flex flex-wrap gap-4">
                             <button
                                 onClick={handleScrollToForm}
-                                className="inline-flex items-center justify-center rounded-full bg-[#01fa6d]/80 backdrop-blur-md px-8 md:px-12 py-[16px] text-[16px] font-extrabold text-black border-2 border-white/10 hover:bg-[#01fa6d] transition-all cursor-pointer shadow-xl shadow-[#01fa6d]/20 hover:-translate-y-1"
+                                className="inline-flex items-center justify-center rounded-full bg-[#01fa6d]/80 backdrop-blur-md px-12 md:px-24 py-[16px] text-[16px] font-extrabold text-black border-2 border-white/10 hover:bg-[#01fa6d] transition-all cursor-pointer shadow-xl shadow-[#01fa6d]/20 hover:-translate-y-1 w-full md:w-auto text-center"
                             >
                                 FREE QUOTE
                             </button>
-                             <a
-                                href="tel:+15877077648"
-                                className="inline-flex items-center justify-center rounded-full bg-[#01fa6d]/80 backdrop-blur-md px-8 md:px-12 py-[16px] text-[16px] font-extrabold text-black border-2 border-white/10 hover:bg-[#01fa6d] transition-all shadow-xl"
-                            >
-                                CALL NOW
-                            </a>
                         </div>
 
                         <GoogleReviewBadge />
@@ -311,65 +303,6 @@ export default function SpringCleanupPage() {
             </Section>
 
 
-
-            {/* BOOK EARLY SECTION */}
-            <section className="py-20 border-y border-white/5" style={{ background: "#2c2d32" }}>
-                <div className="mx-auto max-w-6xl px-6">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                        <ScrollReveal>
-                            <div className="text-left">
-                                <h2 className="text-4xl md:text-5xl font-black text-white leading-tight mb-6 uppercase tracking-tight">
-                                    BOOK EARLY TO <span className="text-[#01fa6d]">SECURE YOUR SPOT.</span>
-                                </h2>
-                                <p className="text-xl text-white/70 font-medium mb-8">
-                                    The best time for spring cleanup in Calgary is from late March to early May. Our schedule fills up fast—reserve your preferred window today.
-                                </p>
-                                <ul className="mb-10 space-y-4 text-white/80 text-lg">
-                                    <li className="flex items-start gap-3 leading-tight">
-                                        <span className="text-[#01fa6d] font-bold">•</span> Power raking to remove winter thatch
-                                    </li>
-                                    <li className="flex items-start gap-3 leading-tight">
-                                        <span className="text-[#01fa6d] font-bold">•</span> Full debris cleanup and haul away
-                                    </li>
-                                    <li className="flex items-start gap-3 leading-tight">
-                                        <span className="text-[#01fa6d] font-bold">•</span> Garden bed refresh and lawn prep for spring
-                                    </li>
-                                </ul>
-                                <button
-                                    onClick={handleScrollToForm}
-                                    className="inline-flex items-center justify-center rounded-full bg-[#01fa6d] px-12 py-5 text-lg font-black text-black hover:opacity-90 transition-all transform hover:-translate-y-1 shadow-2xl shadow-[#01fa6d]/20"
-                                >
-                                    BOOK YOUR WINDOW
-                                </button>
-                            </div>
-                        </ScrollReveal>
-
-                        <ScrollReveal className="relative hidden lg:block">
-                            <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border-4 border-[#01fa6d] shadow-2xl">
-                                <Image
-                                    src="/spring-cleanup-pics/spring-cleanup-team.jpg"
-                                    alt="TERREOAK team performing spring yard cleanup and power raking"
-                                    fill
-                                    className="object-cover"
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-                            </div>
-                        </ScrollReveal>
-
-                        {/* Mobile Image */}
-                        <ScrollReveal className="lg:hidden">
-                            <div className="relative aspect-video rounded-xl overflow-hidden border-2 border-[#01fa6d] shadow-xl mb-8">
-                                <Image
-                                    src="/spring-cleanup-pics/spring-cleanup-team.jpg"
-                                    alt="TERREOAK team performing spring yard cleanup"
-                                    fill
-                                    className="object-cover"
-                                />
-                            </div>
-                        </ScrollReveal>
-                    </div>
-                </div>
-            </section>
 
 
             {/* LEAD FORM SECTION */}

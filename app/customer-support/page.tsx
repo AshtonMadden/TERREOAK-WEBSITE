@@ -21,31 +21,25 @@ export default function CustomerSupportPage() {
           <div className="absolute inset-0 bg-black/60" />
         </div>
 
-        <div className="relative z-10 mx-auto max-w-6xl px-6 pt-48 pb-16 md:pt-56 md:pb-24 lg:pt-60 lg:pb-32 text-left">
-          <p className="text-[14px] font-bold tracking-widest text-[#01fa6d] uppercase drop-shadow-md">
-            TERREOAK • CUSTOMER SUPPORT
-          </p>
-          <h1 className="mt-4 text-[42px] md:text-[56px] lg:text-[64px] font-black leading-[1.1] tracking-tight text-white drop-shadow-2xl max-w-4xl uppercase">
-            CUSTOMER SUPPORT &<br />
-            <span className="text-[#01fa6d]">SERVICE ASSISTANCE.</span>
-          </h1>
-          <p className="mt-6 max-w-2xl text-[1.1rem] font-bold text-white/90 md:text-[1.3rem]">
-            Questions, concerns, or property damage? Our Calgary team is here to help. The more detail you provide, the faster we can resolve your request.
-          </p>
-          <div className="mt-10 flex flex-wrap justify-start gap-4">
+        <div className="relative z-10 w-full mx-auto max-w-6xl px-6 flex flex-col justify-center min-h-[100dvh] md:min-h-0 md:block pt-48 pb-16 md:pt-56 md:pb-24 lg:pt-60 lg:pb-32 text-left">
+          <div className="mt-auto md:mt-0">
+            <p className="text-[14px] md:text-[17px] font-bold tracking-widest text-[#01fa6d] uppercase drop-shadow-md">
+              TERREOAK • CUSTOMER SUPPORT
+            </p>
+            <h1 className="mt-4 text-[32px] md:text-[68px] lg:text-[76px] font-black leading-[1.1] tracking-tight text-white drop-shadow-2xl max-w-4xl uppercase">
+              CUSTOMER SUPPORT &<br />
+              <span className="text-[#01fa6d]">SERVICE ASSISTANCE.</span>
+            </h1>
+          </div>
+
+          <div className="mt-auto md:mt-10 flex flex-wrap justify-start gap-4">
             <a
               href="https://clienthub.getjobber.com/client_hubs/41b3399e-3795-43d8-afe2-e6c38c1b3e6e/login"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center rounded-full bg-[#01fa6d] px-12 py-[14px] text-[16px] font-extrabold text-black border-2 border-white/10 hover:opacity-90 transition-opacity whitespace-nowrap"
+              className="inline-flex items-center justify-center rounded-full bg-[#01fa6d] px-12 md:px-28 py-[14px] md:py-[18px] text-[16px] md:text-[20px] font-extrabold text-black border-2 border-white/10 hover:opacity-90 transition-opacity whitespace-nowrap w-full md:w-auto text-center"
             >
               CLIENT PORTAL
-            </a>
-            <a
-              href="tel:+15877077648"
-              className="inline-flex items-center justify-center rounded-full bg-white/10 backdrop-blur-sm px-12 py-[14px] text-[16px] font-extrabold text-white border-2 border-white/40 hover:bg-white/20 transition-colors whitespace-nowrap"
-            >
-              CALL NOW
             </a>
           </div>
 

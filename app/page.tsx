@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useRef } from "react";
 import Script from "next/script";
-import StatsCounter from "./residential-snow-removal/StatsCounter";
+
 import { Section, ScrollReveal, Carousel } from "./components/UI";
 import OurBlogSection from "./components/OurBlogSection";
 import GoogleReviewBadge from "./components/GoogleReviewBadge";
@@ -118,39 +118,26 @@ export default function HomePage() {
           <div className="absolute inset-0 bg-black/40 z-20" />
         </div>
 
-        <div className="relative z-10 mx-auto max-w-6xl px-6 pt-32 pb-12 md:pt-56 md:pb-24 lg:pt-60 lg:pb-32 text-left">
-          <p className="text-[14px] font-bold tracking-widest text-[#01fa6d] uppercase drop-shadow-md">
-            Calgary & Area
-          </p>
+        <div className="relative z-10 w-full mx-auto max-w-6xl px-6 flex flex-col justify-center min-h-[100dvh] md:min-h-0 md:block pt-32 pb-12 md:pt-56 md:pb-24 lg:pt-60 lg:pb-32 text-left">
+          <div className="mt-auto md:mt-0">
+            <p className="text-[14px] font-bold tracking-widest text-[#01fa6d] uppercase drop-shadow-md">
+              Calgary & Area
+            </p>
 
+            <h1 className="mt-2 text-[32px] md:text-[56px] lg:text-[64px] font-black leading-[1.1] tracking-tight text-white drop-shadow-2xl max-w-4xl uppercase">
+              Calgary Landscape <br />
+              <span className="text-[#01fa6d]">Construction & Snow Removal.</span>
+            </h1>
+          </div>
 
-          <h1 className="mt-2 text-[32px] md:text-[56px] lg:text-[64px] font-black leading-[1.1] tracking-tight text-white drop-shadow-2xl max-w-4xl uppercase">
-            Calgary Landscape <br />
-            <span className="text-[#01fa6d]">Construction & Snow Removal.</span>
-          </h1>
-
-          <p className="mt-6 max-w-2xl text-[1.2rem] md:text-[1.5rem] font-black text-white italic tracking-wide drop-shadow-md uppercase">
-            "WHERE THE SUN MEETS SOIL"
-          </p>
-
-          <p className="mt-4 max-w-2xl text-[1rem] font-bold text-white/90 md:text-[1.2rem]">
-            Commercial & Residential | Design • Build • Maintain
-          </p>
-
-          <div className="mt-6 flex flex-col md:flex-row items-start md:items-center gap-8">
+          <div className="mt-auto md:mt-12 mb-8 md:mb-0 flex flex-col md:flex-row items-start md:items-center gap-8">
             <div className="flex flex-wrap gap-4">
               <Link
                 href="/projects"
-                className="inline-flex items-center justify-center rounded-full bg-[#01fa6d]/80 backdrop-blur-md px-8 md:px-12 py-[16px] text-[16px] font-extrabold text-black border-2 border-white/10 hover:bg-[#01fa6d] transition-all transform hover:-translate-y-1 shadow-xl shadow-[#01fa6d]/20"
+                className="inline-flex items-center justify-center rounded-full bg-[#01fa6d]/80 backdrop-blur-md px-12 md:px-24 py-[16px] text-[16px] font-extrabold text-black border-2 border-white/10 hover:bg-[#01fa6d] transition-all transform hover:-translate-y-1 shadow-xl shadow-[#01fa6d]/20 w-full md:w-auto text-center"
               >
                 SEE RECENT PROJECTS
               </Link>
-              <a
-                href="tel:+15877077648"
-                className="inline-flex items-center justify-center rounded-full bg-white/10 backdrop-blur-sm px-8 md:px-12 py-[16px] text-[16px] font-extrabold text-white border-2 border-white/40 hover:bg-white/20 transition-colors"
-              >
-                CALL US
-              </a>
 
               {/* SOCIAL PROOF BADGE */}
               <GoogleReviewBadge />
@@ -159,20 +146,60 @@ export default function HomePage() {
         </div>
       </section>
 
-
-      <StatsCounter
-        backgroundColor="#01fa6d"
-        numberColor="#000000"
-        labelColor="#000000"
-        borderBottom="none"
-        padding="48px 0"
-        stats={[
-          { end: 185, label: "Happy Clients", suffix: "+" },
-
-          { end: 5, label: "Years Experience", suffix: "+" },
-          { end: 2, label: "TERREOAK Crews" }
-        ]}
-      />
+      {/* FEATURED PROJECTS */}
+      <Section
+        kicker="Portfolio"
+        title="FEATURED PROJECTS"
+        titleClassName="text-[#017a6d]"
+        wrapperClassName="bg-gray-50 border-y border-black/5"
+      >
+        <div className="max-w-6xl mx-auto flex flex-col gap-24">
+            {[
+              {
+                id: 1,
+                title: "Custom Landscape Design & Build",
+                desc: "Explore one of our recent high-end residential landscape construction projects. From initial 3D conceptual design to final construction, see how we transformed this outdoor space.",
+                img: "/Landscape web page pics/Finished-hardscape-project.JPG",
+                link: "/projects/featured-project-1"
+              },
+              {
+                id: 2,
+                title: "Premium Hardscape Installation",
+                desc: "A stunning transformation featuring Techo-Bloc paving stones, custom retaining walls, and a fully redesigned outdoor living area built to withstand Calgary's climate.",
+                img: "/Landscape web page pics/Techo-Bloc-pavers-river-rock.JPG",
+                link: "/projects/featured-project-2"
+              }
+            ].map((project, idx) => (
+                <div key={project.id} className={`flex flex-col md:flex-row gap-12 items-center ${idx % 2 === 1 ? 'md:flex-row-reverse' : ''}`}>
+                    <div className="w-full md:w-1/2">
+                        <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border border-black/10 group">
+                            <Image
+                                src={project.img}
+                                alt={project.title}
+                                fill
+                                sizes="(max-width: 768px) 100vw, 50vw"
+                                className="object-cover group-hover:scale-105 transition-transform duration-700"
+                            />
+                        </div>
+                    </div>
+                    <div className="w-full md:w-1/2 space-y-6">
+                        <h3 className="text-3xl md:text-4xl font-black text-[#017a6d] uppercase tracking-tight">{project.title}</h3>
+                        <p className="text-lg text-black/70 font-medium leading-relaxed">
+                            {project.desc}
+                        </p>
+                        <div className="pt-4">
+                            <Link
+                                href={project.link}
+                                className="inline-flex items-center justify-center rounded-xl bg-[#017a6d] px-8 py-4 text-[16px] font-black text-white hover:bg-[#015e54] transition-all transform hover:-translate-y-1 shadow-lg shadow-[#017a6d]/20 uppercase tracking-wide"
+                            >
+                                LEARN MORE
+                            </Link>
+                        </div>
+                    </div>
+                </div>
+            ))}
+        </div>
+      </Section>
 
 
       {/* SERVICES */}
@@ -279,31 +306,9 @@ export default function HomePage() {
           </div>
         </div>
 
-        <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-          {serviceCategories.map((cat) => (
-            <div
-              key={cat.title}
-              className="group rounded-xl border border-black/10 overflow-hidden bg-white hover:border-[#017a6d] transition-all flex flex-col"
-            >
-              {cat.image && (
-                <div className="relative aspect-video overflow-hidden">
-                  <Image
-                    src={cat.image}
-                    alt={cat.title}
-                    fill
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    className="object-cover"
-                  />
-                </div>
-              )}
-              <div className="p-6 flex flex-col flex-1">
-                <h3 className="font-black text-lg mb-2 uppercase tracking-tight">{cat.title}</h3>
-                <p className="text-sm text-black/60 leading-relaxed flex-1">{cat.desc}</p>
-              </div>
-            </div>
-          ))}
-        </div>
+
       </Section>
+
 
 
       {/* JOBBER LEAD FORM */}

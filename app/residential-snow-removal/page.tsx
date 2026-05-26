@@ -83,37 +83,26 @@ export default function ResidentialSnowBlowingPage() {
         </video>
         <div className="absolute inset-0 bg-black/40 z-0"></div>
 
-        <div className="relative z-10 mx-auto max-w-6xl px-6 pt-32 pb-12 md:pt-56 md:pb-24 lg:pt-60 lg:pb-32 text-left">
-          <p className="text-[14px] font-bold tracking-widest text-[#01fa6d] uppercase drop-shadow-md">
-            Calgary • Residential Snow Removal
-          </p>
-          <h1 className="mt-2 text-[32px] md:text-[56px] lg:text-[64px] font-black leading-[1.1] tracking-tight text-white drop-shadow-2xl max-w-4xl uppercase">
-            CALGARY RESIDENTIAL<br />
-            SNOW REMOVAL —<br />
-            <span className="text-[#01fa6d]">Worry-free all winter.</span>
-          </h1>
-          <p className="mt-4 max-w-2xl text-[1rem] font-bold text-white/90 md:text-[1.3rem]">
-            Unlimited driveway + front sidewalk clearing all season long, with photo logs,
-            dispatch alerts, and 12–24 hour service after snowfall ends.{" "}
-            <span style={{ opacity: 0.85 }}>
-              Built for reliability, not excuses.
-            </span>
-          </p>
+        <div className="relative z-10 w-full mx-auto max-w-6xl px-6 flex flex-col justify-center min-h-[100dvh] md:min-h-0 md:block pt-32 pb-12 md:pt-56 md:pb-24 lg:pt-60 lg:pb-32 text-left">
+          <div className="mt-auto md:mt-0">
+            <p className="text-[14px] font-bold tracking-widest text-[#01fa6d] uppercase drop-shadow-md">
+              Calgary • Residential Snow Removal
+            </p>
+            <h1 className="mt-2 text-[32px] md:text-[56px] lg:text-[64px] font-black leading-[1.1] tracking-tight text-white drop-shadow-2xl max-w-4xl uppercase">
+              CALGARY RESIDENTIAL<br />
+              SNOW REMOVAL —<br />
+              <span className="text-[#01fa6d]">Worry-free all winter.</span>
+            </h1>
+          </div>
 
-          <div className="mt-6 flex flex-col md:flex-row items-start md:items-center gap-8">
+          <div className="mt-auto md:mt-12 mb-8 md:mb-0 flex flex-col md:flex-row items-start md:items-center gap-8">
             <div className="flex flex-wrap gap-4">
               <button
                 onClick={handleScrollToForm}
-                className="inline-flex items-center justify-center rounded-full bg-[#01fa6d]/80 backdrop-blur-md px-8 md:px-12 py-[16px] text-[16px] font-extrabold text-black border-2 border-white/10 hover:bg-[#01fa6d] transition-all cursor-pointer shadow-xl shadow-[#01fa6d]/20 hover:-translate-y-1"
+                className="inline-flex items-center justify-center rounded-full bg-[#01fa6d]/80 backdrop-blur-md px-12 md:px-24 py-[16px] text-[16px] font-extrabold text-black border-2 border-white/10 hover:bg-[#01fa6d] transition-all cursor-pointer shadow-xl shadow-[#01fa6d]/20 hover:-translate-y-1 w-full md:w-auto text-center"
               >
                 SIGN UP
               </button>
-              <a
-                href="tel:+15877077648"
-                className="inline-flex items-center justify-center rounded-full bg-white/10 backdrop-blur-sm px-8 md:px-12 py-[14px] text-[16px] font-extrabold text-white border-2 border-white/40 hover:bg-white/20 transition-colors"
-              >
-                CALL NOW
-              </a>
             </div>
 
             <GoogleReviewBadge />
@@ -157,12 +146,12 @@ export default function ResidentialSnowBlowingPage() {
                 desc: "Email notifications sent before our crew arrives so you always know service is on the way — no guessing, no wondering."
               },
               {
-                title: "Driveway Markers",
-                desc: "We install free snow pickets before the season starts so our crews can clear right to the edges without damaging your lawn, garden beds, or interlock."
+                title: "Driveway Marker",
+                desc: "Each client receives one highly visible snow picket. This helps our crews quickly identify your property during dark, early-morning hours, keeping them off their phones and focused on safety."
               },
               {
                 title: "Flexible Payment",
-                desc: "Pay in full upfront and save 10%, or split into 5 monthly auto-payments — whichever works for your budget."
+                desc: "Pay in full upfront and save 10%, or split into 5 monthly auto-payments."
               }
             ].map((offer, i) => (
               <div key={i} style={styles.offerCard}>
@@ -297,22 +286,22 @@ export default function ResidentialSnowBlowingPage() {
                 High-density routes for maximum reliability.
               </p>
               <p className="text-[17px] text-black/70 leading-relaxed">
-                We use a tiered zone system to guarantee our 24-hour service standard. <strong>Zone 1</strong> is our core service area, where our crews are consistently active during every storm.
+                We strictly limit our service area to guarantee our 12-24 hour service standard. We focus exclusively on the deep south communities to ensure our crews are always nearby when a storm hits.
               </p>
               
               <div className="space-y-6 pt-4">
                 <div className="flex gap-4">
-                  <div className="w-12 h-12 rounded-full bg-[#01fa6d] flex-shrink-0 flex items-center justify-center font-black text-black">1</div>
+                  <div className="w-12 h-12 rounded-full bg-[#01fa6d] flex-shrink-0 flex items-center justify-center font-black text-black text-xl">✓</div>
                   <div>
-                    <h4 className="text-[#017a6d] font-black uppercase tracking-wider text-sm">Zone 1: Southeast Calgary</h4>
+                    <h4 className="text-[#017a6d] font-black uppercase tracking-wider text-sm">Southeast Calgary</h4>
                     <p className="text-sm text-black/60 mt-1">Auburn Bay, Mahogany, Cranston, Copperfield, McKenzie Towne, Legacy, and Walden.</p>
                   </div>
                 </div>
 
                 <div className="flex gap-4">
-                  <div className="w-12 h-12 rounded-full bg-[#01fa6d]/80 flex-shrink-0 flex items-center justify-center font-black text-black">2</div>
+                  <div className="w-12 h-12 rounded-full bg-[#01fa6d]/80 flex-shrink-0 flex items-center justify-center font-black text-black text-xl">✓</div>
                   <div>
-                    <h4 className="text-[#017a6d] font-black uppercase tracking-wider text-sm">Zone 2: Southwest Calgary</h4>
+                    <h4 className="text-[#017a6d] font-black uppercase tracking-wider text-sm">Southwest Calgary</h4>
                     <p className="text-sm text-black/60 mt-1">Evergreen, Shawnessy, Silverado, Chaparral, Bridlewood, and Somerset.</p>
                   </div>
                 </div>
@@ -357,13 +346,13 @@ export default function ResidentialSnowBlowingPage() {
                   
                   {/* Zone Labels - Solid Black Pills */}
                   <g className="font-black text-[3.5px] uppercase tracking-tighter">
-                    {/* SW Label (Zone 2) */}
-                    <rect x="18" y="70" width="24" height="6" rx="3" fill="#01fa6d" />
-                    <text x="30" y="74.2" textAnchor="middle" fill="black">SERVICE ZONE 2: SW</text>
+                    {/* SW Label */}
+                    <rect x="20" y="70" width="20" height="6" rx="3" fill="#01fa6d" />
+                    <text x="30" y="74.2" textAnchor="middle" fill="black">SW CALGARY</text>
                     
-                    {/* SE Label (Zone 1) */}
-                    <rect x="58" y="70" width="24" height="6" rx="3" fill="#01fa6d" />
-                    <text x="70" y="74.2" textAnchor="middle" fill="black">SERVICE ZONE 1: SE</text>
+                    {/* SE Label */}
+                    <rect x="60" y="70" width="20" height="6" rx="3" fill="#01fa6d" />
+                    <text x="70" y="74.2" textAnchor="middle" fill="black">SE CALGARY</text>
 
                     {/* Boundary Marker */}
                     <line x1="50" y1="55" x2="50" y2="92" stroke="black" strokeWidth="0.2" strokeDasharray="1,1" opacity="0.3" />
@@ -379,7 +368,7 @@ export default function ResidentialSnowBlowingPage() {
                       <div className="w-2 h-2 rounded-full bg-[#01fa6d] animate-pulse" />
                       <span className="text-[10px] font-black uppercase tracking-widest text-[#01fa6d]">Active Service Area</span>
                     </div>
-                    <p className="text-[11px] font-bold text-white/90 italic">South Calgary Ring-Road Priority</p>
+                    <p className="text-[11px] font-bold text-white/90 italic">South Calgary Ring-Road Coverage</p>
                   </div>
                 </div>
               </div>
@@ -401,7 +390,7 @@ export default function ResidentialSnowBlowingPage() {
         <div className="grid gap-6 grid-cols-1 md:grid-cols-3 mt-12">
           {[
             { step: "01", title: "Sign up for snow pass", desc: "Lock in your spot for the season." },
-            { step: "02", title: "We install your picket", desc: "Professional driveway markers for precision clearing." },
+            { step: "02", title: "We install your picket", desc: "We place one highly visible marker to help crews identify your property fast." },
             { step: "03", title: "Our team gets to work", desc: "Reliable service whenever it snows." }
           ].map((p, i) => (
             <ScrollReveal key={i} className="group relative">
@@ -438,18 +427,18 @@ export default function ResidentialSnowBlowingPage() {
             </div>
           </div>
 
-          {/* 24-Hour Service Guarantee */}
+          {/* 12-24 Hour Service Guarantee */}
           <div className="flex items-start gap-6">
             <div className="flex-shrink-0 w-16 h-16 text-[#017a6d]">
               <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="24" cy="24" r="20" stroke="currentColor" strokeWidth="1.5" />
-                <text x="24" y="29" fontSize="10" fontWeight="900" textAnchor="middle" fill="currentColor" fontFamily="Arial">24H</text>
+                <text x="24" y="28" fontSize="8" fontWeight="900" textAnchor="middle" fill="currentColor" fontFamily="Arial">12-24H</text>
               </svg>
             </div>
             <div>
-              <h3 className="text-xl font-black mb-2 uppercase tracking-tight">24-Hour Service Guarantee</h3>
+              <h3 className="text-xl font-black mb-2 uppercase tracking-tight">12-24 Hour Service Guarantee</h3>
               <p className="text-[15px] text-black/60 leading-relaxed font-medium">
-                We clear your property within 24 hours of snowfall ending. If we miss that window for any reason, we send a crew back at no charge. Calgary’s snow removal bylaw gives property owners 24 hours to clear sidewalks — we make sure you’re covered.
+                We clear your property within 12-24 hours of snowfall ending. If we miss that window for any reason, we send a crew back at no charge. Calgary’s snow removal bylaw gives property owners 24 hours to clear sidewalks — we make sure you’re covered.
               </p>
             </div>
           </div>
@@ -545,42 +534,6 @@ export default function ResidentialSnowBlowingPage() {
         </div>
       </Section>
 
-      {/* RECENT PROJECTS (Gallery) */}
-      <Section kicker="Projects" title="Our Recent Work" titleClassName="text-[#017a6d]" wrapperClassName="bg-white">
-        <Carousel className="mt-12">
-          {[
-            { src: "/Snow Page web pics/Ice-removal-after.JPG", alt: "Ice Removal After" },
-            { src: "/Snow Page web pics/Ice-removal-before.JPG", alt: "Ice Removal Before" },
-            { src: "/Snow Page web pics/Residential-snow-removal.JPG", alt: "Residential Snow Removal" },
-            { src: "/Snow Page web pics/South-Calgary-Snow-Removal.JPG", alt: "South Calgary Snow Removal" },
-            { src: "/Snow Page web pics/TERREOAK-Snow-Picket.JPG", alt: "TERREOAK Snow Picket" },
-            { src: "/snow-removal-okotoks-after.JPG", alt: "Snow Removal Okotoks After" },
-            { src: "/snow-removal-okotoks-before.JPG", alt: "Snow Removal Okotoks Before" },
-            { src: "/residential-snow-removalJPG.JPG", alt: "Residential Snow Removal Calgary" },
-          ].map((photo, i) => (
-            <div key={i} className="min-w-[85vw] md:min-w-[400px] px-3 snap-center">
-              <ScrollReveal className="relative aspect-[4/3] rounded-lg overflow-hidden group border border-black/5 shadow-md">
-                <Image
-                  src={photo.src}
-                  alt={photo.alt}
-                  fill
-                  sizes="(max-width: 768px) 85vw, 400px"
-                  className="object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500" />
-              </ScrollReveal>
-            </div>
-          ))}
-        </Carousel>
-        <div className="mt-12 text-center">
-          <Link
-            href="/projects"
-            className="inline-flex items-center justify-center rounded-lg border-2 border-[#017a6d] px-8 py-3 text-sm font-bold text-[#017a6d] hover:bg-[#017a6d] hover:text-white transition-all shadow-md hover:-translate-y-1"
-          >
-            VIEW ALL PROJECTS
-          </Link>
-        </div>
-      </Section>
 
       {/* FAQ */}
       <section style={styles.sectionAlt} className="section-divider">
@@ -619,14 +572,14 @@ export default function ResidentialSnowBlowingPage() {
             <details style={styles.details}>
               <summary style={styles.summary}>Do you offer one-time snow removal?</summary>
               <p style={styles.pSmall}>
-                We don’t offer one-time services. TERREOAK runs a route-based season pass model, which means our crews follow established neighbourhood routes each storm. This is what allows us to guarantee consistent 24-hour service — one-off calls would break that system for everyone on the route.
+                We don’t offer one-time services. TERREOAK runs a route-based season pass model, which means our crews follow established neighbourhood routes each storm. This is what allows us to guarantee consistent 12-24 hour service — one-off calls would break that system for everyone on the route.
               </p>
             </details>
 
             <details style={styles.details}>
               <summary style={styles.summary}>What if I’m away for part of the winter?</summary>
               <p style={styles.pSmall}>
-                We offer Snowbird and vacation passes for homeowners who only need coverage for a portion of the season. These short-term passes run from 1 to 8 weeks and include the same priority service and photo logs as a full season pass.
+                We offer Snowbird and vacation passes for homeowners who only need coverage for a portion of the season. These short-term passes run from 1 to 8 weeks and include the same dedicated service and photo logs as a full season pass.
               </p>
             </details>
           </div>

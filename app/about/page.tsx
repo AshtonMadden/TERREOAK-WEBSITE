@@ -21,21 +21,19 @@ export default function AboutPage() {
                     <div className="absolute inset-0 bg-black/60" />
                 </div>
 
-                <div className="relative z-10 mx-auto max-w-6xl px-6 pt-48 pb-16 md:pt-56 md:pb-24 lg:pt-60 lg:pb-32 text-left">
-                    <p className="text-[14px] font-bold tracking-widest text-[#01fa6d] uppercase drop-shadow-md">
-                        TERREOAK • OUR STORY
-                    </p>
-                    <h1 className="mt-4 text-[42px] md:text-[56px] lg:text-[64px] font-black leading-[1.1] tracking-tight text-white drop-shadow-2xl max-w-4xl uppercase">
-                        FROM A SNOW SHOVEL<br />
-                        <span className="text-[#01fa6d]">TO A CALGARY LANDSCAPE COMPANY.</span>
-                    </h1>
-                    <p className="mt-6 max-w-2xl text-[1.1rem] font-bold text-white/90 md:text-[1.3rem]">
-                        Local, reliable, and committed to Calgary properties. We focus on quality builds and accountable maintenance.
-                    </p>
-
+                <div className="relative z-10 w-full mx-auto max-w-6xl px-6 flex flex-col justify-center min-h-[100dvh] md:min-h-0 md:block pt-48 pb-16 md:pt-56 md:pb-24 lg:pt-60 lg:pb-32 text-left">
+                    <div className="mt-auto md:mt-0">
+                        <p className="text-[14px] md:text-[17px] font-bold tracking-widest text-[#01fa6d] uppercase drop-shadow-md">
+                            TERREOAK • OUR STORY
+                        </p>
+                        <h1 className="mt-4 text-[32px] md:text-[68px] lg:text-[76px] font-black leading-[1.1] tracking-tight text-white drop-shadow-2xl max-w-4xl uppercase">
+                            FROM A SNOW SHOVEL<br />
+                            <span className="text-[#01fa6d]">TO A CALGARY LANDSCAPE COMPANY.</span>
+                        </h1>
+                    </div>
 
                     {/* TRUST GRID */}
-                    <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div className="mt-auto md:mt-16 mb-8 md:mb-0 grid grid-cols-1 md:grid-cols-3 gap-6">
                         <div className="rounded-lg border border-black/10 bg-white p-[14px]">
                             <h3 className="font-black text-[16px] text-black">LOCAL CALGARY EXPERTISE</h3>
                             <p className="mt-1.5 text-[14px] text-black/70 leading-relaxed">

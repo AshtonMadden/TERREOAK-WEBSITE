@@ -20,21 +20,19 @@ export default function BlogPage() {
                     <div className="absolute inset-0 bg-black/40 z-0"></div>
                 </div>
 
-                <div className="relative z-10 mx-auto max-w-6xl px-6 pt-48 pb-16 md:pt-56 md:pb-24 lg:pt-60 lg:pb-32 text-left">
-                    <p className="text-[14px] font-bold tracking-widest text-[#01fa6d] uppercase drop-shadow-md">
-                        TERREOAK • Insights
-                    </p>
-                    <h1 className="mt-4 text-[42px] md:text-[56px] lg:text-[64px] font-black leading-[1.1] tracking-tight text-white drop-shadow-2xl max-w-4xl uppercase">
-                        THE TERREOAK BLOG —<br />
-                        <span className="text-[#01fa6d]">EXPERT ADVICE.</span>
-                    </h1>
-                    <p className="mt-6 max-w-2xl text-[1.1rem] font-bold text-white/90 md:text-[1.3rem] drop-shadow-md italic">
-                        Landscaping, snow removal, and property maintenance tips specifically for Calgary&apos;s unique climate.
-                        Learn how to protect your investment and improve your outdoor space.
-                    </p>
+                <div className="relative z-10 w-full mx-auto max-w-6xl px-6 flex flex-col justify-center min-h-[100dvh] md:min-h-0 md:block pt-48 pb-16 md:pt-56 md:pb-24 lg:pt-60 lg:pb-32 text-left">
+                    <div className="mt-auto md:mt-0">
+                        <p className="text-[14px] md:text-[17px] font-bold tracking-widest text-[#01fa6d] uppercase drop-shadow-md">
+                            TERREOAK • Insights
+                        </p>
+                        <h1 className="mt-4 text-[32px] md:text-[68px] lg:text-[76px] font-black leading-[1.1] tracking-tight text-white drop-shadow-2xl max-w-4xl uppercase">
+                            THE TERREOAK BLOG —<br />
+                            <span className="text-[#01fa6d]">EXPERT ADVICE.</span>
+                        </h1>
+                    </div>
 
                     {/* Trust Grid */}
-                    <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div className="mt-auto md:mt-16 mb-8 md:mb-0 grid grid-cols-1 md:grid-cols-3 gap-6">
                         <div className="rounded-xl border border-white/10 bg-white/10 backdrop-blur-md p-6 shadow-2xl">
                             <h3 className="font-black text-[18px] text-[#01fa6d] uppercase">Seasonal Tips</h3>
                             <p className="mt-2 text-[14px] text-white/80 leading-relaxed font-bold uppercase">
@@ -111,6 +109,37 @@ export default function BlogPage() {
                             <div className="space-y-4 text-black/70 text-base leading-relaxed font-medium mb-6">
                                 <p>
                                     Between snow mold, winter salt buildup, and soil compaction, your lawn goes through massive stress during the Calgary winter...
+                                </p>
+                            </div>
+                            <div className="mt-auto">
+                                <span className="inline-flex items-center justify-center rounded-full bg-[#2c2d32] px-6 py-3 text-[13px] font-black text-white group-hover:bg-[#01fa6d] group-hover:text-black transition-all shadow-lg uppercase tracking-wider">
+                                    Read Full Article →
+                                </span>
+                            </div>
+                        </div>
+                    </Link>
+
+                    {/* Article 3 - Snow Removal */}
+                    <Link
+                        href="/blog/why-hire-snow-removal-company"
+                        className="group flex flex-col w-[85vw] md:w-[calc(50%-24px)] flex-shrink-0 snap-center bg-white rounded-3xl border border-black/5 shadow-xl transition-all hover:shadow-2xl hover:-translate-y-1 h-full overflow-hidden"
+                    >
+                        <div className="relative aspect-[16/9] overflow-hidden group-hover:border-[#01fa6d] transition-colors border-b border-black/5">
+                            <Image
+                                src="/blog-pics/professional_snow_clearing.png"
+                                alt="Why hire a professional Calgary snow removal company"
+                                fill
+                                className="object-cover group-hover:scale-105 transition-transform duration-700"
+                            />
+                        </div>
+                        <div className="flex flex-col flex-grow p-8">
+                            <p className="text-[#017a6d] font-black uppercase text-xs mb-3 tracking-widest">WINTER MAINTENANCE • EXPERT GUIDE</p>
+                            <h2 className="text-2xl font-black uppercase text-black leading-tight mb-4 group-hover:text-[#017a6d] transition-colors">
+                                Why You Should Hire a Professional Calgary Snow Removal Company
+                            </h2>
+                            <div className="space-y-4 text-black/70 text-base leading-relaxed font-medium mb-6">
+                                <p>
+                                    When the temperature drops and heavy snow falls, shoveling the driveway is the last thing anyone wants to do. But avoiding the cold isn't the only reason...
                                 </p>
                             </div>
                             <div className="mt-auto">

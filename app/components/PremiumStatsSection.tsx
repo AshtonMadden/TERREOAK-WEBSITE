@@ -25,11 +25,11 @@ export default function PremiumStatsSection() {
           </div>
           
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-black leading-[1.1] tracking-tight text-white mb-6 uppercase drop-shadow-lg">
-            CRAFTING BEAUTIFUL <br/><span className="text-white/50">YARDS SINCE '16</span>
+            CRAFTING BEAUTIFUL <br/><span className="text-white/50">YARDS SINCE '18</span>
           </h2>
           
           <p className="text-lg text-white/80 leading-relaxed font-medium mb-10 max-w-lg">
-            Established in 2016, TERREOAK has been transforming Calgary's outdoor spaces into thriving, beautiful landscapes. With a commitment to quality and personalized care, our highly trained team offers a full range of services—from custom design to premium installation—ensuring your yard flourishes in every season.
+            Established in 2018, TERREOAK has been transforming Calgary's outdoor spaces into thriving, beautiful landscapes. With a commitment to quality and personalized care, our highly trained team offers a full range of services—from custom design to premium installation—ensuring your yard flourishes in every season.
           </p>
 
           <Link

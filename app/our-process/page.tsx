@@ -108,28 +108,6 @@ export default function OurProcessPage() {
         </div>
       </Section>
 
-      {/* TESTIMONIALS */}
-      <TestimonialSection
-        kicker="Client Feedback"
-        title="What Our Clients Say About The Process"
-        testimonials={[
-          {
-            name: "Mark D.",
-            role: "Full Backyard Build",
-            text: "The process was completely stress-free. TERREOAK gave us a detailed quote, stuck to the schedule, and handled the entire build flawlessly. Walking the finished yard with them was amazing—no surprises, just beautiful work."
-          },
-          {
-            name: "Jessica P.",
-            role: "Landscape Design",
-            text: "What impressed me most was their communication. Every step of the way, from the initial consultation to the 3D revisions, they were transparent and responsive. We knew exactly what we were getting and exactly what it would cost."
-          },
-          {
-            name: "Robert W.",
-            role: "Front Yard Renovation",
-            text: "I've worked with a lot of contractors, but TERREOAK's professionalism stands out. They showed up when they said they would, kept a meticulously clean job site, and stood strictly by their one-year warranty."
-          }
-        ]}
-      />
 
       {/* FINAL CTA */}
       <section className="py-24 bg-[#017a6d] text-center text-white">

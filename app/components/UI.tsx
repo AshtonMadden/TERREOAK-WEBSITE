@@ -92,7 +92,7 @@ export function Section({
                                         {kicker}
                                     </p>
                                 ) : null}
-                                <h2 className={`mt-2 text-3xl md:text-5xl font-black ${titleClassName || ""}`}>{title}</h2>
+                                <h2 className={`mt-2 text-3xl md:text-5xl font-black uppercase ${titleClassName || ""}`}>{title}</h2>
                             </div>
                             {headerRight}
                         </div>

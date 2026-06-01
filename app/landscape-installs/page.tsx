@@ -111,7 +111,6 @@ export default function LandscapeInstallsPage() {
         </div>
       </Section>
 
-      <PremiumStatsSection />
 
       {/* PROPERTY TYPES SECTION */}
       <Section title="Landscaping Services for All Calgary Properties" titleClassName="text-[#017a6d]">
@@ -122,28 +121,14 @@ export default function LandscapeInstallsPage() {
           <p className="mb-6">
             We work with new build homeowners in Calgary’s growing south and northwest communities, established homeowners upgrading aging yards, infill townhome builders, and luxury property owners looking for a contractor who can execute a high-spec finish. Every project starts with an on-site consultation and 3D design so you can see your space before a single shovel hits the ground.
           </p>
+          <p className="mb-6 font-black text-[#01fa6d] bg-[#2c2d32] p-4 rounded-xl inline-block shadow-md">
+            🛡️ Peace of Mind: Every TERREOAK landscape installation is backed by a comprehensive 1-Year Workmanship Warranty. We stand behind everything we build.
+          </p>
           <p className="font-black text-[#017a6d]">
             Calgary’s landscape build season fills up fast. If you’re planning a project for spring or summer, now is the time to get into the queue.
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          {[
-            "New Builds",
-            "Established Homes",
-            "Infill Townhomes",
-            "Luxury Properties"
-          ].map((type, i) => (
-            <div key={i} className="flex flex-col items-center justify-center p-6 rounded-xl border border-black/10 transition-all hover:border-[#017a6d] hover:bg-gray-50 group">
-              <div className="w-12 h-12 rounded-full bg-[#017a6d]/5 flex items-center justify-center mb-4 group-hover:bg-[#017a6d] transition-colors">
-                <svg className="w-6 h-6 text-[#017a6d] group-hover:text-white transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-                </svg>
-              </div>
-              <h3 className="font-black text-center text-sm md:text-base">{type}</h3>
-            </div>
-          ))}
-        </div>
 
         {/* FOUNDER SPOTLIGHT */}
         <div className="flex flex-col md:flex-row items-stretch bg-white rounded-3xl shadow-xl border border-black/5 overflow-hidden group mt-20">
@@ -183,70 +168,38 @@ export default function LandscapeInstallsPage() {
         </div>
       </Section>
 
-      {/* WHY CALGARY LANDSCAPING IS DIFFERENT */}
-      <Section
-        kicker="WHY CALGARY LANDSCAPING IS DIFFERENT"
-        title="Built for Alberta. Not Just Built."
-        titleClassName="text-[#017a6d]"
-        wrapperClassName="bg-gray-50"
-      >
-        <div className="max-w-4xl space-y-6">
-          <p className="text-xl text-black/80 leading-relaxed font-bold">
-            Landscaping in Calgary isn’t the same as landscaping in Vancouver or Toronto. Our freeze-thaw cycle, clay soils, short growing season, and chinook wind patterns all affect how outdoor spaces are designed and built. A patio base that works in Ontario will heave and crack here within two winters.
-          </p>
-          <p className="text-lg text-black/70 leading-relaxed font-medium">
-            Every TERREOAK build accounts for Calgary’s specific conditions — proper compacted gravel base depths, frost-rated materials, drainage slopes that handle spring runoff, and plant species selected for Zone 3b hardiness. It’s the difference between a yard that looks great on completion day and one that still looks great five years later.
-          </p>
-        </div>
-      </Section>
+      <PremiumStatsSection />
+
+
 
       {/* PROCESS */}
-      <Section
-        wrapperClassName="bg-[#2c2d32] overflow-hidden"
-        kicker="How We Do It"
-        kickerClassName="text-white/60"
-        title="The Process Matters"
-        titleClassName="text-white"
-      >
-        <div className="flex flex-col xl:flex-row items-stretch gap-8 mt-12">
-          {/* LEFT: Process Step Cards Grid (Strict 3 columns on desktop) */}
-          <div className="flex-1">
-            <div className="grid grid-cols-2 lg:grid-cols-3 gap-3">
-              {[
-                "Inquiry", "Consultation", "Proposal Delivered", "Proposal Review",
-                "Deposit", "Pre-Construction Meeting", "Work on Project Begins",
-                "Walkthrough", "Warranty Period"
-              ].map((step, i) => (
-                <ScrollReveal key={i}>
-                  <div className="h-full bg-white/5 py-4 px-3 rounded-xl border border-white/10 hover:border-[#01fa6d]/50 transition-all group flex flex-col items-center text-center">
-                    <div className="w-8 h-8 rounded-full bg-[#01fa6d] text-[#2c2d32] flex items-center justify-center font-black text-xs mb-3 shrink-0 group-hover:scale-110 transition-transform shadow-lg">
-                      {i + 1}
-                    </div>
-                    <h3 className="font-black uppercase text-[9px] sm:text-[10px] text-white tracking-widest leading-tight">
-                      {step}
-                    </h3>
-                  </div>
-                </ScrollReveal>
-              ))}
-            </div>
-          </div>
-
-          {/* RIGHT: Text Content Box */}
-          <div className="w-full xl:w-[380px] bg-white/5 rounded-3xl p-8 border border-white/10 shadow-2xl flex flex-col justify-center">
-            <h3 className="text-2xl font-black text-[#01fa6d] mb-4 uppercase leading-tight">Quality is in the details</h3>
-            <p className="text-base text-white/90 leading-relaxed mb-4 font-bold">
-              At TERREOAK Landscaping, the entire process matters, from the first call to the moment you relax in your new yard.
+      {/* PROCESS */}
+      <Section title="How We Work" titleClassName="text-[#017a6d]" wrapperClassName="bg-gray-50 border-y border-black/5">
+        <div className="max-w-6xl mx-auto">
+          <ScrollReveal>
+            <p className="text-xl md:text-2xl text-black/80 font-medium mb-16 text-center max-w-3xl mx-auto leading-relaxed">
+              Getting your yard done right starts long before we pick up a shovel. Here’s what working with TERREOAK looks like from first contact to final walkthrough.
             </p>
-            <p className="text-sm text-white/60 leading-relaxed mb-8 font-medium">
-              We believe that you should not only expect to be thrilled with your final project but should also expect to enjoy the experience of working with us. Quality and trust are the foundations of our business.
-            </p>
-
-            <button
-              onClick={handleScrollToForm}
-              className="w-full inline-flex items-center justify-center rounded-xl bg-[#01fa6d] py-4 text-xs font-black text-[#2c2d32] hover:bg-white transition-all shadow-xl uppercase tracking-[0.2em]"
-            >
-              Start Project
-            </button>
+          </ScrollReveal>
+            
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              { step: 1, title: "Initial Consultation", desc: "It starts with a conversation. When you reach out, we’ll ask about your project goals, timeline, and budget to make sure we’re a good fit before anyone commits to anything. From there, we’ll schedule a site walk to see the space in person." },
+              { step: 2, title: "Quote & Agreement", desc: "After the site walk, we put together a detailed quote in our client portal with everything laid out clearly — scope, materials, and pricing. Your service agreement is attached and accepted alongside the quote, so there’s no paperwork chasing. Most projects run on a payment schedule with a deposit required to secure your spot on the schedule." },
+              { step: 3, title: "Design & Revisions", desc: "If your project includes a 3D landscape design, that’s available as an add-on. Once we’re aligned on plants and materials, we finalize everything — attaching material photos and the design to your quote so you know exactly what you’re getting. We offer up to two revisions to make sure it’s right before we move forward." },
+              { step: 4, title: "Scheduling & Installation", desc: "Once the quote is accepted and deposit received, your project gets booked. On site, we treat every yard like it’s our own — working methodically and holding ourselves to the same standard regardless of project size." },
+              { step: 5, title: "Final Walkthrough & Completion", desc: "When the work is done, we walk the property with you to make sure you’re happy with everything. Then we clean up the site, document the finished project with photos, and collect the final payment." },
+              { step: 6, title: "Warranty", desc: "We stand behind our work. TERREOAK provides a one-year workmanship warranty — if anything we installed fails due to our work, we’ll come back and make it right at no charge. Plant warranty follows what the nursery provides, which we’ll communicate clearly upfront." },
+            ].map((item, i) => (
+              <ScrollReveal 
+                key={i} 
+                className="bg-white p-8 rounded-3xl shadow-lg border border-black/5 flex flex-col hover:-translate-y-1 transition-transform h-full"
+              >
+                <div className="text-6xl font-black text-[#01fa6d]/30 tracking-tighter mb-4">0{item.step}</div>
+                <h3 className="text-xl font-black mb-3 text-black uppercase">{item.title}</h3>
+                <p className="text-black/70 text-base leading-relaxed font-medium">{item.desc}</p>
+              </ScrollReveal>
+            ))}
           </div>
         </div>
       </Section>

@@ -51,6 +51,13 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         }
       },
       {
+        "@type": "WebSite",
+        "@id": "https://www.terreoak.CalgaryHardscaping.ca/#website",
+        "url": "https://www.terreoak.CalgaryHardscaping.ca",
+        "name": "TERREOAK Landscaping",
+        "description": "Calgary's premier landscaping and snow removal team."
+      },
+      {
         "@type": "LandscapingService",
         "@id": "https://www.terreoak.CalgaryHardscaping.ca/#localbusiness",
         "name": "TERREOAK Landscaping & Snow",
@@ -59,7 +66,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         "telephone": "+1-587-707-7648",
         "email": "services@TERREOAK.ca",
         "description": "TERREOAK Landscaping & Snow is a premium landscaping contractor in Calgary, Alberta. We specialize in residential hardscaping, softscaping, retaining walls, paving stone patios, landscape design, reliable year-round commercial property maintenance, and residential snow removal.",
-        "knowsAbout": ["Hardscaping", "Retaining Walls", "Paving Stone Patios", "Softscaping", "Snow Removal", "Commercial Grounds Maintenance", "Landscape Design", "Excavation", "Custom Woodworking"],
+        "knowsAbout": ["Hardscaping", "Retaining Walls", "Paving Stone Patios", "Softscaping", "Snow Removal", "Commercial Grounds Maintenance", "Landscape Design", "Custom Woodworking"],
         "image": "https://www.terreoak.CalgaryHardscaping.ca/images/commercial.png",
         "address": {
           "@type": "PostalAddress",

@@ -5,6 +5,9 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import { Section, ScrollReveal, Carousel } from "../components/UI";
 import OurBlogSection from "../components/OurBlogSection";
+import TrustBar from "../components/TrustBar";
+import TestimonialSection from "../components/TestimonialSection";
+import PremiumHero from "../components/PremiumHero";
 import GoogleReviewBadge from "../components/GoogleReviewBadge";
 import dynamic from "next/dynamic";
 
@@ -38,45 +41,13 @@ export default function CommercialGroundsMaintenancePage() {
 
     return (
         <main className="bg-white text-black">
-            {/* HERO */}
-            <section className="relative min-h-screen flex flex-col justify-center border-b border-black/10 overflow-hidden">
-                <div className="absolute inset-0 z-0">
-                    <Image
-                        src="/images/commercial.png"
-                        alt="Commercial grounds maintenance and snow removal in Calgary"
-                        fill
-                        priority
-                        sizes="100vw"
-                        className="object-cover"
-                    />
-                    <div className="absolute inset-0 bg-black/50" />
-                </div>
-
-                <div className="relative z-10 w-full mx-auto max-w-6xl px-6 flex flex-col justify-center min-h-[100dvh] md:min-h-0 md:block pt-32 pb-12 md:pt-56 md:pb-24 lg:pt-60 lg:pb-32 text-left">
-                    <div className="mt-auto md:mt-0">
-                        <p className="text-[14px] md:text-[17px] font-bold tracking-widest text-[#01fa6d] uppercase drop-shadow-md">
-                            Calgary • Commercial Services
-                        </p>
-                        <h1 className="mt-2 text-[32px] md:text-[68px] lg:text-[76px] font-black leading-[1.1] tracking-tight text-white drop-shadow-2xl max-w-4xl uppercase">
-                            CALGARY<br />
-                            <span className="text-[#01fa6d]">COMMERCIAL GROUNDS MAINTENANCE</span>
-                        </h1>
-                    </div>
-
-                    <div className="mt-auto md:mt-12 mb-8 md:mb-0 flex flex-col md:flex-row items-start md:items-center gap-8">
-                        <div className="flex flex-wrap gap-4">
-                            <button
-                                onClick={handleScrollToForm}
-                                className="inline-flex items-center justify-center rounded-full bg-[#01fa6d]/80 backdrop-blur-md px-12 md:px-28 py-[16px] md:py-[20px] text-[16px] md:text-[20px] font-extrabold text-black border-2 border-white/10 hover:bg-[#01fa6d] transition-all cursor-pointer shadow-xl shadow-[#01fa6d]/20 hover:-translate-y-1 w-full md:w-auto text-center"
-                            >
-                                REQUEST A COMMERCIAL BID
-                            </button>
-                        </div>
-
-                        <GoogleReviewBadge />
-                    </div>
-                </div>
-            </section>
+            <PremiumHero
+                title={<>CALGARY<br /><span className="text-[#01fa6d]">COMMERCIAL GROUNDS MAINTENANCE</span></>}
+                backgroundImage="/images/commercial.png"
+                badgeLabel="Calgary • Commercial Services"
+                ctaText="REQUEST A COMMERCIAL BID"
+                onCtaClick={handleScrollToForm}
+            />
 
             {/* INTRO SECTION */}
             <Section

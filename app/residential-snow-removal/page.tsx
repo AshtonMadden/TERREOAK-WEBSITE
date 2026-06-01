@@ -8,6 +8,7 @@ import { Section, ScrollReveal, Carousel } from "../components/UI";
 import OurBlogSection from "../components/OurBlogSection";
 import StatsCounter from "./StatsCounter";
 import GoogleReviewBadge from "../components/GoogleReviewBadge";
+import PremiumHero from "../components/PremiumHero";
 import dynamic from "next/dynamic";
 
 const JobberLeadForm = dynamic(() => import("../components/JobberLeadForm"), {
@@ -70,45 +71,34 @@ export default function ResidentialSnowBlowingPage() {
 
   return (
     <main>
-      {/* HERO */}
-      <section className="relative min-h-screen flex flex-col justify-center border-b border-black/10 overflow-hidden bg-black">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover z-0"
-        >
-          <source src="/Calgary-snowremoval-drone.mov" type="video/mp4" />
-        </video>
-        <div className="absolute inset-0 bg-black/40 z-0"></div>
-
-        <div className="relative z-10 w-full mx-auto max-w-6xl px-6 flex flex-col justify-center min-h-[100dvh] md:min-h-0 md:block pt-32 pb-12 md:pt-56 md:pb-24 lg:pt-60 lg:pb-32 text-left">
-          <div className="mt-auto md:mt-0">
-            <p className="text-[14px] font-bold tracking-widest text-[#01fa6d] uppercase drop-shadow-md">
-              Calgary • Residential Snow Removal
-            </p>
-            <h1 className="mt-2 text-[32px] md:text-[56px] lg:text-[64px] font-black leading-[1.1] tracking-tight text-white drop-shadow-2xl max-w-4xl uppercase">
-              CALGARY RESIDENTIAL<br />
-              SNOW REMOVAL —<br />
-              <span className="text-[#01fa6d]">Worry-free all winter.</span>
-            </h1>
+      <PremiumHero
+        title={<>CALGARY RESIDENTIAL<br />SNOW REMOVAL —<br /><span className="text-[#01fa6d]">Worry-free all winter.</span></>}
+        backgroundVideo="/Calgary-snowremoval-drone.mov"
+        badgeLabel="Calgary • Residential Snow Removal"
+        ctaText="SIGN UP"
+        onCtaClick={handleScrollToForm}
+        ctaSubtext="Responds same day"
+        secondaryCtaText="How it works"
+        onSecondaryCtaClick={() => {
+          const el = document.getElementById('how-it-works');
+          if (el) el.scrollIntoView({ behavior: 'smooth' });
+        }}
+      >
+        <div className="flex flex-wrap items-center gap-3 mt-8">
+          <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md rounded-lg px-4 py-2.5 border border-white/20 shadow-xl">
+            <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" /></svg>
+            <span className="text-sm font-bold text-white tracking-wide">We monitor</span>
           </div>
-
-          <div className="mt-auto md:mt-12 mb-8 md:mb-0 flex flex-col md:flex-row items-start md:items-center gap-8">
-            <div className="flex flex-wrap gap-4">
-              <button
-                onClick={handleScrollToForm}
-                className="inline-flex items-center justify-center rounded-full bg-[#01fa6d]/80 backdrop-blur-md px-12 md:px-24 py-[16px] text-[16px] font-extrabold text-black border-2 border-white/10 hover:bg-[#01fa6d] transition-all cursor-pointer shadow-xl shadow-[#01fa6d]/20 hover:-translate-y-1 w-full md:w-auto text-center"
-              >
-                SIGN UP
-              </button>
-            </div>
-
-            <GoogleReviewBadge />
+          <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md rounded-lg px-4 py-2.5 border border-white/20 shadow-xl">
+            <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+            <span className="text-sm font-bold text-white tracking-wide">We show up</span>
+          </div>
+          <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md rounded-lg px-4 py-2.5 border border-white/20 shadow-xl">
+            <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+            <span className="text-sm font-bold text-white tracking-wide">You get a photo log</span>
           </div>
         </div>
-      </section>
+      </PremiumHero>
 
       {/* STATS COUNTER */}
       <StatsCounter stats={[
@@ -380,6 +370,7 @@ export default function ResidentialSnowBlowingPage() {
       </Section>
 
       <Section
+        id="how-it-works"
         kicker="Our Process"
         kickerClassName="text-white/60"
         title="HOW IT WORKS"

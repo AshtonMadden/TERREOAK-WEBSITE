@@ -8,6 +8,8 @@ import OurBlogSection from "../components/OurBlogSection";
 import StatsCounter from "../residential-snow-removal/StatsCounter";
 import GoogleReviewBadge from "../components/GoogleReviewBadge";
 import dynamic from "next/dynamic";
+import PremiumHero from "../components/PremiumHero";
+import TrustBar from "../components/TrustBar";
 
 const JobberLeadForm = dynamic(() => import("../components/JobberLeadForm"), {
     loading: () => <div className="w-full h-[600px] animate-pulse bg-gray-50 rounded-3xl" />,
@@ -43,48 +45,13 @@ export default function SpringCleanupPage() {
 
     return (
         <main>
-            {/* HERO */}
-            <section className="relative min-h-screen flex flex-col justify-center border-b border-black/10 overflow-hidden bg-black">
-                <div className="absolute inset-0 z-0">
-                    <video
-                        autoPlay
-                        loop
-                        muted
-                        playsInline
-                        className="absolute inset-0 w-full h-full object-cover"
-                    >
-                        <source src="/videos/1B200505-8980-40F6-8F8F-D3B3CBEEAFBA.mp4" type="video/mp4" />
-                    </video>
-                    <div className="absolute inset-0 bg-black/40 z-0"></div>
-                </div>
-
-                <div className="relative z-10 w-full mx-auto max-w-6xl px-6 flex flex-col justify-center min-h-[100dvh] md:min-h-0 md:block pt-32 pb-12 md:pt-56 md:pb-24 lg:pt-60 lg:pb-32 text-left">
-                    <div className="mt-auto md:mt-0">
-                        <p className="text-[14px] font-bold tracking-widest text-[#01fa6d] uppercase drop-shadow-md">
-                            Calgary • Seasonal Services
-                        </p>
-                        <h1 className="mt-2 text-[32px] md:text-[56px] lg:text-[64px] font-black leading-[1.1] tracking-tight text-white drop-shadow-2xl max-w-4xl uppercase">
-                            CALGARY<br />
-                            SPRING CLEANUP<br />
-                            <span className="text-[#01fa6d]">Fresh Start for your Yard.</span>
-                        </h1>
-                    </div>
-
-                    <div className="mt-auto md:mt-12 mb-8 md:mb-0 flex flex-col md:flex-row items-start md:items-center gap-8">
-                        <div className="flex flex-wrap gap-4">
-                            <button
-                                onClick={handleScrollToForm}
-                                className="inline-flex items-center justify-center rounded-full bg-[#01fa6d]/80 backdrop-blur-md px-12 md:px-24 py-[16px] text-[16px] font-extrabold text-black border-2 border-white/10 hover:bg-[#01fa6d] transition-all cursor-pointer shadow-xl shadow-[#01fa6d]/20 hover:-translate-y-1 w-full md:w-auto text-center"
-                            >
-                                FREE QUOTE
-                            </button>
-                        </div>
-
-                        <GoogleReviewBadge />
-                    </div>
-
-                </div>
-            </section>
+      <PremiumHero
+        title={<>CALGARY<br />SPRING CLEANUP<br /><span className="text-[#01fa6d]">Fresh Start for your Yard.</span></>}
+        backgroundVideo="/videos/1B200505-8980-40F6-8F8F-D3B3CBEEAFBA.mp4"
+        badgeLabel="Property Maintenance"
+        ctaText="FREE QUOTE"
+        onCtaClick={handleScrollToForm}
+      />
 
             {/* STATS COUNTER */}
             <StatsCounter stats={[

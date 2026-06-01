@@ -8,6 +8,7 @@ import OurBlogSection from "../components/OurBlogSection";
 import StatsCounter from "../residential-snow-removal/StatsCounter";
 import JobberLeadForm from "../components/JobberLeadForm";
 import GoogleReviewBadge from "../components/GoogleReviewBadge";
+import PremiumHero from "../components/PremiumHero";
 
 export default function IrrigationPage() {
     const [isCtaVisible, setIsCtaVisible] = useState(false);
@@ -35,44 +36,13 @@ export default function IrrigationPage() {
     return (
         <main>
             {/* HERO */}
-            <section className="relative min-h-screen flex flex-col justify-center border-b border-black/10 overflow-hidden bg-black">
-                <div className="absolute inset-0 z-0">
-                    <Image
-                        src="/images/irrigation-hero.jpg"
-                        alt="Professional irrigation blowout and sprinkler winterization in Calgary"
-                        fill
-                        priority
-                        className="object-cover"
-                    />
-                    <div className="absolute inset-0 bg-black/40 z-0"></div>
-                </div>
-
-                <div className="relative z-10 w-full mx-auto max-w-6xl px-6 flex flex-col justify-center min-h-[100dvh] md:min-h-0 md:block pt-32 pb-12 md:pt-56 md:pb-24 lg:pt-60 lg:pb-32 text-left">
-                    <div className="mt-auto md:mt-0">
-                        <p className="text-[14px] md:text-[17px] font-bold tracking-widest text-[#01fa6d] uppercase drop-shadow-md">
-                            Calgary • Seasonal Services
-                        </p>
-                        <h1 className="mt-2 text-[32px] md:text-[68px] lg:text-[76px] font-black leading-[1.1] tracking-tight text-white drop-shadow-2xl max-w-4xl uppercase">
-                            CALGARY<br />
-                            IRRIGATION BLOWOUTS<br />
-                            <span className="text-[#01fa6d]">Protect Your Pipes.</span>
-                        </h1>
-                    </div>
-
-                    <div className="mt-auto md:mt-12 mb-8 md:mb-0 flex flex-col md:flex-row items-start md:items-center gap-8">
-                        <div className="flex flex-wrap gap-4">
-                            <button
-                                onClick={handleScrollToForm}
-                                className="inline-flex items-center justify-center rounded-full bg-[#01fa6d]/80 backdrop-blur-md px-12 md:px-28 py-[16px] md:py-[20px] text-[16px] md:text-[20px] font-extrabold text-black border-2 border-white/10 hover:bg-[#01fa6d] transition-all cursor-pointer shadow-xl shadow-[#01fa6d]/20 hover:-translate-y-1 w-full md:w-auto text-center"
-                            >
-                                BOOK YOUR BLOWOUT
-                            </button>
-                        </div>
-
-                        <GoogleReviewBadge />
-                    </div>
-                </div>
-            </section>
+            <PremiumHero
+                title={<>CALGARY<br />IRRIGATION BLOWOUTS<br /><span className="text-[#01fa6d]">Protect Your Pipes.</span></>}
+                backgroundImage="/images/irrigation-hero.jpg"
+                badgeLabel="Calgary • Seasonal Services"
+                ctaText="BOOK YOUR BLOWOUT"
+                onCtaClick={handleScrollToForm}
+            />
 
             {/* STATS COUNTER */}
             <StatsCounter stats={[

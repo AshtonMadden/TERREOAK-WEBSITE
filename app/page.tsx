@@ -8,7 +8,9 @@ import Script from "next/script";
 
 import { Section, ScrollReveal, Carousel } from "./components/UI";
 import OurBlogSection from "./components/OurBlogSection";
-import GoogleReviewBadge from "./components/GoogleReviewBadge";
+import PremiumHero from "./components/PremiumHero";
+import TrustBar from "./components/TrustBar";
+import PremiumStatsSection from "./components/PremiumStatsSection";
 import dynamic from "next/dynamic";
 
 const TestimonialSection = dynamic(() => import("./components/TestimonialSection"), {
@@ -85,66 +87,18 @@ const allImages = [
 
 
 export default function HomePage() {
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.play().catch(error => {
-        console.error("Autoplay failed:", error);
-      });
-    }
-  }, []);
-
   return (
     <main className="bg-white text-black">
-      {/* HERO */}
-      <section className="relative min-h-screen flex flex-col justify-start border-b border-black/10 overflow-hidden">
-        {/* Background Video with Overlay */}
-        <div className="absolute inset-0 z-0 bg-black/40">
-          <video
-            ref={videoRef}
-            autoPlay
-            loop
-            muted
-            playsInline
-            preload="auto"
-            className="absolute min-w-full min-h-full object-cover transform-gpu will-change-transform z-10"
-          >
-            <source src="/landscaping-mahogany.MOV" type="video/quicktime" />
-            <source src="/landscaping-mahogany.MOV" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-          {/* 40% Dark Overlay */}
-          <div className="absolute inset-0 bg-black/40 z-20" />
-        </div>
+      <PremiumHero
+        title={<>Calgary Landscape <br /><span className="text-[#01fa6d]">Construction & Snow Removal.</span></>}
+        description="Premium landscape construction and year-round property maintenance for Calgary's residential and commercial properties."
+        backgroundVideo="/landscaping-mahogany.MOV"
+        badgeLabel="Calgary & Area"
+        ctaText="SEE RECENT PROJECTS"
+        ctaHref="/projects"
+      />
 
-        <div className="relative z-10 w-full mx-auto max-w-6xl px-6 flex flex-col justify-center min-h-[100dvh] md:min-h-0 md:block pt-32 pb-12 md:pt-56 md:pb-24 lg:pt-60 lg:pb-32 text-left">
-          <div className="mt-auto md:mt-0">
-            <p className="text-[14px] font-bold tracking-widest text-[#01fa6d] uppercase drop-shadow-md">
-              Calgary & Area
-            </p>
-
-            <h1 className="mt-2 text-[32px] md:text-[56px] lg:text-[64px] font-black leading-[1.1] tracking-tight text-white drop-shadow-2xl max-w-4xl uppercase">
-              Calgary Landscape <br />
-              <span className="text-[#01fa6d]">Construction & Snow Removal.</span>
-            </h1>
-          </div>
-
-          <div className="mt-auto md:mt-12 mb-8 md:mb-0 flex flex-col md:flex-row items-start md:items-center gap-8">
-            <div className="flex flex-wrap gap-4">
-              <Link
-                href="/projects"
-                className="inline-flex items-center justify-center rounded-full bg-[#01fa6d]/80 backdrop-blur-md px-12 md:px-24 py-[16px] text-[16px] font-extrabold text-black border-2 border-white/10 hover:bg-[#01fa6d] transition-all transform hover:-translate-y-1 shadow-xl shadow-[#01fa6d]/20 w-full md:w-auto text-center"
-              >
-                SEE RECENT PROJECTS
-              </Link>
-
-              {/* SOCIAL PROOF BADGE */}
-              <GoogleReviewBadge />
-            </div>
-          </div>
-        </div>
-      </section>
+      <TrustBar />
 
       {/* FEATURED PROJECTS */}
       <Section
@@ -153,11 +107,12 @@ export default function HomePage() {
         titleClassName="text-[#017a6d]"
         wrapperClassName="bg-gray-50 border-y border-black/5"
       >
-        <div className="max-w-6xl mx-auto flex flex-col gap-24">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {[
               {
                 id: 1,
                 title: "Custom Landscape Design & Build",
+                location: "Calgary, AB",
                 desc: "Explore one of our recent high-end residential landscape construction projects. From initial 3D conceptual design to final construction, see how we transformed this outdoor space.",
                 img: "/Landscape web page pics/Finished-hardscape-project.JPG",
                 link: "/projects/featured-project-1"
@@ -165,42 +120,52 @@ export default function HomePage() {
               {
                 id: 2,
                 title: "Premium Hardscape Installation",
+                location: "Calgary, AB",
                 desc: "A stunning transformation featuring Techo-Bloc paving stones, custom retaining walls, and a fully redesigned outdoor living area built to withstand Calgary's climate.",
                 img: "/Landscape web page pics/Techo-Bloc-pavers-river-rock.JPG",
                 link: "/projects/featured-project-2"
               }
-            ].map((project, idx) => (
-                <div key={project.id} className={`flex flex-col md:flex-row gap-12 items-center ${idx % 2 === 1 ? 'md:flex-row-reverse' : ''}`}>
-                    <div className="w-full md:w-1/2">
-                        <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border border-black/10 group">
-                            <Image
-                                src={project.img}
-                                alt={project.title}
-                                fill
-                                sizes="(max-width: 768px) 100vw, 50vw"
-                                className="object-cover group-hover:scale-105 transition-transform duration-700"
-                            />
+            ].map((project) => (
+                <div key={project.id} className="relative group overflow-hidden rounded-3xl aspect-[4/3] md:aspect-video cursor-pointer shadow-xl">
+                    <Image
+                        src={project.img}
+                        alt={project.title}
+                        fill
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        className="object-cover group-hover:scale-110 transition-transform duration-700"
+                    />
+                    
+                    {/* Default Glassmorphic Bottom Bar */}
+                    <div className="absolute bottom-4 left-4 right-4 bg-black/40 backdrop-blur-md border border-white/20 rounded-2xl p-6 flex items-center justify-between transition-all duration-500 group-hover:opacity-0 group-hover:translate-y-4">
+                        <div>
+                            <div className="text-white/80 text-[10px] uppercase tracking-[0.2em] font-bold mb-1">Name</div>
+                            <div className="text-white font-black text-xl">{project.title}</div>
+                        </div>
+                        <div className="text-right flex items-center gap-6">
+                            <div className="hidden sm:block text-left">
+                                <div className="text-white/80 text-[10px] uppercase tracking-[0.2em] font-bold mb-1">Location</div>
+                                <div className="text-white font-black text-xl">{project.location}</div>
+                            </div>
+                            <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                            </svg>
                         </div>
                     </div>
-                    <div className="w-full md:w-1/2 space-y-6">
-                        <h3 className="text-3xl md:text-4xl font-black text-[#017a6d] uppercase tracking-tight">{project.title}</h3>
-                        <p className="text-lg text-black/70 font-medium leading-relaxed">
-                            {project.desc}
-                        </p>
-                        <div className="pt-4">
-                            <Link
-                                href={project.link}
-                                className="inline-flex items-center justify-center rounded-xl bg-[#017a6d] px-8 py-4 text-[16px] font-black text-white hover:bg-[#015e54] transition-all transform hover:-translate-y-1 shadow-lg shadow-[#017a6d]/20 uppercase tracking-wide"
-                            >
-                                LEARN MORE
-                            </Link>
-                        </div>
+
+                    {/* Hover Overlay: Solid Green with Description */}
+                    <div className="absolute inset-0 bg-[#017a6d]/95 backdrop-blur-sm flex flex-col justify-center items-center p-8 text-center transition-all duration-500 opacity-0 translate-y-8 group-hover:opacity-100 group-hover:translate-y-0">
+                        <h3 className="text-3xl font-black text-white mb-4">{project.title}</h3>
+                        <p className="text-white/90 font-medium text-lg mb-8 max-w-md">{project.desc}</p>
+                        <Link href={project.link} className="inline-flex items-center gap-3 bg-[#01fa6d] text-black px-8 py-3 rounded-full font-black hover:bg-white transition-colors uppercase tracking-widest text-sm">
+                            View Project <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                        </Link>
                     </div>
                 </div>
             ))}
         </div>
       </Section>
 
+      <PremiumStatsSection />
 
       {/* SERVICES */}
       <Section
@@ -215,7 +180,7 @@ export default function HomePage() {
               TERREOAK is a full-service landscape construction and property maintenance company serving Calgary. Our work is built around three core divisions: landscape construction, commercial grounds maintenance, and residential seasonal services.
             </p>
             <p>
-              From new-build sod and tree installations to hardscape construction and reliable snow removal, we deliver structured scheduling, professional systems, and results built for Alberta’s extreme seasons.
+              From new-build sod and <Link href="/softscapes" className="text-[#017a6d] font-bold hover:underline transition-colors">softscape installation Calgary</Link> projects to hardscape construction and reliable snow removal, we deliver structured scheduling, professional systems, and results built for Alberta’s extreme seasons.
             </p>
             <p>
               We work with homeowners, builders, and commercial property managers who expect clean execution, clear communication, and long-term value.

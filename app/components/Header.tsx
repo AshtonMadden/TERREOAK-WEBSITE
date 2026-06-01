@@ -99,17 +99,44 @@ export default function Header() {
 
             {/* Desktop Nav */}
             <nav className="nav-desktop hidden lg:flex items-center gap-1 xl:gap-4">
-              <Link
-                href="/landscape-installs"
-                className="group relative inline-block"
-                style={{
-                  ...styles.navLink,
-                  color: isActive("/landscape-installs") ? "#017a6d" : "#000000",
-                }}
-              >
-                Landscaping
-                <span className={`absolute bottom-[8px] left-[10px] w-[calc(100%-20px)] h-[2px] bg-[#017a6d] origin-left transition-transform duration-300 ${isActive("/landscape-installs") ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"}`} />
-              </Link>
+              {/* Landscaping dropdown */}
+              <div className="navItem" style={styles.navItem}>
+                <Link
+                  href="/landscape-installs"
+                  className="navTrigger group relative inline-block"
+                  style={{
+                    ...styles.navLink,
+                    color: isParentActive(["/landscape-installs", "/landscape-design", "/hardscaping", "/softscapes", "/woodworking", "/excavation", "/our-process"]) ? "#017a6d" : "#000000",
+                  }}
+                >
+                  Landscaping <span style={styles.caret}>▾</span>
+                  <span className={`absolute bottom-[8px] left-[10px] w-[calc(100%-20px)] h-[2px] bg-[#017a6d] origin-left transition-transform duration-300 ${isParentActive(["/landscape-installs", "/landscape-design", "/hardscaping", "/softscapes", "/woodworking", "/excavation", "/our-process"]) ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"}`} />
+                </Link>
+
+                <div className="dropdown" style={styles.dropdown}>
+                  <Link href="/landscape-installs" className="dropdownLink" style={styles.dropdownLink}>
+                    Overview
+                  </Link>
+                  <Link href="/landscape-design" className="dropdownLink" style={styles.dropdownLink}>
+                    Landscape Design
+                  </Link>
+                  <Link href="/hardscaping" className="dropdownLink" style={styles.dropdownLink}>
+                    Hardscaping
+                  </Link>
+                  <Link href="/softscapes" className="dropdownLink" style={styles.dropdownLink}>
+                    Softscapes
+                  </Link>
+                  <Link href="/woodworking" className="dropdownLink" style={styles.dropdownLink}>
+                    Woodworking
+                  </Link>
+                  <Link href="/excavation" className="dropdownLink" style={styles.dropdownLink}>
+                    Excavation
+                  </Link>
+                  <Link href="/our-process" className="dropdownLink" style={styles.dropdownLink}>
+                    Our Process
+                  </Link>
+                </div>
+              </div>
 
               {/* Snowblowing stays as-is */}
               <Link
@@ -270,10 +297,26 @@ export default function Header() {
               Residential Snow
             </Link>
 
-            {/* Landscaping */}
-            <Link href="/landscape-installs" style={styles.drawerLink} onClick={toggleMobileMenu}>
-              Landscaping
-            </Link>
+            {/* Landscaping Dropdown */}
+            <div>
+              <button style={styles.accordionHeader} onClick={() => toggleSection('landscaping')}>
+                <span style={styles.drawerLinkText}>LANDSCAPING</span>
+                <div style={styles.plusIcon}>
+                  {expandedSection === 'landscaping' ? '−' : '+'}
+                </div>
+              </button>
+              {expandedSection === 'landscaping' && (
+                <div style={styles.accordionContent}>
+                  <Link href="/landscape-installs" style={styles.drawerSubLink} onClick={toggleMobileMenu}>Overview</Link>
+                  <Link href="/landscape-design" style={styles.drawerSubLink} onClick={toggleMobileMenu}>Landscape Design</Link>
+                  <Link href="/hardscaping" style={styles.drawerSubLink} onClick={toggleMobileMenu}>Hardscaping</Link>
+                  <Link href="/softscapes" style={styles.drawerSubLink} onClick={toggleMobileMenu}>Softscapes</Link>
+                  <Link href="/woodworking" style={styles.drawerSubLink} onClick={toggleMobileMenu}>Woodworking</Link>
+                  <Link href="/excavation" style={styles.drawerSubLink} onClick={toggleMobileMenu}>Excavation</Link>
+                  <Link href="/our-process" style={styles.drawerSubLink} onClick={toggleMobileMenu}>Our Process</Link>
+                </div>
+              )}
+            </div>
 
             {/* Seasonal Services */}
             <div>

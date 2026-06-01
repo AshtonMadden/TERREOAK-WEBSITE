@@ -1,6 +1,6 @@
 // app/layout.tsx
 import type { ReactNode } from "react";
-import { Montserrat } from "next/font/google";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import type { Metadata } from "next";
 
@@ -20,10 +20,10 @@ export const metadata: Metadata = {
   }
 };
 
-const montserrat = Montserrat({
+const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-montserrat",
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-montserrat", // Keeping variable name same so global CSS doesn't break
 });
 
 export default function RootLayout({ children }: { children: ReactNode }) {
@@ -102,7 +102,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   };
 
   return (
-    <html lang="en" className={montserrat.variable}>
+    <html lang="en" className={jakarta.variable}>
       <head />
       <body>
         <Script

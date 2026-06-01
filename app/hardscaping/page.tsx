@@ -29,7 +29,7 @@ export default function HardscapingPage() {
   return (
     <main className="bg-white text-black">
             <PremiumHero
-        title="Premium Hardscaping"
+        title={<>CALGARY PREMIUM HARDSCAPING<br /><span className="text-[#01fa6d]">Built to Last.</span></>}
         description="Expertly installed stone patios, retaining walls, walkways, and driveways built to withstand Calgary's harsh freeze-thaw cycles."
         backgroundImage="/Landscape web page pics/Calgary-hardscaping.JPG"
         badgeLabel="Landscaping • Calgary"
@@ -47,6 +47,33 @@ export default function HardscapingPage() {
               Hardscaping forms the foundation of your outdoor living area. From engineered retaining walls and custom Techo-Bloc paving stone patios to exposed aggregate concrete pathways, our hardscaping services are designed to withstand Alberta’s freeze-thaw cycles. We utilize premium open-grade base preparations to ensure maximum drainage and zero frost-heaving. Pair your new structural elements with our expert <Link href="/softscapes" className="text-[#01fa6d] font-bold hover:underline transition-colors bg-[#017a6d] px-1 rounded">softscape installation Calgary</Link> services to complete your total yard transformation.
             </p>
           </ScrollReveal>
+        </div>
+      </Section>
+
+      <Section title="Our Hardscaping Process" titleClassName="text-[#017a6d]" wrapperClassName="bg-gray-50 border-y border-black/5">
+        <div className="max-w-6xl mx-auto">
+          <ScrollReveal>
+            <p className="text-xl md:text-2xl text-black/80 font-medium mb-16 text-center max-w-3xl mx-auto leading-relaxed">
+              A lasting hardscape is all about what’s underneath. We follow a strict, proven methodology to ensure your patio, walkway, or retaining wall won't sink or heave.
+            </p>
+          </ScrollReveal>
+            
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              { step: 1, title: "Dig Out Area", desc: "We carefully excavate the designated area to the precise depth required, removing topsoil and unstable organic materials to reach a solid subgrade foundation." },
+              { step: 2, title: "Base Prep", desc: "We prepare the subgrade, heavily compacting the soil and installing a durable, high-quality geotextile fabric to prevent the subsoil from mixing with the aggregate." },
+              { step: 3, title: "Open Graded Base", desc: "We use an open graded base for improved drainage and less chance of sinkage. This eliminates trapped water that causes frost heaving during Alberta winters." },
+            ].map((item, i) => (
+              <ScrollReveal 
+                key={i} 
+                className="bg-white p-8 rounded-3xl shadow-lg border border-black/5 flex flex-col hover:-translate-y-1 transition-transform h-full"
+              >
+                <div className="text-6xl font-black text-[#01fa6d]/30 tracking-tighter mb-4">0{item.step}</div>
+                <h3 className="text-xl font-black mb-3 text-black uppercase">{item.title}</h3>
+                <p className="text-black/70 text-base leading-relaxed font-medium">{item.desc}</p>
+              </ScrollReveal>
+            ))}
+          </div>
         </div>
       </Section>
 

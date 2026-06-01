@@ -37,7 +37,7 @@ export default function LandscapeInstallsPage() {
   return (
     <main className="bg-white text-black">
       <PremiumHero
-        title={<>Calgary Landscaping Company —<br /><span className="text-[#01fa6d]">Design, Build & Install</span></>}
+        title={<>CALGARY<br />LANDSCAPE INSTALLS<br /><span className="text-[#01fa6d]">Design, Build & Install.</span></>}
         description="Every TERREOAK build accounts for Calgary's specific conditions. From engineered retaining walls and exposed aggregate concrete to sod installations and drainage solutions, we build outdoor spaces designed to last through Alberta's freeze-thaw cycles."
         backgroundImage="/images/landscape-hero-pavers.jpg"
         badgeLabel="Landscape Installs"

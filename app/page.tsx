@@ -90,7 +90,7 @@ export default function HomePage() {
   return (
     <main className="bg-white text-black">
       <PremiumHero
-        title={<>Calgary Landscape <br /><span className="text-[#01fa6d]">Construction & Snow Removal.</span></>}
+        title={<>CALGARY LANDSCAPING <br /><span className="text-[#01fa6d]">Construction & Snow Removal.</span></>}
         description="Premium landscape construction and year-round property maintenance for Calgary's residential and commercial properties."
         backgroundVideo="/landscaping-mahogany.MOV"
         badgeLabel="Calgary & Area"

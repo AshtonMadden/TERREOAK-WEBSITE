@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    const baseUrl = 'https://terreoak.ca'
+    const baseUrl = 'https://www.terreoak.CalgaryHardscaping.ca'
 
     const routes = [
         '',
@@ -16,8 +16,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
         '/fall-cleanup',
         '/commercial-grounds-maintenance',
         '/snow-referral',
+        '/hardscaping',
+        '/softscapes',
+        '/landscape-design',
+        '/excavation',
+        '/woodworking',
+        '/our-process',
+        '/shop',
+        '/careers',
         '/blog/why-calgary-spring-cleanup-matters',
         '/blog/why-open-grade-base-for-paver-patios',
+        '/blog/why-hire-snow-removal-company',
     ]
 
     return routes.map((route) => ({

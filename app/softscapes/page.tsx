@@ -31,7 +31,7 @@ export default function SoftscapesPage() {
   return (
     <main className="bg-white text-black">
       <PremiumHero
-        title="Softscape Installation Calgary"
+        title={<>CALGARY<br />SOFTSCAPE INSTALLATION<br /><span className="text-[#01fa6d]">Lush & Vibrant Spaces.</span></>}
         description="Transform your outdoor space with premium, Zone-4 hardy softscaping built specifically for Calgary's climate. From expert garden bed design and robust tree planting to complete yard grading and sod installation, we handle all the living elements of your landscape to dramatically boost your curb appeal and property value."
         backgroundImage="/Landscape web page pics/Sod-installation-calgary.jpg"
         badgeLabel="Landscaping • Calgary"

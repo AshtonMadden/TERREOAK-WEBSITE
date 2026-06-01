@@ -29,7 +29,7 @@ export default function WoodworkingPage() {
   return (
     <main className="bg-white text-black">
             <PremiumHero
-        title="Custom Woodworking"
+        title={<>CALGARY<br />CUSTOM WOODWORKING<br /><span className="text-[#01fa6d]">Structural & Aesthetic Woodwork.</span></>}
         description="Heavy-duty cedar decks, custom privacy fencing, pergolas, and structural timber retaining walls designed for Alberta's climate."
         backgroundImage="/images/landscape-hero-pavers.jpg"
         badgeLabel="Landscaping • Calgary"

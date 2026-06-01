@@ -29,7 +29,7 @@ export default function ExcavationPage() {
   return (
     <main className="bg-white text-black">
             <PremiumHero
-        title="Excavation & Base Prep"
+        title={<>CALGARY<br />EXCAVATION & BASE PREP<br /><span className="text-[#01fa6d]">The Foundation of Your Yard.</span></>}
         description="A lasting landscape starts with heavy lifting. We handle full-scale land clearing, grading, trenching, and soil removal."
         backgroundImage="/Landscape web page pics/Land-clearing-new-build.JPG"
         badgeLabel="Landscaping • Calgary"

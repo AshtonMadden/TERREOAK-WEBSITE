@@ -29,7 +29,7 @@ export default function LandscapeDesignPage() {
   return (
     <main className="bg-white text-black">
             <PremiumHero
-        title="Landscape Design"
+        title={<>CALGARY<br />LANDSCAPE DESIGN<br /><span className="text-[#01fa6d]">Premium Outdoor Spaces.</span></>}
         description="Great landscaping begins with an intentional, carefully crafted design. We specialize in 3D conceptual designs and precise 2D blueprints."
         backgroundImage="/Landscape web page pics/Finished-hardscape-project.JPG"
         badgeLabel="Landscaping • Calgary"

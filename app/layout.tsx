@@ -11,7 +11,8 @@ import Script from "next/script";
 export const metadata: Metadata = {
   title: "TERREOAK Landscaping: Grounds Maintenance & Landscaping",
   description: "Calgary's premier landscaping and snow removal team. Residential landscape construction, commercial maintenance, and year-round property care.",
-  metadataBase: new URL("https://terreoak.ca"),
+  keywords: ["Calgary landscaping", "hardscaping Calgary", "retaining walls Calgary", "patio builders", "residential snow removal Calgary", "commercial grounds maintenance Calgary", "softscape installation", "TERREOAK Landscaping", "landscape design Calgary"],
+  metadataBase: new URL("https://www.terreoak.CalgaryHardscaping.ca"),
   alternates: {
     canonical: "/",
   },
@@ -32,12 +33,12 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     "@graph": [
       {
         "@type": "Organization",
-        "@id": "https://terreoak.ca/#organization",
+        "@id": "https://www.terreoak.CalgaryHardscaping.ca/#organization",
         "name": "TERREOAK Landscaping & Snow",
-        "url": "https://terreoak.ca",
+        "url": "https://www.terreoak.CalgaryHardscaping.ca",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://terreoak.ca/icon.png",
+          "url": "https://www.terreoak.CalgaryHardscaping.ca/icon.png",
           "width": 180,
           "height": 180
         },
@@ -51,13 +52,15 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       },
       {
         "@type": "LandscapingService",
-        "@id": "https://terreoak.ca/#localbusiness",
+        "@id": "https://www.terreoak.CalgaryHardscaping.ca/#localbusiness",
         "name": "TERREOAK Landscaping & Snow",
         "legalName": "TERREOAK Landscaping & Snow",
-        "url": "https://terreoak.ca",
+        "url": "https://www.terreoak.CalgaryHardscaping.ca",
         "telephone": "+1-587-707-7648",
         "email": "services@TERREOAK.ca",
-        "image": "https://terreoak.ca/images/commercial.png",
+        "description": "TERREOAK Landscaping & Snow is a premium landscaping contractor in Calgary, Alberta. We specialize in residential hardscaping, softscaping, retaining walls, paving stone patios, landscape design, reliable year-round commercial property maintenance, and residential snow removal.",
+        "knowsAbout": ["Hardscaping", "Retaining Walls", "Paving Stone Patios", "Softscaping", "Snow Removal", "Commercial Grounds Maintenance", "Landscape Design", "Excavation", "Custom Woodworking"],
+        "image": "https://www.terreoak.CalgaryHardscaping.ca/images/commercial.png",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "Calgary & Surrounding Area",
@@ -66,6 +69,13 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           "postalCode": "T2P",
           "addressCountry": "CA"
         },
+        "areaServed": [
+          { "@type": "City", "name": "Calgary" },
+          { "@type": "City", "name": "Chestermere" },
+          { "@type": "City", "name": "Okotoks" },
+          { "@type": "City", "name": "Airdrie" },
+          { "@type": "City", "name": "Cochrane" }
+        ],
         "geo": {
           "@type": "GeoCoordinates",
           "latitude": 51.0447,
@@ -86,10 +96,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           "closes": "21:00"
         },
         "priceRange": "$$",
-        "areaServed": {
-          "@type": "City",
-          "name": "Calgary"
-        },
+
         "serviceType": [
           "Landscape Construction",
           "Snow Removal",

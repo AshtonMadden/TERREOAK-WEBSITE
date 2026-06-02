@@ -200,9 +200,7 @@ export default function IrrigationPage() {
                         </details>
                     </div>
 
-                    <div style={{ marginTop: 22 }}>
-                        <Link href="/customer-support" style={styles.secondaryBtn}>Customer Support</Link>
-                    </div>
+
                 </div>
             </section>
 

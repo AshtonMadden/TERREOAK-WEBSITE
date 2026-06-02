@@ -50,18 +50,18 @@ export default function HardscapingPage() {
             {[
               {
                 id: 1,
-                title: "Techo-Bloc Paver Patio",
-                location: "Calgary, AB",
-                desc: "A premium interlocking paver patio featuring Techo-Bloc materials, built on a highly compacted, open-graded base to prevent frost heaving.",
-                img: "/Landscape web page pics/Techo-Bloc-paver-pathway.JPG",
-                link: "/projects/featured-project-1"
+                title: "Custom Stone Pathway",
+                location: "McKenzie Lake, Calgary AB",
+                desc: "A custom stepping stone and premium rundle rock pathway designed to replace outdated materials and drastically improve side-yard accessibility and drainage.",
+                img: "/Landscape web page pics/Finished-hardscape-project.JPG",
+                link: "/mckenzielakelandscaping"
               },
               {
                 id: 2,
-                title: "Structural Retaining Wall",
-                location: "Cochrane, AB",
-                desc: "Engineered retaining wall installation with integrated drainage to effectively manage slope issues while creating a visually stunning landscape feature.",
-                img: "/Landscape web page pics/Finished-hardscape-project.JPG",
+                title: "Techo-Bloc Path",
+                location: "McKenzie Lake, Calgary AB",
+                desc: "A premium interlocking paver patio featuring Techo-Bloc materials, built on a highly compacted, open-graded base to prevent frost heaving.",
+                img: "/Landscape web page pics/Techo-Bloc-paver-pathway.JPG",
                 link: "/projects/featured-project-2"
               }
             ].map((project) => (
@@ -169,6 +169,15 @@ export default function HardscapingPage() {
             </ScrollReveal>
           ))}
         </div>
+        
+        <div className="mt-16 text-center">
+            <button
+                onClick={() => document.getElementById('seasonal-form')?.scrollIntoView({ behavior: 'smooth' })}
+                className="inline-flex items-center justify-center rounded-lg bg-[#01fa6d] px-10 py-4 text-sm font-black text-black hover:opacity-90 transition-all transform hover:-translate-y-1 shadow-lg cursor-pointer"
+            >
+                GET A QUOTE
+            </button>
+        </div>
       </Section>
 
       {/* TEAM SECTION */}
@@ -179,7 +188,7 @@ export default function HardscapingPage() {
         <div className="max-w-6xl mx-auto flex flex-col lg:flex-row gap-12 items-center mb-12">
           
           {/* TEXT */}
-          <div className="w-full text-lg text-black/80 leading-relaxed font-medium">
+          <div className="w-full lg:w-1/2 text-lg text-black/80 leading-relaxed font-medium">
             <ScrollReveal>
               <p className="mb-6">
                 Calgary’s winters are hard on hardscaping. The ground freezes and thaws multiple times through the season. When moisture gets trapped under a patio or behind a retaining wall and then freezes, it expands. That expansion heaves pavers, cracks surfaces, and shifts walls.
@@ -193,6 +202,20 @@ export default function HardscapingPage() {
               <p className="font-bold text-[#017a6d]">
                 We serve Calgary and surrounding communities including Okotoks, Airdrie, Cochrane, and Chestermere.
               </p>
+            </ScrollReveal>
+          </div>
+
+          {/* IMAGE */}
+          <div className="w-full lg:w-1/2">
+            <ScrollReveal>
+                <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-xl border border-black/5 bg-gray-50">
+                    <Image
+                        src="/Landscape web page pics/how-drainage-works.jpg"
+                        alt="How proper drainage and base works for hardscaping"
+                        fill
+                        className="object-contain p-2"
+                    />
+                </div>
             </ScrollReveal>
           </div>
         </div>
@@ -251,8 +274,11 @@ export default function HardscapingPage() {
               Fill out the form below and our team will get back to you with a detailed estimate.
            </p>
         </div>
-        <div className="max-w-4xl mx-auto bg-gray-50 p-4 md:p-8 rounded-3xl shadow-xl border border-black/5">
-           <JobberLeadForm />
+        <div className="max-w-4xl mx-auto w-full">
+           <JobberLeadForm 
+                clienthubId="41b3399e-3795-43d8-afe2-e6c38c1b3e6e-2235504"
+                formUrl="https://clienthub.getjobber.com/client_hubs/41b3399e-3795-43d8-afe2-e6c38c1b3e6e/public/work_request/embedded_work_request_form?form_id=2235504"
+           />
         </div>
       </Section>
 

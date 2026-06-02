@@ -115,7 +115,7 @@ export default function HomePage() {
                 location: "Calgary, AB",
                 desc: "Explore one of our recent high-end residential landscape construction projects. From initial 3D conceptual design to final construction, see how we transformed this outdoor space.",
                 img: "/Landscape web page pics/Finished-hardscape-project.JPG",
-                link: "/projects/featured-project-1"
+                link: "/mckenzielakelandscaping"
               },
               {
                 id: 2,

@@ -246,8 +246,11 @@ export default function SoftscapesPage() {
               Fill out the form below and our team will get back to you with a detailed estimate.
            </p>
         </div>
-        <div className="max-w-4xl mx-auto bg-gray-50 p-4 md:p-8 rounded-3xl shadow-xl border border-black/5">
-           <JobberLeadForm />
+        <div className="max-w-4xl mx-auto w-full">
+           <JobberLeadForm 
+                clienthubId="41b3399e-3795-43d8-afe2-e6c38c1b3e6e-2235504"
+                formUrl="https://clienthub.getjobber.com/client_hubs/41b3399e-3795-43d8-afe2-e6c38c1b3e6e/public/work_request/embedded_work_request_form?form_id=2235504"
+           />
         </div>
       </Section>
 

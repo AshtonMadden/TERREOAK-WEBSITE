@@ -29,7 +29,7 @@ export default function PremiumStatsSection() {
           </h2>
           
           <p className="text-lg text-white/80 leading-relaxed font-medium mb-10 max-w-lg">
-            Established in 2018, TERREOAK has been transforming Calgary's outdoor spaces into thriving, beautiful landscapes. With a commitment to quality and personalized care, our highly trained team offers a full range of services—from custom design to premium installation—ensuring your yard flourishes in every season.
+            TERREOAK has been building and maintaining Calgary yards since 2018. We’re a small crew — owner-operated, hands-on, and we treat every property like it’s our own. No subcontractors, no handoffs. Just consistent work from the same people every time.
           </p>
 
           <Link

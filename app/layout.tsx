@@ -123,16 +123,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           src="https://www.googletagmanager.com/gtag/js?id=G-1BB7P86ZK6"
           strategy="afterInteractive"
         />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-
-            gtag('config', 'G-1BB7P86ZK6');
-            gtag('config', 'AW-16575832442');
-          `}
-        </Script>
+        <Script id="google-analytics" src="/analytics.js" strategy="afterInteractive" />
         <Script
           id="schema-ldjson"
           type="application/ld+json"

@@ -4,6 +4,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { Section, ScrollReveal } from "../components/UI";
 import OurBlogSection from "../components/OurBlogSection";
+import PremiumHero from "../components/PremiumHero";
+import TrustBar from "../components/TrustBar";
 
 export default function ProjectsPage() {
     const allImages = [
@@ -42,46 +44,80 @@ export default function ProjectsPage() {
     return (
         <main className="bg-white overflow-hidden">
             {/* HERO */}
-            <section className="relative min-h-screen flex flex-col justify-center border-b border-black/10 overflow-hidden bg-black">
-                <div className="absolute inset-0 z-0">
-                    <Image
-                        src="/Landscape web page pics/Techo-Bloc-pavers-river-rock.JPG"
-                        alt="Techo-Bloc Pavers and River Rock project in Calgary"
-                        fill
-                        priority
-                        className="object-cover"
-                    />
-                    <div className="absolute inset-0 bg-black/50" />
-                </div>
+            <PremiumHero
+                title={<>OUR PROJECTS<br /><span className="text-[#01fa6d]">Proven in Calgary.</span></>}
+                backgroundImage="/Landscape web page pics/Techo-Bloc-pavers-river-rock.JPG"
+                badgeLabel="TERREOAK • Work & Results"
+                ctaText="VIEW PROJECTS"
+                onCtaClick={() => document.getElementById('featured-projects')?.scrollIntoView({ behavior: 'smooth' })}
+            />
 
-                <div className="relative z-10 w-full mx-auto max-w-6xl px-6 flex flex-col justify-center min-h-[100dvh] md:min-h-0 md:block pt-48 pb-16 md:pt-56 md:pb-24 lg:pt-60 lg:pb-32 text-left">
-                    <div className="mt-auto md:mt-0">
-                        <p className="text-[14px] md:text-[17px] font-bold tracking-widest text-[#01fa6d] uppercase drop-shadow-md">
-                            TERREOAK • Work & Results
-                        </p>
-                        <h1 className="mt-4 text-[32px] md:text-[68px] lg:text-[76px] font-black leading-[1.1] tracking-tight text-white max-w-4xl uppercase drop-shadow-2xl">
-                            Our Projects<br />
-                            <span className="text-[#01fa6d]">Proven in Calgary.</span>
-                        </h1>
-                    </div>
+            <TrustBar />
 
-                    {/* Trust Grid */}
-                    <div style={styles.trustGrid}>
-                        <div style={styles.trustCard}>
-                            <div style={styles.trustTitle}>Diverse Projects</div>
-                            <div style={styles.trustText}>From high-end residential designs to complex commercial maintenance.</div>
+            {/* FEATURED PROJECTS */}
+            <Section
+                id="featured-projects"
+                title="FEATURED PROJECTS"
+                titleClassName="text-[#017a6d]"
+                wrapperClassName="bg-gray-50 border-y border-black/5"
+            >
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    {[
+                      {
+                        id: 1,
+                        title: "Custom Stone Pathway",
+                        location: "McKenzie Lake, Calgary AB",
+                        desc: "A custom stepping stone and premium rundle rock pathway designed to replace outdated materials and drastically improve side-yard accessibility and drainage.",
+                        img: "/Landscape web page pics/Finished-hardscape-project.JPG",
+                        link: "/mckenzielakelandscaping"
+                      },
+                      {
+                        id: 2,
+                        title: "Techo-Bloc Path",
+                        location: "McKenzie Lake, Calgary AB",
+                        desc: "A premium interlocking paver patio featuring Techo-Bloc materials, built on a highly compacted, open-graded base to prevent frost heaving.",
+                        img: "/Landscape web page pics/Techo-Bloc-paver-pathway.JPG",
+                        link: "/projects/featured-project-2"
+                      }
+                    ].map((project) => (
+                        <div key={project.id} className="relative group overflow-hidden rounded-3xl aspect-[4/3] md:aspect-video cursor-pointer shadow-xl">
+                            <Image
+                                src={project.img}
+                                alt={project.title}
+                                fill
+                                sizes="(max-width: 768px) 100vw, 50vw"
+                                className="object-cover group-hover:scale-110 transition-transform duration-700"
+                            />
+                            
+                            {/* Default Glassmorphic Bottom Bar */}
+                            <div className="absolute bottom-4 left-4 right-4 bg-black/40 backdrop-blur-md border border-white/20 rounded-2xl p-6 flex items-center justify-between transition-all duration-500 group-hover:opacity-0 group-hover:translate-y-4">
+                                <div>
+                                    <div className="text-white/80 text-[10px] uppercase tracking-[0.2em] font-bold mb-1">Name</div>
+                                    <div className="text-white font-black text-xl">{project.title}</div>
+                                </div>
+                                <div className="text-right flex items-center gap-6">
+                                    <div className="hidden sm:block text-left">
+                                        <div className="text-white/80 text-[10px] uppercase tracking-[0.2em] font-bold mb-1">Location</div>
+                                        <div className="text-white font-black text-xl">{project.location}</div>
+                                    </div>
+                                    <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                    </svg>
+                                </div>
+                            </div>
+
+                            {/* Hover Overlay: Solid Green with Description */}
+                            <div className="absolute inset-0 bg-[#017a6d]/95 backdrop-blur-sm flex flex-col justify-center items-center p-8 text-center transition-all duration-500 opacity-0 translate-y-8 group-hover:opacity-100 group-hover:translate-y-0">
+                                <h3 className="text-3xl font-black text-white mb-4">{project.title}</h3>
+                                <p className="text-white/90 font-medium text-lg mb-8 max-w-md">{project.desc}</p>
+                                <Link href={project.link} className="inline-flex items-center gap-3 bg-[#01fa6d] text-black px-8 py-3 rounded-full font-black hover:bg-white transition-colors uppercase tracking-widest text-sm">
+                                    View Project <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                                </Link>
+                            </div>
                         </div>
-                        <div style={styles.trustCard}>
-                            <div style={styles.trustTitle}>Detailed Workmanship</div>
-                            <div style={styles.trustText}>Every cut, stone, and plant placed with long-term quality in mind.</div>
-                        </div>
-                        <div style={styles.trustCard}>
-                            <div style={styles.trustTitle}>Proven Results</div>
-                            <div style={styles.trustText}>Building and maintaining properties that survive and thrive in Calgary.</div>
-                        </div>
-                    </div>
+                    ))}
                 </div>
-            </section>
+            </Section>
 
             {/* MARQUEE SECTION */}
             <section className="py-24 space-y-8">

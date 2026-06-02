@@ -99,14 +99,6 @@ export default function JobberLeadForm({
                     </a>
                 </div>
             </div>
-
-            <style jsx global>{`
-                .jobber-embed-container iframe {
-                    width: 100% !important;
-                    min-height: 800px !important;
-                    border: none !important;
-                }
-            `}</style>
         </div>
     );
 }

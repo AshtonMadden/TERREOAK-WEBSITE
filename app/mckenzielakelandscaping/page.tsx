@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ScrollReveal, Section, Carousel } from "../../components/UI";
+import { ScrollReveal, Section, Carousel } from "../components/UI";
 
 export default function FeaturedProjectOne() {
     return (
@@ -45,8 +45,8 @@ export default function FeaturedProjectOne() {
                             <p className="text-3xl font-black text-[#017a6d] uppercase">McKenzie Lake, SE Calgary</p>
                         </div>
                         <div>
-                            <p className="text-sm font-black text-black/50 uppercase tracking-widest mb-2">Project Cost & Timeline</p>
-                            <p className="text-3xl font-black text-[#017a6d] uppercase">$5,000 • 2 Days</p>
+                            <p className="text-sm font-black text-black/50 uppercase tracking-widest mb-2">Project Cost</p>
+                            <p className="text-3xl font-black text-[#017a6d] uppercase">$5,000</p>
                         </div>
                     </div>
                 </ScrollReveal>

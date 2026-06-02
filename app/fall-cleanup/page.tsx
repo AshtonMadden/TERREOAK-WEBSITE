@@ -297,9 +297,7 @@ export default function FallCleanupPage() {
                         </details>
                     </div>
 
-                    <div style={{ marginTop: 22 }}>
-                        <Link href="/customer-support" style={styles.secondaryBtn}>CUSTOMER SUPPORT</Link>
-                    </div>
+
                 </div>
             </section>
 

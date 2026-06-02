@@ -189,18 +189,15 @@ export default function Header() {
                   className="navTrigger group relative inline-block"
                   style={{
                     ...styles.navLink,
-                    color: isParentActive(["/customer-support", "/projects", "/blog", "/about"]) ? "#017a6d" : "#000000",
+                    color: isParentActive(["/projects", "/blog", "/about"]) ? "#017a6d" : "#000000",
                   }}
                   type="button"
                 >
                   More <span style={styles.caret}>▾</span>
-                  <span className={`absolute bottom-[8px] left-[10px] w-[calc(100%-20px)] h-[2px] bg-[#017a6d] origin-left transition-transform duration-300 ${isParentActive(["/customer-support", "/projects", "/blog", "/about"]) ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"}`} />
+                  <span className={`absolute bottom-[8px] left-[10px] w-[calc(100%-20px)] h-[2px] bg-[#017a6d] origin-left transition-transform duration-300 ${isParentActive(["/projects", "/blog", "/about"]) ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"}`} />
                 </button>
 
                 <div className="dropdown" style={styles.dropdown}>
-                  <Link href="/customer-support" className="dropdownLink" style={styles.dropdownLink}>
-                    Customer Support
-                  </Link>
                   <Link href="/projects" className="dropdownLink" style={styles.dropdownLink}>
                     Projects
                   </Link>
@@ -338,7 +335,6 @@ export default function Header() {
                   <Link href="/projects" style={styles.drawerSubLink} onClick={toggleMobileMenu}>Projects</Link>
                   <Link href="/blog" style={styles.drawerSubLink} onClick={toggleMobileMenu}>Blog</Link>
                   <Link href="/about" style={styles.drawerSubLink} onClick={toggleMobileMenu}>About</Link>
-                  <Link href="/customer-support" style={styles.drawerSubLink} onClick={toggleMobileMenu}>Customer Support</Link>
                 </div>
               )}
             </div>

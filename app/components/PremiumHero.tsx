@@ -45,7 +45,7 @@ export default function PremiumHero({
   const renderCta = () => {
     if (!ctaText) return null;
 
-    const className = "w-full md:w-auto inline-flex items-center justify-center rounded-full bg-[#01fa6d] px-5 md:px-12 py-3 md:py-[18px] text-[13px] md:text-[18px] font-black text-black hover:bg-white transition-all duration-300 uppercase tracking-widest shadow-lg shadow-[#01fa6d]/20 hover:-translate-y-0.5 text-center leading-tight";
+    const className = "w-full md:w-auto inline-flex items-center justify-center rounded-full bg-[#01fa6d] px-6 md:px-10 py-4 md:py-4 text-[15px] md:text-[16px] font-black text-black hover:bg-white transition-all duration-300 uppercase tracking-widest shadow-lg shadow-[#01fa6d]/20 hover:-translate-y-0.5 text-center leading-tight";
     
     if (ctaHref) {
       // If it's an anchor link or normal link
@@ -71,7 +71,7 @@ export default function PremiumHero({
     return (
       <button 
         onClick={onSecondaryCtaClick} 
-        className="w-full md:w-auto inline-flex items-center justify-center rounded-full bg-transparent px-4 md:px-8 py-3 md:py-[18px] text-[12px] md:text-[16px] font-bold text-white border-[1.5px] md:border-2 border-white hover:bg-white hover:text-black transition-all duration-300 uppercase tracking-widest shadow-lg leading-tight"
+        className="w-full md:w-auto inline-flex items-center justify-center rounded-full bg-transparent px-5 md:px-8 py-4 md:py-4 text-[14px] md:text-[15px] font-bold text-white border-[1.5px] md:border-2 border-white hover:bg-white hover:text-black transition-all duration-300 uppercase tracking-widest shadow-lg leading-tight"
       >
         {secondaryCtaText}
       </button>
@@ -79,7 +79,7 @@ export default function PremiumHero({
   };
 
   return (
-    <section className="relative min-h-[90vh] md:min-h-screen flex flex-col justify-center overflow-hidden bg-black text-white">
+    <section className="relative min-h-[100svh] flex flex-col justify-center overflow-hidden bg-black text-white">
       {/* Background Media */}
       <div className="absolute inset-0 z-0">
         {backgroundVideo ? (
@@ -138,15 +138,15 @@ export default function PremiumHero({
       {/* Glassmorphic Floating Action Bar */}
       <div className="absolute bottom-8 left-0 right-0 z-20 pointer-events-none">
         <div className="w-full max-w-7xl mx-auto px-6">
-          <div className="inline-block pointer-events-auto w-full md:w-auto">
-            <div className="bg-transparent md:bg-white/10 md:backdrop-blur-xl border-transparent md:border md:border-white/20 md:rounded-[2rem] p-0 md:p-4 flex flex-col md:flex-row items-center md:items-center justify-between gap-5 md:gap-6 md:shadow-2xl">
-              <div className="flex flex-col items-center md:items-start pl-0 md:pl-2">
-                <span className="block text-white/80 text-[12px] md:text-[11px] uppercase tracking-[0.2em] font-bold mb-1.5 md:mb-1 text-center md:text-left drop-shadow-md">
+          <div className="inline-block pointer-events-auto w-full">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-5 md:gap-6">
+              <div className="flex flex-col items-center md:items-start pl-0 md:pl-2 w-full max-w-[340px] md:max-w-none mx-auto md:mx-0">
+                <span className="hidden md:block text-white/80 text-[12px] md:text-[11px] uppercase tracking-[0.2em] font-bold mb-1.5 md:mb-1 text-center md:text-left drop-shadow-md">
                   {badgeLabel}
                 </span>
-                <GoogleReviewBadge className="!mt-0 scale-100 md:scale-90 origin-center md:origin-left -mt-1 md:-mt-0 drop-shadow-lg" />
+                <GoogleReviewBadge className="!mt-0 scale-100 md:scale-100 origin-center md:origin-left -mt-1 md:-mt-0 drop-shadow-lg !w-full md:!w-fit" />
               </div>
-              <div className="flex flex-row md:flex-row items-start md:items-start gap-2 md:gap-3 w-full md:w-auto shrink-0 md:pr-2">
+              <div className="flex flex-col md:flex-row items-stretch md:items-start gap-3 md:gap-4 w-full max-w-[340px] md:max-w-none mx-auto md:mx-0 shrink-0 md:pr-2">
                 <div className="flex-1 md:flex-none">
                   {renderSecondaryCta()}
                 </div>

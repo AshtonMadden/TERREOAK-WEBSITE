@@ -53,8 +53,8 @@ export default function SoftscapesPage() {
             {/* Image Side */}
             <div className="relative overflow-hidden rounded-3xl aspect-[4/3] shadow-xl border border-black/5">
                 <Image
-                    src="/images/front-yard-bed.jpg"
-                    alt="Flower Bed Project in Parkland"
+                    src="/images/softscaping-river-rock-hostas.jpg"
+                    alt="Front Yard Overhaul Project in Parkland"
                     fill
                     sizes="(max-width: 1024px) 100vw, 50vw"
                     className="object-cover group-hover:scale-105 transition-transform duration-700"
@@ -79,15 +79,15 @@ export default function SoftscapesPage() {
 
             {/* Text Summary Side */}
             <div className="text-lg text-black/80 leading-relaxed font-medium">
-                <h3 className="text-3xl font-black text-black mb-6 uppercase">Front Yard Overhaul</h3>
+                <h3 className="text-3xl font-black text-black mb-6 uppercase">Complete Front Yard Overhaul</h3>
                 <p className="mb-6">
-                    This homeowner in Parkland wanted to remove a section of struggling lawn and replace it with a low-maintenance, drought-tolerant flower bed that would thrive in Calgary’s climate.
+                    We completely transformed this space from a fading wood garden with no decorative stone or plants into a stunning, complete rock garden that will look incredible for years to come.
                 </p>
                 <p className="mb-6">
-                    We excavated the existing grass and compacted soil, brought in premium garden mix, and installed a clean natural stone border to separate the new bed from the remaining lawn.
+                    First, we demoed the old wood border and established a rock-solid foundation by installing geogrid, base rock, and a permanent concrete-set border.
                 </p>
                 <p className="mb-6">
-                    The planting included a mix of Zone 3 hardy perennials and shrubs designed to provide staggered blooming throughout the summer. We finished it off with a thick layer of premium mulch to retain moisture and suppress weeds.
+                    After planting a diverse mix of greenery, we finished the space with 40mm river rock and a beautiful 70 lb Rundle boulder as a centerpiece.
                 </p>
                 <div className="mt-8 flex flex-col sm:flex-row gap-4">
                     <Link

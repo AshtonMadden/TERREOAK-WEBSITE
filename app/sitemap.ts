@@ -8,6 +8,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
         '/about',
         '/blog',
         '/projects',
+        '/mckenzielakelandscaping',
+        '/projects/featured-project-2',
+        '/parklandlandscaping',
 
         '/landscape-installs',
         '/residential-snow-removal',

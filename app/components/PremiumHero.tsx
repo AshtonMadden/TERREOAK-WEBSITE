@@ -9,6 +9,7 @@ interface PremiumHeroProps {
   title: React.ReactNode;
   description?: React.ReactNode;
   backgroundImage?: string;
+  backgroundImageAlt?: string;
   backgroundVideo?: string;
   ctaText?: string;
   ctaHref?: string;
@@ -24,6 +25,7 @@ export default function PremiumHero({
   title,
   description,
   backgroundImage,
+  backgroundImageAlt = "Landscaping Background",
   backgroundVideo,
   ctaText = "VIEW PROJECT",
   ctaHref,
@@ -98,7 +100,7 @@ export default function PremiumHero({
         ) : backgroundImage ? (
           <Image
             src={backgroundImage}
-            alt="Landscaping Background"
+            alt={backgroundImageAlt}
             fill
             priority
             className="object-cover opacity-80"

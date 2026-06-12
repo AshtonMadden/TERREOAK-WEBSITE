@@ -11,7 +11,7 @@ import TrustBar from "../components/TrustBar";
 import TestimonialSection from "../components/TestimonialSection";
 import PremiumHero from "../components/PremiumHero";
 import TeamSection from "../components/TeamSection";
-// SodUnrollTransition removed
+import InstagramEmbed from "../components/InstagramEmbed";
 
 export default function SoftscapesPage() {
   const [isCtaVisible, setIsCtaVisible] = useState(false);
@@ -34,7 +34,8 @@ export default function SoftscapesPage() {
       <PremiumHero
         title={<>CALGARY SOFTSCAPING<br /><span className="text-[#01fa6d]">That Actually Lasts.</span></>}
         description="Sod installation, garden beds, planting, and mulch work done right the first time. Serving Calgary, Okotoks, Airdrie, Cochrane, and Chestermere."
-        backgroundImage="/images/backyard-bed.jpg"
+        backgroundImage="/images/softscaping-river-rock-hostas.jpg"
+        backgroundImageAlt="Calgary softscaping project featuring river rock bed, hostas, and red heucheras alongside a house foundation"
         badgeLabel="Landscaping • Calgary"
         ctaText="GET A FREE QUOTE"
         onCtaClick={() => document.getElementById('seasonal-form')?.scrollIntoView({ behavior: 'smooth' })}
@@ -42,7 +43,99 @@ export default function SoftscapesPage() {
       
       <TrustBar />
 
+      {/* FEATURED PROJECT */}
+      <Section
+        title="FEATURED PROJECT"
+        titleClassName="text-[#017a6d]"
+        wrapperClassName="bg-gray-50 border-y border-black/5"
+      >
+        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Image Side */}
+            <div className="relative overflow-hidden rounded-3xl aspect-[4/3] shadow-xl border border-black/5">
+                <Image
+                    src="/images/front-yard-bed.jpg"
+                    alt="Flower Bed Project in Parkland"
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    className="object-cover group-hover:scale-105 transition-transform duration-700"
+                />
+                
+                {/* Info Bar */}
+                <div className="absolute bottom-4 left-4 right-4 bg-black/50 backdrop-blur-md border border-white/20 rounded-2xl p-4 sm:p-5 grid grid-cols-2 sm:grid-cols-3 gap-4">
+                    <div className="col-span-2 sm:col-span-1">
+                        <div className="text-white/80 text-[10px] uppercase tracking-[0.2em] font-bold mb-1">Project Scope</div>
+                        <div className="text-white font-black text-base md:text-lg leading-tight">Planting & Flower Bed</div>
+                    </div>
+                    <div className="col-span-1">
+                        <div className="text-white/80 text-[10px] uppercase tracking-[0.2em] font-bold mb-1">Location</div>
+                        <div className="text-white font-black text-base md:text-lg leading-tight">Parkland</div>
+                    </div>
+                    <div className="col-span-1 text-right sm:text-left">
+                        <div className="text-white/80 text-[10px] uppercase tracking-[0.2em] font-bold mb-1">Investment</div>
+                        <div className="text-white font-black text-base md:text-lg leading-tight text-[#01fa6d]">$4,000</div>
+                    </div>
+                </div>
+            </div>
 
+            {/* Text Summary Side */}
+            <div className="text-lg text-black/80 leading-relaxed font-medium">
+                <h3 className="text-3xl font-black text-black mb-6 uppercase">Front Yard Overhaul</h3>
+                <p className="mb-6">
+                    This homeowner in Parkland wanted to remove a section of struggling lawn and replace it with a low-maintenance, drought-tolerant flower bed that would thrive in Calgary’s climate.
+                </p>
+                <p className="mb-6">
+                    We excavated the existing grass and compacted soil, brought in premium garden mix, and installed a clean natural stone border to separate the new bed from the remaining lawn.
+                </p>
+                <p className="mb-6">
+                    The planting included a mix of Zone 3 hardy perennials and shrubs designed to provide staggered blooming throughout the summer. We finished it off with a thick layer of premium mulch to retain moisture and suppress weeds.
+                </p>
+                <div className="mt-8 flex flex-col sm:flex-row gap-4">
+                    <Link
+                        href="/parklandlandscaping"
+                        className="inline-flex items-center justify-center rounded-lg bg-black px-8 py-3 text-sm font-black text-white hover:bg-black/80 transition-all transform hover:-translate-y-1 shadow-md cursor-pointer uppercase tracking-wider"
+                    >
+                        Read Full Project
+                    </Link>
+                    <button 
+                        onClick={() => document.getElementById('seasonal-form')?.scrollIntoView({ behavior: 'smooth' })}
+                        className="inline-flex items-center justify-center rounded-lg bg-[#01fa6d] px-8 py-3 text-sm font-black text-black hover:opacity-90 transition-all transform hover:-translate-y-1 shadow-md cursor-pointer uppercase tracking-wider"
+                    >
+                        Get a Similar Quote
+                    </button>
+                </div>
+            </div>
+        </div>
+      </Section>
+      
+      {/* LATEST FROM INSTAGRAM */}
+      <Section
+        kicker="Follow Us"
+        title="LATEST PROJECT VIDEOS"
+        titleClassName="text-[#017a6d]"
+        wrapperClassName="bg-white border-y border-black/5"
+      >
+        <div className="flex flex-col items-center">
+            <p className="text-lg font-medium text-black/70 mb-12 text-center max-w-2xl">
+                Check out our latest landscape transformations and snow removal updates over on Instagram. We post regular jobsite walk-throughs and before/afters!
+            </p>
+            <div className="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar md:grid md:grid-cols-3 gap-6 lg:gap-8 w-full max-w-6xl pb-4 md:pb-0 -mx-6 px-6 md:mx-0 md:px-0">
+                <div className="flex-none w-[85%] snap-center md:w-auto">
+                    <InstagramEmbed url="https://www.instagram.com/p/DZYJ9hey3Wz/" />
+                </div>
+                <div className="flex-none w-[85%] snap-center md:w-auto">
+                    <InstagramEmbed url="https://www.instagram.com/p/DZbTO0OTIKM/" />
+                </div>
+                <div className="flex-none w-[85%] snap-center md:w-auto">
+                    <InstagramEmbed url="https://www.instagram.com/p/DZIwwSby7ED/" />
+                </div>
+            </div>
+            <div className="mt-16">
+                <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 bg-black text-white px-8 py-4 rounded-full font-black hover:bg-black/80 transition-colors uppercase tracking-widest text-sm shadow-xl hover:-translate-y-1">
+                    Follow us on Instagram <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                </a>
+            </div>
+        </div>
+      </Section>
       {/* BUILT FOR CALGARY'S CLIMATE */}
       <Section title="Built for Calgary’s Climate" titleClassName="text-[#017a6d]">
         <div className="max-w-6xl mx-auto flex flex-col lg:flex-row gap-12 items-center mb-12">
@@ -376,6 +469,7 @@ export default function SoftscapesPage() {
         />
       </Section>
       
+
       
       {isCtaVisible && (
         <div style={styles.stickyCtaContainer} className="stickyCtaWrapper animate-float-up">

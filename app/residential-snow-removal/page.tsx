@@ -9,6 +9,7 @@ import OurBlogSection from "../components/OurBlogSection";
 import StatsCounter from "./StatsCounter";
 import GoogleReviewBadge from "../components/GoogleReviewBadge";
 import PremiumHero from "../components/PremiumHero";
+import InstagramEmbed from "../components/InstagramEmbed";
 import dynamic from "next/dynamic";
 
 const JobberLeadForm = dynamic(() => import("../components/JobberLeadForm"), {
@@ -261,6 +262,37 @@ export default function ResidentialSnowBlowingPage() {
         </div>
       </section>
 
+      {/* LATEST FROM INSTAGRAM */}
+      <Section
+        kicker="Follow Us"
+        title="SEE THE TEAM IN ACTION"
+        titleClassName="text-[#017a6d]"
+        wrapperClassName="bg-white border-y border-black/5"
+      >
+        <div className="flex flex-col items-center">
+            <p className="text-lg font-medium text-black/70 mb-12 text-center max-w-2xl">
+                Check out our latest snow removal updates over on Instagram. We post regular jobsite walk-throughs, blizzard updates, and before/after clearing results!
+            </p>
+            <div className="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar md:grid md:grid-cols-3 gap-6 lg:gap-8 w-full max-w-6xl pb-4 md:pb-0 -mx-6 px-6 md:mx-0 md:px-0">
+                {/* Placeholders for 3 recent Instagram videos/reels. The user can swap these URLs out with their own. */}
+                <div className="flex-none w-[85%] snap-center md:w-auto">
+                    <InstagramEmbed url="https://www.instagram.com/p/DV8vk9yk61k/" />
+                </div>
+                <div className="flex-none w-[85%] snap-center md:w-auto">
+                    <InstagramEmbed url="https://www.instagram.com/p/DUGmQOWD8NR/" />
+                </div>
+                <div className="flex-none w-[85%] snap-center md:w-auto">
+                    <InstagramEmbed url="https://www.instagram.com/p/DU1JTo7kkSj/" />
+                </div>
+            </div>
+            <div className="mt-16">
+                <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 bg-black text-white px-8 py-4 rounded-full font-black hover:bg-black/80 transition-colors uppercase tracking-widest text-sm shadow-xl hover:-translate-y-1">
+                    Follow us on Instagram <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                </a>
+            </div>
+        </div>
+      </Section>
+
       {/* SERVICE AREA SECTION */}
       <Section
         kicker="Service Area"
@@ -508,6 +540,8 @@ export default function ResidentialSnowBlowingPage() {
 
         </div>
       </section>
+
+
 
 
 

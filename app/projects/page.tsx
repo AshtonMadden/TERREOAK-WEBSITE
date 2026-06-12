@@ -61,13 +61,14 @@ export default function ProjectsPage() {
                 titleClassName="text-[#017a6d]"
                 wrapperClassName="bg-gray-50 border-y border-black/5"
             >
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="max-w-6xl mx-auto flex flex-col gap-24">
                     {[
                       {
                         id: 1,
                         title: "Custom Stone Pathway",
                         location: "McKenzie Lake, Calgary AB",
-                        desc: "A custom stepping stone and premium rundle rock pathway designed to replace outdated materials and drastically improve side-yard accessibility and drainage.",
+                        budget: "$5,000",
+                        desc: "This project focused on upgrading an outdated, low-end rock and stepping-stone pathway into a premium, durable hardscape. The client wanted a much cleaner, modern look that would be easy to maintain and drastically improve their backyard's curb appeal. Within just two days, our crew stripped the existing materials and installed a far superior, professional-grade foundation and aesthetic finish.",
                         img: "/Landscape web page pics/Finished-hardscape-project.JPG",
                         link: "/mckenzielakelandscaping"
                       },
@@ -75,44 +76,59 @@ export default function ProjectsPage() {
                         id: 2,
                         title: "Techo-Bloc Path",
                         location: "McKenzie Lake, Calgary AB",
-                        desc: "A premium interlocking paver patio featuring Techo-Bloc materials, built on a highly compacted, open-graded base to prevent frost heaving.",
+                        budget: "$10,000",
+                        desc: "A premium interlocking paver patio featuring Techo-Bloc materials, built on a highly compacted, open-graded base to prevent frost heaving. We focused heavily on proper drainage and sub-base preparation to ensure the pavers remain perfectly level year after year.",
                         img: "/Landscape web page pics/Techo-Bloc-paver-pathway.JPG",
                         link: "/projects/featured-project-2"
                       }
-                    ].map((project) => (
-                        <div key={project.id} className="relative group overflow-hidden rounded-3xl aspect-[4/3] md:aspect-video cursor-pointer shadow-xl">
-                            <Image
-                                src={project.img}
-                                alt={project.title}
-                                fill
-                                sizes="(max-width: 768px) 100vw, 50vw"
-                                className="object-cover group-hover:scale-110 transition-transform duration-700"
-                            />
-                            
-                            {/* Default Glassmorphic Bottom Bar */}
-                            <div className="absolute bottom-4 left-4 right-4 bg-black/40 backdrop-blur-md border border-white/20 rounded-2xl p-6 flex items-center justify-between transition-all duration-500 group-hover:opacity-0 group-hover:translate-y-4">
-                                <div>
-                                    <div className="text-white/80 text-[10px] uppercase tracking-[0.2em] font-bold mb-1">Name</div>
-                                    <div className="text-white font-black text-xl">{project.title}</div>
-                                </div>
-                                <div className="text-right flex items-center gap-6">
-                                    <div className="hidden sm:block text-left">
-                                        <div className="text-white/80 text-[10px] uppercase tracking-[0.2em] font-bold mb-1">Location</div>
-                                        <div className="text-white font-black text-xl">{project.location}</div>
+                    ].map((project, index) => (
+                        <div key={project.id} className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                            {/* Image Side */}
+                            <div className={`relative overflow-hidden rounded-3xl aspect-[4/3] shadow-xl border border-black/5 ${index % 2 === 1 ? 'lg:order-2' : ''}`}>
+                                <Image
+                                    src={project.img}
+                                    alt={project.title}
+                                    fill
+                                    sizes="(max-width: 1024px) 100vw, 50vw"
+                                    className="object-cover group-hover:scale-105 transition-transform duration-700"
+                                />
+                                
+                                {/* Info Bar */}
+                                <div className="absolute bottom-4 left-4 right-4 bg-black/50 backdrop-blur-md border border-white/20 rounded-2xl p-4 sm:p-5 grid grid-cols-2 sm:grid-cols-3 gap-4">
+                                    <div className="col-span-2 sm:col-span-1">
+                                        <div className="text-white/80 text-[10px] uppercase tracking-[0.2em] font-bold mb-1">Project Scope</div>
+                                        <div className="text-white font-black text-base md:text-lg leading-tight">{project.title}</div>
                                     </div>
-                                    <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                                    </svg>
+                                    <div className="col-span-1">
+                                        <div className="text-white/80 text-[10px] uppercase tracking-[0.2em] font-bold mb-1">Location</div>
+                                        <div className="text-white font-black text-base md:text-lg leading-tight">{project.location.split(',')[0]}</div>
+                                    </div>
+                                    <div className="col-span-1 text-right sm:text-left">
+                                        <div className="text-white/80 text-[10px] uppercase tracking-[0.2em] font-bold mb-1">Investment</div>
+                                        <div className="text-white font-black text-base md:text-lg leading-tight text-[#01fa6d]">{project.budget}</div>
+                                    </div>
                                 </div>
                             </div>
 
-                            {/* Hover Overlay: Solid Green with Description */}
-                            <div className="absolute inset-0 bg-[#017a6d]/95 backdrop-blur-sm flex flex-col justify-center items-center p-8 text-center transition-all duration-500 opacity-0 translate-y-8 group-hover:opacity-100 group-hover:translate-y-0">
-                                <h3 className="text-3xl font-black text-white mb-4">{project.title}</h3>
-                                <p className="text-white/90 font-medium text-lg mb-8 max-w-md">{project.desc}</p>
-                                <Link href={project.link} className="inline-flex items-center gap-3 bg-[#01fa6d] text-black px-8 py-3 rounded-full font-black hover:bg-white transition-colors uppercase tracking-widest text-sm">
-                                    View Project <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-                                </Link>
+                            {/* Text Summary Side */}
+                            <div className={`text-lg text-black/80 leading-relaxed font-medium ${index % 2 === 1 ? 'lg:order-1' : ''}`}>
+                                <h3 className="text-3xl font-black text-black mb-6 uppercase">{project.title}</h3>
+                                <p className="mb-6">{project.desc}</p>
+                                
+                                <div className="mt-8 flex flex-col sm:flex-row gap-4">
+                                    <Link
+                                        href={project.link}
+                                        className="inline-flex items-center justify-center rounded-lg bg-black px-8 py-3 text-sm font-black text-white hover:bg-black/80 transition-all transform hover:-translate-y-1 shadow-md cursor-pointer uppercase tracking-wider"
+                                    >
+                                        Read Full Project
+                                    </Link>
+                                    <button 
+                                        onClick={() => document.getElementById('seasonal-form')?.scrollIntoView({ behavior: 'smooth' })}
+                                        className="inline-flex items-center justify-center rounded-lg bg-[#01fa6d] px-8 py-3 text-sm font-black text-black hover:opacity-90 transition-all transform hover:-translate-y-1 shadow-md cursor-pointer uppercase tracking-wider"
+                                    >
+                                        Get a Similar Quote
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     ))}

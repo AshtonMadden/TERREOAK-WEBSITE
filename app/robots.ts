@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
             allow: '/',
             disallow: ['/thanks'],
         },
-        sitemap: 'https://www.terreoak.CalgaryHardscaping.ca/sitemap.xml',
+        sitemap: 'https://www.terreoak.ca/sitemap.xml',
     }
 }

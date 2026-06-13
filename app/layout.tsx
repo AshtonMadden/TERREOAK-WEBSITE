@@ -120,7 +120,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <head />
       <body>
         <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-1BB7P86ZK6"
+          src="https://www.googletagmanager.com/gtag/js?id=G-9038MTNX12"
           strategy="afterInteractive"
         />
         <Script id="google-analytics" src="/analytics.js" strategy="afterInteractive" />

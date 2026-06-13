@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Calgary Landscaping Company | TERREOAK",
-    description: "TERREOAK Landscaping provides residential and commercial landscaping in Calgary, with design, construction, maintenance, and custom outdoor solutions.",
+    title: "Premium Custom Landscaping Calgary | TERREOAK",
+    description: "High-end custom landscaping and design-build firm in Calgary. We specialize in luxury outdoor transformations, from engineered retaining walls to custom patios.",
 };
 
 export default function LandscapeLayout({ children }: { children: React.ReactNode }) {

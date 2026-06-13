@@ -107,7 +107,7 @@ export default function ResidentialSnowBlowingPage() {
             {[
               {
                 title: "Full Season Coverage",
-                desc: "One flat monthly rate covers unlimited driveway and front sidewalk clearing from the first snowfall through the final melt, no per-visit fees, no surprises."
+                desc: "One flat monthly rate covers driveway and front sidewalk clearing from the first snowfall through the final melt. We service your property once every 24 hours, with no per-visit fees and no surprises."
               },
               {
                 title: "1cm Trigger",
@@ -293,7 +293,7 @@ export default function ResidentialSnowBlowingPage() {
                 High-density routes for maximum reliability.
               </p>
               <p className="text-[17px] text-black/70 leading-relaxed">
-                We strictly limit our service area to guarantee our 12-24 hour service standard. We focus exclusively on the deep south communities to ensure our crews are always nearby when a storm hits.
+                We strictly limit our service area to guarantee we can clear your property once every 24 hours. We focus exclusively on the deep south communities to ensure our crews are always nearby when a storm hits.
               </p>
               
               <div className="space-y-6 pt-4">
@@ -440,13 +440,13 @@ export default function ResidentialSnowBlowingPage() {
             <div className="flex-shrink-0 w-16 h-16 text-[#017a6d]">
               <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="24" cy="24" r="20" stroke="currentColor" strokeWidth="1.5" />
-                <text x="24" y="28" fontSize="8" fontWeight="900" textAnchor="middle" fill="currentColor" fontFamily="Arial">12-24H</text>
+                <text x="24" y="28" fontSize="10" fontWeight="900" textAnchor="middle" fill="currentColor" fontFamily="Arial">24H</text>
               </svg>
             </div>
             <div>
-              <h3 className="text-xl font-black mb-2 uppercase tracking-tight">12-24 Hour Service Guarantee</h3>
+              <h3 className="text-xl font-black mb-2 uppercase tracking-tight">Once Every 24 Hours Guarantee</h3>
               <p className="text-[15px] text-black/60 leading-relaxed font-medium">
-                We clear your property within 12-24 hours of snowfall ending. If we miss that window for any reason, we send a crew back at no charge. Calgary’s snow removal bylaw gives property owners 24 hours to clear sidewalks, we make sure you’re covered.
+                We guarantee to service your property once every 24 hours during continuous snowfall, and within 24 hours of the snowfall ending. If we miss that window for any reason, we send a crew back at no charge. Calgary’s snow removal bylaw gives property owners 24 hours to clear sidewalks, we make sure you’re covered.
               </p>
             </div>
           </div>
@@ -497,6 +497,19 @@ export default function ResidentialSnowBlowingPage() {
       {/* JOBBER LEAD FORM */}
       <Section id="seasonal-form" title="SIGN UP FOR YOUR SEASON PASS" titleClassName="text-[#01fa6d]">
         <div className="max-w-6xl mx-auto w-full">
+          <div className="bg-[#017a6d] p-6 md:p-8 mb-10 rounded-3xl flex flex-col sm:flex-row gap-5 items-start shadow-2xl border border-white/10">
+            <div className="bg-[#01fa6d] text-[#017a6d] rounded-full p-3 shrink-0 shadow-lg">
+              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <div>
+              <h4 className="text-white font-black text-xl uppercase tracking-tight mb-2">Important Service Expectation</h4>
+              <p className="text-white/90 text-base leading-relaxed font-medium">
+                Please note: Our crews strictly operate on a route-based system. We only come <strong>once every 24 hours</strong> to service your property during a snowfall event. This guarantees consistent, reliable service for every client on our route.
+              </p>
+            </div>
+          </div>
           <JobberLeadForm
             clienthubId="41b3399e-3795-43d8-afe2-e6c38c1b3e6e-2232203"
             formUrl="https://clienthub.getjobber.com/client_hubs/41b3399e-3795-43d8-afe2-e6c38c1b3e6e/public/work_request/embedded_work_request_form?form_id=2232203"
@@ -542,7 +555,7 @@ export default function ResidentialSnowBlowingPage() {
             <details style={styles.details}>
               <summary style={styles.summary}>Do you offer one-time snow removal?</summary>
               <p style={styles.pSmall}>
-                We don’t offer one-time services. TERREOAK runs a route-based season pass model, which means our crews follow established neighbourhood routes each storm. This is what allows us to guarantee consistent 12-24 hour service, one-off calls would break that system for everyone on the route.
+                We don’t offer one-time services. TERREOAK runs a route-based season pass model, which means our crews follow established neighbourhood routes each storm. This is what allows us to guarantee we service your property once every 24 hours, one-off calls would break that system for everyone on the route.
               </p>
             </details>
 

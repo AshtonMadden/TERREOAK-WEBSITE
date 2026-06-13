@@ -119,12 +119,7 @@ export default function PremiumHero({
             {title}
           </h1>
 
-          {/* Description */}
-          {description && (
-            <p className="text-lg md:text-xl text-white/90 font-medium leading-relaxed max-w-2xl drop-shadow-md">
-              {description}
-            </p>
-          )}
+
 
 
 
@@ -143,9 +138,7 @@ export default function PremiumHero({
           <div className="inline-block pointer-events-auto w-full">
             <div className="flex flex-col md:flex-row items-center justify-between gap-5 md:gap-6">
               <div className="flex flex-col items-center md:items-start pl-0 md:pl-2 w-full max-w-[340px] md:max-w-none mx-auto md:mx-0">
-                <span className="hidden md:block text-white/80 text-[12px] md:text-[11px] uppercase tracking-[0.2em] font-bold mb-1.5 md:mb-1 text-center md:text-left drop-shadow-md">
-                  {badgeLabel}
-                </span>
+
                 <GoogleReviewBadge className="!mt-0 scale-100 md:scale-100 origin-center md:origin-left -mt-1 md:-mt-0 drop-shadow-lg !w-full md:!w-fit" />
               </div>
               <div className="flex flex-col md:flex-row items-stretch md:items-start gap-3 md:gap-4 w-full max-w-[340px] md:max-w-none mx-auto md:mx-0 shrink-0 md:pr-2">

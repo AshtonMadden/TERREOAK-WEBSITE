@@ -26,7 +26,7 @@ export default function BlogPage() {
                             TERREOAK • Insights
                         </p>
                         <h1 className="mt-4 text-[32px] md:text-[68px] lg:text-[76px] font-black leading-[1.1] tracking-tight text-white drop-shadow-2xl max-w-4xl uppercase">
-                            THE TERREOAK BLOG —<br />
+                            THE TERREOAK BLOG , <br />
                             <span className="text-[#01fa6d]">EXPERT ADVICE.</span>
                         </h1>
                     </div>

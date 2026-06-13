@@ -38,7 +38,7 @@ export default function LandscapeInstallsPage() {
   return (
     <main className="bg-white text-black">
       <PremiumHero
-        title={<>CALGARY<br />LANDSCAPE INSTALLS<br /><span className="text-[#01fa6d]">Design, Build & Install.</span></>}
+        title={<>CALGARY LANDSCAPING & DESIGN<br /><span className="text-[#01fa6d]">WHERE THE SUN MEETS SOIL</span></>}
         description="Every TERREOAK build accounts for Calgary's specific conditions. From engineered retaining walls and exposed aggregate concrete to sod installations and drainage solutions, we build outdoor spaces designed to last through Alberta's freeze-thaw cycles."
         backgroundImage="/images/landscape-hero-pavers.jpg"
         badgeLabel="Landscape Installs"
@@ -60,7 +60,7 @@ export default function LandscapeInstallsPage() {
                 id: 1,
                 title: "Custom Landscape Design & Build",
                 location: "Calgary, AB",
-                budget: "$15,000",
+                budget: "$5,000",
                 desc: "Explore one of our recent high-end residential landscape construction projects. From initial 3D conceptual design to final construction, see how we transformed this outdoor space.",
                 img: "/Landscape web page pics/Finished-hardscape-project.JPG",
                 link: "/mckenzielakelandscaping"
@@ -69,7 +69,7 @@ export default function LandscapeInstallsPage() {
                 id: 2,
                 title: "Premium Hardscape Installation",
                 location: "Calgary, AB",
-                budget: "$12,000",
+                budget: "$10,000",
                 desc: "A stunning transformation featuring Techo-Bloc paving stones, custom retaining walls, and a fully redesigned outdoor living area built to withstand Calgary's climate.",
                 img: "/Landscape web page pics/Techo-Bloc-pavers-river-rock.JPG",
                 link: "/projects/featured-project-2"
@@ -159,20 +159,20 @@ export default function LandscapeInstallsPage() {
       </Section>
 
 
-      {/* PROPERTY TYPES SECTION */}
-      <Section title="Landscaping Services for All Calgary Properties" titleClassName="text-[#017a6d]">
+      {/* PREMIUM PROPERTY TYPES SECTION */}
+      <Section title="Custom Landscaping for homeowners" titleClassName="text-[#017a6d]">
         <div className="max-w-4xl text-lg text-black/80 leading-relaxed font-normal mb-12">
           <p className="mb-6">
-            TERREOAK is a Calgary landscaping and design-build company specializing in complete outdoor transformations for residential and commercial properties. From engineered retaining walls and exposed aggregate concrete to sod installations, pergolas, and drainage solutions, we build outdoor spaces designed to last through Alberta’s freeze-thaw cycles, heavy snowloads, and short construction seasons.
+            TERREOAK is a premier Calgary landscaping and design-build firm specializing in high-end, custom outdoor transformations. We partner with homeowners who value top-quality work, from engineered retaining walls and exposed aggregate concrete to custom pergolas and complex drainage solutions. We build luxury outdoor spaces designed to endure Alberta’s freeze-thaw cycles without cutting corners.
           </p>
           <p className="mb-6">
-            We work with new build homeowners in Calgary’s growing south and northwest communities, established homeowners upgrading aging yards, infill townhome builders, and luxury property owners looking for a contractor who can execute a high-spec finish. Every project starts with an on-site consultation and 3D design so you can see your space before a single shovel hits the ground.
+            Our focus is on established homeowners upgrading aging yards and luxury property owners looking for a contractor capable of executing a great finish. We specialize in complete yard makeovers and beautiful custom landscapes. To ensure careful planning, every project begins with a dedicated on-site consultation followed by a paid, professional 3D design service, so you can visualize and perfect your exact space before a single shovel hits the ground.
           </p>
           <p className="mb-6 font-black text-[#01fa6d] bg-[#2c2d32] p-4 rounded-xl inline-block shadow-md">
-            🛡️ Peace of Mind: Every TERREOAK landscape installation is backed by a comprehensive 1-Year Workmanship Warranty. We stand behind everything we build.
+            🛡️ The TERREOAK Standard: Every custom landscape installation is backed by a comprehensive 1-Year Workmanship Warranty. We use premium materials and refuse to compromise on quality.
           </p>
           <p className="font-black text-[#017a6d]">
-            Calgary’s landscape build season fills up fast. If you’re planning a project for spring or summer, now is the time to get into the queue.
+            Because we limit the number of projects we take on to maintain our exacting standards, our build season fills up fast. If you’re planning a premium landscape upgrade, contact us today to secure your spot.
           </p>
         </div>
 
@@ -232,11 +232,11 @@ export default function LandscapeInstallsPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               { step: 1, title: "Initial Consultation", desc: "It starts with a conversation. When you reach out, we’ll ask about your project goals, timeline, and budget to make sure we’re a good fit before anyone commits to anything. From there, we’ll schedule a site walk to see the space in person." },
-              { step: 2, title: "Quote & Agreement", desc: "After the site walk, we put together a detailed quote in our client portal with everything laid out clearly — scope, materials, and pricing. Your service agreement is attached and accepted alongside the quote, so there’s no paperwork chasing. Most projects run on a payment schedule with a deposit required to secure your spot on the schedule." },
-              { step: 3, title: "Design & Revisions", desc: "If your project includes a 3D landscape design, that’s available as an add-on. Once we’re aligned on plants and materials, we finalize everything — attaching material photos and the design to your quote so you know exactly what you’re getting. We offer up to two revisions to make sure it’s right before we move forward." },
-              { step: 4, title: "Scheduling & Installation", desc: "Once the quote is accepted and deposit received, your project gets booked. On site, we treat every yard like it’s our own — working methodically and holding ourselves to the same standard regardless of project size." },
+              { step: 2, title: "Quote & Agreement", desc: "After the site walk, we put together a detailed quote in our client portal with everything laid out clearly, scope, materials, and pricing. Your service agreement is attached and accepted alongside the quote, so there’s no paperwork chasing. Most projects run on a payment schedule with a deposit required to secure your spot on the schedule." },
+              { step: 3, title: "Design & Revisions", desc: "If your project includes a 3D landscape design, that’s available as an add-on. Once we’re aligned on plants and materials, we finalize everything, attaching material photos and the design to your quote so you know exactly what you’re getting. We offer up to two revisions to make sure it’s right before we move forward." },
+              { step: 4, title: "Scheduling & Installation", desc: "Once the quote is accepted and deposit received, your project gets booked. On site, we treat every yard like it’s our own, working methodically and holding ourselves to the same standard regardless of project size." },
               { step: 5, title: "Final Walkthrough & Completion", desc: "When the work is done, we walk the property with you to make sure you’re happy with everything. Then we clean up the site, document the finished project with photos, and collect the final payment." },
-              { step: 6, title: "Warranty", desc: "We stand behind our work. TERREOAK provides a one-year workmanship warranty — if anything we installed fails due to our work, we’ll come back and make it right at no charge. Plant warranty follows what the nursery provides, which we’ll communicate clearly upfront." },
+              { step: 6, title: "Warranty", desc: "We stand behind our work. TERREOAK provides a one-year workmanship warranty, if anything we installed fails due to our work, we’ll come back and make it right at no charge. Plant warranty follows what the nursery provides, which we’ll communicate clearly upfront." },
             ].map((item, i) => (
               <ScrollReveal 
                 key={i} 
@@ -390,7 +390,7 @@ export default function LandscapeInstallsPage() {
             </div>
           </div>
           <p className="text-lg text-black/70 leading-relaxed italic border-l-4 border-[#017a6d] pl-6 py-2">
-            Every TERREOAK project starts with a free on-site consultation and a detailed, fixed-price quote. We don’t do vague estimates — you’ll know exactly what you’re getting and what it costs before any work begins.
+            Every TERREOAK project starts with a free on-site consultation and a detailed, fixed-price quote. We don’t do vague estimates, you’ll know exactly what you’re getting and what it costs before any work begins.
           </p>
         </div>
       </Section>
@@ -405,7 +405,7 @@ export default function LandscapeInstallsPage() {
             },
             {
               q: "Do you work on new build lots in Calgary?",
-              a: "Yes — new build landscaping is a significant part of our work. We’re familiar with the requirements of Calgary’s new communities including grading certificates, utility locates, and builder coordination. If you’ve just taken possession and need your yard completed, we can take it from bare dirt to finished landscape."
+              a: "Yes, new build landscaping is a significant part of our work. We’re familiar with the requirements of Calgary’s new communities including grading certificates, utility locates, and builder coordination. If you’ve just taken possession and need your yard completed, we can take it from bare dirt to finished landscape."
             },
             {
               q: "What’s the best time of year to book landscaping in Calgary?",

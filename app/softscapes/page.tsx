@@ -32,7 +32,7 @@ export default function SoftscapesPage() {
   return (
     <main className="bg-white text-black">
       <PremiumHero
-        title={<>CALGARY SOFTSCAPING<br /><span className="text-[#01fa6d]">That Actually Lasts.</span></>}
+        title={<>CALGARY SOFTSCAPES<br /><span className="text-[#01fa6d]">IT STARTS WITH THE SOIL</span></>}
         description="Sod installation, garden beds, planting, and mulch work done right the first time. Serving Calgary, Okotoks, Airdrie, Cochrane, and Chestermere."
         backgroundImage="/images/softscaping-river-rock-hostas.jpg"
         backgroundImageAlt="Calgary softscaping project featuring river rock bed, hostas, and red heucheras alongside a house foundation"

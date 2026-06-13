@@ -31,7 +31,7 @@ export default function HardscapingPage() {
   return (
     <main className="bg-white text-black">
       <PremiumHero
-        title={<>CALGARY HARDSCAPING<br /><span className="text-[#01fa6d]">Built to Handle the Winters.</span></>}
+        title={<>CALGARY HARDSCAPES<br /><span className="text-[#01fa6d]">BUILT TO LAST THE NORTH.</span></>}
         description="Patios, retaining walls, walkways, and steps installed with the base work that actually keeps things level after the ground freezes and thaws. Serving Calgary, Okotoks, Airdrie, Cochrane, and Chestermere."
         backgroundImage="/Landscape web page pics/Calgary-hardscaping.JPG"
         badgeLabel="Landscaping • Calgary"

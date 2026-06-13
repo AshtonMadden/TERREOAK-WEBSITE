@@ -42,10 +42,10 @@ export default function WhyHireSnowRemoval() {
                     <ScrollReveal>
                         <div className="space-y-8">
                             <p className="text-2xl md:text-3xl font-black text-black leading-tight italic border-l-[12px] border-[#01fa6d] pl-8 md:pl-12">
-                                Calgary winters are unpredictable. A professional snow removal service isn&apos;t just a luxury—it&apos;s about protecting your health, your liability, and your peace of mind.
+                                Calgary winters are unpredictable. A professional snow removal service isn&apos;t just a luxury, it&apos;s about protecting your health, your liability, and your peace of mind.
                             </p>
                             <p className="text-xl text-black/70 leading-relaxed font-medium">
-                                When the temperature drops and the heavy snow falls, shoveling the driveway is the last thing anyone wants to do. But avoiding the cold isn&apos;t the only—or even the most important—reason to hire a professional snow removal company. From avoiding costly bylaw fines to preventing serious physical injuries, having a dedicated snow removal crew on a route-based season pass is one of the smartest investments a homeowner can make.
+                                When the temperature drops and the heavy snow falls, shoveling the driveway is the last thing anyone wants to do. But avoiding the cold isn&apos;t the only, or even the most important, reason to hire a professional snow removal company. From avoiding costly bylaw fines to preventing serious physical injuries, having a dedicated snow removal crew on a route-based season pass is one of the smartest investments a homeowner can make.
                             </p>
                         </div>
                     </ScrollReveal>

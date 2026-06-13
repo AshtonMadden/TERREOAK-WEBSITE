@@ -59,7 +59,7 @@ export default function CommercialGroundsMaintenancePage() {
                 <div className="max-w-4xl mx-auto space-y-8">
                     <div className="space-y-6 text-[20px] text-black/80 leading-relaxed font-medium">
                         <p>
-                            TERREOAK is Calgary’s commercial grounds maintenance and snow removal contractor for condo corporations, HOA communities, industrial business parks, and new construction sites. We manage exterior property standards year-round — from spring cleanups and weekly grounds care to 24/7 snow and ice management — so property managers and site supervisors can focus on what matters.
+                            TERREOAK is Calgary’s commercial grounds maintenance and snow removal contractor for condo corporations, HOA communities, industrial business parks, and new construction sites. We manage exterior property standards year-round, from spring cleanups and weekly grounds care to 24/7 snow and ice management, so property managers and site supervisors can focus on what matters.
                         </p>
                         <p>
                             Every service visit is logged with time-stamped photos and digital reports, giving you bulletproof documentation for board meetings, liability claims, and contractor audits.
@@ -133,23 +133,23 @@ export default function CommercialGroundsMaintenancePage() {
             >
                 <div className="relative z-10 w-full space-y-10">
                     <div className="space-y-3">
-                        <h3 className="text-xl md:text-2xl font-black text-[#01fa6d] uppercase tracking-tight">Full Digital Accountability — Every Visit, Every Time</h3>
+                        <h3 className="text-xl md:text-2xl font-black text-[#01fa6d] uppercase tracking-tight">Full Digital Accountability, Every Visit, Every Time</h3>
                         <p className="text-lg text-white/80 leading-relaxed font-normal">
-                            No more chasing contractors for confirmation. After every service, you receive a time-stamped photo log directly to your inbox. Know exactly what was done, when it was done, and by whom — documentation your board or insurance provider can rely on.
+                            No more chasing contractors for confirmation. After every service, you receive a time-stamped photo log directly to your inbox. Know exactly what was done, when it was done, and by whom, documentation your board or insurance provider can rely on.
                         </p>
                     </div>
 
                     <div className="space-y-3">
                         <h3 className="text-xl md:text-2xl font-black text-[#01fa6d] uppercase tracking-tight">Built for Alberta’s Conditions</h3>
                         <p className="text-lg text-white/80 leading-relaxed font-normal">
-                            We understand the liability exposure that comes with Calgary winters. Our commercial snow contracts include 24/7 weather monitoring, proactive dispatch, sand and ice melt application, and digital service records — the full paper trail you need to protect your property and your residents.
+                            We understand the liability exposure that comes with Calgary winters. Our commercial snow contracts include 24/7 weather monitoring, proactive dispatch, sand and ice melt application, and digital service records, the full paper trail you need to protect your property and your residents.
                         </p>
                     </div>
 
                     <div className="space-y-3">
                         <h3 className="text-xl md:text-2xl font-black text-[#01fa6d] uppercase tracking-tight">One Contractor. Year-Round Coverage.</h3>
                         <p className="text-lg text-white/80 leading-relaxed font-normal">
-                            Condo boards and property managers tell us their biggest frustration is managing multiple contractors. TERREOAK handles your full exterior — summer grounds maintenance, fall cleanup, irrigation blowouts, snow removal, and landscape construction — under one contract and one point of contact.
+                            Condo boards and property managers tell us their biggest frustration is managing multiple contractors. TERREOAK handles your full exterior, summer grounds maintenance, fall cleanup, irrigation blowouts, snow removal, and landscape construction, under one contract and one point of contact.
                         </p>
                     </div>
 
@@ -203,7 +203,7 @@ export default function CommercialGroundsMaintenancePage() {
                     {[
                         {
                             title: "Condo & HOA Property Managers",
-                            desc: "We work directly with condo corporations and HOA boards across Calgary to manage shared exterior spaces to a professional standard. Scheduled maintenance reports keep boards informed, and our digital service logs eliminate disputes over what was — or wasn’t — done.",
+                            desc: "We work directly with condo corporations and HOA boards across Calgary to manage shared exterior spaces to a professional standard. Scheduled maintenance reports keep boards informed, and our digital service logs eliminate disputes over what was, or wasn’t, done.",
                             icon: (
                                 <svg className="w-6 h-6 text-[#01fa6d]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />

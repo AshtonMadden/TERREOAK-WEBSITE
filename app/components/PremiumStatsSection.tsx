@@ -29,7 +29,7 @@ export default function PremiumStatsSection() {
           </h2>
           
           <p className="text-lg text-white/80 leading-relaxed font-medium mb-10 max-w-lg">
-            TERREOAK has been building and maintaining Calgary yards since 2018. We’re a small crew — owner-operated, hands-on, and we treat every property like it’s our own. No subcontractors, no handoffs. Just consistent work from the same people every time.
+            TERREOAK has been building and maintaining Calgary yards since 2018. We’re a small crew, owner-operated, hands-on, and we treat every property like it’s our own. No subcontractors, no handoffs. Just consistent work from the same people every time.
           </p>
 
           <Link

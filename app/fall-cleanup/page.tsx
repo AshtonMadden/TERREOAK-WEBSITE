@@ -192,7 +192,7 @@ export default function FallCleanupPage() {
                                     BOOK EARLY TO <span className="text-[#01fa6d]">SECURE YOUR SPOT.</span>
                                 </h2>
                                 <p className="text-xl text-white/70 font-medium mb-8">
-                                    The best time for fall cleanup in Calgary is from late September to early November. Our schedule fills up fast—reserve your preferred window today.
+                                    The best time for fall cleanup in Calgary is from late September to early November. Our schedule fills up fast, reserve your preferred window today.
                                 </p>
                                 <ul className="mb-10 space-y-4 text-white/80 text-lg">
                                     <li className="flex items-start gap-3 leading-tight">

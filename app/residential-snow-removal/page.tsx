@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { Section, ScrollReveal, Carousel } from "../components/UI";
+import BeforeAfterSlider from "../components/BeforeAfterSlider";
 
 import OurBlogSection from "../components/OurBlogSection";
 import StatsCounter from "./StatsCounter";
@@ -42,7 +43,6 @@ const SnowflakeSVG = ({ size = 24, strokeWidth = 2, className = "" }) => (
 
 export default function ResidentialSnowBlowingPage() {
   const [isCtaVisible, setIsCtaVisible] = useState(false);
-  const [isAfterOnTop, setIsAfterOnTop] = useState(false);
   const [snowFillHeight, setSnowFillHeight] = useState("0%");
 
   useEffect(() => {
@@ -73,7 +73,7 @@ export default function ResidentialSnowBlowingPage() {
   return (
     <main>
       <PremiumHero
-        title={<>CALGARY RESIDENTIAL<br />SNOW REMOVAL —<br /><span className="text-[#01fa6d]">Worry-free all winter.</span></>}
+        title={<>CALGARY SNOW REMOVAL<br /><span className="text-[#01fa6d]">ONE SEASON, ONE PRICE, ZERO SURPRISES</span></>}
         backgroundVideo="/Calgary-snowremoval-drone.mov"
         badgeLabel="Calgary • Residential Snow Removal"
         ctaText="SIGN UP"
@@ -107,7 +107,7 @@ export default function ResidentialSnowBlowingPage() {
             {[
               {
                 title: "Full Season Coverage",
-                desc: "One flat monthly rate covers unlimited driveway and front sidewalk clearing from the first snowfall through the final melt — no per-visit fees, no surprises."
+                desc: "One flat monthly rate covers unlimited driveway and front sidewalk clearing from the first snowfall through the final melt, no per-visit fees, no surprises."
               },
               {
                 title: "1cm Trigger",
@@ -119,7 +119,7 @@ export default function ResidentialSnowBlowingPage() {
               },
               {
                 title: "Dispatch Alerts",
-                desc: "Email notifications sent before our crew arrives so you always know service is on the way — no guessing, no wondering."
+                desc: "Email notifications sent before our crew arrives so you always know service is on the way, no guessing, no wondering."
               },
               {
                 title: "Driveway Marker",
@@ -160,10 +160,10 @@ export default function ResidentialSnowBlowingPage() {
                 </div>
               </div>
               <p style={{ ...styles.p, fontSize: 18, marginTop: 24, color: "#333" }}>
-                TERREOAK provides residential snow removal for Calgary homeowners who want a reliable, hands-off solution for the entire winter season. No wondering if your driveway got done — just consistent service, dispatch alerts before we arrive, and a photo log in your inbox after every visit.
+                TERREOAK provides residential snow removal for Calgary homeowners who want a reliable, hands-off solution for the entire winter season. No wondering if your driveway got done, just consistent service, dispatch alerts before we arrive, and a photo log in your inbox after every visit.
               </p>
               <p style={{ ...styles.p, fontSize: 18, marginTop: 16, color: "#333" }}>
-                We service driveways and front sidewalks at just 1cm of accumulation, so your property stays clear and safe through every storm Calgary throws at it. Our route-based crews cover communities across SW, SE, Calgary — with capacity capped each season so service quality never slips.
+                We service driveways and front sidewalks at just 1cm of accumulation, so your property stays clear and safe through every storm Calgary throws at it. Our route-based crews cover communities across SW, SE, Calgary, with capacity capped each season so service quality never slips.
               </p>
               <p style={{ ...styles.p, fontSize: 18, marginTop: 16, color: "#333", fontWeight: 900 }}>
                 Spots fill up before the first snowfall. Reserve your season pass early to lock in your route and your rate.
@@ -430,7 +430,7 @@ export default function ResidentialSnowBlowingPage() {
             <div>
               <h3 className="text-xl font-black mb-2 uppercase tracking-tight">First-Service Money-Back Guarantee</h3>
               <p className="text-[15px] text-black/60 leading-relaxed font-medium">
-                Not happy after your first visit? We refund you in full — no questions, no fine print. We’re confident enough in our service to put that in writing because we’ve never had to use it.
+                Not happy after your first visit? We refund you in full, no questions, no fine print. We’re confident enough in our service to put that in writing because we’ve never had to use it.
               </p>
             </div>
           </div>
@@ -446,7 +446,7 @@ export default function ResidentialSnowBlowingPage() {
             <div>
               <h3 className="text-xl font-black mb-2 uppercase tracking-tight">12-24 Hour Service Guarantee</h3>
               <p className="text-[15px] text-black/60 leading-relaxed font-medium">
-                We clear your property within 12-24 hours of snowfall ending. If we miss that window for any reason, we send a crew back at no charge. Calgary’s snow removal bylaw gives property owners 24 hours to clear sidewalks — we make sure you’re covered.
+                We clear your property within 12-24 hours of snowfall ending. If we miss that window for any reason, we send a crew back at no charge. Calgary’s snow removal bylaw gives property owners 24 hours to clear sidewalks, we make sure you’re covered.
               </p>
             </div>
           </div>
@@ -459,69 +459,29 @@ export default function ResidentialSnowBlowingPage() {
             <h2 style={styles.h2}>THE TERREOAK RESULTS</h2>
           </div>
 
-          <div
-            className="mt-12"
-          >
-            {/* Desktop View: Side-by-Side */}
-            <div className="hidden md:grid md:grid-cols-2 gap-8 items-start">
-              <div className="relative">
-                <img
-                  src="/snow-removal-okotoks-before.JPG"
-                  alt="Snow removal Okotoks before clearing"
-                  className="rounded-2xl shadow-2xl w-full h-auto border-4 border-white"
-                />
-                <div style={{ ...styles.label, bottom: "auto", top: "20px", left: "20px", right: "auto" }} className="!bg-red-600">BEFORE</div>
-              </div>
-              <div className="relative">
-                <img
-                  src="/snow-removal-okotoks-after.JPG"
-                  alt="Snow removal Okotoks after clearing"
-                  className="rounded-2xl shadow-2xl w-full h-auto"
-                />
-                <div style={styles.label}>AFTER</div>
-              </div>
+          <div className="mt-12 mb-8 grid lg:grid-cols-2 gap-12 items-center">
+            {/* Text Box */}
+            <div className="order-2 lg:order-1 bg-white p-8 md:p-10 rounded-3xl shadow-xl border border-gray-100 relative overflow-hidden">
+              <div className="absolute top-0 left-0 w-2 h-full bg-[#017a6d]"></div>
+              <h3 className="text-2xl md:text-3xl font-black mb-4 uppercase tracking-tight text-[#017a6d]">Clear Down To The Pavement</h3>
+              <p className="text-[15px] md:text-base text-black/70 leading-relaxed font-medium mb-6">
+                Notice the difference. While others just push the top layer around, our crews clear your property right down to the bare pavement.
+              </p>
+              <p className="text-[15px] md:text-base text-black/70 leading-relaxed font-medium">
+                This meticulous approach eliminates hidden ice layers, preventing slips and keeping your walkways safe and accessible all winter long. Slide the image to see the TERREOAK standard.
+              </p>
             </div>
 
-            {/* Mobile View: Original Stacked/Interactive */}
-            <div
-              style={styles.photoContainer}
-              className="relative max-w-4xl mx-auto h-[400px] cursor-pointer md:hidden"
-              onClick={() => setIsAfterOnTop(!isAfterOnTop)}
-            >
-              {/* After Photo */}
-              <div style={{
-                ...styles.photoBase,
-                ...styles.photoAfter,
-                zIndex: isAfterOnTop ? 15 : 5,
-                transform: isAfterOnTop ? "rotate(0deg) scale(1.02)" : "rotate(2deg) scale(1)",
-                boxShadow: isAfterOnTop ? "0 30px 60px -12px rgba(0,0,0,0.3)" : "0 20px 40px -12px rgba(0,0,0,0.2)"
-              }} className="w-[85%] absolute right-0 bottom-4">
-                <img
-                  src="/snow-removal-okotoks-after.JPG"
-                  alt="Snow removal Okotoks after clearing"
-                  className="rounded-2xl shadow-2xl w-full h-auto"
-                />
-                <div style={styles.label}>AFTER</div>
-              </div>
-
-              {/* Before Photo */}
-              <div style={{
-                ...styles.photoBase,
-                ...styles.photoBefore,
-                zIndex: isAfterOnTop ? 5 : 15,
-                transform: isAfterOnTop ? "rotate(-8deg) scale(0.95)" : "rotate(-4deg) scale(1.02)",
-                boxShadow: isAfterOnTop ? "0 10px 20px -12px rgba(0,0,0,0.2)" : "0 30px 60px -12px rgba(0,0,0,0.3)"
-              }} className="w-[85%] absolute left-0 top-4">
-                <img
-                  src="/snow-removal-okotoks-before.JPG"
-                  alt="Snow removal Okotoks before clearing"
-                  className="rounded-2xl shadow-2xl w-full h-auto border-4 border-white"
-                />
-                <div style={{ ...styles.label, bottom: "auto", top: "20px", left: "20px", right: "auto" }} className="!bg-red-600">BEFORE</div>
-              </div>
+            {/* Slider */}
+            <div className="order-1 lg:order-2">
+              <BeforeAfterSlider
+                beforeImage="/snow-removal-okotoks-before.JPG"
+                afterImage="/snow-removal-okotoks-after.JPG"
+                beforeAlt="Snow removal Okotoks before clearing"
+                afterAlt="Snow removal Okotoks after clearing"
+              />
             </div>
           </div>
-          <p className="text-center mt-8 text-black/40 font-bold text-sm md:hidden">TAP PHOTOS TO SWITCH</p>
 
         </div>
       </section>
@@ -554,7 +514,7 @@ export default function ResidentialSnowBlowingPage() {
             <details style={styles.details}>
               <summary style={styles.summary}>What counts as a qualifying snowfall?</summary>
               <p style={styles.pSmall}>
-                Any snowfall event that results in 1cm or more of accumulation at your property. We monitor weather across all our service areas and dispatch crews proactively — you don’t need to call us or submit a request.
+                Any snowfall event that results in 1cm or more of accumulation at your property. We monitor weather across all our service areas and dispatch crews proactively, you don’t need to call us or submit a request.
               </p>
             </details>
 
@@ -582,7 +542,7 @@ export default function ResidentialSnowBlowingPage() {
             <details style={styles.details}>
               <summary style={styles.summary}>Do you offer one-time snow removal?</summary>
               <p style={styles.pSmall}>
-                We don’t offer one-time services. TERREOAK runs a route-based season pass model, which means our crews follow established neighbourhood routes each storm. This is what allows us to guarantee consistent 12-24 hour service — one-off calls would break that system for everyone on the route.
+                We don’t offer one-time services. TERREOAK runs a route-based season pass model, which means our crews follow established neighbourhood routes each storm. This is what allows us to guarantee consistent 12-24 hour service, one-off calls would break that system for everyone on the route.
               </p>
             </details>
 

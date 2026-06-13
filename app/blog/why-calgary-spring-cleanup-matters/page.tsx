@@ -45,7 +45,7 @@ export default function SpringCleanupArticle() {
                                 A great Calgary summer lawn starts in the first two weeks of April. Without it, your grass is literally gasping for air under a winter&apos;s worth of debris.
                             </p>
                             <p className="text-xl text-black/70 leading-relaxed font-medium">
-                                After six months of sub-zero temperatures, heavy snow packs, and road salt, your lawn isn&apos;t just "dormant"—it&apos;s struggling. For Calgary homeowners, the window between the final snow melt and the first heat wave is the most critical time for property maintenance. A professional spring cleanup isn&apos;t just about aesthetics; it&apos;s a biological requirement for a healthy, green lawn.
+                                After six months of sub-zero temperatures, heavy snow packs, and road salt, your lawn isn&apos;t just "dormant", it&apos;s struggling. For Calgary homeowners, the window between the final snow melt and the first heat wave is the most critical time for property maintenance. A professional spring cleanup isn&apos;t just about aesthetics; it&apos;s a biological requirement for a healthy, green lawn.
                             </p>
                         </div>
                     </ScrollReveal>
@@ -116,7 +116,7 @@ export default function SpringCleanupArticle() {
                                 <div>
                                     <h4 className="text-2xl font-black uppercase text-black mb-3">High-Output Blower Cleanup & Detailing</h4>
                                     <p className="text-black/70 font-medium leading-relaxed text-lg">
-                                        We don&apos;t just rake; we detail your entire property. Using high-output commercial blowers, we clear out gravel from boulevards, debris from garden beds, and salt buildup from driveways. We ensure your entire property—not just the grass—is ready for the season.
+                                        We don&apos;t just rake; we detail your entire property. Using high-output commercial blowers, we clear out gravel from boulevards, debris from garden beds, and salt buildup from driveways. We ensure your entire property, not just the grass, is ready for the season.
                                     </p>
                                 </div>
                             </div>

@@ -69,7 +69,7 @@ export default function AboutPage() {
                             At TERREOAK, our mission is simple: deliver dependable landscaping and snow services while raising the standard for professionalism in the industry.
                         </p>
                         <p>
-                            We believe great work starts with a strong work ethic, attention to detail, and a commitment to doing things the right way — every time. From building landscapes to maintaining properties through the winter, our goal is to create results our customers can rely on season after season.
+                            We believe great work starts with a strong work ethic, attention to detail, and a commitment to doing things the right way, every time. From building landscapes to maintaining properties through the winter, our goal is to create results our customers can rely on season after season.
                         </p>
                         <p>
                             We’re not just here to complete jobs. We’re here to build lasting relationships, improve the properties we work on, and continue growing a company our community can trust.

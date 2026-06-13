@@ -91,7 +91,7 @@ export default function HomePage() {
   return (
     <main className="bg-white text-black">
       <PremiumHero
-        title={<>CALGARY LANDSCAPING <br /><span className="text-[#01fa6d]">Construction & Snow Removal.</span></>}
+        title={<>CALGARY LANDSCAPE CONSTRUCTION <br /><span className="text-[#01fa6d]">WHERE THE SUN MEETS SOIL</span></>}
         description="Premium landscape construction and year-round property maintenance for Calgary's residential and commercial properties."
         backgroundVideo="/landscaping-mahogany.MOV"
         badgeLabel="Calgary & Area"
@@ -114,7 +114,7 @@ export default function HomePage() {
                 id: 1,
                 title: "Custom Landscape Design & Build",
                 location: "Calgary, AB",
-                budget: "$15,000",
+                budget: "$5,000",
                 desc: "Explore one of our recent high-end residential landscape construction projects. From initial 3D conceptual design to final construction, see how we transformed this outdoor space.",
                 img: "/Landscape web page pics/Finished-hardscape-project.JPG",
                 link: "/mckenzielakelandscaping"
@@ -123,7 +123,7 @@ export default function HomePage() {
                 id: 2,
                 title: "Premium Hardscape Installation",
                 location: "Calgary, AB",
-                budget: "$12,000",
+                budget: "$10,000",
                 desc: "A stunning transformation featuring Techo-Bloc paving stones, custom retaining walls, and a fully redesigned outdoor living area built to withstand Calgary's climate.",
                 img: "/Landscape web page pics/Techo-Bloc-pavers-river-rock.JPG",
                 link: "/projects/featured-project-2"

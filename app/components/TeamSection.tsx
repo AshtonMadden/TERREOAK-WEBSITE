@@ -23,7 +23,7 @@ export default function TeamSection() {
         </div>
         <div className="lg:w-1/2 space-y-6 text-[18px] text-black/80 leading-relaxed font-medium text-left">
             <p>
-                At TERREOAK, we believe great work starts with a strong work ethic, attention to detail, and a commitment to doing things the right way — every time.
+                At TERREOAK, we believe great work starts with a strong work ethic, attention to detail, and a commitment to doing things the right way, every time.
             </p>
             <p>
                 From building premium landscapes to maintaining properties year-round, our goal is to create results our customers can rely on season after season. We aren't just here to complete jobs; we're here to build lasting relationships, improve the properties we work on, and continue growing a local Calgary company you can trust.

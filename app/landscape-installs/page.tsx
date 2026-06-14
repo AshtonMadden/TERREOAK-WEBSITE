@@ -58,19 +58,19 @@ export default function LandscapeInstallsPage() {
             {[
               {
                 id: 1,
-                title: "Custom Landscape Design & Build",
-                location: "Calgary, AB",
+                title: "Custom Stone Pathway",
+                location: "McKenzie Lake, Calgary AB",
                 budget: "$5,000",
-                desc: "Explore one of our recent high-end residential landscape construction projects. From initial 3D conceptual design to final construction, see how we transformed this outdoor space.",
+                desc: "This project focused on upgrading an outdated, low-end rock and stepping-stone pathway into a premium, durable hardscape. The client wanted a much cleaner, modern look that would be easy to maintain and drastically improve their backyard's curb appeal. Within just two days, our crew stripped the existing materials and installed a far superior, professional-grade foundation and aesthetic finish.",
                 img: "/Landscape web page pics/Finished-hardscape-project.JPG",
                 link: "/mckenzielakelandscaping"
               },
               {
                 id: 2,
-                title: "Premium Hardscape Installation",
-                location: "Calgary, AB",
+                title: "Techo-Bloc Path",
+                location: "McKenzie Lake, Calgary AB",
                 budget: "$10,000",
-                desc: "A stunning transformation featuring Techo-Bloc paving stones, custom retaining walls, and a fully redesigned outdoor living area built to withstand Calgary's climate.",
+                desc: "This project focused entirely on high-quality hardscaping to completely refresh an outdated side-yard and pathway. The old mixed rock and aggregate steppers were heavily weathered and failing, so we completely removed and disposed of them to make way for a modern upgrade. We replaced the old pathway with large-format Techo-Bloc Blu 60 Grande pavers in a stunning Shale Grey finish, cleanly bordered with premium washed river rock for a striking, low-maintenance aesthetic.",
                 img: "/Landscape web page pics/Techo-Bloc-pavers-river-rock.JPG",
                 link: "/projects/featured-project-2"
               }

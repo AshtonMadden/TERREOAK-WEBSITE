@@ -63,7 +63,7 @@ export default function HardscapingPage() {
                 title: "Techo-Bloc Path",
                 location: "McKenzie Lake, Calgary AB",
                 budget: "$10,000",
-                desc: "A premium interlocking paver patio featuring Techo-Bloc materials, built on a highly compacted, open-graded base to prevent frost heaving. We focused heavily on proper drainage and sub-base preparation to ensure the pavers remain perfectly level year after year.",
+                desc: "This project focused entirely on high-quality hardscaping to completely refresh an outdated side-yard and pathway. The old mixed rock and aggregate steppers were heavily weathered and failing, so we completely removed and disposed of them to make way for a modern upgrade. We replaced the old pathway with large-format Techo-Bloc Blu 60 Grande pavers in a stunning Shale Grey finish, cleanly bordered with premium washed river rock for a striking, low-maintenance aesthetic.",
                 img: "/Landscape web page pics/Techo-Bloc-paver-pathway.JPG",
                 link: "/projects/featured-project-2"
               }

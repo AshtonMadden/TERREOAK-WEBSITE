@@ -35,7 +35,7 @@ export default function HardscapingPage() {
         description="Patios, retaining walls, walkways, and steps installed with the base work that actually keeps things level after the ground freezes and thaws. Serving Calgary, Okotoks, Airdrie, Cochrane, and Chestermere."
         backgroundImage="/Landscape web page pics/Calgary-hardscaping.JPG"
         badgeLabel="Landscaping • Calgary"
-        ctaText="GET A FREE QUOTE"
+        ctaText="REQUEST A PROPOSAL"
         onCtaClick={() => document.getElementById('seasonal-form')?.scrollIntoView({ behavior: 'smooth' })}
       />
       

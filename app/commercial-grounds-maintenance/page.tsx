@@ -45,7 +45,7 @@ export default function CommercialGroundsMaintenancePage() {
                 title={<>CALGARY<br /><span className="text-[#01fa6d]">COMMERCIAL GROUNDS MAINTENANCE</span></>}
                 backgroundImage="/images/commercial.png"
                 badgeLabel="Calgary • Commercial Services"
-                ctaText="REQUEST A COMMERCIAL BID"
+                ctaText="REQUEST A PROPOSAL"
                 onCtaClick={handleScrollToForm}
             />
 

@@ -37,7 +37,7 @@ export default function SoftscapesPage() {
         backgroundImage="/images/softscaping-river-rock-hostas.jpg"
         backgroundImageAlt="Calgary softscaping project featuring river rock bed, hostas, and red heucheras alongside a house foundation"
         badgeLabel="Landscaping • Calgary"
-        ctaText="GET A FREE QUOTE"
+        ctaText="REQUEST A PROPOSAL"
         onCtaClick={() => document.getElementById('seasonal-form')?.scrollIntoView({ behavior: 'smooth' })}
       />
       

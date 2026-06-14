@@ -33,7 +33,7 @@ export default function OurProcessPage() {
         description="Getting your yard done right starts long before we pick up a shovel. We believe in clear communication, meticulous planning, and zero surprises. From the initial consultation to the final walkthrough, discover how TERREOAK guarantees a seamless landscape construction experience in Calgary."
         backgroundImage="/Landscape web page pics/lawn-relevel-calgary.JPG"
         badgeLabel="Landscaping • Calgary"
-        ctaText="REQUEST QUOTE"
+        ctaText="REQUEST A PROPOSAL"
         ctaHref="/landscape-installs"
       />
 

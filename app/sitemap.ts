@@ -9,7 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         '/blog',
         '/projects',
         '/mckenzielakelandscaping',
-        '/projects/featured-project-2',
+        '/projects/mckenzie-lake-landscaping',
         '/parklandlandscaping',
 
         '/landscape-installs',

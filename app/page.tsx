@@ -126,7 +126,7 @@ export default function HomePage() {
                 budget: "$10,000",
                 desc: "This project focused entirely on high-quality hardscaping to completely refresh an outdated side-yard and pathway. The old mixed rock and aggregate steppers were heavily weathered and failing, so we completely removed and disposed of them to make way for a modern upgrade. We replaced the old pathway with large-format Techo-Bloc Blu 60 Grande pavers in a stunning Shale Grey finish, cleanly bordered with premium washed river rock for a striking, low-maintenance aesthetic.",
                 img: "/Landscape web page pics/Techo-Bloc-pavers-river-rock.JPG",
-                link: "/projects/featured-project-2"
+                link: "/projects/mckenzie-lake-landscaping"
               }
             ].map((project, index) => (
                 <div key={project.id} className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">

@@ -110,7 +110,7 @@ export default function ParklandFlowerBedProject() {
                             href="/landscape-installs"
                             className="inline-flex items-center justify-center rounded-full bg-[#01fa6d] px-12 py-[16px] text-[18px] font-black text-black hover:bg-white transition-all shadow-xl hover:-translate-y-1 uppercase tracking-wider"
                         >
-                            REQUEST AN ESTIMATE
+                            REQUEST A PROPOSAL
                         </Link>
                     </div>
                 </ScrollReveal>

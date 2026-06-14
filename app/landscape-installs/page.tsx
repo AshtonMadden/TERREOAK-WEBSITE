@@ -72,7 +72,7 @@ export default function LandscapeInstallsPage() {
                 budget: "$10,000",
                 desc: "This project focused entirely on high-quality hardscaping to completely refresh an outdated side-yard and pathway. The old mixed rock and aggregate steppers were heavily weathered and failing, so we completely removed and disposed of them to make way for a modern upgrade. We replaced the old pathway with large-format Techo-Bloc Blu 60 Grande pavers in a stunning Shale Grey finish, cleanly bordered with premium washed river rock for a striking, low-maintenance aesthetic.",
                 img: "/Landscape web page pics/Techo-Bloc-pavers-river-rock.JPG",
-                link: "/projects/featured-project-2"
+                link: "/projects/mckenzie-lake-landscaping"
               }
             ].map((project, index) => (
                 <div key={project.id} className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -255,7 +255,7 @@ export default function LandscapeInstallsPage() {
 
 
       {/* JOBBER LEAD FORM */}
-      <Section id="seasonal-form" title="REQUEST AN ESTIMATE" titleClassName="text-[#01fa6d]">
+      <Section id="seasonal-form" title="REQUEST A PROPOSAL" titleClassName="text-[#01fa6d]">
         <div className="max-w-6xl mx-auto w-full">
           <JobberLeadForm
             clienthubId="41b3399e-3795-43d8-afe2-e6c38c1b3e6e-2235504"
@@ -452,7 +452,7 @@ export default function LandscapeInstallsPage() {
             onClick={handleScrollToForm}
             className="inline-flex items-center justify-center rounded-full bg-white px-12 py-[16px] text-[18px] font-black text-[#017a6d] hover:bg-gray-100 transition-all shadow-2xl hover:-translate-y-1 cursor-pointer"
           >
-            GET YOUR BUILD ESTIMATE
+            GET YOUR BUILD PROPOSAL
           </button>
         </div>
       </section>

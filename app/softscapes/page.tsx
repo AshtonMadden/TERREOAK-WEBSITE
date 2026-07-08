@@ -43,67 +43,92 @@ export default function SoftscapesPage() {
       
       <TrustBar />
 
-      {/* FEATURED PROJECT */}
+      {/* FEATURED PROJECTS */}
       <Section
-        title="FEATURED PROJECT"
+        id="featured-projects"
+        title="FEATURED PROJECTS"
         titleClassName="text-[#017a6d]"
         wrapperClassName="bg-gray-50 border-y border-black/5"
       >
-        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Image Side */}
-            <div className="relative overflow-hidden rounded-3xl aspect-[4/3] shadow-xl border border-black/5">
-                <Image
-                    src="/images/softscaping-river-rock-hostas.jpg"
-                    alt="Front Yard Overhaul Project in Parkland"
-                    fill
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                    className="object-cover group-hover:scale-105 transition-transform duration-700"
-                />
-                
-                {/* Info Bar */}
-                <div className="absolute bottom-4 left-4 right-4 bg-black/50 backdrop-blur-md border border-white/20 rounded-2xl p-4 sm:p-5 grid grid-cols-2 sm:grid-cols-3 gap-4">
-                    <div className="col-span-2 sm:col-span-1">
-                        <div className="text-white/80 text-[10px] uppercase tracking-[0.2em] font-bold mb-1">Project Scope</div>
-                        <div className="text-white font-black text-base md:text-lg leading-tight">Planting & Flower Bed</div>
+        <div className="max-w-6xl mx-auto flex flex-col gap-24">
+            {[
+              {
+                id: 1,
+                title: "Complete Front Yard Overhaul",
+                scope: "Planting & Flower Bed",
+                location: "Parkland",
+                budget: "$4,000",
+                desc1: "We completely transformed this space from a fading wood garden with no decorative stone or plants into a stunning, complete rock garden that will look incredible for years to come.",
+                desc2: "First, we demoed the old wood border and established a rock-solid foundation by installing geogrid, base rock, and a permanent concrete-set border.",
+                desc3: "After planting a diverse mix of greenery, we finished the space with 40mm river rock and a beautiful 70 lb Rundle boulder as a centerpiece.",
+                img: "/images/softscaping-river-rock-hostas.jpg",
+                link: "/parklandlandscaping"
+              },
+              {
+                id: 2,
+                title: "Front Yard Landscape Makeover",
+                scope: "Sod & Rock Bed",
+                location: "Cranston",
+                budget: "$3,150",
+                desc1: "Originally, this client reached out to us after accidentally spraying his entire front yard with Killex, which unfortunately killed off the entire lawn. We stepped in to completely revitalize the space, removing the dead turf and starting fresh to give the home its curb appeal back.",
+                desc2: "We brought in new, nutrient-rich soil to establish a healthy foundation and installed premium Kentucky Bluegrass sod across the entire front yard.",
+                desc3: "To complete the makeover, we refreshed the landscape beds by filling them with 20 mil Rundle rock and placed a beautiful 300 lb decorative Rundle boulder as a focal point.",
+                img: "/projects/cranston-makeover/hero-aerial.jpg",
+                link: "/projects/cranston-landscape-makeover"
+              }
+            ].map((project, index) => (
+                <div key={project.id} className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    {/* Image Side */}
+                    <div className={`relative overflow-hidden rounded-3xl aspect-[4/3] shadow-xl border border-black/5 ${index % 2 === 1 ? 'lg:order-2' : ''}`}>
+                        <Image
+                            src={project.img}
+                            alt={project.title}
+                            fill
+                            sizes="(max-width: 1024px) 100vw, 50vw"
+                            className="object-cover group-hover:scale-105 transition-transform duration-700"
+                        />
+                        
+                        {/* Info Bar */}
+                        <div className="absolute bottom-4 left-4 right-4 bg-black/50 backdrop-blur-md border border-white/20 rounded-2xl p-4 sm:p-5 grid grid-cols-2 sm:grid-cols-3 gap-4">
+                            <div className="col-span-2 sm:col-span-1">
+                                <div className="text-white/80 text-[10px] uppercase tracking-[0.2em] font-bold mb-1">Project Scope</div>
+                                <div className="text-white font-black text-base md:text-lg leading-tight">{project.scope}</div>
+                            </div>
+                            <div className="col-span-1">
+                                <div className="text-white/80 text-[10px] uppercase tracking-[0.2em] font-bold mb-1">Location</div>
+                                <div className="text-white font-black text-base md:text-lg leading-tight">{project.location}</div>
+                            </div>
+                            <div className="col-span-1 text-right sm:text-left">
+                                <div className="text-white/80 text-[10px] uppercase tracking-[0.2em] font-bold mb-1">Investment</div>
+                                <div className="text-white font-black text-base md:text-lg leading-tight text-[#01fa6d]">{project.budget}</div>
+                            </div>
+                        </div>
                     </div>
-                    <div className="col-span-1">
-                        <div className="text-white/80 text-[10px] uppercase tracking-[0.2em] font-bold mb-1">Location</div>
-                        <div className="text-white font-black text-base md:text-lg leading-tight">Parkland</div>
-                    </div>
-                    <div className="col-span-1 text-right sm:text-left">
-                        <div className="text-white/80 text-[10px] uppercase tracking-[0.2em] font-bold mb-1">Investment</div>
-                        <div className="text-white font-black text-base md:text-lg leading-tight text-[#01fa6d]">$4,000</div>
-                    </div>
-                </div>
-            </div>
 
-            {/* Text Summary Side */}
-            <div className="text-lg text-black/80 leading-relaxed font-medium">
-                <h3 className="text-3xl font-black text-black mb-6 uppercase">Complete Front Yard Overhaul</h3>
-                <p className="mb-6">
-                    We completely transformed this space from a fading wood garden with no decorative stone or plants into a stunning, complete rock garden that will look incredible for years to come.
-                </p>
-                <p className="mb-6">
-                    First, we demoed the old wood border and established a rock-solid foundation by installing geogrid, base rock, and a permanent concrete-set border.
-                </p>
-                <p className="mb-6">
-                    After planting a diverse mix of greenery, we finished the space with 40mm river rock and a beautiful 70 lb Rundle boulder as a centerpiece.
-                </p>
-                <div className="mt-8 flex flex-col sm:flex-row gap-4">
-                    <Link
-                        href="/parklandlandscaping"
-                        className="inline-flex items-center justify-center rounded-lg bg-black px-8 py-3 text-sm font-black text-white hover:bg-black/80 transition-all transform hover:-translate-y-1 shadow-md cursor-pointer uppercase tracking-wider"
-                    >
-                        Read Full Project
-                    </Link>
-                    <button 
-                        onClick={() => document.getElementById('seasonal-form')?.scrollIntoView({ behavior: 'smooth' })}
-                        className="inline-flex items-center justify-center rounded-lg bg-[#01fa6d] px-8 py-3 text-sm font-black text-black hover:opacity-90 transition-all transform hover:-translate-y-1 shadow-md cursor-pointer uppercase tracking-wider"
-                    >
-                        Get a Similar Quote
-                    </button>
+                    {/* Text Summary Side */}
+                    <div className={`text-lg text-black/80 leading-relaxed font-medium ${index % 2 === 1 ? 'lg:order-1' : ''}`}>
+                        <h3 className="text-3xl font-black text-black mb-6 uppercase">{project.title}</h3>
+                        <p className="mb-6">{project.desc1}</p>
+                        {project.desc2 && <p className="mb-6">{project.desc2}</p>}
+                        {project.desc3 && <p className="mb-6">{project.desc3}</p>}
+                        
+                        <div className="mt-8 flex flex-col sm:flex-row gap-4">
+                            <Link
+                                href={project.link}
+                                className="inline-flex items-center justify-center rounded-lg bg-black px-8 py-3 text-sm font-black text-white hover:bg-black/80 transition-all transform hover:-translate-y-1 shadow-md cursor-pointer uppercase tracking-wider"
+                            >
+                                Read Full Project
+                            </Link>
+                            <button 
+                                onClick={() => document.getElementById('seasonal-form')?.scrollIntoView({ behavior: 'smooth' })}
+                                className="inline-flex items-center justify-center rounded-lg bg-[#01fa6d] px-8 py-3 text-sm font-black text-black hover:opacity-90 transition-all transform hover:-translate-y-1 shadow-md cursor-pointer uppercase tracking-wider"
+                            >
+                                Get a Similar Quote
+                            </button>
+                        </div>
+                    </div>
                 </div>
-            </div>
+            ))}
         </div>
       </Section>
       
@@ -126,7 +151,7 @@ export default function SoftscapesPage() {
                     <InstagramEmbed url="https://www.instagram.com/p/DZbTO0OTIKM/" />
                 </div>
                 <div className="flex-none w-[85%] snap-center md:w-auto">
-                    <InstagramEmbed url="https://www.instagram.com/p/DZIwwSby7ED/" />
+                    <InstagramEmbed url="https://www.instagram.com/p/DaOSi4dSUg5/" />
                 </div>
             </div>
             <div className="mt-16">

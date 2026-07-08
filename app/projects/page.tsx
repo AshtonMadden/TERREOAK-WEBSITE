@@ -12,7 +12,7 @@ export default function ProjectsPage() {
         // Landscaping
         { src: "/Landscape web page pics/Calgary-Concrete-pour.JPG", alt: "Calgary Concrete Pour" },
         { src: "/Landscape web page pics/Calgary-hardscaping.JPG", alt: "Calgary Hardscaping" },
-        { src: "/Landscape web page pics/Exposed-aggregate-concrete.JPG", alt: "Exposed Aggregate Concrete" },
+        { src: "/Landscape web page pics/Sod-installation-calgary.jpg", alt: "Sod Installation Calgary" },
         { src: "/Landscape web page pics/Finished-hardscape-project.JPG", alt: "Finished Hardscape Project" },
         { src: "/Landscape web page pics/Hardscape-path-install.JPG", alt: "Hardscape Path Install" },
         { src: "/Landscape web page pics/Land-clearing-new-build.JPG", alt: "Land Clearing New Build" },
@@ -80,6 +80,24 @@ export default function ProjectsPage() {
                         desc: "This project focused entirely on high-quality hardscaping to completely refresh an outdated side-yard and pathway. The old mixed rock and aggregate steppers were heavily weathered and failing, so we completely removed and disposed of them to make way for a modern upgrade. We replaced the old pathway with large-format Techo-Bloc Blu 60 Grande pavers in a stunning Shale Grey finish, cleanly bordered with premium washed river rock for a striking, low-maintenance aesthetic.",
                         img: "/Landscape web page pics/Techo-Bloc-paver-pathway.JPG",
                         link: "/projects/mckenzie-lake-landscaping"
+                      },
+                      {
+                        id: 3,
+                        title: "Front Yard Landscape Makeover",
+                        location: "Cranston, Calgary AB",
+                        budget: "$3,150",
+                        desc: "Originally, this client called us because he had sprayed his entire front yard with Killex, which unfortunately killed the entire lawn off. We completely replaced the dead turf with fresh soil and premium Kentucky Bluegrass sod. To complete the clean look, we filled the beds with 20 mil Rundle rock and placed a stunning 300 lb decorative Rundle boulder.",
+                        img: "/projects/cranston-makeover/hero-aerial.jpg",
+                        link: "/projects/cranston-landscape-makeover"
+                      },
+                      {
+                        id: 4,
+                        title: "Complete Front Yard Overhaul",
+                        location: "Parkland, Calgary AB",
+                        budget: "$4,000",
+                        desc: "We completely transformed this space from a fading wood garden with no decorative stone or plants into a stunning, complete rock garden that will look incredible for years to come. After planting a diverse mix of greenery, we finished the space with 40mm river rock and a beautiful 70 lb Rundle boulder as a centerpiece.",
+                        img: "/images/softscaping-river-rock-hostas.jpg",
+                        link: "/parklandlandscaping"
                       }
                     ].map((project, index) => (
                         <div key={project.id} className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">

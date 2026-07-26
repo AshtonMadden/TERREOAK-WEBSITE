@@ -120,7 +120,7 @@ export default function TestimonialSection({
 
                                 <div className="mt-8 pt-6 border-t border-black/5 flex items-center justify-between">
                                     <div>
-                                        <span className="block text-[10px] font-black text-black/30 uppercase tracking-[0.2em] mb-1">Service Type</span>
+                                        <span className="block text-[10px] font-black text-black/30 uppercase tracking-[0.2em] mb-1 font-lora">Service Type</span>
                                         <span className="block font-black text-[#017a6d] text-xs uppercase">{testimonial.role}</span>
                                     </div>
                                     <div className="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center border border-black/5 text-[#017a6d] font-black">

@@ -27,7 +27,7 @@ export default function OpenGradeBaseArticle() {
                     >
                         <span className="mr-3 text-xl">←</span> Back to insights
                     </Link>
-                    <p className="text-[#01fa6d] font-black uppercase tracking-widest text-sm mb-4">Landscape Construction • Technical Guide</p>
+                    <p className="text-[#01fa6d] font-black uppercase tracking-widest text-sm mb-4 font-lora">Landscape Construction • Technical Guide</p>
                     <h1 className="text-[36px] md:text-[64px] lg:text-[72px] font-black leading-[1] text-white uppercase tracking-tight max-w-4xl">
                         Why Open Grade Base is the Gold Standard for Calgary Patio & Hardscaping
                     </h1>

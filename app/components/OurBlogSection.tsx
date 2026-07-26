@@ -19,7 +19,7 @@ export default function OurBlogSection() {
 
             <div className="relative z-10 mx-auto max-w-6xl px-6">
                 <div className="max-w-3xl">
-                    <p className="text-[13px] font-bold tracking-widest text-[#01fa6d] uppercase mb-2">
+                    <p className="text-[13px] font-black tracking-widest text-[#01fa6d] uppercase mb-2 font-lora">
                         Stay Informed
                     </p>
                     <h2 className="text-3xl md:text-5xl font-black text-white mb-8 uppercase">

@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Hardscaping Calgary | Retaining Walls & Patios | TERREOAK",
-  description: "Professional hardscaping in Calgary. Custom paving stone patios, retaining walls, walkways, and durable outdoor structures built to last in Calgary's climate.",
+  title: "Custom Hardscaping & Patio Builders Calgary | TERREOAK",
+  description: "Premium hardscaping services in Calgary. We design and build stunning patios, retaining walls, and walkways using top-quality materials.",
 };
 
 export default function HardscapingLayout({

@@ -42,7 +42,7 @@ export default function CommercialGroundsMaintenancePage() {
     return (
         <main className="bg-white text-black">
             <PremiumHero
-                title={<>CALGARY<br /><span className="text-[#01fa6d]">COMMERCIAL GROUNDS MAINTENANCE</span></>}
+                title={<>CALGARY<br /><span className="text-[#01fa6d] font-lora italic font-black tracking-normal uppercase">COMMERCIAL GROUNDS MAINTENANCE</span></>}
                 backgroundImage="/images/commercial.png"
                 badgeLabel="Calgary • Commercial Services"
                 ctaText="REQUEST A PROPOSAL"
@@ -104,7 +104,7 @@ export default function CommercialGroundsMaintenancePage() {
                                             className="object-contain object-right"
                                         />
                                     </div>
-                                    <span className="text-[10px] font-bold text-black/30 uppercase tracking-[0.2em]">Founder & Director</span>
+                                    <span className="text-[10px] font-black text-black/30 uppercase tracking-[0.2em] font-lora">Founder & Director</span>
                                 </div>
                             </div>
                         </div>

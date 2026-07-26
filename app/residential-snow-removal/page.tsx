@@ -73,7 +73,7 @@ export default function ResidentialSnowBlowingPage() {
   return (
     <main>
       <PremiumHero
-        title={<>CALGARY SNOW REMOVAL<br /><span className="text-[#01fa6d]">ONE SEASON, ONE PRICE, ZERO SURPRISES</span></>}
+        title={<>CALGARY SNOW REMOVAL<br /><span className="text-[#01fa6d] font-lora italic font-black tracking-normal uppercase">ONE SEASON, ONE PRICE, ZERO SURPRISES</span></>}
         backgroundVideo="/Calgary-snowremoval-drone.mov"
         badgeLabel="Calgary • Residential Snow Removal"
         ctaText="SIGN UP"
@@ -196,7 +196,7 @@ export default function ResidentialSnowBlowingPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
             {/* Visual Snowflake Tracker */}
             <ScrollReveal className="bg-black/40 rounded-3xl p-8 border border-white/10 flex flex-col items-center">
-              <p className="text-[#01fa6d] text-[12px] font-black uppercase tracking-[0.2em] mb-6">Seasonal Progress</p>
+              <p className="text-[#01fa6d] text-[12px] font-black uppercase tracking-[0.2em] mb-6 font-lora">Seasonal Progress</p>
               <div className="relative w-40 h-40 flex items-center justify-center">
                 {/* Background Snowflake (Empty) */}
                 <SnowflakeSVG size={140} strokeWidth={1} className="text-white/10" />
@@ -212,7 +212,7 @@ export default function ResidentialSnowBlowingPage() {
                 {/* CM Multiplier Label */}
                 <div className="absolute inset-0 flex flex-col items-center justify-center pt-2">
                   <span className="text-4xl font-black text-white leading-none drop-shadow-lg">142</span>
-                  <span className="text-[11px] font-black text-[#01fa6d] uppercase tracking-[0.2em] mt-1 bg-black/50 px-2 py-0.5 rounded">CM Total</span>
+                  <span className="text-[11px] font-black text-[#01fa6d] uppercase tracking-[0.2em] mt-1 bg-black/50 px-2 py-0.5 rounded font-lora">CM Total</span>
                 </div>
               </div>
             </ScrollReveal>
@@ -373,7 +373,7 @@ export default function ResidentialSnowBlowingPage() {
                   <div className="bg-black text-white px-5 py-3 rounded-2xl border border-white/10 shadow-2xl">
                     <div className="flex items-center gap-2 mb-1">
                       <div className="w-2 h-2 rounded-full bg-[#01fa6d] animate-pulse" />
-                      <span className="text-[10px] font-black uppercase tracking-widest text-[#01fa6d]">Active Service Area</span>
+                      <span className="text-[10px] font-black uppercase tracking-widest text-[#01fa6d] font-lora">Active Service Area</span>
                     </div>
                     <p className="text-[11px] font-bold text-white/90 italic">South Calgary Ring-Road Coverage</p>
                   </div>

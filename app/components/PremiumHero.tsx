@@ -60,7 +60,7 @@ export default function PremiumHero({
           {ctaText}
         </button>
         {ctaSubtext && (
-          <span className="text-[10px] md:text-[11px] font-bold text-[#01fa6d] uppercase tracking-widest mt-1.5 md:mt-2 block text-center">
+          <span className="text-[10px] md:text-[11px] font-black text-[#01fa6d] uppercase tracking-widest mt-1.5 md:mt-2 block text-center font-lora">
             {ctaSubtext}
           </span>
         )}

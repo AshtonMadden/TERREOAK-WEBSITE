@@ -29,7 +29,7 @@ export default function OurProcessPage() {
   return (
     <main className="bg-white text-black">
             <PremiumHero
-        title={<>CALGARY LANDSCAPING<br />OUR PROCESS<br /><span className="text-[#01fa6d]">How we build it.</span></>}
+        title={<>CALGARY LANDSCAPING<br />OUR PROCESS<br /><span className="text-[#01fa6d] font-lora italic font-black tracking-normal uppercase">How we build it.</span></>}
         description="Getting your yard done right starts long before we pick up a shovel. We believe in clear communication, meticulous planning, and zero surprises. From the initial consultation to the final walkthrough, discover how TERREOAK guarantees a seamless landscape construction experience in Calgary."
         backgroundImage="/Landscape web page pics/lawn-relevel-calgary.JPG"
         badgeLabel="Landscaping • Calgary"

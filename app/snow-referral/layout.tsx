@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Snowball Referral Program | TERREOAK",
-    description: "Refer a neighbor and save! Join the TERREOAK Snowball Referral program to earn credits for yourself and discounts for your friends.",
+  title: "Snow Removal Referral Program Calgary | TERREOAK",
+  description: "Join the TERREOAK snow removal referral program in Calgary. Earn rewards by referring friends and neighbors for our reliable winter services.",
 };
 
 export default function SnowReferralLayout({ children }: { children: React.ReactNode }) {

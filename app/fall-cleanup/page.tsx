@@ -37,7 +37,7 @@ export default function FallCleanupPage() {
         <main>
             {/* HERO */}
             <PremiumHero
-                title={<>CALGARY<br />FALL CLEANUP<br /><span className="text-[#01fa6d]">Essential Yard Winterization.</span></>}
+                title={<>CALGARY<br />FALL CLEANUP<br /><span className="text-[#01fa6d] font-lora italic font-black tracking-normal uppercase">Essential Yard Winterization.</span></>}
                 backgroundImage="/fall-cleanup-hero.jpg"
                 badgeLabel="Calgary • Seasonal Services"
                 ctaText="BOOK FALL CLEANUP"

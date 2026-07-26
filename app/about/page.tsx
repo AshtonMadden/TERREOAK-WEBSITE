@@ -23,12 +23,12 @@ export default function AboutPage() {
 
                 <div className="relative z-10 w-full mx-auto max-w-6xl px-6 flex flex-col justify-center min-h-[100dvh] md:min-h-0 md:block pt-48 pb-16 md:pt-56 md:pb-24 lg:pt-60 lg:pb-32 text-left">
                     <div className="mt-auto md:mt-0">
-                        <p className="text-[14px] md:text-[17px] font-bold tracking-widest text-[#01fa6d] uppercase drop-shadow-md">
+                        <p className="text-[14px] md:text-[17px] font-black tracking-widest text-[#01fa6d] uppercase drop-shadow-md font-lora">
                             TERREOAK • OUR STORY
                         </p>
                         <h1 className="mt-4 text-[32px] md:text-[68px] lg:text-[76px] font-black leading-[1.1] tracking-tight text-white drop-shadow-2xl max-w-4xl uppercase">
                             FROM A SNOW SHOVEL<br />
-                            <span className="text-[#01fa6d]">TO A CALGARY LANDSCAPE COMPANY.</span>
+                            <span className="text-[#01fa6d] font-lora italic font-black tracking-normal uppercase">TO A CALGARY LANDSCAPE COMPANY.</span>
                         </h1>
                     </div>
 
@@ -116,7 +116,7 @@ export default function AboutPage() {
                             </div>
 
                             <div className="mt-6 flex flex-col gap-2">
-                                <h4 className="text-[12px] font-black text-[#017a6d] uppercase tracking-[0.2em] mb-1">Focus Areas</h4>
+                                <h4 className="text-[12px] font-black text-[#017a6d] uppercase tracking-[0.2em] mb-1 font-lora">Focus Areas</h4>
                                 <div className="flex flex-wrap gap-x-6 gap-y-2">
                                     {[
                                         "Company Leadership",
@@ -143,7 +143,7 @@ export default function AboutPage() {
                                             className="object-contain object-right"
                                         />
                                     </div>
-                                    <span className="text-[10px] font-bold text-black/30 uppercase tracking-[0.2em]">Founder & Director</span>
+                                    <span className="text-[10px] font-black text-black/30 uppercase tracking-[0.2em] font-lora">Founder & Director</span>
                                 </div>
                             </div>
                         </div>
@@ -180,7 +180,7 @@ export default function AboutPage() {
                                             className="object-contain object-right"
                                         />
                                     </div>
-                                    <span className="text-[10px] font-bold text-black/30 uppercase tracking-[0.2em]">Co-Owner & Operations Director</span>
+                                    <span className="text-[10px] font-black text-black/30 uppercase tracking-[0.2em] font-lora">Co-Owner & Operations Director</span>
                                 </div>
                             </div>
                         </div>
@@ -217,7 +217,7 @@ export default function AboutPage() {
                                             className="object-contain object-right"
                                         />
                                     </div>
-                                    <span className="text-[10px] font-bold text-black/30 uppercase tracking-[0.2em]">Media & Content Lead</span>
+                                    <span className="text-[10px] font-black text-black/30 uppercase tracking-[0.2em] font-lora">Media & Content Lead</span>
                                 </div>
                             </div>
                         </div>

@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "About TERREOAK | Calgary Landscaping & Property Services",
-    description: "Learn about TERREOAK Landscaping & Snow. Professional integrity and cultural excellence built for Calgary's unique seasons.",
+  title: "About TERREOAK | Calgary's Trusted Landscapers",
+  description: "Learn about TERREOAK, an owner-operated landscaping company in Calgary. Discover our story, our hands-on approach, and our commitment to quality.",
 };
 
 export default function AboutLayout({ children }: { children: React.ReactNode }) {

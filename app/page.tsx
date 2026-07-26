@@ -10,12 +10,14 @@ import { Section, ScrollReveal, Carousel } from "./components/UI";
 import OurBlogSection from "./components/OurBlogSection";
 import PremiumHero from "./components/PremiumHero";
 import TrustBar from "./components/TrustBar";
-import PremiumStatsSection from "./components/PremiumStatsSection";
+import GuaranteesAccordion from "./components/GuaranteesAccordion";
 import InstagramEmbed from "./components/InstagramEmbed";
+import FeaturedProjectsGrid from "./components/FeaturedProjectsGrid";
+import ServicesAccordion from "./components/ServicesAccordion";
 import dynamic from "next/dynamic";
 
 const TestimonialSection = dynamic(() => import("./components/TestimonialSection"), {
-  loading: () => <div className="py-24 animate-pulse bg-gray-50 rounded-3xl" />,
+  loading: () => <div className="py-24 animate-pulse bg-[#1e1e1e] rounded-3xl" />,
   ssr: true
 });
 
@@ -91,7 +93,7 @@ export default function HomePage() {
   return (
     <main className="bg-white text-black">
       <PremiumHero
-        title={<>CALGARY LANDSCAPE CONSTRUCTION <br /><span className="text-[#01fa6d]">WHERE THE SUN MEETS SOIL</span></>}
+        title={<>CALGARY LANDSCAPE CONSTRUCTION <br /><span className="text-[#01fa6d] font-lora italic font-black tracking-normal uppercase">WHERE THE SUN MEETS SOIL</span></>}
         description="Premium landscape construction and year-round property maintenance for Calgary's residential and commercial properties."
         backgroundVideo="/landscaping-mahogany.MOV"
         badgeLabel="Calgary & Area"
@@ -100,16 +102,16 @@ export default function HomePage() {
       />
 
       <TrustBar />
-
+      
       {/* FEATURED PROJECTS */}
       <Section
         kicker="Portfolio"
         title="FEATURED PROJECTS"
         titleClassName="text-[#017a6d]"
-        wrapperClassName="bg-gray-50 border-y border-black/5"
+        wrapperClassName="bg-white border-y border-black/5"
       >
-        <div className="max-w-6xl mx-auto flex flex-col gap-24">
-            {[
+        <div className="max-w-6xl mx-auto">
+            <FeaturedProjectsGrid projects={[
               {
                 id: 1,
                 title: "Custom Stone Pathway",
@@ -146,61 +148,10 @@ export default function HomePage() {
                 img: "/images/softscaping-river-rock-hostas.jpg",
                 link: "/parklandlandscaping"
               }
-            ].map((project, index) => (
-                <div key={project.id} className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                    {/* Image Side */}
-                    <div className={`relative overflow-hidden rounded-3xl aspect-[4/3] shadow-xl border border-black/5 ${index % 2 === 1 ? 'lg:order-2' : ''}`}>
-                        <Image
-                            src={project.img}
-                            alt={project.title}
-                            fill
-                            sizes="(max-width: 1024px) 100vw, 50vw"
-                            className="object-cover group-hover:scale-105 transition-transform duration-700"
-                        />
-                        
-                        {/* Info Bar */}
-                        <div className="absolute bottom-4 left-4 right-4 bg-black/50 backdrop-blur-md border border-white/20 rounded-2xl p-4 sm:p-5 grid grid-cols-2 sm:grid-cols-3 gap-4">
-                            <div className="col-span-2 sm:col-span-1">
-                                <div className="text-white/80 text-[10px] uppercase tracking-[0.2em] font-bold mb-1">Project Scope</div>
-                                <div className="text-white font-black text-base md:text-lg leading-tight">{project.title}</div>
-                            </div>
-                            <div className="col-span-1">
-                                <div className="text-white/80 text-[10px] uppercase tracking-[0.2em] font-bold mb-1">Location</div>
-                                <div className="text-white font-black text-base md:text-lg leading-tight">{project.location.split(',')[0]}</div>
-                            </div>
-                            <div className="col-span-1 text-right sm:text-left">
-                                <div className="text-white/80 text-[10px] uppercase tracking-[0.2em] font-bold mb-1">Investment</div>
-                                <div className="text-white font-black text-base md:text-lg leading-tight text-[#01fa6d]">{project.budget}</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Text Summary Side */}
-                    <div className={`text-lg text-black/80 leading-relaxed font-medium ${index % 2 === 1 ? 'lg:order-1' : ''}`}>
-                        <h3 className="text-3xl font-black text-black mb-6 uppercase">{project.title}</h3>
-                        <p className="mb-6">{project.desc}</p>
-                        
-                        <div className="mt-8 flex flex-col sm:flex-row gap-4">
-                            <Link
-                                href={project.link}
-                                className="inline-flex items-center justify-center rounded-lg bg-black px-8 py-3 text-sm font-black text-white hover:bg-black/80 transition-all transform hover:-translate-y-1 shadow-md cursor-pointer uppercase tracking-wider"
-                            >
-                                Read Full Project
-                            </Link>
-                            <button 
-                                onClick={() => document.getElementById('seasonal-form')?.scrollIntoView({ behavior: 'smooth' })}
-                                className="inline-flex items-center justify-center rounded-lg bg-[#01fa6d] px-8 py-3 text-sm font-black text-black hover:opacity-90 transition-all transform hover:-translate-y-1 shadow-md cursor-pointer uppercase tracking-wider"
-                            >
-                                Get a Similar Quote
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            ))}
+            ]} />
         </div>
       </Section>
-
-      <PremiumStatsSection />
+      <ServicesAccordion />
 
       {/* LATEST FROM INSTAGRAM */}
       <Section
@@ -232,16 +183,17 @@ export default function HomePage() {
             </div>
         </div>
       </Section>
+      <GuaranteesAccordion />
+
 
       {/* SERVICES */}
       <Section
         kicker="About Us"
         title="TERREOAK Landscaping and Snow"
         titleClassName="text-[#017a6d]"
-        py="pt-12 md:pt-16 pb-24"
       >
-        <div className="flex flex-col lg:flex-row gap-12 items-center mb-12">
-          <div className="lg:w-1/2 space-y-6 text-[18px] text-black/80 leading-relaxed font-medium">
+        <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 items-center mb-16">
+          <div className="lg:w-5/12 space-y-8 text-[18px] md:text-[20px] text-black/80 leading-relaxed font-medium">
             <p>
               TERREOAK is a full-service landscape construction and property maintenance company serving Calgary. Our work is built around three core divisions: landscape construction, commercial grounds maintenance, and residential seasonal services.
             </p>
@@ -260,8 +212,8 @@ export default function HomePage() {
               </Link>
             </div>
           </div>
-          <div className="lg:w-1/2 w-full">
-            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl shadow-2xl border border-black/5 ring-1 ring-black/5">
+          <div className="lg:w-7/12 w-full">
+            <div className="relative aspect-[16/10] overflow-hidden rounded-3xl shadow-2xl border border-black/5 ring-1 ring-black/5">
               <Image
                 src="/Calgary-landscape-design-build-patio.JPG"
                 alt="TERREOAK high-end landscape construction project in Calgary"
@@ -278,14 +230,14 @@ export default function HomePage() {
           <div className="md:w-2/5 relative min-h-[350px] md:min-h-full">
             <Image
               src="/images/Ashton-Madden-Cowboy.jpg"
-              alt="Ashton Madden - Founder & Director"
+              alt="Ashton Madden - Founder & Director | Calgary Landscaping & Snow Removal"
               fill
               sizes="(max-width: 768px) 100vw, 40vw"
               className="object-cover"
             />
           </div>
           <div className="md:w-3/5 p-8 md:p-12 relative flex flex-col justify-center">
-            <h3 className="text-3xl font-black text-[#017a6d] uppercase tracking-tight mb-4 text-left">Ashton Madden</h3>
+            <h2 className="text-3xl font-black text-[#017a6d] uppercase tracking-tight mb-4 text-left">Ashton Madden</h2>
             <div className="space-y-4">
               <p className="text-lg text-black/70 leading-relaxed font-medium">
                 My goal with TERREOAK is simple: build a company rooted in strong values, a great team culture, and a customer experience people can trust.
@@ -298,48 +250,47 @@ export default function HomePage() {
                 <div className="relative h-20 w-[200px] md:h-[136px] md:w-[435px] mb-2">
                   <Image
                     src="/Ashton_Signature_.jpg"
-                    alt="Ashton Madden Signature"
+                    alt="Ashton Madden Signature | Calgary Landscaping & Snow Removal"
                     fill
                     sizes="(max-width: 768px) 200px, 435px"
                     className="object-contain object-right"
                   />
                 </div>
-                <span className="text-[10px] font-bold text-black/30 uppercase tracking-[0.2em]">Founder & Director</span>
+                <span className="text-[10px] font-black text-black/30 uppercase tracking-[0.2em] font-lora">Founder & Director</span>
               </div>
             </div>
           </div>
         </div>
 
-        {/* DESIGN • BUILD • MAINTAIN GRID */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-20 border-t border-black/5 pt-12">
+        {/* MEET • DESIGN • BUILD GRID */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-16 mb-20 border-t border-black/10 pt-16">
+          {/* MEET */}
+          <div>
+            <h2 className="text-3xl md:text-5xl lg:text-[56px] font-black mb-6 text-[#017a6d] uppercase tracking-tighter">Meet</h2>
+            <p className="text-[16px] text-black/70 leading-relaxed font-medium">
+              Every great landscape begins with a conversation. We start with a comprehensive on-site consultation to understand your vision, assess your property's unique characteristics, and discuss how we can transform your outdoor space into a premium extension of your home.
+            </p>
+          </div>
+
           {/* DESIGN */}
           <div>
-            <h3 className="text-2xl md:text-4xl lg:text-[42px] font-black mb-4 text-[#017a6d] uppercase tracking-tight">Design</h3>
-            <p className="text-[15px] text-black/60 leading-relaxed font-medium">
-              Professional on-site consultations and detailed 3D conceptual designs to visualize your space before we break ground.
+            <h2 className="text-3xl md:text-5xl lg:text-[56px] font-black mb-6 text-[#017a6d] uppercase tracking-tighter">Design</h2>
+            <p className="text-[16px] text-black/70 leading-relaxed font-medium">
+              Our team crafts detailed 3D conceptual designs that allow you to fully visualize your new space before we ever break ground. We refine these designs collaboratively, ensuring every material, texture, and layout detail aligns perfectly with your expectations.
             </p>
           </div>
 
           {/* BUILD */}
           <div>
-            <h3 className="text-2xl md:text-4xl lg:text-[42px] font-black mb-4 text-[#017a6d] uppercase tracking-tight">Build</h3>
-            <p className="text-[15px] text-black/60 leading-relaxed font-medium">
-              Expert construction of hardscapes, retaining walls, and softscapes using climate-ready materials designed for Alberta&apos;s seasons.
-            </p>
-          </div>
-
-          {/* MAINTAIN */}
-          <div>
-            <h3 className="text-2xl md:text-4xl lg:text-[42px] font-black mb-4 text-[#017a6d] uppercase tracking-tight">Maintain</h3>
-            <p className="text-[15px] text-black/60 leading-relaxed font-medium">
-              Disciplined year-round property care, from precision grounds maintenance to reliable 24/7 priority snow removal.
+            <h2 className="text-3xl md:text-5xl lg:text-[56px] font-black mb-6 text-[#017a6d] uppercase tracking-tighter">Build</h2>
+            <p className="text-[16px] text-black/70 leading-relaxed font-medium">
+              With a finalized design and a structured schedule, our expert crews execute the construction phase with precision. We maintain clear communication throughout the build, utilizing high-quality materials to deliver a stunning landscape built to endure Alberta's seasons.
             </p>
           </div>
         </div>
 
 
       </Section>
-
 
 
       {/* JOBBER LEAD FORM */}

@@ -27,7 +27,7 @@ export default function WhyHireSnowRemoval() {
                     >
                         <span className="mr-3 text-xl">←</span> Back to insights
                     </Link>
-                    <p className="text-[#01fa6d] font-black uppercase tracking-widest text-sm mb-4">Winter Maintenance • Expert Guide</p>
+                    <p className="text-[#01fa6d] font-black uppercase tracking-widest text-sm mb-4 font-lora">Winter Maintenance • Expert Guide</p>
                     <h1 className="text-[36px] md:text-[64px] lg:text-[72px] font-black leading-[1] text-white uppercase tracking-tight max-w-4xl">
                         Why You Should Hire a Professional Calgary Snow Removal Company
                     </h1>

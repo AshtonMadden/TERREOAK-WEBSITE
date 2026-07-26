@@ -46,7 +46,7 @@ export default function SpringCleanupPage() {
     return (
         <main>
       <PremiumHero
-        title={<>CALGARY<br />SPRING CLEANUP<br /><span className="text-[#01fa6d]">Fresh Start for your Yard.</span></>}
+        title={<>CALGARY<br />SPRING CLEANUP<br /><span className="text-[#01fa6d] font-lora italic font-black tracking-normal uppercase">Fresh Start for your Yard.</span></>}
         backgroundVideo="/videos/1B200505-8980-40F6-8F8F-D3B3CBEEAFBA.mp4"
         badgeLabel="Property Maintenance"
         ctaText="FREE QUOTE"
@@ -106,7 +106,7 @@ export default function SpringCleanupPage() {
                     </div>
                 </div>
                 <div style={styles.inner} className="mt-4 text-center md:text-right md:w-full">
-                    <p className="text-[12px] font-bold text-black/40 uppercase tracking-widest animate-pulse">
+                    <p className="text-[12px] font-black text-black/40 uppercase tracking-widest animate-pulse font-lora">
                         Click the photo above to see the results →
                     </p>
                 </div>

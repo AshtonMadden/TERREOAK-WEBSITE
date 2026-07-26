@@ -24,7 +24,7 @@ export default function ShopPage() {
 
         <div className="relative z-10 w-full mx-auto max-w-6xl px-6 flex flex-col justify-center min-h-[100dvh] md:min-h-0 md:block pt-32 pb-12 md:pt-56 md:pb-24 lg:pt-60 lg:pb-32 text-left animate-slide-in-left">
           <div className="mt-auto md:mt-0">
-            <p className="text-[14px] font-bold tracking-widest text-[#01fa6d] uppercase drop-shadow-md">
+            <p className="text-[14px] font-black tracking-widest text-[#01fa6d] uppercase drop-shadow-md font-lora">
               TERREOAK • Premium Goods
             </p>
             <h1 className="mt-2 text-[32px] md:text-[56px] lg:text-[64px] font-black leading-[1.1] tracking-tight text-white drop-shadow-2xl uppercase">

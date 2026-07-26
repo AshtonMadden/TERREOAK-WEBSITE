@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Why Spring Cleanup Matters for Calgary Lawns | TERREOAK Tips",
-    description: "Discover why professional spring cleanup is essential for your Calgary yard. Learn about snow mold, aeration, power raking, and salt damage solutions.",
+  title: "Why Spring Cleanup Matters in Calgary | TERREOAK Blog",
+  description: "Understand the importance of a thorough spring yard cleanup in Calgary. Learn how early maintenance sets your lawn and garden up for summer success.",
 };
 
 export default function ArticleLayout({ children }: { children: React.ReactNode }) {

@@ -22,12 +22,12 @@ export default function BlogPage() {
 
                 <div className="relative z-10 w-full mx-auto max-w-6xl px-6 flex flex-col justify-center min-h-[100dvh] md:min-h-0 md:block pt-48 pb-16 md:pt-56 md:pb-24 lg:pt-60 lg:pb-32 text-left">
                     <div className="mt-auto md:mt-0">
-                        <p className="text-[14px] md:text-[17px] font-bold tracking-widest text-[#01fa6d] uppercase drop-shadow-md">
+                        <p className="text-[14px] md:text-[17px] font-black tracking-widest text-[#01fa6d] uppercase drop-shadow-md font-lora">
                             TERREOAK • Insights
                         </p>
                         <h1 className="mt-4 text-[32px] md:text-[68px] lg:text-[76px] font-black leading-[1.1] tracking-tight text-white drop-shadow-2xl max-w-4xl uppercase">
                             THE TERREOAK BLOG , <br />
-                            <span className="text-[#01fa6d]">EXPERT ADVICE.</span>
+                            <span className="text-[#01fa6d] font-lora italic font-black tracking-normal uppercase">EXPERT ADVICE.</span>
                         </h1>
                     </div>
 
@@ -71,7 +71,7 @@ export default function BlogPage() {
                             />
                         </div>
                         <div className="flex flex-col flex-grow p-8">
-                            <p className="text-[#017a6d] font-black uppercase text-xs mb-3 tracking-widest">LANDSCAPE CONSTRUCTION • EXPERT TIPS</p>
+                            <p className="text-[#017a6d] font-black uppercase text-xs mb-3 tracking-widest font-lora">LANDSCAPE CONSTRUCTION • EXPERT TIPS</p>
                             <h2 className="text-2xl font-black uppercase text-black leading-tight mb-4 group-hover:text-[#017a6d] transition-colors">
                                 Why Open Grade Base is the Gold Standard for Calgary Patio & Hardscaping
                             </h2>
@@ -102,7 +102,7 @@ export default function BlogPage() {
                             />
                         </div>
                         <div className="flex flex-col flex-grow p-8">
-                            <p className="text-[#017a6d] font-black uppercase text-xs mb-3 tracking-widest">SEASONAL CARE • EXPERT ADVICE</p>
+                            <p className="text-[#017a6d] font-black uppercase text-xs mb-3 tracking-widest font-lora">SEASONAL CARE • EXPERT ADVICE</p>
                             <h2 className="text-2xl font-black uppercase text-black leading-tight mb-4 group-hover:text-[#017a6d] transition-colors">
                                 Why a Professional Spring Cleanup is Essential for Calgary Lawns
                             </h2>
@@ -133,7 +133,7 @@ export default function BlogPage() {
                             />
                         </div>
                         <div className="flex flex-col flex-grow p-8">
-                            <p className="text-[#017a6d] font-black uppercase text-xs mb-3 tracking-widest">WINTER MAINTENANCE • EXPERT GUIDE</p>
+                            <p className="text-[#017a6d] font-black uppercase text-xs mb-3 tracking-widest font-lora">WINTER MAINTENANCE • EXPERT GUIDE</p>
                             <h2 className="text-2xl font-black uppercase text-black leading-tight mb-4 group-hover:text-[#017a6d] transition-colors">
                                 Why You Should Hire a Professional Calgary Snow Removal Company
                             </h2>

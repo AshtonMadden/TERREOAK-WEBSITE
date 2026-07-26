@@ -28,7 +28,7 @@ export default function TeamSection() {
             <p>
                 From building premium landscapes to maintaining properties year-round, our goal is to create results our customers can rely on season after season. We aren't just here to complete jobs; we're here to build lasting relationships, improve the properties we work on, and continue growing a local Calgary company you can trust.
             </p>
-            <p className="font-black text-[#017a6d] pt-4 uppercase tracking-widest text-sm">
+            <p className="font-black text-[#017a6d] pt-4 uppercase tracking-widest text-sm font-lora">
                 - Ashton Madden, Founder & Director
             </p>
         </div>

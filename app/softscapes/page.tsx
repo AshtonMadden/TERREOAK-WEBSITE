@@ -32,7 +32,7 @@ export default function SoftscapesPage() {
   return (
     <main className="bg-white text-black">
       <PremiumHero
-        title={<>CALGARY SOFTSCAPES<br /><span className="text-[#01fa6d]">IT STARTS WITH THE SOIL</span></>}
+        title={<>CALGARY SOFTSCAPES<br /><span className="text-[#01fa6d] font-lora italic font-black tracking-normal uppercase">IT STARTS WITH THE SOIL</span></>}
         description="Sod installation, garden beds, planting, and mulch work done right the first time. Serving Calgary, Okotoks, Airdrie, Cochrane, and Chestermere."
         backgroundImage="/images/softscaping-river-rock-hostas.jpg"
         backgroundImageAlt="Calgary softscaping project featuring river rock bed, hostas, and red heucheras alongside a house foundation"
@@ -91,15 +91,15 @@ export default function SoftscapesPage() {
                         {/* Info Bar */}
                         <div className="absolute bottom-4 left-4 right-4 bg-black/50 backdrop-blur-md border border-white/20 rounded-2xl p-4 sm:p-5 grid grid-cols-2 sm:grid-cols-3 gap-4">
                             <div className="col-span-2 sm:col-span-1">
-                                <div className="text-white/80 text-[10px] uppercase tracking-[0.2em] font-bold mb-1">Project Scope</div>
+                                <div className="text-white/80 text-[10px] uppercase tracking-[0.2em] font-black mb-1 font-lora">Project Scope</div>
                                 <div className="text-white font-black text-base md:text-lg leading-tight">{project.scope}</div>
                             </div>
                             <div className="col-span-1">
-                                <div className="text-white/80 text-[10px] uppercase tracking-[0.2em] font-bold mb-1">Location</div>
+                                <div className="text-white/80 text-[10px] uppercase tracking-[0.2em] font-black mb-1 font-lora">Location</div>
                                 <div className="text-white font-black text-base md:text-lg leading-tight">{project.location}</div>
                             </div>
                             <div className="col-span-1 text-right sm:text-left">
-                                <div className="text-white/80 text-[10px] uppercase tracking-[0.2em] font-bold mb-1">Investment</div>
+                                <div className="text-white/80 text-[10px] uppercase tracking-[0.2em] font-black mb-1 font-lora">Investment</div>
                                 <div className="text-white font-black text-base md:text-lg leading-tight text-[#01fa6d]">{project.budget}</div>
                             </div>
                         </div>

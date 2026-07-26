@@ -38,7 +38,7 @@ export default function LandscapeInstallsPage() {
   return (
     <main className="bg-white text-black">
       <PremiumHero
-        title={<>CALGARY LANDSCAPING & DESIGN<br /><span className="text-[#01fa6d]">WHERE THE SUN MEETS SOIL</span></>}
+        title={<>CALGARY LANDSCAPING & DESIGN<br /><span className="text-[#01fa6d] font-lora italic font-black tracking-normal uppercase">WHERE THE SUN MEETS SOIL</span></>}
         description="Every TERREOAK build accounts for Calgary's specific conditions. From engineered retaining walls and exposed aggregate concrete to sod installations and drainage solutions, we build outdoor spaces designed to last through Alberta's freeze-thaw cycles."
         backgroundImage="/images/landscape-hero-pavers.jpg"
         badgeLabel="Landscape Installs"
@@ -107,15 +107,15 @@ export default function LandscapeInstallsPage() {
                         {/* Info Bar */}
                         <div className="absolute bottom-4 left-4 right-4 bg-black/50 backdrop-blur-md border border-white/20 rounded-2xl p-4 sm:p-5 grid grid-cols-2 sm:grid-cols-3 gap-4">
                             <div className="col-span-2 sm:col-span-1">
-                                <div className="text-white/80 text-[10px] uppercase tracking-[0.2em] font-bold mb-1">Project Scope</div>
+                                <div className="text-white/80 text-[10px] uppercase tracking-[0.2em] font-black mb-1 font-lora">Project Scope</div>
                                 <div className="text-white font-black text-base md:text-lg leading-tight">{project.title}</div>
                             </div>
                             <div className="col-span-1">
-                                <div className="text-white/80 text-[10px] uppercase tracking-[0.2em] font-bold mb-1">Location</div>
+                                <div className="text-white/80 text-[10px] uppercase tracking-[0.2em] font-black mb-1 font-lora">Location</div>
                                 <div className="text-white font-black text-base md:text-lg leading-tight">{project.location.split(',')[0]}</div>
                             </div>
                             <div className="col-span-1 text-right sm:text-left">
-                                <div className="text-white/80 text-[10px] uppercase tracking-[0.2em] font-bold mb-1">Investment</div>
+                                <div className="text-white/80 text-[10px] uppercase tracking-[0.2em] font-black mb-1 font-lora">Investment</div>
                                 <div className="text-white font-black text-base md:text-lg leading-tight text-[#01fa6d]">{project.budget}</div>
                             </div>
                         </div>
@@ -226,7 +226,7 @@ export default function LandscapeInstallsPage() {
                     className="object-contain object-right"
                   />
                 </div>
-                <span className="text-[10px] font-bold text-black/30 uppercase tracking-[0.2em]">Founder & Director</span>
+                <span className="text-[10px] font-black text-black/30 uppercase tracking-[0.2em] font-lora">Founder & Director</span>
               </div>
             </div>
           </div>

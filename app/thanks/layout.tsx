@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Request Received | TERREOAK",
-  description: "Thank you for reaching out to TERREOAK. We've received your request and our team will get back to you shortly.",
+  title: "Thank You | TERREOAK Landscaping Calgary",
+  description: "Thank you for contacting TERREOAK. We have received your message and will be in touch shortly regarding your landscaping or snow removal needs.",
 };
 
 export default function ThanksLayout({ children }: { children: React.ReactNode }) {

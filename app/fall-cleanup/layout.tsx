@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Fall Cleanup Calgary | Leaf Removal & Winter Prep",
-  description: "Prepare your property for the Alberta winter with professional fall cleanup. Leaf removal, garden bed clearing, and final lawn maintenance to protect your investment.",
+  title: "Fall Yard Cleanup Services Calgary | TERREOAK",
+  description: "Get your property ready for winter with TERREOAK's comprehensive fall yard cleanup services in Calgary. Leaf removal, pruning, and debris clearing.",
 };
 
 export default function FallCleanupLayout({ children }: { children: React.ReactNode }) {

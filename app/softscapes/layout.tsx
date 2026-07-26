@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Softscapes Calgary | Sod, Mulch & Planting | TERREOAK",
-  description: "Premium softscape installation in Calgary. We provide professional sod installation, custom garden beds, mulch, and planting services for beautiful, lasting yards.",
+  title: "Softscape & Garden Design Calgary | TERREOAK",
+  description: "Beautiful softscape installations in Calgary. TERREOAK specializes in planting, sodding, mulching, and custom garden designs for your home.",
 };
 
 export default function SoftscapesLayout({

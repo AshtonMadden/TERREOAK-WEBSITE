@@ -45,7 +45,7 @@ export default function ProjectsPage() {
         <main className="bg-white overflow-hidden">
             {/* HERO */}
             <PremiumHero
-                title={<>OUR PROJECTS<br /><span className="text-[#01fa6d]">Proven in Calgary.</span></>}
+                title={<>OUR PROJECTS<br /><span className="text-[#01fa6d] font-lora italic font-black tracking-normal uppercase">Proven in Calgary.</span></>}
                 backgroundImage="/Landscape web page pics/Techo-Bloc-pavers-river-rock.JPG"
                 badgeLabel="TERREOAK • Work & Results"
                 ctaText="VIEW PROJECTS"
@@ -114,15 +114,15 @@ export default function ProjectsPage() {
                                 {/* Info Bar */}
                                 <div className="absolute bottom-4 left-4 right-4 bg-black/50 backdrop-blur-md border border-white/20 rounded-2xl p-4 sm:p-5 grid grid-cols-2 sm:grid-cols-3 gap-4">
                                     <div className="col-span-2 sm:col-span-1">
-                                        <div className="text-white/80 text-[10px] uppercase tracking-[0.2em] font-bold mb-1">Project Scope</div>
+                                        <div className="text-white/80 text-[10px] uppercase tracking-[0.2em] font-black mb-1 font-lora">Project Scope</div>
                                         <div className="text-white font-black text-base md:text-lg leading-tight">{project.title}</div>
                                     </div>
                                     <div className="col-span-1">
-                                        <div className="text-white/80 text-[10px] uppercase tracking-[0.2em] font-bold mb-1">Location</div>
+                                        <div className="text-white/80 text-[10px] uppercase tracking-[0.2em] font-black mb-1 font-lora">Location</div>
                                         <div className="text-white font-black text-base md:text-lg leading-tight">{project.location.split(',')[0]}</div>
                                     </div>
                                     <div className="col-span-1 text-right sm:text-left">
-                                        <div className="text-white/80 text-[10px] uppercase tracking-[0.2em] font-bold mb-1">Investment</div>
+                                        <div className="text-white/80 text-[10px] uppercase tracking-[0.2em] font-black mb-1 font-lora">Investment</div>
                                         <div className="text-white font-black text-base md:text-lg leading-tight text-[#01fa6d]">{project.budget}</div>
                                     </div>
                                 </div>

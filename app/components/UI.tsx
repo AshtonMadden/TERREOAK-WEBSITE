@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 
+
 /**
  * ScrollReveal component that adds an entry animation when scrolled into view.
  */
@@ -37,7 +38,7 @@ export function ScrollReveal({
         <div
             ref={ref}
             className={`transition-all duration-700 ease-out 
-        ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12 md:translate-y-0 md:opacity-100"} 
+        ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"} 
         ${className}`}
         >
             {children}
@@ -56,11 +57,13 @@ export function Section({
     titleClassName,
     wrapperClassName,
     image,
-    py = "py-24",
+    py = "py-32 md:py-40",
     headerRight,
     imageRight = false,
     hasBorder = true,
     id,
+    bottomDivider,
+    dividerColor,
 }: {
     kicker?: string;
     kickerClassName?: string;
@@ -74,31 +77,37 @@ export function Section({
     imageRight?: boolean;
     hasBorder?: boolean;
     id?: string;
+    bottomDivider?: boolean;
+    dividerColor?: string;
 }) {
     return (
-        <div id={id} className={`${hasBorder ? "border-t border-black/5" : ""} ${wrapperClassName || ""}`}>
-            <section className={`mx-auto max-w-6xl px-6 ${py}`}>
-                <div className={image ? "grid grid-cols-1 md:grid-cols-2 gap-16 items-center" : ""}>
-                    {image && (
-                        <div className={`relative aspect-[4/3] overflow-hidden rounded-2xl shadow-xl ${imageRight ? "md:order-last" : ""}`}>
-                            {image}
-                        </div>
-                    )}
-                    <div className={imageRight ? "md:order-first" : ""}>
-                        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
-                            <div>
-                                {kicker ? (
-                                    <p className={`text-[13px] font-bold tracking-widest text-black/60 uppercase ${kickerClassName || ""}`}>
-                                        {kicker}
-                                    </p>
-                                ) : null}
-                                <h2 className={`mt-2 text-3xl md:text-5xl font-black uppercase ${titleClassName || ""}`}>{title}</h2>
+        <div id={id} className={`relative ${hasBorder ? "border-t border-black/5" : ""} ${wrapperClassName || ""}`}>
+            <section className={`relative z-20 mx-auto max-w-6xl px-6 ${py}`}>
+                <ScrollReveal>
+                    <div className={image ? "grid grid-cols-1 md:grid-cols-2 gap-16 items-center" : ""}>
+                        {image && (
+                            <div className={`relative aspect-[4/3] overflow-hidden rounded-2xl shadow-xl ${imageRight ? "md:order-last" : ""}`}>
+                                {image}
                             </div>
-                            {headerRight}
+                        )}
+                        <div className={imageRight ? "md:order-first" : ""}>
+                            <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+                                <div>
+                                    {kicker ? (
+                                        <p className={`text-[13px] font-black tracking-widest text-black/60 uppercase font-lora ${kickerClassName || ""}`}>
+                                            {kicker}
+                                        </p>
+                                    ) : null}
+                                    <h2 className={`mt-2 text-4xl md:text-6xl lg:text-7xl font-black uppercase tracking-tighter leading-[1.05] ${titleClassName || ""}`}>
+                                        {title}
+                                    </h2>
+                                </div>
+                                {headerRight}
+                            </div>
+                            <div className="mt-8">{children}</div>
                         </div>
-                        <div className="mt-8">{children}</div>
                     </div>
-                </div>
+                </ScrollReveal>
             </section>
         </div>
     );

@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Our Process | Calgary Landscaping & Design | TERREOAK",
-  description: "Learn how TERREOAK approaches landscape design and construction in Calgary. From initial consultation to 3D design and professional installation.",
+  title: "Our Landscaping Process | How TERREOAK Works",
+  description: "Learn about TERREOAK's seamless landscaping process. From initial consultation to final installation, see how we deliver exceptional results in Calgary.",
 };
 
 export default function OurProcessLayout({

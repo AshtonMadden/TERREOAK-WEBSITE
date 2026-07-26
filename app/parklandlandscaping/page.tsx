@@ -49,11 +49,11 @@ export default function ParklandFlowerBedProject() {
                     {/* Fast Facts Grid */}
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20 bg-gray-50 p-12 rounded-3xl border border-black/5">
                         <div>
-                            <p className="text-sm font-black text-black/50 uppercase tracking-widest mb-2">Location</p>
+                            <p className="text-sm font-black text-black/50 uppercase tracking-widest mb-2 font-lora">Location</p>
                             <p className="text-3xl font-black text-[#017a6d] uppercase">Parkland, SE Calgary</p>
                         </div>
                         <div>
-                            <p className="text-sm font-black text-black/50 uppercase tracking-widest mb-2">Project Cost</p>
+                            <p className="text-sm font-black text-black/50 uppercase tracking-widest mb-2 font-lora">Project Cost</p>
                             <p className="text-3xl font-black text-[#017a6d] uppercase">$4,000</p>
                         </div>
                     </div>

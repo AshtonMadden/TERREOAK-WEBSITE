@@ -39,7 +39,7 @@ export default async function ProductDetail({ params }: { params: Promise<{ id: 
 
             {/* Details Section */}
             <div className="w-full md:w-1/2 p-8 md:p-12 lg:p-16 flex flex-col justify-center">
-              <p className="text-[14px] font-bold tracking-widest text-[#017a6d] uppercase">
+              <p className="text-[14px] font-black tracking-widest text-[#017a6d] uppercase font-lora">
                 TERREOAK EXCLUSIVE
               </p>
               <h1 className="mt-2 text-[32px] md:text-[42px] font-black leading-[1.1] uppercase text-black">

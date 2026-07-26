@@ -37,7 +37,7 @@ export default function IrrigationPage() {
         <main>
             {/* HERO */}
             <PremiumHero
-                title={<>CALGARY<br />IRRIGATION BLOWOUTS<br /><span className="text-[#01fa6d]">Protect Your Pipes.</span></>}
+                title={<>CALGARY<br />IRRIGATION BLOWOUTS<br /><span className="text-[#01fa6d] font-lora italic font-black tracking-normal uppercase">Protect Your Pipes.</span></>}
                 backgroundImage="/images/irrigation-hero.jpg"
                 badgeLabel="Calgary • Seasonal Services"
                 ctaText="BOOK YOUR BLOWOUT"

@@ -26,7 +26,7 @@ export default function CareersPage() {
 
         <div className="relative z-10 w-full mx-auto max-w-6xl px-6 flex flex-col justify-center min-h-[100dvh] md:min-h-0 md:block pt-32 pb-12 md:pt-56 md:pb-24 lg:pt-60 lg:pb-32 text-left animate-slide-in-left">
           <div className="mt-auto md:mt-0">
-            <p className="text-[14px] font-bold tracking-widest text-[#01fa6d] uppercase drop-shadow-md">
+            <p className="text-[14px] font-black tracking-widest text-[#01fa6d] uppercase drop-shadow-md font-lora">
               TERREOAK • JOIN THE CREW
             </p>
             <h1 className="mt-2 text-[32px] md:text-[56px] lg:text-[64px] font-black leading-[1.1] tracking-tight text-white drop-shadow-2xl max-w-4xl uppercase">
@@ -102,7 +102,7 @@ export default function CareersPage() {
               <div className="flex flex-col md:flex-row md:items-start justify-between gap-8">
                 <div className="flex-grow">
                   <h3 className="text-[24px] font-black uppercase text-black group-hover:text-[#017a6d] transition-colors">Landscape Crew Leader</h3>
-                  <p className="text-[14px] font-bold text-[#017a6d] uppercase mt-1 tracking-widest">Full-Time • Calgary, AB</p>
+                  <p className="text-[14px] font-black text-[#017a6d] uppercase mt-1 tracking-widest font-lora">Full-Time • Calgary, AB</p>
                   <p className="mt-4 text-[16px] text-black/70 font-medium">
                     Lead a dedicated team executing premium hardscape and softscape installations. Requires 3+ years of landscaping experience, a valid driver's license, and strong leadership skills.
                   </p>
@@ -131,7 +131,7 @@ export default function CareersPage() {
               <div className="flex flex-col md:flex-row md:items-start justify-between gap-8">
                 <div className="flex-grow">
                   <h3 className="text-[24px] font-black uppercase text-black group-hover:text-[#017a6d] transition-colors">Snow Removal Operator</h3>
-                  <p className="text-[14px] font-bold text-[#017a6d] uppercase mt-1 tracking-widest">Seasonal / Full-Time • Calgary, AB</p>
+                  <p className="text-[14px] font-black text-[#017a6d] uppercase mt-1 tracking-widest font-lora">Seasonal / Full-Time • Calgary, AB</p>
                   <p className="mt-4 text-[16px] text-black/70 font-medium">
                     Operate commercial snow removal equipment (skid steers, tractors, plows). Requires open availability during winter months and previous heavy equipment experience.
                   </p>
@@ -160,7 +160,7 @@ export default function CareersPage() {
               <div className="flex flex-col md:flex-row md:items-start justify-between gap-8">
                 <div className="flex-grow">
                   <h3 className="text-[24px] font-black uppercase text-black group-hover:text-[#017a6d] transition-colors">Maintenance Crew Member</h3>
-                  <p className="text-[14px] font-bold text-[#017a6d] uppercase mt-1 tracking-widest">Full-Time • Calgary, AB</p>
+                  <p className="text-[14px] font-black text-[#017a6d] uppercase mt-1 tracking-widest font-lora">Full-Time • Calgary, AB</p>
                   <p className="mt-4 text-[16px] text-black/70 font-medium">
                     Join our fast-paced commercial and residential maintenance crews. Mowing, trimming, fall cleanups, and property care. Willing to train the right hardworking individual.
                   </p>

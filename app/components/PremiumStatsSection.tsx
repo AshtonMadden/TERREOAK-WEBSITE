@@ -20,7 +20,7 @@ export default function PremiumStatsSection() {
       <div className="relative z-10 max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         {/* Left Side: Story & CTA */}
         <div>
-          <div className="inline-block px-4 py-1.5 rounded-full border border-white/20 bg-white/5 backdrop-blur-sm text-[11px] font-black tracking-[0.2em] uppercase text-white/80 mb-8">
+          <div className="inline-block px-4 py-1.5 rounded-full border border-white/20 bg-white/5 backdrop-blur-sm text-[11px] font-black tracking-[0.2em] uppercase text-white/80 mb-8 font-lora">
             Our Story
           </div>
           
@@ -97,7 +97,7 @@ export default function PremiumStatsSection() {
               ))}
             </div>
             <div className="text-sm text-white/70 font-medium mb-3">Average Rating</div>
-            <div className="text-sm font-black tracking-widest uppercase text-white/90">
+            <div className="text-sm font-black tracking-widest uppercase text-white/90 font-lora">
                Top Rated
             </div>
           </div>

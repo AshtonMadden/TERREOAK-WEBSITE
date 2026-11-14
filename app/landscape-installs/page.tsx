@@ -199,7 +199,7 @@ export default function LandscapeInstallsPage() {
         <div className="flex flex-col md:flex-row items-stretch bg-white rounded-3xl shadow-xl border border-black/5 overflow-hidden group mt-20">
           <div className="md:w-2/5 relative min-h-[350px] md:min-h-full">
             <Image
-              src="/images/Ashton-Madden-Cowboy.jpg"
+              src="/images/ashton-madden-headshot-2026.jpg"
               alt="Ashton Madden - Founder & Director"
               fill
               sizes="(max-width: 768px) 100vw, 40vw"

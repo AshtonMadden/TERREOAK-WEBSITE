@@ -170,7 +170,7 @@ export function FounderQuote() {
   return (
     <figure className="to-card grid items-center gap-8 p-8 md:grid-cols-[auto_minmax(0,1fr)] md:gap-12 md:p-12">
       <div className="relative h-40 w-40 overflow-hidden rounded-full md:h-48 md:w-48">
-        <Image src="/images/Ashton-Madden-Cowboy.jpg" alt="Ashton Madden, Founder & Director of TERREOAK Landscaping & Snow" fill sizes="200px" className="object-cover" />
+        <Image src="/images/ashton-madden-headshot-2026.jpg" alt="Ashton Madden, Founder & Director of TERREOAK Landscaping & Snow" fill sizes="200px" className="object-cover object-[50%_28%]" />
       </div>
       <div>
         <blockquote className="to-display text-[1.5rem] leading-snug md:text-[1.9rem]">

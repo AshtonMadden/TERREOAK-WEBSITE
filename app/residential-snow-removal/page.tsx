@@ -89,7 +89,7 @@ export default function ResidentialSnowRemovalPage() {
             <RouteCheck />
           </div>
 
-          <dl className="mt-14 grid grid-cols-3 gap-6 md:mt-20 md:max-w-3xl">
+          <dl className="mt-14 grid grid-cols-2 gap-x-6 gap-y-8 sm:grid-cols-4 md:mt-20 md:max-w-4xl">
             {stats.map((stat) => (
               <div key={stat.label}>
                 <dd className="to-display text-5xl md:text-6xl">

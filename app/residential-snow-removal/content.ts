@@ -115,6 +115,7 @@ export const stats = [
   { end: 100, suffix: "+", label: "Total properties managed" },
   { end: 92, suffix: "+", label: "Happy clients" },
   { end: 2, suffix: "", label: "TERREOAK crews" },
+  { end: 12, suffix: " hr", label: "Average route clear time" },
 ];
 
 // Snowball referral program terms.

@@ -1,17 +1,16 @@
 "use client";
 
-import Link from "next/link";
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import { Section, ScrollReveal, Carousel } from "../components/UI";
+import { Section, ScrollReveal } from "../components/UI";
 import BeforeAfterSlider from "../components/BeforeAfterSlider";
 
 import OurBlogSection from "../components/OurBlogSection";
 import StatsCounter from "./StatsCounter";
-import GoogleReviewBadge from "../components/GoogleReviewBadge";
 import PremiumHero from "../components/PremiumHero";
 import InstagramEmbed from "../components/InstagramEmbed";
 import dynamic from "next/dynamic";
+import { snowFaqs } from "./faqs";
 
 const JobberLeadForm = dynamic(() => import("../components/JobberLeadForm"), {
   loading: () => <div className="w-full h-[600px] animate-pulse bg-gray-50 rounded-3xl" />,
@@ -74,7 +73,8 @@ export default function ResidentialSnowBlowingPage() {
     <main>
       <PremiumHero
         title={<>CALGARY SNOW REMOVAL<br /><span className="text-[#01fa6d] font-lora italic font-black tracking-normal uppercase">ONE SEASON, ONE PRICE, ZERO SURPRISES</span></>}
-        backgroundVideo="/Calgary-snowremoval-drone.mov"
+        backgroundVideo="/videos/calgary-snow-removal-drone.mp4"
+        backgroundVideoPoster="/images/snow-removal/hero-poster.jpg"
         badgeLabel="Calgary • Residential Snow Removal"
         ctaText="SIGN UP"
         onCtaClick={handleScrollToForm}
@@ -90,9 +90,6 @@ export default function ResidentialSnowBlowingPage() {
       <StatsCounter stats={[
         { end: 100, label: "Total Properties Managed", suffix: "+" },
         { end: 92, label: "Happy Clients", suffix: "+" },
-
-
-
         { end: 2, label: "TERREOAK Crews" },
       ]} />
 
@@ -163,7 +160,7 @@ export default function ResidentialSnowBlowingPage() {
                 TERREOAK provides residential snow removal for Calgary homeowners who want a reliable, hands-off solution for the entire winter season. No wondering if your driveway got done, just consistent service, dispatch alerts before we arrive, and a photo log in your inbox after every visit.
               </p>
               <p style={{ ...styles.p, fontSize: 18, marginTop: 16, color: "#333" }}>
-                We service driveways and front sidewalks at just 1cm of accumulation, so your property stays clear and safe through every storm Calgary throws at it. Our route-based crews cover communities across SW, SE, Calgary, with capacity capped each season so service quality never slips.
+                We service driveways and front sidewalks at just 1cm of accumulation, so your property stays clear and safe through every storm Calgary throws at it. Our route-based crews cover communities across SW and SE Calgary, with capacity capped each season so service quality never slips.
               </p>
               <p style={{ ...styles.p, fontSize: 18, marginTop: 16, color: "#333", fontWeight: 900 }}>
                 Spots fill up before the first snowfall. Reserve your season pass early to lock in your route and your rate.
@@ -259,7 +256,6 @@ export default function ResidentialSnowBlowingPage() {
                 Check out our latest snow removal updates over on Instagram. We post regular jobsite walk-throughs, blizzard updates, and before/after clearing results!
             </p>
             <div className="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar md:grid md:grid-cols-3 gap-6 lg:gap-8 w-full max-w-6xl pb-4 md:pb-0 -mx-6 px-6 md:mx-0 md:px-0">
-                {/* Placeholders for 3 recent Instagram videos/reels. The user can swap these URLs out with their own. */}
                 <div className="flex-none w-[85%] snap-center md:w-auto">
                     <InstagramEmbed url="https://www.instagram.com/p/DV8vk9yk61k/" />
                 </div>
@@ -300,7 +296,7 @@ export default function ResidentialSnowBlowingPage() {
                 <div className="flex gap-4">
                   <div className="w-12 h-12 rounded-full bg-[#01fa6d] flex-shrink-0 flex items-center justify-center font-black text-black text-xl">✓</div>
                   <div>
-                    <h4 className="text-[#017a6d] font-black uppercase tracking-wider text-sm">Southeast Calgary</h4>
+                    <h3 className="text-[#017a6d] font-black uppercase tracking-wider text-sm">Southeast Calgary</h3>
                     <p className="text-sm text-black/60 mt-1">Auburn Bay, Mahogany, Cranston, Copperfield, McKenzie Towne, Legacy, and Walden.</p>
                   </div>
                 </div>
@@ -308,7 +304,7 @@ export default function ResidentialSnowBlowingPage() {
                 <div className="flex gap-4">
                   <div className="w-12 h-12 rounded-full bg-[#01fa6d]/80 flex-shrink-0 flex items-center justify-center font-black text-black text-xl">✓</div>
                   <div>
-                    <h4 className="text-[#017a6d] font-black uppercase tracking-wider text-sm">Southwest Calgary</h4>
+                    <h3 className="text-[#017a6d] font-black uppercase tracking-wider text-sm">Southwest Calgary</h3>
                     <p className="text-sm text-black/60 mt-1">Evergreen, Shawnessy, Silverado, Chaparral, Bridlewood, and Somerset.</p>
                   </div>
                 </div>
@@ -327,7 +323,7 @@ export default function ResidentialSnowBlowingPage() {
               {/* Base Map Image */}
               <Image
                 src="/calgary-base-map.png"
-                alt="Interactive Calgary Service Zones"
+                alt="Map of TERREOAK snow removal service zones in southwest and southeast Calgary"
                 fill
                 className="object-cover transition-transform duration-700 group-hover/map:scale-[1.02]"
               />
@@ -435,7 +431,7 @@ export default function ResidentialSnowBlowingPage() {
             </div>
           </div>
 
-          {/* 12-24 Hour Service Guarantee */}
+          {/* 24 Hour Service Guarantee */}
           <div className="flex items-start gap-6">
             <div className="flex-shrink-0 w-16 h-16 text-[#017a6d]">
               <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -486,16 +482,8 @@ export default function ResidentialSnowBlowingPage() {
         </div>
       </section>
 
-
-
-
-
-
-
-
-
       {/* JOBBER LEAD FORM */}
-      <Section id="seasonal-form" title="SIGN UP FOR YOUR SEASON PASS" titleClassName="text-[#01fa6d]">
+      <Section id="seasonal-form" title="SIGN UP FOR YOUR SEASON PASS" titleClassName="text-[#017a6d]">
         <div className="max-w-6xl mx-auto w-full">
           <div className="bg-[#017a6d] p-6 md:p-8 mb-10 rounded-3xl flex flex-col sm:flex-row gap-5 items-start shadow-2xl border border-white/10">
             <div className="bg-[#01fa6d] text-[#017a6d] rounded-full p-3 shrink-0 shadow-lg">
@@ -504,7 +492,7 @@ export default function ResidentialSnowBlowingPage() {
               </svg>
             </div>
             <div>
-              <h4 className="text-white font-black text-xl uppercase tracking-tight mb-2">Important Service Expectation</h4>
+              <h3 className="text-white font-black text-xl uppercase tracking-tight mb-2">Important Service Expectation</h3>
               <p className="text-white/90 text-base leading-relaxed font-medium">
                 Please note: Our crews strictly operate on a route-based system. We only come <strong>once every 24 hours</strong> to service your property during a snowfall event. This guarantees consistent, reliable service for every client on our route.
               </p>
@@ -524,47 +512,12 @@ export default function ResidentialSnowBlowingPage() {
           <h2 style={styles.h2}>FAQS</h2>
 
           <div style={styles.faq}>
-            <details style={styles.details}>
-              <summary style={styles.summary}>What counts as a qualifying snowfall?</summary>
-              <p style={styles.pSmall}>
-                Any snowfall event that results in 1cm or more of accumulation at your property. We monitor weather across all our service areas and dispatch crews proactively, you don’t need to call us or submit a request.
-              </p>
-            </details>
-
-            <details style={styles.details}>
-              <summary style={styles.summary}>Do you clear windrows left by the city plow?</summary>
-              <p style={styles.pSmall}>
-                Windrows from city plows pushing snow back onto your driveway apron are not included in the standard season pass. If you’d like windrow clearing added, ask us about a custom pass when you sign up.
-              </p>
-            </details>
-
-            <details style={styles.details}>
-              <summary style={styles.summary}>How does the Photo Service Log work?</summary>
-              <p style={styles.pSmall}>
-                After every single visit, our crew submits time-stamped before-and-after photos through our service software. These are emailed directly to you, giving you a complete record of every service event throughout the winter. It’s especially useful for rental property owners or anyone who isn’t always home to check.
-              </p>
-            </details>
-
-            <details style={styles.details}>
-              <summary style={styles.summary}>Is ice melt included?</summary>
-              <p style={styles.pSmall}>
-                Ice melt is available as a monthly add-on subscription and is not included in the base season pass. The add-on covers automatic ice melt application after each visit, up to 4 visits per month, keeping walkways and driveways safe between snowfalls.
-              </p>
-            </details>
-
-            <details style={styles.details}>
-              <summary style={styles.summary}>Do you offer one-time snow removal?</summary>
-              <p style={styles.pSmall}>
-                We don’t offer one-time services. TERREOAK runs a route-based season pass model, which means our crews follow established neighbourhood routes each storm. This is what allows us to guarantee we service your property once every 24 hours, one-off calls would break that system for everyone on the route.
-              </p>
-            </details>
-
-            <details style={styles.details}>
-              <summary style={styles.summary}>What if I’m away for part of the winter?</summary>
-              <p style={styles.pSmall}>
-                We offer Snowbird and vacation passes for homeowners who only need coverage for a portion of the season. These short-term passes run from 1 to 8 weeks and include the same dedicated service and photo logs as a full season pass.
-              </p>
-            </details>
+            {snowFaqs.map((faq) => (
+              <details key={faq.q} style={styles.details}>
+                <summary style={styles.summary}>{faq.q}</summary>
+                <p style={styles.pSmall}>{faq.a}</p>
+              </details>
+            ))}
           </div>
         </div>
       </section>
@@ -596,62 +549,7 @@ export default function ResidentialSnowBlowingPage() {
 }
 
 const styles: Record<string, React.CSSProperties> = {
-  hero: {
-    position: "relative",
-    overflow: "hidden",
-    background: "#000",
-    borderBottom: "1px solid rgba(255,255,255,0.08)",
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "flex-start",
-    minHeight: "100vh",
-  },
-  videoBackground: {
-    position: "absolute",
-    top: 0,
-    left: 0,
-    width: "100%",
-    height: "100%",
-    objectFit: "cover",
-    zIndex: 0,
-  },
-  overlay: {
-    position: "absolute",
-    top: 0,
-    left: 0,
-    width: "100%",
-    height: "100%",
-    background: "rgba(0, 0, 0, 0.4)",
-    zIndex: 1,
-  },
-  heroInner: { position: "relative", zIndex: 2, maxWidth: 1152, margin: "0 auto", paddingLeft: "24px", paddingRight: "24px", color: "#fff" },
-  kicker: { margin: 0, fontWeight: 700, fontSize: "14px", color: "rgba(255,255,255,0.7)", letterSpacing: "0.1em", textTransform: "uppercase" },
-  h1: { margin: "16px 0 0", fontSize: "48px", lineHeight: 1.05, fontWeight: 900, color: "#fff", letterSpacing: "-0.02em" },
-  subhead: { marginTop: 24, maxWidth: 820, fontSize: "1.2rem", lineHeight: 1.5, color: "rgba(255,255,255,0.85)", fontWeight: 700 },
-  ctaRow: { marginTop: 22, display: "flex", gap: 12, flexWrap: "wrap" },
-  primaryBtn: {
-    background: "#22c55e", // green-500
-    color: "#fff",
-    padding: "12px 18px",
-    borderRadius: 8, // matched to homepage 'rounded'
-    fontWeight: 700,
-    textDecoration: "none",
-    display: "inline-flex",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  secondaryBtn: {
-    border: "2px solid rgba(0,0,0,0.2)",
-    color: "#000",
-    padding: "12px 18px",
-    borderRadius: 8,
-    fontWeight: 700,
-    textDecoration: "none",
-    display: "inline-flex",
-    alignItems: "center",
-    justifyContent: "center",
-    background: "transparent",
-  },
+  offerSection: { padding: "70px 0", background: "#2c2d32" },
   stickyCtaContainer: {
     position: "fixed",
     bottom: "24px",
@@ -693,90 +591,21 @@ const styles: Record<string, React.CSSProperties> = {
     fontWeight: 900,
     marginRight: "4px",
   },
-  trustGrid: { marginTop: 26, display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 12 },
-  trustCard: { border: "1px solid rgba(0,0,0,0.10)", borderRadius: 8, padding: 14, background: "#f9fafb" }, // gray-50
-  trustTitle: { fontWeight: 900, color: "#000", fontSize: 21.6 },
-  trustText: { marginTop: 6, color: "rgba(0,0,0,0.7)", fontSize: 14, lineHeight: 1.4 },
-
-  section: { padding: "56px 0", background: "#fff", color: "#000" },
   sectionAlt: { padding: "56px 0", background: "#f9fafb", color: "#000" }, // gray-50
-  final: { padding: "66px 0", background: "#f9fafb", color: "#000", borderTop: "1px solid rgba(0,0,0,0.08)" },
-
   inner: { maxWidth: 1200, margin: "0 auto", padding: "0 20px" },
   h2: { margin: 0, fontSize: 30.6, fontWeight: 900, color: "#000" },
-  h3: { margin: 0, fontSize: 21.6, fontWeight: 900, color: "#000" },
   p: { marginTop: 10, maxWidth: 880, color: "rgba(0,0,0,0.7)", lineHeight: 1.6 },
-  pSmall: { marginTop: 10, color: "rgba(0,0,0,0.7)", lineHeight: 1.55, fontSize: 12.6 },
-
-  grid2: { marginTop: 18, display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: 16 },
-  bullets: { margin: 0, paddingLeft: 18, color: "rgba(0,0,0,0.7)", lineHeight: 1.8 },
-
+  pSmall: { marginTop: 10, color: "rgba(0,0,0,0.7)", lineHeight: 1.6, fontSize: 15 },
   cards3: { marginTop: 18, display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 14 },
-  cards2: { marginTop: 18, display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: 14 },
-  card: { border: "1px solid rgba(0,0,0,0.10)", borderRadius: 8, padding: 16, background: "#fff" },
-
   offerCard: { background: "#019587", borderRadius: 12, padding: "28px 24px", display: "flex", flexDirection: "column" as const, alignItems: "flex-start", justifyContent: "flex-start", minHeight: "180px", border: "none" },
   offerTitle: { margin: 0, fontSize: 21.6, fontWeight: 900, color: "#fff", textAlign: "left" as const },
   offerDesc: { marginTop: 12, fontSize: 15, color: "rgba(255,255,255,0.9)", lineHeight: 1.5, fontWeight: 500 },
-
-  ctaBox: {
-    border: "1px solid rgba(0,0,0,0.10)",
-    borderRadius: 8,
-    padding: 18,
-    background: "#fff",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "space-between",
-    gap: 14,
-    flexWrap: "wrap",
-    boxShadow: "0 1px 2px 0 rgba(0, 0, 0, 0.05)",
-  },
-  formShell: {
-    marginTop: 14,
-    border: "1px dashed rgba(0,0,0,0.18)",
-    borderRadius: 8,
-    padding: 16,
-    background: "#fff",
-  },
-
   faq: { marginTop: 18, display: "grid", gap: 10 },
   details: { border: "1px solid rgba(0,0,0,0.10)", borderRadius: 8, padding: "10px 14px", background: "#fff" },
   summary: { cursor: "pointer", fontWeight: 900, color: "#000" },
-
   beforeAfterSection: {
     padding: "100px 0",
     background: "#fdfdfd",
     overflow: "hidden",
   },
-  photoContainer: {
-    position: "relative",
-    marginTop: "40px",
-  },
-  photoBase: {
-    transition: "transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)",
-  },
-  photoBefore: {
-    zIndex: 10,
-    transform: "rotate(-4deg) scale(1.02)",
-    boxShadow: "0 30px 60px -12px rgba(0,0,0,0.3)",
-  },
-  photoAfter: {
-    zIndex: 5,
-    transform: "rotate(2deg)",
-    boxShadow: "0 20px 40px -12px rgba(0,0,0,0.2)",
-  },
-  label: {
-    position: "absolute",
-    bottom: "20px",
-    right: "20px",
-    background: "rgba(1, 122, 109, 0.95)",
-    color: "#fff",
-    padding: "10px 20px",
-    borderRadius: "8px",
-    fontWeight: 900,
-    fontSize: "14px",
-    letterSpacing: "0.05em",
-    backdropFilter: "blur(4px)",
-    zIndex: 20,
-  }
 };

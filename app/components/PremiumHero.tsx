@@ -11,6 +11,7 @@ interface PremiumHeroProps {
   backgroundImage?: string;
   backgroundImageAlt?: string;
   backgroundVideo?: string;
+  backgroundVideoPoster?: string;
   ctaText?: string;
   ctaHref?: string;
   onCtaClick?: () => void;
@@ -27,6 +28,7 @@ export default function PremiumHero({
   backgroundImage,
   backgroundImageAlt = "Landscaping Background",
   backgroundVideo,
+  backgroundVideoPoster,
   ctaText = "VIEW PROJECT",
   ctaHref,
   onCtaClick,
@@ -92,9 +94,10 @@ export default function PremiumHero({
             muted
             playsInline
             preload="auto"
+            poster={backgroundVideoPoster}
             className="object-cover w-full h-full opacity-80 transform-gpu will-change-transform"
           >
-            <source src={backgroundVideo} type="video/quicktime" />
+            {/\.mov$/i.test(backgroundVideo) && <source src={backgroundVideo} type="video/quicktime" />}
             <source src={backgroundVideo} type="video/mp4" />
           </video>
         ) : backgroundImage ? (

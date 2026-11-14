@@ -15,7 +15,7 @@ export const metadata = pageMeta({
   title: "Custom Hardscaping & Patio Builders Calgary | TERREOAK",
   description,
   path,
-  image: "/Landscape web page pics/Finished-hardscape-project.JPG",
+  image: "/hardscaping/calgary-fire-pit-patio.jpg",
 });
 
 const jsonLd = {
@@ -43,6 +43,24 @@ const jsonLd = {
   ],
 };
 
+const recentBuilds = [
+  {
+    src: "/hardscaping/calgary-fire-pit-patio.jpg",
+    alt: "Aerial view of a curved paver patio with a round fire pit and boulder border in Calgary",
+    label: "Fire pit patio",
+  },
+  {
+    src: "/hardscaping/calgary-paver-patio.jpg",
+    alt: "Two paver patios joined by a paver walkway and stepping stones, with new sod, in a Calgary backyard",
+    label: "Paver patio and walkway",
+  },
+  {
+    src: "/hardscaping/calgary-retaining-wall.jpg",
+    alt: "Interlocking concrete block retaining wall with a cap, built by TERREOAK in Calgary",
+    label: "Retaining wall",
+  },
+];
+
 const trustPoints = ["8 years of experience", "Licensed & insured", "Professionally trained team"];
 
 export default function HardscapingPage() {
@@ -57,8 +75,8 @@ export default function HardscapingPage() {
           </>
         }
         lead="Patios, retaining walls, walkways, and steps installed with the base work that actually keeps things level after the ground freezes and thaws. Serving Calgary, Okotoks, Airdrie, Cochrane, and Chestermere."
-        image="/Landscape web page pics/Calgary-hardscaping.JPG"
-        imageAlt="Paving stone hardscape built by TERREOAK in Calgary"
+        image="/hardscaping/calgary-fire-pit-patio.jpg"
+        imageAlt="Aerial view of a curved paver patio with a round fire pit and boulder border, built by TERREOAK in Calgary"
         footer={
           <ul className="flex flex-col gap-x-10 gap-y-3 text-[1.1rem] font-medium text-fg sm:flex-row">
             {trustPoints.map((point) => (
@@ -95,8 +113,8 @@ export default function HardscapingPage() {
           </div>
           <div className="relative mx-auto aspect-[3/4] w-full max-w-md overflow-hidden rounded-[36px] shadow-[0_40px_80px_-40px_rgba(0,0,0,0.8)]">
             <Image
-              src="/Landscape web page pics/Techo-Bloc-paver-pathway.JPG"
-              alt="Techo-Bloc paver pathway installed by TERREOAK"
+              src="/hardscaping/calgary-paver-patio.jpg"
+              alt="Paver patios and walkway installed by TERREOAK in a Calgary backyard"
               fill
               sizes="(min-width: 1280px) 440px, 90vw"
               className="object-cover"
@@ -118,6 +136,21 @@ export default function HardscapingPage() {
         </div>
         <div className="mt-8">
           <Button href="#hardscape-form">Get a quote</Button>
+        </div>
+      </Band>
+
+      {/* RECENT BUILDS */}
+      <Band>
+        <h2 className="to-display to-h2">Recent hardscape builds</h2>
+        <div className="mt-12 grid gap-5 md:grid-cols-3">
+          {recentBuilds.map((build) => (
+            <figure key={build.src} className="to-card overflow-hidden">
+              <div className="relative aspect-[4/3]">
+                <Image src={build.src} alt={build.alt} fill sizes="(min-width: 768px) 33vw, 100vw" className="object-cover" />
+              </div>
+              <figcaption className="p-6 text-[1.2rem] font-bold text-fg">{build.label}</figcaption>
+            </figure>
+          ))}
         </div>
       </Band>
 

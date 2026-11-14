@@ -14,6 +14,20 @@ function Logo({ onClick }: { onClick?: () => void }) {
   );
 }
 
+// Snowflake positions, sizes and timings. Fixed values (not random) so the server and the
+// browser draw the same thing.
+const flakes = Array.from({ length: 18 }, (_, i) => {
+  const r = (n: number) => ((i * 9301 + n * 49297) % 233280) / 233280;
+  return {
+    left: `${Math.round((i / 18) * 100 + r(1) * 5)}%`,
+    width: `${Math.round(4 + r(2) * 5)}px`,
+    height: `${Math.round(4 + r(2) * 5)}px`,
+    animationDuration: `${(7 + r(3) * 7).toFixed(1)}s`,
+    animationDelay: `${(-r(4) * 14).toFixed(1)}s`,
+    ["--drift" as string]: `${Math.round(-30 + r(5) * 60)}px`,
+  } as React.CSSProperties;
+});
+
 const Caret = () => (
   <svg className="h-3 w-3 opacity-60 transition-transform group-hover:rotate-180 group-focus-within:rotate-180" viewBox="0 0 12 12" fill="none" aria-hidden="true">
     <path d="M2.5 4.5 6 8l3.5-3.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
@@ -137,6 +151,15 @@ export default function Header() {
           </div>
         </div>
       </div>
+
+      {/* Snow falling from under the header. Decorative only. */}
+      {!open && (
+        <div className="to-snowfall" aria-hidden="true">
+          {flakes.map((flake, i) => (
+            <span key={i} style={flake} />
+          ))}
+        </div>
+      )}
 
       {/* Mobile menu */}
       {open && (

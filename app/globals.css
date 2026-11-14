@@ -453,3 +453,59 @@ html {
 .to-prose .to-table-wrap {
   overflow-x: auto;
 }
+
+/* Snow falling from under the header. Pure CSS, moves with transform and opacity only so it
+   never shifts the layout, sits behind clicks, and is switched off for reduced motion. */
+.to-snowfall {
+  position: absolute;
+  inset-inline: 0;
+  top: 100%;
+  height: 62vh;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.to-snowfall span {
+  position: absolute;
+  top: -12px;
+  border-radius: 999px;
+  background: #ffffff;
+  opacity: 0;
+  animation-name: to-snow-fall;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  will-change: transform, opacity;
+}
+
+@keyframes to-snow-fall {
+  0% {
+    transform: translate3d(0, 0, 0);
+    opacity: 0;
+  }
+
+  12% {
+    opacity: 0.85;
+  }
+
+  70% {
+    opacity: 0.55;
+  }
+
+  100% {
+    transform: translate3d(var(--drift, 0), 62vh, 0);
+    opacity: 0;
+  }
+}
+
+/* Fewer flakes on phones */
+@media (max-width: 767px) {
+  .to-snowfall span:nth-child(2n) {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .to-snowfall {
+    display: none;
+  }
+}

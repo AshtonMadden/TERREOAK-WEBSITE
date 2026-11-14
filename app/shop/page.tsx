@@ -2,13 +2,18 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { products } from "./data";
-import Header from "../components/Header";
+import { pageMeta } from "../lib/seo";
+
+export const metadata = pageMeta({
+  title: "Used Equipment & Gear Shop | TERREOAK Calgary",
+  description: "Shop well-maintained used landscaping and snow removal equipment from the TERREOAK crew in Calgary. Local pickup or shipping within Canada.",
+  path: "/shop",
+  image: "/images/shop-hero.png",
+});
 
 export default function ShopPage() {
   return (
     <main className="bg-white text-black min-h-screen flex flex-col">
-      <Header />
-
       {/* HERO */}
       <section className="relative min-h-screen flex flex-col justify-center border-b border-black/10 overflow-hidden">
         <div className="absolute inset-0 z-0 overflow-hidden">

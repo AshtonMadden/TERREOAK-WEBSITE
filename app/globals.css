@@ -15,7 +15,16 @@ html {
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --font-lora: var(--font-lora, "Lora", serif);
-  --breakpoint-lg: 1280px;
+  --breakpoint-lg: 80rem; /* 1280px, in rem so it sorts correctly with the default breakpoints */
+
+  /* TERREOAK design system: dark gray, brand green, white */
+  --color-coal: #1b1c1f;        /* page background */
+  --color-panel: #232428;       /* cards and raised surfaces */
+  --color-panel-2: #2c2d32;     /* hover / nested surfaces */
+  --color-line: rgb(255 255 255 / 0.09);
+  --color-brand: #01fa6d;
+  --color-brand-deep: #017a6d;
+  --color-mist: #a9adb5;        /* secondary text on dark */
 }
 
 @media (prefers-color-scheme: dark) {
@@ -162,4 +171,186 @@ body {
   width: 100% !important;
   min-height: 800px !important;
   border: none !important;
+}
+
+/* ------------------------------------------------------------------ */
+/* TERREOAK design system                                              */
+/* ------------------------------------------------------------------ */
+
+html {
+  scroll-behavior: smooth;
+}
+
+[id] {
+  scroll-margin-top: 96px;
+}
+
+.to-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-brand);
+}
+
+.to-eyebrow::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--color-brand);
+  box-shadow: 0 0 12px var(--color-brand);
+}
+
+.to-h1 {
+  font-size: clamp(2.75rem, 6.4vw, 5.25rem);
+  line-height: 1.02;
+  letter-spacing: -0.04em;
+  font-weight: 700;
+  text-wrap: balance;
+}
+
+.to-h2 {
+  font-size: clamp(2.1rem, 4.2vw, 3.5rem);
+  line-height: 1.06;
+  letter-spacing: -0.035em;
+  font-weight: 700;
+  text-wrap: balance;
+}
+
+.to-lead {
+  font-size: clamp(1.1rem, 1.5vw, 1.3rem);
+  line-height: 1.6;
+  color: var(--color-mist);
+  text-wrap: pretty;
+}
+
+.to-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  height: 3.4rem;
+  padding: 0 1.75rem;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.to-btn:hover {
+  transform: translateY(-1px);
+}
+
+.to-btn:focus-visible,
+.to-focus:focus-visible {
+  outline: 2px solid var(--color-brand);
+  outline-offset: 3px;
+}
+
+.to-btn-primary {
+  background: var(--color-brand);
+  color: #06120b;
+  box-shadow: 0 0 0 1px rgb(1 250 109 / 0.4), 0 10px 40px -10px rgb(1 250 109 / 0.55);
+}
+
+.to-btn-primary:hover {
+  background: #ffffff;
+}
+
+.to-btn-ghost {
+  color: #fff;
+  border: 1px solid rgb(255 255 255 / 0.18);
+  background: rgb(255 255 255 / 0.04);
+  backdrop-filter: blur(8px);
+}
+
+.to-btn-ghost:hover {
+  border-color: rgb(255 255 255 / 0.4);
+  background: rgb(255 255 255 / 0.08);
+}
+
+.to-btn-sm {
+  height: 2.75rem;
+  padding: 0 1.25rem;
+  font-size: 0.92rem;
+}
+
+.to-card {
+  position: relative;
+  border-radius: 1.5rem;
+  border: 1px solid var(--color-line);
+  background: linear-gradient(180deg, rgb(255 255 255 / 0.045), rgb(255 255 255 / 0.015));
+  transition: border-color 0.3s ease, transform 0.3s ease, background 0.3s ease;
+}
+
+.to-card-hover:hover {
+  border-color: rgb(1 250 109 / 0.35);
+  transform: translateY(-2px);
+}
+
+/* faint grid that fades out, used behind heroes and section headers */
+.to-grid {
+  background-image:
+    linear-gradient(to right, rgb(255 255 255 / 0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(255 255 255 / 0.045) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(ellipse 80% 70% at 50% 0%, #000 30%, transparent 75%);
+}
+
+.to-glow {
+  background: radial-gradient(ellipse at center, rgb(1 250 109 / 0.16), transparent 65%);
+}
+
+.to-reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.to-reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .to-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* FAQ accordion built on <details> */
+.to-faq summary {
+  list-style: none;
+  cursor: pointer;
+}
+
+.to-faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.to-faq .to-faq-icon {
+  transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease;
+}
+
+.to-faq[open] .to-faq-icon {
+  transform: rotate(45deg);
+  background: var(--color-brand);
+  color: #06120b;
+}
+
+.to-faq[open] {
+  border-color: rgb(1 250 109 / 0.3);
 }

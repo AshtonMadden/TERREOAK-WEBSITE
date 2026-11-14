@@ -95,7 +95,8 @@ export default function HomePage() {
       <PremiumHero
         title={<>CALGARY LANDSCAPE CONSTRUCTION <br /><span className="text-[#01fa6d] font-lora italic font-black tracking-normal uppercase">WHERE THE SUN MEETS SOIL</span></>}
         description="Premium landscape construction and year-round property maintenance for Calgary's residential and commercial properties."
-        backgroundVideo="/landscaping-mahogany.MOV"
+        backgroundVideo="/videos/calgary-landscaping-hero.mp4"
+        backgroundVideoPoster="/images/home-hero-poster.jpg"
         badgeLabel="Calgary & Area"
         ctaText="SEE RECENT PROJECTS"
         ctaHref="/projects"

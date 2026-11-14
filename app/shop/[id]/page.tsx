@@ -3,7 +3,24 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { products } from "../data";
-import Header from "../../components/Header";
+import type { Metadata } from "next";
+import { pageMeta } from "../../lib/seo";
+
+export function generateStaticParams() {
+  return products.map((product) => ({ id: product.id }));
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
+  const { id } = await params;
+  const product = products.find((p) => p.id === id);
+  if (!product) return {};
+  return pageMeta({
+    title: `${product.title} | TERREOAK Shop`,
+    description: product.description.slice(0, 155),
+    path: `/shop/${product.id}`,
+    image: product.image,
+  });
+}
 
 // Note: In Next.js App Router, dynamic params are passed as props
 export default async function ProductDetail({ params }: { params: Promise<{ id: string }> }) {
@@ -16,8 +33,6 @@ export default async function ProductDetail({ params }: { params: Promise<{ id: 
 
   return (
     <main className="bg-white text-black min-h-screen flex flex-col">
-      <Header />
-
       <section className="pt-32 pb-16 md:pt-48 md:pb-24 lg:pt-56 lg:pb-32 bg-gray-50 flex-grow">
         <div className="mx-auto max-w-6xl px-6">
           {/* Back link */}

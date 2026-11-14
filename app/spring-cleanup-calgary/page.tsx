@@ -47,7 +47,7 @@ export default function SpringCleanupPage() {
         <main>
       <PremiumHero
         title={<>CALGARY<br />SPRING CLEANUP<br /><span className="text-[#01fa6d] font-lora italic font-black tracking-normal uppercase">Fresh Start for your Yard.</span></>}
-        backgroundVideo="/videos/1B200505-8980-40F6-8F8F-D3B3CBEEAFBA.mp4"
+        backgroundVideo="/videos/spring-cleanup-hero.mp4"
         badgeLabel="Property Maintenance"
         ctaText="FREE QUOTE"
         onCtaClick={handleScrollToForm}

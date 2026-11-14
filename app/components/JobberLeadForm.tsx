@@ -79,22 +79,16 @@ export default function JobberLeadForm({
                 className="jobber-embed-container w-full block"
             ></div>
 
-            {/* Fallback Contact Bar */}
-            <div className="mt-8 bg-[#2c2d32] rounded-2xl p-8 md:p-10 flex flex-col items-center justify-center text-center shadow-xl border border-white/10 gap-6">
-                <p className="text-white/90 font-medium text-[16px] md:text-[18px] leading-relaxed max-w-2xl m-0">
-                    If lead form doesn't work feel free to shoot us an email or call.
+            {/* Fallback contact bar */}
+            <div className="mt-6 flex flex-col items-center justify-between gap-5 rounded-2xl bg-[#1b1c1f] p-6 text-center md:flex-row md:p-7 md:text-left">
+                <p className="m-0 text-[1.05rem] font-medium leading-relaxed text-white/85">
+                    Form not loading? Email or call us and we&apos;ll get you sorted.
                 </p>
-                <div className="flex flex-col sm:flex-row gap-4 w-full justify-center mt-2">
-                    <a 
-                        href="mailto:services@terreoak.ca" 
-                        className="inline-flex items-center justify-center rounded-full bg-transparent border-2 border-[#01fa6d] text-[#01fa6d] px-10 py-4 font-black text-[16px] md:text-[18px] uppercase tracking-wide hover:bg-[#01fa6d] hover:text-black transition-all w-full sm:w-auto shadow-md"
-                    >
+                <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
+                    <a href="mailto:services@terreoak.ca" className="to-btn to-btn-ghost to-btn-sm">
                         services@terreoak.ca
                     </a>
-                    <a 
-                        href="tel:+15877077648" 
-                        className="inline-flex items-center justify-center rounded-full bg-[#01fa6d] text-black px-10 py-4 font-black text-[16px] md:text-[18px] uppercase tracking-wide hover:bg-white transition-all shadow-lg w-full sm:w-auto"
-                    >
+                    <a href="tel:+15877077648" className="to-btn to-btn-primary to-btn-sm">
                         587-707-7648
                     </a>
                 </div>

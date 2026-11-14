@@ -1,3 +1,11 @@
+import { pageMeta } from "../lib/seo";
+
+export const metadata = pageMeta({
+  title: "Terms of Service | TERREOAK Landscaping & Snow",
+  description: "The terms that apply when you use the TERREOAK website or book landscaping, property maintenance or snow removal services in Calgary.",
+  path: "/terms",
+});
+
 export default function TermsOfServicePage() {
     return (
         <main className="bg-white min-h-screen pt-40 pb-24 text-black">

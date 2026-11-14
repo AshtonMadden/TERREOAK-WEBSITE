@@ -2,13 +2,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ScrollReveal, Section, Carousel } from "../components/UI";
-import { Metadata } from "next";
+import { pageMeta } from "../lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = pageMeta({
   title: "Parkland Front Yard Overhaul | TERREOAK Landscaping",
   description: "See our complete front yard landscaping overhaul in Parkland, SE Calgary. River rock, custom borders, and hardy perennials.",
-  keywords: ["Parkland landscaping", "front yard overhaul", "river rock installation", "SE Calgary landscaping project", "drought tolerant landscaping"],
-};
+  path: "/parklandlandscaping",
+  image: "/images/softscaping-river-rock-hostas.jpg",
+});
 
 export default function ParklandFlowerBedProject() {
     return (

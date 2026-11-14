@@ -2,11 +2,14 @@ import React from 'react';
 import Image from 'next/image';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import { pageMeta } from '../lib/seo';
 
-export const metadata = {
+export const metadata = pageMeta({
   title: "Careers | TERREOAK Landscaping & Snow Removal",
   description: "Join the TERREOAK team. We are hiring professional landscapers, snow removal operators, and crew members in Calgary.",
-};
+  path: "/careers",
+  image: "/images/careers-hero.png",
+});
 
 export default function CareersPage() {
   return (

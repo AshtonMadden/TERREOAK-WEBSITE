@@ -2,39 +2,30 @@
 import type { ReactNode } from "react";
 import { Plus_Jakarta_Sans, Lora } from "next/font/google";
 import "./globals.css";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
+import { pageMeta } from "./lib/seo";
+import { site } from "./lib/site";
+import JsonLd from "./components/JsonLd";
 
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Script from "next/script";
 
+const homeTitle = "Top Rated Landscaping & Snow Removal Calgary | TERREOAK";
+const homeDescription =
+  "TERREOAK provides premium landscaping, hardscaping, and residential snow removal in Calgary. Transform your outdoor space with our expert, hands-on team.";
+
 export const metadata: Metadata = {
-  title: "Top Rated Landscaping & Snow Removal Calgary | TERREOAK",
-  description: "TERREOAK provides premium landscaping, hardscaping, and residential snow removal in Calgary. Transform your outdoor space with our expert, hands-on team.",
-  icons: {
-    icon: "/icon.png",
-  },
-  openGraph: {
-    title: "Top Rated Landscaping & Snow Removal Calgary | TERREOAK",
-    description: "TERREOAK provides premium landscaping, hardscaping, and residential snow removal in Calgary.",
-    url: "https://www.terreoak.ca",
-    siteName: "TERREOAK Landscaping & Snow",
-    images: [
-      {
-        url: "https://www.terreoak.ca/images/commercial.png",
-        width: 1200,
-        height: 630,
-      }
-    ],
-    locale: "en_CA",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Top Rated Landscaping & Snow Removal Calgary | TERREOAK",
-    description: "TERREOAK provides premium landscaping, hardscaping, and residential snow removal in Calgary.",
-    images: ["https://www.terreoak.ca/images/commercial.png"],
-  },
+  metadataBase: new URL(site.url),
+  ...pageMeta({ title: homeTitle, description: homeDescription, path: "/" }),
+  applicationName: site.shortName,
+  icons: { icon: "/icon.png", apple: "/icon.png" },
+  formatDetection: { telephone: true, email: true, address: true },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#1b1c1f",
+  colorScheme: "dark light",
 };
 
 const jakarta = Plus_Jakarta_Sans({
@@ -87,13 +78,12 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         "legalName": "TERREOAK Landscaping & Snow",
         "url": "https://www.terreoak.ca",
         "telephone": "+1-587-707-7648",
-        "email": "services@TERREOAK.ca",
+        "email": "services@terreoak.ca",
         "description": "TERREOAK Landscaping & Snow is a premium landscaping contractor in Calgary, Alberta. We specialize in residential hardscaping, softscaping, retaining walls, paving stone patios, landscape design, reliable year-round commercial property maintenance, and residential snow removal.",
         "knowsAbout": ["Calgary Snow Removal", "Landscaping in Calgary", "Hardscaping Calgary", "Retaining Walls", "Paving Stone Patios", "Softscaping", "Commercial Grounds Maintenance", "Landscape Design", "Spring Cleanup"],
         "image": "https://www.terreoak.ca/images/commercial.png",
         "address": {
           "@type": "PostalAddress",
-          "streetAddress": "Calgary & Surrounding Area",
           "addressLocality": "Calgary",
           "addressRegion": "AB",
           "postalCode": "T2P",
@@ -147,12 +137,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           strategy="afterInteractive"
         />
         <Script id="google-analytics" src="/analytics.js" strategy="afterInteractive" />
-        <Script
-          id="schema-ldjson"
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-          strategy="afterInteractive"
-        />
+        <JsonLd data={jsonLd} />
         <Header />
         {children}
         <Footer />

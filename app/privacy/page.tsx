@@ -1,3 +1,11 @@
+import { pageMeta } from "../lib/seo";
+
+export const metadata = pageMeta({
+  title: "Privacy Policy | TERREOAK Landscaping & Snow",
+  description: "How TERREOAK Landscaping & Snow collects, uses and protects your personal information when you request a quote or use our Calgary services.",
+  path: "/privacy",
+});
+
 export default function PrivacyPolicyPage() {
     return (
         <main className="bg-white min-h-screen pt-40 pb-24 text-black">

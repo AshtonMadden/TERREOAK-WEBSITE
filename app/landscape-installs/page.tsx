@@ -9,10 +9,10 @@ import { costs, faqs, gallery, instagramPosts, jobberForm, steps } from "./conte
 
 const path = "/landscape-installs";
 const description =
-  "Complete landscape installations in Calgary. Let TERREOAK bring your dream yard to life with our expert design and construction team.";
+  "Calgary landscape design and build: patios, retaining walls, sod and drainage built for freeze-thaw. See typical costs and request a fixed-price proposal.";
 
 export const metadata = pageMeta({
-  title: "Professional Landscape Installs Calgary | TERREOAK",
+  title: "Landscaping Calgary | Design & Build | TERREOAK",
   description,
   path,
   image: "/Calgary-landscape-design-build-patio.JPG",

@@ -9,7 +9,7 @@ import { audiences, faqs, jobberForm, processSteps, reasons, services } from "./
 
 const path = "/commercial-grounds-maintenance";
 const description =
-  "Professional commercial grounds maintenance in Calgary. Keep your business property pristine year-round with TERREOAK's dedicated property care.";
+  "Commercial grounds maintenance and snow removal in Calgary for condos, HOAs, business parks and builders. Time-stamped photo logs after every visit.";
 
 export const metadata = pageMeta({
   title: "Commercial Grounds Maintenance Calgary | TERREOAK",

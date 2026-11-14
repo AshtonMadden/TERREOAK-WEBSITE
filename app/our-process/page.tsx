@@ -10,7 +10,7 @@ const description =
   "Learn about TERREOAK's landscaping process. From initial consultation to final installation, see how we deliver exceptional results in Calgary.";
 
 export const metadata = pageMeta({
-  title: "Our Landscaping Process | How TERREOAK Works",
+  title: "Our Landscaping Process in Calgary | TERREOAK",
   description,
   path,
   image: "/Landscape web page pics/lawn-relevel-calgary.JPG",

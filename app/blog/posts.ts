@@ -2,7 +2,7 @@
 import type { Article } from "../components/ArticlePage";
 
 export const snowPost: Article = {
-  "metaTitle": "Why Hire a Pro Snow Removal Company? | TERREOAK Blog",
+  "metaTitle": "Why Hire a Snow Removal Company in Calgary? | TERREOAK",
   "metaDescription": "Discover the top reasons to hire a professional snow removal company in Calgary. Save time, avoid injury, and ensure your property is always safe.",
   "title": "Why you should hire a professional Calgary snow removal company",
   "category": "Winter maintenance",
@@ -38,7 +38,7 @@ export const springPost: Article = {
 };
 
 export const basePost: Article = {
-  "metaTitle": "Why Use Open Grade Base for Patios? | TERREOAK Blog",
+  "metaTitle": "Open Grade Base vs Road Crush for Calgary Patios | TERREOAK",
   "metaDescription": "Learn why an open grade base is superior for paver patios. Discover the benefits of improved drainage and longevity for your Calgary hardscaping project.",
   "title": "Why open grade base is the gold standard for Calgary patio & hardscaping",
   "category": "Landscape construction",

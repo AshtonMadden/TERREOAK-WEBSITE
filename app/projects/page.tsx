@@ -10,7 +10,7 @@ const description =
   "Browse the TERREOAK landscaping portfolio. View our recent projects in Calgary featuring custom patios, garden designs, and complete yard renovations.";
 
 export const metadata = pageMeta({
-  title: "Our Landscaping Projects Portfolio Calgary | TERREOAK",
+  title: "Landscaping Projects in Calgary | TERREOAK Portfolio",
   description,
   path,
   image: "/Landscape web page pics/Techo-Bloc-pavers-river-rock.JPG",

@@ -9,10 +9,10 @@ import { faqs, instagramPosts, jobberForm, projects, reviews, services, steps } 
 
 const path = "/hardscaping";
 const description =
-  "Premium hardscaping services in Calgary. We design and build stunning patios, retaining walls, and walkways using top-quality materials.";
+  "Paving stone patios, retaining walls, walkways and steps in Calgary, built on a properly drained, compacted base so they stay level through freeze-thaw.";
 
 export const metadata = pageMeta({
-  title: "Custom Hardscaping & Patio Builders Calgary | TERREOAK",
+  title: "Hardscaping Calgary | Patios & Retaining Walls | TERREOAK",
   description,
   path,
   image: "/hardscaping/calgary-fire-pit-patio.jpg",

@@ -6,11 +6,11 @@ import { pageMeta } from "../lib/seo";
 
 const path = "/fall-cleanup";
 const description =
-  "Get your property ready for winter with TERREOAK's comprehensive fall yard cleanup services in Calgary. Leaf removal, pruning, and debris clearing.";
+  "Fall yard cleanup in Calgary: leaf removal, a final mow, core aeration and fall fertilizer packages. Book your window before the first snow.";
 const bookingUrl = "https://clienthub.getjobber.com/booking/6ba7fcc7-4c40-4f17-9235-428046e21db6";
 
 export const metadata = pageMeta({
-  title: "Fall Yard Cleanup Services Calgary | TERREOAK",
+  title: "Fall Cleanup Calgary | Leaf Removal & Lawn Prep | TERREOAK",
   description,
   path,
   image: "/fall-cleanup-hero.jpg",

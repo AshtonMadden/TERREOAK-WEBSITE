@@ -6,8 +6,13 @@ type PageMeta = {
   description: string;
   /** Route path starting with "/", e.g. "/about". Use "/" for the homepage. */
   path: string;
-  /** Path or absolute URL of the share image. Defaults to the site-wide image. */
+  /**
+   * The page's main photo. Kept for reference: the share image itself is the 1200x630 file
+   * generated from it by scripts/make-og-images.mjs, found by route at /og/<route>.jpg.
+   */
   image?: string;
+  /** Short description of the share image for screen readers. Defaults to the page title. */
+  imageAlt?: string;
   type?: "website" | "article";
   noindex?: boolean;
 };
@@ -15,25 +20,32 @@ type PageMeta = {
 export const absoluteUrl = (path: string) =>
   path.startsWith("http") ? path : `${site.url}${path === "/" ? "" : encodeURI(path)}`;
 
+/** The generated 1200x630 share image for a route. */
+export const shareImage = (path: string) => `${site.url}/og/${path === "/" ? "home" : path.slice(1)}.jpg`;
+
 /** Builds consistent title/description/canonical/Open Graph/Twitter tags for a page. */
-export function pageMeta({ title, description, path, image, type = "website", noindex }: PageMeta): Metadata {
+export function pageMeta({ title, description, path, imageAlt, type = "website", noindex }: PageMeta): Metadata {
   const url = absoluteUrl(path);
-  const img = absoluteUrl(image ?? site.defaultOgImage);
+  const img = shareImage(path);
+  const alt = imageAlt ?? title.split(" | ")[0];
   return {
     title,
     description,
     alternates: { canonical: url },
-    robots: noindex ? { index: false, follow: true } : undefined,
+    // Let Google show large image previews and full text snippets for indexable pages.
+    robots: noindex
+      ? { index: false, follow: true }
+      : { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1, "max-video-preview": -1 } },
     openGraph: {
       title,
       description,
       url,
       siteName: site.name,
-      images: [{ url: img }],
+      images: [{ url: img, width: 1200, height: 630, alt }],
       locale: "en_CA",
       type,
     },
-    twitter: { card: "summary_large_image", title, description, images: [img] },
+    twitter: { card: "summary_large_image", title, description, images: [{ url: img, alt }] },
   };
 }
 

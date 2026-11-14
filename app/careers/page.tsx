@@ -5,11 +5,11 @@ import { breadcrumbLd, pageMeta } from "../lib/seo";
 import { site } from "../lib/site";
 
 const path = "/careers";
-const description = "Join the TERREOAK team. We are hiring professional landscapers, snow removal operators, and crew members in Calgary.";
+const description = "Join the TERREOAK crew in Calgary. Open roles for landscape crew leaders, snow removal operators and maintenance crew, with year-round work.";
 const applyEmail = "careers@terreoak.com";
 
 export const metadata = pageMeta({
-  title: "Careers | TERREOAK Landscaping & Snow Removal",
+  title: "Landscaping & Snow Removal Jobs Calgary | TERREOAK Careers",
   description,
   path,
   image: "/images/careers-hero.png",

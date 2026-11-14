@@ -14,9 +14,9 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Script from "next/script";
 
-const homeTitle = "Top Rated Landscaping & Snow Removal Calgary | TERREOAK";
+const homeTitle = "Landscaping & Snow Removal Calgary | TERREOAK";
 const homeDescription =
-  "TERREOAK provides premium landscaping, hardscaping, and residential snow removal in Calgary. Transform your outdoor space with our expert, hands-on team.";
+  "TERREOAK builds patios, retaining walls and landscapes and handles year-round property maintenance and residential snow removal in Calgary. 5.0 on Google.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),

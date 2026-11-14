@@ -20,9 +20,9 @@ export type ProjectDetail = {
 export const projectDetails: Record<string, ProjectDetail> = {
   mckenzieStonePathway: {
     path: "/mckenzielakelandscaping",
-    metaTitle: "McKenzie Lake Landscaping Calgary | TERREOAK",
+    metaTitle: "Stone Pathway in McKenzie Lake, Calgary | TERREOAK Projects",
     metaDescription:
-      "Expert landscaping services in McKenzie Lake, Calgary. From custom hardscaping to lush softscapes, trust TERREOAK for your next yard transformation.",
+      "A two-day stone pathway upgrade in McKenzie Lake, SE Calgary: old rock beds removed, commercial filter fabric, new paving stones and 40mm Rundle rock.",
     title: "McKenzie Lake custom landscape design & build",
     location: "McKenzie Lake, SE Calgary",
     cost: "$5,000",
@@ -49,9 +49,9 @@ export const projectDetails: Record<string, ProjectDetail> = {
   },
   mckenzieTechoBloc: {
     path: "/projects/mckenzie-lake-landscaping",
-    metaTitle: "McKenzie Lake Landscape Makeover | TERREOAK Projects",
+    metaTitle: "Techo-Bloc Paver Path in McKenzie Lake | TERREOAK Projects",
     metaDescription:
-      "View our recent landscape makeover in McKenzie Lake, Calgary. See how TERREOAK transformed this property with custom hardscaping and elegant design.",
+      "A $10,000 side-yard hardscape in McKenzie Lake, Calgary: Techo-Bloc Blu 60 Grande pavers on a compacted base with a washed river rock border.",
     title: "McKenzie Lake premium hardscape installation",
     location: "McKenzie Lake, SE Calgary",
     cost: "$10,000",
@@ -82,9 +82,9 @@ export const projectDetails: Record<string, ProjectDetail> = {
   },
   cranston: {
     path: "/projects/cranston-landscape-makeover",
-    metaTitle: "Cranston Landscape Makeover | TERREOAK Projects",
+    metaTitle: "Cranston Front Yard Makeover, Calgary | TERREOAK Projects",
     metaDescription:
-      "Explore our Cranston landscape makeover project. Discover the high-quality craftsmanship and materials TERREOAK brings to Calgary yards.",
+      "A Cranston front yard brought back after Killex killed the lawn: new topsoil, Kentucky Bluegrass sod, Rundle rock beds and a 300 lb feature boulder.",
     title: "Cranston front yard landscape makeover",
     location: "Cranston, Calgary AB",
     cost: "$3,150",

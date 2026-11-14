@@ -8,10 +8,10 @@ import { faqs, instagramPosts, jobberForm, mulches, projects, reviews, services,
 
 const path = "/softscapes";
 const description =
-  "Beautiful softscape installations in Calgary. TERREOAK specializes in planting, sodding, mulching, and custom garden designs for your home.";
+  "Sod installation, garden beds, tree and shrub planting and premium mulch in Calgary, using Zone 3 plants and proper soil prep so it thrives long term.";
 
 export const metadata = pageMeta({
-  title: "Softscape & Garden Design Calgary | TERREOAK",
+  title: "Softscaping Calgary | Sod, Garden Beds & Mulch | TERREOAK",
   description,
   path,
   image: "/images/softscaping-river-rock-hostas.jpg",

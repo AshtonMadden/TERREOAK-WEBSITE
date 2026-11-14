@@ -3,22 +3,39 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
-const SEEN_KEY = "terreoak-snow-offer-seen";
+export type Offer = {
+  /** Short unique name, used to remember that this visitor has seen the offer. */
+  id: string;
+  label: string;
+  /** The big number or phrase, e.g. "10% off" or "Free". */
+  highlight: string;
+  title: string;
+  text: string;
+  cta: string;
+  /** id of the form section the main button jumps to. */
+  formId: string;
+  photo: string;
+  photoAlt: string;
+  /** Optional cut-out graphic shown over the photo (and beside the offer on phones). */
+  graphic?: { src: string; alt: string; width: number; height: number };
+  terms?: string;
+};
 
 /**
- * Pay-upfront offer for the snow removal page.
+ * Offer popup for a service page.
  *
  * It waits until the visitor has been on the page a while or has scrolled, shows once per
  * browser session, and is a small card on phones instead of a full-screen takeover, so it
  * does not get in the way of reading the page or of search engines.
  */
-export default function OfferPopup() {
+export default function OfferPopup({ offer }: { offer: Offer }) {
+  const seenKey = `terreoak-offer-seen-${offer.id}`;
   const [open, setOpen] = useState(false);
   const closeRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     try {
-      if (sessionStorage.getItem(SEEN_KEY)) return;
+      if (sessionStorage.getItem(seenKey)) return;
     } catch {
       // Storage can be blocked; in that case the offer may show again on a later visit.
     }
@@ -27,12 +44,12 @@ export default function OfferPopup() {
     const show = () => {
       if (shown) return;
       // Don't interrupt someone who is already at the sign-up form.
-      const form = document.getElementById("seasonal-form")?.getBoundingClientRect();
+      const form = document.getElementById(offer.formId)?.getBoundingClientRect();
       if (form && form.top < window.innerHeight && form.bottom > 0) return;
       shown = true;
       setOpen(true);
       try {
-        sessionStorage.setItem(SEEN_KEY, "1");
+        sessionStorage.setItem(seenKey, "1");
       } catch {}
       cleanup();
     };
@@ -46,7 +63,7 @@ export default function OfferPopup() {
       window.removeEventListener("scroll", onScroll);
     };
     return cleanup;
-  }, []);
+  }, [seenKey, offer.formId]);
 
   useEffect(() => {
     if (!open) return;
@@ -67,25 +84,23 @@ export default function OfferPopup() {
       <div
         role="dialog"
         aria-modal="true"
-        aria-labelledby="snow-offer-title"
+        aria-labelledby="offer-title"
         className="to-pavement to-offer relative w-full max-w-[860px] overflow-hidden rounded-[32px] !bg-[#2f3236] shadow-[0_40px_90px_-30px_rgba(0,0,0,0.85)] sm:grid sm:grid-cols-[minmax(0,5fr)_minmax(0,6fr)]"
       >
         <div className="relative hidden min-h-[420px] sm:block">
-          <Image
-            src="/Snow Page web pics/Residential-snow-removal.JPG"
-            alt="Edge of a freshly cleared Calgary driveway"
-            fill
-            sizes="400px"
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-[#1d1f21]/35" />
-          <Image
-            src="/brand/snow-picket.png"
-            alt="TERREOAK snow picket"
-            width={169}
-            height={490}
-            className="absolute bottom-0 left-1/2 h-[82%] w-auto -translate-x-1/2"
-          />
+          <Image src={offer.photo} alt={offer.photoAlt} fill sizes="400px" className="object-cover" />
+          {offer.graphic && (
+            <>
+              <div className="absolute inset-0 bg-[#1d1f21]/35" />
+              <Image
+                src={offer.graphic.src}
+                alt={offer.graphic.alt}
+                width={offer.graphic.width}
+                height={offer.graphic.height}
+                className="absolute bottom-0 left-1/2 h-[82%] w-auto -translate-x-1/2"
+              />
+            </>
+          )}
         </div>
 
         <div className="relative p-7 sm:p-10">
@@ -102,27 +117,27 @@ export default function OfferPopup() {
           </button>
 
           <div className="flex items-start gap-5 pr-12 sm:block sm:pr-0">
-            <Image src="/brand/snow-picket.png" alt="" width={169} height={490} className="h-28 w-auto shrink-0 sm:hidden" />
+            {offer.graphic && (
+              <Image src={offer.graphic.src} alt="" width={offer.graphic.width} height={offer.graphic.height} className="h-28 w-auto shrink-0 sm:hidden" />
+            )}
             <div>
-              <p className="to-sub">Season pass offer</p>
-              <p className="to-display mt-3 text-[4.2rem] leading-none text-accent sm:text-[5.5rem]">10% off</p>
+              <p className="to-sub">{offer.label}</p>
+              <p className="to-display mt-3 text-[3.4rem] leading-none text-accent sm:text-[4.6rem]">{offer.highlight}</p>
             </div>
           </div>
-          <h2 id="snow-offer-title" className="to-display mt-4 text-[1.6rem] leading-tight sm:text-[1.9rem]">
-            Pay for your season upfront and save 10%.
+          <h2 id="offer-title" className="to-display mt-4 text-[1.6rem] leading-tight sm:text-[1.9rem]">
+            {offer.title}
           </h2>
-          <p className="mt-4 text-[1.08rem] leading-relaxed text-muted">
-            Pay in full when you sign up and we take 10% off your snow removal season pass. One payment, and your winter is handled.
-          </p>
+          <p className="mt-4 text-[1.08rem] leading-relaxed text-muted">{offer.text}</p>
           <div className="mt-7 flex flex-col gap-3 sm:flex-row">
-            <a href="#seasonal-form" onClick={() => setOpen(false)} className="to-btn to-btn-primary">
-              Claim 10% off
+            <a href={`#${offer.formId}`} onClick={() => setOpen(false)} className="to-btn to-btn-primary">
+              {offer.cta}
             </a>
             <button type="button" onClick={() => setOpen(false)} className="to-btn to-btn-quiet">
               No thanks
             </button>
           </div>
-          <p className="mt-5 text-[0.92rem] text-muted">Terms and conditions may apply.</p>
+          <p className="mt-5 text-[0.92rem] text-muted">{offer.terms ?? "Terms and conditions may apply."}</p>
         </div>
       </div>
     </div>

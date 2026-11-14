@@ -10,7 +10,7 @@ import { site } from "../lib/site";
 import { addOns, instagramPosts, jobberForm, offers, passes, referral, reviews, season, stats, steps, zones } from "./content";
 import { snowFaqs } from "./faqs";
 import StickyCta from "../components/StickyCta";
-import OfferPopup from "./OfferPopup";
+import OfferPopup from "../components/OfferPopup";
 import { RouteCheck } from "./SnowClient";
 
 const path = "/residential-snow-removal";
@@ -474,7 +474,20 @@ export default function ResidentialSnowRemovalPage() {
       </BlogCta>
 
       <StickyCta targetId="seasonal-form" label="Reserve a season pass" />
-      <OfferPopup />
+      <OfferPopup
+        offer={{
+          id: "snow-upfront",
+          label: "Season pass offer",
+          highlight: "10% off",
+          title: "Pay for your season upfront and save 10%.",
+          text: "Pay in full when you sign up and we take 10% off your snow removal season pass. One payment, and your winter is handled.",
+          cta: "Claim 10% off",
+          formId: "seasonal-form",
+          photo: "/Snow Page web pics/Residential-snow-removal.JPG",
+          photoAlt: "Edge of a freshly cleared Calgary driveway",
+          graphic: { src: "/brand/snow-picket.png", alt: "TERREOAK snow picket", width: 169, height: 490 },
+        }}
+      />
     </main>
   );
 }

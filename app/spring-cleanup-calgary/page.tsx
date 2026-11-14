@@ -2,6 +2,7 @@ import Image from "next/image";
 import BeforeAfterSlider from "../components/BeforeAfterSlider";
 import JobberLeadForm from "../components/JobberLeadForm";
 import JsonLd from "../components/JsonLd";
+import OfferPopup from "../components/OfferPopup";
 import StickyCta from "../components/StickyCta";
 import { Band, BlogCta, Button, FaqList, PageHero, Tick } from "../components/ds";
 import { CountUp } from "../components/HeroMedia";
@@ -209,6 +210,19 @@ export default function SpringCleanupPage() {
       </BlogCta>
 
       <StickyCta targetId="spring-cleanup-form" label="Get a free quote" />
+      <OfferPopup
+        offer={{
+          id: "spring-fertilizer",
+          label: "Spring cleanup offer",
+          highlight: "$150 value",
+          title: "Free fertilizer application when you book with us.",
+          text: "Book your spring cleanup and we’ll include a fertilizer application at no charge, worth $150.",
+          cta: "Claim my free fertilizer",
+          formId: "spring-cleanup-form",
+          photo: "/spring-cleanup-pics/calgary-spring-cleanup-after.jpg",
+          photoAlt: "Thick green lawn after a TERREOAK spring cleanup",
+        }}
+      />
     </main>
   );
 }

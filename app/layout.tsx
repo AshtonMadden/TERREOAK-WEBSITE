@@ -1,10 +1,8 @@
 // app/layout.tsx
 import type { ReactNode } from "react";
-// Fonts are self-hosted so builds never depend on a third-party font server.
-import "@fontsource-variable/plus-jakarta-sans";
-import "@fontsource-variable/lora";
-import "@fontsource-variable/lora/wght-italic.css";
+// Montserrat is the only typeface on the site, self-hosted so builds never depend on a font server.
 import "@fontsource-variable/montserrat";
+import "@fontsource-variable/montserrat/wght-italic.css";
 import "./globals.css";
 import type { Metadata, Viewport } from "next";
 import { pageMeta } from "./lib/seo";

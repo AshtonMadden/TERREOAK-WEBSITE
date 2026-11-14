@@ -1,6 +1,5 @@
 import type { MetadataRoute } from "next";
 import { site } from "./lib/site";
-import { products } from "./shop/data";
 
 // Generated at build time, so new pages only need to be added to this list.
 const routes: { path: string; priority: number; changeFrequency: "weekly" | "monthly" | "yearly" }[] = [
@@ -25,25 +24,16 @@ const routes: { path: string; priority: number; changeFrequency: "weekly" | "mon
   { path: "/blog/why-calgary-spring-cleanup-matters", priority: 0.6, changeFrequency: "yearly" },
   { path: "/blog/why-open-grade-base-for-paver-patios", priority: 0.6, changeFrequency: "yearly" },
   { path: "/careers", priority: 0.5, changeFrequency: "monthly" },
-  { path: "/shop", priority: 0.4, changeFrequency: "monthly" },
   { path: "/privacy", priority: 0.2, changeFrequency: "yearly" },
   { path: "/terms", priority: 0.2, changeFrequency: "yearly" },
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
-  return [
-    ...routes.map((route) => ({
-      url: `${site.url}${route.path === "/" ? "" : route.path}`,
-      lastModified,
-      changeFrequency: route.changeFrequency,
-      priority: route.priority,
-    })),
-    ...products.map((product) => ({
-      url: `${site.url}/shop/${product.id}`,
-      lastModified,
-      changeFrequency: "monthly" as const,
-      priority: 0.3,
-    })),
-  ];
+  return routes.map((route) => ({
+    url: `${site.url}${route.path === "/" ? "" : route.path}`,
+    lastModified,
+    changeFrequency: route.changeFrequency,
+    priority: route.priority,
+  }));
 }

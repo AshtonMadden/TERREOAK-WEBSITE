@@ -24,6 +24,9 @@ const nextConfig: NextConfig = {
     return [
       // The referral program now lives on the snow removal page.
       { source: "/snow-referral", destination: "/residential-snow-removal#referral", permanent: true },
+      // The shop was removed; send its old addresses to the homepage.
+      { source: "/shop", destination: "/", permanent: true },
+      { source: "/shop/:id", destination: "/", permanent: true },
       // Old addresses the previous site linked to that never had a page.
       { source: "/support", destination: "/#home-form", permanent: true },
       { source: "/reviews", destination: "/#reviews", permanent: true },

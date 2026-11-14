@@ -205,7 +205,7 @@ export default function HomePage() {
       </Band>
 
       {/* REVIEWS */}
-      <Band>
+      <Band id="reviews">
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <h2 className="to-display to-h2">What our clients say</h2>
           <a href={site.googleProfile} target="_blank" rel="noopener noreferrer" className="to-focus flex w-fit items-center gap-3 rounded-full bg-white/[0.07] px-5 py-3 text-[1.05rem] font-medium text-fg transition-colors hover:bg-white/[0.12]">

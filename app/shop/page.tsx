@@ -1,84 +1,57 @@
-import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import JsonLd from "../components/JsonLd";
+import { Container } from "../components/ds";
+import { absoluteUrl, breadcrumbLd, pageMeta } from "../lib/seo";
+import { site } from "../lib/site";
 import { products } from "./data";
-import { pageMeta } from "../lib/seo";
 
-export const metadata = pageMeta({
-  title: "Used Equipment & Gear Shop | TERREOAK Calgary",
-  description: "Shop well-maintained used landscaping and snow removal equipment from the TERREOAK crew in Calgary. Local pickup or shipping within Canada.",
-  path: "/shop",
-  image: "/images/shop-hero.png",
-});
+const path = "/shop";
+const description =
+  "Shop well-maintained used landscaping and snow removal equipment from the TERREOAK crew in Calgary. Local pickup or shipping within Canada.";
+
+export const metadata = pageMeta({ title: "Used Equipment & Gear Shop | TERREOAK Calgary", description, path, image: "/images/shop-hero.png" });
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ItemList",
+      "@id": `${site.url}${path}#list`,
+      itemListElement: products.map((product, i) => ({ "@type": "ListItem", position: i + 1, name: product.title, url: absoluteUrl(`/shop/${product.id}`) })),
+    },
+    { "@id": `${site.url}${path}#breadcrumb`, ...breadcrumbLd([{ name: "Home", path: "/" }, { name: "Shop", path }]) },
+  ],
+};
 
 export default function ShopPage() {
   return (
-    <main className="bg-white text-black min-h-screen flex flex-col">
-      {/* HERO */}
-      <section className="relative min-h-screen flex flex-col justify-center border-b border-black/10 overflow-hidden">
-        <div className="absolute inset-0 z-0 overflow-hidden">
-          <Image
-            src="/images/shop-hero.png"
-            alt="TERREOAK Shop"
-            fill
-            priority
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-black/60" />
+    <main className="to-pavement to-flow overflow-x-clip pb-20 pt-36 md:pb-28 md:pt-44">
+      <JsonLd data={jsonLd} />
+      <Container>
+        <h1 className="to-display to-h1 max-w-[16ch]">TERREOAK shop.</h1>
+        <p className="to-body mt-8">Surplus and used professional-grade landscaping and maintenance equipment from our fleet.</p>
+        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {products.map((product) => (
+            <Link key={product.id} href={`/shop/${product.id}`} className="to-card to-card-lift to-focus group flex flex-col overflow-hidden">
+              <div className="relative aspect-square overflow-hidden bg-white">
+                <Image
+                  src={product.image}
+                  alt={product.title}
+                  fill
+                  sizes="(min-width: 1280px) 400px, (min-width: 640px) 50vw, 100vw"
+                  className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                />
+              </div>
+              <div className="flex flex-1 flex-col p-7">
+                <h2 className="to-display to-h3">{product.title}</h2>
+                <p className="mt-3 text-[1.3rem] font-bold text-accent">${product.price.toFixed(2)} CAD</p>
+                <span className="mt-auto pt-6 text-[1.02rem] font-semibold text-accent">View item</span>
+              </div>
+            </Link>
+          ))}
         </div>
-
-        <div className="relative z-10 w-full mx-auto max-w-6xl px-6 flex flex-col justify-center min-h-[100dvh] md:min-h-0 md:block pt-32 pb-12 md:pt-56 md:pb-24 lg:pt-60 lg:pb-32 text-left animate-slide-in-left">
-          <div className="mt-auto md:mt-0">
-            <p className="text-[14px] font-black tracking-widest text-[#01fa6d] uppercase drop-shadow-md font-lora">
-              TERREOAK • Premium Goods
-            </p>
-            <h1 className="mt-2 text-[32px] md:text-[56px] lg:text-[64px] font-black leading-[1.1] tracking-tight text-white drop-shadow-2xl uppercase">
-              TERREOAK SHOP
-            </h1>
-            <p className="mt-4 mx-auto max-w-2xl text-[1rem] font-bold text-white/90 md:text-[1.3rem]">
-              Surplus and used professional-grade landscaping and maintenance equipment from our fleet.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* SHOP GRID */}
-      <section className="py-20 flex-grow bg-gray-50">
-        <div className="mx-auto max-w-6xl px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-            {products.map((product) => (
-              <Link 
-                href={`/shop/${product.id}`} 
-                key={product.id}
-                className="group flex flex-col bg-white rounded-xl shadow-lg border border-black/5 overflow-hidden hover:shadow-2xl transition-all transform hover:-translate-y-1"
-              >
-                <div className="relative w-full aspect-square bg-gray-100 overflow-hidden">
-                  <Image
-                    src={product.image}
-                    alt={product.title}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                </div>
-                <div className="p-6 flex flex-col flex-grow">
-                  <h3 className="text-[20px] font-black uppercase leading-tight group-hover:text-[#017a6d] transition-colors">
-                    {product.title}
-                  </h3>
-                  <p className="mt-2 text-[18px] font-bold text-black/70">
-                    ${product.price.toFixed(2)} CAD
-                  </p>
-                  
-                  <div className="mt-auto pt-6">
-                    <span className="inline-flex items-center justify-center w-full rounded-full bg-black px-6 py-3 text-[14px] font-extrabold text-white uppercase group-hover:bg-[#01fa6d] group-hover:text-black transition-colors">
-                      View Item
-                    </span>
-                  </div>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
+      </Container>
     </main>
   );
 }

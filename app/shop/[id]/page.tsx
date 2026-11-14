@@ -1,14 +1,19 @@
-import React from "react";
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import JsonLd from "../../components/JsonLd";
+import { Button, Container, Tick } from "../../components/ds";
+import { absoluteUrl, breadcrumbLd, pageMeta } from "../../lib/seo";
+import { site } from "../../lib/site";
 import { products } from "../data";
-import type { Metadata } from "next";
-import { pageMeta } from "../../lib/seo";
 
 export function generateStaticParams() {
   return products.map((product) => ({ id: product.id }));
 }
+
+// Only the products listed in data.ts exist; anything else is a real 404.
+export const dynamicParams = false;
 
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
   const { id } = await params;
@@ -22,89 +27,77 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   });
 }
 
-// Note: In Next.js App Router, dynamic params are passed as props
 export default async function ProductDetail({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   const product = products.find((p) => p.id === id);
+  if (!product) notFound();
 
-  if (!product) {
-    notFound();
-  }
+  const path = `/shop/${product.id}`;
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Product",
+        "@id": `${site.url}${path}#product`,
+        name: product.title,
+        description: product.description,
+        image: absoluteUrl(product.image),
+        offers: {
+          "@type": "Offer",
+          price: product.price.toFixed(2),
+          priceCurrency: "CAD",
+          itemCondition: "https://schema.org/UsedCondition",
+          availability: "https://schema.org/InStock",
+          url: `${site.url}${path}`,
+          seller: { "@id": `${site.url}/#organization` },
+        },
+      },
+      {
+        "@id": `${site.url}${path}#breadcrumb`,
+        ...breadcrumbLd([
+          { name: "Home", path: "/" },
+          { name: "Shop", path: "/shop" },
+          { name: product.title, path },
+        ]),
+      },
+    ],
+  };
+  const buyHref = `mailto:${site.email}?subject=${encodeURIComponent(`Shop enquiry: ${product.title}`)}`;
 
   return (
-    <main className="bg-white text-black min-h-screen flex flex-col">
-      <section className="pt-32 pb-16 md:pt-48 md:pb-24 lg:pt-56 lg:pb-32 bg-gray-50 flex-grow">
-        <div className="mx-auto max-w-6xl px-6">
-          {/* Back link */}
-          <Link href="/shop" className="inline-flex items-center text-[#017a6d] font-bold uppercase text-[14px] hover:underline mb-8">
-            ← Back to Shop
-          </Link>
-
-          <div className="bg-white rounded-2xl shadow-xl border border-black/5 overflow-hidden flex flex-col md:flex-row">
-            {/* Image Section */}
-            <div className="w-full md:w-1/2 relative bg-gray-100 min-h-[400px] md:min-h-[600px]">
-              <Image
-                src={product.image}
-                alt={product.title}
-                fill
-                className="object-cover"
-                priority
-              />
-            </div>
-
-            {/* Details Section */}
-            <div className="w-full md:w-1/2 p-8 md:p-12 lg:p-16 flex flex-col justify-center">
-              <p className="text-[14px] font-black tracking-widest text-[#017a6d] uppercase font-lora">
-                TERREOAK EXCLUSIVE
-              </p>
-              <h1 className="mt-2 text-[32px] md:text-[42px] font-black leading-[1.1] uppercase text-black">
-                {product.title}
-              </h1>
-              
-              <p className="mt-4 text-[24px] font-extrabold text-black/80">
-                ${product.price.toFixed(2)} CAD
-              </p>
-
-              <div className="mt-8">
-                <p className="text-[16px] text-black/70 leading-relaxed font-medium">
-                  {product.description}
-                </p>
-              </div>
-
-              {/* Features List */}
-              <div className="mt-8">
-                <h3 className="text-[16px] font-bold uppercase text-black">Features:</h3>
-                <ul className="mt-4 space-y-2">
-                  {product.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-start gap-3 text-[15px] text-black/70 font-medium">
-                      <span className="text-[#01fa6d] mt-1">✔</span>
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Shipping Notice */}
-              <div className="mt-8 p-4 bg-gray-50 border border-black/10 rounded-lg flex items-center gap-4">
-                <div className="text-[24px]">📦</div>
-                <div>
-                  <p className="text-[14px] font-bold uppercase text-black">Shipping Notice</p>
-                  <p className="text-[14px] text-black/60 font-medium mt-0.5">We currently only offer shipping within Canada.</p>
-                </div>
-              </div>
-
-              {/* CTA */}
-              <div className="mt-10">
-                <button 
-                  className="w-full md:w-auto inline-flex items-center justify-center rounded-full bg-[#01fa6d] px-10 py-[16px] text-[16px] font-extrabold text-black hover:bg-black hover:text-[#01fa6d] transition-colors shadow-lg cursor-pointer"
-                >
-                  ADD TO CART
-                </button>
-              </div>
+    <main className="to-pavement to-flow overflow-x-clip pb-20 pt-36 md:pb-28 md:pt-44">
+      <JsonLd data={jsonLd} />
+      <Container>
+        <Link href="/shop" className="to-link text-[1.05rem]">
+          Back to the shop
+        </Link>
+        <div className="mt-8 grid items-start gap-12 lg:grid-cols-2 lg:gap-20">
+          <div className="relative aspect-square overflow-hidden rounded-[36px] bg-white">
+            <Image src={product.image} alt={product.title} fill priority sizes="(min-width: 1280px) 600px, 100vw" className="object-cover" />
+          </div>
+          <div>
+            <h1 className="to-display to-h2">{product.title}</h1>
+            <p className="to-display mt-4 text-[2rem] text-accent">${product.price.toFixed(2)} CAD</p>
+            <p className="to-body mt-6">{product.description}</p>
+            <h2 className="mt-8 text-[1.2rem] font-bold text-fg">Features</h2>
+            <ul className="mt-4 grid gap-3 text-[1.08rem] text-fg">
+              {product.features.map((feature) => (
+                <li key={feature} className="flex gap-3">
+                  <Tick />
+                  {feature}
+                </li>
+              ))}
+            </ul>
+            <p className="mt-8 text-[1.05rem] text-muted">Shipping notice: we currently only offer shipping within Canada.</p>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <Button href={buyHref}>Email us to buy</Button>
+              <Button href={site.phoneHref} variant="quiet">
+                Call {site.phoneDisplay}
+              </Button>
             </div>
           </div>
         </div>
-      </section>
+      </Container>
     </main>
   );
 }

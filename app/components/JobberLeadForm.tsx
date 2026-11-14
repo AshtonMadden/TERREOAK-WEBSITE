@@ -24,8 +24,8 @@ export default function JobberLeadForm({
         let script: HTMLScriptElement | null = null;
 
         // Clean up previous content to avoid multiple forms during re-renders
-        containerRef.current.innerHTML = "";
-        setIsLoading(true);
+        const container = containerRef.current;
+        container.innerHTML = "";
 
         const timer = setTimeout(() => {
             if (!isMounted || !containerRef.current) return;
@@ -60,7 +60,7 @@ export default function JobberLeadForm({
         return () => {
             isMounted = false;
             clearTimeout(timer);
-            if (containerRef.current) containerRef.current.innerHTML = "";
+            container.innerHTML = "";
         };
     }, [clienthubId, formUrl]);
 

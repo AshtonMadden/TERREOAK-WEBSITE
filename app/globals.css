@@ -5,8 +5,8 @@ html {
 }
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #26282b;
+  --foreground: #ffffff;
 }
 
 @theme inline {
@@ -32,13 +32,6 @@ html {
   --color-olive: #a6bc09;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #ffffff;
-    --foreground: #171717;
-  }
-}
-
 body {
   background: var(--background);
   color: var(--foreground);
@@ -54,124 +47,6 @@ body {
 
 body {
   font-family: var(--font-montserrat);
-}
-
-.navItem:hover .dropdown,
-.navItem:focus-within .dropdown {
-  display: block !important;
-}
-
-/* Hover bridge to prevent menu from closing when moving mouse across the gap */
-.dropdown::before {
-  content: '';
-  position: absolute;
-  top: -15px;
-  left: 0;
-  right: 0;
-  height: 15px;
-  background: transparent;
-}
-
-.dropdownLink:hover {
-  background: rgba(1, 149, 135, 0.18);
-}
-
-
-/* Header & Top Bar Responsive Fixes */
-.nav-desktop {
-  display: flex;
-}
-
-@media (max-width: 1279px) {
-  .nav-desktop {
-    display: none !important;
-  }
-}
-
-.top-bar-text-container {
-  display: flex !important;
-  flex-wrap: wrap !important;
-  justify-content: center !important;
-  gap: 0 15px !important;
-  padding: 0 10px !important;
-}
-
-
-.section-divider {
-  border-top: 1px solid rgba(0, 0, 0, 0.05);
-}
-
-.shiny-button {
-  position: relative;
-  overflow: hidden;
-}
-
-.shiny-button::after {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: linear-gradient(to bottom right,
-      rgba(255, 255, 255, 0) 0%,
-      rgba(255, 255, 255, 0) 40%,
-      rgba(255, 255, 255, 0.4) 50%,
-      rgba(255, 255, 255, 0) 60%,
-      rgba(255, 255, 255, 0) 100%);
-  transform: rotate(45deg);
-  transition: all 0.5s opacity;
-  opacity: 0;
-  pointer-events: none;
-}
-
-.shiny-button:hover::after {
-  animation: shine 1.5s infinite;
-  opacity: 1;
-}
-
-@keyframes shine {
-  0% {
-    top: -100%;
-    left: -100%;
-  }
-
-  100% {
-    top: 100%;
-    left: 100%;
-  }
-}
-
-@keyframes floatUp {
-  0% {
-    transform: translateY(100px);
-    opacity: 0;
-  }
-
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-.animate-float-up {
-  animation: floatUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-}
-
-@keyframes slideInLeft {
-  0% {
-    transform: translateX(-50px);
-    opacity: 0;
-  }
-
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-.animate-slide-in-left {
-  animation: slideInLeft 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
 /* Jobber Embed Forms */
@@ -454,4 +329,62 @@ html {
 
 .to-faq[open] .to-faq-icon {
   transform: rotate(45deg);
+}
+
+/* Long-form article text (blog posts, legal pages) */
+.to-prose {
+  font-size: 1.15rem;
+  line-height: 1.75;
+  color: var(--to-muted);
+}
+
+.to-prose > * + *,
+.to-prose div > * + * {
+  margin-top: 1.25rem;
+}
+
+.to-prose h2 {
+  font-size: clamp(1.7rem, 2.8vw, 2.3rem);
+  line-height: 1.15;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--to-fg);
+  margin-top: 3.25rem;
+}
+
+.to-prose h3,
+.to-prose h4,
+.to-prose h5 {
+  font-size: 1.35rem;
+  line-height: 1.25;
+  font-weight: 700;
+  color: var(--to-fg);
+  margin-top: 2.25rem;
+}
+
+.to-prose strong {
+  font-weight: 700;
+  color: var(--to-fg);
+}
+
+.to-prose ul {
+  display: grid;
+  gap: 0.7rem;
+  padding-left: 1.25rem;
+  list-style: disc;
+}
+
+.to-prose ul li::marker {
+  color: var(--to-accent);
+}
+
+.to-prose a {
+  color: var(--to-accent);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 0.22em;
+}
+
+.to-prose img {
+  border-radius: 28px;
 }

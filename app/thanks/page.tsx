@@ -1,24 +1,27 @@
-"use client";
+import { Button, Container } from "../components/ds";
+import { pageMeta } from "../lib/seo";
 
-import Link from 'next/link';
-import OurBlogSection from '../components/OurBlogSection';
+export const metadata = pageMeta({
+  title: "Thank You | TERREOAK Landscaping Calgary",
+  description:
+    "Thank you for contacting TERREOAK. We have received your message and will be in touch shortly regarding your landscaping or snow removal needs.",
+  path: "/thanks",
+  noindex: true,
+});
 
 export default function ThanksPage() {
-    return (
-        <>
-            <main className="mx-auto max-w-3xl px-6 py-20 text-center">
-                <h1 className="mb-4 text-4xl font-bold text-black">Request received ✅</h1>
-                <p className="mb-8 text-black/70">
-                    We’ll follow up soon to confirm details and scheduling.
-                </p>
-                <Link
-                    href="/"
-                    className="inline-block rounded border border-black/20 px-6 py-3 font-semibold text-black transition hover:border-black/40 hover:bg-black/5"
-                >
-                    Back to Home
-                </Link>
-            </main>
-            <OurBlogSection />
-        </>
-    );
+  return (
+    <main className="to-pavement to-flow flex min-h-[80svh] items-center overflow-x-clip pb-20 pt-36">
+      <Container>
+        <h1 className="to-display to-h1 max-w-[16ch]">Request received.</h1>
+        <p className="to-body mt-8 !text-fg">We’ll follow up soon to confirm details and scheduling.</p>
+        <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+          <Button href="/">Back to home</Button>
+          <Button href="/projects" variant="quiet">
+            See recent projects
+          </Button>
+        </div>
+      </Container>
+    </main>
+  );
 }

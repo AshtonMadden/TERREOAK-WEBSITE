@@ -106,6 +106,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           "closes": "21:00"
         },
         "priceRange": "$$$",
+        "hasMap": site.googleProfile,
 
         "serviceType": [
           "Landscape Construction",

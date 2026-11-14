@@ -84,9 +84,7 @@ export default function ResidentialSnowRemovalPage() {
       <section className="relative isolate flex min-h-[100svh] flex-col justify-end">
         <div className="absolute inset-0 -z-10">
           <HeroVideo src="/videos/calgary-snow-removal-drone.mp4" poster="/images/snow-removal/hero-poster.jpg" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#1d1f21]/90 via-[#1d1f21]/55 to-[#1d1f21]/25" />
-          <div className="absolute inset-0 bg-[#1d1f21]/45 md:hidden" />
-          <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-[#26282b] via-[#26282b]/70 to-transparent" />
+          <div className="absolute inset-0 bg-[#1d1f21]/65" />
         </div>
 
         <Container className="pb-14 pt-36 md:pb-20">

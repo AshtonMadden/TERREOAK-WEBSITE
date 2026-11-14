@@ -94,3 +94,25 @@ export const jobberForm = {
   formUrl:
     "https://clienthub.getjobber.com/client_hubs/41b3399e-3795-43d8-afe2-e6c38c1b3e6e/public/work_request/embedded_work_request_form?form_id=2232203",
 };
+
+// Real Google reviews from snow removal clients.
+export const reviews = [
+  {
+    name: "George Witherley",
+    text: "The guys from TERREOAK are amazing. They are clear on when they are coming with emails and show up every single time no matter how bad the snow fall is. They always go above and beyond clearing not only the walk way but my stairs as well. They are very polite and do an excellent job.",
+  },
+  {
+    name: "J Walker",
+    text: "I currently use TERREOAK for snow removal services and have been extremely happy with their work. They always send notification of when they will be coming and are extremely prompt and courteous. Will definitely be using them again next season and would highly recommend.",
+  },
+  {
+    name: "Susan Lewis",
+    text: "TERREOAK are doing snow removal for me this year. They send an email to advise when they are dispatching the crew each time it snows. They always get it done within the time they say. I'm very happy with their service and would highly recommend them.",
+  },
+];
+
+export const stats = [
+  { end: 100, suffix: "+", label: "Total properties managed" },
+  { end: 92, suffix: "+", label: "Happy clients" },
+  { end: 2, suffix: "", label: "TERREOAK crews" },
+];

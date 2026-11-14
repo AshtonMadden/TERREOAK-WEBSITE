@@ -12,7 +12,7 @@ export default function InstagramEmbed({ url, width = '100%', height = 620 }: In
   const embedUrl = `${baseUrl}/embed`;
 
   return (
-    <div className="w-full max-w-sm mx-auto overflow-hidden rounded-[14px] border border-black/10 bg-white">
+    <div className="w-full max-w-sm mx-auto overflow-hidden rounded-[28px] bg-white">
       <iframe
         src={embedUrl}
         width={width}

@@ -37,8 +37,8 @@ export function Button({
 }
 
 /**
- * A page band on one of the two surfaces. Children pick up the right text, rule and
- * accent colours through the text-fg / text-muted / border-rule / text-accent utilities.
+ * A page section. By default it is transparent and sits on the page's flowing dark surface.
+ * surface="snow" renders it as a rounded white panel floating on that surface instead of a hard band.
  */
 export function Band({
   id,
@@ -51,8 +51,17 @@ export function Band({
   children: ReactNode;
   className?: string;
 }) {
+  if (surface === "snow") {
+    return (
+      <section id={id} className={`px-3 py-6 sm:px-5 md:py-10 ${className}`}>
+        <div className="to-snow mx-auto max-w-[1400px] rounded-[36px] py-14 md:rounded-[48px] md:py-20">
+          <Container>{children}</Container>
+        </div>
+      </section>
+    );
+  }
   return (
-    <section id={id} className={`${surface === "snow" ? "to-snow" : "to-pavement"} overflow-x-clip py-20 md:py-28 ${className}`}>
+    <section id={id} className={`py-16 md:py-24 ${className}`}>
       <Container>{children}</Container>
     </section>
   );
@@ -61,16 +70,16 @@ export function Band({
 /** FAQ as hairline rows. Pair with faqLd() from lib/seo for structured data. */
 export function FaqList({ faqs }: { faqs: { q: string; a: string }[] }) {
   return (
-    <div className="border-t border-rule">
+    <div className="grid gap-3">
       {faqs.map((faq) => (
-        <details key={faq.q} className="to-faq border-b border-rule">
+        <details key={faq.q} className="to-faq to-card px-6 md:px-8">
           <summary className="to-focus flex items-center justify-between gap-6 py-6 text-xl font-semibold text-fg md:text-2xl">
             {faq.q}
             <svg className="to-faq-icon h-5 w-5 shrink-0 text-accent" viewBox="0 0 20 20" fill="none" aria-hidden="true">
               <path d="M10 3v14M3 10h14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
             </svg>
           </summary>
-          <p className="to-body pb-7">{faq.a}</p>
+          <p className="to-body pb-7 !max-w-none">{faq.a}</p>
         </details>
       ))}
     </div>

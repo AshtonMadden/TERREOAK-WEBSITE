@@ -58,7 +58,7 @@ export default function Header() {
     <header className="to-pavement fixed inset-x-0 top-0 z-[100] !bg-transparent">
       <div
         className={`border-b transition-colors duration-300 ${
-          scrolled || open ? "border-rule bg-pavement" : "border-transparent bg-pavement/0"
+          scrolled || open ? "border-transparent bg-pavement/85 backdrop-blur-lg" : "border-transparent bg-pavement/0"
         }`}
       >
         <div className="mx-auto flex h-[72px] w-full max-w-[1280px] items-center justify-between gap-6 px-5 sm:px-8 lg:px-12">
@@ -84,12 +84,12 @@ export default function Header() {
                     <Caret />
                   </button>
                   <div className="invisible absolute left-1/2 top-full w-[340px] -translate-x-1/2 pt-3 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
-                    <div className="rounded-xl border border-rule bg-[#1d1f21] p-2 shadow-[0_18px_40px_-12px_rgba(0,0,0,0.6)]">
+                    <div className="rounded-3xl bg-[#1d1f21] p-2.5 shadow-[0_18px_40px_-12px_rgba(0,0,0,0.6)]">
                       {group.items!.map((item) => (
                         <Link
                           key={item.href}
                           href={item.href}
-                          className="to-focus block rounded-lg px-4 py-3 transition-colors hover:bg-white/[0.07]"
+                          className="to-focus block rounded-2xl px-4 py-3 transition-colors hover:bg-white/[0.07]"
                           aria-current={pathname === item.href ? "page" : undefined}
                         >
                           <span className={`block text-[0.98rem] font-semibold ${pathname === item.href ? "text-brand" : "text-white"}`}>{item.label}</span>
@@ -117,7 +117,7 @@ export default function Header() {
               onClick={() => setOpen((v) => !v)}
               aria-label={open ? "Close menu" : "Open menu"}
               aria-expanded={open}
-              className="to-focus flex h-11 w-11 items-center justify-center rounded-lg border border-rule text-white lg:hidden"
+              className="to-focus flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white lg:hidden"
             >
               <svg className="h-5 w-5" viewBox="0 0 20 20" fill="none" aria-hidden="true">
                 {open ? (

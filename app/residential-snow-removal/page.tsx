@@ -172,7 +172,9 @@ export default function ResidentialSnowRemovalPage() {
       <Band>
         <div className="flex items-center justify-between gap-6">
           <h2 className="to-display to-h2 max-w-[18ch]">Pick the pass that fits your winter</h2>
-          <Image src="/brand/snow-pass-badge.png" alt="TERREOAK Snow Pass" width={514} height={585} className="h-24 w-auto shrink-0 md:h-36" />
+          <a href="#seasonal-form" className="to-focus shrink-0 rounded-2xl transition-transform hover:scale-[1.04]" aria-label="Sign up for a Snow Pass">
+            <Image src="/brand/snow-pass-badge.png" alt="TERREOAK Snow Pass" width={514} height={585} className="h-24 w-auto md:h-36" />
+          </a>
         </div>
         <div className="mt-12 grid gap-5 lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)]">
           {passes.map((pass, i) => (
@@ -229,7 +231,9 @@ export default function ResidentialSnowRemovalPage() {
       <Band id="referral">
         <div className="to-card relative p-8 md:p-12">
           <div className="mb-8 flex justify-end md:absolute md:right-12 md:top-12 md:mb-0">
-            <Image src="/brand/snow-pass-rewards.png" alt="Snow Pass Rewards" width={488} height={96} className="h-11 w-auto md:h-14" />
+            <a href="#seasonal-form" className="to-focus rounded-lg transition-transform hover:scale-[1.04]" aria-label="Sign up for a Snow Pass to earn rewards">
+              <Image src="/brand/snow-pass-rewards.png" alt="Snow Pass Rewards" width={488} height={96} className="h-11 w-auto md:h-14" />
+            </a>
           </div>
           <div className="grid gap-x-16 gap-y-10 lg:grid-cols-[minmax(0,6fr)_minmax(0,5fr)] lg:items-end">
             <div>
@@ -267,9 +271,9 @@ export default function ResidentialSnowRemovalPage() {
               </ul>
             </div>
             <div className="flex flex-col gap-3 sm:flex-row lg:justify-end">
-              <Button href={site.clientPortalUrl}>Open your client portal</Button>
-              <Button href={site.phoneHref} variant="quiet">
-                Call {site.phoneDisplay}
+              <Button href="#seasonal-form">Sign up for a season pass</Button>
+              <Button href={site.clientPortalUrl} variant="quiet">
+                Open your client portal
               </Button>
             </div>
           </div>

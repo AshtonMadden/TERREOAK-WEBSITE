@@ -52,7 +52,9 @@ export default function Header() {
       ? { label: "Request a proposal", href: "#commercial-form" }
       : pathname.startsWith("/spring-cleanup-calgary")
         ? { label: "Get a free quote", href: "#spring-cleanup-form" }
-        : { label: "Request an estimate", href: "/#home-form" };
+        : pathname.startsWith("/hardscaping")
+          ? { label: "Request a proposal", href: "#hardscape-form" }
+          : { label: "Request an estimate", href: "/#home-form" };
 
   const isActive = (href?: string, items?: { href: string }[]) =>
     href ? pathname === href : !!items?.some((i) => pathname === i.href);

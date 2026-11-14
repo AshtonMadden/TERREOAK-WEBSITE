@@ -128,7 +128,7 @@ export function PageHero({
   children,
   footer,
 }: {
-  title: string;
+  title: ReactNode;
   lead?: ReactNode;
   image?: string;
   imageAlt?: string;

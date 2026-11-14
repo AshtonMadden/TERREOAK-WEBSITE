@@ -74,7 +74,7 @@ export const zones = [
   { name: "Southwest Calgary", areas: ["Evergreen", "Shawnessy", "Silverado", "Chaparral", "Bridlewood", "Somerset"] },
 ];
 
-// Snow tracker. Update these numbers as the season goes on; the snowflake, percentage
+// Snow tracker. Update these numbers as the season goes on; the measuring stick, percentage
 // and tiles on the page all follow from them.
 export const season = {
   label: "2026–2027",

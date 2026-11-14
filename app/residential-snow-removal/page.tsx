@@ -51,23 +51,53 @@ const offerIcons: React.ReactNode[] = [
   <path key="card" d="M3 7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7Zm0 3h18M7 15h4" />,
 ];
 
-/** Six-armed snowflake drawn from one arm repeated every 60 degrees. */
-function Snowflake({ className, style }: { className?: string; style?: React.CSSProperties }) {
+/**
+ * Snow measuring stick: a vertical ruler in centimetres that fills to this season's total,
+ * with a marker at the season average. The scale grows by itself in a heavy winter.
+ */
+function MeasuringStick({ totalCm, averageCm }: { totalCm: number; averageCm: number }) {
+  const scaleMax = Math.max(150, Math.ceil((Math.max(totalCm, averageCm) * 1.1) / 50) * 50);
+  const pct = (cm: number) => `${(cm / scaleMax) * 100}%`;
+  const ticks = Array.from({ length: scaleMax / 10 + 1 }, (_, i) => i * 10);
+
   return (
-    <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="3.4" strokeLinecap="round" strokeLinejoin="round" className={className} style={style} aria-hidden="true">
-      {[0, 60, 120, 180, 240, 300].map((angle) => (
-        <g key={angle} transform={`rotate(${angle} 50 50)`}>
-          <path d="M50 50V3M50 13l-8-7M50 13l8-7M50 23l-7-6M50 23l7-6" />
-        </g>
-      ))}
-    </svg>
+    <div className="flex items-stretch justify-center gap-3" role="img" aria-label={`Snow measuring stick showing ${totalCm} centimetres so far this season against a ${averageCm} centimetre average`}>
+      {/* Average label, left of the stick */}
+      <div className="relative w-24">
+        <div className="absolute right-0 flex flex-col items-end" style={{ bottom: pct(averageCm), transform: "translateY(50%)" }}>
+          <span className="text-[0.82rem] font-semibold uppercase tracking-[0.1em] text-accent">Average</span>
+          <span className="text-[1.05rem] font-bold tabular-nums text-fg">{averageCm} cm</span>
+        </div>
+      </div>
+
+      {/* The stick */}
+      <div className="relative h-72 w-12 md:h-80">
+        <div className="absolute inset-0 overflow-hidden rounded-t-[10px] bg-white/[0.09]">
+          <div className="to-stick-fill absolute inset-x-0 bottom-0 bg-brand" style={{ height: pct(totalCm) }} />
+        </div>
+        <div className="absolute -inset-x-2 border-t-2 border-dashed border-white/70" style={{ bottom: pct(averageCm) }} />
+        {/* Snow mound at the base */}
+        <div className="absolute -bottom-3 left-1/2 h-6 w-28 -translate-x-1/2 rounded-[50%] bg-white" />
+      </div>
+
+      {/* Scale, right of the stick */}
+      <div className="relative w-16">
+        {ticks.map((cm) => {
+          const major = cm % 50 === 0;
+          return (
+            <div key={cm} className="absolute left-0 flex translate-y-1/2 items-center gap-2" style={{ bottom: pct(cm) }}>
+              <span className={`block h-px ${major ? "w-4 bg-white/80" : "w-2 bg-white/35"}`} />
+              {major && <span className="text-[0.9rem] tabular-nums text-muted">{cm}</span>}
+            </div>
+          );
+        })}
+      </div>
+    </div>
   );
 }
 
 export default function ResidentialSnowRemovalPage() {
-  // The snowflake fills in proportion to this season's total against the average, topping out when the average is reached.
   const trackerPercent = Math.round((season.totalCm / season.averageCm) * 100);
-  const trackerFill = Math.min(100, trackerPercent);
 
   return (
     <main className="to-pavement to-flow overflow-x-clip">
@@ -301,15 +331,11 @@ export default function ResidentialSnowRemovalPage() {
       <Band>
         <div className="to-card grid items-center gap-x-16 gap-y-10 p-8 md:p-12 lg:grid-cols-[auto_minmax(0,1fr)]">
           <figure className="mx-auto">
-            <div className="relative h-64 w-64 md:h-80 md:w-80">
-              <Snowflake className="absolute inset-0 h-full w-full text-white/15" />
-              <Snowflake className="to-flake-fill absolute inset-0 h-full w-full text-brand" style={{ clipPath: `inset(${100 - trackerFill}% 0 0 0)` }} />
-              <div className="absolute left-1/2 top-1/2 flex h-[38%] w-[38%] -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center rounded-full bg-[#2f3236]">
-                <span className="to-display text-[2.1rem] leading-none tabular-nums text-fg md:text-[2.5rem]">{season.totalCm}</span>
-                <span className="mt-1 text-[0.72rem] font-semibold uppercase tracking-[0.12em] text-accent">cm total</span>
-              </div>
-            </div>
-            <figcaption className="mt-4 text-center text-[1rem] text-muted">{trackerPercent}% of the season average</figcaption>
+            <MeasuringStick totalCm={season.totalCm} averageCm={season.averageCm} />
+            <figcaption className="mt-8 text-center">
+              <span className="to-display block text-4xl tabular-nums text-fg">{season.totalCm} cm</span>
+              <span className="mt-1 block text-[1rem] text-muted">so far this season, {trackerPercent}% of the average</span>
+            </figcaption>
           </figure>
           <div>
             <h2 className="to-display to-h2">{season.label} snow tracker</h2>

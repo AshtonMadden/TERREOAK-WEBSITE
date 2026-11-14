@@ -3,23 +3,23 @@
 export const offers = [
   {
     title: "Full season coverage",
-    desc: "One flat monthly rate covers driveway and front sidewalk clearing from the first snowfall through the final melt. We service your property once every 24 hours, with no per-visit fees and no surprises.",
+    desc: "One flat monthly rate for driveway and front sidewalk clearing, from first snowfall to final melt. No per-visit fees.",
   },
   {
     title: "1cm trigger",
-    desc: "We dispatch as soon as accumulation hits 1cm. You won’t wake up to a buried driveway waiting for a contractor who services “major storms only.”",
+    desc: "We dispatch as soon as 1cm accumulates, not only for major storms.",
   },
   {
     title: "Photo service log",
-    desc: "After every visit, you receive time-stamped photos by email confirming exactly what was cleared and when. Perfect for renters, property owners, or anyone who needs documentation.",
+    desc: "Time-stamped photos emailed after every visit, so you know what was cleared and when.",
   },
   {
     title: "Dispatch alerts",
-    desc: "Email notifications sent before our crew arrives so you always know service is on the way, no guessing, no wondering.",
+    desc: "An email before our crew arrives, so you know service is on the way.",
   },
   {
     title: "Driveway marker",
-    desc: "Each client receives one highly visible snow picket. This helps our crews quickly identify your property during dark, early-morning hours, keeping them off their phones and focused on safety.",
+    desc: "One highly visible snow picket so crews find your property fast in the dark.",
   },
   {
     title: "Flexible payment",

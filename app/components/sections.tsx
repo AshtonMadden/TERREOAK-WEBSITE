@@ -1,10 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
-import type { ReactNode } from "react";
+import { Children, type ReactNode } from "react";
 import { site } from "../lib/site";
 import { CountUp } from "./HeroMedia";
 import InstagramEmbed from "./InstagramEmbed";
 import JobberLeadForm from "./JobberLeadForm";
+import ClampText from "./ClampText";
 import ReadMore from "./ReadMore";
 import { breadcrumbLd, faqLd } from "../lib/seo";
 import { Band, FaqList, GoogleMark, Stars, Tick } from "./ds";
@@ -21,40 +22,57 @@ export type Project = { id: number | string; title: string; location: string; bu
 
 /** Project cards: photo, location and investment, title, summary, link to the write-up. */
 export function ProjectCards({ projects }: { projects: Project[] }) {
+  const card = (project: Project) => (
+    <Link key={project.id} href={project.link} className="to-card to-card-lift to-focus group flex flex-col overflow-hidden">
+      <div className="relative aspect-[16/10] overflow-hidden">
+        <Image
+          src={project.img}
+          alt={`${project.title} in ${project.location}`}
+          fill
+          sizes="(min-width: 768px) 50vw, 100vw"
+          className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+        />
+      </div>
+      <div className="flex flex-1 flex-col p-6 md:p-8">
+        <p className="to-sub">
+          {project.location.split(",")[0]}
+          {project.budget ? ` / ${project.budget} investment` : ""}
+        </p>
+        <h3 className="to-display to-h3 mt-3">{project.title}</h3>
+        <p className="mt-3 line-clamp-3 text-[1.05rem] leading-relaxed text-muted">{project.desc}</p>
+        <span className="mt-auto flex items-center gap-2 pt-5 text-[1.02rem] font-semibold text-accent md:pt-6">
+          Read project <Arrow />
+        </span>
+      </div>
+    </Link>
+  );
   return (
     <div className="grid gap-5 md:grid-cols-2">
-      {projects.map((project) => (
-        <Link key={project.id} href={project.link} className="to-card to-card-lift to-focus group flex flex-col overflow-hidden">
-          <div className="relative aspect-[16/10] overflow-hidden">
-            <Image
-              src={project.img}
-              alt={`${project.title} in ${project.location}`}
-              fill
-              sizes="(min-width: 768px) 50vw, 100vw"
-              className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
-            />
-          </div>
-          <div className="flex flex-1 flex-col p-7 md:p-8">
-            <p className="to-sub">
-              {project.location.split(",")[0]}
-              {project.budget ? ` / ${project.budget} investment` : ""}
-            </p>
-            <h3 className="to-display to-h3 mt-3">{project.title}</h3>
-            <p className="mt-3 line-clamp-3 text-[1.05rem] leading-relaxed text-muted">{project.desc}</p>
-            <span className="mt-auto flex items-center gap-2 pt-6 text-[1.02rem] font-semibold text-accent">
-              Read project <Arrow />
-            </span>
-          </div>
-        </Link>
-      ))}
+      {projects.slice(0, 2).map(card)}
+      {projects.length > 2 && (
+        <ReadMore inGrid label="Show more projects">
+          {projects.slice(2).map(card)}
+        </ReadMore>
+      )}
     </div>
   );
 }
 
-/** Google reviews section with the rating link. */
-export function ReviewsBand({ title, reviews }: { title: string; reviews: { name: string; role?: string; text: string }[] }) {
+const reviewCard = (review: { name: string; role?: string; text: string }) => (
+  <figure key={review.name} className="to-card flex flex-col p-6 md:p-8">
+    <Stars />
+    <blockquote className="mt-5 text-[1.05rem] leading-relaxed text-fg md:text-[1.1rem]">“{review.text}”</blockquote>
+    <figcaption className="mt-auto pt-6">
+      <p className="text-[1.05rem] font-semibold text-fg">{review.name}</p>
+      {review.role && <p className="mt-1 text-[0.98rem] text-muted">{review.role}</p>}
+    </figcaption>
+  </figure>
+);
+
+/** Google reviews section with the rating link. On phones the first review shows, the rest sit behind a button. */
+export function ReviewsBand({ id, title, reviews }: { id?: string; title: string; reviews: { name: string; role?: string; text: string }[] }) {
   return (
-    <Band>
+    <Band id={id}>
       <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
         <h2 className="to-display to-h2">{title}</h2>
         <a
@@ -67,17 +85,13 @@ export function ReviewsBand({ title, reviews }: { title: string; reviews: { name
           {site.reviews.rating} from {site.reviews.count} Google reviews
         </a>
       </div>
-      <div className="mt-12 grid gap-5 lg:grid-cols-3">
-        {reviews.map((review) => (
-          <figure key={review.name} className="to-card flex flex-col p-8">
-            <Stars />
-            <blockquote className="mt-5 text-[1.1rem] leading-relaxed text-fg">“{review.text}”</blockquote>
-            <figcaption className="mt-auto pt-6">
-              <p className="text-[1.05rem] font-semibold text-fg">{review.name}</p>
-              {review.role && <p className="mt-1 text-[0.98rem] text-muted">{review.role}</p>}
-            </figcaption>
-          </figure>
-        ))}
+      <div className="mt-8 grid gap-5 md:mt-12 lg:grid-cols-3">
+        {reviews.slice(0, 1).map(reviewCard)}
+        {reviews.length > 1 && (
+          <ReadMore inGrid label="Show more reviews">
+            {reviews.slice(1).map(reviewCard)}
+          </ReadMore>
+        )}
       </div>
     </Band>
   );
@@ -153,12 +167,14 @@ export function StepsBand({ id, title, steps, children }: { id?: string; title: 
   return (
     <Band id={id}>
       <h2 className="to-display to-h2">{title}</h2>
-      <ol className={`mt-12 grid gap-5 ${cols}`}>
+      <ol className={`mt-8 grid gap-3 md:mt-12 md:gap-5 ${cols}`}>
         {steps.map((step, i) => (
-          <li key={step.title} className="to-card to-card-lift p-8">
-            <span className="to-icon to-display text-2xl">{i + 1}</span>
-            <h3 className="to-display to-h3 mt-6">{step.title}</h3>
-            <p className="mt-3 text-[1.05rem] leading-relaxed text-muted">{step.desc}</p>
+          <li key={step.title} className="to-card to-card-lift flex gap-4 p-5 md:block md:p-8">
+            <span className="to-icon to-display shrink-0 text-2xl max-md:h-11 max-md:w-11 max-md:text-xl">{i + 1}</span>
+            <div>
+              <h3 className="to-display to-h3 md:mt-6">{step.title}</h3>
+              <ClampText className="mt-1.5 text-[1rem] leading-relaxed text-muted md:mt-3 md:text-[1.05rem]">{step.desc}</ClampText>
+            </div>
           </li>
         ))}
       </ol>
@@ -187,11 +203,11 @@ export function CardsBand({
     <Band id={id}>
       <h2 className="to-display to-h2">{title}</h2>
       {lead && <p className="to-body mt-5">{lead}</p>}
-      <div className={`mt-12 grid gap-5 md:grid-cols-2 ${columns === 3 ? "lg:grid-cols-3" : ""}`}>
+      <div className={`mt-8 grid gap-3 md:mt-12 md:grid-cols-2 md:gap-5 ${columns === 3 ? "lg:grid-cols-3" : ""}`}>
         {cards.map((card) => (
-          <article key={card.title} className="to-card to-card-lift p-8">
+          <article key={card.title} className="to-card to-card-lift p-5 md:p-8">
             <h3 className="to-display to-h3">{card.title}</h3>
-            <p className="mt-4 text-[1.05rem] leading-relaxed text-muted">{card.desc}</p>
+            <ClampText className="mt-2 text-[1rem] leading-relaxed text-muted md:mt-4 md:text-[1.05rem]">{card.desc}</ClampText>
           </article>
         ))}
       </div>
@@ -222,13 +238,17 @@ export function SplitBand({
   contain?: boolean;
   children: ReactNode;
 }) {
+  const parts = Children.toArray(children);
   return (
     <Band id={id}>
-      <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
+      <div className="grid items-center gap-8 md:gap-12 lg:grid-cols-2 lg:gap-20">
         <div className={imageSide === "left" ? "lg:order-2" : ""}>
           <h2 className="to-display to-h2">{title}</h2>
           {sub && <p className="to-sub mt-4">{sub}</p>}
-          <div className="mt-7 grid gap-5">{children}</div>
+          <div className="mt-6 grid gap-5 md:mt-7">
+            {parts[0]}
+            {parts.length > 1 && <ReadMore>{parts.slice(1)}</ReadMore>}
+          </div>
         </div>
         <div className={`relative ${aspect} overflow-hidden rounded-[36px] shadow-[0_40px_80px_-40px_rgba(0,0,0,0.8)] ${contain ? "bg-white" : ""}`}>
           <Image src={image} alt={imageAlt} fill sizes="(min-width: 1280px) 600px, 100vw" className={contain ? "object-contain" : "object-cover"} />

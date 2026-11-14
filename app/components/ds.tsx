@@ -149,9 +149,9 @@ export function PageHero({
         ) : null}
         <div className="absolute inset-0 bg-[#1d1f21]/65" />
       </div>
-      <Container className="pb-14 pt-36 md:pb-20">
+      <Container className="pb-10 pt-28 md:pb-20 md:pt-36">
         <h1 className="to-display to-h1 max-w-[20ch]">{title}</h1>
-        {lead && <p className="to-body mt-8 !text-fg">{lead}</p>}
+        {lead && <p className="to-body mt-6 !text-fg md:mt-8">{lead}</p>}
         {children && <div className="mt-8 flex flex-col gap-3 sm:flex-row">{children}</div>}
         <p className="mt-8 flex flex-wrap items-center gap-x-3 gap-y-2 text-[1.05rem] text-white/80">
           <GoogleMark />
@@ -159,7 +159,7 @@ export function PageHero({
             {site.reviews.rating} stars from {site.reviews.count} Google reviews
           </a>
         </p>
-        {footer && <div className="mt-14 md:mt-20">{footer}</div>}
+        {footer && <div className="mt-10 md:mt-20">{footer}</div>}
       </Container>
     </section>
   );
@@ -168,12 +168,12 @@ export function PageHero({
 /** Founder quote card with photo and signature. */
 export function FounderQuote() {
   return (
-    <figure className="to-card grid items-center gap-8 p-8 md:grid-cols-[auto_minmax(0,1fr)] md:gap-12 md:p-12">
-      <div className="relative h-40 w-40 overflow-hidden rounded-full md:h-48 md:w-48">
+    <figure className="to-card grid items-center gap-6 p-6 md:grid-cols-[auto_minmax(0,1fr)] md:gap-12 md:p-12">
+      <div className="relative h-28 w-28 overflow-hidden rounded-full md:h-48 md:w-48">
         <Image src="/images/ashton-madden-headshot-2026.jpg" alt="Ashton Madden, Founder & Director of TERREOAK Landscaping & Snow" fill sizes="200px" className="object-cover object-[50%_28%]" />
       </div>
       <div>
-        <blockquote className="to-display text-[1.5rem] leading-snug md:text-[1.9rem]">
+        <blockquote className="to-display text-[1.3rem] leading-snug md:text-[1.9rem]">
           “My goal with TERREOAK is simple: build a company rooted in strong values, a great team culture, and a customer experience people can trust.”
         </blockquote>
         <figcaption className="mt-6 flex items-center gap-6">

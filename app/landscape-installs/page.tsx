@@ -1,4 +1,5 @@
 import JsonLd from "../components/JsonLd";
+import ReadMore from "../components/ReadMore";
 import StickyCta from "../components/StickyCta";
 import { Band, BlogCta, Button, FounderQuote, PageHero, Tick } from "../components/ds";
 import { FaqBand, FormBand, GalleryBand, InstagramBand, ProjectCards, ReviewsBand, StepsBand, TrustPoints, serviceLd } from "../components/sections";
@@ -55,11 +56,13 @@ export default function LandscapeInstallsPage() {
           <p className="to-body">
             TERREOAK is a premier Calgary landscaping and design-build firm specializing in high-end, custom outdoor transformations. We partner with homeowners who value top-quality work, from engineered retaining walls and exposed aggregate concrete to custom pergolas and complex drainage solutions. We build luxury outdoor spaces designed to endure Alberta’s freeze-thaw cycles without cutting corners.
           </p>
-          <p className="to-body">
-            Our focus is on established homeowners upgrading aging yards and luxury property owners looking for a contractor capable of executing a great finish. We specialize in complete yard makeovers and beautiful custom landscapes. To ensure careful planning, every project begins with a dedicated on-site consultation followed by a paid, professional 3D design service, so you can visualize and perfect your exact space before a single shovel hits the ground.
-          </p>
+          <ReadMore>
+            <p className="to-body">
+              Our focus is on established homeowners upgrading aging yards and luxury property owners looking for a contractor capable of executing a great finish. We specialize in complete yard makeovers and beautiful custom landscapes. To ensure careful planning, every project begins with a dedicated on-site consultation followed by a paid, professional 3D design service, so you can visualize and perfect your exact space before a single shovel hits the ground.
+            </p>
+          </ReadMore>
         </div>
-        <div className="to-card mt-10 flex gap-4 p-7 md:p-8">
+        <div className="to-card mt-8 flex gap-4 p-5 md:mt-10 md:p-8">
           <Tick />
           <p className="text-[1.12rem] leading-relaxed text-fg">
             <strong className="font-bold">The TERREOAK standard:</strong> every custom landscape installation is backed by a comprehensive 1-year workmanship warranty. We use premium materials and refuse to compromise on quality.
@@ -121,11 +124,11 @@ export default function LandscapeInstallsPage() {
       <Band>
         <h2 className="to-display to-h2 max-w-[22ch]">How much does landscaping cost in Calgary?</h2>
         <p className="to-body mt-5">Landscaping project costs in Calgary vary widely based on scope, materials, and site conditions. As a general guide:</p>
-        <dl className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <dl className="mt-8 grid gap-3 sm:grid-cols-2 md:mt-12 md:gap-5 lg:grid-cols-4">
           {costs.map((cost) => (
-            <div key={cost.title} className="to-card p-8">
+            <div key={cost.title} className="to-card p-5 md:p-8">
               <dt className="text-[1.15rem] font-bold text-fg">{cost.title}</dt>
-              <dd className="to-display mt-4 text-[1.9rem] leading-tight text-accent">{cost.range}</dd>
+              <dd className="to-display mt-2 text-[1.7rem] leading-tight text-accent md:mt-4 md:text-[1.9rem]">{cost.range}</dd>
               <dd className="mt-3 text-[1.02rem] leading-relaxed text-muted">{cost.desc}</dd>
             </div>
           ))}

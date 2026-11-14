@@ -152,8 +152,8 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Snow falling from under the header. Decorative only. */}
-      {!open && (
+      {/* Snow falling from under the header, on the snow removal page only. Decorative. */}
+      {!open && pathname === "/residential-snow-removal" && (
         <div className="to-snowfall" aria-hidden="true">
           {flakes.map((flake, i) => (
             <span key={i} style={flake} />

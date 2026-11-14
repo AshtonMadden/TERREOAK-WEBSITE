@@ -38,8 +38,8 @@ const columns = [
 export default function Footer() {
   return (
     <footer className="to-pavement border-t border-rule !bg-[#1d1f21]">
-      <div className="mx-auto w-full max-w-[1280px] px-5 py-16 sm:px-8 md:py-20 lg:px-12">
-        <div className="grid gap-12 lg:grid-cols-[1.3fr_2fr]">
+      <div className="mx-auto w-full max-w-[1280px] px-5 py-10 sm:px-8 md:py-20 lg:px-12">
+        <div className="grid gap-9 md:gap-12 lg:grid-cols-[1.3fr_2fr]">
           <div>
             <Link href="/" className="to-focus inline-flex rounded-lg">
               <Image src="/brand/terreoak-logo-on-dark.png" alt="TERREOAK Landscaping & Snow" width={1200} height={367} sizes="300px" className="h-[84px] w-auto" />
@@ -86,7 +86,7 @@ export default function Footer() {
           </nav>
         </div>
 
-        <div className="mt-16 flex flex-col gap-8 border-t border-rule pt-8 md:flex-row md:items-center md:justify-between">
+        <div className="mt-9 flex flex-col gap-6 border-t border-rule pt-7 md:mt-16 md:flex-row md:items-center md:justify-between md:gap-8 md:pt-8">
           <Image src="/brand/terreoak-tagline-on-dark.png" alt="Where the sun meets soil." width={1200} height={259} sizes="260px" className="h-[56px] w-auto self-start" />
           <div className="flex flex-col gap-3 text-sm text-muted md:items-end">
             <p>

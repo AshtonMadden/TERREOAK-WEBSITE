@@ -9,6 +9,7 @@ import { breadcrumbLd, faqLd, pageMeta } from "../lib/seo";
 import { site } from "../lib/site";
 import { addOns, instagramPosts, jobberForm, offers, passes, referral, reviews, season, stats, steps, zones } from "./content";
 import { snowFaqs } from "./faqs";
+import ClampText from "../components/ClampText";
 import ReadMore from "../components/ReadMore";
 import StickyCta from "../components/StickyCta";
 import OfferPopup from "../components/OfferPopup";
@@ -74,7 +75,7 @@ function MeasuringStick({ totalCm, averageCm }: { totalCm: number; averageCm: nu
   return (
     <div className="flex items-stretch justify-center gap-3" role="img" aria-label={`Snow measuring stick showing ${totalCm} centimetres so far this season against a ${averageCm} centimetre average`}>
       {/* Average label, left of the stick */}
-      <div className="relative w-24">
+      <div className="relative w-24 max-md:hidden">
         <div className="absolute right-0 flex flex-col items-end" style={{ bottom: pct(averageCm), transform: "translateY(50%)" }}>
           <span className="text-[0.82rem] font-semibold uppercase tracking-[0.1em] text-accent">Average</span>
           <span className="text-[1.05rem] font-bold tabular-nums text-fg">{averageCm} cm</span>
@@ -92,7 +93,7 @@ function MeasuringStick({ totalCm, averageCm }: { totalCm: number; averageCm: nu
       </div>
 
       {/* Scale, right of the stick */}
-      <div className="relative w-16">
+      <div className="relative w-10 md:w-16">
         {ticks.map((cm) => {
           const major = cm % 50 === 0;
           return (
@@ -297,15 +298,15 @@ export default function ResidentialSnowRemovalPage() {
         <div className="mt-8 grid gap-5 md:mt-12 md:grid-cols-2">
           <article className="to-card p-6 md:p-10">
             <h3 className="to-display to-h3">First-service money-back guarantee</h3>
-            <p className="mt-4 text-[1.12rem] leading-relaxed text-muted">
-              Not happy after your first visit? We refund you in full, no questions, no fine print. We’re confident enough in our service to put that in writing because we’ve never had to use it.
-            </p>
+            <ClampText className="mt-3 text-[1.05rem] leading-relaxed text-muted md:mt-4 md:text-[1.12rem]">
+              {"Not happy after your first visit? We refund you in full, no questions, no fine print. We’re confident enough in our service to put that in writing because we’ve never had to use it."}
+            </ClampText>
           </article>
           <article className="to-card p-6 md:p-10">
             <h3 className="to-display to-h3">Once every 24 hours guarantee</h3>
-            <p className="mt-4 text-[1.12rem] leading-relaxed text-muted">
-              We guarantee to service your property once every 24 hours during continuous snowfall, and within 24 hours of the snowfall ending. If we miss that window for any reason, we send a crew back at no charge. On average, our team clears a full route in 12 hours. Calgary’s snow removal bylaw gives property owners 24 hours to clear sidewalks, we make sure you’re covered.
-            </p>
+            <ClampText className="mt-3 text-[1.05rem] leading-relaxed text-muted md:mt-4 md:text-[1.12rem]">
+              {"We guarantee to service your property once every 24 hours during continuous snowfall, and within 24 hours of the snowfall ending. If we miss that window for any reason, we send a crew back at no charge. On average, our team clears a full route in 12 hours. Calgary’s snow removal bylaw gives property owners 24 hours to clear sidewalks, we make sure you’re covered."}
+            </ClampText>
           </article>
         </div>
       </Band>
@@ -350,7 +351,7 @@ export default function ResidentialSnowRemovalPage() {
 
       {/* REFERRAL PROGRAM */}
       <Band id="referral">
-        <div className="to-card relative p-8 md:p-12">
+        <div className="to-card relative p-6 md:p-12">
           <div className="mb-8 flex justify-end md:absolute md:right-12 md:top-12 md:mb-0">
             <a href="#seasonal-form" className="to-focus rounded-lg transition-transform hover:scale-[1.04]" aria-label="Sign up for a Snow Pass to earn rewards">
               <Image src="/brand/snow-pass-rewards.png" alt="Snow Pass Rewards" width={488} height={96} className="h-11 w-auto md:h-14" />
@@ -403,32 +404,35 @@ export default function ResidentialSnowRemovalPage() {
 
       {/* SNOW TRACKER */}
       <Band>
-        <div className="to-card grid items-center gap-x-16 gap-y-10 p-8 md:p-12 lg:grid-cols-[auto_minmax(0,1fr)]">
-          <figure className="mx-auto">
-            <MeasuringStick totalCm={season.totalCm} averageCm={season.averageCm} />
-            <figcaption className="mt-8 text-center">
-              <span className="to-display block text-4xl tabular-nums text-fg">{season.totalCm} cm</span>
-              <span className="mt-1 block text-[1rem] text-muted">so far this season, {trackerPercent}% of the average</span>
-            </figcaption>
-          </figure>
-          <div>
-            <h2 className="to-display to-h2">{season.label} snow tracker</h2>
-            <p className="to-body mt-5">
-              We track every centimeter so you don’t have to. Our crews trigger at just 1cm of accumulation, ensuring your driveway is clear before the ice builds up.
-            </p>
-            <dl className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-4">
-              {[
-                { label: "Season average", value: `${season.averageCm} cm`, primary: false },
-                { label: "Current total", value: `${season.totalCm} cm`, primary: true },
-                { label: "Last snowfall", value: season.lastSnowfallCm > 0 ? `${season.lastSnowfallCm} cm` : "None yet", primary: false },
-                { label: "Visits to date", value: String(season.visits), primary: false },
-              ].map((item) => (
-                <div key={item.label} className={`rounded-[20px] px-5 py-5 ${item.primary ? "bg-brand text-brand-deep" : "bg-white/[0.05]"}`}>
-                  <dt className={`text-[0.95rem] ${item.primary ? "font-semibold text-brand-deep" : "text-muted"}`}>{item.label}</dt>
-                  <dd className={`to-display mt-1 text-[1.7rem] tabular-nums ${item.primary ? "text-brand-deep" : "text-fg"}`}>{item.value}</dd>
-                </div>
-              ))}
-            </dl>
+        <div className="to-card p-6 md:p-12">
+          <h2 className="to-display to-h2">{season.label} snow tracker</h2>
+          <p className="mt-3 text-[1.05rem] leading-relaxed text-muted md:hidden">We track every centimeter so you don’t have to.</p>
+          <div className="mt-6 grid grid-cols-[auto_minmax(0,1fr)] items-center gap-x-5 md:mt-10 md:gap-x-16">
+            <figure className="mx-auto">
+              <MeasuringStick totalCm={season.totalCm} averageCm={season.averageCm} />
+              <figcaption className="mt-6 text-center max-md:hidden md:mt-8">
+                <span className="to-display block text-4xl tabular-nums text-fg">{season.totalCm} cm</span>
+                <span className="mt-1 block text-[1rem] text-muted">so far this season, {trackerPercent}% of the average</span>
+              </figcaption>
+            </figure>
+            <div>
+              <p className="to-body max-md:hidden">
+                We track every centimeter so you don’t have to. Our crews trigger at just 1cm of accumulation, ensuring your driveway is clear before the ice builds up.
+              </p>
+              <dl className="grid gap-2.5 sm:grid-cols-2 md:mt-8 md:gap-4 lg:grid-cols-4">
+                {[
+                  { label: "Season average", value: `${season.averageCm} cm`, primary: false },
+                  { label: "Current total", value: `${season.totalCm} cm`, primary: true },
+                  { label: "Last snowfall", value: season.lastSnowfallCm > 0 ? `${season.lastSnowfallCm} cm` : "None yet", primary: false },
+                  { label: "Visits to date", value: String(season.visits), primary: false },
+                ].map((item) => (
+                  <div key={item.label} className={`rounded-[16px] px-4 py-2.5 md:rounded-[20px] md:px-5 md:py-5 ${item.primary ? "bg-brand text-brand-deep" : "bg-white/[0.05]"}`}>
+                    <dt className={`text-[0.85rem] md:text-[0.95rem] ${item.primary ? "font-semibold text-brand-deep" : "text-muted"}`}>{item.label}</dt>
+                    <dd className={`to-display text-[1.25rem] tabular-nums md:mt-1 md:text-[1.7rem] ${item.primary ? "text-brand-deep" : "text-fg"}`}>{item.value}</dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
           </div>
         </div>
       </Band>
@@ -442,9 +446,9 @@ export default function ResidentialSnowRemovalPage() {
             <p className="to-body mt-3">
               We strictly limit our service area to guarantee we can clear your property once every 24 hours. We focus exclusively on the deep south communities to ensure our crews are always nearby when a storm hits.
             </p>
-            <dl className="mt-8 grid gap-4">
+            <dl className="mt-6 grid gap-3 md:mt-8 md:gap-4">
               {zones.map((zone) => (
-                <div key={zone.name} className="to-card p-6">
+                <div key={zone.name} className="to-card p-5 md:p-6">
                   <dt className="text-[1.2rem] font-semibold text-fg">{zone.name}</dt>
                   <dd className="mt-2 text-[1.1rem] leading-relaxed text-muted">{zone.areas.join(", ")}</dd>
                 </div>

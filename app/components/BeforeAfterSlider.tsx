@@ -14,7 +14,7 @@ export default function BeforeAfterSlider({ beforeImage, afterImage, beforeAlt, 
   const [position, setPosition] = useState(50);
 
   return (
-    <div className="relative aspect-[4/5] w-full sm:aspect-[4/3] select-none overflow-hidden rounded-[36px] bg-[#1d1f21] shadow-[0_40px_80px_-40px_rgba(0,0,0,0.8)]">
+    <div className="relative aspect-[4/3] w-full select-none overflow-hidden rounded-[36px] bg-[#1d1f21] shadow-[0_40px_80px_-40px_rgba(0,0,0,0.8)]">
       <Image src={afterImage} alt={afterAlt} fill sizes="(min-width: 1024px) 600px, 100vw" className="object-cover" />
       <span className="absolute right-4 top-4 rounded-md bg-brand px-2.5 py-1 text-sm font-semibold text-[#005148]">After</span>
 

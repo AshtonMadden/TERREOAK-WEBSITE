@@ -320,7 +320,7 @@ export default function ResidentialSnowRemovalPage() {
               {[
                 { label: "Season average", value: `${season.averageCm} cm`, primary: false },
                 { label: "Current total", value: `${season.totalCm} cm`, primary: true },
-                { label: "Last snowfall", value: `${season.lastSnowfallCm} cm`, primary: false },
+                { label: "Last snowfall", value: season.lastSnowfallCm > 0 ? `${season.lastSnowfallCm} cm` : "None yet", primary: false },
                 { label: "Visits to date", value: String(season.visits), primary: false },
               ].map((item) => (
                 <div key={item.label} className={`rounded-[20px] px-5 py-5 ${item.primary ? "bg-brand text-brand-deep" : "bg-white/[0.05]"}`}>

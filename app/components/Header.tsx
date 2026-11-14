@@ -20,11 +20,12 @@ const flakes = Array.from({ length: 18 }, (_, i) => {
   const r = (n: number) => ((i * 9301 + n * 49297) % 233280) / 233280;
   return {
     left: `${Math.round((i / 18) * 100 + r(1) * 5)}%`,
-    width: `${Math.round(4 + r(2) * 5)}px`,
-    height: `${Math.round(4 + r(2) * 5)}px`,
+    width: `${Math.round(12 + r(2) * 12)}px`,
+    height: `${Math.round(12 + r(2) * 12)}px`,
     animationDuration: `${(7 + r(3) * 7).toFixed(1)}s`,
     animationDelay: `${(-r(4) * 14).toFixed(1)}s`,
     ["--drift" as string]: `${Math.round(-30 + r(5) * 60)}px`,
+    ["--spin" as string]: `${Math.round(-200 + r(6) * 400)}deg`,
   } as React.CSSProperties;
 });
 

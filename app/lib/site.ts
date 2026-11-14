@@ -13,6 +13,8 @@ export const site = {
   googleProfile:
     "https://www.google.com/maps/place/TERREOAK+Landscaping+%26+Snow/@50.954088,-114.417468,10z/data=!3m1!4b1!4m6!3m5!1s0x247081e09718a15f:0xc8ac035eb06955b0!8m2!3d50.9541194!4d-114.087835!16s%2Fg%2F11tj3r68zj",
   defaultOgImage: "/images/commercial.png",
+  // Jobber client portal, where existing clients find their referral link.
+  clientPortalUrl: "https://clienthub.getjobber.com/client_hubs/41b3399e-3795-43d8-afe2-e6c38c1b3e6e/",
   // Opens Google's source preferences with TERREOAK pre-searched, so a visitor can add it as a preferred source.
   preferredSourceUrl: "https://www.google.com/preferences/source?q=terreoak.ca",
 } as const;

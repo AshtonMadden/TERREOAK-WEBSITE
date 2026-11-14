@@ -236,6 +236,7 @@ export default function ResidentialSnowRemovalPage() {
                   </li>
                 ))}
               </ul>
+              <p className="mt-6 text-[1.08rem] leading-relaxed text-muted">Already a client? Your personal link is in your Jobber client portal.</p>
             </div>
             <dl className="grid grid-cols-3 gap-4 text-center">
               {referral.highlights.map((item) => (
@@ -260,7 +261,7 @@ export default function ResidentialSnowRemovalPage() {
               </ul>
             </div>
             <div className="flex flex-col gap-3 sm:flex-row lg:justify-end">
-              <Button href={`mailto:${site.email}?subject=Snowball%20referral%20link`}>Ask for your link</Button>
+              <Button href={site.clientPortalUrl}>Open your client portal</Button>
               <Button href={site.phoneHref} variant="quiet">
                 Call {site.phoneDisplay}
               </Button>

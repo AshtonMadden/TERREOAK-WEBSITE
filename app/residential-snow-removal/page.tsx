@@ -10,6 +10,7 @@ import { site } from "../lib/site";
 import { addOns, instagramPosts, jobberForm, offers, passes, referral, reviews, season, stats, steps, zones } from "./content";
 import { snowFaqs } from "./faqs";
 import StickyCta from "../components/StickyCta";
+import OfferPopup from "./OfferPopup";
 import { RouteCheck } from "./SnowClient";
 
 const path = "/residential-snow-removal";
@@ -473,6 +474,7 @@ export default function ResidentialSnowRemovalPage() {
       </BlogCta>
 
       <StickyCta targetId="seasonal-form" label="Reserve a season pass" />
+      <OfferPopup />
     </main>
   );
 }

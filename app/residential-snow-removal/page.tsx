@@ -64,7 +64,7 @@ const offerIcons: React.ReactNode[] = [
 ];
 
 const Stars = () => (
-  <span className="flex gap-0.5 text-brand" aria-label="5 out of 5 stars" role="img">
+  <span className="flex gap-0.5 text-olive" aria-label="5 out of 5 stars" role="img">
     {[0, 1, 2, 3, 4].map((i) => (
       <svg key={i} className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
         <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
@@ -199,7 +199,7 @@ export default function ResidentialSnowRemovalPage() {
           {passes.map((pass, i) => (
             <article key={pass.name} className={`to-card flex flex-col p-8 md:p-10 ${i === 0 ? "ring-1 ring-brand/45" : ""}`}>
               <h3 className="to-display to-h3">{pass.name}</h3>
-              <p className="mt-1 text-[1.1rem] font-medium text-accent">{pass.term}</p>
+              <p className="to-sub mt-2">{pass.term}</p>
               <p className="mt-5 text-[1.12rem] leading-relaxed text-muted">{pass.summary}</p>
               <ul className={`mt-6 grid gap-3 text-[1.1rem] text-fg ${i === 0 ? "sm:grid-cols-2" : ""}`}>
                 {pass.includes.map((item) => (
@@ -275,7 +275,7 @@ export default function ResidentialSnowRemovalPage() {
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
           <div>
             <h2 className="to-display to-h2">Our Calgary service zones</h2>
-            <p className="mt-6 text-[1.25rem] font-semibold text-fg">High-density routes for maximum reliability.</p>
+            <p className="to-sub mt-6">High-density routes for maximum reliability.</p>
             <p className="to-body mt-3">
               We strictly limit our service area to guarantee we can clear your property once every 24 hours. We focus exclusively on the deep south communities to ensure our crews are always nearby when a storm hits.
             </p>
@@ -304,8 +304,8 @@ export default function ResidentialSnowRemovalPage() {
               className="object-cover brightness-[0.5] contrast-125 grayscale invert-[0.92]"
             />
             <svg viewBox="0 0 100 100" className="absolute inset-0 h-full w-full" aria-hidden="true">
-              <path d="M 50,55 L 12,55 Q 5,75 15,85 Q 25,92 50,92 Z" fill="#01fa6d" fillOpacity="0.3" stroke="#01fa6d" strokeWidth="0.6" />
-              <path d="M 50,55 L 88,55 Q 95,75 85,85 Q 75,92 50,92 Z" fill="#01fa6d" fillOpacity="0.3" stroke="#01fa6d" strokeWidth="0.6" />
+              <path d="M 50,55 L 12,55 Q 5,75 15,85 Q 25,92 50,92 Z" fill="#019587" fillOpacity="0.45" stroke="#ccea8d" strokeWidth="0.6" />
+              <path d="M 50,55 L 88,55 Q 95,75 85,85 Q 75,92 50,92 Z" fill="#019587" fillOpacity="0.45" stroke="#ccea8d" strokeWidth="0.6" />
               <g fontSize="3.6" fontWeight="600" textAnchor="middle" fill="#ffffff">
                 <text x="31" y="74">SW Calgary</text>
                 <text x="69" y="74">SE Calgary</text>
@@ -381,7 +381,7 @@ export default function ResidentialSnowRemovalPage() {
           <div>
             <h2 className="to-display to-h2">Sign up for your season pass</h2>
             <p className="to-body mt-6">Tell us about your property and we’ll get back to you the same day.</p>
-            <div className="mt-8 rounded-[24px] bg-[#017a6d]/10 p-6">
+            <div className="mt-8 rounded-[24px] bg-[#019587]/12 p-6">
               <h3 className="text-[1.2rem] font-semibold text-fg">Important service expectation</h3>
               <p className="mt-2 text-[1.08rem] leading-relaxed text-muted">
                 Our crews strictly operate on a route-based system. We only come <strong className="font-semibold text-fg">once every 24 hours</strong> to service your property during a snowfall event. This guarantees consistent, reliable service for every client on our route.

@@ -68,7 +68,7 @@ export default function JobberLeadForm({
         <div className="w-full relative transition-all">
             {isLoading && (
                 <div className="absolute inset-0 flex flex-col items-center justify-center bg-white/50 z-50">
-                    <div className="w-12 h-12 border-4 border-[#01fa6d]/20 border-t-[#01fa6d] rounded-full animate-spin"></div>
+                    <div className="w-12 h-12 border-4 border-[#019587]/20 border-t-[#019587] rounded-full animate-spin"></div>
                 </div>
             )}
 
@@ -82,11 +82,11 @@ export default function JobberLeadForm({
             {/* Fallback contact line */}
             <p className="mt-6 border-t border-black/10 pt-5 text-[1.05rem] text-[#50565b]">
                 Form not loading? Email{" "}
-                <a href="mailto:services@terreoak.ca" className="font-semibold text-[#017a6d] underline underline-offset-4">
+                <a href="mailto:services@terreoak.ca" className="font-semibold text-[#005148] underline underline-offset-4">
                     services@terreoak.ca
                 </a>{" "}
                 or call{" "}
-                <a href="tel:+15877077648" className="font-semibold text-[#017a6d] underline underline-offset-4">
+                <a href="tel:+15877077648" className="font-semibold text-[#005148] underline underline-offset-4">
                     587-707-7648
                 </a>
                 .

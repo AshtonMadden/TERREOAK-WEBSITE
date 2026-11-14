@@ -25,8 +25,11 @@ html {
   --color-raised: var(--to-raised);
   --color-pavement: #26282b;
   --color-snow: #f3f5f4;
-  --color-brand: #01fa6d;
-  --color-brand-deep: #017a6d;
+  /* Brand palette from the TERREOAK guidelines */
+  --color-brand: #ccea8d;
+  --color-brand-deep: #005148;
+  --color-teal: #019587;
+  --color-olive: #a6bc09;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -46,8 +49,8 @@ body {
   /* Variable name kept from the old Montserrat setup so existing styles keep working */
   --font-montserrat: "Plus Jakarta Sans Variable", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   --font-lora: "Lora Variable", Georgia, serif;
-  --font-bricolage: "Bricolage Grotesque Variable";
-  --font-geist: "Geist Variable";
+  /* Brand typefaces from the TERREOAK guidelines */
+  --font-brand: "Montserrat Variable", system-ui, sans-serif;
 }
 
 body {
@@ -181,8 +184,9 @@ body {
 
 /* ------------------------------------------------------------------ */
 /* TERREOAK design system                                              */
-/* Pavement (dark gray) and snow (white) are the two surfaces; picket  */
-/* green is reserved for actions and the driveway marker.              */
+/* Dark gray is the main surface, white the secondary one. Colours and */
+/* fonts follow the brand guidelines: #005148 #019587 #A6BC09 #CCEA8D,  */
+/* Montserrat for headings and text, Lora for sub-headings.            */
 /* ------------------------------------------------------------------ */
 
 html {
@@ -191,7 +195,7 @@ html {
 
 .to-pavement,
 .to-snow {
-  font-family: var(--font-geist), system-ui, sans-serif;
+  font-family: var(--font-brand);
   background: var(--to-bg);
   color: var(--to-fg);
 }
@@ -202,7 +206,7 @@ html {
   --to-fg: #ffffff;
   --to-muted: #bcc2c7;
   --to-rule: rgb(255 255 255 / 0.14);
-  --to-accent: #01fa6d;
+  --to-accent: #ccea8d;
   --to-field: #1d1f21;
 }
 
@@ -212,14 +216,14 @@ html {
   --to-fg: #1d1f21;
   --to-muted: #50565b;
   --to-rule: rgb(29 31 33 / 0.16);
-  --to-accent: #017a6d;
+  --to-accent: #005148;
   --to-field: #ffffff;
 }
 
 .to-pavement ::selection,
 .to-snow ::selection {
-  background: #01fa6d;
-  color: #10231a;
+  background: #ccea8d;
+  color: #005148;
 }
 
 .to-pavement [id],
@@ -230,32 +234,40 @@ html {
 }
 
 .to-display {
-  font-family: var(--font-bricolage), var(--font-geist), system-ui, sans-serif;
-  font-stretch: 84%;
+  font-family: var(--font-brand);
   font-weight: 700;
   letter-spacing: -0.025em;
-  font-variant-ligatures: no-common-ligatures;
   text-wrap: balance;
 }
 
 .to-h1 {
-  font-size: clamp(2.9rem, 6.6vw, 6rem);
-  line-height: 0.98;
+  font-size: clamp(2.5rem, 5.4vw, 4.9rem);
+  line-height: 1.04;
 }
 
 .to-h2 {
-  font-size: clamp(2.2rem, 4.4vw, 3.6rem);
-  line-height: 1.02;
+  font-size: clamp(2rem, 3.7vw, 3.1rem);
+  line-height: 1.08;
 }
 
 .to-h3 {
-  font-size: clamp(1.45rem, 2vw, 1.8rem);
-  line-height: 1.12;
+  font-size: clamp(1.35rem, 1.8vw, 1.6rem);
+  line-height: 1.18;
+}
+
+/* Sub-heading style from the guidelines: Lora, spaced capitals */
+.to-sub {
+  font-family: var(--font-lora);
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--to-accent);
 }
 
 .to-body {
-  font-size: 1.2rem;
-  line-height: 1.6;
+  font-size: 1.15rem;
+  line-height: 1.65;
   color: var(--to-muted);
   max-width: 62ch;
   text-wrap: pretty;
@@ -276,16 +288,16 @@ html {
 }
 
 .to-btn-primary {
-  background: #01fa6d;
-  color: #10231a;
+  background: #ccea8d;
+  color: #005148;
 }
 
 .to-btn-primary:hover {
-  background: #5dffa3;
+  background: #ffffff;
 }
 
 .to-btn-primary:active {
-  background: #00d95d;
+  background: #a6bc09;
 }
 
 .to-btn-quiet {
@@ -319,7 +331,7 @@ html {
 .to-focus:focus-visible,
 .to-link:focus-visible,
 .to-field:focus-visible {
-  outline: 2px solid var(--to-accent, #01fa6d);
+  outline: 2px solid var(--to-accent, #ccea8d);
   outline-offset: 3px;
 }
 
@@ -362,8 +374,8 @@ html {
   align-items: center;
   justify-content: center;
   border-radius: 999px;
-  background: rgb(1 250 109 / 0.12);
-  color: #01fa6d;
+  background: #005148;
+  color: #ccea8d;
 }
 
 /* The one authored motion on the page: the hero photo is revealed like a plow pass. */

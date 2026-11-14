@@ -378,7 +378,7 @@ export default function ResidentialSnowRemovalPage() {
           <article className="to-card p-8 md:p-10">
             <h3 className="to-display to-h3">Once every 24 hours guarantee</h3>
             <p className="mt-4 text-[1.12rem] leading-relaxed text-muted">
-              We guarantee to service your property once every 24 hours during continuous snowfall, and within 24 hours of the snowfall ending. If we miss that window for any reason, we send a crew back at no charge. Calgary’s snow removal bylaw gives property owners 24 hours to clear sidewalks, we make sure you’re covered.
+              We guarantee to service your property once every 24 hours during continuous snowfall, and within 24 hours of the snowfall ending. If we miss that window for any reason, we send a crew back at no charge. On average, our team clears a full route in 12 hours. Calgary’s snow removal bylaw gives property owners 24 hours to clear sidewalks, we make sure you’re covered.
             </p>
           </article>
         </div>

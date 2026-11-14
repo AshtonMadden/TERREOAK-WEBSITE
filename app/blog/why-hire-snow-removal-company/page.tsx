@@ -13,7 +13,7 @@ const takeaways = [
   "If someone slips on your icy sidewalk, you can be held legally liable. Time-stamped photo logs give you a record of every clearing.",
   "Shovelling wet, heavy snow is a leading cause of winter back injuries, muscle strains and cardiovascular emergencies.",
   "Untouched snow signals an empty house. A maintained driveway keeps your home looking lived in while you travel.",
-  "TERREOAK runs route-based season passes in South Calgary and does not take one-off calls during storms.",
+  "TERREOAK runs route-based season passes in South Calgary, clears a full route in 12 hours on average, and does not take one-off calls during storms.",
 ];
 
 const sections: ArticleSection[] = [
@@ -77,7 +77,7 @@ const sections: ArticleSection[] = [
         </p>
         <h3>Once every 24 hours guarantee</h3>
         <p>
-          We guarantee to service your property once every 24 hours during continuous snowfall, and within 24 hours of the snowfall ending. If we miss that window for any reason, we send a crew back at no charge. We take our service times very seriously.
+          We guarantee to service your property once every 24 hours during continuous snowfall, and within 24 hours of the snowfall ending. If we miss that window for any reason, we send a crew back at no charge. On average, our team clears a full route in 12 hours. We take our service times very seriously.
         </p>
         <h3>Email updates and photo logs</h3>
         <p>

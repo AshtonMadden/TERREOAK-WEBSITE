@@ -46,15 +46,17 @@ export default function Header() {
   };
 
   // The header button goes to the form that matches the page you are on.
-  const cta = pathname.startsWith("/residential-snow-removal")
-    ? { label: "Reserve a season pass", href: "#seasonal-form" }
-    : pathname.startsWith("/commercial-grounds-maintenance")
-      ? { label: "Request a proposal", href: "#commercial-form" }
-      : pathname.startsWith("/spring-cleanup-calgary")
-        ? { label: "Get a free quote", href: "#spring-cleanup-form" }
-        : pathname.startsWith("/hardscaping")
-          ? { label: "Request a proposal", href: "#hardscape-form" }
-          : { label: "Request an estimate", href: "/#home-form" };
+  const pageCtas: Record<string, { label: string; href: string }> = {
+    "/residential-snow-removal": { label: "Reserve a season pass", href: "#seasonal-form" },
+    "/commercial-grounds-maintenance": { label: "Request a proposal", href: "#commercial-form" },
+    "/spring-cleanup-calgary": { label: "Get a free quote", href: "#spring-cleanup-form" },
+    "/fall-cleanup": { label: "Book fall cleanup", href: "https://clienthub.getjobber.com/booking/6ba7fcc7-4c40-4f17-9235-428046e21db6" },
+    "/irrigation-blowouts": { label: "Book a blowout", href: "#blowout-form" },
+    "/hardscaping": { label: "Request a proposal", href: "#hardscape-form" },
+    "/softscapes": { label: "Request a proposal", href: "#softscape-form" },
+    "/landscape-installs": { label: "Request a proposal", href: "#landscape-form" },
+  };
+  const cta = pageCtas[pathname] ?? { label: "Request an estimate", href: "/#home-form" };
 
   const isActive = (href?: string, items?: { href: string }[]) =>
     href ? pathname === href : !!items?.some((i) => pathname === i.href);

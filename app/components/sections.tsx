@@ -2,9 +2,11 @@ import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { site } from "../lib/site";
+import { CountUp } from "./HeroMedia";
 import InstagramEmbed from "./InstagramEmbed";
 import JobberLeadForm from "./JobberLeadForm";
-import { Band, GoogleMark, Stars } from "./ds";
+import { breadcrumbLd, faqLd } from "../lib/seo";
+import { Band, FaqList, GoogleMark, Stars, Tick } from "./ds";
 
 /* Whole page sections shared by the service pages. */
 
@@ -124,5 +126,216 @@ export function FormBand({
         </div>
       </div>
     </Band>
+  );
+}
+
+export const trustPoints = ["8 years of experience", "Licensed & insured", "Professionally trained team"];
+
+/** The three trust points as a ticked row, used under hero buttons. */
+export function TrustPoints() {
+  return (
+    <ul className="flex flex-col gap-x-10 gap-y-3 text-[1.1rem] font-medium text-fg sm:flex-row">
+      {trustPoints.map((point) => (
+        <li key={point} className="flex items-start gap-3">
+          <Tick />
+          {point}
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+/** Numbered process cards. */
+export function StepsBand({ id, title, steps, children }: { id?: string; title: string; steps: { title: string; desc: string }[]; children?: ReactNode }) {
+  const cols = steps.length === 6 ? "md:grid-cols-2 lg:grid-cols-3" : steps.length >= 5 ? "sm:grid-cols-2 lg:grid-cols-5" : steps.length === 4 ? "sm:grid-cols-2 lg:grid-cols-4" : "md:grid-cols-3";
+  return (
+    <Band id={id}>
+      <h2 className="to-display to-h2">{title}</h2>
+      <ol className={`mt-12 grid gap-5 ${cols}`}>
+        {steps.map((step, i) => (
+          <li key={step.title} className="to-card to-card-lift p-8">
+            <span className="to-icon to-display text-2xl">{i + 1}</span>
+            <h3 className="to-display to-h3 mt-6">{step.title}</h3>
+            <p className="mt-3 text-[1.05rem] leading-relaxed text-muted">{step.desc}</p>
+          </li>
+        ))}
+      </ol>
+      {children && <div className="mt-8">{children}</div>}
+    </Band>
+  );
+}
+
+/** Grid of titled text cards. */
+export function CardsBand({
+  id,
+  title,
+  lead,
+  cards,
+  columns = 3,
+  children,
+}: {
+  id?: string;
+  title: string;
+  lead?: ReactNode;
+  cards: { title: string; desc: string }[];
+  columns?: 2 | 3;
+  children?: ReactNode;
+}) {
+  return (
+    <Band id={id}>
+      <h2 className="to-display to-h2">{title}</h2>
+      {lead && <p className="to-body mt-5">{lead}</p>}
+      <div className={`mt-12 grid gap-5 md:grid-cols-2 ${columns === 3 ? "lg:grid-cols-3" : ""}`}>
+        {cards.map((card) => (
+          <article key={card.title} className="to-card to-card-lift p-8">
+            <h3 className="to-display to-h3">{card.title}</h3>
+            <p className="mt-4 text-[1.05rem] leading-relaxed text-muted">{card.desc}</p>
+          </article>
+        ))}
+      </div>
+      {children && <div className="mt-8">{children}</div>}
+    </Band>
+  );
+}
+
+/** Text beside a rounded photo. */
+export function SplitBand({
+  id,
+  title,
+  sub,
+  image,
+  imageAlt,
+  imageSide = "right",
+  aspect = "aspect-[4/3]",
+  contain = false,
+  children,
+}: {
+  id?: string;
+  title: string;
+  sub?: string;
+  image: string;
+  imageAlt: string;
+  imageSide?: "left" | "right";
+  aspect?: string;
+  contain?: boolean;
+  children: ReactNode;
+}) {
+  return (
+    <Band id={id}>
+      <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
+        <div className={imageSide === "left" ? "lg:order-2" : ""}>
+          <h2 className="to-display to-h2">{title}</h2>
+          {sub && <p className="to-sub mt-4">{sub}</p>}
+          <div className="mt-7 grid gap-5">{children}</div>
+        </div>
+        <div className={`relative ${aspect} overflow-hidden rounded-[36px] shadow-[0_40px_80px_-40px_rgba(0,0,0,0.8)] ${contain ? "bg-white" : ""}`}>
+          <Image src={image} alt={imageAlt} fill sizes="(min-width: 1280px) 600px, 100vw" className={contain ? "object-contain" : "object-cover"} />
+        </div>
+      </div>
+    </Band>
+  );
+}
+
+/** "Meet the team" section used on the landscaping pages. */
+export function TeamBand() {
+  return (
+    <SplitBand title="Meet the team" sub="Locally owned & operated" image="/images/about-mission-team.jpg" imageAlt="The TERREOAK landscaping team" imageSide="left">
+      <p className="to-body">
+        At TERREOAK, we believe great work starts with a strong work ethic, attention to detail, and a commitment to doing things the right way, every time.
+      </p>
+      <p className="to-body">
+        From building premium landscapes to maintaining properties year-round, our goal is to create results our customers can rely on season after season. We aren’t just here to complete jobs; we’re here to build lasting relationships, improve the properties we work on, and continue growing a local Calgary company you can trust.
+      </p>
+      <p className="text-[1.1rem] font-semibold text-fg">Ashton Madden, Founder & Director</p>
+    </SplitBand>
+  );
+}
+
+/** FAQ section with the heading beside the list. */
+export function FaqBand({ title = "FAQs", faqs }: { title?: string; faqs: { q: string; a: string }[] }) {
+  return (
+    <Band>
+      <div className="grid gap-x-20 gap-y-10 lg:grid-cols-[minmax(0,4fr)_minmax(0,8fr)]">
+        <h2 className="to-display to-h2">{title}</h2>
+        <FaqList faqs={faqs} />
+      </div>
+    </Band>
+  );
+}
+
+/** Sideways-scrolling photo gallery. */
+export function GalleryBand({ title, images, children }: { title: string; images: { src: string; alt: string }[]; children?: ReactNode }) {
+  return (
+    <Band>
+      <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+        <h2 className="to-display to-h2">{title}</h2>
+        {children}
+      </div>
+      <div
+        className="-mx-5 mt-12 flex snap-x snap-mandatory gap-5 overflow-x-auto px-5 pb-4 [scrollbar-width:none] sm:-mx-8 sm:px-8 lg:-mx-12 lg:px-12"
+        tabIndex={0}
+        role="region"
+        aria-label={title}
+      >
+        {images.map((img) => (
+          <div key={img.src} className="relative aspect-[4/5] w-[72%] flex-none snap-start overflow-hidden rounded-[28px] sm:w-[320px]">
+            <Image src={img.src} alt={img.alt} fill sizes="320px" className="object-cover" />
+          </div>
+        ))}
+      </div>
+    </Band>
+  );
+}
+
+/** Standard structured data for a service page. */
+export function serviceLd({
+  path,
+  name,
+  serviceType,
+  description,
+  areas = ["Calgary"],
+  crumbs,
+  faqs,
+}: {
+  path: string;
+  name: string;
+  serviceType: string;
+  description: string;
+  areas?: string[];
+  crumbs: { name: string; path: string }[];
+  faqs?: { q: string; a: string }[];
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        "@id": `${site.url}${path}#service`,
+        name,
+        serviceType,
+        description,
+        url: `${site.url}${path}`,
+        provider: { "@id": `${site.url}/#localbusiness` },
+        areaServed: areas.map((area) => ({ "@type": "City", name: area })),
+      },
+      { "@id": `${site.url}${path}#breadcrumb`, ...breadcrumbLd([{ name: "Home", path: "/" }, ...crumbs]) },
+      ...(faqs?.length ? [{ "@id": `${site.url}${path}#faq`, ...faqLd(faqs) }] : []),
+    ],
+  };
+}
+
+/** Count-up stats row for the bottom of a hero. */
+export function HeroStats({ stats }: { stats: { end: number; suffix?: string; label: string }[] }) {
+  return (
+    <dl className="grid grid-cols-3 gap-6 md:max-w-3xl">
+      {stats.map((stat) => (
+        <div key={stat.label}>
+          <dd className="to-display text-5xl md:text-6xl">
+            <CountUp end={stat.end} suffix={stat.suffix} />
+          </dd>
+          <dt className="mt-2 text-[1.02rem] text-muted">{stat.label}</dt>
+        </div>
+      ))}
+    </dl>
   );
 }

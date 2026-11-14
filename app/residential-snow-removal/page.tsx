@@ -57,7 +57,7 @@ function Snowflake({ className, style }: { className?: string; style?: React.CSS
     <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="3.4" strokeLinecap="round" strokeLinejoin="round" className={className} style={style} aria-hidden="true">
       {[0, 60, 120, 180, 240, 300].map((angle) => (
         <g key={angle} transform={`rotate(${angle} 50 50)`}>
-          <path d="M50 50V4M50 15l-8-8M50 15l8-8M50 26l-6-6M50 26l6-6" />
+          <path d="M50 50V3M50 13l-8-7M50 13l8-7M50 23l-7-6M50 23l7-6" />
         </g>
       ))}
     </svg>
@@ -301,12 +301,12 @@ export default function ResidentialSnowRemovalPage() {
       <Band>
         <div className="to-card grid items-center gap-x-16 gap-y-10 p-8 md:p-12 lg:grid-cols-[auto_minmax(0,1fr)]">
           <figure className="mx-auto">
-            <div className="relative h-60 w-60 md:h-72 md:w-72">
+            <div className="relative h-64 w-64 md:h-80 md:w-80">
               <Snowflake className="absolute inset-0 h-full w-full text-white/15" />
               <Snowflake className="to-flake-fill absolute inset-0 h-full w-full text-brand" style={{ clipPath: `inset(${100 - trackerFill}% 0 0 0)` }} />
-              <div className="absolute left-1/2 top-1/2 flex h-[46%] w-[46%] -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center rounded-full bg-[#2f3236]">
-                <span className="to-display text-[2.6rem] leading-none tabular-nums text-fg md:text-5xl">{season.totalCm}</span>
-                <span className="mt-1.5 text-[0.8rem] font-semibold uppercase tracking-[0.14em] text-accent">cm total</span>
+              <div className="absolute left-1/2 top-1/2 flex h-[38%] w-[38%] -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center rounded-full bg-[#2f3236]">
+                <span className="to-display text-[2.1rem] leading-none tabular-nums text-fg md:text-[2.5rem]">{season.totalCm}</span>
+                <span className="mt-1 text-[0.72rem] font-semibold uppercase tracking-[0.12em] text-accent">cm total</span>
               </div>
             </div>
             <figcaption className="mt-4 text-center text-[1rem] text-muted">{trackerPercent}% of the season average</figcaption>

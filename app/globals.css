@@ -378,28 +378,55 @@ html {
   color: #ccea8d;
 }
 
-/* The one authored motion on the page: the hero photo is revealed like a plow pass. */
-@keyframes to-plow {
+/* Reveal on scroll. The classes are only added by ScrollReveal after load, so content is
+   visible by default and stays visible without JavaScript. Opacity and position only. */
+.to-reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.to-reveal.is-in {
+  opacity: 1;
+  transform: none;
+}
+
+/* Cards inside a revealed section follow one after another */
+@keyframes to-rise {
   from {
-    clip-path: inset(0 100% 0 0);
-  }
-
-  to {
-    clip-path: inset(0 0 0 0);
+    opacity: 0;
+    translate: 0 14px;
   }
 }
 
-.to-plow {
-  animation: to-plow 1.1s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both;
+.to-reveal:not(.is-in) .to-card {
+  opacity: 0;
 }
+
+.to-reveal.is-in .to-card {
+  animation: to-rise 0.6s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+}
+
+.to-reveal.is-in .to-card:nth-child(2) { animation-delay: 80ms; }
+.to-reveal.is-in .to-card:nth-child(3) { animation-delay: 160ms; }
+.to-reveal.is-in .to-card:nth-child(4) { animation-delay: 240ms; }
+.to-reveal.is-in .to-card:nth-child(5) { animation-delay: 320ms; }
+.to-reveal.is-in .to-card:nth-child(6) { animation-delay: 400ms; }
 
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
   }
 
-  .to-plow {
-    animation: none;
+  .to-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .to-reveal .to-card {
+    opacity: 1 !important;
+    animation: none !important;
   }
 
   .to-card {

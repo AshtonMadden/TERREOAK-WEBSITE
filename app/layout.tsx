@@ -8,6 +8,7 @@ import type { Metadata, Viewport } from "next";
 import { pageMeta } from "./lib/seo";
 import { site } from "./lib/site";
 import JsonLd from "./components/JsonLd";
+import ScrollReveal from "./components/ScrollReveal";
 
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -127,6 +128,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         />
         <Script id="google-analytics" src="/analytics.js" strategy="afterInteractive" />
         <JsonLd data={jsonLd} />
+        <ScrollReveal />
         <Header />
         {children}
         <Footer />

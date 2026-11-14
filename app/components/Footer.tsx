@@ -20,7 +20,7 @@ const columns = [
       { label: "Spring cleanup", href: "/spring-cleanup-calgary" },
       { label: "Fall cleanup", href: "/fall-cleanup" },
       { label: "Irrigation blowouts", href: "/irrigation-blowouts" },
-      { label: "Snowball referral program", href: "/snow-referral" },
+      { label: "Snowball referral program", href: "/residential-snow-removal#referral" },
     ],
   },
   {

@@ -24,7 +24,6 @@ const routes: { path: string; priority: number; changeFrequency: "weekly" | "mon
   { path: "/blog/why-hire-snow-removal-company", priority: 0.6, changeFrequency: "yearly" },
   { path: "/blog/why-calgary-spring-cleanup-matters", priority: 0.6, changeFrequency: "yearly" },
   { path: "/blog/why-open-grade-base-for-paver-patios", priority: 0.6, changeFrequency: "yearly" },
-  { path: "/snow-referral", priority: 0.5, changeFrequency: "yearly" },
   { path: "/careers", priority: 0.5, changeFrequency: "monthly" },
   { path: "/shop", priority: 0.4, changeFrequency: "monthly" },
   { path: "/privacy", priority: 0.2, changeFrequency: "yearly" },

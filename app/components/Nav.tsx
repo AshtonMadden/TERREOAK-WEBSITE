@@ -11,7 +11,7 @@ const links = [
   { href: "/irrigation-blowouts", label: "Irrigation Blowouts" },
   { href: "/spring-cleanup-calgary", label: "Spring Clean Up" },
   { href: "/fall-cleanup", label: "Fall Clean Up" },
-  { href: "/snow-referral", label: "Snow Referral" },
+  { href: "/residential-snow-removal#referral", label: "Snow Referral" },
   { href: "/support", label: "Support" },
 
 ];

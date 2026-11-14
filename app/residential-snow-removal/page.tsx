@@ -7,7 +7,7 @@ import { Band, Button, Container, FaqList, GoogleMark, Stars, Tick } from "../co
 import { CountUp, HeroVideo } from "../components/HeroMedia";
 import { breadcrumbLd, faqLd, pageMeta } from "../lib/seo";
 import { site } from "../lib/site";
-import { addOns, instagramPosts, jobberForm, offers, passes, reviews, season, stats, steps, zones } from "./content";
+import { addOns, instagramPosts, jobberForm, offers, passes, referral, reviews, season, stats, steps, zones } from "./content";
 import { snowFaqs } from "./faqs";
 import { RouteCheck, StickyCta } from "./SnowClient";
 
@@ -223,31 +223,49 @@ export default function ResidentialSnowRemovalPage() {
       </Band>
 
       {/* REFERRAL PROGRAM */}
-      <Band>
-        <div className="to-card grid gap-x-16 gap-y-10 p-8 md:p-12 lg:grid-cols-[minmax(0,6fr)_minmax(0,5fr)] lg:items-center">
-          <div>
-            <h2 className="to-display to-h2">Snowball referral program</h2>
-            <p className="to-body mt-5">Refer a new customer and you both get $25 off. Refer up to 6 people to cover your entire season.</p>
-            <p className="to-body mt-4">Contact us for your referral code.</p>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Button href={site.phoneHref}>Call {site.phoneDisplay}</Button>
-              <Button href={`mailto:${site.email}?subject=Snowball%20referral%20code`} variant="quiet">
-                Email for your code
+      <Band id="referral">
+        <div className="to-card p-8 md:p-12">
+          <div className="grid gap-x-16 gap-y-10 lg:grid-cols-[minmax(0,6fr)_minmax(0,5fr)] lg:items-center">
+            <div>
+              <h2 className="to-display to-h2">Snowball referral program</h2>
+              <ul className="mt-7 grid gap-3 text-[1.15rem] text-fg">
+                {referral.steps.map((step) => (
+                  <li key={step} className="flex gap-3">
+                    <Tick />
+                    {step}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <dl className="grid grid-cols-3 gap-4 text-center">
+              {referral.highlights.map((item) => (
+                <div key={item.label} className="rounded-[24px] bg-white/[0.05] px-3 py-7">
+                  <dd className="to-display text-4xl text-accent md:text-5xl">{item.value}</dd>
+                  <dt className="mt-2 text-[1rem] leading-snug text-muted">{item.label}</dt>
+                </div>
+              ))}
+            </dl>
+          </div>
+
+          <div className="mt-10 grid gap-x-16 gap-y-8 border-t border-rule pt-8 lg:grid-cols-[minmax(0,6fr)_minmax(0,5fr)] lg:items-end">
+            <div>
+              <h3 className="text-[1.2rem] font-semibold text-fg">A few simple conditions</h3>
+              <ul className="mt-4 grid gap-2 text-[1.08rem] leading-relaxed text-muted">
+                {referral.conditions.map((condition) => (
+                  <li key={condition} className="flex gap-3">
+                    <span className="mt-[0.7em] h-1.5 w-1.5 shrink-0 rounded-full bg-muted" aria-hidden="true" />
+                    {condition}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="flex flex-col gap-3 sm:flex-row lg:justify-end">
+              <Button href={`mailto:${site.email}?subject=Snowball%20referral%20link`}>Ask for your link</Button>
+              <Button href={site.phoneHref} variant="quiet">
+                Call {site.phoneDisplay}
               </Button>
             </div>
           </div>
-          <dl className="grid grid-cols-3 gap-4 text-center">
-            {[
-              { value: "$25", label: "off for you" },
-              { value: "$25", label: "off for your neighbour" },
-              { value: "6", label: "referrals, at most" },
-            ].map((item) => (
-              <div key={item.label} className="rounded-[24px] bg-white/[0.05] px-3 py-7">
-                <dd className="to-display text-4xl text-accent md:text-5xl">{item.value}</dd>
-                <dt className="mt-2 text-[1rem] leading-snug text-muted">{item.label}</dt>
-              </div>
-            ))}
-          </dl>
         </div>
       </Band>
 

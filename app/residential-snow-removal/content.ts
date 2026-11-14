@@ -116,3 +116,23 @@ export const stats = [
   { end: 92, suffix: "+", label: "Happy clients" },
   { end: 2, suffix: "", label: "TERREOAK crews" },
 ];
+
+// Snowball referral program terms.
+export const referral = {
+  steps: [
+    "Share your personal link with someone new",
+    "When they sign up, you get $25 off your next invoice",
+    "They get $50 off their first month",
+    "You can refer up to two people this season",
+  ],
+  highlights: [
+    { value: "$25", label: "off your next invoice" },
+    { value: "$50", label: "off their first month" },
+    { value: "2", label: "referrals this season" },
+  ],
+  conditions: [
+    "They must be a new client (not someone who already works with us)",
+    "They need to sign up for a minimum of three months",
+    "Credits are applied once they’ve started service",
+  ],
+};

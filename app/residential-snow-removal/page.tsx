@@ -51,8 +51,23 @@ const offerIcons: React.ReactNode[] = [
   <path key="card" d="M3 7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7Zm0 3h18M7 15h4" />,
 ];
 
+/** Six-armed snowflake drawn from one arm repeated every 60 degrees. */
+function Snowflake({ className, style }: { className?: string; style?: React.CSSProperties }) {
+  return (
+    <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="3.4" strokeLinecap="round" strokeLinejoin="round" className={className} style={style} aria-hidden="true">
+      {[0, 60, 120, 180, 240, 300].map((angle) => (
+        <g key={angle} transform={`rotate(${angle} 50 50)`}>
+          <path d="M50 50V4M50 15l-8-8M50 15l8-8M50 26l-6-6M50 26l6-6" />
+        </g>
+      ))}
+    </svg>
+  );
+}
+
 export default function ResidentialSnowRemovalPage() {
-  const trackerMax = Math.max(season.totalCm, season.averageCm);
+  // The snowflake fills in proportion to this season's total against the average, topping out when the average is reached.
+  const trackerPercent = Math.round((season.totalCm / season.averageCm) * 100);
+  const trackerFill = Math.min(100, trackerPercent);
 
   return (
     <main className="to-pavement to-flow overflow-x-clip">
@@ -284,37 +299,35 @@ export default function ResidentialSnowRemovalPage() {
 
       {/* SNOW TRACKER */}
       <Band>
-        <div className="to-card grid gap-x-16 gap-y-10 p-8 md:p-12 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:items-center">
+        <div className="to-card grid items-center gap-x-16 gap-y-10 p-8 md:p-12 lg:grid-cols-[auto_minmax(0,1fr)]">
+          <figure className="mx-auto">
+            <div className="relative h-60 w-60 md:h-72 md:w-72">
+              <Snowflake className="absolute inset-0 h-full w-full text-white/15" />
+              <Snowflake className="to-flake-fill absolute inset-0 h-full w-full text-brand" style={{ clipPath: `inset(${100 - trackerFill}% 0 0 0)` }} />
+              <div className="absolute left-1/2 top-1/2 flex h-[46%] w-[46%] -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center rounded-full bg-[#2f3236]">
+                <span className="to-display text-[2.6rem] leading-none tabular-nums text-fg md:text-5xl">{season.totalCm}</span>
+                <span className="mt-1.5 text-[0.8rem] font-semibold uppercase tracking-[0.14em] text-accent">cm total</span>
+              </div>
+            </div>
+            <figcaption className="mt-4 text-center text-[1rem] text-muted">{trackerPercent}% of the season average</figcaption>
+          </figure>
           <div>
             <h2 className="to-display to-h2">{season.label} snow tracker</h2>
             <p className="to-body mt-5">
               We track every centimeter so you don’t have to. Our crews trigger at just 1cm of accumulation, ensuring your driveway is clear before the ice builds up.
             </p>
-          </div>
-          <div>
-            <div className="grid gap-5">
+            <dl className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-4">
               {[
-                { label: "Current total", value: season.totalCm, primary: true },
-                { label: "Season average", value: season.averageCm, primary: false },
-              ].map((row) => (
-                <div key={row.label} className="grid grid-cols-[8.5rem_minmax(0,1fr)_5rem] items-center gap-4 text-[1.1rem]">
-                  <span className="text-muted">{row.label}</span>
-                  <span className="h-3 rounded-full bg-white/10">
-                    <span className={`block h-full rounded-full ${row.primary ? "bg-brand" : "bg-white/55"}`} style={{ width: `${(row.value / trackerMax) * 100}%` }} />
-                  </span>
-                  <span className="text-right font-semibold tabular-nums text-fg">{row.value} cm</span>
+                { label: "Season average", value: `${season.averageCm} cm`, primary: false },
+                { label: "Current total", value: `${season.totalCm} cm`, primary: true },
+                { label: "Last snowfall", value: `${season.lastSnowfallCm} cm`, primary: false },
+                { label: "Visits to date", value: String(season.visits), primary: false },
+              ].map((item) => (
+                <div key={item.label} className={`rounded-[20px] px-5 py-5 ${item.primary ? "bg-brand text-brand-deep" : "bg-white/[0.05]"}`}>
+                  <dt className={`text-[0.95rem] ${item.primary ? "font-semibold text-brand-deep" : "text-muted"}`}>{item.label}</dt>
+                  <dd className={`to-display mt-1 text-[1.7rem] tabular-nums ${item.primary ? "text-brand-deep" : "text-fg"}`}>{item.value}</dd>
                 </div>
               ))}
-            </div>
-            <dl className="mt-9 grid grid-cols-2 gap-8">
-              <div>
-                <dt className="text-[1.05rem] text-muted">Last snowfall</dt>
-                <dd className="to-display mt-1 text-4xl tabular-nums">{season.lastSnowfallCm} cm</dd>
-              </div>
-              <div>
-                <dt className="text-[1.05rem] text-muted">Visits to date</dt>
-                <dd className="to-display mt-1 text-4xl tabular-nums">{season.visits}</dd>
-              </div>
             </dl>
           </div>
         </div>

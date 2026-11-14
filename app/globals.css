@@ -266,6 +266,15 @@ html {
   transform: none;
 }
 
+/* Snow tracker: the snowflake fills from the bottom when its section is revealed */
+.to-flake-fill {
+  transition: clip-path 1.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s;
+}
+
+.to-reveal:not(.is-in) .to-flake-fill {
+  clip-path: inset(100% 0 0 0) !important;
+}
+
 /* Cards inside a revealed section follow one after another */
 @keyframes to-rise {
   from {
@@ -313,6 +322,10 @@ html {
 
   .to-offer {
     animation: none;
+  }
+
+  .to-flake-fill {
+    transition: none;
   }
 
   .to-reveal .to-card {

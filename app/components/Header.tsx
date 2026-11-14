@@ -8,9 +8,8 @@ import { nav, site } from "../lib/site";
 
 function Logo({ onClick }: { onClick?: () => void }) {
   return (
-    <Link href="/" onClick={onClick} aria-label="TERREOAK home" className="to-focus flex items-center gap-1 rounded-lg">
-      <Image src="/logo.png" alt="" width={88} height={88} priority className="h-11 w-11 object-contain" />
-      <span className="to-display text-[1.6rem] text-white">TERREOAK</span>
+    <Link href="/" onClick={onClick} aria-label="TERREOAK home" className="to-focus flex shrink-0 items-center rounded-lg">
+      <Image src="/brand/terreoak-logo-on-dark.png" alt="TERREOAK Landscaping & Snow" width={1200} height={367} priority sizes="200px" className="h-[52px] w-auto" />
     </Link>
   );
 }

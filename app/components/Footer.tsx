@@ -40,9 +40,8 @@ export default function Footer() {
       <div className="mx-auto w-full max-w-[1280px] px-5 py-16 sm:px-8 md:py-20 lg:px-12">
         <div className="grid gap-12 lg:grid-cols-[1.3fr_2fr]">
           <div>
-            <Link href="/" className="to-focus inline-flex items-center gap-1 rounded-lg" aria-label="TERREOAK home">
-              <Image src="/logo.png" alt="" width={104} height={104} className="object-contain" style={{ height: 52, width: 52 }} />
-              <span className="to-display text-3xl">TERREOAK</span>
+            <Link href="/" className="to-focus inline-flex rounded-lg">
+              <Image src="/brand/terreoak-logo-on-dark.png" alt="TERREOAK Landscaping & Snow" width={1200} height={367} sizes="300px" className="h-[84px] w-auto" />
             </Link>
             <p className="mt-5 max-w-sm text-[1.05rem] leading-relaxed text-muted">
               Landscape construction, property maintenance and residential snow removal for Calgary homes and businesses.
@@ -77,17 +76,20 @@ export default function Footer() {
           </nav>
         </div>
 
-        <div className="mt-16 flex flex-col gap-4 border-t border-rule pt-8 text-sm text-muted sm:flex-row sm:items-center sm:justify-between">
-          <p>
-            © {new Date().getFullYear()} {site.name}. All rights reserved.
-          </p>
-          <div className="flex gap-6">
-            <Link href="/terms" className="to-focus transition-colors hover:text-white">
-              Terms of Service
-            </Link>
-            <Link href="/privacy" className="to-focus transition-colors hover:text-white">
-              Privacy Policy
-            </Link>
+        <div className="mt-16 flex flex-col gap-8 border-t border-rule pt-8 md:flex-row md:items-center md:justify-between">
+          <Image src="/brand/terreoak-tagline-on-dark.png" alt="Where the sun meets soil." width={1200} height={259} sizes="260px" className="h-[56px] w-auto self-start" />
+          <div className="flex flex-col gap-3 text-sm text-muted md:items-end">
+            <p>
+              © {new Date().getFullYear()} {site.name}. All rights reserved.
+            </p>
+            <div className="flex gap-6">
+              <Link href="/terms" className="to-focus transition-colors hover:text-white">
+                Terms of Service
+              </Link>
+              <Link href="/privacy" className="to-focus transition-colors hover:text-white">
+                Privacy Policy
+              </Link>
+            </div>
           </div>
         </div>
       </div>

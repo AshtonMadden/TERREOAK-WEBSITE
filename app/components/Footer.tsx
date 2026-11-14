@@ -36,39 +36,37 @@ const columns = [
 
 export default function Footer() {
   return (
-    <footer className="border-t border-line bg-[#161719] text-white">
-      <div className="mx-auto w-full max-w-[1240px] px-5 py-16 sm:px-8 md:py-20">
+    <footer className="to-pavement border-t border-rule !bg-[#1d1f21]">
+      <div className="mx-auto w-full max-w-[1280px] px-5 py-16 sm:px-8 md:py-20 lg:px-12">
         <div className="grid gap-12 lg:grid-cols-[1.3fr_2fr]">
           <div>
             <Link href="/" className="to-focus inline-flex items-center gap-1 rounded-lg" aria-label="TERREOAK home">
-              <Image src="/logo.png" alt="" width={104} height={104} className="h-13 w-13 object-contain" style={{ height: 52, width: 52 }} />
-              <span className="text-2xl font-extrabold tracking-[-0.02em]">
-                TERRE<span className="text-brand">OAK</span>
-              </span>
+              <Image src="/logo.png" alt="" width={104} height={104} className="object-contain" style={{ height: 52, width: 52 }} />
+              <span className="to-display text-3xl">TERREOAK</span>
             </Link>
-            <p className="mt-5 max-w-sm text-[1.02rem] leading-relaxed text-mist">
+            <p className="mt-5 max-w-sm text-[1.05rem] leading-relaxed text-muted">
               Landscape construction, property maintenance and residential snow removal for Calgary homes and businesses.
             </p>
-            <div className="mt-7 grid gap-2 text-[1.02rem]">
-              <a href={site.phoneHref} className="to-focus w-fit font-semibold text-white transition-colors hover:text-brand">
+            <div className="mt-7 grid gap-2 text-[1.05rem]">
+              <a href={site.phoneHref} className="to-focus w-fit font-semibold text-white transition-colors hover:text-accent">
                 {site.phoneDisplay}
               </a>
-              <a href={`mailto:${site.email}`} className="to-focus w-fit font-semibold text-white transition-colors hover:text-brand">
+              <a href={`mailto:${site.email}`} className="to-focus w-fit font-semibold text-white transition-colors hover:text-accent">
                 {site.email}
               </a>
-              <p className="text-mist">{site.locality}</p>
-              <p className="text-mist">{site.hours}</p>
+              <p className="text-muted">{site.locality}</p>
+              <p className="text-muted">{site.hours}</p>
             </div>
           </div>
 
           <nav aria-label="Footer" className="grid grid-cols-2 gap-10 sm:grid-cols-3">
             {columns.map((col) => (
               <div key={col.title}>
-                <h2 className="text-sm font-semibold uppercase tracking-[0.14em] text-white/50">{col.title}</h2>
+                <h2 className="text-[1.05rem] font-semibold text-white">{col.title}</h2>
                 <ul className="mt-5 grid gap-3">
                   {col.links.map((link) => (
                     <li key={link.href}>
-                      <Link href={link.href} className="to-focus text-[1.02rem] text-mist transition-colors hover:text-white">
+                      <Link href={link.href} className="to-focus text-[1.05rem] text-muted transition-colors hover:text-white">
                         {link.label}
                       </Link>
                     </li>
@@ -79,7 +77,7 @@ export default function Footer() {
           </nav>
         </div>
 
-        <div className="mt-16 flex flex-col gap-4 border-t border-line pt-8 text-sm text-white/45 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-16 flex flex-col gap-4 border-t border-rule pt-8 text-sm text-muted sm:flex-row sm:items-center sm:justify-between">
           <p>
             © {new Date().getFullYear()} {site.name}. All rights reserved.
           </p>

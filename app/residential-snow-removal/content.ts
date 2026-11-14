@@ -1,49 +1,72 @@
 // Content for the snow removal page, kept apart from layout so numbers and copy are easy to update.
 
-export const stats = [
-  { end: 100, suffix: "+", label: "Properties managed" },
-  { end: 92, suffix: "+", label: "Happy clients" },
-  { end: 2, suffix: "", label: "TERREOAK crews" },
-  { end: 1, suffix: "cm", label: "Dispatch trigger" },
-];
-
 export const offers = [
   {
-    icon: "calendar",
     title: "Full season coverage",
     desc: "One flat monthly rate covers driveway and front sidewalk clearing from the first snowfall through the final melt. We service your property once every 24 hours, with no per-visit fees and no surprises.",
   },
   {
-    icon: "ruler",
     title: "1cm trigger",
     desc: "We dispatch as soon as accumulation hits 1cm. You won’t wake up to a buried driveway waiting for a contractor who services “major storms only.”",
   },
   {
-    icon: "camera",
     title: "Photo service log",
     desc: "After every visit, you receive time-stamped photos by email confirming exactly what was cleared and when. Perfect for renters, property owners, or anyone who needs documentation.",
   },
   {
-    icon: "bell",
     title: "Dispatch alerts",
     desc: "Email notifications sent before our crew arrives so you always know service is on the way, no guessing, no wondering.",
   },
   {
-    icon: "pin",
     title: "Driveway marker",
     desc: "Each client receives one highly visible snow picket. This helps our crews quickly identify your property during dark, early-morning hours, keeping them off their phones and focused on safety.",
   },
   {
-    icon: "card",
     title: "Flexible payment",
     desc: "Pay in full upfront and save 10%, or split into 5 monthly auto-payments.",
   },
-] as const;
+];
 
 export const steps = [
   { title: "Sign up for your snow pass", desc: "Lock in your spot for the season." },
   { title: "We install your picket", desc: "We place one highly visible marker to help crews identify your property fast." },
   { title: "Our team gets to work", desc: "Reliable service whenever it snows." },
+];
+
+// The passes and add-ons described across the page and FAQ, side by side.
+export const passes = [
+  {
+    name: "Season pass",
+    term: "First snowfall through the final melt",
+    summary: "The full winter, handled. One flat monthly rate with no per-visit fees.",
+    includes: [
+      "Driveway and front sidewalk clearing",
+      "Service at 1cm of accumulation",
+      "One visit every 24 hours during a snowfall",
+      "Dispatch alert before each visit",
+      "Photo service log after each visit",
+      "Driveway marker picket",
+    ],
+    payment: "Pay in full upfront and save 10%, or split into 5 monthly auto-payments.",
+  },
+  {
+    name: "Snowbird and vacation pass",
+    term: "1 to 8 weeks",
+    summary: "Coverage for the part of the winter you’re away, with the same dedicated service and photo logs as a full season pass.",
+    includes: ["Driveway and front sidewalk clearing", "Service at 1cm of accumulation", "Photo service log after each visit"],
+    payment: "",
+  },
+];
+
+export const addOns = [
+  {
+    name: "Ice melt",
+    desc: "A monthly add-on subscription. Automatic ice melt application after each visit, up to 4 visits per month.",
+  },
+  {
+    name: "Windrow clearing",
+    desc: "Windrows left by city plows aren’t part of the standard pass. Ask us about a custom pass when you sign up.",
+  },
 ];
 
 export const zones = [

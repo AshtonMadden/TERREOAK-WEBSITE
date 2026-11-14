@@ -1,6 +1,11 @@
 // app/layout.tsx
 import type { ReactNode } from "react";
-import { Plus_Jakarta_Sans, Lora } from "next/font/google";
+// Fonts are self-hosted so builds never depend on a third-party font server.
+import "@fontsource-variable/plus-jakarta-sans";
+import "@fontsource-variable/lora";
+import "@fontsource-variable/lora/wght-italic.css";
+import "@fontsource-variable/bricolage-grotesque/wdth.css";
+import "@fontsource-variable/geist";
 import "./globals.css";
 import type { Metadata, Viewport } from "next";
 import { pageMeta } from "./lib/seo";
@@ -24,22 +29,9 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#1b1c1f",
+  themeColor: "#26282b",
   colorScheme: "dark light",
 };
-
-const jakarta = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
-  variable: "--font-montserrat", // Keeping variable name same so global CSS doesn't break
-});
-
-const lora = Lora({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-lora",
-  style: ["normal", "italic"],
-});
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   const jsonLd = {
@@ -129,7 +121,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   };
 
   return (
-    <html lang="en" className={`${jakarta.variable} ${lora.variable}`}>
+    <html lang="en">
       <head />
       <body>
         <Script

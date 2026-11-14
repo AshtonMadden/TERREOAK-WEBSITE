@@ -79,20 +79,18 @@ export default function JobberLeadForm({
                 className="jobber-embed-container w-full block"
             ></div>
 
-            {/* Fallback contact bar */}
-            <div className="mt-6 flex flex-col items-center justify-between gap-5 rounded-2xl bg-[#1b1c1f] p-6 text-center md:flex-row md:p-7 md:text-left">
-                <p className="m-0 text-[1.05rem] font-medium leading-relaxed text-white/85">
-                    Form not loading? Email or call us and we&apos;ll get you sorted.
-                </p>
-                <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
-                    <a href="mailto:services@terreoak.ca" className="to-btn to-btn-ghost to-btn-sm">
-                        services@terreoak.ca
-                    </a>
-                    <a href="tel:+15877077648" className="to-btn to-btn-primary to-btn-sm">
-                        587-707-7648
-                    </a>
-                </div>
-            </div>
+            {/* Fallback contact line */}
+            <p className="mt-6 border-t border-black/10 pt-5 text-[1.05rem] text-[#50565b]">
+                Form not loading? Email{" "}
+                <a href="mailto:services@terreoak.ca" className="font-semibold text-[#017a6d] underline underline-offset-4">
+                    services@terreoak.ca
+                </a>{" "}
+                or call{" "}
+                <a href="tel:+15877077648" className="font-semibold text-[#017a6d] underline underline-offset-4">
+                    587-707-7648
+                </a>
+                .
+            </p>
         </div>
     );
 }

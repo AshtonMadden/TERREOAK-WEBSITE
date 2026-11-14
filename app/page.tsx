@@ -1,411 +1,304 @@
-
-"use client";
-
-import Link from "next/link";
 import Image from "next/image";
-import { useEffect, useRef } from "react";
-import Script from "next/script";
-
-import { Section, ScrollReveal, Carousel } from "./components/UI";
-import OurBlogSection from "./components/OurBlogSection";
-import PremiumHero from "./components/PremiumHero";
-import TrustBar from "./components/TrustBar";
-import GuaranteesAccordion from "./components/GuaranteesAccordion";
+import Link from "next/link";
 import InstagramEmbed from "./components/InstagramEmbed";
-import FeaturedProjectsGrid from "./components/FeaturedProjectsGrid";
-import ServicesAccordion from "./components/ServicesAccordion";
-import dynamic from "next/dynamic";
+import JobberLeadForm from "./components/JobberLeadForm";
+import { Band, Button, Container, GoogleMark, Stars, Tick } from "./components/ds";
+import { HeroVideo } from "./components/HeroMedia";
+import { site } from "./lib/site";
+import { gallery, guarantees, instagramPosts, jobberForm, processSteps, projects, reviews, services, trustPoints } from "./home-content";
 
-const TestimonialSection = dynamic(() => import("./components/TestimonialSection"), {
-  loading: () => <div className="py-24 animate-pulse bg-[#1e1e1e] rounded-3xl" />,
-  ssr: true
-});
-
-const JobberLeadForm = dynamic(() => import("./components/JobberLeadForm"), {
-  ssr: false
-});
-
-const serviceCategories = [
-  {
-    title: "Landscape Construction & Irrigation",
-    desc: "Hardscape construction, paving, stone work, and planting designed for stability and style.",
-    image: "/Landscape web page pics/Techo-Bloc-pavers-river-rock.JPG",
-  },
-  {
-    title: "Seasonal Services",
-    desc: "Precision property care, from spring and fall cleanups to irrigation blowouts and mulching.",
-    image: "/spring-cleanup-pics/Leaf-Cleanup-near-me.jpg",
-  },
-  {
-    title: "Pergolas & Fencing",
-    desc: "Premium custom wooden pergolas and horizontal privacy fencing designed for luxury outdoor living.",
-    image: "/images/pergolas-fencing-new.jpg",
-  },
-  {
-    title: "Commercial Grounds Maintenance",
-    desc: "Professional groundskeeping and 24/7 priority snow removal for commercial property managers.",
-    image: "/images/commercial.png",
-  },
-  {
-    title: "Residential Snow Removal",
-    desc: "Reliable driveway and sidewalk snow removal with 1cm servicing and photo service logs.",
-    image: "/Snow Page web pics/TERREOAK-Snow-Picket.JPG",
-  },
-  {
-    title: "Landscape Design",
-    desc: "Professional 3D landscape design and conceptual planning for your outdoor space.",
-    image: "/images/design.png",
-  },
-];
-const allImages = [
-  // Landscaping
-  { src: "/Landscape web page pics/Calgary-Concrete-pour.JPG", alt: "Custom exposed aggregate concrete pour in Calgary" },
-  { src: "/Landscape web page pics/Calgary-hardscaping.JPG", alt: "Premium Calgary hardscaping and backyard transformation" },
-  { src: "/Landscape web page pics/Sod-installation-calgary.jpg", alt: "Sod Installation Calgary" },
-  { src: "/Landscape web page pics/Finished-hardscape-project.JPG", alt: "Finished high-end hardscape project in South Calgary" },
-  { src: "/Landscape web page pics/Hardscape-path-install.JPG", alt: "Custom paving stone hardscape path installation" },
-  { src: "/Landscape web page pics/Land-clearing-new-build.JPG", alt: "Land clearing and grading for Calgary new build landscaping" },
-  { src: "/Landscape web page pics/Techo-Bloc-paver-pathway.JPG", alt: "Techo-Bloc paver pathway construction" },
-  { src: "/Landscape web page pics/Techo-Bloc-pavers-river-rock.JPG", alt: "Techo-Bloc pavers with decorative river rock garden bed" },
-  { src: "/Landscape web page pics/Techo-bloc-bin-pad.JPG", alt: "Techo-Bloc garbage bin pad installation" },
-  { src: "/Landscape web page pics/base-prep-paverpath.JPG", alt: "Engineered base preparation for custom paver path" },
-  { src: "/Landscape web page pics/lawn-relevel-calgary.JPG", alt: "Professional lawn releveling and sod installation Calgary" },
-  { src: "/Landscape web page pics/rock-bed-refresh.JPG", alt: "Landscape rock bed refresh and softscaping" },
-  // Spring
-  { src: "/spring-cleanup-pics/Calgary-Core-Aeration.JPG", alt: "Professional lawn core aeration service in Calgary" },
-  { src: "/spring-cleanup-pics/Calgary-Leaf-Cleanup.JPG", alt: "Comprehensive residential leaf cleanup Calgary" },
-  { src: "/spring-cleanup-pics/Copperfield-leaf-cleanup.JPG", alt: "Spring property cleanup in Copperfield Calgary" },
-  { src: "/spring-cleanup-pics/Leaf-Cleanup-near-me.jpg", alt: "Local leaf cleanup and yard maintenance service" },
-  { src: "/spring-cleanup-pics/Leaf-removal-Calgary.JPG", alt: "Fall leaf removal and property maintenance Calgary" },
-  { src: "/spring-cleanup-pics/Power-raking-services.JPG", alt: "Lawn power raking and dethatching services" },
-  // Snow
-  { src: "/Snow Page web pics/Ice-removal-after.JPG", alt: "Clear driveway after professional ice removal" },
-  { src: "/Snow Page web pics/Ice-removal-before.JPG", alt: "Driveway before ice removal and snow clearing" },
-  { src: "/Snow Page web pics/Residential-snow-removal.JPG", alt: "Reliable residential snow removal service Calgary" },
-  { src: "/Snow Page web pics/South-Calgary-Snow-Removal.JPG", alt: "South Calgary snow removal route service" },
-  { src: "/Snow Page web pics/TERREOAK-Snow-Picket.JPG", alt: "TerreOak snow removal service marker picket" },
-  { src: "/residential-snow-removalJPG.JPG", alt: "Professional residential driveway snow removal Calgary" },
-];
-
-
+const Arrow = () => (
+  <svg className="h-4 w-4 transition-transform group-hover:translate-x-1" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+    <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>
+);
 
 export default function HomePage() {
   return (
-    <main className="bg-white text-black">
-      <PremiumHero
-        title={<>CALGARY LANDSCAPE CONSTRUCTION <br /><span className="text-[#01fa6d] font-lora italic font-black tracking-normal uppercase">WHERE THE SUN MEETS SOIL</span></>}
-        description="Premium landscape construction and year-round property maintenance for Calgary's residential and commercial properties."
-        backgroundVideo="/videos/calgary-landscaping-hero.mp4"
-        backgroundVideoPoster="/images/home-hero-poster.jpg"
-        badgeLabel="Calgary & Area"
-        ctaText="SEE RECENT PROJECTS"
-        ctaHref="/projects"
-      />
-
-      <TrustBar />
-      
-      {/* FEATURED PROJECTS */}
-      <Section
-        kicker="Portfolio"
-        title="FEATURED PROJECTS"
-        titleClassName="text-[#017a6d]"
-        wrapperClassName="bg-white border-y border-black/5"
-      >
-        <div className="max-w-6xl mx-auto">
-            <FeaturedProjectsGrid projects={[
-              {
-                id: 1,
-                title: "Custom Stone Pathway",
-                location: "McKenzie Lake, Calgary AB",
-                budget: "$5,000",
-                desc: "This project focused on upgrading an outdated, low-end rock and stepping-stone pathway into a premium, durable hardscape. The client wanted a much cleaner, modern look that would be easy to maintain and drastically improve their backyard's curb appeal. Within just two days, our crew stripped the existing materials and installed a far superior, professional-grade foundation and aesthetic finish.",
-                img: "/Landscape web page pics/Finished-hardscape-project.JPG",
-                link: "/mckenzielakelandscaping"
-              },
-              {
-                id: 2,
-                title: "Techo-Bloc Path",
-                location: "McKenzie Lake, Calgary AB",
-                budget: "$10,000",
-                desc: "This project focused entirely on high-quality hardscaping to completely refresh an outdated side-yard and pathway. The old mixed rock and aggregate steppers were heavily weathered and failing, so we completely removed and disposed of them to make way for a modern upgrade. We replaced the old pathway with large-format Techo-Bloc Blu 60 Grande pavers in a stunning Shale Grey finish, cleanly bordered with premium washed river rock for a striking, low-maintenance aesthetic.",
-                img: "/Landscape web page pics/Techo-Bloc-pavers-river-rock.JPG",
-                link: "/projects/mckenzie-lake-landscaping"
-              },
-              {
-                id: 3,
-                title: "Front Yard Landscape Makeover",
-                location: "Cranston, Calgary AB",
-                budget: "$3,150",
-                desc: "Originally, this client called us because he had sprayed his entire front yard with Killex, which unfortunately killed the entire lawn off. We completely replaced the dead turf with fresh soil and premium Kentucky Bluegrass sod. To complete the clean look, we filled the beds with 20 mil Rundle rock and placed a stunning 300 lb decorative Rundle boulder.",
-                img: "/projects/cranston-makeover/hero-aerial.jpg",
-                link: "/projects/cranston-landscape-makeover"
-              },
-              {
-                id: 4,
-                title: "Complete Front Yard Overhaul",
-                location: "Parkland, Calgary AB",
-                budget: "$4,000",
-                desc: "We completely transformed this space from a fading wood garden with no decorative stone or plants into a stunning, complete rock garden that will look incredible for years to come. After planting a diverse mix of greenery, we finished the space with 40mm river rock and a beautiful 70 lb Rundle boulder as a centerpiece.",
-                img: "/images/softscaping-river-rock-hostas.jpg",
-                link: "/parklandlandscaping"
-              }
-            ]} />
+    <main className="to-pavement to-flow overflow-x-clip">
+      {/* HERO */}
+      <section className="relative isolate flex min-h-[100svh] flex-col justify-end">
+        <div className="absolute inset-0 -z-10">
+          <HeroVideo src="/videos/calgary-landscaping-hero.mp4" poster="/images/home-hero-poster.jpg" />
+          <div className="absolute inset-0 bg-[#1d1f21]/65" />
         </div>
-      </Section>
-      <ServicesAccordion />
 
-      {/* LATEST FROM INSTAGRAM */}
-      <Section
-        kicker="Follow Us"
-        title="LATEST PROJECT VIDEOS"
-        titleClassName="text-[#017a6d]"
-        wrapperClassName="bg-white border-y border-black/5"
-      >
-        <div className="flex flex-col items-center">
-            <p className="text-lg font-medium text-black/70 mb-12 text-center max-w-2xl">
-                Check out our latest landscape transformations and snow removal updates over on Instagram. We post regular jobsite walk-throughs and before/afters!
-            </p>
-            <div className="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar md:grid md:grid-cols-3 gap-6 lg:gap-8 w-full max-w-6xl pb-4 md:pb-0 -mx-6 px-6 md:mx-0 md:px-0">
-                {/* Placeholders for 3 recent Instagram videos/reels. The user can swap these URLs out with their own. */}
-                <div className="flex-none w-[85%] snap-center md:w-auto">
-                    <InstagramEmbed url="https://www.instagram.com/p/DZYJ9hey3Wz/" />
-                </div>
-                <div className="flex-none w-[85%] snap-center md:w-auto">
-                    <InstagramEmbed url="https://www.instagram.com/p/DZbTO0OTIKM/" />
-                </div>
-                <div className="flex-none w-[85%] snap-center md:w-auto">
-                    <InstagramEmbed url="https://www.instagram.com/p/DaOSi4dSUg5/" />
-                </div>
-            </div>
-            <div className="mt-16">
-                <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 bg-black text-white px-8 py-4 rounded-full font-black hover:bg-black/80 transition-colors uppercase tracking-widest text-sm shadow-xl hover:-translate-y-1">
-                    Follow us on Instagram <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
-                </a>
-            </div>
-        </div>
-      </Section>
-      <GuaranteesAccordion />
+        <Container className="pb-14 pt-36 md:pb-20">
+          <h1 className="to-display to-h1 max-w-[20ch]">Calgary landscape construction, where the sun meets soil.</h1>
+          <p className="to-body mt-8 !text-fg">
+            Premium landscape construction and year-round property maintenance for Calgary’s residential and commercial properties.
+          </p>
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <Button href="#home-form">Request an estimate</Button>
+            <Button href="/projects" variant="quiet" className="bg-white/5 backdrop-blur-sm">
+              See recent projects
+            </Button>
+          </div>
+          <p className="mt-8 flex flex-wrap items-center gap-x-3 gap-y-2 text-[1.05rem] text-white/80">
+            <GoogleMark />
+            <a href={site.googleProfile} target="_blank" rel="noopener noreferrer" className="to-link">
+              {site.reviews.rating} stars from {site.reviews.count} Google reviews
+            </a>
+          </p>
 
+          <ul className="mt-14 flex flex-col gap-x-10 gap-y-3 text-[1.1rem] font-medium text-fg sm:flex-row md:mt-20">
+            {trustPoints.map((point) => (
+              <li key={point} className="flex items-start gap-3">
+                <Tick />
+                {point}
+              </li>
+            ))}
+          </ul>
+        </Container>
+      </section>
 
       {/* SERVICES */}
-      <Section
-        kicker="About Us"
-        title="TERREOAK Landscaping and Snow"
-        titleClassName="text-[#017a6d]"
-      >
-        <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 items-center mb-16">
-          <div className="lg:w-5/12 space-y-8 text-[18px] md:text-[20px] text-black/80 leading-relaxed font-medium">
-            <p>
-              TERREOAK is a full-service landscape construction and property maintenance company serving Calgary. Our work is built around three core divisions: landscape construction, commercial grounds maintenance, and residential seasonal services.
-            </p>
-            <p>
-              From new-build sod and <Link href="/softscapes" className="text-[#017a6d] font-bold hover:underline transition-colors">softscape installation Calgary</Link> projects to hardscape construction and reliable snow removal, we deliver structured scheduling, professional systems, and results built for Alberta’s extreme seasons.
-            </p>
-            <p>
-              We work with homeowners, builders, and commercial property managers who expect clean execution, clear communication, and long-term value.
-            </p>
-            <div className="pt-4">
-              <Link
-                href="/about"
-                className="inline-flex items-center justify-center rounded-lg bg-[#01fa6d] px-8 py-4 text-[16px] font-black text-black hover:opacity-90 transition-all transform hover:-translate-y-0.5 shadow-lg shadow-[#01fa6d]/20"
-              >
-                READ OUR STORY
-              </Link>
-            </div>
-          </div>
-          <div className="lg:w-7/12 w-full">
-            <div className="relative aspect-[16/10] overflow-hidden rounded-3xl shadow-2xl border border-black/5 ring-1 ring-black/5">
-              <Image
-                src="/Calgary-landscape-design-build-patio.JPG"
-                alt="TERREOAK high-end landscape construction project in Calgary"
-                fill
-                sizes="(max-width: 768px) 100vw, 50vw"
-                className="object-cover"
-              />
-            </div>
-          </div>
+      <Band>
+        <h2 className="to-display to-h2">Landscaping and snow services</h2>
+        <p className="to-body mt-5">
+          Our work is built around three core divisions: landscape construction, commercial grounds maintenance, and residential seasonal services.
+        </p>
+        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {services.map((service) => (
+            <Link key={service.href} href={service.href} className="to-card to-card-lift to-focus group flex flex-col p-7">
+              <h3 className="to-display to-h3">{service.title}</h3>
+              <p className="mt-3 text-[1.05rem] leading-relaxed text-muted">{service.description}</p>
+              <span className="mt-auto flex items-center gap-2 pt-6 text-[1.02rem] font-semibold text-accent">
+                Learn more <Arrow />
+              </span>
+            </Link>
+          ))}
         </div>
+      </Band>
 
-        {/* FOUNDER SPOTLIGHT */}
-        <div className="flex flex-col md:flex-row items-stretch bg-white rounded-3xl shadow-xl border border-black/5 overflow-hidden group mb-20">
-          <div className="md:w-2/5 relative min-h-[350px] md:min-h-full">
+      {/* FEATURED PROJECTS */}
+      <Band>
+        <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+          <h2 className="to-display to-h2">Featured projects</h2>
+          <Button href="/projects" variant="quiet">
+            View all projects
+          </Button>
+        </div>
+        <div className="mt-12 grid gap-5 md:grid-cols-2">
+          {projects.map((project) => (
+            <Link key={project.id} href={project.link} className="to-card to-card-lift to-focus group flex flex-col overflow-hidden">
+              <div className="relative aspect-[16/10] overflow-hidden">
+                <Image
+                  src={project.img}
+                  alt={`${project.title} in ${project.location}`}
+                  fill
+                  sizes="(min-width: 768px) 50vw, 100vw"
+                  className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                />
+              </div>
+              <div className="flex flex-1 flex-col p-7 md:p-8">
+                <p className="to-sub">
+                  {project.location.split(",")[0]}
+                  {project.budget ? ` / ${project.budget} investment` : ""}
+                </p>
+                <h3 className="to-display to-h3 mt-3">{project.title}</h3>
+                <p className="mt-3 line-clamp-3 text-[1.05rem] leading-relaxed text-muted">{project.desc}</p>
+                <span className="mt-auto flex items-center gap-2 pt-6 text-[1.02rem] font-semibold text-accent">
+                  Read project <Arrow />
+                </span>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </Band>
+
+      {/* ABOUT */}
+      <Band>
+        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
+          <div>
+            <h2 className="to-display to-h2">TERREOAK Landscaping and Snow</h2>
+            <div className="mt-7 grid gap-5">
+              <p className="to-body">
+                TERREOAK is a full-service landscape construction and property maintenance company serving Calgary. Our work is built around three core divisions: landscape construction, commercial grounds maintenance, and residential seasonal services.
+              </p>
+              <p className="to-body">
+                From new-build sod and{" "}
+                <Link href="/softscapes" className="to-link">
+                  softscape installation Calgary
+                </Link>{" "}
+                projects to hardscape construction and reliable snow removal, we deliver structured scheduling, professional systems, and results built for Alberta’s extreme seasons.
+              </p>
+              <p className="to-body">
+                We work with homeowners, builders, and commercial property managers who expect clean execution, clear communication, and long-term value.
+              </p>
+            </div>
+            <div className="mt-8">
+              <Button href="/about">Read our story</Button>
+            </div>
+          </div>
+          <div className="relative aspect-[4/3] overflow-hidden rounded-[36px] shadow-[0_40px_80px_-40px_rgba(0,0,0,0.8)]">
             <Image
-              src="/images/Ashton-Madden-Cowboy.jpg"
-              alt="Ashton Madden - Founder & Director | Calgary Landscaping & Snow Removal"
+              src="/Calgary-landscape-design-build-patio.JPG"
+              alt="TERREOAK high-end landscape construction project in Calgary"
               fill
-              sizes="(max-width: 768px) 100vw, 40vw"
+              sizes="(min-width: 1280px) 600px, 100vw"
               className="object-cover"
             />
           </div>
-          <div className="md:w-3/5 p-8 md:p-12 relative flex flex-col justify-center">
-            <h2 className="text-3xl font-black text-[#017a6d] uppercase tracking-tight mb-4 text-left">Ashton Madden</h2>
-            <div className="space-y-4">
-              <p className="text-lg text-black/70 leading-relaxed font-medium">
-                My goal with TERREOAK is simple: build a company rooted in strong values, a great team culture, and a customer experience people can trust.
-              </p>
-            </div>
+        </div>
 
-            {/* SIGNATURE AREA */}
-            <div className="mt-8 flex justify-end items-end">
-              <div className="text-right w-full flex flex-col items-end">
-                <div className="relative h-20 w-[200px] md:h-[136px] md:w-[435px] mb-2">
-                  <Image
-                    src="/Ashton_Signature_.jpg"
-                    alt="Ashton Madden Signature | Calgary Landscaping & Snow Removal"
-                    fill
-                    sizes="(max-width: 768px) 200px, 435px"
-                    className="object-contain object-right"
-                  />
-                </div>
-                <span className="text-[10px] font-black text-black/30 uppercase tracking-[0.2em] font-lora">Founder & Director</span>
+        <figure className="to-card mt-14 grid items-center gap-8 p-8 md:grid-cols-[auto_minmax(0,1fr)] md:gap-12 md:p-12">
+          <div className="relative h-40 w-40 overflow-hidden rounded-full md:h-48 md:w-48">
+            <Image
+              src="/images/Ashton-Madden-Cowboy.jpg"
+              alt="Ashton Madden, Founder & Director of TERREOAK Landscaping & Snow"
+              fill
+              sizes="200px"
+              className="object-cover"
+            />
+          </div>
+          <div>
+            <blockquote className="to-display text-[1.5rem] leading-snug md:text-[1.9rem]">
+              “My goal with TERREOAK is simple: build a company rooted in strong values, a great team culture, and a customer experience people can trust.”
+            </blockquote>
+            <figcaption className="mt-6 flex items-center gap-6">
+              <Image
+                src="/Ashton_Signature_.jpg"
+                alt="Ashton Madden’s signature"
+                width={150}
+                height={100}
+                className="h-20 w-auto opacity-90 mix-blend-screen invert"
+              />
+              <div>
+                <p className="text-[1.15rem] font-semibold text-fg">Ashton Madden</p>
+                <p className="to-sub mt-1">Founder & Director</p>
               </div>
-            </div>
+            </figcaption>
           </div>
+        </figure>
+      </Band>
+
+      {/* PROCESS */}
+      <Band>
+        <h2 className="to-display to-h2">Meet, design, build</h2>
+        <ol className="mt-12 grid gap-5 md:grid-cols-3">
+          {processSteps.map((step, i) => (
+            <li key={step.title} className="to-card to-card-lift p-8">
+              <span className="to-icon to-display text-2xl">{i + 1}</span>
+              <h3 className="to-display to-h3 mt-6">{step.title}</h3>
+              <p className="mt-3 text-[1.08rem] leading-relaxed text-muted">{step.desc}</p>
+            </li>
+          ))}
+        </ol>
+        <div className="mt-8">
+          <Button href="/our-process" variant="quiet">
+            See our full process
+          </Button>
         </div>
+      </Band>
 
-        {/* MEET • DESIGN • BUILD GRID */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-16 mb-20 border-t border-black/10 pt-16">
-          {/* MEET */}
-          <div>
-            <h2 className="text-3xl md:text-5xl lg:text-[56px] font-black mb-6 text-[#017a6d] uppercase tracking-tighter">Meet</h2>
-            <p className="text-[16px] text-black/70 leading-relaxed font-medium">
-              Every great landscape begins with a conversation. We start with a comprehensive on-site consultation to understand your vision, assess your property's unique characteristics, and discuss how we can transform your outdoor space into a premium extension of your home.
-            </p>
-          </div>
-
-          {/* DESIGN */}
-          <div>
-            <h2 className="text-3xl md:text-5xl lg:text-[56px] font-black mb-6 text-[#017a6d] uppercase tracking-tighter">Design</h2>
-            <p className="text-[16px] text-black/70 leading-relaxed font-medium">
-              Our team crafts detailed 3D conceptual designs that allow you to fully visualize your new space before we ever break ground. We refine these designs collaboratively, ensuring every material, texture, and layout detail aligns perfectly with your expectations.
-            </p>
-          </div>
-
-          {/* BUILD */}
-          <div>
-            <h2 className="text-3xl md:text-5xl lg:text-[56px] font-black mb-6 text-[#017a6d] uppercase tracking-tighter">Build</h2>
-            <p className="text-[16px] text-black/70 leading-relaxed font-medium">
-              With a finalized design and a structured schedule, our expert crews execute the construction phase with precision. We maintain clear communication throughout the build, utilizing high-quality materials to deliver a stunning landscape built to endure Alberta's seasons.
-            </p>
-          </div>
+      {/* GUARANTEES */}
+      <Band>
+        <h2 className="to-display to-h2">Fully insured and guaranteed</h2>
+        <p className="to-sub mt-4">Peace of mind</p>
+        <div className="mt-12 grid gap-5 md:grid-cols-3">
+          {guarantees.map((item) => (
+            <article key={item.id} className="to-card p-8">
+              <span className="to-icon">
+                <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <path d="M12 3 5 6v5c0 4.5 2.9 8.3 7 10 4.1-1.7 7-5.5 7-10V6l-7-3Zm-3 9 2 2 4-4" />
+                </svg>
+              </span>
+              <h3 className="to-display to-h3 mt-6">{item.title}</h3>
+              <p className="mt-3 text-[1.08rem] leading-relaxed text-muted">{item.description}</p>
+            </article>
+          ))}
         </div>
+      </Band>
 
-
-      </Section>
-
-
-      {/* JOBBER LEAD FORM */}
-      <Section id="home-form" title="REQUEST AN ESTIMATE" titleClassName="text-[#017a6d]">
-        <div className="max-w-6xl mx-auto w-full">
-          <JobberLeadForm
-            clienthubId="41b3399e-3795-43d8-afe2-e6c38c1b3e6e-2235504"
-            formUrl="https://clienthub.getjobber.com/client_hubs/41b3399e-3795-43d8-afe2-e6c38c1b3e6e/public/work_request/embedded_work_request_form?form_id=2235504"
-          />
+      {/* REVIEWS */}
+      <Band>
+        <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+          <h2 className="to-display to-h2">What our clients say</h2>
+          <a href={site.googleProfile} target="_blank" rel="noopener noreferrer" className="to-focus flex w-fit items-center gap-3 rounded-full bg-white/[0.07] px-5 py-3 text-[1.05rem] font-medium text-fg transition-colors hover:bg-white/[0.12]">
+            <GoogleMark />
+            {site.reviews.rating} from {site.reviews.count} Google reviews
+          </a>
         </div>
-      </Section>
+        <div className="mt-12 gap-5 md:columns-2 lg:columns-3">
+          {reviews.map((review) => (
+            <figure key={review.name} className="to-card mb-5 break-inside-avoid p-8">
+              <Stars />
+              <blockquote className="mt-5 text-[1.08rem] leading-relaxed text-fg">“{review.text}”</blockquote>
+              <figcaption className="mt-6">
+                <p className="text-[1.05rem] font-semibold text-fg">{review.name}</p>
+                <p className="mt-1 text-[0.98rem] text-muted">{review.role}</p>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      </Band>
 
-      {/* TESTIMONIALS */}
-      <TestimonialSection
-        testimonials={[
-          {
-            name: "Brian Williamson",
-            role: "Walking Path Repair",
-            text: "I was looking for a landscape company to repair a walking path. Ashton from TERREOAK answered immediately and we booked a site visit. He provided several options, samples, and photos. We were pleased with the finished product and the way he handled the process and kept us informed throughout.",
-          },
-          {
-            name: "Chris Leech",
-            role: "Lawn Aeration",
-            text: "Got these guys in to aerate my lawn for the first time. Could not be happier. Ashton and his crew did a tremendous job. They reply quickly and get the job booked and done fast. Always great to deal with a local business that actual replies.",
-          },
-          {
-            name: "Linda Hayes Conradson",
-            role: "Yard Cleanup Customer",
-            text: "I recently used TERREOAK for yard cleanup and was extremely happy with the quality of work and how courteous and considerate the onsite team was. Email communications were friendly, helpful and received quickly. Thank you to Ashton and his team. Would highly recommend!",
-          },
-          {
-            name: "George Witherley",
-            role: "Snow Removal",
-            text: "The guys from TERREOAK are amazing. They are clear on when they are coming with emails and show up every single time no matter how bad the snow fall is. They always go above and beyond clearing not only the walk way but my stairs as well. They are very polite and do an excellent job.",
-          },
-          {
-            name: "J Walker",
-            role: "Snow Removal Client",
-            text: "I currently use TERREOAK for snow removal services and have been extremely happy with their work. They always send notification of when they will be coming and are extremely prompt and courteous. Will definitely be using them again next season and would highly recommend.",
-          },
-          {
-            name: "Susan Lewis",
-            role: "Snow Removal",
-            text: "TERREOAK are doing snow removal for me this year. They send an email to advise when they are dispatching the crew each time it snows. They always get it done within the time they say. I'm very happy with their service and would highly recommend them.",
-          },
-          {
-            name: "John Vaisman",
-            role: "Spring Aeration & Clean Up",
-            text: "I used TERREOAK for spring aeration and clean up. They did a fantastic job and the lawn looked great all summer. Very professional and reasonably priced. Would recommend.",
-          },
-          {
-            name: "Justin & Ashley Lamrock",
-            role: "Power Rake and Aeration",
-            text: "If great service and professional results is what you're after, TERREOAK Landscaping is the place to go! Great pricing on power rake and aeration. Will book again next spring.",
-          },
-          {
-            name: "Chad Coopman",
-            role: "Lawn Care",
-            text: "Hands down one of the best Lawn Care Companies I've dealt with. Fast, Quality workmanship, above and beyond my expectations. I highly recommend Ashton and TERREOAK, thank you again.",
-          },
-          {
-            name: "Ewa Tybura",
-            role: "Landscaping",
-            text: "It was a great experience that I had within this company rep Ashton. They were very fast, professional and they were paying attention to all details. I will definitely using their service again.",
-          },
-          {
-            name: "Cheryl O'Brien",
-            role: "Window Washing",
-            text: "Great service from the team @ TERREOAK!! Recently had them out to wash my windows, quick, professional service. My only complaint is that now that the outside of the windows are so clean I have to clean the inside 🤣. Thanks guys great job!!",
-          },
-          {
-            name: "Shawn Gareau",
-            role: "Landscaping",
-            text: "I have relied on TERREOAK for all of my landscaping needs and they always deliver a great job in a timely manner. I highly recommend them.",
-          },
-        ]}
-      />
-
-      {/* GALLERY */}
-      <Section
-        kicker="Projects"
-        title="OUR WORK"
-        titleClassName="text-[#017a6d]"
-        wrapperClassName="bg-white"
-        hasBorder={true}
-      >
-        <Carousel className="mt-12">
-          {allImages.map((img, i) => (
-            <div key={i} className="min-w-[85vw] md:min-w-[400px] px-3 snap-center">
-              <ScrollReveal className="relative aspect-[4/3] rounded-lg overflow-hidden group border border-black/5 shadow-md">
-                <Image
-                  src={img.src}
-                  alt={img.alt}
-                  fill
-                  sizes="(max-width: 768px) 350px, 450px"
-                  className="object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500" />
-              </ScrollReveal>
+      {/* OUR WORK */}
+      <Band>
+        <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+          <h2 className="to-display to-h2">Our work</h2>
+          <Button href="/projects" variant="quiet">
+            View all projects
+          </Button>
+        </div>
+        <div className="-mx-5 mt-12 flex snap-x snap-mandatory gap-5 overflow-x-auto px-5 pb-4 [scrollbar-width:none] sm:-mx-8 sm:px-8 lg:-mx-12 lg:px-12" tabIndex={0} role="region" aria-label="Photo gallery of recent work">
+          {gallery.map((img) => (
+            <div key={img.src} className="relative aspect-[4/5] w-[72%] flex-none snap-start overflow-hidden rounded-[28px] sm:w-[320px]">
+              <Image src={img.src} alt={img.alt} fill sizes="320px" className="object-cover" />
             </div>
           ))}
-        </Carousel>
-        <div className="mt-12 text-center">
-          <Link
-            href="/projects"
-            className="inline-flex items-center justify-center rounded-lg border-2 border-[#017a6d] px-8 py-3 text-sm font-bold text-[#017a6d] hover:bg-[#017a6d] hover:text-white transition-all shadow-md hover:-translate-y-1"
-          >
-            VIEW ALL PROJECTS
-          </Link>
         </div>
-      </Section>
+      </Band>
+
+      {/* ESTIMATE FORM */}
+      <Band id="home-form" surface="snow">
+        <div className="grid gap-x-20 gap-y-10 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]">
+          <div>
+            <h2 className="to-display to-h2">Request an estimate</h2>
+            <p className="to-body mt-6">Tell us about your property and what you have in mind. We’ll follow up to book a site visit.</p>
+            <ul className="mt-8 grid gap-3 text-[1.1rem] font-medium text-fg">
+              {trustPoints.map((point) => (
+                <li key={point} className="flex items-start gap-3">
+                  <Tick />
+                  {point}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="rounded-[28px] bg-white p-4 shadow-[0_30px_60px_-40px_rgba(0,0,0,0.35)] md:p-7">
+            <JobberLeadForm clienthubId={jobberForm.clienthubId} formUrl={jobberForm.formUrl} />
+          </div>
+        </div>
+      </Band>
+
+      {/* INSTAGRAM */}
+      <Band>
+        <h2 className="to-display to-h2">Latest project videos</h2>
+        <p className="to-body mt-5">
+          Check out our latest landscape transformations and snow removal updates over on Instagram. We post regular jobsite walk-throughs and before/afters.
+        </p>
+        <div className="-mx-5 mt-12 flex snap-x snap-mandatory gap-5 overflow-x-auto px-5 pb-4 [scrollbar-width:none] sm:-mx-8 sm:px-8 lg:mx-0 lg:grid lg:grid-cols-3 lg:overflow-visible lg:px-0 lg:pb-0">
+          {instagramPosts.map((url) => (
+            <div key={url} className="w-[85%] flex-none snap-center sm:w-[380px] lg:w-auto">
+              <InstagramEmbed url={url} />
+            </div>
+          ))}
+        </div>
+      </Band>
 
       {/* BLOG */}
-      <OurBlogSection />
+      <Band>
+        <div className="to-card flex flex-col gap-8 p-8 md:flex-row md:items-center md:justify-between md:p-12">
+          <div>
+            <h2 className="to-display to-h2">Our blog</h2>
+            <p className="to-body mt-4">Stay updated with the latest landscaping tips, seasonal advice, and project highlights from the TERREOAK team.</p>
+          </div>
+          <div className="shrink-0">
+            <Button href="/blog">Read our blog</Button>
+          </div>
+        </div>
+      </Band>
     </main>
   );
 }

@@ -3,12 +3,13 @@ import BeforeAfterSlider from "../components/BeforeAfterSlider";
 import InstagramEmbed from "../components/InstagramEmbed";
 import JobberLeadForm from "../components/JobberLeadForm";
 import JsonLd from "../components/JsonLd";
-import { Band, Button, Container, FaqList } from "../components/ds";
+import { Band, Button, Container, FaqList, GoogleMark, Stars, Tick } from "../components/ds";
+import { CountUp, HeroVideo } from "../components/HeroMedia";
 import { breadcrumbLd, faqLd, pageMeta } from "../lib/seo";
 import { site } from "../lib/site";
 import { addOns, instagramPosts, jobberForm, offers, passes, reviews, season, stats, steps, zones } from "./content";
 import { snowFaqs } from "./faqs";
-import { CountUp, HeroVideo, RouteCheck, StickyCta } from "./SnowClient";
+import { RouteCheck, StickyCta } from "./SnowClient";
 
 const path = "/residential-snow-removal";
 const description =
@@ -39,21 +40,6 @@ const jsonLd = {
   ],
 };
 
-const Tick = () => (
-  <svg className="mt-[0.35em] h-4 w-4 shrink-0 text-accent" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-    <path d="m2.5 8.5 3.5 3.5 7.5-8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-  </svg>
-);
-
-const GoogleMark = () => (
-  <svg viewBox="0 0 24 24" className="h-5 w-5 shrink-0" aria-hidden="true">
-    <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4" />
-    <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-1 .67-2.28 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853" />
-    <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05" />
-    <path d="M12 5.38c1.62 0 3.06.56 4.21 1.66l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335" />
-  </svg>
-);
-
 const offerIcons: React.ReactNode[] = [
   <path key="calendar" d="M7 3v3M17 3v3M4 9h16M6 5h12a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Zm3 9 2 2 4-4" />,
   <path key="ruler" d="M3 17 17 3l4 4L7 21l-4-4Zm5-5 2 2m1-5 2 2m1-5 2 2" />,
@@ -62,16 +48,6 @@ const offerIcons: React.ReactNode[] = [
   <path key="pin" d="M12 21s7-6.2 7-11.5a7 7 0 0 0-14 0C5 14.8 12 21 12 21Zm0-9a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z" />,
   <path key="card" d="M3 7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7Zm0 3h18M7 15h4" />,
 ];
-
-const Stars = () => (
-  <span className="flex gap-0.5 text-olive" aria-label="5 out of 5 stars" role="img">
-    {[0, 1, 2, 3, 4].map((i) => (
-      <svg key={i} className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-      </svg>
-    ))}
-  </span>
-);
 
 export default function ResidentialSnowRemovalPage() {
   const trackerMax = Math.max(season.totalCm, season.averageCm);

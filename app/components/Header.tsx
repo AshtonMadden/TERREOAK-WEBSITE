@@ -48,7 +48,7 @@ export default function Header() {
   const isSnow = pathname.startsWith("/residential-snow-removal");
   const cta = isSnow
     ? { label: "Reserve a season pass", href: "#seasonal-form" }
-    : { label: "Get a quote", href: "/#home-form" };
+    : { label: "Request an estimate", href: "/#home-form" };
 
   const isActive = (href?: string, items?: { href: string }[]) =>
     href ? pathname === href : !!items?.some((i) => pathname === i.href);

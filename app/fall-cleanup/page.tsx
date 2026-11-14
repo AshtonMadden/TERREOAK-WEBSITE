@@ -10,7 +10,7 @@ const description =
 const bookingUrl = "https://clienthub.getjobber.com/booking/6ba7fcc7-4c40-4f17-9235-428046e21db6";
 
 export const metadata = pageMeta({
-  title: "Fall Cleanup Calgary | Leaf Removal & Lawn Prep | TERREOAK",
+  title: "Fall Cleanup Calgary | Leaf Removal & Aeration | TERREOAK",
   description,
   path,
   image: "/fall-cleanup-hero.jpg",

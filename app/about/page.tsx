@@ -10,7 +10,7 @@ const description =
   "Learn about TERREOAK, an owner-operated landscaping company in Calgary. Discover our story, our hands-on approach, and our commitment to quality.";
 
 export const metadata = pageMeta({
-  title: "About TERREOAK | Calgary Landscaping & Snow Company",
+  title: "About TERREOAK | Calgary Landscaping & Snow Removal Company",
   description,
   path,
   image: "/images/about-mission-team.jpg",

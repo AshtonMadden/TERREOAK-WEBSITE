@@ -20,7 +20,7 @@ export const snowPost: Article = {
 };
 
 export const springPost: Article = {
-  "metaTitle": "Why Spring Cleanup Matters in Calgary | TERREOAK Blog",
+  "metaTitle": "Why Spring Cleanup Matters for Calgary Lawns | TERREOAK",
   "metaDescription": "Understand the importance of a thorough spring yard cleanup in Calgary. Learn how early maintenance sets your lawn and garden up for summer success.",
   "title": "Why a professional spring cleanup is essential for Calgary lawns",
   "category": "Seasonal care",

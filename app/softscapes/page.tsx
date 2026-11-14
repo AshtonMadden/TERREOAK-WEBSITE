@@ -11,7 +11,7 @@ const description =
   "Sod installation, garden beds, tree and shrub planting and premium mulch in Calgary, using Zone 3 plants and proper soil prep so it thrives long term.";
 
 export const metadata = pageMeta({
-  title: "Softscaping Calgary | Sod, Garden Beds & Mulch | TERREOAK",
+  title: "Sod Installation & Softscaping Calgary | TERREOAK",
   description,
   path,
   image: "/images/softscaping-river-rock-hostas.jpg",

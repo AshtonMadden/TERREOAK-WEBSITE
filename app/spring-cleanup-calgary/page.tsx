@@ -16,7 +16,7 @@ const description =
   "Revitalize your yard with TERREOAK's professional spring cleanup services in Calgary. Power raking, aeration, and debris removal for a healthy lawn.";
 
 export const metadata = pageMeta({
-  title: "Spring Cleanup Calgary | Aeration & Power Raking | TERREOAK",
+  title: "Spring Cleanup Calgary | Power Raking & Aeration | TERREOAK",
   description,
   path,
   image: "/spring-cleanup-pics/Calgary-Core-Aeration.JPG",

@@ -11,7 +11,7 @@ const description =
   "Read the TERREOAK blog for expert landscaping tips, snow removal advice, and seasonal property maintenance guides for Calgary homeowners.";
 
 export const metadata = pageMeta({
-  title: "Landscaping & Snow Removal Blog Calgary | TERREOAK",
+  title: "Calgary Landscaping & Snow Removal Tips | TERREOAK Blog",
   description,
   path,
   image: "/images/blog-hero.jpg",

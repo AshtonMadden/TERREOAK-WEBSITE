@@ -12,7 +12,7 @@ const description =
   "Calgary landscape design and build: patios, retaining walls, sod and drainage built for freeze-thaw. See typical costs and request a fixed-price proposal.";
 
 export const metadata = pageMeta({
-  title: "Landscaping Calgary | Design & Build | TERREOAK",
+  title: "Landscaping Calgary | Landscape Design & Build | TERREOAK",
   description,
   path,
   image: "/Calgary-landscape-design-build-patio.JPG",

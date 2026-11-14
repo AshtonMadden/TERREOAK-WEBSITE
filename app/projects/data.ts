@@ -20,7 +20,7 @@ export type ProjectDetail = {
 export const projectDetails: Record<string, ProjectDetail> = {
   mckenzieStonePathway: {
     path: "/mckenzielakelandscaping",
-    metaTitle: "Stone Pathway in McKenzie Lake, Calgary | TERREOAK Projects",
+    metaTitle: "Stone Pathway Install, McKenzie Lake Calgary | TERREOAK",
     metaDescription:
       "A two-day stone pathway upgrade in McKenzie Lake, SE Calgary: old rock beds removed, commercial filter fabric, new paving stones and 40mm Rundle rock.",
     title: "McKenzie Lake custom landscape design & build",
@@ -49,7 +49,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
   },
   mckenzieTechoBloc: {
     path: "/projects/mckenzie-lake-landscaping",
-    metaTitle: "Techo-Bloc Paver Path in McKenzie Lake | TERREOAK Projects",
+    metaTitle: "Techo-Bloc Paver Walkway, McKenzie Lake Calgary | TERREOAK",
     metaDescription:
       "A $10,000 side-yard hardscape in McKenzie Lake, Calgary: Techo-Bloc Blu 60 Grande pavers on a compacted base with a washed river rock border.",
     title: "McKenzie Lake premium hardscape installation",
@@ -82,7 +82,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
   },
   cranston: {
     path: "/projects/cranston-landscape-makeover",
-    metaTitle: "Cranston Front Yard Makeover, Calgary | TERREOAK Projects",
+    metaTitle: "Cranston Front Yard Landscaping Project, Calgary | TERREOAK",
     metaDescription:
       "A Cranston front yard brought back after Killex killed the lawn: new topsoil, Kentucky Bluegrass sod, Rundle rock beds and a 300 lb feature boulder.",
     title: "Cranston front yard landscape makeover",
@@ -112,7 +112,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
   },
   parkland: {
     path: "/parklandlandscaping",
-    metaTitle: "Parkland Front Yard Overhaul | TERREOAK Landscaping",
+    metaTitle: "Front Yard Landscaping in Parkland, Calgary | TERREOAK",
     metaDescription: "See our complete front yard landscaping overhaul in Parkland, SE Calgary. River rock, custom borders, and hardy perennials.",
     title: "Parkland complete front yard overhaul",
     location: "Parkland, SE Calgary",

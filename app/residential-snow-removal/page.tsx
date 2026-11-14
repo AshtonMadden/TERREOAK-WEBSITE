@@ -20,7 +20,7 @@ const description =
   "Residential snow removal in Calgary on a flat-rate season pass. Driveway and sidewalk clearing at 1cm, dispatch alerts, and a photo log after every visit.";
 
 export const metadata = pageMeta({
-  title: "Residential Snow Removal Calgary | Season Pass | TERREOAK",
+  title: "Snow Removal Calgary | Residential Season Pass | TERREOAK",
   description,
   path,
   image: "/images/snow-removal/hero-poster.jpg",

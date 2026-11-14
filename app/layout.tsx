@@ -14,7 +14,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Script from "next/script";
 
-const homeTitle = "Landscaping & Snow Removal Calgary | TERREOAK";
+const homeTitle = "Calgary Landscaping & Snow Removal Company | TERREOAK";
 const homeDescription =
   "TERREOAK builds patios, retaining walls and landscapes and handles year-round property maintenance and residential snow removal in Calgary. 5.0 on Google.";
 

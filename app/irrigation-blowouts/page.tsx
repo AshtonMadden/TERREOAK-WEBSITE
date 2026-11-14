@@ -9,7 +9,7 @@ const description =
   "Protect your sprinkler system from freezing. Book professional irrigation blowouts and winterization services in Calgary with TERREOAK.";
 
 export const metadata = pageMeta({
-  title: "Sprinkler Blowouts & Winterization Calgary | TERREOAK",
+  title: "Sprinkler & Irrigation Blowouts Calgary | TERREOAK",
   description,
   path,
   image: "/images/irrigation-hero.jpg",

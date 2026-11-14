@@ -9,7 +9,7 @@ const description = "Join the TERREOAK crew in Calgary. Open roles for landscape
 const applyEmail = "careers@terreoak.com";
 
 export const metadata = pageMeta({
-  title: "Landscaping & Snow Removal Jobs Calgary | TERREOAK Careers",
+  title: "Landscaping & Snow Removal Jobs in Calgary | TERREOAK",
   description,
   path,
   image: "/images/careers-hero.png",

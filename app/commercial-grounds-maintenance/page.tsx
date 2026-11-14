@@ -12,7 +12,7 @@ const description =
   "Commercial grounds maintenance and snow removal in Calgary for condos, HOAs, business parks and builders. Time-stamped photo logs after every visit.";
 
 export const metadata = pageMeta({
-  title: "Commercial Grounds Maintenance Calgary | TERREOAK",
+  title: "Commercial Snow Removal & Landscaping Calgary | TERREOAK",
   description,
   path,
   image: "/commercial-lawn-mowing.JPG",

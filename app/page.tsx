@@ -71,6 +71,25 @@ export default function HomePage() {
         </div>
       </Band>
 
+      {/* SNOW REMOVAL REMINDER */}
+      <Band>
+        <div className="relative isolate flex min-h-[460px] flex-col justify-end overflow-hidden rounded-[36px] shadow-[0_40px_80px_-40px_rgba(0,0,0,0.8)] md:min-h-[520px]">
+          <div className="absolute inset-0 -z-10">
+            <HeroVideo src="/videos/calgary-snow-removal-drone.mp4" poster="/images/snow-removal/hero-poster.jpg" />
+            <div className="absolute inset-0 bg-[#1d1f21]/55" />
+          </div>
+          <div className="flex flex-col gap-8 p-8 md:flex-row md:items-end md:justify-between md:p-12">
+            <div>
+              <h2 className="to-display to-h2 max-w-[18ch]">Winter’s coming sooner than you think.</h2>
+              <p className="to-display mt-3 text-[1.6rem] text-accent md:text-[2rem]">Are you prepared?</p>
+            </div>
+            <div className="shrink-0">
+              <Button href="/residential-snow-removal#seasonal-form">Get a season pass</Button>
+            </div>
+          </div>
+        </div>
+      </Band>
+
       {/* FEATURED PROJECTS */}
       <Band>
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">

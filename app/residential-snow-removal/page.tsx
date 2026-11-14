@@ -170,7 +170,10 @@ export default function ResidentialSnowRemovalPage() {
 
       {/* PASSES */}
       <Band>
-        <h2 className="to-display to-h2 max-w-[18ch]">Pick the pass that fits your winter</h2>
+        <div className="flex items-center justify-between gap-6">
+          <h2 className="to-display to-h2 max-w-[18ch]">Pick the pass that fits your winter</h2>
+          <Image src="/brand/snow-pass-badge.png" alt="TERREOAK Snow Pass" width={514} height={585} className="h-24 w-auto shrink-0 md:h-36" />
+        </div>
         <div className="mt-12 grid gap-5 lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)]">
           {passes.map((pass, i) => (
             <article key={pass.name} className={`to-card relative flex flex-col overflow-hidden p-8 md:p-10 ${i === 0 ? "ring-1 ring-brand/45 md:pr-52" : ""}`}>
@@ -224,8 +227,11 @@ export default function ResidentialSnowRemovalPage() {
 
       {/* REFERRAL PROGRAM */}
       <Band id="referral">
-        <div className="to-card p-8 md:p-12">
-          <div className="grid gap-x-16 gap-y-10 lg:grid-cols-[minmax(0,6fr)_minmax(0,5fr)] lg:items-center">
+        <div className="to-card relative p-8 md:p-12">
+          <div className="mb-8 flex justify-end md:absolute md:right-12 md:top-12 md:mb-0">
+            <Image src="/brand/snow-pass-rewards.png" alt="Snow Pass Rewards" width={488} height={96} className="h-11 w-auto md:h-14" />
+          </div>
+          <div className="grid gap-x-16 gap-y-10 lg:grid-cols-[minmax(0,6fr)_minmax(0,5fr)] lg:items-end">
             <div>
               <h2 className="to-display to-h2">Snowball referral program</h2>
               <ul className="mt-7 grid gap-3 text-[1.15rem] text-fg">

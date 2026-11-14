@@ -45,10 +45,12 @@ export default function Header() {
     setExpanded(null);
   };
 
-  const isSnow = pathname.startsWith("/residential-snow-removal");
-  const cta = isSnow
+  // The header button goes to the form that matches the page you are on.
+  const cta = pathname.startsWith("/residential-snow-removal")
     ? { label: "Reserve a season pass", href: "#seasonal-form" }
-    : { label: "Request an estimate", href: "/#home-form" };
+    : pathname.startsWith("/commercial-grounds-maintenance")
+      ? { label: "Request a proposal", href: "#commercial-form" }
+      : { label: "Request an estimate", href: "/#home-form" };
 
   const isActive = (href?: string, items?: { href: string }[]) =>
     href ? pathname === href : !!items?.some((i) => pathname === i.href);

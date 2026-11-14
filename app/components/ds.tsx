@@ -1,5 +1,8 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
+import { site } from "../lib/site";
+import { HeroVideo } from "./HeroMedia";
 
 /* TERREOAK design system primitives. Server components: safe to use anywhere. */
 
@@ -113,3 +116,92 @@ export const Stars = () => (
   </span>
 );
 
+
+/** Full-height page hero: photo or video behind a flat dark overlay, headline and actions on top. */
+export function PageHero({
+  title,
+  lead,
+  image,
+  imageAlt = "",
+  video,
+  poster,
+  children,
+  footer,
+}: {
+  title: string;
+  lead?: ReactNode;
+  image?: string;
+  imageAlt?: string;
+  video?: string;
+  poster?: string;
+  /** Buttons */
+  children?: ReactNode;
+  /** Optional row under the rating line, e.g. trust points */
+  footer?: ReactNode;
+}) {
+  return (
+    <section className="relative isolate flex min-h-[100svh] flex-col justify-end">
+      <div className="absolute inset-0 -z-10">
+        {video ? (
+          <HeroVideo src={video} poster={poster ?? ""} />
+        ) : image ? (
+          <Image src={image} alt={imageAlt} fill priority sizes="100vw" className="object-cover" />
+        ) : null}
+        <div className="absolute inset-0 bg-[#1d1f21]/65" />
+      </div>
+      <Container className="pb-14 pt-36 md:pb-20">
+        <h1 className="to-display to-h1 max-w-[20ch]">{title}</h1>
+        {lead && <p className="to-body mt-8 !text-fg">{lead}</p>}
+        {children && <div className="mt-8 flex flex-col gap-3 sm:flex-row">{children}</div>}
+        <p className="mt-8 flex flex-wrap items-center gap-x-3 gap-y-2 text-[1.05rem] text-white/80">
+          <GoogleMark />
+          <a href={site.googleProfile} target="_blank" rel="noopener noreferrer" className="to-link">
+            {site.reviews.rating} stars from {site.reviews.count} Google reviews
+          </a>
+        </p>
+        {footer && <div className="mt-14 md:mt-20">{footer}</div>}
+      </Container>
+    </section>
+  );
+}
+
+/** Founder quote card with photo and signature. */
+export function FounderQuote() {
+  return (
+    <figure className="to-card grid items-center gap-8 p-8 md:grid-cols-[auto_minmax(0,1fr)] md:gap-12 md:p-12">
+      <div className="relative h-40 w-40 overflow-hidden rounded-full md:h-48 md:w-48">
+        <Image src="/images/Ashton-Madden-Cowboy.jpg" alt="Ashton Madden, Founder & Director of TERREOAK Landscaping & Snow" fill sizes="200px" className="object-cover" />
+      </div>
+      <div>
+        <blockquote className="to-display text-[1.5rem] leading-snug md:text-[1.9rem]">
+          “My goal with TERREOAK is simple: build a company rooted in strong values, a great team culture, and a customer experience people can trust.”
+        </blockquote>
+        <figcaption className="mt-6 flex items-center gap-6">
+          <Image src="/Ashton_Signature_.jpg" alt="Ashton Madden’s signature" width={150} height={100} className="h-20 w-auto opacity-90 mix-blend-screen invert" />
+          <div>
+            <p className="text-[1.15rem] font-semibold text-fg">Ashton Madden</p>
+            <p className="to-sub mt-1">Founder & Director</p>
+          </div>
+        </figcaption>
+      </div>
+    </figure>
+  );
+}
+
+/** Closing blog card. Pass extra buttons as children to show them before the main one. */
+export function BlogCta({ children }: { children?: ReactNode }) {
+  return (
+    <Band>
+      <div className="to-card flex flex-col gap-8 p-8 md:flex-row md:items-center md:justify-between md:p-12">
+        <div>
+          <h2 className="to-display to-h2">Our blog</h2>
+          <p className="to-body mt-4">Stay updated with the latest landscaping tips, seasonal advice, and project highlights from the TERREOAK team.</p>
+        </div>
+        <div className="flex shrink-0 flex-col gap-3 sm:flex-row">
+          {children}
+          <Button href="/blog">Read our blog</Button>
+        </div>
+      </div>
+    </Band>
+  );
+}

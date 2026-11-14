@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import InstagramEmbed from "./components/InstagramEmbed";
 import JobberLeadForm from "./components/JobberLeadForm";
-import { Band, Button, Container, GoogleMark, Stars, Tick } from "./components/ds";
+import { Band, BlogCta, Button, Container, FounderQuote, GoogleMark, Stars, Tick } from "./components/ds";
 import { HeroVideo } from "./components/HeroMedia";
 import { site } from "./lib/site";
 import { gallery, guarantees, instagramPosts, jobberForm, processSteps, projects, reviews, services, trustPoints } from "./home-content";
@@ -161,35 +161,9 @@ export default function HomePage() {
           </div>
         </div>
 
-        <figure className="to-card mt-14 grid items-center gap-8 p-8 md:grid-cols-[auto_minmax(0,1fr)] md:gap-12 md:p-12">
-          <div className="relative h-40 w-40 overflow-hidden rounded-full md:h-48 md:w-48">
-            <Image
-              src="/images/Ashton-Madden-Cowboy.jpg"
-              alt="Ashton Madden, Founder & Director of TERREOAK Landscaping & Snow"
-              fill
-              sizes="200px"
-              className="object-cover"
-            />
-          </div>
-          <div>
-            <blockquote className="to-display text-[1.5rem] leading-snug md:text-[1.9rem]">
-              “My goal with TERREOAK is simple: build a company rooted in strong values, a great team culture, and a customer experience people can trust.”
-            </blockquote>
-            <figcaption className="mt-6 flex items-center gap-6">
-              <Image
-                src="/Ashton_Signature_.jpg"
-                alt="Ashton Madden’s signature"
-                width={150}
-                height={100}
-                className="h-20 w-auto opacity-90 mix-blend-screen invert"
-              />
-              <div>
-                <p className="text-[1.15rem] font-semibold text-fg">Ashton Madden</p>
-                <p className="to-sub mt-1">Founder & Director</p>
-              </div>
-            </figcaption>
-          </div>
-        </figure>
+        <div className="mt-14">
+          <FounderQuote />
+        </div>
       </Band>
 
       {/* PROCESS */}
@@ -306,18 +280,7 @@ export default function HomePage() {
         </div>
       </Band>
 
-      {/* BLOG */}
-      <Band>
-        <div className="to-card flex flex-col gap-8 p-8 md:flex-row md:items-center md:justify-between md:p-12">
-          <div>
-            <h2 className="to-display to-h2">Our blog</h2>
-            <p className="to-body mt-4">Stay updated with the latest landscaping tips, seasonal advice, and project highlights from the TERREOAK team.</p>
-          </div>
-          <div className="shrink-0">
-            <Button href="/blog">Read our blog</Button>
-          </div>
-        </div>
-      </Band>
+      <BlogCta />
     </main>
   );
 }

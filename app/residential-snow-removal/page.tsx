@@ -3,13 +3,14 @@ import BeforeAfterSlider from "../components/BeforeAfterSlider";
 import InstagramEmbed from "../components/InstagramEmbed";
 import JobberLeadForm from "../components/JobberLeadForm";
 import JsonLd from "../components/JsonLd";
-import { Band, Button, Container, FaqList, GoogleMark, Stars, Tick } from "../components/ds";
+import { Band, BlogCta, Button, Container, FaqList, GoogleMark, Stars, Tick } from "../components/ds";
 import { CountUp, HeroVideo } from "../components/HeroMedia";
 import { breadcrumbLd, faqLd, pageMeta } from "../lib/seo";
 import { site } from "../lib/site";
 import { addOns, instagramPosts, jobberForm, offers, passes, referral, reviews, season, stats, steps, zones } from "./content";
 import { snowFaqs } from "./faqs";
-import { RouteCheck, StickyCta } from "./SnowClient";
+import StickyCta from "../components/StickyCta";
+import { RouteCheck } from "./SnowClient";
 
 const path = "/residential-snow-removal";
 const description =
@@ -465,21 +466,11 @@ export default function ResidentialSnowRemovalPage() {
         </div>
       </Band>
 
-      {/* BLOG */}
-      <Band>
-        <div className="to-card flex flex-col gap-8 p-8 md:flex-row md:items-center md:justify-between md:p-12">
-          <div>
-            <h2 className="to-display to-h2">Our blog</h2>
-            <p className="to-body mt-4">Stay updated with the latest landscaping tips, seasonal advice, and project highlights from the TERREOAK team.</p>
-          </div>
-          <div className="flex shrink-0 flex-col gap-3 sm:flex-row">
-            <Button href="/blog/why-hire-snow-removal-company" variant="quiet">
-              Why hire a snow removal company?
-            </Button>
-            <Button href="/blog">Read our blog</Button>
-          </div>
-        </div>
-      </Band>
+      <BlogCta>
+        <Button href="/blog/why-hire-snow-removal-company" variant="quiet">
+          Why hire a snow removal company?
+        </Button>
+      </BlogCta>
 
       <StickyCta targetId="seasonal-form" label="Reserve a season pass" />
     </main>

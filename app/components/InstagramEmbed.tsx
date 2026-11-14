@@ -20,6 +20,8 @@ export default function InstagramEmbed({ url, width = '100%', height = 620 }: In
         frameBorder="0"
         scrolling="no"
         allow="encrypted-media"
+        loading="lazy"
+        title="Instagram post from TERREOAK"
         className="w-full"
       ></iframe>
     </div>

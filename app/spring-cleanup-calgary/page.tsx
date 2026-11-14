@@ -5,6 +5,7 @@ import JsonLd from "../components/JsonLd";
 import OfferPopup from "../components/OfferPopup";
 import StickyCta from "../components/StickyCta";
 import { Band, BlogCta, Button, FaqList, PageHero, Tick } from "../components/ds";
+import { GalleryBand } from "../components/sections";
 import { CountUp } from "../components/HeroMedia";
 import { breadcrumbLd, faqLd, pageMeta } from "../lib/seo";
 import { site } from "../lib/site";
@@ -170,17 +171,7 @@ export default function SpringCleanupPage() {
         </div>
       </Band>
 
-      {/* GALLERY */}
-      <Band>
-        <h2 className="to-display to-h2">Our recent cleanups</h2>
-        <div className="-mx-5 mt-12 flex snap-x snap-mandatory gap-5 overflow-x-auto px-5 pb-4 [scrollbar-width:none] sm:-mx-8 sm:px-8 lg:-mx-12 lg:px-12" tabIndex={0} role="region" aria-label="Photo gallery of recent spring cleanups">
-          {gallery.map((img) => (
-            <div key={img.src} className="relative aspect-[4/5] w-[72%] flex-none snap-start overflow-hidden rounded-[28px] sm:w-[320px]">
-              <Image src={img.src} alt={img.alt} fill sizes="320px" className="object-cover" />
-            </div>
-          ))}
-        </div>
-      </Band>
+      <GalleryBand title="Our recent cleanups" images={gallery} />
 
       {/* ESTIMATE FORM */}
       <Band id="spring-cleanup-form" surface="snow">

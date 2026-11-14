@@ -5,6 +5,7 @@ import { site } from "../lib/site";
 import { CountUp } from "./HeroMedia";
 import InstagramEmbed from "./InstagramEmbed";
 import JobberLeadForm from "./JobberLeadForm";
+import ReadMore from "./ReadMore";
 import { breadcrumbLd, faqLd } from "../lib/seo";
 import { Band, FaqList, GoogleMark, Stars, Tick } from "./ds";
 
@@ -88,12 +89,13 @@ export function InstagramBand({ title, lead, posts }: { title: string; lead: str
     <Band>
       <h2 className="to-display to-h2">{title}</h2>
       <p className="to-body mt-5">{lead}</p>
-      <div className="-mx-5 mt-12 flex snap-x snap-mandatory gap-5 overflow-x-auto px-5 pb-4 [scrollbar-width:none] sm:-mx-8 sm:px-8 lg:mx-0 lg:grid lg:grid-cols-3 lg:overflow-visible lg:px-0 lg:pb-0">
-        {posts.map((url) => (
-          <div key={url} className="w-[85%] flex-none snap-center sm:w-[380px] lg:w-auto">
-            <InstagramEmbed url={url} />
-          </div>
-        ))}
+      <div className="mt-8 grid gap-5 md:mt-12 lg:grid-cols-3">
+        <InstagramEmbed url={posts[0]} />
+        <ReadMore inGrid label="Show more posts">
+          {posts.slice(1).map((url) => (
+            <InstagramEmbed key={url} url={url} />
+          ))}
+        </ReadMore>
       </div>
     </Band>
   );
@@ -263,25 +265,26 @@ export function FaqBand({ title = "FAQs", faqs }: { title?: string; faqs: { q: s
   );
 }
 
-/** Sideways-scrolling photo gallery. */
+/** Photo gallery as a grid: the first eight photos, with the rest behind a "Show more photos" button. */
 export function GalleryBand({ title, images, children }: { title: string; images: { src: string; alt: string }[]; children?: ReactNode }) {
+  const tile = (img: { src: string; alt: string }) => (
+    <div key={img.src} className="relative aspect-[4/5] overflow-hidden rounded-[20px] md:rounded-[28px]">
+      <Image src={img.src} alt={img.alt} fill sizes="(min-width: 1280px) 300px, (min-width: 768px) 33vw, 50vw" className="object-cover" />
+    </div>
+  );
   return (
     <Band>
       <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
         <h2 className="to-display to-h2">{title}</h2>
         {children}
       </div>
-      <div
-        className="-mx-5 mt-12 flex snap-x snap-mandatory gap-5 overflow-x-auto px-5 pb-4 [scrollbar-width:none] sm:-mx-8 sm:px-8 lg:-mx-12 lg:px-12"
-        tabIndex={0}
-        role="region"
-        aria-label={title}
-      >
-        {images.map((img) => (
-          <div key={img.src} className="relative aspect-[4/5] w-[72%] flex-none snap-start overflow-hidden rounded-[28px] sm:w-[320px]">
-            <Image src={img.src} alt={img.alt} fill sizes="320px" className="object-cover" />
-          </div>
-        ))}
+      <div className="mt-8 grid grid-cols-2 gap-3 md:mt-12 md:grid-cols-3 md:gap-5 lg:grid-cols-4">
+        {images.slice(0, 8).map(tile)}
+        {images.length > 8 && (
+          <ReadMore inGrid allSizes label="Show more photos">
+            {images.slice(8).map(tile)}
+          </ReadMore>
+        )}
       </div>
     </Band>
   );

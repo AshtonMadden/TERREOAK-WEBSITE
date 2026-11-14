@@ -52,6 +52,16 @@ const offerIcons: React.ReactNode[] = [
   <path key="card" d="M3 7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7Zm0 3h18M7 15h4" />,
 ];
 
+function ReviewCard({ review }: { review: { name: string; text: string } }) {
+  return (
+    <figure className="to-card flex flex-col p-6 md:p-8">
+      <Stars />
+      <blockquote className="mt-5 text-[1.08rem] leading-relaxed text-fg md:text-[1.12rem]">“{review.text}”</blockquote>
+      <figcaption className="mt-auto pt-6 text-[1.05rem] font-semibold text-muted">{review.name}</figcaption>
+    </figure>
+  );
+}
+
 /**
  * Snow measuring stick: a vertical ruler in centimetres that fills to this season's total,
  * with a marker at the season average. The scale grows by itself in a heavy winter.
@@ -152,16 +162,18 @@ export default function ResidentialSnowRemovalPage() {
       <Band>
         <h2 className="to-display to-h2">What we offer</h2>
         <p className="to-body mt-5">Reliable, professional snow management tailored for Calgary homeowners.</p>
-        <div className="to-swipe mt-8 grid gap-5 sm:grid-cols-2 md:mt-12 lg:grid-cols-3">
+        <div className="mt-8 grid gap-3 sm:grid-cols-2 md:mt-12 md:gap-5 lg:grid-cols-3">
           {offers.map((offer, i) => (
-            <article key={offer.title} className="to-card to-card-lift p-8">
-              <span className="to-icon">
-                <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+            <article key={offer.title} className="to-card to-card-lift flex gap-4 p-5 md:block md:p-8">
+              <span className="to-icon shrink-0 max-md:h-11 max-md:w-11">
+                <svg className="h-6 w-6 max-md:h-5 max-md:w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                   {offerIcons[i]}
                 </svg>
               </span>
-              <h3 className="to-display to-h3 mt-6">{offer.title}</h3>
-              <p className="mt-3 text-[1.1rem] leading-relaxed text-muted">{offer.desc}</p>
+              <div>
+                <h3 className="to-display to-h3 md:mt-6">{offer.title}</h3>
+                <p className="mt-1.5 text-[1rem] leading-relaxed text-muted md:mt-3 md:text-[1.1rem]">{offer.desc}</p>
+              </div>
             </article>
           ))}
         </div>
@@ -207,12 +219,14 @@ export default function ResidentialSnowRemovalPage() {
       {/* HOW IT WORKS */}
       <Band id="how-it-works">
         <h2 className="to-display to-h2">How it works</h2>
-        <ol className="to-swipe mt-8 grid gap-5 md:mt-12 md:grid-cols-3">
+        <ol className="mt-8 grid gap-3 md:mt-12 md:grid-cols-3 md:gap-5">
           {steps.map((step, i) => (
-            <li key={step.title} className="to-card to-card-lift p-8">
-              <span className="to-icon to-display text-2xl">{i + 1}</span>
-              <h3 className="to-display to-h3 mt-6">{step.title}</h3>
-              <p className="mt-3 text-[1.1rem] leading-relaxed text-muted">{step.desc}</p>
+            <li key={step.title} className="to-card to-card-lift flex gap-4 p-5 md:block md:p-8">
+              <span className="to-icon to-display shrink-0 text-2xl max-md:h-11 max-md:w-11 max-md:text-xl">{i + 1}</span>
+              <div>
+                <h3 className="to-display to-h3 md:mt-6">{step.title}</h3>
+                <p className="mt-1.5 text-[1rem] leading-relaxed text-muted md:mt-3 md:text-[1.1rem]">{step.desc}</p>
+              </div>
             </li>
           ))}
         </ol>
@@ -226,9 +240,9 @@ export default function ResidentialSnowRemovalPage() {
             <Image src="/brand/snow-pass-badge.png" alt="TERREOAK Snow Pass" width={514} height={585} className="h-24 w-auto md:h-36" />
           </a>
         </div>
-        <div className="to-swipe mt-8 grid gap-5 md:mt-12 lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)]">
+        <div className="mt-8 grid gap-5 md:mt-12 lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)]">
           {passes.map((pass, i) => (
-            <article key={pass.name} className={`to-card relative flex flex-col overflow-hidden p-8 md:p-10 ${i === 0 ? "ring-1 ring-brand/45 md:pr-52" : ""}`}>
+            <article key={pass.name} className={`to-card relative flex flex-col overflow-hidden p-6 md:p-10 ${i === 0 ? "ring-1 ring-brand/45 md:pr-52" : ""}`}>
               {i === 0 && (
                 <Image
                   src="/brand/snow-picket.png"
@@ -280,14 +294,14 @@ export default function ResidentialSnowRemovalPage() {
       {/* GUARANTEES */}
       <Band>
         <h2 className="to-display to-h2">Our guarantees</h2>
-        <div className="to-swipe mt-8 grid gap-5 md:mt-12 md:grid-cols-2">
-          <article className="to-card p-8 md:p-10">
+        <div className="mt-8 grid gap-5 md:mt-12 md:grid-cols-2">
+          <article className="to-card p-6 md:p-10">
             <h3 className="to-display to-h3">First-service money-back guarantee</h3>
             <p className="mt-4 text-[1.12rem] leading-relaxed text-muted">
               Not happy after your first visit? We refund you in full, no questions, no fine print. We’re confident enough in our service to put that in writing because we’ve never had to use it.
             </p>
           </article>
-          <article className="to-card p-8 md:p-10">
+          <article className="to-card p-6 md:p-10">
             <h3 className="to-display to-h3">Once every 24 hours guarantee</h3>
             <p className="mt-4 text-[1.12rem] leading-relaxed text-muted">
               We guarantee to service your property once every 24 hours during continuous snowfall, and within 24 hours of the snowfall ending. If we miss that window for any reason, we send a crew back at no charge. On average, our team clears a full route in 12 hours. Calgary’s snow removal bylaw gives property owners 24 hours to clear sidewalks, we make sure you’re covered.
@@ -305,14 +319,13 @@ export default function ResidentialSnowRemovalPage() {
             {site.reviews.rating} from {site.reviews.count} Google reviews
           </a>
         </div>
-        <div className="to-swipe mt-8 grid gap-5 md:mt-12 lg:grid-cols-3">
-          {reviews.map((review) => (
-            <figure key={review.name} className="to-card flex flex-col p-8">
-              <Stars />
-              <blockquote className="mt-5 text-[1.12rem] leading-relaxed text-fg">“{review.text}”</blockquote>
-              <figcaption className="mt-auto pt-6 text-[1.05rem] font-semibold text-muted">{review.name}</figcaption>
-            </figure>
-          ))}
+        <div className="mt-8 grid gap-5 md:mt-12 lg:grid-cols-3">
+          <ReviewCard review={reviews[0]} />
+          <ReadMore inGrid label="Show more reviews">
+            {reviews.slice(1).map((review) => (
+              <ReviewCard key={review.name} review={review} />
+            ))}
+          </ReadMore>
         </div>
       </Band>
 
@@ -500,12 +513,13 @@ export default function ResidentialSnowRemovalPage() {
         <p className="to-body mt-5">
           Check out our latest snow removal updates over on Instagram. We post regular jobsite walk-throughs, blizzard updates, and before/after clearing results.
         </p>
-        <div className="-mx-5 mt-12 flex snap-x snap-mandatory gap-5 overflow-x-auto px-5 pb-4 [scrollbar-width:none] sm:-mx-8 sm:px-8 lg:mx-0 lg:grid lg:grid-cols-3 lg:overflow-visible lg:px-0 lg:pb-0">
-          {instagramPosts.map((url) => (
-            <div key={url} className="w-[85%] flex-none snap-center sm:w-[380px] lg:w-auto">
-              <InstagramEmbed url={url} />
-            </div>
-          ))}
+        <div className="mt-8 grid gap-5 md:mt-12 lg:grid-cols-3">
+          <InstagramEmbed url={instagramPosts[0]} />
+          <ReadMore inGrid label="Show more posts">
+            {instagramPosts.slice(1).map((url) => (
+              <InstagramEmbed key={url} url={url} />
+            ))}
+          </ReadMore>
         </div>
       </Band>
 

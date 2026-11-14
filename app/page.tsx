@@ -1,9 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import InstagramEmbed from "./components/InstagramEmbed";
 import JobberLeadForm from "./components/JobberLeadForm";
 import { Band, BlogCta, Button, Container, FounderQuote, GoogleMark, Stars, Tick } from "./components/ds";
 import { HeroVideo } from "./components/HeroMedia";
+import { GalleryBand, InstagramBand } from "./components/sections";
 import { site } from "./lib/site";
 import { gallery, guarantees, instagramPosts, jobberForm, processSteps, projects, reviews, services, trustPoints } from "./home-content";
 
@@ -227,22 +227,11 @@ export default function HomePage() {
         </div>
       </Band>
 
-      {/* OUR WORK */}
-      <Band>
-        <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-          <h2 className="to-display to-h2">Our work</h2>
-          <Button href="/projects" variant="quiet">
-            View all projects
-          </Button>
-        </div>
-        <div className="-mx-5 mt-12 flex snap-x snap-mandatory gap-5 overflow-x-auto px-5 pb-4 [scrollbar-width:none] sm:-mx-8 sm:px-8 lg:-mx-12 lg:px-12" tabIndex={0} role="region" aria-label="Photo gallery of recent work">
-          {gallery.map((img) => (
-            <div key={img.src} className="relative aspect-[4/5] w-[72%] flex-none snap-start overflow-hidden rounded-[28px] sm:w-[320px]">
-              <Image src={img.src} alt={img.alt} fill sizes="320px" className="object-cover" />
-            </div>
-          ))}
-        </div>
-      </Band>
+      <GalleryBand title="Our work" images={gallery}>
+        <Button href="/projects" variant="quiet">
+          View all projects
+        </Button>
+      </GalleryBand>
 
       {/* ESTIMATE FORM */}
       <Band id="home-form" surface="snow">
@@ -265,20 +254,11 @@ export default function HomePage() {
         </div>
       </Band>
 
-      {/* INSTAGRAM */}
-      <Band>
-        <h2 className="to-display to-h2">Latest project videos</h2>
-        <p className="to-body mt-5">
-          Check out our latest landscape transformations and snow removal updates over on Instagram. We post regular jobsite walk-throughs and before/afters.
-        </p>
-        <div className="-mx-5 mt-12 flex snap-x snap-mandatory gap-5 overflow-x-auto px-5 pb-4 [scrollbar-width:none] sm:-mx-8 sm:px-8 lg:mx-0 lg:grid lg:grid-cols-3 lg:overflow-visible lg:px-0 lg:pb-0">
-          {instagramPosts.map((url) => (
-            <div key={url} className="w-[85%] flex-none snap-center sm:w-[380px] lg:w-auto">
-              <InstagramEmbed url={url} />
-            </div>
-          ))}
-        </div>
-      </Band>
+      <InstagramBand
+        title="Latest project videos"
+        lead="Check out our latest landscape transformations and snow removal updates over on Instagram. We post regular jobsite walk-throughs and before/afters."
+        posts={instagramPosts}
+      />
 
       <BlogCta />
     </main>

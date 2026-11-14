@@ -173,9 +173,23 @@ export default function ResidentialSnowRemovalPage() {
         <h2 className="to-display to-h2 max-w-[18ch]">Pick the pass that fits your winter</h2>
         <div className="mt-12 grid gap-5 lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)]">
           {passes.map((pass, i) => (
-            <article key={pass.name} className={`to-card flex flex-col p-8 md:p-10 ${i === 0 ? "ring-1 ring-brand/45" : ""}`}>
-              <h3 className="to-display to-h3">{pass.name}</h3>
-              <p className="to-sub mt-2">{pass.term}</p>
+            <article key={pass.name} className={`to-card relative flex flex-col overflow-hidden p-8 md:p-10 ${i === 0 ? "ring-1 ring-brand/45 md:pr-52" : ""}`}>
+              {i === 0 && (
+                <Image
+                  src="/brand/snow-picket.png"
+                  alt="TERREOAK snow picket with the phone number 587-707-7648"
+                  width={169}
+                  height={490}
+                  className="pointer-events-none absolute -bottom-2 right-8 hidden h-[330px] w-auto md:block"
+                />
+              )}
+              <div className="flex items-start justify-between gap-4">
+                <div>
+                  <h3 className="to-display to-h3">{pass.name}</h3>
+                  <p className="to-sub mt-2">{pass.term}</p>
+                </div>
+                {i === 0 && <Image src="/brand/snow-picket.png" alt="" width={169} height={490} className="-mt-2 h-32 w-auto shrink-0 md:hidden" />}
+              </div>
               <p className="mt-5 text-[1.12rem] leading-relaxed text-muted">{pass.summary}</p>
               <ul className={`mt-6 grid gap-3 text-[1.1rem] text-fg ${i === 0 ? "sm:grid-cols-2" : ""}`}>
                 {pass.includes.map((item) => (
@@ -206,6 +220,35 @@ export default function ResidentialSnowRemovalPage() {
             <dd className="mt-2 text-[1.08rem] leading-relaxed text-muted">Our crews follow set neighbourhood routes each storm, which is what lets us guarantee a visit every 24 hours.</dd>
           </div>
         </dl>
+      </Band>
+
+      {/* REFERRAL PROGRAM */}
+      <Band>
+        <div className="to-card grid gap-x-16 gap-y-10 p-8 md:p-12 lg:grid-cols-[minmax(0,6fr)_minmax(0,5fr)] lg:items-center">
+          <div>
+            <h2 className="to-display to-h2">Snowball referral program</h2>
+            <p className="to-body mt-5">Refer a new customer and you both get $25 off. Refer up to 6 people to cover your entire season.</p>
+            <p className="to-body mt-4">Contact us for your referral code.</p>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <Button href={site.phoneHref}>Call {site.phoneDisplay}</Button>
+              <Button href={`mailto:${site.email}?subject=Snowball%20referral%20code`} variant="quiet">
+                Email for your code
+              </Button>
+            </div>
+          </div>
+          <dl className="grid grid-cols-3 gap-4 text-center">
+            {[
+              { value: "$25", label: "off for you" },
+              { value: "$25", label: "off for your neighbour" },
+              { value: "6", label: "referrals, at most" },
+            ].map((item) => (
+              <div key={item.label} className="rounded-[24px] bg-white/[0.05] px-3 py-7">
+                <dd className="to-display text-4xl text-accent md:text-5xl">{item.value}</dd>
+                <dt className="mt-2 text-[1rem] leading-snug text-muted">{item.label}</dt>
+              </div>
+            ))}
+          </dl>
+        </div>
       </Band>
 
       {/* SNOW TRACKER */}

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { site } from "../lib/site";
+import { GoogleMark } from "./ds";
 
 const columns = [
   {
@@ -56,6 +57,15 @@ export default function Footer() {
               <p className="text-muted">{site.locality}</p>
               <p className="text-muted">{site.hours}</p>
             </div>
+            <a
+              href={site.preferredSourceUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="to-focus mt-7 inline-flex items-center gap-3 rounded-full bg-white/[0.07] px-5 py-3 text-[1.02rem] font-medium text-white transition-colors hover:bg-white/[0.12]"
+            >
+              <GoogleMark />
+              Add TERREOAK as a preferred source on Google
+            </a>
           </div>
 
           <nav aria-label="Footer" className="grid grid-cols-2 gap-10 sm:grid-cols-3">

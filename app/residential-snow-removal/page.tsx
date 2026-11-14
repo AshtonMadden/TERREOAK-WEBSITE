@@ -9,6 +9,7 @@ import { breadcrumbLd, faqLd, pageMeta } from "../lib/seo";
 import { site } from "../lib/site";
 import { addOns, instagramPosts, jobberForm, offers, passes, referral, reviews, season, stats, steps, zones } from "./content";
 import { snowFaqs } from "./faqs";
+import ReadMore from "../components/ReadMore";
 import StickyCta from "../components/StickyCta";
 import OfferPopup from "../components/OfferPopup";
 import { RouteCheck } from "./SnowClient";
@@ -71,7 +72,7 @@ function MeasuringStick({ totalCm, averageCm }: { totalCm: number; averageCm: nu
       </div>
 
       {/* The stick */}
-      <div className="relative h-72 w-12 md:h-80">
+      <div className="relative h-52 w-12 md:h-80">
         <div className="absolute inset-0 overflow-hidden rounded-t-[10px] bg-white/[0.09]">
           <div className="to-stick-fill absolute inset-x-0 bottom-0 bg-brand" style={{ height: pct(totalCm) }} />
         </div>
@@ -110,9 +111,9 @@ export default function ResidentialSnowRemovalPage() {
           <div className="absolute inset-0 bg-[#1d1f21]/65" />
         </div>
 
-        <Container className="pb-14 pt-36 md:pb-20">
+        <Container className="pb-10 pt-28 md:pb-20 md:pt-36">
           <h1 className="to-display to-h1 max-w-[22ch]">Calgary snow removal you can set and forget.</h1>
-          <div className="mt-10 grid items-end gap-10 lg:mt-12 lg:grid-cols-[minmax(0,1fr)_minmax(360px,440px)] lg:gap-20">
+          <div className="mt-7 grid items-end gap-8 md:mt-10 md:gap-10 lg:mt-12 lg:grid-cols-[minmax(0,1fr)_minmax(360px,440px)] lg:gap-20">
             <div>
               <p className="to-body !text-fg">
                 One season, one price, zero surprises. We clear your driveway and front sidewalk whenever 1cm falls, email you before the crew arrives, and send photos when the job is done.
@@ -134,13 +135,13 @@ export default function ResidentialSnowRemovalPage() {
             <RouteCheck />
           </div>
 
-          <dl className="mt-14 grid grid-cols-2 gap-x-6 gap-y-8 sm:grid-cols-4 md:mt-20 md:max-w-4xl">
+          <dl className="mt-10 grid grid-cols-4 gap-x-3 md:mt-20 md:max-w-4xl md:gap-x-6">
             {stats.map((stat) => (
               <div key={stat.label}>
-                <dd className="to-display text-5xl md:text-6xl">
+                <dd className="to-display whitespace-nowrap text-[1.7rem] md:text-6xl">
                   <CountUp end={stat.end} suffix={stat.suffix} />
                 </dd>
-                <dt className="mt-2 text-[1.02rem] text-muted">{stat.label}</dt>
+                <dt className="mt-1.5 text-[0.82rem] leading-snug text-muted md:mt-2 md:text-[1.02rem]">{stat.label}</dt>
               </div>
             ))}
           </dl>
@@ -151,7 +152,7 @@ export default function ResidentialSnowRemovalPage() {
       <Band>
         <h2 className="to-display to-h2">What we offer</h2>
         <p className="to-body mt-5">Reliable, professional snow management tailored for Calgary homeowners.</p>
-        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="to-swipe mt-8 grid gap-5 sm:grid-cols-2 md:mt-12 lg:grid-cols-3">
           {offers.map((offer, i) => (
             <article key={offer.title} className="to-card to-card-lift p-8">
               <span className="to-icon">
@@ -175,19 +176,21 @@ export default function ResidentialSnowRemovalPage() {
               <p className="to-body">
                 TERREOAK provides residential snow removal for Calgary homeowners who want a reliable, hands-off solution for the entire winter season. No wondering if your driveway got done, just consistent service, dispatch alerts before we arrive, and a photo log in your inbox after every visit.
               </p>
-              <p className="to-body">
-                We service driveways and front sidewalks at just 1cm of accumulation, so your property stays clear and safe through every storm Calgary throws at it. Our route-based crews cover communities across SW and SE Calgary, with capacity capped each season so service quality never slips.
-              </p>
-              <p className="max-w-[62ch] text-[1.2rem] font-semibold leading-snug text-fg">
-                Spots fill up before the first snowfall. Reserve your season pass early to lock in your route and your rate.
-              </p>
+              <ReadMore>
+                <p className="to-body">
+                  We service driveways and front sidewalks at just 1cm of accumulation, so your property stays clear and safe through every storm Calgary throws at it. Our route-based crews cover communities across SW and SE Calgary, with capacity capped each season so service quality never slips.
+                </p>
+                <p className="max-w-[62ch] text-[1.2rem] font-semibold leading-snug text-fg">
+                  Spots fill up before the first snowfall. Reserve your season pass early to lock in your route and your rate.
+                </p>
+              </ReadMore>
             </div>
             <div className="mt-8">
               <Button href="#seasonal-form">Reserve a season pass</Button>
             </div>
           </div>
           <figure className="mx-auto w-full max-w-md">
-            <div className="relative aspect-[3/4] overflow-hidden rounded-[36px] shadow-[0_40px_80px_-40px_rgba(0,0,0,0.8)]">
+            <div className="relative aspect-[4/3] overflow-hidden rounded-[36px] shadow-[0_40px_80px_-40px_rgba(0,0,0,0.8)] md:aspect-[3/4]">
               <Image
                 src="/Snow Page web pics/TERREOAK-Snow-Picket.JPG"
                 alt="A green TERREOAK snow picket standing beside a cleared Calgary driveway"
@@ -204,7 +207,7 @@ export default function ResidentialSnowRemovalPage() {
       {/* HOW IT WORKS */}
       <Band id="how-it-works">
         <h2 className="to-display to-h2">How it works</h2>
-        <ol className="mt-12 grid gap-5 md:grid-cols-3">
+        <ol className="to-swipe mt-8 grid gap-5 md:mt-12 md:grid-cols-3">
           {steps.map((step, i) => (
             <li key={step.title} className="to-card to-card-lift p-8">
               <span className="to-icon to-display text-2xl">{i + 1}</span>
@@ -223,7 +226,7 @@ export default function ResidentialSnowRemovalPage() {
             <Image src="/brand/snow-pass-badge.png" alt="TERREOAK Snow Pass" width={514} height={585} className="h-24 w-auto md:h-36" />
           </a>
         </div>
-        <div className="mt-12 grid gap-5 lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)]">
+        <div className="to-swipe mt-8 grid gap-5 md:mt-12 lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)]">
           {passes.map((pass, i) => (
             <article key={pass.name} className={`to-card relative flex flex-col overflow-hidden p-8 md:p-10 ${i === 0 ? "ring-1 ring-brand/45 md:pr-52" : ""}`}>
               {i === 0 && (
@@ -260,7 +263,7 @@ export default function ResidentialSnowRemovalPage() {
             </article>
           ))}
         </div>
-        <dl className="mt-10 grid gap-x-12 gap-y-8 px-2 md:grid-cols-3">
+        <dl className="mt-8 grid gap-x-12 gap-y-6 px-2 md:mt-10 md:grid-cols-3 md:gap-y-8">
           {addOns.map((addOn) => (
             <div key={addOn.name}>
               <dt className="text-[1.2rem] font-semibold text-fg">Add-on: {addOn.name}</dt>
@@ -272,6 +275,64 @@ export default function ResidentialSnowRemovalPage() {
             <dd className="mt-2 text-[1.08rem] leading-relaxed text-muted">Our crews follow set neighbourhood routes each storm, which is what lets us guarantee a visit every 24 hours.</dd>
           </div>
         </dl>
+      </Band>
+
+      {/* GUARANTEES */}
+      <Band>
+        <h2 className="to-display to-h2">Our guarantees</h2>
+        <div className="to-swipe mt-8 grid gap-5 md:mt-12 md:grid-cols-2">
+          <article className="to-card p-8 md:p-10">
+            <h3 className="to-display to-h3">First-service money-back guarantee</h3>
+            <p className="mt-4 text-[1.12rem] leading-relaxed text-muted">
+              Not happy after your first visit? We refund you in full, no questions, no fine print. We’re confident enough in our service to put that in writing because we’ve never had to use it.
+            </p>
+          </article>
+          <article className="to-card p-8 md:p-10">
+            <h3 className="to-display to-h3">Once every 24 hours guarantee</h3>
+            <p className="mt-4 text-[1.12rem] leading-relaxed text-muted">
+              We guarantee to service your property once every 24 hours during continuous snowfall, and within 24 hours of the snowfall ending. If we miss that window for any reason, we send a crew back at no charge. On average, our team clears a full route in 12 hours. Calgary’s snow removal bylaw gives property owners 24 hours to clear sidewalks, we make sure you’re covered.
+            </p>
+          </article>
+        </div>
+      </Band>
+
+      {/* REVIEWS */}
+      <Band>
+        <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+          <h2 className="to-display to-h2">What our snow clients say</h2>
+          <a href={site.googleProfile} target="_blank" rel="noopener noreferrer" className="to-focus flex w-fit items-center gap-3 rounded-full bg-white/[0.07] px-5 py-3 text-[1.05rem] font-medium text-fg transition-colors hover:bg-white/[0.12]">
+            <GoogleMark />
+            {site.reviews.rating} from {site.reviews.count} Google reviews
+          </a>
+        </div>
+        <div className="to-swipe mt-8 grid gap-5 md:mt-12 lg:grid-cols-3">
+          {reviews.map((review) => (
+            <figure key={review.name} className="to-card flex flex-col p-8">
+              <Stars />
+              <blockquote className="mt-5 text-[1.12rem] leading-relaxed text-fg">“{review.text}”</blockquote>
+              <figcaption className="mt-auto pt-6 text-[1.05rem] font-semibold text-muted">{review.name}</figcaption>
+            </figure>
+          ))}
+        </div>
+      </Band>
+
+      {/* SIGN UP */}
+      <Band id="seasonal-form" surface="snow">
+        <div className="grid gap-x-20 gap-y-10 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]">
+          <div>
+            <h2 className="to-display to-h2">Sign up for your season pass</h2>
+            <p className="to-body mt-6">Tell us about your property and we’ll get back to you the same day.</p>
+            <div className="mt-8 rounded-[24px] bg-[#019587]/12 p-6">
+              <h3 className="text-[1.2rem] font-semibold text-fg">Important service expectation</h3>
+              <p className="mt-2 text-[1.08rem] leading-relaxed text-muted">
+                Our crews strictly operate on a route-based system. We only come <strong className="font-semibold text-fg">once every 24 hours</strong> to service your property during a snowfall event. This guarantees consistent, reliable service for every client on our route.
+              </p>
+            </div>
+          </div>
+          <div className="rounded-[28px] bg-white p-4 shadow-[0_30px_60px_-40px_rgba(0,0,0,0.35)] md:p-7">
+            <JobberLeadForm clienthubId={jobberForm.clienthubId} formUrl={jobberForm.formUrl} />
+          </div>
+        </div>
       </Band>
 
       {/* REFERRAL PROGRAM */}
@@ -404,25 +465,6 @@ export default function ResidentialSnowRemovalPage() {
         </div>
       </Band>
 
-      {/* GUARANTEES */}
-      <Band>
-        <h2 className="to-display to-h2">Our guarantees</h2>
-        <div className="mt-12 grid gap-5 md:grid-cols-2">
-          <article className="to-card p-8 md:p-10">
-            <h3 className="to-display to-h3">First-service money-back guarantee</h3>
-            <p className="mt-4 text-[1.12rem] leading-relaxed text-muted">
-              Not happy after your first visit? We refund you in full, no questions, no fine print. We’re confident enough in our service to put that in writing because we’ve never had to use it.
-            </p>
-          </article>
-          <article className="to-card p-8 md:p-10">
-            <h3 className="to-display to-h3">Once every 24 hours guarantee</h3>
-            <p className="mt-4 text-[1.12rem] leading-relaxed text-muted">
-              We guarantee to service your property once every 24 hours during continuous snowfall, and within 24 hours of the snowfall ending. If we miss that window for any reason, we send a crew back at no charge. On average, our team clears a full route in 12 hours. Calgary’s snow removal bylaw gives property owners 24 hours to clear sidewalks, we make sure you’re covered.
-            </p>
-          </article>
-        </div>
-      </Band>
-
       {/* RESULTS */}
       <Band>
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
@@ -440,45 +482,6 @@ export default function ResidentialSnowRemovalPage() {
                 This meticulous approach eliminates hidden ice layers, preventing slips and keeping your walkways safe and accessible all winter long. Slide the image to see the TERREOAK standard.
               </p>
             </div>
-          </div>
-        </div>
-      </Band>
-
-      {/* REVIEWS */}
-      <Band>
-        <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-          <h2 className="to-display to-h2">What our snow clients say</h2>
-          <a href={site.googleProfile} target="_blank" rel="noopener noreferrer" className="to-focus flex w-fit items-center gap-3 rounded-full bg-white/[0.07] px-5 py-3 text-[1.05rem] font-medium text-fg transition-colors hover:bg-white/[0.12]">
-            <GoogleMark />
-            {site.reviews.rating} from {site.reviews.count} Google reviews
-          </a>
-        </div>
-        <div className="mt-12 grid gap-5 lg:grid-cols-3">
-          {reviews.map((review) => (
-            <figure key={review.name} className="to-card flex flex-col p-8">
-              <Stars />
-              <blockquote className="mt-5 text-[1.12rem] leading-relaxed text-fg">“{review.text}”</blockquote>
-              <figcaption className="mt-auto pt-6 text-[1.05rem] font-semibold text-muted">{review.name}</figcaption>
-            </figure>
-          ))}
-        </div>
-      </Band>
-
-      {/* SIGN UP */}
-      <Band id="seasonal-form" surface="snow">
-        <div className="grid gap-x-20 gap-y-10 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]">
-          <div>
-            <h2 className="to-display to-h2">Sign up for your season pass</h2>
-            <p className="to-body mt-6">Tell us about your property and we’ll get back to you the same day.</p>
-            <div className="mt-8 rounded-[24px] bg-[#019587]/12 p-6">
-              <h3 className="text-[1.2rem] font-semibold text-fg">Important service expectation</h3>
-              <p className="mt-2 text-[1.08rem] leading-relaxed text-muted">
-                Our crews strictly operate on a route-based system. We only come <strong className="font-semibold text-fg">once every 24 hours</strong> to service your property during a snowfall event. This guarantees consistent, reliable service for every client on our route.
-              </p>
-            </div>
-          </div>
-          <div className="rounded-[28px] bg-white p-4 shadow-[0_30px_60px_-40px_rgba(0,0,0,0.35)] md:p-7">
-            <JobberLeadForm clienthubId={jobberForm.clienthubId} formUrl={jobberForm.formUrl} />
           </div>
         </div>
       </Band>

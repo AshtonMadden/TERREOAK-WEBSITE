@@ -12,7 +12,7 @@ export function RouteCheck() {
   const zone = zones.find((z) => z.areas.includes(choice));
 
   return (
-    <div className="rounded-[28px] bg-[#1d1f21]/80 p-6 shadow-[0_24px_48px_-24px_rgba(0,0,0,0.7)] backdrop-blur-md sm:p-7">
+    <div className="rounded-[28px] bg-[#1d1f21]/80 p-5 shadow-[0_24px_48px_-24px_rgba(0,0,0,0.7)] backdrop-blur-md sm:p-7">
       <label htmlFor="route-check" className="block text-lg font-semibold text-fg">
         Is your home on one of our routes?
       </label>
@@ -32,7 +32,7 @@ export function RouteCheck() {
         <option value={OUTSIDE}>Somewhere else</option>
       </select>
 
-      <div aria-live="polite" className="mt-4 min-h-[6.5rem]">
+      <div aria-live="polite" className="mt-4 md:min-h-[6.5rem]">
         {!choice && (
           <p className="text-[1.05rem] leading-relaxed text-muted">
             We only take homes we can reach within 24 hours of a snowfall, so routes are limited to south Calgary.

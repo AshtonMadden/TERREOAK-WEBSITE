@@ -453,3 +453,29 @@ html {
 .to-prose .to-table-wrap {
   overflow-x: auto;
 }
+
+/* On phones, a grid of cards becomes one sideways swipe row so pages stay short.
+   The next card peeks in from the right to show there is more. */
+@media (max-width: 767px) {
+  .to-swipe {
+    display: flex !important;
+    align-items: stretch;
+    gap: 0.9rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    margin-inline: -1.25rem;
+    padding-inline: 1.25rem;
+    scroll-padding-inline: 1.25rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .to-swipe::-webkit-scrollbar {
+    display: none;
+  }
+
+  .to-swipe > * {
+    flex: 0 0 84%;
+    scroll-snap-align: start;
+  }
+}

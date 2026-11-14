@@ -355,6 +355,7 @@ html {
 }
 
 .to-prose > * + *,
+.to-prose section > * + *,
 .to-prose div > * + * {
   margin-top: 1.25rem;
 }
@@ -403,4 +404,39 @@ html {
 
 .to-prose img {
   border-radius: 28px;
+}
+
+.to-prose section + section {
+  margin-top: 3.25rem;
+}
+
+.to-prose section > h2 {
+  margin-top: 0;
+}
+
+.to-prose section > h2 + * {
+  margin-top: 1.4rem;
+}
+
+.to-prose table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1.02rem;
+}
+
+.to-prose th,
+.to-prose td {
+  padding: 0.9rem 1rem;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--to-rule);
+}
+
+.to-prose th {
+  font-weight: 700;
+  color: var(--to-fg);
+}
+
+.to-prose .to-table-wrap {
+  overflow-x: auto;
 }

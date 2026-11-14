@@ -9,6 +9,7 @@ export const snowPost: Article = {
   "hero": "/blog-pics/professional_snow_clearing.png",
   "heroAlt": "TERREOAK professional snow removal crew clearing a residential driveway",
   "excerpt": "When the temperature drops and heavy snow falls, shoveling the driveway is the last thing anyone wants to do. But avoiding the cold isn't the only reason to hire a professional.",
+  "updated": "2026-11-14",
   "cta": {
     "title": "Ready for a worry-free Calgary winter?",
     "text": "Don't wait until the first blizzard hits. Secure your spot on our exclusive South Calgary snow removal routes today.",
@@ -26,6 +27,7 @@ export const springPost: Article = {
   "hero": "/spring-cleanup-pics/Leaf-Cleanup-near-me.jpg",
   "heroAlt": "TERREOAK professionally cleaning a Calgary lawn",
   "excerpt": "Between snow mold, winter salt buildup, and soil compaction, your lawn goes through massive stress during the Calgary winter.",
+  "updated": "2026-11-14",
   "cta": {
     "title": "Ready for a lush Calgary summer?",
     "text": "Don't let winter damage dictate the health of your yard. Book your professional spring cleanup today and give your grass the head start it deserves.",
@@ -43,6 +45,7 @@ export const basePost: Article = {
   "hero": "/Landscape web page pics/Techo-Bloc-pavers-river-rock.JPG",
   "heroAlt": "High-end Calgary patio and luxury hardscaping installation",
   "excerpt": "In Calgary, the freeze-thaw cycle is the enemy of any hardscaping project. Traditional road crush can trap moisture under your patio.",
+  "updated": "2026-11-14",
   "cta": {
     "title": "Want a patio built for a Calgary lifetime?",
     "text": "At TERREOAK, we don't take shortcuts on what you can't see. Your Calgary patio's long-term beauty is built from the ground up with expert hardscaping techniques.",

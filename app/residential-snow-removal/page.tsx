@@ -64,7 +64,7 @@ export default function ResidentialSnowRemovalPage() {
         </div>
 
         <Container className="pb-14 pt-36 md:pb-20">
-          <h1 className="to-display to-h1 max-w-[22ch]">Calgary snow removal on one flat seasonal price.</h1>
+          <h1 className="to-display to-h1 max-w-[22ch]">Calgary snow removal you can set and forget.</h1>
           <div className="mt-10 grid items-end gap-10 lg:mt-12 lg:grid-cols-[minmax(0,1fr)_minmax(360px,440px)] lg:gap-20">
             <div>
               <p className="to-body !text-fg">

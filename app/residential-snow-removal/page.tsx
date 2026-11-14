@@ -53,6 +53,24 @@ const offerIcons: React.ReactNode[] = [
   <path key="card" d="M3 7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7Zm0 3h18M7 15h4" />,
 ];
 
+/**
+ * A snow bank that runs the full width of the page: two flat-coloured drifts, the back one
+ * slightly grey for depth. Used to split the page into parts. Decorative only.
+ */
+function SnowBank({ flip = false, className = "" }: { flip?: boolean; className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 1440 120"
+      preserveAspectRatio="none"
+      aria-hidden="true"
+      className={`block h-[64px] w-full md:h-[110px] ${flip ? "-scale-x-100" : ""} ${className}`}
+    >
+      <path d="M0 120V46C160 6 300 72 460 36C620 4 760 62 900 30C1060 0 1220 56 1440 22V120Z" fill="#cfd8dc" />
+      <path d="M0 120V72C120 34 220 96 360 62C480 32 560 84 700 56C840 30 930 92 1080 64C1200 42 1320 88 1440 52V120Z" fill="#ffffff" />
+    </svg>
+  );
+}
+
 function ReviewCard({ review }: { review: { name: string; text: string } }) {
   return (
     <figure className="to-card flex flex-col p-6 md:p-8">
@@ -157,6 +175,7 @@ export default function ResidentialSnowRemovalPage() {
             ))}
           </dl>
         </Container>
+        <SnowBank />
       </section>
 
       {/* WHAT WE OFFER */}
@@ -348,6 +367,8 @@ export default function ResidentialSnowRemovalPage() {
           </div>
         </div>
       </Band>
+
+      <SnowBank flip className="mt-6 md:mt-10" />
 
       {/* REFERRAL PROGRAM */}
       <Band id="referral">

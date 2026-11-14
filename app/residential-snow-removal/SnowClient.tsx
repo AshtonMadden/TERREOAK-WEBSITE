@@ -61,7 +61,7 @@ export function RouteCheck() {
   );
 }
 
-/** Sign-up bar that appears after the hero and gets out of the way once the form is on screen. */
+/** Sign-up bar that appears after the hero and gets out of the way when the form or the footer is on screen. */
 export function StickyCta({ targetId, label }: { targetId: string; label: string }) {
   const [visible, setVisible] = useState(false);
   const [dismissed, setDismissed] = useState(false);
@@ -70,7 +70,9 @@ export function StickyCta({ targetId, label }: { targetId: string; label: string
     const onScroll = () => {
       const rect = document.getElementById(targetId)?.getBoundingClientRect();
       const formOnScreen = !!rect && rect.top < window.innerHeight * 0.8 && rect.bottom > 0;
-      setVisible(window.scrollY > 700 && !formOnScreen);
+      const footerTop = document.querySelector("footer")?.getBoundingClientRect().top;
+      const footerOnScreen = footerTop !== undefined && footerTop < window.innerHeight;
+      setVisible(window.scrollY > 700 && !formOnScreen && !footerOnScreen);
     };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });

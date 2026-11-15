@@ -167,20 +167,20 @@ export default function ResidentialSnowRemovalPage() {
           <div className="absolute inset-0 bg-[#1d1f21]/65" />
         </div>
 
-        <Container className="pb-10 pt-32 md:pb-20 md:pt-52">
+        <Container className="pb-10 pt-32 md:pb-12 md:pt-48">
           <h1 className="to-display to-h1 max-w-[22ch]">Calgary snow removal you can set and forget.</h1>
-          <div className="mt-7 grid items-end gap-8 md:mt-10 md:gap-10 lg:mt-12 lg:grid-cols-[minmax(0,1fr)_minmax(360px,440px)] lg:gap-x-20 lg:gap-y-14">
+          <div className="mt-6 grid items-end gap-7 md:mt-7 md:gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(360px,440px)] lg:gap-x-20 lg:gap-y-8">
             <div className="lg:col-span-2 lg:max-w-3xl">
               <p className="to-body !text-fg">
                 One season, one price, zero surprises. We clear your driveway and front sidewalk whenever 1cm falls, email you before the crew arrives, and send photos when the job is done.
               </p>
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <div className="mt-6 flex flex-col gap-3 sm:flex-row">
                 <Button href="#seasonal-form">Reserve a season pass</Button>
                 <Button href="#how-it-works" variant="quiet" className="bg-white/5 backdrop-blur-sm">
                   See how it works
                 </Button>
               </div>
-              <p className="mt-8 flex flex-wrap items-center gap-x-3 gap-y-2 text-[1.05rem] text-white/80">
+              <p className="mt-5 flex flex-wrap items-center gap-x-3 gap-y-2 text-[1.05rem] text-white/80">
                 <GoogleMark />
                 <a href={site.googleProfile} target="_blank" rel="noopener noreferrer" className="to-link">
                   {site.reviews.rating} stars from {site.reviews.count} Google reviews

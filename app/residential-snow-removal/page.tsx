@@ -169,8 +169,8 @@ export default function ResidentialSnowRemovalPage() {
 
         <Container className="pb-10 pt-28 md:pb-20 md:pt-36">
           <h1 className="to-display to-h1 max-w-[22ch]">Calgary snow removal you can set and forget.</h1>
-          <div className="mt-7 grid items-end gap-8 md:mt-10 md:gap-10 lg:mt-12 lg:grid-cols-[minmax(0,1fr)_minmax(360px,440px)] lg:gap-20">
-            <div>
+          <div className="mt-7 grid items-end gap-8 md:mt-10 md:gap-10 lg:mt-12 lg:grid-cols-[minmax(0,1fr)_minmax(360px,440px)] lg:gap-x-20 lg:gap-y-14">
+            <div className="lg:col-span-2 lg:max-w-3xl">
               <p className="to-body !text-fg">
                 One season, one price, zero surprises. We clear your driveway and front sidewalk whenever 1cm falls, email you before the crew arrives, and send photos when the job is done.
               </p>
@@ -188,19 +188,22 @@ export default function ResidentialSnowRemovalPage() {
                 <span>We respond the same day.</span>
               </p>
             </div>
-            <RouteCheck />
-          </div>
+            {/* On desktop the route check sits beside the stats; on phones it stays above them. */}
+            <div className="lg:col-start-2 lg:row-start-2">
+              <RouteCheck />
+            </div>
 
-          <dl className="mt-10 grid grid-cols-4 gap-x-3 md:mt-20 md:max-w-4xl md:gap-x-6">
+          <dl className="mt-2 grid grid-cols-4 gap-x-3 md:mt-6 md:gap-x-6 lg:col-start-1 lg:row-start-2 lg:mt-0">
             {stats.map((stat) => (
               <div key={stat.label}>
-                <dd className="to-display whitespace-nowrap text-[1.7rem] md:text-6xl">
+                <dd className="to-display whitespace-nowrap text-[1.7rem] md:text-5xl xl:text-6xl">
                   <CountUp end={stat.end} suffix={stat.suffix} />
                 </dd>
                 <dt className="mt-1.5 text-[0.82rem] leading-snug text-muted md:mt-2 md:text-[1.02rem]">{stat.label}</dt>
               </div>
             ))}
           </dl>
+          </div>
         </Container>
         <SnowBank />
       </section>

@@ -510,3 +510,79 @@ html {
     display: none;
   }
 }
+
+/* Snow page only: snow settled along the top of every card, with a few drips down the face
+   and one hanging off a side. Flat fills, decorative, drawn with pseudo-elements. */
+.to-snowcapped .to-card {
+  position: relative;
+}
+
+.to-snowcapped .to-card::before {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  top: -14px;
+  left: -4px;
+  right: -4px;
+  height: 50px;
+  border-radius: 22px 22px 0 0;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 50'%3E%3Cpath transform='translate(0 2)' fill='%23cfd8dc' d='M-2 12C20 3 45 2 70 8C95 14 115 5 140 4C170 3 190 13 215 10C240 7 255 2 280 5C298 7 310 11 322 12V24H300C294 24 296 33 285 33C274 33 276 24 268 24H236C231 24 233 28 233 36C233 43 230 46 226 46C222 46 219 43 219 36C219 28 221 24 214 24H176C170 24 169 28 169 32C169 36 165 38 160 38C155 38 151 36 151 32C151 28 150 24 144 24H112C106 24 107 30 98 30C89 30 90 24 84 24H62C57 24 56 28 56 34C56 39 53 42 50 42C47 42 44 39 44 34C44 28 43 24 38 24H-2Z'/%3E%3Cpath fill='%23fff' d='M-2 12C20 3 45 2 70 8C95 14 115 5 140 4C170 3 190 13 215 10C240 7 255 2 280 5C298 7 310 11 322 12V24H300C294 24 296 33 285 33C274 33 276 24 268 24H236C231 24 233 28 233 36C233 43 230 46 226 46C222 46 219 43 219 36C219 28 221 24 214 24H176C170 24 169 28 169 32C169 36 165 38 160 38C155 38 151 36 151 32C151 28 150 24 144 24H112C106 24 107 30 98 30C89 30 90 24 84 24H62C57 24 56 28 56 34C56 39 53 42 50 42C47 42 44 39 44 34C44 28 43 24 38 24H-2Z'/%3E%3C/svg%3E") 0 0 / 320px 50px repeat-x;
+  pointer-events: none;
+}
+
+.to-snowcapped .to-card:nth-child(2n)::before { background-position-x: -120px; }
+.to-snowcapped .to-card:nth-child(3n)::before { background-position-x: -230px; }
+
+/* The side drip starts under the cap so the two read as one piece of snow. */
+.to-snowcapped .to-card::after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  right: -4px;
+  width: 13px;
+  height: 52px;
+  border-radius: 0 6px 999px 999px;
+  background: #fff;
+  box-shadow: 0 2px 0 #cfd8dc;
+  pointer-events: none;
+}
+
+.to-snowcapped .to-card:nth-child(2n)::after {
+  right: auto;
+  left: -4px;
+  height: 40px;
+  border-radius: 6px 0 999px 999px;
+}
+
+.to-snowcapped .to-card:nth-child(3n)::after { height: 66px; }
+
+/* FAQ rows sit close together, so they get a lighter dusting and no side drip. */
+.to-snowcapped .to-faq.to-card::before {
+  top: -8px;
+  height: 30px;
+  background-size: 192px 30px;
+}
+
+.to-snowcapped .to-faq.to-card::after {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .to-snowcapped .to-card::before {
+    top: -10px;
+    left: -3px;
+    right: -3px;
+    height: 35px;
+    background-size: 224px 35px;
+  }
+
+  .to-snowcapped .to-card::after {
+    right: -3px;
+    width: 10px;
+    height: 36px;
+  }
+
+  .to-snowcapped .to-card:nth-child(2n)::after { left: -3px; height: 28px; }
+  .to-snowcapped .to-card:nth-child(3n)::after { height: 46px; }
+}

@@ -130,7 +130,7 @@ export default function ResidentialSnowRemovalPage() {
   const trackerPercent = Math.round((season.totalCm / season.averageCm) * 100);
 
   return (
-    <main className="to-pavement to-flow overflow-x-clip">
+    <main className="to-pavement to-flow to-snowcapped overflow-x-clip">
       <JsonLd data={jsonLd} />
 
       {/* HERO: video behind, offer and route check on top, fading into the page */}
@@ -367,8 +367,6 @@ export default function ResidentialSnowRemovalPage() {
           </div>
         </div>
       </Band>
-
-      <SnowBank flip className="mt-6 md:mt-10" />
 
       {/* REFERRAL PROGRAM */}
       <Band id="referral">

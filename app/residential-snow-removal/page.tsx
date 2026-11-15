@@ -167,7 +167,7 @@ export default function ResidentialSnowRemovalPage() {
           <div className="absolute inset-0 bg-[#1d1f21]/65" />
         </div>
 
-        <Container className="pb-10 pt-28 md:pb-20 md:pt-36">
+        <Container className="pb-10 pt-32 md:pb-20 md:pt-52">
           <h1 className="to-display to-h1 max-w-[22ch]">Calgary snow removal you can set and forget.</h1>
           <div className="mt-7 grid items-end gap-8 md:mt-10 md:gap-10 lg:mt-12 lg:grid-cols-[minmax(0,1fr)_minmax(360px,440px)] lg:gap-x-20 lg:gap-y-14">
             <div className="lg:col-span-2 lg:max-w-3xl">

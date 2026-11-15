@@ -2,7 +2,7 @@
 export const site = {
   name: "TERREOAK Landscaping & Snow",
   shortName: "TERREOAK",
-  url: "https://www.terreoak.ca",
+  url: "https://terreoak.ca",
   phoneDisplay: "(587) 707-7648",
   phoneHref: "tel:+15877077648",
   phoneSchema: "+1-587-707-7648",

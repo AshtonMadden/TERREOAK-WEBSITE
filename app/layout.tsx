@@ -37,12 +37,12 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     "@graph": [
       {
         "@type": "Organization",
-        "@id": "https://www.terreoak.ca/#organization",
+        "@id": "https://terreoak.ca/#organization",
         "name": "TERREOAK Landscaping & Snow",
-        "url": "https://www.terreoak.ca",
+        "url": "https://terreoak.ca",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.terreoak.ca/icon.png",
+          "url": "https://terreoak.ca/icon.png",
           "width": 180,
           "height": 180
         },
@@ -56,22 +56,22 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       },
       {
         "@type": "WebSite",
-        "@id": "https://www.terreoak.ca/#website",
-        "url": "https://www.terreoak.ca",
+        "@id": "https://terreoak.ca/#website",
+        "url": "https://terreoak.ca",
         "name": "TERREOAK Landscaping",
         "description": "Calgary's premier landscaping and snow removal team."
       },
       {
         "@type": "LandscapingService",
-        "@id": "https://www.terreoak.ca/#localbusiness",
+        "@id": "https://terreoak.ca/#localbusiness",
         "name": "TERREOAK Landscaping & Snow",
         "legalName": "TERREOAK Landscaping & Snow",
-        "url": "https://www.terreoak.ca",
+        "url": "https://terreoak.ca",
         "telephone": "+1-587-707-7648",
         "email": "services@terreoak.ca",
         "description": "TERREOAK Landscaping & Snow is a premium landscaping contractor in Calgary, Alberta. We specialize in residential hardscaping, softscaping, retaining walls, paving stone patios, landscape design, reliable year-round commercial property maintenance, and residential snow removal.",
         "knowsAbout": ["Calgary Snow Removal", "Landscaping in Calgary", "Hardscaping Calgary", "Retaining Walls", "Paving Stone Patios", "Softscaping", "Commercial Grounds Maintenance", "Landscape Design", "Spring Cleanup"],
-        "image": "https://www.terreoak.ca/images/commercial.png",
+        "image": "https://terreoak.ca/images/commercial.png",
         "address": {
           "@type": "PostalAddress",
           "addressLocality": "Calgary",

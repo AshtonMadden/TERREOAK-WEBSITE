@@ -76,7 +76,7 @@ export default function HomePage() {
       <Band>
         <div className="relative isolate flex min-h-[460px] flex-col justify-end overflow-hidden rounded-[36px] shadow-[0_40px_80px_-40px_rgba(0,0,0,0.8)] md:min-h-[520px]">
           <div className="absolute inset-0 -z-10">
-            <HeroVideo src="/videos/calgary-snow-removal-drone.mp4" poster="/images/snow-removal/hero-poster.jpg" />
+            <HeroVideo src="/videos/calgary-snow-removal-drone.mp4" poster="/images/snow-removal/hero-poster.jpg" lazyPoster />
             <div className="absolute inset-0 bg-[#1d1f21]/55" />
           </div>
           <div className="flex flex-col gap-8 p-8 md:flex-row md:items-end md:justify-between md:p-12">

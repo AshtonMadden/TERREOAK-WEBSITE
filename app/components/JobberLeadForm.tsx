@@ -27,7 +27,8 @@ export default function JobberLeadForm({
         const container = containerRef.current;
         container.innerHTML = "";
 
-        const timer = setTimeout(() => {
+        // The form is a heavy third-party embed, so it only loads once the visitor is close to it.
+        const load = () => {
             if (!isMounted || !containerRef.current) return;
 
             // 1. Load Jobber CSS
@@ -55,11 +56,21 @@ export default function JobberLeadForm({
             };
 
             containerRef.current.appendChild(script);
-        }, 100);
+        };
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+                if (!entries.some((entry) => entry.isIntersecting)) return;
+                observer.disconnect();
+                load();
+            },
+            { rootMargin: "900px" }
+        );
+        observer.observe(container);
 
         return () => {
             isMounted = false;
-            clearTimeout(timer);
+            observer.disconnect();
             container.innerHTML = "";
         };
     }, [clienthubId, formUrl]);
@@ -76,7 +87,7 @@ export default function JobberLeadForm({
             <div
                 ref={containerRef}
                 id={clienthubId}
-                className="jobber-embed-container w-full block"
+                className="jobber-embed-container block min-h-[420px] w-full"
             ></div>
 
             {/* Fallback contact line */}

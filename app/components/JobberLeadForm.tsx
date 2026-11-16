@@ -27,8 +27,14 @@ export default function JobberLeadForm({
         const container = containerRef.current;
         container.innerHTML = "";
 
-        // The form is a heavy third-party embed, so it only loads once the visitor is close to it.
+        // The form is a heavy third-party embed. It starts loading in the background the moment the
+        // visitor first scrolls, taps or moves the mouse (or a few seconds after the page has loaded),
+        // so it is ready and waiting by the time they reach it, without slowing the first paint.
+        let started = false;
         const load = () => {
+            if (started) return;
+            started = true;
+            stop();
             if (!isMounted || !containerRef.current) return;
 
             // 1. Load Jobber CSS
@@ -58,19 +64,32 @@ export default function JobberLeadForm({
             containerRef.current.appendChild(script);
         };
 
+        const events = ["scroll", "pointerdown", "pointermove", "touchstart", "keydown"] as const;
+        let timer: ReturnType<typeof setTimeout> | undefined;
+        const afterLoad = () => {
+            timer = setTimeout(load, 4000);
+        };
         const observer = new IntersectionObserver(
             (entries) => {
-                if (!entries.some((entry) => entry.isIntersecting)) return;
-                observer.disconnect();
-                load();
+                if (entries.some((entry) => entry.isIntersecting)) load();
             },
-            { rootMargin: "900px" }
+            { rootMargin: "1200px" }
         );
+        function stop() {
+            events.forEach((name) => window.removeEventListener(name, load));
+            window.removeEventListener("load", afterLoad);
+            clearTimeout(timer);
+            observer.disconnect();
+        }
+
+        events.forEach((name) => window.addEventListener(name, load, { once: true, passive: true }));
+        if (document.readyState === "complete") afterLoad();
+        else window.addEventListener("load", afterLoad, { once: true });
         observer.observe(container);
 
         return () => {
             isMounted = false;
-            observer.disconnect();
+            stop();
             container.innerHTML = "";
         };
     }, [clienthubId, formUrl]);

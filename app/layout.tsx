@@ -123,7 +123,11 @@ export default function RootLayout({ children }: { children: ReactNode }) {
 
   return (
     <html lang="en">
-      <head />
+      <head>
+        {/* Open connections to the booking form's servers early so the form appears faster. */}
+        <link rel="preconnect" href="https://d3ey4dbjkt2f6s.cloudfront.net" />
+        <link rel="preconnect" href="https://clienthub.getjobber.com" />
+      </head>
       <body>
         {/* Analytics loads once the page is idle so it never competes with the content. */}
         <Script src="https://www.googletagmanager.com/gtag/js?id=G-9038MTNX12" strategy="lazyOnload" />

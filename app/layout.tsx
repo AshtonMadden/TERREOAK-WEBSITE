@@ -125,11 +125,15 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html lang="en">
       <head />
       <body>
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-9038MTNX12"
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" src="/analytics.js" strategy="afterInteractive" />
+        {/* Analytics loads once the page is idle so it never competes with the content. */}
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-9038MTNX12" strategy="lazyOnload" />
+        <Script id="google-analytics" strategy="lazyOnload">
+          {`window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-9038MTNX12');
+gtag('config', 'AW-16575832442');`}
+        </Script>
         <JsonLd data={jsonLd} />
         <ScrollReveal />
         <Header />

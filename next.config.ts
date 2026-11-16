@@ -14,9 +14,9 @@ const nextConfig: NextConfig = {
         ],
       },
       {
-        // Photos, video and brand files rarely change; let browsers keep them for a month.
-        source: "/:all*(jpg|jpeg|JPG|png|webp|avif|svg|mp4|woff2)",
-        headers: [{ key: "Cache-Control", value: "public, max-age=2592000" }],
+        // Photos, video, fonts and brand files rarely change; let browsers keep them for a year.
+        source: "/:path(.+\\.(?:jpg|jpeg|JPG|png|webp|avif|svg|ico|mp4|woff2))",
+        headers: [{ key: "Cache-Control", value: "public, max-age=31536000" }],
       },
     ];
   },
@@ -35,6 +35,8 @@ const nextConfig: NextConfig = {
   images: {
     // Serve AVIF where the browser supports it, WebP otherwise.
     formats: ["image/avif", "image/webp"],
+    // Resized photos are kept for a month instead of the four-hour default.
+    minimumCacheTTL: 2678400,
   },
 };
 

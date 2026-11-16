@@ -2,18 +2,29 @@
 
 import { useEffect, useRef, useState } from "react";
 
-/** Background hero video. Playback starts from JS because hydrated videos don't always autoplay. */
+/**
+ * Background video. Nothing is downloaded until the video is about to scroll into view, and it
+ * pauses again when it leaves, so a video further down the page costs nothing up front.
+ */
 export function HeroVideo({ src, poster }: { src: string; poster: string }) {
   const ref = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     const video = ref.current;
     if (!video || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    video.play().catch(() => {});
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) video.play().catch(() => {});
+        else video.pause();
+      },
+      { rootMargin: "200px" }
+    );
+    observer.observe(video);
+    return () => observer.disconnect();
   }, []);
 
   return (
-    <video ref={ref} muted loop playsInline preload="metadata" poster={poster} aria-hidden="true" className="h-full w-full object-cover">
+    <video ref={ref} muted loop playsInline preload="none" poster={poster} aria-hidden="true" className="h-full w-full object-cover">
       <source src={src} type="video/mp4" />
     </video>
   );

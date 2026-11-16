@@ -9,7 +9,7 @@ export const site = {
   email: "services@terreoak.ca",
   hours: "Open 7 days a week, 6am–9pm",
   locality: "Calgary, Alberta",
-  reviews: { rating: "5.0", count: 40 },
+  reviews: { rating: "5.0", count: 25 },
   googleProfile:
     "https://www.google.com/maps/place/TERREOAK+Landscaping+%26+Snow/@50.954088,-114.417468,10z/data=!3m1!4b1!4m6!3m5!1s0x247081e09718a15f:0xc8ac035eb06955b0!8m2!3d50.9541194!4d-114.087835!16s%2Fg%2F11tj3r68zj",
   defaultOgImage: "/images/commercial.png",

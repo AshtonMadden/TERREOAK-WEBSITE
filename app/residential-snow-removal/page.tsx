@@ -4,6 +4,7 @@ import JobberLeadForm from "../components/JobberLeadForm";
 import JsonLd from "../components/JsonLd";
 import { Band, BlogCta, Button, Container, FaqList, GoogleMark, Stars, Tick } from "../components/ds";
 import { CountUp, HeroVideo } from "../components/HeroMedia";
+import HolidayGameSlot from "./HolidayGameSlot";
 import { breadcrumbLd, faqLd, pageMeta } from "../lib/seo";
 import { site } from "../lib/site";
 import { addOns, jobberForm, offers, passes, referral, reviews, season, stats, steps, zones } from "./content";
@@ -449,6 +450,9 @@ export default function ResidentialSnowRemovalPage() {
           </div>
         </div>
       </Band>
+
+      {/* HOLIDAY GAME: only appears during the holiday season */}
+      <HolidayGameSlot />
 
       {/* SNOW TRACKER: the snowman stands above this section, so it must not be clipped. */}
       <Band className="![content-visibility:visible]">

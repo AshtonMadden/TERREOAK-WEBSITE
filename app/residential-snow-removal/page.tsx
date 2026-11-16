@@ -1,13 +1,12 @@
 import Image from "next/image";
 import BeforeAfterSlider from "../components/BeforeAfterSlider";
-import InstagramEmbed from "../components/InstagramEmbed";
 import JobberLeadForm from "../components/JobberLeadForm";
 import JsonLd from "../components/JsonLd";
 import { Band, BlogCta, Button, Container, FaqList, GoogleMark, Stars, Tick } from "../components/ds";
 import { CountUp, HeroVideo } from "../components/HeroMedia";
 import { breadcrumbLd, faqLd, pageMeta } from "../lib/seo";
 import { site } from "../lib/site";
-import { addOns, instagramPosts, jobberForm, offers, passes, referral, reviews, season, stats, steps, zones } from "./content";
+import { addOns, jobberForm, offers, passes, referral, reviews, season, stats, steps, zones } from "./content";
 import { snowFaqs } from "./faqs";
 import ClampText from "../components/ClampText";
 import ReadMore from "../components/ReadMore";
@@ -558,22 +557,6 @@ export default function ResidentialSnowRemovalPage() {
         <div className="grid gap-x-20 gap-y-10 lg:grid-cols-[minmax(0,4fr)_minmax(0,8fr)]">
           <h2 className="to-display to-h2">FAQs</h2>
           <FaqList faqs={snowFaqs} />
-        </div>
-      </Band>
-
-      {/* INSTAGRAM */}
-      <Band>
-        <h2 className="to-display to-h2">See the team in action</h2>
-        <p className="to-body mt-5">
-          Check out our latest snow removal updates over on Instagram. We post regular jobsite walk-throughs, blizzard updates, and before/after clearing results.
-        </p>
-        <div className="mt-8 grid gap-5 md:mt-12 lg:grid-cols-3">
-          <InstagramEmbed url={instagramPosts[0]} />
-          <ReadMore inGrid label="Show more posts">
-            {instagramPosts.slice(1).map((url) => (
-              <InstagramEmbed key={url} url={url} />
-            ))}
-          </ReadMore>
         </div>
       </Band>
 

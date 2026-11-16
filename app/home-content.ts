@@ -305,11 +305,6 @@ export const gallery = [
   },
 ];
 
-export const instagramPosts = [
-  "https://www.instagram.com/p/DZYJ9hey3Wz/",
-  "https://www.instagram.com/p/DZbTO0OTIKM/",
-  "https://www.instagram.com/p/DaOSi4dSUg5/",
-];
 
 export const jobberForm = {
   clienthubId: "41b3399e-3795-43d8-afe2-e6c38c1b3e6e-2235504",

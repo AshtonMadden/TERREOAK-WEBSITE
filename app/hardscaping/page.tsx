@@ -2,10 +2,10 @@ import Image from "next/image";
 import JsonLd from "../components/JsonLd";
 import StickyCta from "../components/StickyCta";
 import { Band, BlogCta, Button, FaqList, PageHero, Tick } from "../components/ds";
-import { CardsBand, FormBand, InstagramBand, ProjectCards, ReviewsBand, SplitBand, StepsBand, TeamBand } from "../components/sections";
+import { CardsBand, FormBand, ProjectCards, ReviewsBand, SplitBand, StepsBand, TeamBand } from "../components/sections";
 import { breadcrumbLd, faqLd, pageMeta } from "../lib/seo";
 import { site } from "../lib/site";
-import { faqs, instagramPosts, jobberForm, projects, reviews, services, steps } from "./content";
+import { faqs, jobberForm, projects, reviews, services, steps } from "./content";
 
 const path = "/hardscaping";
 const description =
@@ -186,12 +186,6 @@ export default function HardscapingPage() {
           <FaqList faqs={faqs} />
         </div>
       </Band>
-
-      <InstagramBand
-        title="Latest project videos"
-        lead="Check out our latest landscape transformations and snow removal updates over on Instagram. We post regular jobsite walk-throughs and before/afters."
-        posts={instagramPosts}
-      />
 
       <BlogCta>
         <Button href="/blog/why-open-grade-base-for-paver-patios" variant="quiet">

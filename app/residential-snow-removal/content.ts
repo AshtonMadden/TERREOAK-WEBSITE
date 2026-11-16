@@ -84,11 +84,6 @@ export const season = {
   visits: 0,
 };
 
-export const instagramPosts = [
-  "https://www.instagram.com/p/DV8vk9yk61k/",
-  "https://www.instagram.com/p/DUGmQOWD8NR/",
-  "https://www.instagram.com/p/DU1JTo7kkSj/",
-];
 
 export const jobberForm = {
   clienthubId: "41b3399e-3795-43d8-afe2-e6c38c1b3e6e-2232203",

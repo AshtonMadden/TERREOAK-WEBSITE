@@ -2,10 +2,10 @@ import JsonLd from "../components/JsonLd";
 import ReadMore from "../components/ReadMore";
 import StickyCta from "../components/StickyCta";
 import { Band, BlogCta, Button, FounderQuote, PageHero, Tick } from "../components/ds";
-import { FaqBand, FormBand, GalleryBand, InstagramBand, ProjectCards, ReviewsBand, StepsBand, TrustPoints, serviceLd } from "../components/sections";
+import { FaqBand, FormBand, GalleryBand, ProjectCards, ReviewsBand, StepsBand, TrustPoints, serviceLd } from "../components/sections";
 import { projects, reviews } from "../home-content";
 import { pageMeta } from "../lib/seo";
-import { costs, faqs, gallery, instagramPosts, jobberForm, steps } from "./content";
+import { costs, faqs, gallery, jobberForm, steps } from "./content";
 
 const path = "/landscape-installs";
 const description =
@@ -154,12 +154,6 @@ export default function LandscapeInstallsPage() {
       />
 
       <FaqBand title="Frequently asked questions" faqs={faqs} />
-
-      <InstagramBand
-        title="Latest project videos"
-        lead="Check out our latest landscape transformations and snow removal updates over on Instagram. We post regular jobsite walk-throughs and before/afters."
-        posts={instagramPosts}
-      />
 
       <BlogCta />
 

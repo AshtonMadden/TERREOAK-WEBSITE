@@ -4,9 +4,9 @@ import JobberLeadForm from "./components/JobberLeadForm";
 import { Band, BlogCta, Button, Container, FounderQuote, GoogleMark, Tick } from "./components/ds";
 import { HeroVideo } from "./components/HeroMedia";
 import ReadMore from "./components/ReadMore";
-import { GalleryBand, InstagramBand, ProjectCards, ReviewsBand, StepsBand } from "./components/sections";
+import { GalleryBand, ProjectCards, ReviewsBand, StepsBand } from "./components/sections";
 import { site } from "./lib/site";
-import { gallery, guarantees, instagramPosts, jobberForm, processSteps, projects, reviews, services, trustPoints } from "./home-content";
+import { gallery, guarantees, jobberForm, processSteps, projects, reviews, services, trustPoints } from "./home-content";
 
 const Arrow = () => (
   <svg className="h-4 w-4 transition-transform group-hover:translate-x-1" viewBox="0 0 16 16" fill="none" aria-hidden="true">
@@ -201,12 +201,6 @@ export default function HomePage() {
           </div>
         </div>
       </Band>
-
-      <InstagramBand
-        title="Latest project videos"
-        lead="Check out our latest landscape transformations and snow removal updates over on Instagram. We post regular jobsite walk-throughs and before/afters."
-        posts={instagramPosts}
-      />
 
       <BlogCta />
     </main>

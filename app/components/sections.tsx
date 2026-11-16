@@ -3,7 +3,6 @@ import Link from "next/link";
 import { Children, type ReactNode } from "react";
 import { site } from "../lib/site";
 import { CountUp } from "./HeroMedia";
-import InstagramEmbed from "./InstagramEmbed";
 import JobberLeadForm from "./JobberLeadForm";
 import ClampText from "./ClampText";
 import ReadMore from "./ReadMore";
@@ -92,24 +91,6 @@ export function ReviewsBand({ id, title, reviews }: { id?: string; title: string
             {reviews.slice(1).map(reviewCard)}
           </ReadMore>
         )}
-      </div>
-    </Band>
-  );
-}
-
-/** Row of Instagram posts: sideways scroller on phones, three columns on desktop. */
-export function InstagramBand({ title, lead, posts }: { title: string; lead: string; posts: string[] }) {
-  return (
-    <Band>
-      <h2 className="to-display to-h2">{title}</h2>
-      <p className="to-body mt-5">{lead}</p>
-      <div className="mt-8 grid gap-5 md:mt-12 lg:grid-cols-3">
-        <InstagramEmbed url={posts[0]} />
-        <ReadMore inGrid label="Show more posts">
-          {posts.slice(1).map((url) => (
-            <InstagramEmbed key={url} url={url} />
-          ))}
-        </ReadMore>
       </div>
     </Band>
   );

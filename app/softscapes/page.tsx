@@ -2,9 +2,9 @@ import Image from "next/image";
 import JsonLd from "../components/JsonLd";
 import StickyCta from "../components/StickyCta";
 import { Band, BlogCta, Button, PageHero, Tick } from "../components/ds";
-import { CardsBand, FaqBand, FormBand, InstagramBand, ProjectCards, ReviewsBand, SplitBand, StepsBand, TeamBand, TrustPoints, serviceLd } from "../components/sections";
+import { CardsBand, FaqBand, FormBand, ProjectCards, ReviewsBand, SplitBand, StepsBand, TeamBand, TrustPoints, serviceLd } from "../components/sections";
 import { pageMeta } from "../lib/seo";
-import { faqs, instagramPosts, jobberForm, mulches, projects, reviews, services, steps } from "./content";
+import { faqs, jobberForm, mulches, projects, reviews, services, steps } from "./content";
 
 const path = "/softscapes";
 const description =
@@ -139,12 +139,6 @@ export default function SoftscapesPage() {
       </FormBand>
 
       <FaqBand title="Common questions" faqs={faqs} />
-
-      <InstagramBand
-        title="Latest project videos"
-        lead="Check out our latest landscape transformations and snow removal updates over on Instagram. We post regular jobsite walk-throughs and before/afters."
-        posts={instagramPosts}
-      />
 
       <BlogCta />
 

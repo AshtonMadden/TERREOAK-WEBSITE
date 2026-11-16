@@ -2,7 +2,7 @@
 
 export const stats = [
   { end: 225, suffix: "+", label: "Total properties serviced" },
-  { end: 185, suffix: "+", label: "Happy clients" },
+  { end: 220, suffix: "+", label: "Happy clients" },
   { end: 2, suffix: "", label: "TERREOAK crews" },
 ];
 

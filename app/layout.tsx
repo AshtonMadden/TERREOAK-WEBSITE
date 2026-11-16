@@ -21,7 +21,7 @@ const homeDescription =
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   ...pageMeta({ title: homeTitle, description: homeDescription, path: "/" }),
-  applicationName: site.shortName,
+  applicationName: site.name,
   icons: { icon: "/icon.png", apple: "/icon.png" },
   formatDetection: { telephone: true, email: true, address: true },
 };
@@ -58,8 +58,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         "@type": "WebSite",
         "@id": "https://terreoak.ca/#website",
         "url": "https://terreoak.ca",
-        "name": "TERREOAK Landscaping",
-        "description": "Calgary's premier landscaping and snow removal team."
+        "name": "TERREOAK Landscaping & Snow",
+        "alternateName": ["TERREOAK", "TERREOAK Landscaping"],
+        "description": "Calgary's premier landscaping and snow removal team.",
+        "publisher": { "@id": "https://terreoak.ca/#organization" }
       },
       {
         "@type": "LandscapingService",

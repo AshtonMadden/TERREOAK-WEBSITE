@@ -20,6 +20,7 @@ const routes: { path: string; priority: number; changeFrequency: "weekly" | "mon
   { path: "/parklandlandscaping", priority: 0.7, changeFrequency: "yearly" },
   { path: "/about", priority: 0.7, changeFrequency: "monthly" },
   { path: "/blog", priority: 0.7, changeFrequency: "weekly" },
+  { path: "/blog/commercial-snow-removal-calgary-guide", priority: 0.6, changeFrequency: "yearly" },
   { path: "/blog/why-hire-snow-removal-company", priority: 0.6, changeFrequency: "yearly" },
   { path: "/blog/why-calgary-spring-cleanup-matters", priority: 0.6, changeFrequency: "yearly" },
   { path: "/blog/why-open-grade-base-for-paver-patios", priority: 0.6, changeFrequency: "yearly" },

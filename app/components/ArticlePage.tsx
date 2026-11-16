@@ -19,6 +19,8 @@ export type Article = {
   updated: string;
   /** ISO date first published, when known. */
   published?: string;
+  /** Named author, when the post is written in one person's voice. Defaults to the team. */
+  author?: string;
   /** Where the closing button sends readers. */
   cta: { title: string; text: string; label: string; href: string };
 };
@@ -65,7 +67,9 @@ export default function ArticlePage({
         inLanguage: "en-CA",
         dateModified: article.updated,
         ...(article.published ? { datePublished: article.published } : {}),
-        author: { "@id": `${site.url}/#organization` },
+        author: article.author
+          ? { "@type": "Person", name: article.author, jobTitle: "Owner", worksFor: { "@id": `${site.url}/#organization` }, url: `${site.url}/about` }
+          : { "@id": `${site.url}/#organization` },
         publisher: { "@id": `${site.url}/#organization` },
         mainEntityOfPage: `${site.url}${article.path}`,
         about: { "@type": "Place", name: "Calgary, Alberta" },
@@ -98,7 +102,7 @@ export default function ArticlePage({
           <p className="to-sub mt-6">{article.category}</p>
           <h1 className="to-display mt-4 max-w-[24ch] text-[clamp(2.2rem,4.6vw,4rem)] leading-[1.06]">{article.title}</h1>
           <p className="mt-6 text-[1.02rem] text-white/80">
-            By the TERREOAK team in Calgary. Last updated <time dateTime={article.updated}>{formatDate(article.updated)}</time>.
+            {article.author ? `By ${article.author}, owner of TERREOAK in Calgary.` : "By the TERREOAK team in Calgary."} Last updated <time dateTime={article.updated}>{formatDate(article.updated)}</time>.
           </p>
         </Container>
       </section>

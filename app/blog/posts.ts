@@ -55,4 +55,24 @@ export const basePost: Article = {
   "path": "/blog/why-open-grade-base-for-paver-patios"
 };
 
-export const posts = [basePost, springPost, snowPost];
+export const commercialSnowPost: Article = {
+  "metaTitle": "Commercial Snow Removal Calgary: Property Manager's Guide",
+  "metaDescription": "Contract types, trigger depths, ice control and liability: what Calgary property managers should lock in with a snow contractor before the first storm.",
+  "title": "Commercial snow removal in Calgary: what property managers need locked in before the first big storm",
+  "category": "Commercial snow removal",
+  "hero": "/blog-pics/commercial-snow-removal-calgary-picket.jpg",
+  "heroAlt": "TERREOAK snow picket marking the entrance to a commercial parking lot in Calgary",
+  "excerpt": "Contract types, trigger depths, ice control, liability and snow storage: what to have in writing with your snow contractor before the snow flies, plus 10 questions to ask before you sign.",
+  "updated": "2026-11-15",
+  "published": "2026-11-15",
+  "author": "Ashton Madden",
+  "cta": {
+    "title": "Get your property sorted before the next storm",
+    "text": "Owner-operated, no subcontractors. Ice control, visit logs and clear completion times written right into the contract.",
+    "label": "Request a commercial snow quote",
+    "href": "/commercial-grounds-maintenance#commercial-form"
+  },
+  "path": "/blog/commercial-snow-removal-calgary-guide"
+};
+
+export const posts = [commercialSnowPost, basePost, springPost, snowPost];

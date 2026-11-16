@@ -24,6 +24,7 @@ const sources = {
   "/about": "images/about-mission-team.jpg",
   "/blog": "Landscape web page pics/Finished-hardscape-project.JPG",
   "/blog/why-hire-snow-removal-company": "blog-pics/professional_snow_clearing.png",
+  "/blog/commercial-snow-removal-calgary-guide": "blog-pics/commercial-snow-removal-calgary-picket.jpg",
   "/blog/why-calgary-spring-cleanup-matters": "spring-cleanup-pics/Leaf-Cleanup-near-me.jpg",
   "/blog/why-open-grade-base-for-paver-patios": "Landscape web page pics/Techo-Bloc-pavers-river-rock.JPG",
   "/careers": "images/careers-hero.png",

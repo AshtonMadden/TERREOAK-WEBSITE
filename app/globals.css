@@ -590,3 +590,9 @@ html {
     --sn: 0.72;
   }
 }
+
+/* Sections further down the page skip layout and paint work until they are about to be seen. */
+.to-cv {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 720px;
+}

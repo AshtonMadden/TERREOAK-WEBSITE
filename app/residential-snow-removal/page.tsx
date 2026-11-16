@@ -451,8 +451,8 @@ export default function ResidentialSnowRemovalPage() {
         </div>
       </Band>
 
-      {/* SNOW TRACKER */}
-      <Band>
+      {/* SNOW TRACKER: the snowman stands above this section, so it must not be clipped. */}
+      <Band className="![content-visibility:visible]">
         <div className="to-card to-snow-v1 p-6 md:p-12">
           <Snowman />
           <h2 className="to-display to-h2">{season.label} snow tracker</h2>

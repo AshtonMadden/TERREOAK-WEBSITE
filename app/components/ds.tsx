@@ -56,7 +56,7 @@ export function Band({
 }) {
   if (surface === "snow") {
     return (
-      <section id={id} className={`px-3 py-5 sm:px-5 md:py-10 ${className}`}>
+      <section id={id} className={`to-cv px-3 py-5 sm:px-5 md:py-10 ${className}`}>
         <div data-reveal className="to-snow mx-auto max-w-[1400px] rounded-[36px] py-10 md:rounded-[48px] md:py-20">
           <Container>{children}</Container>
         </div>
@@ -64,7 +64,7 @@ export function Band({
     );
   }
   return (
-    <section id={id} className={`py-10 md:py-24 ${className}`}>
+    <section id={id} className={`to-cv py-10 md:py-24 ${className}`}>
       <div data-reveal>
         <Container>{children}</Container>
       </div>

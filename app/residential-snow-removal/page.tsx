@@ -5,6 +5,7 @@ import JsonLd from "../components/JsonLd";
 import { Band, BlogCta, Button, Container, FaqList, GoogleMark, Stars, Tick } from "../components/ds";
 import { CountUp, HeroVideo } from "../components/HeroMedia";
 import HolidayGameSlot from "./HolidayGameSlot";
+import StormBanner from "./StormBanner";
 import { breadcrumbLd, faqLd, pageMeta } from "../lib/seo";
 import { site } from "../lib/site";
 import { addOns, jobberForm, offers, passes, referral, reviews, season, stats, steps, zones } from "./content";
@@ -167,7 +168,8 @@ export default function ResidentialSnowRemovalPage() {
           <div className="absolute inset-0 bg-[#1d1f21]/65" />
         </div>
 
-        <Container className="pb-10 pt-32 md:pb-12 md:pt-48">
+        <Container className="pb-10 pt-32 has-[.to-storm]:pt-24 md:pb-12 md:pt-48 md:has-[.to-storm]:pt-28">
+          <StormBanner />
           <h1 className="to-display to-h1 max-w-[22ch]">Calgary snow removal you can set and forget.</h1>
           <div className="mt-6 grid items-end gap-7 md:mt-7 md:gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(360px,440px)] lg:gap-x-20 lg:gap-y-8">
             <div className="lg:col-span-2 lg:max-w-3xl">

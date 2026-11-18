@@ -39,7 +39,9 @@ export async function GET(request: Request, { params }: { params: Promise<{ path
 
   const headers = {
     "Content-Type": "text/markdown; charset=utf-8",
-    "Cache-Control": "public, max-age=600",
+    // Never stored by shared caches, so a browser can never be handed the Markdown version by mistake.
+    "Cache-Control": "private, no-store",
+    "CDN-Cache-Control": "no-store",
     Vary: "Accept",
     "X-Robots-Tag": "noindex",
     Link: `<${site.url}${path === "/" ? "" : path}>; rel="canonical"`,

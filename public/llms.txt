@@ -23,5 +23,11 @@
 ## Company
 
 - [About TERREOAK](https://terreoak.ca/about)
+- [Contact](https://terreoak.ca/contact): phone, email, hours and the estimate request form.
 - [Projects](https://terreoak.ca/projects)
 - [Our process](https://terreoak.ca/our-process)
+
+## For AI agents
+
+- Any page is available as Markdown: send `Accept: text/markdown`, or request `https://terreoak.ca/md/<path>`.
+- MCP server (read-only): `https://terreoak.ca/api/mcp`, described at `https://terreoak.ca/.well-known/mcp/server-card.json`.

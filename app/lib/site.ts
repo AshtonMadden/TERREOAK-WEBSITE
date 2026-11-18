@@ -12,6 +12,11 @@ export const site = {
   reviews: { rating: "5.0", count: 25 },
   googleProfile:
     "https://www.google.com/maps/place/TERREOAK+Landscaping+%26+Snow/@50.954088,-114.417468,10z/data=!3m1!4b1!4m6!3m5!1s0x247081e09718a15f:0xc8ac035eb06955b0!8m2!3d50.9541194!4d-114.087835!16s%2Fg%2F11tj3r68zj",
+  // Other places the business is listed. Used as "sameAs" so search engines and AI agents can
+  // confirm they are all the same company. Add social and directory profiles here.
+  sameAs: [
+    "https://www.google.com/maps/place/TERREOAK+Landscaping+%26+Snow/@50.954088,-114.417468,10z/data=!3m1!4b1!4m6!3m5!1s0x247081e09718a15f:0xc8ac035eb06955b0!8m2!3d50.9541194!4d-114.087835!16s%2Fg%2F11tj3r68zj",
+  ],
   defaultOgImage: "/images/commercial.png",
   // Jobber client portal, where existing clients find their referral link.
   clientPortalUrl: "https://clienthub.getjobber.com/client_hubs/41b3399e-3795-43d8-afe2-e6c38c1b3e6e/",
@@ -47,6 +52,7 @@ export const nav: NavGroup[] = [
     items: [
       { label: "Projects", href: "/projects", desc: "Recent work around Calgary" },
       { label: "About", href: "/about", desc: "Who we are and how we work" },
+      { label: "Contact", href: "/contact", desc: "Call, email or send a request" },
       { label: "Blog", href: "/blog", desc: "Seasonal tips and guides" },
       { label: "Careers", href: "/careers", desc: "Join the crew" },
     ],

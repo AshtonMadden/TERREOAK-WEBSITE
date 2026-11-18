@@ -13,6 +13,7 @@ import ScrollReveal from "./components/ScrollReveal";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Script from "next/script";
+import WebMcpTools from "./components/WebMcpTools";
 
 const homeTitle = "Calgary Landscaping & Snow Removal Company | TERREOAK";
 const homeDescription =
@@ -46,10 +47,21 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           "width": 180,
           "height": 180
         },
+        "telephone": "+1-587-707-7648",
+        "email": "services@terreoak.ca",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Calgary",
+          "addressRegion": "AB",
+          "postalCode": "T2P",
+          "addressCountry": "CA"
+        },
+        "sameAs": site.sameAs,
         "contactPoint": {
           "@type": "ContactPoint",
           "telephone": "+1-587-707-7648",
           "contactType": "customer service",
+          "url": "https://terreoak.ca/contact",
           "areaServed": "CA",
           "availableLanguage": "English"
         }
@@ -109,6 +121,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         },
         "priceRange": "$$$",
         "hasMap": site.googleProfile,
+        "sameAs": site.sameAs,
 
         "serviceType": [
           "Landscape Construction",
@@ -140,6 +153,7 @@ gtag('config', 'AW-16575832442');`}
         </Script>
         <JsonLd data={jsonLd} />
         <ScrollReveal />
+        <WebMcpTools />
         <Header />
         {children}
         <Footer />

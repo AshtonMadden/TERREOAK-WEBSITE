@@ -19,6 +19,7 @@ const routes: { path: string; priority: number; changeFrequency: "weekly" | "mon
   { path: "/mckenzielakelandscaping", priority: 0.7, changeFrequency: "yearly" },
   { path: "/parklandlandscaping", priority: 0.7, changeFrequency: "yearly" },
   { path: "/about", priority: 0.7, changeFrequency: "monthly" },
+  { path: "/contact", priority: 0.7, changeFrequency: "monthly" },
   { path: "/blog", priority: 0.7, changeFrequency: "weekly" },
   { path: "/blog/commercial-snow-removal-calgary-guide", priority: 0.6, changeFrequency: "yearly" },
   { path: "/blog/why-hire-snow-removal-company", priority: 0.6, changeFrequency: "yearly" },

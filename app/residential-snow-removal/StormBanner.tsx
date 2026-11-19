@@ -9,10 +9,10 @@ import { useEffect, useState } from "react";
  */
 export const stormAlert = {
   active: true,
-  /** When the banner stops showing: the end of November 19, 2026, Calgary time. */
-  expires: "2026-11-20T07:00:00Z",
-  title: "Incoming snow storm",
-  text: "Prepare for the next 48 hours. Calgary is expecting 15 to 30 cm.",
+  /** When the banner stops showing: noon on Saturday, November 21, 2026, Calgary time. */
+  expires: "2026-11-21T19:00:00Z",
+  title: "Snow in the forecast",
+  text: "1 cm possible this Friday night.",
   linkLabel: "Need a pass? Fill out the form",
   linkHref: "#seasonal-form",
 };

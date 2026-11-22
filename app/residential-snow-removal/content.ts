@@ -58,9 +58,26 @@ export const passes = [
   },
 ];
 
-// Starting price for a residential season pass. Used on the snow page, the pricing page and
-// in the price data search engines read.
-export const snowPricing = { from: "$199.99", amount: "199.99" };
+// Season pass prices. The season rate is the monthly rate times 5 (the season is billed as
+// 5 monthly payments). Used on the snow page, the pricing page and in the price data search
+// engines read, so change them here and everything follows.
+export const snowPrices = [
+  { name: "Double car driveway", covers: "Double driveway with front sidewalks", monthly: "$199.99", amount: "199.99", season: "$999.95" },
+  { name: "Single car driveway", covers: "Single driveway with front sidewalks", monthly: "$189.99", amount: "189.99", season: "$949.95" },
+  { name: "Front sidewalks only", covers: "Front sidewalks, no driveway", monthly: "$139.99", amount: "139.99", season: "$699.95" },
+];
+
+export const iceMeltPrice = {
+  name: "Ice melt subscription",
+  desc: "Automatic ice melt application after each visit, up to 4 visits per month.",
+  monthly: "$49.99",
+  amount: "49.99",
+};
+
+export const priceNote = "All pricing is a starting point and subject to change.";
+
+// Lowest and headline starting prices, for copy that mentions a single number.
+export const snowPricing = { from: "$139.99", amount: "139.99", driveway: "$199.99" };
 
 export const addOns = [
   {

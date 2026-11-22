@@ -5,7 +5,7 @@ import { communityPath } from "../snow-removal/communities";
 import { site } from "./site";
 
 export const services = [
-  { name: "Residential snow removal", path: "/residential-snow-removal", form: "/residential-snow-removal#seasonal-form", summary: "Flat-rate season passes from $199.99 per month for driveways and front sidewalks in south Calgary, cleared whenever 1 cm falls." },
+  { name: "Residential snow removal", path: "/residential-snow-removal", form: "/residential-snow-removal#seasonal-form", summary: "Flat-rate season passes in south Calgary, cleared whenever 1 cm falls. Starting at $199.99 per month for a double driveway with front sidewalks, $189.99 for a single driveway, $139.99 for front sidewalks only (5 monthly payments). Starting prices, subject to change." },
   { name: "Commercial grounds maintenance", path: "/commercial-grounds-maintenance", form: "/commercial-grounds-maintenance#commercial-form", summary: "Year-round grounds care and snow and ice management for condos, HOAs and business parks." },
   { name: "Commercial snow removal", path: "/commercial-snow-removal", form: "/commercial-snow-removal#commercial-snow-form", summary: "Parking lot plowing, sidewalk clearing, ice control and time-stamped visit logs for commercial properties in Calgary." },
   { name: "Landscape installs", path: "/landscape-installs", form: "/landscape-installs#landscape-form", summary: "Full landscape design and build." },

@@ -27,6 +27,6 @@ export const snowFaqs: { q: string; a: string }[] = [
   },
   {
     q: "How much does snow removal cost?",
-    a: "Season passes start at $199.99 per month for driveway and front sidewalk clearing, with no per-visit fees. The exact rate depends on the size of your property. Pay in full upfront and you save 10%.",
+    a: "Season passes start at $199.99 per month for a double car driveway with front sidewalks, $189.99 for a single car driveway with front sidewalks, and $139.99 for front sidewalks only. The season is five monthly payments. Ice melt is an optional $49.99 monthly subscription you can cancel anytime. All pricing is a starting point and subject to change.",
   },
 ];

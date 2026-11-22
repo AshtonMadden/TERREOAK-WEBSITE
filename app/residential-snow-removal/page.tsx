@@ -7,6 +7,7 @@ import { Band, BlogCta, Button, Container, FaqList, GoogleMark, Stars, Tick } fr
 import { CountUp, HeroVideo } from "../components/HeroMedia";
 import { SnowBank, Snowman } from "../components/SnowDecor";
 import HolidayGameSlot from "./HolidayGameSlot";
+import SnowPriceBoxes from "./SnowPriceBoxes";
 import StormBanner from "./StormBanner";
 import { communityPath } from "../snow-removal/communities";
 import { breadcrumbLd, faqLd, pageMeta } from "../lib/seo";
@@ -272,9 +273,9 @@ export default function ResidentialSnowRemovalPage() {
               {i === 0 && (
                 <p className="mt-5 text-[1.12rem] text-fg">
                   <span className="to-display text-[1.9rem] text-accent">From {snowPricing.from}</span> per month.{" "}
-                  <Link href="/snow-removal-cost-calgary" className="to-link">
+                  <a href="#pricing" className="to-link">
                     See pricing
-                  </Link>
+                  </a>
                 </p>
               )}
               {i === 1 && (
@@ -314,6 +315,19 @@ export default function ResidentialSnowRemovalPage() {
             <dd className="mt-2 text-[1.08rem] leading-relaxed text-muted">Our crews follow set neighbourhood routes each storm, which is what lets us guarantee a visit every 24 hours.</dd>
           </div>
         </dl>
+        <div id="pricing" className="mt-12 md:mt-20">
+          <h3 className="to-display to-h2">Season pass pricing</h3>
+          <p className="to-body mt-5">One flat monthly rate for the winter, based on what we’re clearing. No per-visit fees.</p>
+          <div className="mt-8 md:mt-12">
+            <SnowPriceBoxes />
+          </div>
+          <p className="mt-6 text-[1.05rem] text-muted">
+            Pay in full upfront and save 10%.{" "}
+            <Link href="/snow-removal-cost-calgary" className="to-link">
+              More about pricing
+            </Link>
+          </p>
+        </div>
       </Band>
 
       {/* GUARANTEES */}

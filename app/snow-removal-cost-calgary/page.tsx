@@ -5,13 +5,14 @@ import { Band, Button, PageHero, Tick } from "../components/ds";
 import { FaqBand, FormBand, ReviewsBand } from "../components/sections";
 import { breadcrumbLd, faqLd, pageMeta } from "../lib/seo";
 import { site } from "../lib/site";
-import { addOns, jobberForm, passes, reviews, snowPricing } from "../residential-snow-removal/content";
+import SnowPriceBoxes from "../residential-snow-removal/SnowPriceBoxes";
+import { addOns, iceMeltPrice, jobberForm, passes, priceNote, reviews, snowPrices, snowPricing } from "../residential-snow-removal/content";
 
 const path = "/snow-removal-cost-calgary";
-const description = `Residential snow removal in Calgary costs from ${snowPricing.from} per month with TERREOAK. See what’s included, what changes the price, and how to save 10%.`;
+const description = `Snow removal in Calgary from ${snowPricing.driveway} a month for a double driveway, ${snowPrices[1].monthly} for a single, ${snowPricing.from} for sidewalks only. See what’s included.`;
 
 export const metadata = pageMeta({
-  title: `Snow Removal Cost Calgary: From ${snowPricing.from}/Month | TERREOAK`,
+  title: "Snow Removal Cost Calgary: 2026–27 Prices | TERREOAK",
   description,
   path,
   image: "/og/residential-snow-removal.jpg",
@@ -20,9 +21,9 @@ export const metadata = pageMeta({
 const seasonPass = passes[0];
 
 const priceFactors = [
-  { title: "The size of your driveway", desc: "A single driveway takes less time than a triple or an extra-long one, so the rate reflects the area we’re clearing." },
+  { title: "The size of your driveway", desc: "Single and double driveways have their own starting rates. Larger or extra-long driveways are priced once we’ve seen them." },
   { title: "How much sidewalk you have", desc: "Corner lots carry more public sidewalk than a mid-block home, and the city expects all of it cleared." },
-  { title: "Add-ons you choose", desc: "Ice melt and windrow clearing aren’t part of the standard pass. Add them if you want them, skip them if you don’t." },
+  { title: "Add-ons you choose", desc: `Ice melt is an optional ${iceMeltPrice.monthly} monthly subscription you can cancel anytime. Windrow clearing can be added through a custom pass.` },
   { title: "How you pay", desc: seasonPass.payment },
 ];
 
@@ -44,7 +45,7 @@ const compare = [
 const faqs = [
   {
     q: "How much does snow removal cost in Calgary?",
-    a: `With TERREOAK, residential snow removal starts at ${snowPricing.from} per month for a season pass. That covers your driveway and front sidewalk, cleared whenever 1 cm of snow falls, with no per-visit fees. The exact rate depends on the size of your property.`,
+    a: `With TERREOAK, season passes start at ${snowPrices[0].monthly} per month for a double car driveway with front sidewalks, ${snowPrices[1].monthly} for a single car driveway with front sidewalks, and ${snowPrices[2].monthly} for front sidewalks only. The season is five monthly payments, so that works out to ${snowPrices[0].season}, ${snowPrices[1].season} and ${snowPrices[2].season}. ${priceNote}`,
   },
   {
     q: "What is included in the monthly price?",
@@ -56,7 +57,7 @@ const faqs = [
   },
   {
     q: "Are there any extra fees?",
-    a: "There are no per-visit fees on a season pass. Ice melt is an optional monthly add-on, and windrow clearing can be added through a custom pass. Neither is charged unless you ask for it.",
+    a: `There are no per-visit fees on a season pass. Ice melt is an optional ${iceMeltPrice.monthly} monthly subscription you can cancel anytime, and windrow clearing can be added through a custom pass. Neither is charged unless you ask for it.`,
   },
   {
     q: "Can I save money by paying upfront?",
@@ -84,13 +85,15 @@ const jsonLd = {
       url: `${site.url}${path}`,
       provider: { "@id": `${site.url}/#localbusiness` },
       areaServed: { "@type": "City", name: "Calgary" },
-      offers: {
+      offers: snowPrices.map((tier) => ({
         "@type": "Offer",
+        name: tier.name,
+        description: tier.covers,
         priceCurrency: "CAD",
-        price: snowPricing.amount,
-        priceSpecification: { "@type": "UnitPriceSpecification", price: snowPricing.amount, priceCurrency: "CAD", unitText: "month", description: "Starting monthly rate for a residential season pass" },
+        price: tier.amount,
+        priceSpecification: { "@type": "UnitPriceSpecification", price: tier.amount, priceCurrency: "CAD", unitText: "month", description: "Starting monthly rate, billed as 5 monthly payments for the season" },
         url: `${site.url}/residential-snow-removal#seasonal-form`,
-      },
+      })),
     },
     {
       "@id": `${site.url}${path}#breadcrumb`,
@@ -111,7 +114,7 @@ export default function Page() {
 
       <PageHero
         title="What snow removal costs in Calgary."
-        lead={`Season passes from ${snowPricing.from} per month. One flat rate for your driveway and front sidewalk, with no per-visit fees and no surprises after a big storm.`}
+        lead={`Season passes from ${snowPricing.driveway} per month for a double driveway and front sidewalks. One flat rate, with no per-visit fees and no surprises after a big storm.`}
         video="/videos/calgary-snow-removal-drone.mp4"
         poster="/images/snow-removal/hero-poster.jpg"
       >
@@ -121,28 +124,26 @@ export default function Page() {
         </Button>
       </PageHero>
 
-      {/* THE PRICE */}
+      {/* THE PRICES */}
       <Band id="price">
-        <div className="to-card to-snow-v1 grid items-center gap-8 p-6 md:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] md:gap-12 md:p-12">
-          <div>
-            <p className="to-sub">{seasonPass.name}</p>
-            <p className="to-display mt-3 text-[2.6rem] leading-none text-accent md:text-[3.4rem]">{snowPricing.from}+</p>
-            <p className="mt-3 text-[1.1rem] text-muted">per month, for the season</p>
-            <div className="mt-7">
-              <Button href="#seasonal-form">Get my exact price</Button>
-            </div>
-          </div>
-          <div>
-            <h2 className="to-display to-h3">What’s included</h2>
-            <ul className="mt-5 grid gap-3 text-[1.08rem] text-fg sm:grid-cols-2">
-              {seasonPass.includes.map((item) => (
-                <li key={item} className="flex gap-3">
-                  <Tick />
-                  {item}
-                </li>
-              ))}
-            </ul>
-            <p className="mt-6 text-[1.05rem] leading-relaxed text-muted">{seasonPass.payment}</p>
+        <h2 className="to-display to-h2">Season pass prices</h2>
+        <p className="to-body mt-5">One flat monthly rate for the winter, based on what we’re clearing. The season is billed as five monthly payments.</p>
+        <div className="mt-8 md:mt-12">
+          <SnowPriceBoxes />
+        </div>
+        <div className="to-card mt-3 p-6 md:mt-5 md:p-8">
+          <h3 className="to-display to-h3">What every season pass includes</h3>
+          <ul className="mt-5 grid gap-3 text-[1.08rem] text-fg sm:grid-cols-2 lg:grid-cols-3">
+            {seasonPass.includes.map((item) => (
+              <li key={item} className="flex gap-3">
+                <Tick />
+                {item}
+              </li>
+            ))}
+          </ul>
+          <p className="mt-6 text-[1.05rem] leading-relaxed text-muted">{seasonPass.payment}</p>
+          <div className="mt-6">
+            <Button href="#seasonal-form">Get my exact price</Button>
           </div>
         </div>
       </Band>
@@ -152,7 +153,7 @@ export default function Page() {
         <div className="grid items-end gap-x-20 gap-y-6 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]">
           <h2 className="to-display to-h2">What changes your price</h2>
           <p className="to-body">
-            {snowPricing.from} is where season passes start. Your own rate is set once we know the property, and it stays the same every month for the whole winter, whether it snows twice or twenty times.
+            The prices above are starting points. Your own rate is set once we know the property, and it stays the same every month for the whole winter, whether it snows twice or twenty times.
           </p>
         </div>
         <div className="mt-8 grid gap-3 md:mt-12 md:grid-cols-2 md:gap-5">

@@ -216,8 +216,7 @@ const sections: ArticleSection[] = [
           from someone who fell.
         </p>
         <p>
-          See the full details on our <Link href="/residential-snow-removal">residential snow removal</Link> page, or the{" "}
-          <Link href="/snow-removal/snowbird-vacation-pass">snowbird and vacation pass</Link> if you only need cover while you’re away.
+          See the full details on our <Link href="/residential-snow-removal">residential snow removal</Link> page, which also covers the snowbird and vacation pass if you only need cover while you’re away.
         </p>
       </>
     ),
@@ -288,7 +287,6 @@ const faqs = [
 const related = [
   { label: "Residential snow removal", href: "/residential-snow-removal", desc: "Flat-rate season passes for driveways and front sidewalks." },
   { label: "Season pass pricing", href: "/residential-snow-removal#pricing", desc: "Monthly and season rates by property type." },
-  { label: "Snowbird and vacation pass", href: "/snow-removal/snowbird-vacation-pass", desc: "Coverage for 1 to 8 weeks while you’re away." },
   { label: "Why hire a snow removal company?", href: "/blog/why-hire-snow-removal-company", desc: "Liability, property damage and how our routes work." },
 ];
 

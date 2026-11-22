@@ -278,13 +278,6 @@ export default function ResidentialSnowRemovalPage() {
                   </a>
                 </p>
               )}
-              {i === 1 && (
-                <p className="mt-5 text-[1.05rem]">
-                  <Link href="/snow-removal/snowbird-vacation-pass" className="to-link">
-                    About the snowbird pass
-                  </Link>
-                </p>
-              )}
               <p className="mt-4 text-[1.12rem] leading-relaxed text-muted">{pass.summary}</p>
               <ul className={`mt-6 grid gap-3 text-[1.1rem] text-fg ${i === 0 ? "sm:grid-cols-2" : ""}`}>
                 {pass.includes.map((item) => (

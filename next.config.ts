@@ -52,6 +52,9 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       // The community pages live under /snow-removal/<community>; the section itself is the main snow page.
+      // The snowbird and vacation pass is described on the main snow page. Listed before the
+      // community pages so this address redirects instead of returning a 404.
+      { source: "/snow-removal/snowbird-vacation-pass", destination: "/residential-snow-removal", permanent: true },
       { source: "/snow-removal", destination: "/residential-snow-removal", permanent: true },
       // Pricing now lives on the snow removal page.
       { source: "/snow-removal-cost-calgary", destination: "/residential-snow-removal#pricing", permanent: true },

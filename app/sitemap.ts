@@ -13,7 +13,6 @@ const routes: { path: string; priority: number; changeFrequency: "weekly" | "mon
   { path: "/hardscaping/retaining-walls", priority: 0.8, changeFrequency: "monthly" },
   { path: "/hardscaping/walkways-pathways", priority: 0.8, changeFrequency: "monthly" },
   { path: "/softscapes/sod-installation", priority: 0.8, changeFrequency: "monthly" },
-  { path: "/snow-removal/snowbird-vacation-pass", priority: 0.8, changeFrequency: "monthly" },
   { path: "/softscapes", priority: 0.9, changeFrequency: "monthly" },
   { path: "/commercial-grounds-maintenance", priority: 0.9, changeFrequency: "monthly" },
   { path: "/commercial-snow-removal", priority: 0.9, changeFrequency: "monthly" },

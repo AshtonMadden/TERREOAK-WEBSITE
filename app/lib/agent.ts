@@ -14,7 +14,6 @@ export const services = [
   { name: "Retaining walls", path: "/hardscaping/retaining-walls", form: "/hardscaping/retaining-walls#wall-form", summary: "Interlocking block and natural stone retaining walls with proper base and drainage." },
   { name: "Walkways and pathways", path: "/hardscaping/walkways-pathways", form: "/hardscaping/walkways-pathways#walkway-form", summary: "Paver walkways, slab steppers and side-yard paths on a drained, compacted base." },
   { name: "Sod installation", path: "/softscapes/sod-installation", form: "/softscapes/sod-installation#sod-form", summary: "Kentucky Bluegrass sod on graded, prepared soil. Typically $2,000 to $6,000 for a standard lot." },
-  { name: "Snowbird and vacation snow removal pass", path: "/snow-removal/snowbird-vacation-pass", form: "/snow-removal/snowbird-vacation-pass#seasonal-form", summary: "Short-term residential snow removal for 1 to 8 weeks while you are away." },
   { name: "Softscapes", path: "/softscapes", form: "/softscapes#softscape-form", summary: "Sod, garden beds, tree and shrub planting, mulch and topsoil." },
   { name: "Spring cleanup", path: "/spring-cleanup-calgary", form: "/spring-cleanup-calgary#spring-cleanup-form", summary: "Core aeration, power raking and debris removal." },
   { name: "Fall cleanup", path: "/fall-cleanup", form: "/fall-cleanup", summary: "Leaf removal, final mow and winter lawn prep." },

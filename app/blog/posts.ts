@@ -70,7 +70,7 @@ export const commercialSnowPost: Article = {
     "title": "Get your property sorted before the next storm",
     "text": "Owner-operated, no subcontractors. Ice control, visit logs and clear completion times written right into the contract.",
     "label": "Request a commercial snow quote",
-    "href": "/commercial-grounds-maintenance#commercial-form"
+    "href": "/commercial-snow-removal#commercial-snow-form"
   },
   "path": "/blog/commercial-snow-removal-calgary-guide"
 };

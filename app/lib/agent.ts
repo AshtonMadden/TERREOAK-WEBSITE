@@ -6,7 +6,8 @@ import { site } from "./site";
 
 export const services = [
   { name: "Residential snow removal", path: "/residential-snow-removal", form: "/residential-snow-removal#seasonal-form", summary: "Flat-rate season passes for driveways and front sidewalks in south Calgary, cleared whenever 1 cm falls." },
-  { name: "Commercial grounds maintenance and snow removal", path: "/commercial-grounds-maintenance", form: "/commercial-grounds-maintenance#commercial-form", summary: "Year-round grounds care and snow and ice management for condos, HOAs and business parks." },
+  { name: "Commercial grounds maintenance", path: "/commercial-grounds-maintenance", form: "/commercial-grounds-maintenance#commercial-form", summary: "Year-round grounds care and snow and ice management for condos, HOAs and business parks." },
+  { name: "Commercial snow removal", path: "/commercial-snow-removal", form: "/commercial-snow-removal#commercial-snow-form", summary: "Parking lot plowing, sidewalk clearing, ice control and time-stamped visit logs for commercial properties in Calgary." },
   { name: "Landscape installs", path: "/landscape-installs", form: "/landscape-installs#landscape-form", summary: "Full landscape design and build." },
   { name: "Hardscaping", path: "/hardscaping", form: "/hardscaping#hardscape-form", summary: "Paving stone patios, retaining walls, walkways and steps." },
   { name: "Softscapes", path: "/softscapes", form: "/softscapes#softscape-form", summary: "Sod, garden beds, tree and shrub planting, mulch and topsoil." },

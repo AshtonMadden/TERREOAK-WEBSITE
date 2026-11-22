@@ -28,6 +28,7 @@ const sources = {
   "/blog/power-raking-calgary-guide": "spring-cleanup-pics/Power-raking-services.JPG",
   "/blog/when-to-aerate-lawn-calgary": "spring-cleanup-pics/Calgary-Core-Aeration.JPG",
   "/blog/commercial-snow-removal-calgary-guide": "blog-pics/commercial-snow-removal-calgary-picket.jpg",
+  "/commercial-snow-removal": "blog-pics/commercial-snow-removal-calgary-picket.jpg",
   "/blog/why-calgary-spring-cleanup-matters": "spring-cleanup-pics/Leaf-Cleanup-near-me.jpg",
   "/blog/why-open-grade-base-for-paver-patios": "Landscape web page pics/Techo-Bloc-pavers-river-rock.JPG",
   "/careers": "images/careers-hero.png",

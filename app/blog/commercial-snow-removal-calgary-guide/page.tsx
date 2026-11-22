@@ -229,8 +229,8 @@ const sections: ArticleSection[] = [
         />
         <p>
           If you’d rather not be the property manager calling around after the first dump,{" "}
-          <Link href="/commercial-grounds-maintenance#commercial-form">request a free commercial snow quote</Link> or call us at <a href={site.phoneHref}>{site.phoneDisplay}</a>. You can also see everything we handle for commercial sites on our{" "}
-          <Link href="/commercial-grounds-maintenance">commercial snow and grounds page</Link>.
+          <Link href="/commercial-snow-removal#commercial-snow-form">request a free commercial snow quote</Link> or call us at <a href={site.phoneHref}>{site.phoneDisplay}</a>. You can also see everything we handle for commercial sites on our{" "}
+          <Link href="/commercial-snow-removal">commercial snow removal page</Link>.
         </p>
       </>
     ),
@@ -265,6 +265,7 @@ const faqs = [
 ];
 
 const related = [
+  { label: "Commercial snow removal", href: "/commercial-snow-removal", desc: "Parking lot plowing, sidewalk clearing, ice control and visit logs." },
   { label: "Commercial grounds maintenance", href: "/commercial-grounds-maintenance", desc: "Snow and ice management, plus year-round grounds care, under one contract." },
   { label: "Residential snow removal", href: "/residential-snow-removal", desc: "Flat-rate season passes for driveways and front sidewalks." },
   { label: "Why hire a snow removal company?", href: "/blog/why-hire-snow-removal-company", desc: "The homeowner’s version: bylaws, liability and injury risk." },

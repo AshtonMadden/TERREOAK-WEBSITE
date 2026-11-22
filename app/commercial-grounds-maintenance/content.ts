@@ -60,25 +60,7 @@ export const services = [
   },
 ];
 
-// Commercial snow removal section. Every point here is something the contract already covers.
-export const snowPoints = [
-  { title: "24/7 monitoring and dispatch", desc: "We track the weather and your site around the clock and send crews out proactively, so you aren’t the one making the call at 4 a.m." },
-  { title: "Parking lots and drive lanes", desc: "Plowing with commercial-grade equipment, with priority dispatch for high-traffic sites and active loading zones." },
-  { title: "Sidewalks and entrances", desc: "Sidewalk clearing and ice melt where people actually walk, not just where vehicles drive." },
-  { title: "Ice control", desc: "Sand, salt and ice melt applied to match the conditions, because in Calgary the ice after the snow is the bigger risk." },
-  { title: "Time-stamped visit logs", desc: "Every visit is recorded with the time, the work done and photos, ready for a board meeting or an insurance claim." },
-  { title: "Clear terms in writing", desc: "Ice control, visit logs and completion times are written into a seasonal contract, backed by $5M liability coverage and WCB Alberta." },
-];
-
 export const faqs = [
-  {
-    q: "Do you offer commercial snow removal in Calgary?",
-    a: "Yes. TERREOAK provides commercial snow removal and ice control for condo corporations, HOA communities, industrial business parks and construction sites in Calgary, with parking lot plowing, sidewalk clearing, sand and salt application, and time-stamped service logs.",
-  },
-  {
-    q: "What is included in a commercial snow removal contract?",
-    a: "Our seasonal contracts cover parking lot plowing, sidewalk clearing and ice melt, sand and salt application, 24/7 monitoring and digital service logs with photos. Ice control, visit logs and completion times are written into the contract so there are no surprises mid-winter.",
-  },
   {
     q: "How is commercial snow removal priority determined?",
     a: "Priority is given to high-traffic commercial sites, medical facilities, and active loading zones through our 24/7 monitoring system.",

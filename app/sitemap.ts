@@ -11,6 +11,7 @@ const routes: { path: string; priority: number; changeFrequency: "weekly" | "mon
   { path: "/hardscaping", priority: 0.9, changeFrequency: "monthly" },
   { path: "/softscapes", priority: 0.9, changeFrequency: "monthly" },
   { path: "/commercial-grounds-maintenance", priority: 0.9, changeFrequency: "monthly" },
+  { path: "/commercial-snow-removal", priority: 0.9, changeFrequency: "monthly" },
   { path: "/spring-cleanup-calgary", priority: 0.8, changeFrequency: "monthly" },
   { path: "/fall-cleanup", priority: 0.8, changeFrequency: "monthly" },
   { path: "/irrigation-blowouts", priority: 0.8, changeFrequency: "monthly" },

@@ -12,6 +12,7 @@ const columns = [
       { label: "Softscapes", href: "/softscapes" },
       { label: "Residential snow removal", href: "/residential-snow-removal" },
       { label: "Commercial maintenance", href: "/commercial-grounds-maintenance" },
+      { label: "Commercial snow removal", href: "/commercial-snow-removal" },
     ],
   },
   {

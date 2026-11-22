@@ -64,6 +64,7 @@ export default function Header() {
   const pageCtas: Record<string, { label: string; href: string }> = {
     "/residential-snow-removal": { label: "Reserve a season pass", href: "#seasonal-form" },
     "/commercial-grounds-maintenance": { label: "Request a proposal", href: "#commercial-form" },
+    "/commercial-snow-removal": { label: "Request a proposal", href: "#commercial-snow-form" },
     "/spring-cleanup-calgary": { label: "Get a free quote", href: "#spring-cleanup-form" },
     "/fall-cleanup": { label: "Book fall cleanup", href: "https://clienthub.getjobber.com/booking/6ba7fcc7-4c40-4f17-9235-428046e21db6" },
     "/irrigation-blowouts": { label: "Book a blowout", href: "#blowout-form" },

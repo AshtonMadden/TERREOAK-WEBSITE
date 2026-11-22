@@ -71,7 +71,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         "@id": "https://terreoak.ca/#website",
         "url": "https://terreoak.ca",
         "name": "TERREOAK Landscaping & Snow",
-        "alternateName": ["TERREOAK", "TERREOAK Landscaping"],
+        "alternateName": ["TERREOAK", "TERREOAK Landscaping", "Terre Oak", "Terra Oak", "Terraoak"],
         "description": "Calgary's premier landscaping and snow removal team.",
         "publisher": { "@id": "https://terreoak.ca/#organization" }
       },

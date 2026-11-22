@@ -110,22 +110,22 @@ export const faqs = [
 export const costs = [
   {
     title: "Sod & grading",
-    range: ",000–,000",
+    range: "$2,000–$6,000",
     desc: "A basic sod installation on a standard Calgary lot, depending on lawn size, grading required, and soil prep.",
   },
   {
     title: "Patios & hardscapes",
-    range: ",000–5,000+",
+    range: "$8,000–$25,000+",
     desc: "Exposed aggregate or paver patio projects, depending on size and material grade.",
   },
   {
     title: "Retaining walls",
-    range: "From ,000",
+    range: "From $5,000",
     desc: "Retaining wall installations scale with height, length, and engineering requirements.",
   },
   {
     title: "Full yard transformations",
-    range: "0,000–0,000+",
+    range: "$20,000–$60,000+",
     desc: "Full yard design-build transformations for new homes.",
   },
 ];

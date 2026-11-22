@@ -170,7 +170,26 @@ export const sitePrepPost: Article = {
   "path": "/blog/commercial-winter-site-prep-checklist"
 };
 
+export const costGuidePost: Article = {
+  "metaTitle": "Landscaping Cost Calgary: 2026 Price Guide | TERREOAK",
+  "metaDescription": "What landscaping costs in Calgary in 2026: sod, patios, retaining walls and full yards, with real project prices and what drives the cost.",
+  "title": "How much does landscaping cost in Calgary? A 2026 price guide",
+  "category": "Landscape construction",
+  "hero": "/hardscaping/calgary-fire-pit-patio.jpg",
+  "heroAlt": "Aerial view of a paver patio with a fire pit built by TERREOAK in Calgary",
+  "excerpt": "Typical price ranges for sod, patios, retaining walls and full yards in Calgary, four real projects with what they cost, and why quotes vary so much.",
+  "updated": "2026-11-22",
+  "published": "2026-11-22",
+  "cta": {
+    "title": "Want a real number for your yard?",
+    "text": "Every project starts with a free site visit and a detailed, fixed-price quote. No vague estimates.",
+    "label": "Request a site visit",
+    "href": "/landscape-installs#landscape-form"
+  },
+  "path": "/blog/landscaping-cost-calgary"
+};
+
 // The guides written for commercial property managers, in reading order.
 export const propertyManagerGuides = [commercialSnowPost, sitePrepPost, iceControlPost, liabilityPost];
 
-export const posts = [sitePrepPost, iceControlPost, liabilityPost, powerRakingPost, aerationPost, commercialSnowPost, basePost, springPost, snowPost];
+export const posts = [costGuidePost, sitePrepPost, iceControlPost, liabilityPost, powerRakingPost, aerationPost, commercialSnowPost, basePost, springPost, snowPost];

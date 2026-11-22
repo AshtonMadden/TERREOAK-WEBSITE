@@ -71,6 +71,9 @@ export default function Header() {
     "/hardscaping": { label: "Request a proposal", href: "#hardscape-form" },
     "/hardscaping/paver-patios-artificial-turf": { label: "Get a free quote", href: "#patio-form" },
     "/hardscaping/retaining-walls": { label: "Get a free quote", href: "#wall-form" },
+    "/hardscaping/walkways-pathways": { label: "Get a free quote", href: "#walkway-form" },
+    "/softscapes/sod-installation": { label: "Get a free quote", href: "#sod-form" },
+    "/snow-removal-cost-calgary": { label: "Reserve a season pass", href: "#seasonal-form" },
     "/softscapes": { label: "Request a proposal", href: "#softscape-form" },
     "/landscape-installs": { label: "Request a proposal", href: "#landscape-form" },
   };
@@ -92,7 +95,7 @@ export default function Header() {
           <nav aria-label="Main" className="hidden items-center gap-1 lg:flex">
             {nav.map((group) => {
               const active = isActive(group.href, group.items);
-              const linkCls = `to-focus flex items-center gap-1.5 whitespace-nowrap rounded-lg px-3 py-2 text-[1.05rem] font-medium transition-colors hover:text-white ${
+              const linkCls = `to-focus flex items-center gap-1.5 whitespace-nowrap rounded-lg px-2.5 py-2 text-[1.05rem] font-medium transition-colors hover:text-white ${
                 active ? "text-white underline decoration-brand decoration-2 underline-offset-8" : "text-white/75"
               }`;
               if (group.href) {

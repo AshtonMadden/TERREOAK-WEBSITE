@@ -11,7 +11,7 @@ import StormBanner from "./StormBanner";
 import { communityPath } from "../snow-removal/communities";
 import { breadcrumbLd, faqLd, pageMeta } from "../lib/seo";
 import { site } from "../lib/site";
-import { addOns, jobberForm, offers, passes, referral, reviews, season, stats, steps, zones } from "./content";
+import { addOns, jobberForm, offers, passes, referral, reviews, season, stats, steps, zones, snowPricing } from "./content";
 import { snowFaqs } from "./faqs";
 import ClampText from "../components/ClampText";
 import ReadMore from "../components/ReadMore";
@@ -269,7 +269,22 @@ export default function ResidentialSnowRemovalPage() {
                 </div>
                 {i === 0 && <Image src="/brand/snow-picket.png" alt="" width={169} height={490} className="-mt-2 h-32 w-auto shrink-0 md:hidden" />}
               </div>
-              <p className="mt-5 text-[1.12rem] leading-relaxed text-muted">{pass.summary}</p>
+              {i === 0 && (
+                <p className="mt-5 text-[1.12rem] text-fg">
+                  <span className="to-display text-[1.9rem] text-accent">From {snowPricing.from}</span> per month.{" "}
+                  <Link href="/snow-removal-cost-calgary" className="to-link">
+                    See pricing
+                  </Link>
+                </p>
+              )}
+              {i === 1 && (
+                <p className="mt-5 text-[1.05rem]">
+                  <Link href="/snow-removal/snowbird-vacation-pass" className="to-link">
+                    About the snowbird pass
+                  </Link>
+                </p>
+              )}
+              <p className="mt-4 text-[1.12rem] leading-relaxed text-muted">{pass.summary}</p>
               <ul className={`mt-6 grid gap-3 text-[1.1rem] text-fg ${i === 0 ? "sm:grid-cols-2" : ""}`}>
                 {pass.includes.map((item) => (
                   <li key={item} className="flex gap-3">

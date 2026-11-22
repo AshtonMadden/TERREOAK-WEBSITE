@@ -119,7 +119,7 @@ export default function HardscapingPage() {
       {/* DEDICATED PAGES */}
       <Band>
         <h2 className="to-display to-h2">Explore by project</h2>
-        <div className="mt-8 grid gap-3 md:mt-12 md:grid-cols-2 md:gap-5">
+        <div className="mt-8 grid gap-3 md:mt-12 md:gap-5 lg:grid-cols-3">
           {[
             {
               href: "/hardscaping/paver-patios-artificial-turf",
@@ -135,10 +135,17 @@ export default function HardscapingPage() {
               img: "/hardscaping/calgary-retaining-wall.jpg",
               alt: "Interlocking block retaining wall in a Calgary yard",
             },
+            {
+              href: "/hardscaping/walkways-pathways",
+              title: "Walkways and pathways",
+              desc: "Paver walks, slab steppers and side-yard paths, with two real projects and what they cost.",
+              img: "/Landscape web page pics/Techo-Bloc-paver-pathway.JPG",
+              alt: "Large-format paver pathway beside a Calgary home",
+            },
           ].map((item) => (
             <Link key={item.href} href={item.href} className="to-card to-card-lift to-focus group flex flex-col overflow-hidden">
               <div className="relative aspect-[16/9] overflow-hidden">
-                <Image src={item.img} alt={item.alt} fill sizes="(min-width: 768px) 600px, 100vw" className="object-cover transition-transform duration-700 group-hover:scale-[1.03]" />
+                <Image src={item.img} alt={item.alt} fill sizes="(min-width: 1024px) 400px, 100vw" className="object-cover transition-transform duration-700 group-hover:scale-[1.03]" />
               </div>
               <div className="flex flex-1 flex-col p-6 md:p-8">
                 <h3 className="to-display to-h3">{item.title}</h3>

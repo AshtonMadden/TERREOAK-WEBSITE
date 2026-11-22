@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Image from "next/image";
 import JsonLd from "../components/JsonLd";
 import StickyCta from "../components/StickyCta";
@@ -65,6 +66,21 @@ export default function SoftscapesPage() {
       <CardsBand id="what-we-install" title="What we install" cards={services}>
         <Button href="#softscape-form">Get a quote</Button>
       </CardsBand>
+
+      {/* DEDICATED PAGE */}
+      <Band>
+        <Link href="/softscapes/sod-installation" className="to-card to-card-lift to-focus group grid overflow-hidden md:grid-cols-2">
+          <div className="relative aspect-[16/10] overflow-hidden md:aspect-auto md:min-h-[260px]">
+            <Image src="/Landscape web page pics/Sod-installation-calgary.jpg" alt="Freshly laid sod on a Calgary lawn" fill sizes="(min-width: 768px) 600px, 100vw" className="object-cover transition-transform duration-700 group-hover:scale-[1.03]" />
+          </div>
+          <div className="flex flex-col justify-center p-6 md:p-10">
+            <p className="to-sub">Most requested</p>
+            <h2 className="to-display to-h2 mt-3">Sod installation</h2>
+            <p className="to-body mt-4">When new sod makes sense, how we prepare the soil, what it costs and how to look after it in the first month.</p>
+            <span className="mt-6 text-[1.05rem] font-semibold text-accent">See the details</span>
+          </div>
+        </Link>
+      </Band>
 
       <Band>
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">

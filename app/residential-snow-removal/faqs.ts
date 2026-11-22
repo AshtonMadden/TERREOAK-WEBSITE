@@ -25,4 +25,8 @@ export const snowFaqs: { q: string; a: string }[] = [
     q: "What if I’m away for part of the winter?",
     a: "We offer Snowbird and vacation passes for homeowners who only need coverage for a portion of the season. These short-term passes run from 1 to 8 weeks and include the same dedicated service and photo logs as a full season pass.",
   },
+  {
+    q: "How much does snow removal cost?",
+    a: "Season passes start at $199.99 per month for driveway and front sidewalk clearing, with no per-visit fees. The exact rate depends on the size of your property. Pay in full upfront and you save 10%.",
+  },
 ];

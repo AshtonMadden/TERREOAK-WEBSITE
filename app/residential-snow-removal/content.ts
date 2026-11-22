@@ -58,6 +58,10 @@ export const passes = [
   },
 ];
 
+// Starting price for a residential season pass. Used on the snow page, the pricing page and
+// in the price data search engines read.
+export const snowPricing = { from: "$199.99", amount: "199.99" };
+
 export const addOns = [
   {
     name: "Ice melt",

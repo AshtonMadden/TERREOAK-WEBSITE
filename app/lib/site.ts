@@ -35,11 +35,20 @@ export const nav: NavGroup[] = [
       { label: "Hardscaping", href: "/hardscaping", desc: "Patios, walkways and retaining walls" },
       { label: "Paver patios & artificial turf", href: "/hardscaping/paver-patios-artificial-turf", desc: "Patios, fire pits and no-mow turf" },
       { label: "Retaining walls", href: "/hardscaping/retaining-walls", desc: "Block and stone walls built to last" },
+      { label: "Walkways & pathways", href: "/hardscaping/walkways-pathways", desc: "Paver walks, steppers and side-yard paths" },
       { label: "Softscapes", href: "/softscapes", desc: "Sod, planting, mulch and garden beds" },
+      { label: "Sod installation", href: "/softscapes/sod-installation", desc: "New lawns on properly prepared soil" },
       { label: "Our process", href: "/our-process", desc: "How a project runs, step by step" },
     ],
   },
-  { label: "Snow removal", href: "/residential-snow-removal" },
+  {
+    label: "Snow removal",
+    items: [
+      { label: "Residential snow removal", href: "/residential-snow-removal", desc: "Season passes for driveways and sidewalks" },
+      { label: "Pricing", href: "/snow-removal-cost-calgary", desc: "What a season pass costs" },
+      { label: "Snowbird & vacation pass", href: "/snow-removal/snowbird-vacation-pass", desc: "Coverage for 1 to 8 weeks while you’re away" },
+    ],
+  },
   {
     label: "Seasonal",
     items: [

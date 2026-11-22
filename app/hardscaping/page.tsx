@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import JsonLd from "../components/JsonLd";
 import StickyCta from "../components/StickyCta";
 import { Band, BlogCta, Button, FaqList, PageHero, Tick } from "../components/ds";
@@ -115,6 +116,40 @@ export default function HardscapingPage() {
       </CardsBand>
 
       {/* RECENT BUILDS */}
+      {/* DEDICATED PAGES */}
+      <Band>
+        <h2 className="to-display to-h2">Explore by project</h2>
+        <div className="mt-8 grid gap-3 md:mt-12 md:grid-cols-2 md:gap-5">
+          {[
+            {
+              href: "/hardscaping/paver-patios-artificial-turf",
+              title: "Paver patios and artificial turf",
+              desc: "Patio materials, fire pit patios, how the base is built, and where no-mow turf makes sense.",
+              img: "/hardscaping/calgary-fire-pit-patio.jpg",
+              alt: "Curved paver patio with a round fire pit in Calgary",
+            },
+            {
+              href: "/hardscaping/retaining-walls",
+              title: "Retaining walls",
+              desc: "Why walls fail, what makes them last, permits and engineering, and what they cost.",
+              img: "/hardscaping/calgary-retaining-wall.jpg",
+              alt: "Interlocking block retaining wall in a Calgary yard",
+            },
+          ].map((item) => (
+            <Link key={item.href} href={item.href} className="to-card to-card-lift to-focus group flex flex-col overflow-hidden">
+              <div className="relative aspect-[16/9] overflow-hidden">
+                <Image src={item.img} alt={item.alt} fill sizes="(min-width: 768px) 600px, 100vw" className="object-cover transition-transform duration-700 group-hover:scale-[1.03]" />
+              </div>
+              <div className="flex flex-1 flex-col p-6 md:p-8">
+                <h3 className="to-display to-h3">{item.title}</h3>
+                <p className="mt-3 text-[1.05rem] leading-relaxed text-muted">{item.desc}</p>
+                <span className="mt-auto pt-6 text-[1.02rem] font-semibold text-accent">See the details</span>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </Band>
+
       <Band>
         <h2 className="to-display to-h2">Recent hardscape builds</h2>
         <div className="mt-8 grid gap-4 md:mt-12 md:grid-cols-3 md:gap-5">

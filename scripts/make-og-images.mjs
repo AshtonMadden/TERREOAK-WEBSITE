@@ -10,6 +10,8 @@ const sources = {
   "/residential-snow-removal": "images/snow-removal/hero-poster.jpg",
   "/landscape-installs": "Calgary-landscape-design-build-patio.JPG",
   "/hardscaping": "hardscaping/calgary-fire-pit-patio.jpg",
+  "/hardscaping/paver-patios-artificial-turf": "hardscaping/calgary-fire-pit-patio.jpg",
+  "/hardscaping/retaining-walls": "hardscaping/calgary-retaining-wall.jpg",
   "/softscapes": "images/softscaping-river-rock-hostas.jpg",
   "/commercial-grounds-maintenance": "commercial-lawn-mowing.JPG",
   "/spring-cleanup-calgary": "spring-cleanup-pics/calgary-spring-cleanup-after.jpg",

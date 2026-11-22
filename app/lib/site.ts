@@ -33,6 +33,8 @@ export const nav: NavGroup[] = [
     items: [
       { label: "Landscape installs", href: "/landscape-installs", desc: "Full design and build, start to finish" },
       { label: "Hardscaping", href: "/hardscaping", desc: "Patios, walkways and retaining walls" },
+      { label: "Paver patios & artificial turf", href: "/hardscaping/paver-patios-artificial-turf", desc: "Patios, fire pits and no-mow turf" },
+      { label: "Retaining walls", href: "/hardscaping/retaining-walls", desc: "Block and stone walls built to last" },
       { label: "Softscapes", href: "/softscapes", desc: "Sod, planting, mulch and garden beds" },
       { label: "Our process", href: "/our-process", desc: "How a project runs, step by step" },
     ],

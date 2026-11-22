@@ -9,6 +9,8 @@ const routes: { path: string; priority: number; changeFrequency: "weekly" | "mon
   ...communities.map((community) => ({ path: `/snow-removal/${community.slug}`, priority: 0.7, changeFrequency: "monthly" as const })),
   { path: "/landscape-installs", priority: 0.9, changeFrequency: "monthly" },
   { path: "/hardscaping", priority: 0.9, changeFrequency: "monthly" },
+  { path: "/hardscaping/paver-patios-artificial-turf", priority: 0.8, changeFrequency: "monthly" },
+  { path: "/hardscaping/retaining-walls", priority: 0.8, changeFrequency: "monthly" },
   { path: "/softscapes", priority: 0.9, changeFrequency: "monthly" },
   { path: "/commercial-grounds-maintenance", priority: 0.9, changeFrequency: "monthly" },
   { path: "/commercial-snow-removal", priority: 0.9, changeFrequency: "monthly" },

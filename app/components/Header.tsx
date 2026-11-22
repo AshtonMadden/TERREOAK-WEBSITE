@@ -69,6 +69,8 @@ export default function Header() {
     "/fall-cleanup": { label: "Book fall cleanup", href: "https://clienthub.getjobber.com/booking/6ba7fcc7-4c40-4f17-9235-428046e21db6" },
     "/irrigation-blowouts": { label: "Book a blowout", href: "#blowout-form" },
     "/hardscaping": { label: "Request a proposal", href: "#hardscape-form" },
+    "/hardscaping/paver-patios-artificial-turf": { label: "Get a free quote", href: "#patio-form" },
+    "/hardscaping/retaining-walls": { label: "Get a free quote", href: "#wall-form" },
     "/softscapes": { label: "Request a proposal", href: "#softscape-form" },
     "/landscape-installs": { label: "Request a proposal", href: "#landscape-form" },
   };

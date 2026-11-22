@@ -1,6 +1,5 @@
 import Link from "next/link";
 import ArticlePage, { articleMeta, type ArticleSection } from "../../components/ArticlePage";
-import { snowPrices } from "../../residential-snow-removal/content";
 import { shovellingPost as article } from "../posts";
 
 export const metadata = articleMeta(article);
@@ -208,15 +207,15 @@ const sections: ArticleSection[] = [
     content: (
       <>
         <p>
-          A TERREOAK season pass starts at {snowPrices[2].monthly} a month for front sidewalks only, {snowPrices[1].monthly} for a single car driveway with front sidewalks, and {snowPrices[0].monthly} for a double. All
-          pricing is a starting point and subject to change.
+          A season pass is one flat monthly rate for the winter, set by the size of your driveway and how much sidewalk you have. It doesn’t go up in a heavy winter, and there are no per-visit fees.
         </p>
         <p>
-          Put another way, one first-offence fine is more than a month of service, and three fines in a winter is $1,500. That’s before the cost of a trip to the emergency room, time off work with a strained back, or a claim
-          from someone who fell.
+          Weigh that against what shovelling can cost. One first-offence fine is $250, and three in a winter is $1,500. That’s before a trip to the emergency room, time off work with a strained back, or a claim from
+          someone who fell.
         </p>
         <p>
-          See the full details on our <Link href="/residential-snow-removal">residential snow removal</Link> page, which also covers the snowbird and vacation pass if you only need cover while you’re away.
+          See the full details on our <Link href="/residential-snow-removal">residential snow removal</Link> page, which also covers the snowbird and vacation pass if you only need cover while you’re away, or{" "}
+          <Link href="/residential-snow-removal#seasonal-form">request a price for your property</Link>.
         </p>
       </>
     ),
@@ -280,13 +279,12 @@ const faqs = [
   },
   {
     q: "Is hiring a snow removal service worth it?",
-    a: "For many households, yes. It removes the physical risk, keeps you inside the 24-hour bylaw window even when you’re away, and gives you a time-stamped record of every clearing. One first-offence fine costs more than a month of service.",
+    a: "For many households, yes. It removes the physical risk, keeps you inside the 24-hour bylaw window even when you’re away, and gives you a time-stamped record of every clearing.",
   },
 ];
 
 const related = [
   { label: "Residential snow removal", href: "/residential-snow-removal", desc: "Flat-rate season passes for driveways and front sidewalks." },
-  { label: "Season pass pricing", href: "/residential-snow-removal#pricing", desc: "Monthly and season rates by property type." },
   { label: "Why hire a snow removal company?", href: "/blog/why-hire-snow-removal-company", desc: "Liability, property damage and how our routes work." },
 ];
 

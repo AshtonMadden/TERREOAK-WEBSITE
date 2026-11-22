@@ -7,12 +7,11 @@ import { Band, BlogCta, Button, Container, FaqList, GoogleMark, Stars, Tick } fr
 import { CountUp, HeroVideo } from "../components/HeroMedia";
 import { SnowBank, Snowman } from "../components/SnowDecor";
 import HolidayGameSlot from "./HolidayGameSlot";
-import SnowPriceBoxes from "./SnowPriceBoxes";
 import StormBanner from "./StormBanner";
 import { communityPath } from "../snow-removal/communities";
 import { breadcrumbLd, faqLd, pageMeta } from "../lib/seo";
 import { site } from "../lib/site";
-import { addOns, jobberForm, offers, passes, referral, reviews, season, stats, steps, zones, snowPricing } from "./content";
+import { addOns, jobberForm, offers, passes, referral, reviews, season, stats, steps, zones } from "./content";
 import { snowFaqs } from "./faqs";
 import ClampText from "../components/ClampText";
 import ReadMore from "../components/ReadMore";
@@ -270,14 +269,6 @@ export default function ResidentialSnowRemovalPage() {
                 </div>
                 {i === 0 && <Image src="/brand/snow-picket.png" alt="" width={169} height={490} className="-mt-2 h-32 w-auto shrink-0 md:hidden" />}
               </div>
-              {i === 0 && (
-                <p className="mt-5 text-[1.12rem] text-fg">
-                  <span className="to-display text-[1.9rem] text-accent">From {snowPricing.from}</span> per month.{" "}
-                  <a href="#pricing" className="to-link">
-                    See pricing
-                  </a>
-                </p>
-              )}
               <p className="mt-4 text-[1.12rem] leading-relaxed text-muted">{pass.summary}</p>
               <ul className={`mt-6 grid gap-3 text-[1.1rem] text-fg ${i === 0 ? "sm:grid-cols-2" : ""}`}>
                 {pass.includes.map((item) => (
@@ -308,14 +299,6 @@ export default function ResidentialSnowRemovalPage() {
             <dd className="mt-2 text-[1.08rem] leading-relaxed text-muted">Our crews follow set neighbourhood routes each storm, which is what lets us guarantee a visit every 24 hours.</dd>
           </div>
         </dl>
-        <div id="pricing" className="mt-12 md:mt-20">
-          <h3 className="to-display to-h2">Season pass pricing</h3>
-          <p className="to-body mt-5">One flat monthly rate for the winter, based on what we’re clearing. No per-visit fees.</p>
-          <div className="mt-8 md:mt-12">
-            <SnowPriceBoxes />
-          </div>
-          <p className="mt-6 text-[1.05rem] text-muted">Pay in full upfront and save 10%.</p>
-        </div>
       </Band>
 
       {/* GUARANTEES */}

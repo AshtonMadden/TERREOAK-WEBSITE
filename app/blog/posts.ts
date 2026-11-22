@@ -201,7 +201,7 @@ export const shovellingPost: Article = {
   "published": "2026-11-22",
   "cta": {
     "title": "Put the shovel down this winter",
-    "text": "Season passes start at $139.99 a month. We clear at 1 cm and come back every 24 hours while it’s snowing.",
+    "text": "One flat rate for the winter. We clear at 1 cm and come back every 24 hours while it’s snowing.",
     "label": "Reserve a season pass",
     "href": "/residential-snow-removal#seasonal-form"
   },

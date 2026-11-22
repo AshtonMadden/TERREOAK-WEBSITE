@@ -56,8 +56,8 @@ const nextConfig: NextConfig = {
       // community pages so this address redirects instead of returning a 404.
       { source: "/snow-removal/snowbird-vacation-pass", destination: "/residential-snow-removal", permanent: true },
       { source: "/snow-removal", destination: "/residential-snow-removal", permanent: true },
-      // Pricing now lives on the snow removal page.
-      { source: "/snow-removal-cost-calgary", destination: "/residential-snow-removal#pricing", permanent: true },
+      // The old pricing page now goes to the snow removal page.
+      { source: "/snow-removal-cost-calgary", destination: "/residential-snow-removal", permanent: true },
       // The referral program now lives on the snow removal page.
       { source: "/snow-referral", destination: "/residential-snow-removal#referral", permanent: true },
       // The shop was removed; send its old addresses to the homepage.

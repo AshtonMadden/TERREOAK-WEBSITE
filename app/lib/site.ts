@@ -46,7 +46,13 @@ export const nav: NavGroup[] = [
       { label: "Irrigation blowouts", href: "/irrigation-blowouts", desc: "Sprinkler winterization" },
     ],
   },
-  { label: "Commercial", href: "/commercial-grounds-maintenance" },
+  {
+    label: "Commercial",
+    items: [
+      { label: "Grounds maintenance", href: "/commercial-grounds-maintenance", desc: "Year-round care for condos, HOAs and business parks" },
+      { label: "Commercial snow removal", href: "/commercial-snow-removal", desc: "Parking lots, sidewalks and ice control" },
+    ],
+  },
   {
     label: "Company",
     items: [

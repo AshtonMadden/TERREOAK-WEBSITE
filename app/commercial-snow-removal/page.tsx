@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import JobberLeadForm from "../components/JobberLeadForm";
 import JsonLd from "../components/JsonLd";
+import { SnowBank, Snowman } from "../components/SnowDecor";
 import StickyCta from "../components/StickyCta";
 import { Band, Button, FaqList, PageHero, Tick } from "../components/ds";
 import { audiences, jobberForm, processSteps } from "../commercial-grounds-maintenance/content";
@@ -52,7 +53,7 @@ const jsonLd = {
 
 export default function CommercialSnowRemovalPage() {
   return (
-    <main className="to-pavement to-flow overflow-x-clip">
+    <main className="to-pavement to-flow to-snowcapped overflow-x-clip">
       <JsonLd data={jsonLd} />
 
       <PageHero
@@ -60,12 +61,18 @@ export default function CommercialSnowRemovalPage() {
         lead="Parking lot plowing, sidewalk clearing and ice control for condo corporations, HOA communities and business parks, with every visit documented."
         image="/blog-pics/commercial-snow-removal-calgary-picket.jpg"
         imageAlt="TERREOAK snow picket marking the entrance to a commercial parking lot in Calgary"
+        // Leaves room at the bottom of the hero for the snow bank that overlaps it.
+        footer={<div aria-hidden="true" className="h-2 md:h-4" />}
       >
         <Button href="#commercial-snow-form">Request a proposal</Button>
         <Button href="/commercial-grounds-maintenance" variant="quiet" className="bg-white/5 backdrop-blur-sm">
           All commercial services
         </Button>
       </PageHero>
+      {/* Snow bank across the bottom of the hero, as on the residential snow page. */}
+      <div className="relative z-[1] -mt-[64px] md:-mt-[110px]">
+        <SnowBank />
+      </div>
 
       {/* INTRO */}
       <Band>
@@ -105,9 +112,12 @@ export default function CommercialSnowRemovalPage() {
       {/* WHO WE SERVE */}
       <Band>
         <h2 className="to-display to-h2">Who we clear snow for</h2>
-        <div className="mt-8 grid gap-3 md:mt-12 md:gap-5 lg:grid-cols-2">
-          {snowAudiences.map((audience) => (
-            <article key={audience.title} className="to-card p-5 md:p-8">
+        {/* Extra room above the cards on smaller screens so the snowman doesn't touch the heading. */}
+        <div className="mt-24 grid gap-3 md:gap-5 lg:mt-12 lg:grid-cols-2">
+          {snowAudiences.map((audience, i) => (
+            <article key={audience.title} className="to-card to-snow-v1 p-5 md:p-8">
+              {/* One snowman: on the first card when the cards are stacked, on the right-hand card on wide screens. */}
+              <Snowman className={i === 0 ? "right-[9%] md:right-[12%] lg:hidden" : "right-[12%] max-lg:hidden"} />
               <h3 className="to-display to-h3">{audience.title}</h3>
               <p className="mt-3 text-[1.05rem] leading-relaxed text-muted">{audience.desc}</p>
             </article>

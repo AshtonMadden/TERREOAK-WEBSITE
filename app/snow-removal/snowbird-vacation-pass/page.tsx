@@ -165,7 +165,7 @@ export default function Page() {
       <FormBand id="seasonal-form" title="Request a vacation pass" lead="Send us your address and the dates you’re away. We’ll confirm your spot and the price, usually the same day." form={jobberForm}>
         <p className="mt-6 text-[1.08rem] text-[#50565b]">
           Home all winter?{" "}
-          <Link href="/snow-removal-cost-calgary" className="font-semibold text-[#005148] underline underline-offset-4">
+          <Link href="/residential-snow-removal#pricing" className="font-semibold text-[#005148] underline underline-offset-4">
             See season pass pricing
           </Link>
           .

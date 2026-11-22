@@ -15,6 +15,7 @@ const sources = {
   "/hardscaping/walkways-pathways": "Landscape web page pics/Techo-Bloc-paver-pathway.JPG",
   "/softscapes/sod-installation": "Landscape web page pics/Sod-installation-calgary.jpg",
   "/blog/landscaping-cost-calgary": "hardscaping/calgary-fire-pit-patio.jpg",
+  "/blog/snow-shovelling-risks-and-fines-calgary": "residential-snow-removalJPG.JPG",
   "/softscapes": "images/softscaping-river-rock-hostas.jpg",
   "/commercial-grounds-maintenance": "commercial-lawn-mowing.JPG",
   "/spring-cleanup-calgary": "spring-cleanup-pics/calgary-spring-cleanup-after.jpg",

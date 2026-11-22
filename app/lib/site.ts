@@ -45,7 +45,7 @@ export const nav: NavGroup[] = [
     label: "Snow removal",
     items: [
       { label: "Residential snow removal", href: "/residential-snow-removal", desc: "Season passes for driveways and sidewalks" },
-      { label: "Pricing", href: "/snow-removal-cost-calgary", desc: "What a season pass costs" },
+      { label: "Pricing", href: "/residential-snow-removal#pricing", desc: "What a season pass costs" },
       { label: "Snowbird & vacation pass", href: "/snow-removal/snowbird-vacation-pass", desc: "Coverage for 1 to 8 weeks while you’re away" },
     ],
   },

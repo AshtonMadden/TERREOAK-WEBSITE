@@ -189,7 +189,26 @@ export const costGuidePost: Article = {
   "path": "/blog/landscaping-cost-calgary"
 };
 
+export const shovellingPost: Article = {
+  "metaTitle": "Shovelling Snow: Health Risks & Calgary Bylaw Fines",
+  "metaDescription": "Why hiring a residential snow removal crew beats shovelling: the heart risks for older adults, how many people die each year, and Calgary's $250 fine.",
+  "title": "Why hire a residential snow removal crew? The health risks and bylaw fines of shovelling it yourself",
+  "category": "Winter maintenance",
+  "hero": "/residential-snow-removalJPG.JPG",
+  "heroAlt": "TERREOAK crew clearing a residential driveway and sidewalk in Calgary",
+  "excerpt": "Shovelling is harder on the heart than most people realize, and Calgary fines start at $250 if the sidewalk isn’t cleared in 24 hours. What the research and the bylaw say.",
+  "updated": "2026-11-22",
+  "published": "2026-11-22",
+  "cta": {
+    "title": "Put the shovel down this winter",
+    "text": "Season passes start at $139.99 a month. We clear at 1 cm and come back every 24 hours while it’s snowing.",
+    "label": "Reserve a season pass",
+    "href": "/residential-snow-removal#seasonal-form"
+  },
+  "path": "/blog/snow-shovelling-risks-and-fines-calgary"
+};
+
 // The guides written for commercial property managers, in reading order.
 export const propertyManagerGuides = [commercialSnowPost, sitePrepPost, iceControlPost, liabilityPost];
 
-export const posts = [costGuidePost, sitePrepPost, iceControlPost, liabilityPost, powerRakingPost, aerationPost, commercialSnowPost, basePost, springPost, snowPost];
+export const posts = [shovellingPost, costGuidePost, sitePrepPost, iceControlPost, liabilityPost, powerRakingPost, aerationPost, commercialSnowPost, basePost, springPost, snowPost];

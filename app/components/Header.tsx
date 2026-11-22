@@ -73,7 +73,6 @@ export default function Header() {
     "/hardscaping/retaining-walls": { label: "Get a free quote", href: "#wall-form" },
     "/hardscaping/walkways-pathways": { label: "Get a free quote", href: "#walkway-form" },
     "/softscapes/sod-installation": { label: "Get a free quote", href: "#sod-form" },
-    "/snow-removal-cost-calgary": { label: "Reserve a season pass", href: "#seasonal-form" },
     "/softscapes": { label: "Request a proposal", href: "#softscape-form" },
     "/landscape-installs": { label: "Request a proposal", href: "#landscape-form" },
   };

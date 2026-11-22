@@ -321,12 +321,7 @@ export default function ResidentialSnowRemovalPage() {
           <div className="mt-8 md:mt-12">
             <SnowPriceBoxes />
           </div>
-          <p className="mt-6 text-[1.05rem] text-muted">
-            Pay in full upfront and save 10%.{" "}
-            <Link href="/snow-removal-cost-calgary" className="to-link">
-              More about pricing
-            </Link>
-          </p>
+          <p className="mt-6 text-[1.05rem] text-muted">Pay in full upfront and save 10%.</p>
         </div>
       </Band>
 

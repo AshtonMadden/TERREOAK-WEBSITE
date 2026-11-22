@@ -9,7 +9,7 @@ import { audiences, jobberForm, processSteps } from "../commercial-grounds-maint
 import { breadcrumbLd, faqLd, pageMeta } from "../lib/seo";
 import { site } from "../lib/site";
 import { propertyManagerGuides } from "../blog/posts";
-import { faqs, snowPoints } from "./content";
+import { faqs, secondPass, snowPoints } from "./content";
 
 // The builder audience on the commercial page is about grading and sod, so it is left out here.
 const snowAudiences = audiences.slice(0, 2);
@@ -106,6 +106,21 @@ export default function CommercialSnowRemovalPage() {
               <p className="mt-3 text-[1.05rem] leading-relaxed text-muted">{point.desc}</p>
             </article>
           ))}
+        </div>
+        <div id="second-pass" className="to-card to-snow-v2 mt-3 grid items-center gap-6 p-5 md:mt-5 md:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] md:gap-12 md:p-10">
+          <div>
+            <p className="to-sub">Optional add-on</p>
+            <h3 className="to-display to-h3 mt-3">{secondPass.title}</h3>
+            <p className="mt-4 text-[1.08rem] leading-relaxed text-muted">{secondPass.text}</p>
+          </div>
+          <ul className="grid gap-3 text-[1.08rem] font-medium text-fg">
+            {secondPass.points.map((point) => (
+              <li key={point} className="flex items-start gap-3">
+                <Tick />
+                {point}
+              </li>
+            ))}
+          </ul>
         </div>
       </Band>
 

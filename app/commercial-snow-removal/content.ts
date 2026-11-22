@@ -10,6 +10,13 @@ export const snowPoints = [
   { title: "Clear terms in writing", desc: "Ice control, visit logs and completion times are written into a seasonal contract, backed by $5M liability coverage and WCB Alberta." },
 ];
 
+// Optional extra on top of the standard contract.
+export const secondPass = {
+  title: "Second pass snow clearing",
+  text: "For sites that can’t have snow sitting on the ground, we offer a second pass: after the main clearing, a crew comes back through to clean up whatever has fallen, drifted or been tracked in since. It’s billed at a man-hour rate, so you only pay for the time it takes.",
+  points: ["Available to commercial clients", "Billed at a man-hour rate", "Suited to zero-tolerance sites"],
+};
+
 export const faqs = [
   {
     q: "Do you offer commercial snow removal in Calgary?",
@@ -18,6 +25,10 @@ export const faqs = [
   {
     q: "What is included in a commercial snow removal contract?",
     a: "Our seasonal contracts cover parking lot plowing, sidewalk clearing and ice melt, sand and salt application, 24/7 monitoring and digital service logs with photos. Ice control, visit logs and completion times are written into the contract so there are no surprises mid-winter.",
+  },
+  {
+    q: "Do you offer second pass snow clearing?",
+    a: "Yes. Commercial clients can add a second pass, where a crew returns after the main clearing to clean up snow that has fallen, drifted or been tracked in since. It’s billed at a man-hour rate and is a good fit for any site with zero tolerance for snow.",
   },
   {
     q: "How is commercial snow removal priority determined?",

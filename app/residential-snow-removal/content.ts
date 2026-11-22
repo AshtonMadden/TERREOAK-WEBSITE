@@ -81,7 +81,7 @@ export const season = {
   totalCm: 30,
   averageCm: 129,
   lastSnowfallCm: 30,
-  visits: 0,
+  visits: 1,
 };
 
 

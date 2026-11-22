@@ -113,4 +113,64 @@ export const powerRakingPost: Article = {
   "path": "/blog/power-raking-calgary-guide"
 };
 
-export const posts = [powerRakingPost, aerationPost, commercialSnowPost, basePost, springPost, snowPost];
+export const iceControlPost: Article = {
+  "metaTitle": "Commercial Ice Control in Calgary: Salt, Sand or Ice Melt?",
+  "metaDescription": "Which de-icing product works at which temperature, when to apply it, and how to handle re-freeze after a Chinook on a Calgary commercial property.",
+  "title": "Ice control for commercial properties in Calgary: salt, sand and ice melt explained",
+  "category": "Commercial snow removal",
+  "hero": "/snow-removal-okotoks-after.JPG",
+  "heroAlt": "Pavement cleared down to the surface after a snowfall",
+  "excerpt": "Rock salt stops working at about −10°C, and the worst ice shows up on days it hasn’t snowed. What works when, and what to ask your contractor.",
+  "updated": "2026-11-22",
+  "published": "2026-11-22",
+  "cta": {
+    "title": "Want ice control that covers re-freeze?",
+    "text": "Our commercial contracts include sand, salt and ice melt matched to the conditions, with every application logged.",
+    "label": "Request a commercial snow quote",
+    "href": "/commercial-snow-removal#commercial-snow-form"
+  },
+  "path": "/blog/commercial-ice-control-calgary"
+};
+
+export const liabilityPost: Article = {
+  "metaTitle": "Winter Slip-and-Fall Liability: A Guide for Property Managers",
+  "metaDescription": "What Alberta property managers are responsible for in winter, the records that protect you after a slip and fall, and how long to keep them.",
+  "title": "Winter slip-and-fall liability: what Calgary property managers should document",
+  "category": "Commercial snow removal",
+  "hero": "/residential-snow-removalJPG.JPG",
+  "heroAlt": "TERREOAK crew clearing snow beside a TERREOAK snow picket",
+  "excerpt": "You can’t prevent every patch of ice. What protects you is being able to show a reasonable system was in place and followed. Here’s what to keep on file.",
+  "updated": "2026-11-22",
+  "published": "2026-11-22",
+  "cta": {
+    "title": "Want a record of every visit?",
+    "text": "We log every service with the time, the work done and photos, so the documentation exists if anyone ever asks.",
+    "label": "Request a commercial snow quote",
+    "href": "/commercial-snow-removal#commercial-snow-form"
+  },
+  "path": "/blog/winter-slip-and-fall-liability-property-managers"
+};
+
+export const sitePrepPost: Article = {
+  "metaTitle": "Commercial Winter Site Prep Checklist for Calgary Properties",
+  "metaDescription": "A pre-season checklist for Calgary property managers: the site walk, marking hazards, snow pile locations, repairs before freeze-up and tenant notices.",
+  "title": "Winter site prep checklist for commercial properties in Calgary",
+  "category": "Commercial snow removal",
+  "hero": "/blog-pics/commercial-property-sidewalk-calgary.jpg",
+  "heroAlt": "Commercial property in Calgary in the fall, before the first snowfall",
+  "excerpt": "Most mid-winter problems trace back to something that wasn’t settled in the fall. A checklist to work through with your contractor before the snow flies.",
+  "updated": "2026-11-22",
+  "published": "2026-11-22",
+  "cta": {
+    "title": "Want help getting your site winter-ready?",
+    "text": "Our commercial snow service starts with a site assessment and a plan for your property, before the first snowfall.",
+    "label": "Request a commercial snow quote",
+    "href": "/commercial-snow-removal#commercial-snow-form"
+  },
+  "path": "/blog/commercial-winter-site-prep-checklist"
+};
+
+// The guides written for commercial property managers, in reading order.
+export const propertyManagerGuides = [commercialSnowPost, sitePrepPost, iceControlPost, liabilityPost];
+
+export const posts = [sitePrepPost, iceControlPost, liabilityPost, powerRakingPost, aerationPost, commercialSnowPost, basePost, springPost, snowPost];

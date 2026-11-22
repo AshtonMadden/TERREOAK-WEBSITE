@@ -7,6 +7,7 @@ import { Band, Button, FaqList, PageHero, Tick } from "../components/ds";
 import { audiences, jobberForm, processSteps } from "../commercial-grounds-maintenance/content";
 import { breadcrumbLd, faqLd, pageMeta } from "../lib/seo";
 import { site } from "../lib/site";
+import { propertyManagerGuides } from "../blog/posts";
 import { faqs, snowPoints } from "./content";
 
 // The builder audience on the commercial page is about grading and sod, so it is left out here.
@@ -128,33 +129,6 @@ export default function CommercialSnowRemovalPage() {
         </ol>
       </Band>
 
-      {/* GUIDE */}
-      <Band>
-        <div className="to-card grid items-center gap-8 overflow-hidden p-6 md:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] md:gap-12 md:p-12">
-          <div>
-            <p className="to-sub">For property managers</p>
-            <h2 className="to-display to-h2 mt-3">Comparing snow contractors?</h2>
-            <p className="to-body mt-5">
-              Our guide walks through contract types, trigger depths, ice control, liability and snow storage, with 10 questions to ask any contractor before you sign. Including us.
-            </p>
-            <div className="mt-7">
-              <Button href="/blog/commercial-snow-removal-calgary-guide" variant="quiet">
-                Read the property manager’s guide
-              </Button>
-            </div>
-          </div>
-          <div className="relative aspect-[4/3] overflow-hidden rounded-[24px]">
-            <Image
-              src="/blog-pics/commercial-property-sidewalk-calgary.jpg"
-              alt="Sidewalk and entrance of a commercial property in Calgary"
-              fill
-              sizes="(min-width: 768px) 420px, 100vw"
-              className="object-cover"
-            />
-          </div>
-        </div>
-      </Band>
-
       {/* PROPOSAL FORM */}
       <Band id="commercial-snow-form" surface="snow">
         <div className="grid gap-x-20 gap-y-10 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]">
@@ -188,6 +162,27 @@ export default function CommercialSnowRemovalPage() {
         <div className="grid gap-x-20 gap-y-10 lg:grid-cols-[minmax(0,4fr)_minmax(0,8fr)]">
           <h2 className="to-display to-h2">Commercial snow removal FAQs</h2>
           <FaqList faqs={faqs} />
+        </div>
+      </Band>
+
+      {/* GUIDES FOR PROPERTY MANAGERS */}
+      <Band id="guides">
+        <p className="to-sub">Resources</p>
+        <h2 className="to-display to-h2 mt-3">Guides for property managers</h2>
+        <p className="to-body mt-5">Practical reading for anyone responsible for a commercial property through a Calgary winter. Free to read, no sign-up.</p>
+        <div className="mt-8 grid gap-3 md:mt-12 md:grid-cols-2 md:gap-5 lg:grid-cols-4">
+          {propertyManagerGuides.map((guide) => (
+            <Link key={guide.path} href={guide.path} className="to-card to-card-lift to-focus group flex flex-col overflow-hidden">
+              <div className="relative aspect-[16/10] overflow-hidden">
+                <Image src={guide.hero} alt={guide.heroAlt} fill sizes="(min-width: 1024px) 300px, (min-width: 768px) 50vw, 100vw" className="object-cover transition-transform duration-700 group-hover:scale-[1.03]" />
+              </div>
+              <div className="flex flex-1 flex-col p-5 md:p-6">
+                <h3 className="text-[1.15rem] font-bold leading-snug text-fg">{guide.title}</h3>
+                <p className="mt-3 text-[1rem] leading-relaxed text-muted">{guide.excerpt}</p>
+                <span className="mt-auto pt-5 text-[1rem] font-semibold text-accent">Read the guide</span>
+              </div>
+            </Link>
+          ))}
         </div>
       </Band>
 

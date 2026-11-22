@@ -268,7 +268,9 @@ const related = [
   { label: "Commercial snow removal", href: "/commercial-snow-removal", desc: "Parking lot plowing, sidewalk clearing, ice control and visit logs." },
   { label: "Commercial grounds maintenance", href: "/commercial-grounds-maintenance", desc: "Snow and ice management, plus year-round grounds care, under one contract." },
   { label: "Residential snow removal", href: "/residential-snow-removal", desc: "Flat-rate season passes for driveways and front sidewalks." },
-  { label: "Why hire a snow removal company?", href: "/blog/why-hire-snow-removal-company", desc: "The homeowner’s version: bylaws, liability and injury risk." },
+  { label: "Winter site prep checklist", href: "/blog/commercial-winter-site-prep-checklist", desc: "What to settle with your contractor before the first snowfall." },
+  { label: "Ice control explained", href: "/blog/commercial-ice-control-calgary", desc: "Which product works at which temperature." },
+  { label: "Winter liability and records", href: "/blog/winter-slip-and-fall-liability-property-managers", desc: "What to document to protect your property." },
 ];
 
 export default function Page() {

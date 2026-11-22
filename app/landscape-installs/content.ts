@@ -43,8 +43,8 @@ export const gallery = [
     alt: "Calgary Hardscaping",
   },
   {
-    src: "/Landscape web page pics/Sod-installation-calgary.jpg",
-    alt: "Sod Installation Calgary",
+    src: "/projects/cranston-makeover/laying-sod.jpg",
+    alt: "New sod installed in a Cranston front yard in Calgary",
   },
   {
     src: "/Landscape web page pics/Finished-hardscape-project.JPG",

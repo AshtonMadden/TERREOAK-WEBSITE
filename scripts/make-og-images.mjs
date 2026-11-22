@@ -13,7 +13,7 @@ const sources = {
   "/hardscaping/paver-patios-artificial-turf": "hardscaping/calgary-fire-pit-patio.jpg",
   "/hardscaping/retaining-walls": "hardscaping/calgary-retaining-wall.jpg",
   "/hardscaping/walkways-pathways": "Landscape web page pics/Techo-Bloc-paver-pathway.JPG",
-  "/softscapes/sod-installation": "Landscape web page pics/Sod-installation-calgary.jpg",
+  "/softscapes/sod-installation": "projects/cranston-makeover/laying-sod.jpg",
   "/blog/landscaping-cost-calgary": "hardscaping/calgary-fire-pit-patio.jpg",
   "/blog/snow-shovelling-risks-and-fines-calgary": "residential-snow-removalJPG.JPG",
   "/softscapes": "images/softscaping-river-rock-hostas.jpg",

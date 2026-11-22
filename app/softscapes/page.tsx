@@ -71,7 +71,7 @@ export default function SoftscapesPage() {
       <Band>
         <Link href="/softscapes/sod-installation" className="to-card to-card-lift to-focus group grid overflow-hidden md:grid-cols-2">
           <div className="relative aspect-[16/10] overflow-hidden md:aspect-auto md:min-h-[260px]">
-            <Image src="/Landscape web page pics/Sod-installation-calgary.jpg" alt="Freshly laid sod on a Calgary lawn" fill sizes="(min-width: 768px) 600px, 100vw" className="object-cover transition-transform duration-700 group-hover:scale-[1.03]" />
+            <Image src="/projects/cranston-makeover/hero-aerial.jpg" alt="Aerial view of new sod in a Cranston front yard" fill sizes="(min-width: 768px) 600px, 100vw" className="object-cover transition-transform duration-700 group-hover:scale-[1.03]" />
           </div>
           <div className="flex flex-col justify-center p-6 md:p-10">
             <p className="to-sub">Most requested</p>

@@ -15,7 +15,7 @@ export const metadata = pageMeta({
   title: "Sod Installation Calgary | New Lawns | TERREOAK",
   description,
   path,
-  image: "/Landscape web page pics/Sod-installation-calgary.jpg",
+  image: "/projects/cranston-makeover/laying-sod.jpg",
 });
 
 const reasons = [
@@ -93,8 +93,8 @@ export default function Page() {
       <PageHero
         title="Sod installation in Calgary."
         lead="A new lawn laid on properly graded, prepared soil, using 100% Kentucky Bluegrass that’s sourced locally and suited to Calgary’s cold winters and dry summers."
-        image="/Landscape web page pics/Sod-installation-calgary.jpg"
-        imageAlt="Freshly laid sod on a Calgary lawn installed by TERREOAK"
+        image="/projects/cranston-makeover/laying-sod.jpg"
+        imageAlt="New Kentucky Bluegrass sod in a Cranston front yard, installed by TERREOAK"
       >
         <Button href="#sod-form">Get a free quote</Button>
         <Button href="/softscapes" variant="quiet" className="bg-white/5 backdrop-blur-sm">
@@ -102,7 +102,7 @@ export default function Page() {
         </Button>
       </PageHero>
 
-      <SplitBand title="A fresh lawn starts with the soil" image="/projects/cranston-makeover/laying-sod.jpg" imageAlt="TERREOAK crew laying new sod in a Cranston front yard">
+      <SplitBand title="A fresh lawn starts with the soil" image="/projects/cranston-makeover/front-view.jpg" imageAlt="TERREOAK crew preparing the soil in a Cranston front yard before laying new sod" aspect="aspect-[4/5]">
         <p className="to-body">
           A fresh lawn starts with proper soil prep. We grade the area, bring in quality topsoil where needed, and lay 100% Kentucky Bluegrass sod that is sourced locally and suited to Calgary’s cold winters and dry summers.
         </p>
@@ -151,8 +151,8 @@ export default function Page() {
         id="aftercare"
         title="Looking after new sod"
         sub="The first month matters most"
-        image="/projects/cranston-makeover/front-view.jpg"
-        imageAlt="Finished front yard in Cranston with new Kentucky Bluegrass sod and rock beds"
+        image="/projects/cranston-makeover/rundle-bed.jpg"
+        imageAlt="Finished front yard in Cranston with new Kentucky Bluegrass sod and a Rundle rock bed"
         imageSide="left"
       >
         <p className="to-body">We walk you through watering before we leave. As a general guide:</p>

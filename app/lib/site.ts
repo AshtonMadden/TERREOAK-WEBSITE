@@ -41,13 +41,7 @@ export const nav: NavGroup[] = [
       { label: "Our process", href: "/our-process", desc: "How a project runs, step by step" },
     ],
   },
-  {
-    label: "Snow removal",
-    items: [
-      { label: "Residential snow removal", href: "/residential-snow-removal", desc: "Season passes for driveways and sidewalks" },
-      { label: "Pricing", href: "/residential-snow-removal#pricing", desc: "What a season pass costs" },
-    ],
-  },
+  { label: "Snow removal", href: "/residential-snow-removal" },
   {
     label: "Seasonal",
     items: [

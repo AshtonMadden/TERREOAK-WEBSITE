@@ -78,9 +78,9 @@ export const zones = [
 // and tiles on the page all follow from them.
 export const season = {
   label: "2026–2027",
-  totalCm: 0,
+  totalCm: 30,
   averageCm: 129,
-  lastSnowfallCm: 0,
+  lastSnowfallCm: 30,
   visits: 0,
 };
 

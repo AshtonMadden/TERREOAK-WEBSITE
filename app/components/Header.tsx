@@ -90,7 +90,7 @@ export default function Header() {
           <nav aria-label="Main" className="hidden items-center gap-1 lg:flex">
             {nav.map((group) => {
               const active = isActive(group.href, group.items);
-              const linkCls = `to-focus flex items-center gap-1.5 rounded-lg px-3.5 py-2 text-[1.05rem] font-medium transition-colors hover:text-white ${
+              const linkCls = `to-focus flex items-center gap-1.5 whitespace-nowrap rounded-lg px-3 py-2 text-[1.05rem] font-medium transition-colors hover:text-white ${
                 active ? "text-white underline decoration-brand decoration-2 underline-offset-8" : "text-white/75"
               }`;
               if (group.href) {
@@ -127,11 +127,11 @@ export default function Header() {
           </nav>
 
           <div className="flex items-center gap-2">
-            <a href={site.phoneHref} className="to-focus hidden rounded-lg px-3 py-2 text-[1.05rem] font-medium text-white/75 transition-colors hover:text-white xl:block">
+            <a href={site.phoneHref} className="to-focus hidden whitespace-nowrap rounded-lg px-3 py-2 text-[1.05rem] font-medium text-white/75 transition-colors hover:text-white xl:block">
               {site.phoneDisplay}
             </a>
             <span className="hidden md:block">
-              <a href={cta.href} onClick={close} className="to-btn to-btn-primary to-btn-sm">
+              <a href={cta.href} onClick={close} className="to-btn to-btn-primary to-btn-sm whitespace-nowrap">
                 {cta.label}
               </a>
             </span>

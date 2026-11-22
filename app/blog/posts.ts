@@ -6,8 +6,8 @@ export const snowPost: Article = {
   "metaDescription": "Discover the top reasons to hire a professional snow removal company in Calgary. Save time, avoid injury, and ensure your property is always safe.",
   "title": "Why you should hire a professional Calgary snow removal company",
   "category": "Winter maintenance",
-  "hero": "/blog-pics/professional_snow_clearing.png",
-  "heroAlt": "TERREOAK professional snow removal crew clearing a residential driveway",
+  "hero": "/photos/snow-storm-truck.jpg",
+  "heroAlt": "TERREOAK truck loaded with snow blowers during a heavy Calgary snowfall",
   "excerpt": "When the temperature drops and heavy snow falls, shoveling the driveway is the last thing anyone wants to do. But avoiding the cold isn't the only reason to hire a professional.",
   "updated": "2026-11-14",
   "cta": {

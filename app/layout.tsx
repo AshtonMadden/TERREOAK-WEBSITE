@@ -85,7 +85,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         "email": "services@terreoak.ca",
         "description": "TERREOAK Landscaping & Snow is a premium landscaping contractor in Calgary, Alberta. We specialize in residential hardscaping, softscaping, retaining walls, paving stone patios, landscape design, reliable year-round commercial property maintenance, and residential snow removal.",
         "knowsAbout": ["Calgary Snow Removal", "Landscaping in Calgary", "Hardscaping Calgary", "Retaining Walls", "Paving Stone Patios", "Softscaping", "Commercial Grounds Maintenance", "Landscape Design", "Spring Cleanup"],
-        "image": "https://terreoak.ca/images/commercial.png",
+        "image": "https://terreoak.ca/hardscaping/calgary-fire-pit-patio.jpg",
         "address": {
           "@type": "PostalAddress",
           "addressLocality": "Calgary",

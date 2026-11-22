@@ -39,6 +39,9 @@ const turfUses = [
 const gallery = [
   { src: "/hardscaping/calgary-fire-pit-patio.jpg", alt: "Aerial view of a curved paver patio with a round fire pit and boulder border in Calgary", label: "Fire pit patio" },
   { src: "/hardscaping/calgary-paver-patio.jpg", alt: "Two paver patios joined by a paver walkway and stepping stones in a Calgary backyard", label: "Paver patio and walkway" },
+  { src: "/photos/fire-pit-patio-ground.jpg", alt: "Curved paver patio with a soldier-course border, a stone fire pit and a boulder seat wall", label: "Fire pit patio with boulder seating" },
+  { src: "/photos/paver-patio-border.jpg", alt: "Grey slab patio with a charcoal border and a second pad joined by stepping stones", label: "Slab patio with charcoal border" },
+  { src: "/photos/paver-patio-sod-aerial.jpg", alt: "Aerial view of a finished backyard with paver patios and new sod", label: "Patios and new sod, from above" },
   { src: "/Landscape web page pics/Techo-Bloc-pavers-river-rock.JPG", alt: "Close-up of Techo-Bloc slabs set with a washed river rock border", label: "Slabs with river rock" },
   { src: "/Landscape web page pics/Techo-Bloc-paver-pathway.JPG", alt: "Large-format Techo-Bloc paver pathway along the side of a Calgary home", label: "Side-yard paver path" },
   { src: "/Landscape web page pics/Finished-hardscape-project.JPG", alt: "Finished stone stepper pathway with decorative rock in McKenzie Lake", label: "Stepper pathway" },
@@ -169,7 +172,10 @@ export default function Page() {
             </p>
           </div>
         </div>
-        <div className="mt-8 grid gap-3 md:mt-12 md:grid-cols-2 md:gap-5">
+        <div className="mt-8 grid gap-3 md:mt-12 md:grid-cols-2 md:gap-5 lg:grid-cols-3">
+          <figure className="relative aspect-[4/3] overflow-hidden rounded-[28px] md:col-span-2 md:aspect-[16/7] lg:col-span-1 lg:aspect-auto lg:min-h-[420px]">
+            <Image src="/photos/artificial-turf-backyard.jpg" alt="Artificial turf installed in a shaded Calgary backyard around mature trees and a rock bed" fill sizes="(min-width: 1024px) 400px, 100vw" className="object-cover" />
+          </figure>
           <article className="to-card p-5 md:p-8">
             <h3 className="to-display to-h3">Where artificial turf works best</h3>
             <ul className="mt-5 grid gap-3 text-[1.08rem] text-fg">

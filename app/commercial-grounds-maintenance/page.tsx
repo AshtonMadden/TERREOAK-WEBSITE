@@ -162,6 +162,24 @@ export default function CommercialGroundsMaintenancePage() {
         </div>
       </Band>
 
+      {/* SITE PHOTOS */}
+      <Band>
+        <div className="grid gap-3 md:grid-cols-2 md:gap-5">
+          <figure className="to-card overflow-hidden">
+            <div className="relative aspect-[4/3]">
+              <Image src="/photos/commercial-rock-bed.jpg" alt="Maintained rock bed and shrubs along the walkway of a commercial property in Calgary" fill sizes="(min-width: 768px) 600px, 100vw" className="object-cover" />
+            </div>
+            <figcaption className="px-5 py-4 text-[1.05rem] font-semibold text-fg">Rock beds and shrubs at a commercial site</figcaption>
+          </figure>
+          <figure className="to-card overflow-hidden">
+            <div className="relative aspect-[4/3]">
+              <Image src="/photos/commercial-planter-mulch.jpg" alt="TERREOAK crew refreshing mulch and shrubs in a planter at a Calgary commercial property" fill sizes="(min-width: 768px) 600px, 100vw" className="object-cover" />
+            </div>
+            <figcaption className="px-5 py-4 text-[1.05rem] font-semibold text-fg">Planter refresh with new mulch</figcaption>
+          </figure>
+        </div>
+      </Band>
+
       {/* CLIENT PORTAL */}
       <Band>
         <div className="to-card flex flex-col gap-8 p-8 md:flex-row md:items-center md:justify-between md:p-12">

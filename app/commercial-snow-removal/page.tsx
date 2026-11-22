@@ -77,8 +77,13 @@ export default function CommercialSnowRemovalPage() {
       {/* INTRO */}
       <Band>
         <div className="grid gap-x-20 gap-y-8 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]">
-          <h2 className="to-display to-h2">Keep your site open, and keep the paper trail</h2>
-          <div className="grid gap-5">
+          <div>
+            <h2 className="to-display to-h2">Keep your site open, and keep the paper trail</h2>
+            <figure className="relative mt-8 aspect-[4/3] overflow-hidden rounded-[36px] lg:aspect-[4/5]">
+              <Image src="/photos/snow-storm-truck.jpg" alt="TERREOAK truck loaded with snow blowers in a commercial lot during a heavy Calgary snowfall" fill sizes="(min-width: 1024px) 480px, 100vw" className="object-cover" />
+            </figure>
+          </div>
+          <div className="grid content-start gap-5">
             <p className="to-body">
               Winter is where a commercial property carries the most risk. A lot that isn’t cleared by opening, or a sidewalk that refreezes after a Chinook, is a liability problem as much as an access problem.
             </p>

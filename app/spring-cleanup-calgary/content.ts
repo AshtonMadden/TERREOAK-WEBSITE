@@ -60,6 +60,7 @@ export const benefits = [
 ];
 
 export const gallery = [
+  { src: "/photos/power-raking-bagging-thatch.jpg", alt: "TERREOAK crew bagging thatch after power raking a Calgary lawn" },
   { src: "/spring-cleanup-pics/Calgary-Core-Aeration.JPG", alt: "Core aeration on a Calgary lawn" },
   { src: "/spring-cleanup-pics/Calgary-Leaf-Cleanup.JPG", alt: "Leaf cleanup in Calgary" },
   { src: "/spring-cleanup-pics/City-of-Calgary-skyline.JPG", alt: "City of Calgary skyline from a TERREOAK job site" },

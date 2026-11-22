@@ -204,6 +204,22 @@ export const reviews = [
 ];
 
 export const gallery = [
+  {
+    src: "/photos/backyard-trees-mulch-bed.jpg",
+    alt: "New trees, a mulch bed, sod and a slab patio in a Calgary backyard",
+  },
+  {
+    src: "/photos/paver-patio-sod-aerial.jpg",
+    alt: "Aerial view of a Calgary backyard with new paver patios and sod",
+  },
+  {
+    src: "/photos/fire-pit-patio-ground.jpg",
+    alt: "Paver patio with a fire pit and boulder seat wall in Calgary",
+  },
+  {
+    src: "/photos/artificial-turf-backyard.jpg",
+    alt: "Artificial turf in a shaded Calgary backyard",
+  },
   // Landscaping
   {
     src: "/Landscape web page pics/Calgary-Concrete-pour.JPG",

@@ -12,7 +12,7 @@ export const metadata = pageMeta({
   title: "Landscaping & Snow Removal Jobs in Calgary | TERREOAK",
   description,
   path,
-  image: "/images/careers-hero.png",
+  image: "/photos/crew-mini-excavator.jpg",
 });
 
 const perks = [
@@ -73,8 +73,8 @@ export default function CareersPage() {
           </>
         }
         lead="Landscaping and snow removal jobs in Calgary, with year-round work and equipment that’s looked after."
-        image="/images/careers-hero.png"
-        imageAlt="TERREOAK crew on a job site"
+        image="/photos/crew-mini-excavator.jpg"
+        imageAlt="TERREOAK crew member at the controls of a Bobcat mini excavator"
       >
         <Button href="#open-positions">View open positions</Button>
       </PageHero>

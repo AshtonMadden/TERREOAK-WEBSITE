@@ -102,7 +102,7 @@ export default function Page() {
         </Button>
       </PageHero>
 
-      <SplitBand title="A fresh lawn starts with the soil" image="/projects/cranston-makeover/front-view.jpg" imageAlt="TERREOAK crew preparing the soil in a Cranston front yard before laying new sod" aspect="aspect-[4/5]">
+      <SplitBand title="A fresh lawn starts with the soil" image="/photos/sod-laying-crew.jpg" imageAlt="TERREOAK crew laying rolls of new sod in a Calgary backyard">
         <p className="to-body">
           A fresh lawn starts with proper soil prep. We grade the area, bring in quality topsoil where needed, and lay 100% Kentucky Bluegrass sod that is sourced locally and suited to Calgary’s cold winters and dry summers.
         </p>
@@ -151,8 +151,8 @@ export default function Page() {
         id="aftercare"
         title="Looking after new sod"
         sub="The first month matters most"
-        image="/projects/cranston-makeover/rundle-bed.jpg"
-        imageAlt="Finished front yard in Cranston with new Kentucky Bluegrass sod and a Rundle rock bed"
+        image="/photos/paver-patio-sod-aerial.jpg"
+        imageAlt="Aerial view of a Calgary backyard with freshly laid sod being watered by a sprinkler"
         imageSide="left"
       >
         <p className="to-body">We walk you through watering before we leave. As a general guide:</p>

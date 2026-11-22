@@ -1,3 +1,4 @@
+import Image from "next/image";
 import JsonLd from "../components/JsonLd";
 import ReadMore from "../components/ReadMore";
 import StickyCta from "../components/StickyCta";
@@ -121,6 +122,31 @@ export default function LandscapeInstallsPage() {
       </StepsBand>
 
       {/* COSTS */}
+      {/* 3D DESIGN */}
+      <Band id="design">
+        <div className="grid items-end gap-x-20 gap-y-6 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]">
+          <h2 className="to-display to-h2">See your yard before we build it</h2>
+          <p className="to-body">For design-build projects we can model your yard in 3D, so you can see where the beds, paths and patios go and make changes before any ground is broken.</p>
+        </div>
+        <ul className="mt-8 grid gap-3 md:mt-12 md:grid-cols-3 md:gap-5">
+          {[
+            { src: "/photos/design-3d-front-yard.jpg", alt: "3D design rendering of a front yard with a rock bed, shrubs and stepping stones", label: "Front yard concept" },
+            { src: "/photos/design-3d-backyard.jpg", alt: "3D design rendering of a backyard with a patio, walkway, lawn and rock border", label: "Backyard layout" },
+            { src: "/photos/design-3d-side-bed.jpg", alt: "3D design rendering of a rock bed with shrubs beside a driveway", label: "Driveway bed detail" },
+          ].map((item) => (
+            <li key={item.src}>
+              <figure className="to-card overflow-hidden">
+                <div className="relative aspect-[16/9]">
+                  <Image src={item.src} alt={item.alt} fill sizes="(min-width: 768px) 400px, 100vw" className="object-cover" />
+                </div>
+                <figcaption className="px-5 py-4 text-[1.05rem] font-semibold text-fg">{item.label}</figcaption>
+              </figure>
+            </li>
+          ))}
+        </ul>
+        <p className="mt-5 text-[0.98rem] text-muted">Renderings are artistic concepts. Final materials and plants are confirmed in your written quote.</p>
+      </Band>
+
       <Band>
         <h2 className="to-display to-h2 max-w-[22ch]">How much does landscaping cost in Calgary?</h2>
         <p className="to-body mt-5">Landscaping project costs in Calgary vary widely based on scope, materials, and site conditions. As a general guide:</p>

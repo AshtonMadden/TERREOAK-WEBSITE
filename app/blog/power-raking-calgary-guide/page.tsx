@@ -146,6 +146,14 @@ const sections: ArticleSection[] = [
     content: (
       <>
         <p>Your lawn will look rough for a week or two. That’s normal: you’ve just removed the dead layer that was hiding the thin spots. To help it bounce back:</p>
+        <Image
+          src="/photos/power-raking-bagging-thatch.jpg"
+          alt="TERREOAK crew bagging the thatch pulled out of a Calgary lawn by power raking"
+          width={1500}
+          height={2000}
+          sizes="(max-width: 1024px) 100vw, 760px"
+          className="h-auto w-full"
+        />
         <ul>
           <li>
             <strong>Aerate</strong> if the soil is compacted, while the surface is clear.

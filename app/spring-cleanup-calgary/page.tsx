@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Image from "next/image";
 import BeforeAfterSlider from "../components/BeforeAfterSlider";
 import JobberLeadForm from "../components/JobberLeadForm";
@@ -9,14 +10,14 @@ import { GalleryBand } from "../components/sections";
 import { CountUp } from "../components/HeroMedia";
 import { breadcrumbLd, faqLd, pageMeta } from "../lib/seo";
 import { site } from "../lib/site";
-import { benefits, faqs, gallery, jobberForm, stats, steps, treatments } from "./content";
+import { benefits, faqs, gallery, included, jobberForm, stats, steps, treatments } from "./content";
 
 const path = "/spring-cleanup-calgary";
 const description =
-  "Revitalize your yard with TERREOAK's professional spring cleanup services in Calgary. Power raking, aeration, and debris removal for a healthy lawn.";
+  "Spring yard cleanup in Calgary: power raking, core aeration, debris removal and a first mow for your lawn. Free fertilizer application when you book.";
 
 export const metadata = pageMeta({
-  title: "Spring Cleanup Calgary | Power Raking & Aeration | TERREOAK",
+  title: "Spring Yard Cleanup Calgary | Power Raking & Aeration",
   description,
   path,
   image: "/spring-cleanup-pics/Calgary-Core-Aeration.JPG",
@@ -29,7 +30,7 @@ const jsonLd = {
       "@type": "Service",
       "@id": `${site.url}${path}#service`,
       name: "Spring Cleanup",
-      serviceType: "Spring yard cleanup, core aeration and power raking",
+      serviceType: "Spring yard and lawn cleanup, power raking and core aeration",
       description,
       url: `${site.url}${path}`,
       provider: { "@id": `${site.url}/#localbusiness` },
@@ -48,10 +49,10 @@ export default function SpringCleanupPage() {
       <PageHero
         title={
           <>
-            Calgary spring cleanup. <span className="block">A fresh start for your yard.</span>
+            Spring yard cleanup in Calgary. <span className="block">A fresh start for your lawn.</span>
           </>
         }
-        lead="Core aeration, power raking and debris removal that clear out winter and set your lawn up for a healthy season."
+        lead="Power raking, core aeration, debris removal and a first mow that clear out winter and set your lawn up for a healthy season."
         video="/videos/spring-cleanup-hero.mp4"
         poster="/images/spring-cleanup-hero-poster.jpg"
         footer={
@@ -102,6 +103,23 @@ export default function SpringCleanupPage() {
         </div>
       </Band>
 
+      {/* WHAT'S INCLUDED */}
+      <Band id="whats-included">
+        <h2 className="to-display to-h2">What’s included in a spring yard cleanup</h2>
+        <p className="to-body mt-5">One visit that takes your lawn from winter-beaten to ready for the season.</p>
+        <ol className="mt-8 grid gap-3 md:mt-12 md:grid-cols-2 md:gap-5 lg:grid-cols-5">
+          {included.map((item, i) => (
+            <li key={item.title} className="to-card flex gap-4 p-5 md:block md:p-6">
+              <span className="to-icon shrink-0 text-lg font-bold">{i + 1}</span>
+              <div>
+                <h3 className="text-[1.15rem] font-bold leading-snug text-fg md:mt-5">{item.title}</h3>
+                <p className="mt-2 text-[1.02rem] leading-relaxed text-muted">{item.desc}</p>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </Band>
+
       {/* TREATMENTS */}
       <Band>
         <h2 className="to-display to-h2">Maintenance that matters</h2>
@@ -124,6 +142,33 @@ export default function SpringCleanupPage() {
               </ul>
             </article>
           ))}
+        </div>
+      </Band>
+
+      {/* WHEN TO BOOK + GUIDES */}
+      <Band>
+        <div className="grid gap-x-20 gap-y-8 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]">
+          <h2 className="to-display to-h2">When to book your Calgary lawn’s spring cleanup</h2>
+          <div className="grid gap-5">
+            <p className="to-body">
+              The window is short. Power raking has to happen after the snow is gone and the lawn has dried out, but before the grass is growing strongly, which in a typical Calgary spring is somewhere between late March and the
+              end of April. Leave it too late and the machine pulls out healthy new growth along with the dead.
+            </p>
+            <p className="to-body">
+              That’s why our spring schedule fills before the snow has finished melting. Booking in winter gets you a spot in the right window instead of whatever is left.
+            </p>
+            <p className="to-body">
+              Not sure what your lawn needs? Our guides explain{" "}
+              <Link href="/blog/power-raking-calgary-guide" className="to-link">
+                when power raking helps and when to skip it
+              </Link>{" "}
+              and{" "}
+              <Link href="/blog/when-to-aerate-lawn-calgary" className="to-link">
+                when to aerate a lawn in Calgary
+              </Link>
+              .
+            </p>
+          </div>
         </div>
       </Band>
 
@@ -197,6 +242,12 @@ export default function SpringCleanupPage() {
       <BlogCta>
         <Button href="/blog/why-calgary-spring-cleanup-matters" variant="quiet">
           Why spring cleanup matters
+        </Button>
+        <Button href="/blog/power-raking-calgary-guide" variant="quiet">
+          Power raking guide
+        </Button>
+        <Button href="/blog/when-to-aerate-lawn-calgary" variant="quiet">
+          When to aerate
         </Button>
       </BlogCta>
 

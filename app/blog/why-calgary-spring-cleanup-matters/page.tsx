@@ -115,7 +115,8 @@ const faqs = [
 const related = [
   { label: "Spring cleanup", href: "/spring-cleanup-calgary", desc: "Core aeration, power raking and debris removal for Calgary lawns." },
   { label: "Fall cleanup", href: "/fall-cleanup", desc: "Leaf removal and winter lawn prep before the first snow." },
-  { label: "Softscapes", href: "/softscapes", desc: "Sod, garden beds, planting and mulch." },
+  { label: "Power raking in Calgary", href: "/blog/power-raking-calgary-guide", desc: "When power raking helps, and when to skip it." },
+  { label: "When to aerate in Calgary", href: "/blog/when-to-aerate-lawn-calgary", desc: "The right windows for core aeration." },
 ];
 
 export default function Page() {

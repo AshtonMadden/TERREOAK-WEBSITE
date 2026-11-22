@@ -75,4 +75,42 @@ export const commercialSnowPost: Article = {
   "path": "/blog/commercial-snow-removal-calgary-guide"
 };
 
-export const posts = [commercialSnowPost, basePost, springPost, snowPost];
+export const aerationPost: Article = {
+  "metaTitle": "When to Aerate Your Lawn in Calgary | TERREOAK",
+  "metaDescription": "The best time to aerate a lawn in Calgary, how to tell if yours needs it, how to prepare, and what to do afterwards. A practical guide for clay soil.",
+  "title": "When to aerate your lawn in Calgary",
+  "category": "Seasonal care",
+  "hero": "/spring-cleanup-pics/Calgary-Core-Aeration.JPG",
+  "heroAlt": "Core aeration plugs on a Calgary lawn in spring",
+  "excerpt": "Spring or fall? The right windows for core aeration in Calgary, the signs your lawn needs it, and what to do before and after.",
+  "updated": "2026-11-22",
+  "published": "2026-11-22",
+  "cta": {
+    "title": "Want your lawn aerated in the right window?",
+    "text": "Core aeration is part of our spring cleanup, along with power raking and debris removal. Slots fill quickly once the snow goes.",
+    "label": "Book your spring cleanup",
+    "href": "/spring-cleanup-calgary#spring-cleanup-form"
+  },
+  "path": "/blog/when-to-aerate-lawn-calgary"
+};
+
+export const powerRakingPost: Article = {
+  "metaTitle": "Power Raking in Calgary: When, Why & Is It Worth It?",
+  "metaDescription": "What power raking is, when to do it in Calgary, how it differs from dethatching and aeration, and when your lawn is better off without it.",
+  "title": "Power raking in Calgary: when to do it and whether your lawn needs it",
+  "category": "Seasonal care",
+  "hero": "/spring-cleanup-pics/Power-raking-services.JPG",
+  "heroAlt": "Power raking a Calgary lawn in early spring",
+  "excerpt": "Power raking clears the dead grass a Calgary winter leaves behind, but timing is everything. When to do it, when to skip it, and how it differs from aeration.",
+  "updated": "2026-11-22",
+  "published": "2026-11-22",
+  "cta": {
+    "title": "Get your lawn power raked at the right time",
+    "text": "Our spring cleanup covers power raking, core aeration and debris removal, with everything bagged and taken care of in one visit.",
+    "label": "Book your spring cleanup",
+    "href": "/spring-cleanup-calgary#spring-cleanup-form"
+  },
+  "path": "/blog/power-raking-calgary-guide"
+};
+
+export const posts = [powerRakingPost, aerationPost, commercialSnowPost, basePost, springPost, snowPost];

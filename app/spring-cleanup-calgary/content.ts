@@ -29,6 +29,15 @@ export const treatments = [
   },
 ];
 
+// What a spring cleanup visit covers.
+export const included = [
+  { title: "Debris and leaf removal", desc: "Leaves, branches, gravel and everything else winter left on your lawn and in your beds, cleared away." },
+  { title: "Power raking", desc: "The matted layer of dead grass is lifted out so sunlight, air and water can reach the soil again." },
+  { title: "Core aeration", desc: "Plugs are pulled from the soil to relieve compaction and let roots grow deeper." },
+  { title: "First mow", desc: "A clean first cut to even everything out and start the season tidy." },
+  { title: "Fertilizer application", desc: "Feeds the new growth while the soil is open. Free when you book your cleanup with us, a $150 value." },
+];
+
 export const steps = [
   { title: "Book your cleanup", desc: "Select your preferred window and services." },
   { title: "Confirmation & schedule", desc: "We confirm details and provide a service date." },
@@ -65,16 +74,32 @@ export const gallery = [
 
 export const faqs = [
   {
-    q: "When is the best time for a spring cleanup?",
-    a: "Typically late March through April, once the snow has melted and the ground has started to dry out.",
+    q: "What is included in a spring yard cleanup?",
+    a: "Our spring cleanup covers debris and leaf removal, power raking, core aeration and a first mow. A fertilizer application is included free when you book with us.",
+  },
+  {
+    q: "When is the best time for a spring cleanup in Calgary?",
+    a: "Typically late March through April, once the snow has melted and the ground has started to dry out. Power raking needs to happen before the lawn is growing strongly, so it’s worth booking before the snow is gone.",
   },
   {
     q: "What is power raking?",
     a: "Power raking uses specialized equipment to remove the layer of dead grass and debris (thatch) that builds up at the base of your lawn.",
   },
   {
+    q: "What’s the difference between power raking and aeration?",
+    a: "Power raking clears dead grass off the surface of the lawn. Core aeration pulls plugs out of the soil to relieve compaction. They solve different problems, and most Calgary lawns on clay soil benefit from both in spring.",
+  },
+  {
+    q: "Do I need both power raking and aeration?",
+    a: "Not always. If your lawn has very little thatch you can skip power raking and just aerate. We’ll tell you what your lawn needs when we quote.",
+  },
+  {
     q: "Do I need to be home?",
     a: "No, as long as we have access to your yard, you don't need to be home for the cleanup.",
+  },
+  {
+    q: "How do I book a spring cleanup?",
+    a: "Fill out the form on this page or call (587) 707-7648. We confirm the details and give you a service date.",
   },
 ];
 

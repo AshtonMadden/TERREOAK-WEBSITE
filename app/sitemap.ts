@@ -23,6 +23,8 @@ const routes: { path: string; priority: number; changeFrequency: "weekly" | "mon
   { path: "/about", priority: 0.7, changeFrequency: "monthly" },
   { path: "/contact", priority: 0.7, changeFrequency: "monthly" },
   { path: "/blog", priority: 0.7, changeFrequency: "weekly" },
+  { path: "/blog/power-raking-calgary-guide", priority: 0.6, changeFrequency: "yearly" },
+  { path: "/blog/when-to-aerate-lawn-calgary", priority: 0.6, changeFrequency: "yearly" },
   { path: "/blog/commercial-snow-removal-calgary-guide", priority: 0.6, changeFrequency: "yearly" },
   { path: "/blog/why-hire-snow-removal-company", priority: 0.6, changeFrequency: "yearly" },
   { path: "/blog/why-calgary-spring-cleanup-matters", priority: 0.6, changeFrequency: "yearly" },

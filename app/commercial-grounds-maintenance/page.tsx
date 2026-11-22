@@ -1,11 +1,12 @@
 import Image from "next/image";
+import Link from "next/link";
 import JobberLeadForm from "../components/JobberLeadForm";
 import JsonLd from "../components/JsonLd";
 import StickyCta from "../components/StickyCta";
 import { Band, BlogCta, Button, FaqList, FounderQuote, PageHero, Tick } from "../components/ds";
 import { breadcrumbLd, faqLd, pageMeta } from "../lib/seo";
 import { site } from "../lib/site";
-import { audiences, faqs, jobberForm, processSteps, reasons, services } from "./content";
+import { audiences, faqs, jobberForm, processSteps, reasons, services, snowPoints } from "./content";
 
 const path = "/commercial-grounds-maintenance";
 const description =
@@ -32,6 +33,16 @@ const jsonLd = {
       areaServed: { "@type": "City", name: "Calgary" },
       audience: audiences.map((a) => ({ "@type": "Audience", audienceType: a.title })),
     },
+    {
+      "@type": "Service",
+      "@id": `${site.url}${path}#snow-service`,
+      name: "Commercial Snow Removal",
+      serviceType: "Commercial snow removal and ice control",
+      description: "Commercial snow removal and ice control in Calgary: parking lot plowing, sidewalk clearing, sand and salt application, 24/7 monitoring and time-stamped service logs.",
+      url: `${site.url}${path}#commercial-snow`,
+      provider: { "@id": `${site.url}/#localbusiness` },
+      areaServed: { "@type": "City", name: "Calgary" },
+    },
     { "@id": `${site.url}${path}#breadcrumb`, ...breadcrumbLd([{ name: "Home", path: "/" }, { name: "Commercial Grounds Maintenance", path }]) },
     { "@id": `${site.url}${path}#faq`, ...faqLd(faqs) },
   ],
@@ -50,7 +61,7 @@ export default function CommercialGroundsMaintenancePage() {
 
       <PageHero
         title="Calgary commercial grounds maintenance."
-        lead="Grounds maintenance and snow removal for condo corporations, HOA communities, industrial business parks, and new construction sites, with every visit documented."
+        lead="Commercial snow removal and grounds maintenance for condo corporations, HOA communities, industrial business parks, and new construction sites, with every visit documented."
         image="/commercial-lawn-mowing.JPG"
         imageAlt="TERREOAK crew mowing a commercial property in Calgary"
       >
@@ -90,6 +101,46 @@ export default function CommercialGroundsMaintenancePage() {
         <div className="mt-14">
           <FounderQuote />
         </div>
+      </Band>
+
+      {/* COMMERCIAL SNOW REMOVAL */}
+      <Band id="commercial-snow">
+        <div className="grid items-end gap-x-20 gap-y-6 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]">
+          <h2 className="to-display to-h2">Commercial snow removal in Calgary</h2>
+          <p className="to-body">
+            Winter is where a commercial property carries the most risk. A lot that isn’t cleared by opening, or a sidewalk that refreezes after a Chinook, is a liability problem as much as an access problem. Our commercial snow
+            contracts are built to keep your site open and to give you the paper trail if anyone ever asks.
+          </p>
+        </div>
+        <div className="mt-8 grid gap-3 md:mt-12 md:grid-cols-2 md:gap-5 lg:grid-cols-3">
+          {snowPoints.map((point) => (
+            <article key={point.title} className="to-card p-5 md:p-8">
+              <h3 className="to-display to-h3">{point.title}</h3>
+              <p className="mt-3 text-[1.05rem] leading-relaxed text-muted">{point.desc}</p>
+            </article>
+          ))}
+        </div>
+        <div className="mt-8 flex flex-col gap-3 sm:flex-row md:mt-10">
+          <Button href="#commercial-form">Request a snow removal proposal</Button>
+          <Button href="/blog/commercial-snow-removal-calgary-guide" variant="quiet">
+            Read the property manager’s guide
+          </Button>
+        </div>
+        <p className="mt-6 text-[1.05rem] text-muted">
+          Comparing contractors? Our guide covers{" "}
+          <Link href="/blog/commercial-snow-removal-calgary-guide#contract-types" className="to-link">
+            contract types
+          </Link>
+          ,{" "}
+          <Link href="/blog/commercial-snow-removal-calgary-guide#triggers-and-response" className="to-link">
+            trigger depths
+          </Link>{" "}
+          and{" "}
+          <Link href="/blog/commercial-snow-removal-calgary-guide#questions-to-ask" className="to-link">
+            10 questions to ask before you sign
+          </Link>
+          .
+        </p>
       </Band>
 
       {/* WHY TERREOAK */}

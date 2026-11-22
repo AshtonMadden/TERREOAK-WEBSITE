@@ -1,10 +1,12 @@
 import type { MetadataRoute } from "next";
 import { site } from "./lib/site";
+import { communities } from "./snow-removal/communities";
 
 // Generated at build time, so new pages only need to be added to this list.
 const routes: { path: string; priority: number; changeFrequency: "weekly" | "monthly" | "yearly" }[] = [
   { path: "/", priority: 1, changeFrequency: "weekly" },
   { path: "/residential-snow-removal", priority: 0.9, changeFrequency: "weekly" },
+  ...communities.map((community) => ({ path: `/snow-removal/${community.slug}`, priority: 0.7, changeFrequency: "monthly" as const })),
   { path: "/landscape-installs", priority: 0.9, changeFrequency: "monthly" },
   { path: "/hardscaping", priority: 0.9, changeFrequency: "monthly" },
   { path: "/softscapes", priority: 0.9, changeFrequency: "monthly" },

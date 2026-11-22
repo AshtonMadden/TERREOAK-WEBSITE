@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Image from "next/image";
 import BeforeAfterSlider from "../components/BeforeAfterSlider";
 import JobberLeadForm from "../components/JobberLeadForm";
@@ -6,6 +7,7 @@ import { Band, BlogCta, Button, Container, FaqList, GoogleMark, Stars, Tick } fr
 import { CountUp, HeroVideo } from "../components/HeroMedia";
 import HolidayGameSlot from "./HolidayGameSlot";
 import StormBanner from "./StormBanner";
+import { communityPath } from "../snow-removal/communities";
 import { breadcrumbLd, faqLd, pageMeta } from "../lib/seo";
 import { site } from "../lib/site";
 import { addOns, jobberForm, offers, passes, referral, reviews, season, stats, steps, zones } from "./content";
@@ -493,7 +495,7 @@ export default function ResidentialSnowRemovalPage() {
       </Band>
 
       {/* SERVICE ZONES */}
-      <Band>
+      <Band id="zones">
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
           <div>
             <h2 className="to-display to-h2">Our Calgary service zones</h2>
@@ -505,7 +507,23 @@ export default function ResidentialSnowRemovalPage() {
               {zones.map((zone) => (
                 <div key={zone.name} className="to-card p-5 md:p-6">
                   <dt className="text-[1.2rem] font-semibold text-fg">{zone.name}</dt>
-                  <dd className="mt-2 text-[1.1rem] leading-relaxed text-muted">{zone.areas.join(", ")}</dd>
+                  <dd className="mt-2 text-[1.1rem] leading-relaxed text-muted">
+                    {zone.areas.map((area, i) => {
+                      const href = communityPath(area);
+                      return (
+                        <span key={area}>
+                          {i > 0 && ", "}
+                          {href ? (
+                            <Link href={href} className="to-focus underline decoration-white/25 underline-offset-4 transition-colors hover:text-white">
+                              {area}
+                            </Link>
+                          ) : (
+                            area
+                          )}
+                        </span>
+                      );
+                    })}
+                  </dd>
                 </div>
               ))}
             </dl>

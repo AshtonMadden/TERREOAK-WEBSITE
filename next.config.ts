@@ -51,6 +51,8 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      // The community pages live under /snow-removal/<community>; the section itself is the main snow page.
+      { source: "/snow-removal", destination: "/residential-snow-removal", permanent: true },
       // The referral program now lives on the snow removal page.
       { source: "/snow-referral", destination: "/residential-snow-removal#referral", permanent: true },
       // The shop was removed; send its old addresses to the homepage.

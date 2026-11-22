@@ -71,7 +71,7 @@ export default function Header() {
     "/softscapes": { label: "Request a proposal", href: "#softscape-form" },
     "/landscape-installs": { label: "Request a proposal", href: "#landscape-form" },
   };
-  const cta = pageCtas[pathname] ?? { label: "Request an estimate", href: "/#home-form" };
+  const cta = pageCtas[pathname] ?? (pathname.startsWith("/snow-removal/") ? { label: "Reserve a season pass", href: "#seasonal-form" } : { label: "Request an estimate", href: "/#home-form" });
 
   const isActive = (href?: string, items?: { href: string }[]) =>
     href ? pathname === href : !!items?.some((i) => pathname === i.href);

@@ -1,6 +1,7 @@
 // Plain-data answers about the business, shared by the MCP server (/api/mcp) and the in-browser
 // WebMCP tools, so an AI agent gets the same facts whichever way it asks.
 import { zones } from "../residential-snow-removal/content";
+import { communityPath } from "../snow-removal/communities";
 import { site } from "./site";
 
 export const services = [
@@ -40,7 +41,9 @@ export function checkSnowRoute(community: string) {
   const zone = zones.find((z) => z.areas.some((area) => area.toLowerCase() === wanted));
   const allAreas = zones.flatMap((z) => z.areas);
   if (zone) {
-    return { community, onRoute: true, zone: zone.name, next: `Reserve a season pass at ${abs("/residential-snow-removal#seasonal-form")}` };
+    const area = zone.areas.find((name) => name.toLowerCase() === wanted) ?? community;
+    const page = communityPath(area);
+    return { community: area, onRoute: true, zone: zone.name, ...(page ? { page: abs(page) } : {}), next: `Reserve a season pass at ${abs("/residential-snow-removal#seasonal-form")}` };
   }
   return {
     community,

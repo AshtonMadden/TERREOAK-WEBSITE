@@ -101,12 +101,6 @@ export default async function Page({ params }: Props) {
         </div>
       </Band>
 
-      <CardsBand title={`What ${name} homeowners get`} cards={offers} />
-
-      <StepsBand id="how-it-works" title="How it works" steps={steps} />
-
-      <ReviewsBand title="What our snow clients say" reviews={reviews} />
-
       <FormBand
         id="seasonal-form"
         title={`Reserve your ${name} season pass`}
@@ -121,6 +115,12 @@ export default async function Page({ params }: Props) {
           .
         </p>
       </FormBand>
+
+      <CardsBand title={`What ${name} homeowners get`} cards={offers} />
+
+      <StepsBand id="how-it-works" title="How it works" steps={steps} />
+
+      <ReviewsBand title="What our snow clients say" reviews={reviews} />
 
       <FaqBand title={`Snow removal in ${name}: FAQs`} faqs={faqs} />
 

@@ -72,6 +72,27 @@ export default function HomePage() {
         </div>
       </Band>
 
+      {/* ESTIMATE FORM */}
+      <Band id="home-form" surface="snow">
+        <div className="grid gap-x-20 gap-y-10 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]">
+          <div>
+            <h2 className="to-display to-h2">Request an estimate</h2>
+            <p className="to-body mt-6">Tell us about your property and what you have in mind. We’ll follow up to book a site visit.</p>
+            <ul className="mt-8 grid gap-3 text-[1.1rem] font-medium text-fg">
+              {trustPoints.map((point) => (
+                <li key={point} className="flex items-start gap-3">
+                  <Tick />
+                  {point}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="rounded-[28px] bg-white p-4 shadow-[0_30px_60px_-40px_rgba(0,0,0,0.35)] md:p-7">
+            <JobberLeadForm clienthubId={jobberForm.clienthubId} formUrl={jobberForm.formUrl} />
+          </div>
+        </div>
+      </Band>
+
       {/* SNOW REMOVAL REMINDER */}
       <Band>
         <div className="relative isolate flex min-h-[460px] flex-col justify-end overflow-hidden rounded-[36px] shadow-[0_40px_80px_-40px_rgba(0,0,0,0.8)] md:min-h-[520px]">
@@ -180,27 +201,6 @@ export default function HomePage() {
           View all projects
         </Button>
       </GalleryBand>
-
-      {/* ESTIMATE FORM */}
-      <Band id="home-form" surface="snow">
-        <div className="grid gap-x-20 gap-y-10 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]">
-          <div>
-            <h2 className="to-display to-h2">Request an estimate</h2>
-            <p className="to-body mt-6">Tell us about your property and what you have in mind. We’ll follow up to book a site visit.</p>
-            <ul className="mt-8 grid gap-3 text-[1.1rem] font-medium text-fg">
-              {trustPoints.map((point) => (
-                <li key={point} className="flex items-start gap-3">
-                  <Tick />
-                  {point}
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="rounded-[28px] bg-white p-4 shadow-[0_30px_60px_-40px_rgba(0,0,0,0.35)] md:p-7">
-            <JobberLeadForm clienthubId={jobberForm.clienthubId} formUrl={jobberForm.formUrl} />
-          </div>
-        </div>
-      </Band>
 
       <BlogCta />
     </main>

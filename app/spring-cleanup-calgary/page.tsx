@@ -103,6 +103,19 @@ export default function SpringCleanupPage() {
         </div>
       </Band>
 
+      {/* ESTIMATE FORM */}
+      <Band id="spring-cleanup-form" surface="snow">
+        <div className="grid gap-x-20 gap-y-10 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]">
+          <div>
+            <h2 className="to-display to-h2">Request a cleanup estimate</h2>
+            <p className="to-body mt-6">Fill out the form to request an estimate for your spring cleanup.</p>
+          </div>
+          <div className="rounded-[28px] bg-white p-4 shadow-[0_30px_60px_-40px_rgba(0,0,0,0.35)] md:p-7">
+            <JobberLeadForm clienthubId={jobberForm.clienthubId} formUrl={jobberForm.formUrl} />
+          </div>
+        </div>
+      </Band>
+
       {/* WHAT'S INCLUDED */}
       <Band id="whats-included">
         <h2 className="to-display to-h2">What’s included in a spring yard cleanup</h2>
@@ -217,19 +230,6 @@ export default function SpringCleanupPage() {
       </Band>
 
       <GalleryBand title="Our recent cleanups" images={gallery} />
-
-      {/* ESTIMATE FORM */}
-      <Band id="spring-cleanup-form" surface="snow">
-        <div className="grid gap-x-20 gap-y-10 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]">
-          <div>
-            <h2 className="to-display to-h2">Request a cleanup estimate</h2>
-            <p className="to-body mt-6">Fill out the form to request an estimate for your spring cleanup.</p>
-          </div>
-          <div className="rounded-[28px] bg-white p-4 shadow-[0_30px_60px_-40px_rgba(0,0,0,0.35)] md:p-7">
-            <JobberLeadForm clienthubId={jobberForm.clienthubId} formUrl={jobberForm.formUrl} />
-          </div>
-        </div>
-      </Band>
 
       {/* FAQ */}
       <Band>

@@ -64,6 +64,17 @@ export default function SoftscapesPage() {
         <p className="to-body">At TERREOAK we focus on selecting the right plants and materials for Calgary’s climate so what we install actually thrives through the seasons.</p>
       </SplitBand>
 
+      <FormBand id="softscape-form" title="Get a softscape proposal" lead="Fill out the form and our team will get back to you with a detailed proposal." form={jobberForm}>
+        <ul className="mt-8 grid gap-3 text-[1.1rem] font-medium text-fg">
+          {["5.0 on Google", "Owner-operated", "Every job documented with photos"].map((point) => (
+            <li key={point} className="flex items-start gap-3">
+              <Tick />
+              {point}
+            </li>
+          ))}
+        </ul>
+      </FormBand>
+
       <CardsBand id="what-we-install" title="What we install" cards={services}>
         <Button href="#softscape-form">Get a quote</Button>
       </CardsBand>
@@ -145,17 +156,6 @@ export default function SoftscapesPage() {
       <TeamBand />
 
       <ReviewsBand title="What Calgary homeowners are saying" reviews={reviews} />
-
-      <FormBand id="softscape-form" title="Get a softscape proposal" lead="Fill out the form and our team will get back to you with a detailed proposal." form={jobberForm}>
-        <ul className="mt-8 grid gap-3 text-[1.1rem] font-medium text-fg">
-          {["5.0 on Google", "Owner-operated", "Every job documented with photos"].map((point) => (
-            <li key={point} className="flex items-start gap-3">
-              <Tick />
-              {point}
-            </li>
-          ))}
-        </ul>
-      </FormBand>
 
       <FaqBand title="Common questions" faqs={faqs} />
 

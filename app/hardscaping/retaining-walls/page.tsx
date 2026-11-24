@@ -119,6 +119,16 @@ export default function Page() {
         </p>
       </SplitBand>
 
+      <FormBand id="wall-form" title="Get a retaining wall quote" lead="Tell us about the slope or the wall you have now. We’ll book a free site visit and send a detailed written quote." form={jobberForm}>
+        <p className="mt-6 text-[1.08rem] text-[#50565b]">
+          Adding a patio on the level ground it creates?{" "}
+          <Link href="/hardscaping/paver-patios-artificial-turf" className="font-semibold text-[#005148] underline underline-offset-4">
+            See paver patios and artificial turf
+          </Link>
+          .
+        </p>
+      </FormBand>
+
       <CardsBand id="why" title="Why homeowners build a retaining wall" cards={reasons} />
 
       {/* HOW IT'S BUILT */}
@@ -191,16 +201,6 @@ export default function Page() {
       <StepsBand title="How it works" steps={steps} />
 
       <ReviewsBand title="What Calgary homeowners are saying" reviews={reviews} />
-
-      <FormBand id="wall-form" title="Get a retaining wall quote" lead="Tell us about the slope or the wall you have now. We’ll book a free site visit and send a detailed written quote." form={jobberForm}>
-        <p className="mt-6 text-[1.08rem] text-[#50565b]">
-          Adding a patio on the level ground it creates?{" "}
-          <Link href="/hardscaping/paver-patios-artificial-turf" className="font-semibold text-[#005148] underline underline-offset-4">
-            See paver patios and artificial turf
-          </Link>
-          .
-        </p>
-      </FormBand>
 
       <FaqBand title="Retaining wall FAQs" faqs={faqs} />
 

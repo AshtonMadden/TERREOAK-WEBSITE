@@ -101,6 +101,34 @@ export default function CommercialSnowRemovalPage() {
         </div>
       </Band>
 
+      {/* PROPOSAL FORM */}
+      <Band id="commercial-snow-form" surface="snow">
+        <div className="grid gap-x-20 gap-y-10 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]">
+          <div>
+            <h2 className="to-display to-h2">Request a snow removal proposal</h2>
+            <p className="to-body mt-6">Fill out the form to request a site walkthrough and a professional bid for your property.</p>
+            <ul className="mt-8 grid gap-3 text-[1.1rem] font-medium text-fg">
+              {["$5M liability coverage", "WCB Alberta in good standing", "Time-stamped photo log after every visit"].map((point) => (
+                <li key={point} className="flex items-start gap-3">
+                  <Tick />
+                  {point}
+                </li>
+              ))}
+            </ul>
+            <p className="mt-8 text-[1.08rem] text-[#50565b]">
+              Need summer grounds care as well?{" "}
+              <Link href="/commercial-grounds-maintenance" className="font-semibold text-[#005148] underline underline-offset-4">
+                See our commercial grounds maintenance
+              </Link>
+              .
+            </p>
+          </div>
+          <div className="rounded-[28px] bg-white p-4 shadow-[0_30px_60px_-40px_rgba(0,0,0,0.35)] md:p-7">
+            <JobberLeadForm clienthubId={jobberForm.clienthubId} formUrl={jobberForm.formUrl} />
+          </div>
+        </div>
+      </Band>
+
       {/* WHAT'S COVERED */}
       <Band>
         <h2 className="to-display to-h2">What our commercial snow contracts cover</h2>
@@ -157,34 +185,6 @@ export default function CommercialSnowRemovalPage() {
             </li>
           ))}
         </ol>
-      </Band>
-
-      {/* PROPOSAL FORM */}
-      <Band id="commercial-snow-form" surface="snow">
-        <div className="grid gap-x-20 gap-y-10 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]">
-          <div>
-            <h2 className="to-display to-h2">Request a snow removal proposal</h2>
-            <p className="to-body mt-6">Fill out the form to request a site walkthrough and a professional bid for your property.</p>
-            <ul className="mt-8 grid gap-3 text-[1.1rem] font-medium text-fg">
-              {["$5M liability coverage", "WCB Alberta in good standing", "Time-stamped photo log after every visit"].map((point) => (
-                <li key={point} className="flex items-start gap-3">
-                  <Tick />
-                  {point}
-                </li>
-              ))}
-            </ul>
-            <p className="mt-8 text-[1.08rem] text-[#50565b]">
-              Need summer grounds care as well?{" "}
-              <Link href="/commercial-grounds-maintenance" className="font-semibold text-[#005148] underline underline-offset-4">
-                See our commercial grounds maintenance
-              </Link>
-              .
-            </p>
-          </div>
-          <div className="rounded-[28px] bg-white p-4 shadow-[0_30px_60px_-40px_rgba(0,0,0,0.35)] md:p-7">
-            <JobberLeadForm clienthubId={jobberForm.clienthubId} formUrl={jobberForm.formUrl} />
-          </div>
-        </div>
       </Band>
 
       {/* FAQ */}

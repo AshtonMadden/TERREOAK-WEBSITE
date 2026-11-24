@@ -78,6 +78,13 @@ export default function LandscapeInstallsPage() {
         </div>
       </Band>
 
+      <FormBand
+        id="landscape-form"
+        title="Request a proposal"
+        lead="Secure your spot in our build queue today. Our crews fill up fast for the Calgary spring and summer season."
+        form={jobberForm}
+      />
+
       {/* FEATURED PROJECTS */}
       <Band>
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
@@ -174,13 +181,6 @@ export default function LandscapeInstallsPage() {
       </GalleryBand>
 
       <ReviewsBand title="What our clients say" reviews={reviews} />
-
-      <FormBand
-        id="landscape-form"
-        title="Request a proposal"
-        lead="Secure your spot in our build queue today. Our crews fill up fast for the Calgary spring and summer season."
-        form={jobberForm}
-      />
 
       <FaqBand title="Frequently asked questions" faqs={faqs} />
 

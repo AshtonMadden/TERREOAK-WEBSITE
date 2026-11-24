@@ -113,6 +113,13 @@ export default function IrrigationBlowoutsPage() {
         </ul>
       </Band>
 
+      <FormBand
+        id="blowout-form"
+        title="Request an estimate"
+        lead="Tell us about your property and we'll get back to you with a professional estimate for your irrigation blowout."
+        form={jobberForm}
+      />
+
       {/* INTRO */}
       <Band>
         <h2 className="to-display to-h2 max-w-[24ch]">Calgary irrigation winterization that’s built for winter</h2>
@@ -143,13 +150,6 @@ export default function IrrigationBlowoutsPage() {
           ))}
         </div>
       </Band>
-
-      <FormBand
-        id="blowout-form"
-        title="Request an estimate"
-        lead="Tell us about your property and we'll get back to you with a professional estimate for your irrigation blowout."
-        form={jobberForm}
-      />
 
       <FaqBand faqs={faqs} />
 

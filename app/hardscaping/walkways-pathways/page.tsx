@@ -110,6 +110,16 @@ export default function Page() {
         </p>
       </SplitBand>
 
+      <FormBand id="walkway-form" title="Get a walkway quote" lead="Tell us where the path goes and what’s there now. We’ll book a free site visit and send a detailed written quote." form={jobberForm}>
+        <p className="mt-6 text-[1.08rem] text-[#50565b]">
+          Path on a slope?{" "}
+          <Link href="/hardscaping/retaining-walls" className="font-semibold text-[#005148] underline underline-offset-4">
+            See our retaining walls
+          </Link>
+          .
+        </p>
+      </FormBand>
+
       <CardsBand id="options" title="Walkway and pathway options" cards={options} />
 
       <SplitBand
@@ -159,16 +169,6 @@ export default function Page() {
       <StepsBand title="How it works" steps={steps} />
 
       <ReviewsBand title="What Calgary homeowners are saying" reviews={reviews} />
-
-      <FormBand id="walkway-form" title="Get a walkway quote" lead="Tell us where the path goes and what’s there now. We’ll book a free site visit and send a detailed written quote." form={jobberForm}>
-        <p className="mt-6 text-[1.08rem] text-[#50565b]">
-          Path on a slope?{" "}
-          <Link href="/hardscaping/retaining-walls" className="font-semibold text-[#005148] underline underline-offset-4">
-            See our retaining walls
-          </Link>
-          .
-        </p>
-      </FormBand>
 
       <FaqBand title="Walkway FAQs" faqs={faqs} />
 

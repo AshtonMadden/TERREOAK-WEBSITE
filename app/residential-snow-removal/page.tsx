@@ -189,6 +189,25 @@ export default function ResidentialSnowRemovalPage() {
         </div>
       </Band>
 
+      {/* SIGN UP */}
+      <Band id="seasonal-form" surface="snow">
+        <div className="grid gap-x-20 gap-y-10 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]">
+          <div>
+            <h2 className="to-display to-h2">Sign up for your season pass</h2>
+            <p className="to-body mt-6">Tell us about your property and we’ll get back to you the same day.</p>
+            <div className="mt-8 rounded-[24px] bg-[#019587]/12 p-6">
+              <h3 className="text-[1.2rem] font-semibold text-fg">Important service expectation</h3>
+              <p className="mt-2 text-[1.08rem] leading-relaxed text-muted">
+                Our crews strictly operate on a route-based system. We only come <strong className="font-semibold text-fg">once every 24 hours</strong> to service your property during a snowfall event. This guarantees consistent, reliable service for every client on our route.
+              </p>
+            </div>
+          </div>
+          <div className="rounded-[28px] bg-white p-4 shadow-[0_30px_60px_-40px_rgba(0,0,0,0.35)] md:p-7">
+            <JobberLeadForm clienthubId={jobberForm.clienthubId} formUrl={jobberForm.formUrl} />
+          </div>
+        </div>
+      </Band>
+
       {/* BUILT FOR WINTER */}
       <Band>
         <div className="grid items-center gap-12 lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] lg:gap-20">
@@ -336,25 +355,6 @@ export default function ResidentialSnowRemovalPage() {
               <ReviewCard key={review.name} review={review} />
             ))}
           </ReadMore>
-        </div>
-      </Band>
-
-      {/* SIGN UP */}
-      <Band id="seasonal-form" surface="snow">
-        <div className="grid gap-x-20 gap-y-10 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]">
-          <div>
-            <h2 className="to-display to-h2">Sign up for your season pass</h2>
-            <p className="to-body mt-6">Tell us about your property and we’ll get back to you the same day.</p>
-            <div className="mt-8 rounded-[24px] bg-[#019587]/12 p-6">
-              <h3 className="text-[1.2rem] font-semibold text-fg">Important service expectation</h3>
-              <p className="mt-2 text-[1.08rem] leading-relaxed text-muted">
-                Our crews strictly operate on a route-based system. We only come <strong className="font-semibold text-fg">once every 24 hours</strong> to service your property during a snowfall event. This guarantees consistent, reliable service for every client on our route.
-              </p>
-            </div>
-          </div>
-          <div className="rounded-[28px] bg-white p-4 shadow-[0_30px_60px_-40px_rgba(0,0,0,0.35)] md:p-7">
-            <JobberLeadForm clienthubId={jobberForm.clienthubId} formUrl={jobberForm.formUrl} />
-          </div>
         </div>
       </Band>
 

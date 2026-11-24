@@ -134,6 +134,16 @@ export default function Page() {
         </p>
       </SplitBand>
 
+      <FormBand id="patio-form" title="Get a patio or turf quote" lead="Tell us about your yard and what you have in mind. We’ll book a free site visit and send a detailed written quote." form={jobberForm}>
+        <p className="mt-6 text-[1.08rem] text-[#50565b]">
+          Building on a slope?{" "}
+          <Link href="/hardscaping/retaining-walls" className="font-semibold text-[#005148] underline underline-offset-4">
+            See our retaining walls
+          </Link>
+          .
+        </p>
+      </FormBand>
+
       <CardsBand id="patio-options" title="Paver patio options" lead="Materials and layouts we install most often. We’ll bring samples to the site visit so you can see them against your house." cards={patioOptions} />
 
       <SplitBand
@@ -257,16 +267,6 @@ export default function Page() {
       <StepsBand title="How it works" steps={steps} />
 
       <ReviewsBand title="What Calgary homeowners are saying" reviews={reviews} />
-
-      <FormBand id="patio-form" title="Get a patio or turf quote" lead="Tell us about your yard and what you have in mind. We’ll book a free site visit and send a detailed written quote." form={jobberForm}>
-        <p className="mt-6 text-[1.08rem] text-[#50565b]">
-          Building on a slope?{" "}
-          <Link href="/hardscaping/retaining-walls" className="font-semibold text-[#005148] underline underline-offset-4">
-            See our retaining walls
-          </Link>
-          .
-        </p>
-      </FormBand>
 
       <FaqBand title="Patio and turf FAQs" faqs={faqs} />
 

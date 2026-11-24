@@ -114,6 +114,16 @@ export default function Page() {
         </p>
       </SplitBand>
 
+      <FormBand id="sod-form" title="Get a sod quote" lead="Tell us about your lawn and roughly how big it is. We’ll book a free site visit and send a detailed written quote." form={jobberForm}>
+        <p className="mt-6 text-[1.08rem] text-[#50565b]">
+          Shady or high-traffic area?{" "}
+          <Link href="/hardscaping/paver-patios-artificial-turf#artificial-turf" className="font-semibold text-[#005148] underline underline-offset-4">
+            Artificial turf might suit it better
+          </Link>
+          .
+        </p>
+      </FormBand>
+
       <CardsBand id="when" title="When new sod makes sense" cards={reasons} />
 
       {/* PREP */}
@@ -186,16 +196,6 @@ export default function Page() {
       <StepsBand title="How it works" steps={steps} />
 
       <ReviewsBand title="What Calgary homeowners are saying" reviews={reviews} />
-
-      <FormBand id="sod-form" title="Get a sod quote" lead="Tell us about your lawn and roughly how big it is. We’ll book a free site visit and send a detailed written quote." form={jobberForm}>
-        <p className="mt-6 text-[1.08rem] text-[#50565b]">
-          Shady or high-traffic area?{" "}
-          <Link href="/hardscaping/paver-patios-artificial-turf#artificial-turf" className="font-semibold text-[#005148] underline underline-offset-4">
-            Artificial turf might suit it better
-          </Link>
-          .
-        </p>
-      </FormBand>
 
       <FaqBand title="Sod installation FAQs" faqs={faqs} />
 

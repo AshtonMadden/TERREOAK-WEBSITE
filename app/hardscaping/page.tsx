@@ -112,6 +112,17 @@ export default function HardscapingPage() {
         </p>
       </SplitBand>
 
+      <FormBand id="hardscape-form" title="Get a hardscape proposal" lead="Fill out the form and our team will get back to you with a detailed proposal." form={jobberForm}>
+        <ul className="mt-8 grid gap-3 text-[1.1rem] font-medium text-fg">
+          {["5.0 on Google", "Owner-operated", "Every job documented with photos"].map((point) => (
+            <li key={point} className="flex items-start gap-3">
+              <Tick />
+              {point}
+            </li>
+          ))}
+        </ul>
+      </FormBand>
+
       <CardsBand id="what-we-build" title="What we build" cards={services}>
         <Button href="#hardscape-form">Get a quote</Button>
       </CardsBand>
@@ -212,17 +223,6 @@ export default function HardscapingPage() {
       <TeamBand />
 
       <ReviewsBand title="What Calgary homeowners are saying" reviews={reviews} />
-
-      <FormBand id="hardscape-form" title="Get a hardscape proposal" lead="Fill out the form and our team will get back to you with a detailed proposal." form={jobberForm}>
-        <ul className="mt-8 grid gap-3 text-[1.1rem] font-medium text-fg">
-          {["5.0 on Google", "Owner-operated", "Every job documented with photos"].map((point) => (
-            <li key={point} className="flex items-start gap-3">
-              <Tick />
-              {point}
-            </li>
-          ))}
-        </ul>
-      </FormBand>
 
       {/* FAQ */}
       <Band>

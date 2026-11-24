@@ -1,4 +1,5 @@
 import Link from "next/link";
+import WarrantyBand, { warranty } from "../../components/Warranty";
 import JsonLd from "../../components/JsonLd";
 import StickyCta from "../../components/StickyCta";
 import { Band, Button, PageHero, Tick } from "../../components/ds";
@@ -42,6 +43,7 @@ const warningSigns = [
 ];
 
 const faqs = [
+  warranty.faq,
   {
     q: "How much does a retaining wall cost in Calgary?",
     a: "Retaining wall installations start around $5,000 and scale with height, length and engineering requirements. Every TERREOAK project starts with a free site visit and a detailed, fixed-price quote.",
@@ -183,6 +185,8 @@ export default function Page() {
           </div>
         </div>
       </Band>
+
+      <WarrantyBand />
 
       <StepsBand title="How it works" steps={steps} />
 

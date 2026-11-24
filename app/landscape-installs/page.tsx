@@ -1,4 +1,5 @@
 import Image from "next/image";
+import WarrantyBand from "../components/Warranty";
 import JsonLd from "../components/JsonLd";
 import ReadMore from "../components/ReadMore";
 import StickyCta from "../components/StickyCta";
@@ -111,6 +112,8 @@ export default function LandscapeInstallsPage() {
           </dl>
         </div>
       </Band>
+
+      <WarrantyBand />
 
       <StepsBand
         title="How we work"

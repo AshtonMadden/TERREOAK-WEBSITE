@@ -1,4 +1,5 @@
 import Image from "next/image";
+import WarrantyBand, { warranty } from "../../components/Warranty";
 import Link from "next/link";
 import JsonLd from "../../components/JsonLd";
 import StickyCta from "../../components/StickyCta";
@@ -49,6 +50,7 @@ const gallery = [
 ];
 
 const faqs = [
+  warranty.faq,
   {
     q: "How much does a paver patio cost in Calgary?",
     a: "Exposed aggregate or paver patio projects typically range from $8,000 to $25,000 or more, depending on size and the grade of material. Every TERREOAK project starts with a free site visit and a detailed, fixed-price quote.",
@@ -249,6 +251,8 @@ export default function Page() {
           <ProjectCards projects={projects} />
         </div>
       </Band>
+
+      <WarrantyBand />
 
       <StepsBand title="How it works" steps={steps} />
 

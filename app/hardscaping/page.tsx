@@ -1,4 +1,5 @@
 import Image from "next/image";
+import WarrantyBand from "../components/Warranty";
 import Link from "next/link";
 import JsonLd from "../components/JsonLd";
 import StickyCta from "../components/StickyCta";
@@ -203,6 +204,8 @@ export default function HardscapingPage() {
         </p>
         <p className="to-body">We serve Calgary and surrounding communities including Okotoks, Airdrie, Cochrane, and Chestermere.</p>
       </SplitBand>
+
+      <WarrantyBand />
 
       <StepsBand title="How it works" steps={steps} />
 

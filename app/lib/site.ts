@@ -62,6 +62,7 @@ export const nav: NavGroup[] = [
     items: [
       { label: "Projects", href: "/projects", desc: "Recent work around Calgary" },
       { label: "About", href: "/about", desc: "Who we are and how we work" },
+      { label: "Reviews", href: "/reviews", desc: "What our clients say" },
       { label: "Contact", href: "/contact", desc: "Call, email or send a request" },
       { label: "Blog", href: "/blog", desc: "Seasonal tips and guides" },
       { label: "Careers", href: "/careers", desc: "Join the crew" },

@@ -28,6 +28,7 @@ const sources = {
   "/mckenzielakelandscaping": "Landscape web page pics/Finished-hardscape-project.JPG",
   "/parklandlandscaping": "images/softscaping-river-rock-hostas.jpg",
   "/about": "images/about-mission-team.jpg",
+  "/reviews": "hardscaping/calgary-fire-pit-patio.jpg",
   "/contact": "images/about-mission-team.jpg",
   "/blog": "Landscape web page pics/Finished-hardscape-project.JPG",
   "/blog/why-hire-snow-removal-company": "photos/snow-storm-truck.jpg",

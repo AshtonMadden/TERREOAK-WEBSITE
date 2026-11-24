@@ -1,4 +1,5 @@
 // Content for the softscapes page.
+import { warranty } from "../components/Warranty";
 
 const rawProjects = [
   {
@@ -112,6 +113,7 @@ export const reviews = [
 ];
 
 export const faqs = [
+  warranty.faq,
   {
     q: "What time of year is best for softscaping in Calgary?",
     a: "Spring and early fall are ideal for most planting and sod installation. Cooler temperatures help roots establish before the stress of summer heat or winter freeze. We work through the growing season and can advise on timing based on what you are looking to install.",

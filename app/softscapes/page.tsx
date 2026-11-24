@@ -1,4 +1,5 @@
 import Link from "next/link";
+import WarrantyBand from "../components/Warranty";
 import Image from "next/image";
 import JsonLd from "../components/JsonLd";
 import StickyCta from "../components/StickyCta";
@@ -136,6 +137,8 @@ export default function SoftscapesPage() {
           </div>
         </div>
       </Band>
+
+      <WarrantyBand />
 
       <StepsBand title="How it works" steps={steps} />
 

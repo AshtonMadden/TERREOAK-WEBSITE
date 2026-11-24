@@ -1,4 +1,5 @@
 // Content for the hardscaping page.
+import { warranty } from "../components/Warranty";
 
 export const projects = [
   {
@@ -90,6 +91,7 @@ export const reviews = [
 ];
 
 export const faqs = [
+  warranty.faq,
   {
     q: "What materials work best for patios in Calgary?",
     a: "Interlocking concrete pavers and natural stone are the best options for Calgary. They handle freeze-thaw movement better than solid poured surfaces and can be releveled if needed. The key is always the base preparation underneath, not just the material on top.",

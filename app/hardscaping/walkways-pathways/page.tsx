@@ -1,4 +1,5 @@
 import Image from "next/image";
+import WarrantyBand, { warranty } from "../../components/Warranty";
 import Link from "next/link";
 import JsonLd from "../../components/JsonLd";
 import StickyCta from "../../components/StickyCta";
@@ -37,6 +38,7 @@ const gallery = [
 ];
 
 const faqs = [
+  warranty.faq,
   {
     q: "How much does a walkway cost in Calgary?",
     a: "It depends on the length, the material and how much base work the site needs. As real examples, a stone stepper pathway we built in McKenzie Lake was a $5,000 project and a large-format Techo-Bloc side-yard path was $10,000. Every project starts with a free site visit and a fixed-price quote.",
@@ -151,6 +153,8 @@ export default function Page() {
           <ProjectCards projects={projects} />
         </div>
       </Band>
+
+      <WarrantyBand />
 
       <StepsBand title="How it works" steps={steps} />
 

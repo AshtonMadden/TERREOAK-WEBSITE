@@ -1,4 +1,5 @@
 // Content for the landscape installs page.
+import { warranty } from "../components/Warranty";
 
 export const steps = [
   {
@@ -105,6 +106,7 @@ export const gallery = [
 ];
 
 export const faqs = [
+  warranty.faq,
   {
     q: "How long does a typical landscaping project take in Calgary?",
     a: "Most residential projects run between 1 and 4 weeks from start to final walkthrough, depending on scope. A sod and cleanup install might take 2–3 days. A full hardscape build with retaining walls, concrete, and planting can run 2–4 weeks. We provide a project timeline before work begins so you’re never left guessing.",

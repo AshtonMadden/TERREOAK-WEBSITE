@@ -1,4 +1,5 @@
 import Image from "next/image";
+import WarrantyBand, { warranty } from "../../components/Warranty";
 import Link from "next/link";
 import JsonLd from "../../components/JsonLd";
 import StickyCta from "../../components/StickyCta";
@@ -41,6 +42,7 @@ const aftercare = [
 ];
 
 const faqs = [
+  warranty.faq,
   {
     q: "How much does sod installation cost in Calgary?",
     a: "A basic sod installation on a standard Calgary lot typically runs $2,000 to $6,000, depending on lawn size, the grading required and soil prep. As a real example, a front yard we re-sodded in Cranston, with new soil and refreshed rock beds, was a $3,150 project.",
@@ -178,6 +180,8 @@ export default function Page() {
           <Image src="/projects/cranston-makeover/hero-aerial.jpg" alt="Aerial view of a Cranston front yard after new sod and rock beds were installed" fill sizes="(min-width: 1280px) 1180px, 100vw" className="object-cover" />
         </figure>
       </Band>
+
+      <WarrantyBand />
 
       <StepsBand title="How it works" steps={steps} />
 

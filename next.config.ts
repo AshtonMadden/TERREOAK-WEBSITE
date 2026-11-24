@@ -65,7 +65,6 @@ const nextConfig: NextConfig = {
       { source: "/shop/:id", destination: "/", permanent: true },
       // Old addresses the previous site linked to that never had a page.
       { source: "/support", destination: "/#home-form", permanent: true },
-      { source: "/reviews", destination: "/#reviews", permanent: true },
     ];
   },
   images: {

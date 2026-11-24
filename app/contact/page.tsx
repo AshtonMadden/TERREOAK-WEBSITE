@@ -30,7 +30,7 @@ const jsonLd = {
   ],
 };
 
-const serviceLinks = nav.flatMap((group) => (group.items ?? (group.href ? [{ label: group.label, href: group.href }] : []))).filter((link) => !["/projects", "/about", "/blog", "/careers", "/our-process"].includes(link.href));
+const serviceLinks = nav.flatMap((group) => (group.items ? group.items.flatMap((item) => [item, ...(item.children ?? [])]) : group.href ? [{ label: group.label, href: group.href }] : [])).filter((link) => !["/projects", "/about", "/blog", "/careers", "/our-process"].includes(link.href));
 
 export default function Page() {
   return (

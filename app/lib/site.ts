@@ -24,22 +24,39 @@ export const site = {
   preferredSourceUrl: "https://www.google.com/preferences/source?q=terreoak.ca",
 } as const;
 
-export type NavLink = { label: string; href: string; desc?: string };
+// A menu link. `children` open as a second-level menu beside it.
+export type NavLink = { label: string; href: string; desc?: string; children?: NavLink[] };
 export type NavGroup = { label: string; href?: string; items?: NavLink[] };
 
 export const nav: NavGroup[] = [
   {
     label: "Landscaping",
     items: [
-      { label: "Landscape installs", href: "/landscape-installs", desc: "Full design and build, start to finish" },
-      { label: "Hardscaping", href: "/hardscaping", desc: "Patios, walkways and retaining walls" },
-      { label: "Paver patios & artificial turf", href: "/hardscaping/paver-patios-artificial-turf", desc: "Patios, fire pits and no-mow turf" },
-      { label: "Retaining walls", href: "/hardscaping/retaining-walls", desc: "Block and stone walls built to last" },
-      { label: "Walkways & pathways", href: "/hardscaping/walkways-pathways", desc: "Paver walks, steppers and side-yard paths" },
-      { label: "Softscapes", href: "/softscapes", desc: "Sod, planting, mulch and garden beds" },
-      { label: "Sod installation", href: "/softscapes/sod-installation", desc: "New lawns on properly prepared soil" },
-      { label: "Landscape lighting", href: "/landscape-installs/landscape-lighting", desc: "Path, step, patio and tree lighting" },
-      { label: "Irrigation installation", href: "/landscape-installs/irrigation-installation", desc: "Sprinklers, drip lines and controllers" },
+      {
+        label: "Landscape installs",
+        href: "/landscape-installs",
+        desc: "Full design and build, start to finish",
+        children: [
+          { label: "Landscape lighting", href: "/landscape-installs/landscape-lighting", desc: "Path, step, patio and tree lighting" },
+          { label: "Irrigation installation", href: "/landscape-installs/irrigation-installation", desc: "Sprinklers, drip lines and controllers" },
+        ],
+      },
+      {
+        label: "Hardscaping",
+        href: "/hardscaping",
+        desc: "Patios, walkways and retaining walls",
+        children: [
+          { label: "Paver patios & artificial turf", href: "/hardscaping/paver-patios-artificial-turf", desc: "Patios, fire pits and no-mow turf" },
+          { label: "Retaining walls", href: "/hardscaping/retaining-walls", desc: "Block and stone walls built to last" },
+          { label: "Walkways & pathways", href: "/hardscaping/walkways-pathways", desc: "Paver walks, steppers and side-yard paths" },
+        ],
+      },
+      {
+        label: "Softscapes",
+        href: "/softscapes",
+        desc: "Sod, planting, mulch and garden beds",
+        children: [{ label: "Sod installation", href: "/softscapes/sod-installation", desc: "New lawns on properly prepared soil" }],
+      },
       { label: "Our process", href: "/our-process", desc: "How a project runs, step by step" },
     ],
   },

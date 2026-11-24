@@ -80,8 +80,8 @@ export default function Header() {
   };
   const cta = pageCtas[pathname] ?? (pathname.startsWith("/snow-removal/") ? { label: "Reserve a season pass", href: "#seasonal-form" } : { label: "Request an estimate", href: "/#home-form" });
 
-  const isActive = (href?: string, items?: { href: string }[]) =>
-    href ? pathname === href : !!items?.some((i) => pathname === i.href);
+  const isActive = (href?: string, items?: { href: string; children?: { href: string }[] }[]) =>
+    href ? pathname === href : !!items?.some((i) => pathname === i.href || i.children?.some((c) => pathname === c.href));
 
   return (
     <header className="to-pavement fixed inset-x-0 top-0 z-[100] !bg-transparent">
@@ -112,19 +112,49 @@ export default function Header() {
                     {group.label}
                     <Caret />
                   </button>
-                  <div className={`invisible absolute top-full pt-3 ${group.items!.length > 6 ? "-left-6 w-[660px]" : "left-1/2 w-[340px] -translate-x-1/2"} opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100`}>
-                    <div className={`rounded-3xl bg-[#1d1f21] p-2.5 shadow-[0_18px_40px_-12px_rgba(0,0,0,0.6)] ${group.items!.length > 6 ? "grid grid-cols-2" : ""}`}>
-                      {group.items!.map((item) => (
-                        <Link
-                          key={item.href}
-                          href={item.href}
-                          className="to-focus block rounded-2xl px-4 py-3 transition-colors hover:bg-white/[0.07]"
-                          aria-current={pathname === item.href ? "page" : undefined}
-                        >
-                          <span className={`block text-[0.98rem] font-semibold ${pathname === item.href ? "text-brand" : "text-white"}`}>{item.label}</span>
-                          {item.desc && <span className="mt-0.5 block text-[0.95rem] text-muted">{item.desc}</span>}
-                        </Link>
-                      ))}
+                  <div className="invisible absolute left-1/2 top-full w-[340px] -translate-x-1/2 pt-3 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+                    <div className="rounded-3xl bg-[#1d1f21] p-2.5 shadow-[0_18px_40px_-12px_rgba(0,0,0,0.6)]">
+                      {group.items!.map((item) => {
+                        const here = pathname === item.href || !!item.children?.some((c) => pathname === c.href);
+                        return (
+                          <div key={item.href} className="group/sub relative">
+                            <Link
+                              href={item.href}
+                              className="to-focus flex items-center justify-between gap-3 rounded-2xl px-4 py-3 transition-colors hover:bg-white/[0.07] group-hover/sub:bg-white/[0.07]"
+                              aria-current={pathname === item.href ? "page" : undefined}
+                              aria-haspopup={item.children ? "true" : undefined}
+                            >
+                              <span>
+                                <span className={`block text-[0.98rem] font-semibold ${here ? "text-brand" : "text-white"}`}>{item.label}</span>
+                                {item.desc && <span className="mt-0.5 block text-[0.95rem] text-muted">{item.desc}</span>}
+                              </span>
+                              {item.children && (
+                                <svg className="h-3 w-3 shrink-0 opacity-60" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                                  <path d="M4.5 2.5 8 6l-3.5 3.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+                                </svg>
+                              )}
+                            </Link>
+                            {/* Second-level menu: opens beside its parent on hover or keyboard focus. */}
+                            {item.children && (
+                              <div className="invisible absolute left-full top-0 w-[320px] pl-3 opacity-0 transition-all duration-150 group-hover/sub:visible group-hover/sub:opacity-100 group-focus-within/sub:visible group-focus-within/sub:opacity-100">
+                                <div className="rounded-3xl bg-[#1d1f21] p-2.5 shadow-[0_18px_40px_-12px_rgba(0,0,0,0.6)]">
+                                  {item.children.map((child) => (
+                                    <Link
+                                      key={child.href}
+                                      href={child.href}
+                                      className="to-focus block rounded-2xl px-4 py-3 transition-colors hover:bg-white/[0.07]"
+                                      aria-current={pathname === child.href ? "page" : undefined}
+                                    >
+                                      <span className={`block text-[0.98rem] font-semibold ${pathname === child.href ? "text-brand" : "text-white"}`}>{child.label}</span>
+                                      {child.desc && <span className="mt-0.5 block text-[0.95rem] text-muted">{child.desc}</span>}
+                                    </Link>
+                                  ))}
+                                </div>
+                              </div>
+                            )}
+                          </div>
+                        );
+                      })}
                     </div>
                   </div>
                 </div>
@@ -194,9 +224,20 @@ export default function Header() {
                   {expanded === group.label && (
                     <div className="flex flex-col gap-1 pb-5">
                       {group.items!.map((item) => (
-                        <Link key={item.href} href={item.href} onClick={close} className="rounded-lg px-3 py-3 text-xl text-muted hover:text-white">
-                          {item.label}
-                        </Link>
+                        <div key={item.href} className="flex flex-col">
+                          <Link href={item.href} onClick={close} className="rounded-lg px-3 py-3 text-xl text-muted hover:text-white">
+                            {item.label}
+                          </Link>
+                          {item.children && (
+                            <div className="mb-2 ml-4 flex flex-col border-l border-rule pl-3">
+                              {item.children.map((child) => (
+                                <Link key={child.href} href={child.href} onClick={close} className="rounded-lg px-3 py-2 text-[1.05rem] text-muted hover:text-white">
+                                  {child.label}
+                                </Link>
+                              ))}
+                            </div>
+                          )}
+                        </div>
                       ))}
                     </div>
                   )}

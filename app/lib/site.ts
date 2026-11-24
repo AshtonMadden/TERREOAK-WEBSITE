@@ -38,6 +38,8 @@ export const nav: NavGroup[] = [
       { label: "Walkways & pathways", href: "/hardscaping/walkways-pathways", desc: "Paver walks, steppers and side-yard paths" },
       { label: "Softscapes", href: "/softscapes", desc: "Sod, planting, mulch and garden beds" },
       { label: "Sod installation", href: "/softscapes/sod-installation", desc: "New lawns on properly prepared soil" },
+      { label: "Landscape lighting", href: "/landscape-installs/landscape-lighting", desc: "Path, step, patio and tree lighting" },
+      { label: "Irrigation installation", href: "/landscape-installs/irrigation-installation", desc: "Sprinklers, drip lines and controllers" },
       { label: "Our process", href: "/our-process", desc: "How a project runs, step by step" },
     ],
   },

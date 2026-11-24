@@ -14,6 +14,8 @@ export const services = [
   { name: "Retaining walls", path: "/hardscaping/retaining-walls", form: "/hardscaping/retaining-walls#wall-form", summary: "Interlocking block and natural stone retaining walls with proper base and drainage." },
   { name: "Walkways and pathways", path: "/hardscaping/walkways-pathways", form: "/hardscaping/walkways-pathways#walkway-form", summary: "Paver walkways, slab steppers and side-yard paths on a drained, compacted base." },
   { name: "Sod installation", path: "/softscapes/sod-installation", form: "/softscapes/sod-installation#sod-form", summary: "Kentucky Bluegrass sod on graded, prepared soil. Typically $2,000 to $6,000 for a standard lot." },
+  { name: "Landscape lighting", path: "/landscape-installs/landscape-lighting", form: "/landscape-installs/landscape-lighting#lighting-form", summary: "Low-voltage LED path, step, patio and tree lighting." },
+  { name: "Irrigation installation", path: "/landscape-installs/irrigation-installation", form: "/landscape-installs/irrigation-installation#irrigation-form", summary: "Lawn sprinkler zones, drip irrigation for beds and smart controllers." },
   { name: "Softscapes", path: "/softscapes", form: "/softscapes#softscape-form", summary: "Sod, garden beds, tree and shrub planting, mulch and topsoil." },
   { name: "Spring cleanup", path: "/spring-cleanup-calgary", form: "/spring-cleanup-calgary#spring-cleanup-form", summary: "Core aeration, power raking and debris removal." },
   { name: "Fall cleanup", path: "/fall-cleanup", form: "/fall-cleanup", summary: "Leaf removal, final mow and winter lawn prep." },

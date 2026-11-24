@@ -151,6 +151,18 @@ export default function IrrigationBlowoutsPage() {
         </div>
       </Band>
 
+      <Band>
+        <div className="to-card flex flex-col gap-6 p-6 md:flex-row md:items-center md:justify-between md:p-10">
+          <div>
+            <h2 className="to-display to-h3">Need a new system, or an old one extended?</h2>
+            <p className="mt-3 text-[1.08rem] leading-relaxed text-muted">We also design and install irrigation: lawn sprinklers, drip lines for beds and smart controllers.</p>
+          </div>
+          <Button href="/landscape-installs/irrigation-installation" variant="quiet">
+            Irrigation installation
+          </Button>
+        </div>
+      </Band>
+
       <FaqBand faqs={faqs} />
 
       <BlogCta>

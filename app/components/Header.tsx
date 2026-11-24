@@ -73,6 +73,8 @@ export default function Header() {
     "/hardscaping/retaining-walls": { label: "Get a free quote", href: "#wall-form" },
     "/hardscaping/walkways-pathways": { label: "Get a free quote", href: "#walkway-form" },
     "/softscapes/sod-installation": { label: "Get a free quote", href: "#sod-form" },
+    "/landscape-installs/landscape-lighting": { label: "Get a free quote", href: "#lighting-form" },
+    "/landscape-installs/irrigation-installation": { label: "Get a free quote", href: "#irrigation-form" },
     "/softscapes": { label: "Request a proposal", href: "#softscape-form" },
     "/landscape-installs": { label: "Request a proposal", href: "#landscape-form" },
   };
@@ -110,8 +112,8 @@ export default function Header() {
                     {group.label}
                     <Caret />
                   </button>
-                  <div className="invisible absolute left-1/2 top-full w-[340px] -translate-x-1/2 pt-3 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
-                    <div className="rounded-3xl bg-[#1d1f21] p-2.5 shadow-[0_18px_40px_-12px_rgba(0,0,0,0.6)]">
+                  <div className={`invisible absolute top-full pt-3 ${group.items!.length > 6 ? "-left-6 w-[660px]" : "left-1/2 w-[340px] -translate-x-1/2"} opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100`}>
+                    <div className={`rounded-3xl bg-[#1d1f21] p-2.5 shadow-[0_18px_40px_-12px_rgba(0,0,0,0.6)] ${group.items!.length > 6 ? "grid grid-cols-2" : ""}`}>
                       {group.items!.map((item) => (
                         <Link
                           key={item.href}

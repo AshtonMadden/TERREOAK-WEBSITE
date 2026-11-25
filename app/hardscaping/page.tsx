@@ -31,7 +31,7 @@ export default function HardscapingPage() {
   return (
     <main className="bg-white text-black">
       <PremiumHero
-        title={<>CALGARY HARDSCAPES<br /><span className="text-[#01fa6d] font-lora italic font-black tracking-normal uppercase">BUILT TO LAST THE NORTH.</span></>}
+        title={<>CALGARY HARDSCAPING<br /><span className="text-[#01fa6d] font-lora italic font-black tracking-normal uppercase">BUILT TO LAST THE NORTH.</span></>}
         description="Patios, retaining walls, walkways, and steps installed with the base work that actually keeps things level after the ground freezes and thaws. Serving Calgary, Okotoks, Airdrie, Cochrane, and Chestermere."
         backgroundImage="/Landscape web page pics/Calgary-hardscaping.JPG"
         badgeLabel="Landscaping • Calgary"
@@ -187,11 +187,13 @@ export default function HardscapingPage() {
           {[
             { 
               title: "Paving Stone Patios", 
-              desc: "A well-built patio turns a backyard into a space you actually use. We install paving stone patios using interlocking concrete pavers, natural stone, and flagstone. Every installation starts with proper excavation, a compacted gravel base, and correct grading so water runs away from your home and the surface stays level season after season. We work in backyards, front entries, side yards, and around decks or fences."
+              desc: "A well-built patio turns a backyard into a space you actually use. We install paving stone patios using interlocking concrete pavers, natural stone, and flagstone. Every installation starts with proper excavation, a compacted gravel base, and correct grading so water runs away from your home and the surface stays level season after season. We work in backyards, front entries, side yards, and around decks or fences.",
+              href: "/hardscaping/paving-stones-calgary"
             },
             { 
               title: "Retaining Walls", 
-              desc: "If your yard has a slope, a retaining wall is often the difference between a usable yard and a steep unusable grade. We build retaining walls using interlocking concrete block, natural stone, and other materials suited to your specific situation. Proper drainage behind every wall is not optional. It is what prevents the wall from failing. For walls over 1.2 metres, we flag any permit requirements upfront so there are no surprises."
+              desc: "If your yard has a slope, a retaining wall is often the difference between a usable yard and a steep unusable grade. We build retaining walls using interlocking concrete block, natural stone, and other materials suited to your specific situation. Proper drainage behind every wall is not optional. It is what prevents the wall from failing. For walls over 1.2 metres, we flag any permit requirements upfront so there are no surprises.",
+              href: "/hardscaping/retaining-walls-calgary"
             },
             { 
               title: "Walkways and Pathways", 
@@ -205,16 +207,34 @@ export default function HardscapingPage() {
               title: "Grading and Drainage", 
               desc: "A lot of hardscape problems start with poor drainage. Water sitting against a foundation, pooling on a patio, or building up behind a retaining wall will always win eventually. We grade properly before any install and can address existing drainage problems as part of a larger project or on their own."
             },
-            { 
-              title: "Garden Bed Borders and Edging", 
+            {
+              title: "Garden Bed Borders and Edging",
               desc: "Clean edging separates your hardscape from your planted areas and keeps everything looking intentional. We install stone borders, concrete edging, and decorative rock surrounds that tie your hardscape and softscape together into a finished yard."
+            },
+            {
+              title: "Paver Repair & Re-Leveling",
+              desc: "Settled or heaved pavers re-laid on a properly rebuilt base so the fix lasts instead of shifting again. We will tell you honestly whether a spot repair or a full reinstall is the better long-term call.",
+              href: "/hardscaping/paving-stones-calgary"
+            },
+            {
+              title: "Concrete Curbing",
+              desc: "Clean, continuous concrete curbing and mow strips that define garden beds, driveways, and walkways and keep rock, mulch, and grass where they belong."
             }
-          ].map((service, i) => (
+          ].map((service, i) => {
+            const href = (service as { href?: string }).href;
+            return (
             <ScrollReveal key={i} className="bg-white rounded-3xl p-8 shadow-md border border-black/5 hover:-translate-y-2 transition-all group">
               <h3 className="text-xl font-black text-black mb-3 leading-tight">{service.title}</h3>
               <p className="text-black/70 font-medium leading-relaxed">{service.desc}</p>
+              {href && (
+                <Link href={href} className="inline-flex items-center gap-1 mt-4 text-sm font-black text-[#017a6d] hover:gap-2 transition-all">
+                  Learn more
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M9 5l7 7-7 7" /></svg>
+                </Link>
+              )}
             </ScrollReveal>
-          ))}
+            );
+          })}
         </div>
         
         <div className="mt-16 text-center">
@@ -340,6 +360,10 @@ export default function HardscapingPage() {
         <div className="max-w-4xl mx-auto space-y-4">
           {[
             {
+              q: "How much does a paving stone patio cost in Calgary?",
+              a: "Most paving-stone patios and walkways in Calgary run roughly $25 to $45 per square foot installed, depending on the paver, the amount of excavation and base work, site access, and any grading or drainage. We give you an itemized quote after a free site visit so you see exactly what drives the number."
+            },
+            {
               q: "What materials work best for patios in Calgary?",
               a: "Interlocking concrete pavers and natural stone are the best options for Calgary. They handle freeze-thaw movement better than solid poured surfaces and can be releveled if needed. The key is always the base preparation underneath, not just the material on top."
             },
@@ -386,6 +410,14 @@ export default function HardscapingPage() {
               "@context": "https://schema.org",
               "@type": "FAQPage",
               "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "How much does a paving stone patio cost in Calgary?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Most paving-stone patios and walkways in Calgary run roughly $25 to $45 per square foot installed, depending on the paver, the amount of excavation and base work, site access, and any grading or drainage."
+                  }
+                },
                 {
                   "@type": "Question",
                   "name": "What materials work best for patios in Calgary?",

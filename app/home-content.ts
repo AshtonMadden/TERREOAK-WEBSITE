@@ -67,6 +67,15 @@ export const services = [
 
 export const projects = [
   {
+    id: 5,
+    title: "Commercial Rock Bed Conversion",
+    location: "Commercial plaza, Calgary AB",
+    budget: "$7,800",
+    desc: "Fourteen worn-out mulch beds at a commercial property, rebuilt in three days. We scraped out two inches of broken-down mulch with the Bobcat, cleared the weeds, laid and stapled 5oz filter cloth, and installed 15 yards of 40mm washed rock.",
+    img: "/projects/commercial-rock-beds/rock-beds-along-walkway.jpg",
+    link: "/projects/commercial-rock-bed-conversion",
+  },
+  {
     id: 1,
     title: "Custom Stone Pathway",
     location: "McKenzie Lake, Calgary AB",

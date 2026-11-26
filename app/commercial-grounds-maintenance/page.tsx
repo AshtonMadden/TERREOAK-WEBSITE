@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import JobberLeadForm from "../components/JobberLeadForm";
 import JsonLd from "../components/JsonLd";
 import StickyCta from "../components/StickyCta";
@@ -190,7 +191,12 @@ export default function CommercialGroundsMaintenancePage() {
             <div className="relative aspect-[4/3]">
               <Image src="/photos/commercial-rock-bed.jpg" alt="Maintained rock bed and shrubs along the walkway of a commercial property in Calgary" fill sizes="(min-width: 768px) 600px, 100vw" className="object-cover" />
             </div>
-            <figcaption className="px-5 py-4 text-[1.05rem] font-semibold text-fg">Rock beds and shrubs at a commercial site</figcaption>
+            <figcaption className="px-5 py-4 text-[1.05rem] font-semibold text-fg">
+              14 mulch beds converted to washed rock.{" "}
+              <Link href="/projects/commercial-rock-bed-conversion" className="to-link">
+                See the project
+              </Link>
+            </figcaption>
           </figure>
           <figure className="to-card overflow-hidden">
             <div className="relative aspect-[4/3]">

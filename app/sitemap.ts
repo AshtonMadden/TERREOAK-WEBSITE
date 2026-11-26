@@ -23,6 +23,7 @@ const routes: { path: string; priority: number; changeFrequency: "weekly" | "mon
   { path: "/irrigation-blowouts", priority: 0.8, changeFrequency: "monthly" },
   { path: "/our-process", priority: 0.7, changeFrequency: "monthly" },
   { path: "/projects", priority: 0.8, changeFrequency: "monthly" },
+  { path: "/projects/commercial-rock-bed-conversion", priority: 0.7, changeFrequency: "yearly" },
   { path: "/projects/cranston-landscape-makeover", priority: 0.7, changeFrequency: "yearly" },
   { path: "/projects/mckenzie-lake-landscaping", priority: 0.7, changeFrequency: "yearly" },
   { path: "/mckenzielakelandscaping", priority: 0.7, changeFrequency: "yearly" },

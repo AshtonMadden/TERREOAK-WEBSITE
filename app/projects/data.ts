@@ -139,4 +139,37 @@ export const projectDetails: Record<string, ProjectDetail> = {
     ctaTitle: "Ready to transform your space?",
     ctaText: "Whether you want a complete backyard overhaul or a custom patio, our team is ready to bring your vision to life.",
   },
+  commercialRockBeds: {
+    path: "/projects/commercial-rock-bed-conversion",
+    metaTitle: "Commercial Rock Bed Conversion, Calgary | TERREOAK",
+    metaDescription:
+      "A three-day commercial landscaping project in Calgary: 14 worn-out mulch beds scraped out and rebuilt with 5oz filter cloth and 15 yards of 40mm washed rock.",
+    title: "Commercial rock bed conversion: 14 beds in three days",
+    location: "Commercial plaza, Calgary",
+    cost: "$7,800",
+    hero: "/projects/commercial-rock-beds/aerial-commercial-plaza.jpg",
+    heroAlt: "Aerial view of a Calgary commercial plaza with rock beds running the length of the parking lot",
+    breakdown: [
+      "CMS Real Estate Ltd. brought us in to deal with 14 landscape beds running along the walkway and parking lot of one of their commercial properties. The beds were filled with mulch that had broken down over the years, leaving them tired, weedy and hard to keep tidy.",
+      "Over three days in August, our crew stripped the beds back to bare ground and rebuilt them as low-maintenance rock beds. Washed rock doesn’t break down, blow away or need topping up every spring, which makes it a good fit for a busy commercial site.",
+    ],
+    scope: [
+      { label: "Scraping out the old beds", text: "Used the Bobcat to scrape all 14 beds and remove two inches of broken-down mulch and debris." },
+      { label: "Weed removal", text: "Cleaned the weeds out of every bed before anything new went down." },
+      { label: "Filter cloth", text: "Laid 5oz filter cloth across each bed and stapled it in place, to hold back weeds and keep the rock from sinking into the soil." },
+      { label: "Washed rock", text: "Installed 15 yards of 40mm washed rock, shaped around the existing shrubs and trees." },
+      { label: "Site cleanup", text: "Cleaned up the site and swept the parking lot and sidewalks, so the property was ready for tenants and customers." },
+    ],
+    galleryTitle: "Project gallery",
+    gallery: [
+      { src: "/projects/commercial-rock-beds/rock-beds-along-walkway.jpg", alt: "Finished 40mm washed rock beds with shrubs along the walkway of a Calgary commercial property" },
+      { src: "/projects/commercial-rock-beds/rock-bed-entrance.jpg", alt: "Washed rock bed beside the entrance gate and sidewalk of a commercial property" },
+      { src: "/photos/commercial-rock-bed.jpg", alt: "Rock bed and trimmed shrubs between the parking lot and the sidewalk" },
+      { src: "/projects/commercial-rock-beds/bobcat-and-dump-trailer.jpg", alt: "Bobcat MT100 and dump trailer used to scrape out and haul away the old mulch" },
+      { src: "/photos/mini-track-loader.jpg", alt: "Bobcat mini track loader loaded on the trailer at the end of the job" },
+      { src: "/projects/commercial-rock-beds/aerial-commercial-plaza.jpg", alt: "Aerial view of the commercial plaza and its parking lot" },
+    ],
+    ctaTitle: "Got a commercial property that needs attention?",
+    ctaText: "From a one-off bed conversion to year-round grounds maintenance, we’ll walk the site and send a fixed-price proposal.",
+  },
 };

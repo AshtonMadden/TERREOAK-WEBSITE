@@ -76,6 +76,15 @@ export const projects = [
     link: "/projects/commercial-rock-bed-conversion",
   },
   {
+    id: 6,
+    title: "Commercial Planter Refresh",
+    location: "Commercial property, Calgary AB",
+    budget: "$2,200",
+    desc: "Raised planters outside a commercial building, refreshed for a property management company. We removed the old bushes, planted six Peking cotoneasters in new reconditioned soil, laid 5oz filter cloth and finished the beds with Foothills Premium mulch.",
+    img: "/projects/commercial-planters/planter-finished.jpg",
+    link: "/projects/commercial-planter-refresh",
+  },
+  {
     id: 1,
     title: "Custom Stone Pathway",
     location: "McKenzie Lake, Calgary AB",

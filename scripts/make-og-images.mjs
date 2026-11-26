@@ -27,6 +27,7 @@ const sources = {
   "/projects": "Landscape web page pics/Techo-Bloc-pavers-river-rock.JPG",
   "/projects/cranston-landscape-makeover": "projects/cranston-makeover/hero-aerial.jpg",
   "/projects/commercial-rock-bed-conversion": "projects/commercial-rock-beds/rock-beds-along-walkway.jpg",
+  "/projects/commercial-planter-refresh": "projects/commercial-planters/cotoneaster-mulch-closeup.jpg",
   "/projects/mckenzie-lake-landscaping": "projects/project-2/img-7.jpg",
   "/mckenzielakelandscaping": "Landscape web page pics/Finished-hardscape-project.JPG",
   "/parklandlandscaping": "images/softscaping-river-rock-hostas.jpg",

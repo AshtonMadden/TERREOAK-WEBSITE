@@ -172,4 +172,35 @@ export const projectDetails: Record<string, ProjectDetail> = {
     ctaTitle: "Got a commercial property that needs attention?",
     ctaText: "From a one-off bed conversion to year-round grounds maintenance, we’ll walk the site and send a fixed-price proposal.",
   },
+  commercialPlanters: {
+    path: "/projects/commercial-planter-refresh",
+    metaTitle: "Commercial Planter Refresh, Calgary | TERREOAK",
+    metaDescription:
+      "A commercial planter refresh in Calgary: old bushes removed, six Peking cotoneasters planted in new soil, 5oz filter cloth and Foothills Premium mulch.",
+    title: "Commercial planter refresh with Peking cotoneaster",
+    location: "Commercial property, Calgary",
+    cost: "$2,200",
+    hero: "/projects/commercial-planters/cotoneaster-mulch-closeup.jpg",
+    heroAlt: "Newly planted Peking cotoneaster in fresh bark mulch in a raised planter at a Calgary commercial property",
+    breakdown: [
+      "A commercial property management company asked us to refresh the raised planters outside one of their buildings. The old bushes had run their course, and the beds were letting down the front of the property.",
+      "We took the old bushes out, replanted with Peking cotoneaster and finished the beds with filter cloth and fresh mulch. Peking cotoneaster is a hardy shrub that handles Calgary winters well and turns red and orange in the fall, which you can see in the photos.",
+    ],
+    scope: [
+      { label: "Removal", text: "Took the old bushes out of the planters." },
+      { label: "New planting", text: "Planted six Peking cotoneasters, supplied by Foothills Nursery, and filled the holes with new reconditioned soil." },
+      { label: "Filter cloth", text: "Laid 5oz filter cloth in the beds to hold back weeds." },
+      { label: "Mulch", text: "Finished the beds with Foothills Premium mulch, supplied by Eagle Lake Landscape Supply." },
+    ],
+    galleryTitle: "Project gallery",
+    gallery: [
+      { src: "/projects/commercial-planters/planter-finished.jpg", alt: "Finished raised planter with new Peking cotoneasters and bark mulch" },
+      { src: "/projects/commercial-planters/cotoneaster-mulch-closeup.jpg", alt: "Close-up of a Peking cotoneaster in fall colour planted in Foothills Premium mulch" },
+      { src: "/photos/commercial-planter-mulch.jpg", alt: "TERREOAK crew member finishing a mulched planter at a commercial property" },
+      { src: "/projects/commercial-planters/planter-replanted.jpg", alt: "Raised planter cleared out and replanted, before the filter cloth and mulch went in" },
+      { src: "/projects/commercial-planters/planter-replanted-angled.jpg", alt: "Second raised planter replanted in new soil, before mulch" },
+    ],
+    ctaTitle: "Planters or beds that need a refresh?",
+    ctaText: "We look after commercial properties of every size, from a few planters to year-round grounds maintenance.",
+  },
 };

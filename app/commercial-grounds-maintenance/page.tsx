@@ -195,7 +195,12 @@ export default function CommercialGroundsMaintenancePage() {
             <div className="relative aspect-[4/3]">
               <Image src="/photos/commercial-planter-mulch.jpg" alt="TERREOAK crew refreshing mulch and shrubs in a planter at a Calgary commercial property" fill sizes="(min-width: 768px) 600px, 100vw" className="object-cover" />
             </div>
-            <figcaption className="px-5 py-4 text-[1.05rem] font-semibold text-fg">Planter refresh with new mulch</figcaption>
+            <figcaption className="px-5 py-4 text-[1.05rem] font-semibold text-fg">
+              Planters replanted and mulched.{" "}
+              <Link href="/projects/commercial-planter-refresh" className="to-link">
+                See the project
+              </Link>
+            </figcaption>
           </figure>
         </div>
       </Band>

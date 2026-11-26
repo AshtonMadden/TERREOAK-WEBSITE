@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Icon, { type IconName } from "../components/Icon";
 import Image from "next/image";
 import BeforeAfterSlider from "../components/BeforeAfterSlider";
 import JobberLeadForm from "../components/JobberLeadForm";
@@ -48,14 +49,7 @@ const jsonLd = {
   ],
 };
 
-const offerIcons: React.ReactNode[] = [
-  <path key="calendar" d="M7 3v3M17 3v3M4 9h16M6 5h12a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Zm3 9 2 2 4-4" />,
-  <path key="ruler" d="M3 17 17 3l4 4L7 21l-4-4Zm5-5 2 2m1-5 2 2m1-5 2 2" />,
-  <path key="camera" d="M4 8h3l2-3h6l2 3h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1Zm8 9a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Z" />,
-  <path key="bell" d="M6 16v-5a6 6 0 1 1 12 0v5l2 2H4l2-2Zm4 5h4" />,
-  <path key="pin" d="M12 21s7-6.2 7-11.5a7 7 0 0 0-14 0C5 14.8 12 21 12 21Zm0-9a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z" />,
-  <path key="card" d="M3 7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7Zm0 3h18M7 15h4" />,
-];
+const offerIcons: IconName[] = ["calendar", "ruler", "camera", "bell", "picket", "card"];
 
 function ReviewCard({ review }: { review: { name: string; text: string } }) {
   return (
@@ -175,11 +169,7 @@ export default function ResidentialSnowRemovalPage() {
         <div className="mt-8 grid gap-3 sm:grid-cols-2 md:mt-12 md:gap-5 lg:grid-cols-3">
           {offers.map((offer, i) => (
             <article key={offer.title} className="to-card to-card-lift flex gap-4 p-5 md:block md:p-8">
-              <span className="to-icon shrink-0 max-md:h-11 max-md:w-11">
-                <svg className="h-6 w-6 max-md:h-5 max-md:w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  {offerIcons[i]}
-                </svg>
-              </span>
+              <Icon name={offerIcons[i]} className="h-11 w-11 md:h-14 md:w-14" />
               <div>
                 <h3 className="to-display to-h3 md:mt-6">{offer.title}</h3>
                 <p className="mt-1.5 text-[1rem] leading-relaxed text-muted md:mt-3 md:text-[1.1rem]">{offer.desc}</p>

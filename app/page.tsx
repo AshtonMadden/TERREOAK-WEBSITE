@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Icon, { type IconName } from "./components/Icon";
 import ServiceIcon from "./components/ServiceIcon";
 import Link from "next/link";
 import JobberLeadForm from "./components/JobberLeadForm";
@@ -14,6 +15,8 @@ const Arrow = () => (
     <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 );
+
+const guaranteeIcons: IconName[] = ["shield", "hardhat", "medal"];
 
 export default function HomePage() {
   return (
@@ -63,7 +66,7 @@ export default function HomePage() {
         <div className="mt-8 grid gap-3 sm:grid-cols-2 md:mt-12 md:gap-5 lg:grid-cols-4">
           {services.map((service) => (
             <Link key={service.href} href={service.href} className="to-card to-card-lift to-focus group flex flex-col p-5 md:p-7">
-              <ServiceIcon href={service.href} className="!h-11 !w-11 md:!h-[3.4rem] md:!w-[3.4rem]" />
+              <ServiceIcon href={service.href} />
               <h3 className="to-display to-h3 mt-4 md:mt-6">{service.title}</h3>
               <p className="mt-1.5 text-[1rem] leading-relaxed text-muted md:mt-3 md:text-[1.05rem]">{service.description}</p>
               <span className="mt-auto flex items-center gap-2 pt-3 text-[1.02rem] font-semibold text-accent md:pt-6">
@@ -180,13 +183,9 @@ export default function HomePage() {
         <h2 className="to-display to-h2">Fully insured and guaranteed</h2>
         <p className="to-sub mt-4">Peace of mind</p>
         <div className="mt-8 grid gap-3 md:mt-12 md:grid-cols-3 md:gap-5">
-          {guarantees.map((item) => (
+          {guarantees.map((item, i) => (
             <article key={item.id} className="to-card flex gap-4 p-5 md:block md:p-8">
-              <span className="to-icon shrink-0 max-md:h-11 max-md:w-11">
-                <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  <path d="M12 3 5 6v5c0 4.5 2.9 8.3 7 10 4.1-1.7 7-5.5 7-10V6l-7-3Zm-3 9 2 2 4-4" />
-                </svg>
-              </span>
+              <Icon name={guaranteeIcons[i] ?? "shield"} className="h-11 w-11 md:h-14 md:w-14" />
               <div>
                 <h3 className="to-display to-h3 md:mt-6">{item.title}</h3>
                 <p className="mt-1.5 text-[1rem] leading-relaxed text-muted md:mt-3 md:text-[1.08rem]">{item.description}</p>

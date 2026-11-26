@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Icon, { type IconName } from "../components/Icon";
 import Link from "next/link";
 import JobberLeadForm from "../components/JobberLeadForm";
 import JsonLd from "../components/JsonLd";
@@ -38,11 +39,7 @@ const jsonLd = {
   ],
 };
 
-const audienceIcons: React.ReactNode[] = [
-  <path key="condo" d="M4 21V5a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v16M14 9h5a1 1 0 0 1 1 1v11M3 21h18M8 8h2M8 12h2M8 16h2" />,
-  <path key="industrial" d="M3 21V10l6 4V10l6 4V5h4a1 1 0 0 1 1 1v15H3Zm4-3h2m4 0h2" />,
-  <path key="build" d="M3 21h18M5 21V9l7-5 7 5v12M10 21v-6h4v6" />,
-];
+const audienceIcons: IconName[] = ["condo", "factory", "house"];
 
 export default function CommercialGroundsMaintenancePage() {
   return (
@@ -133,11 +130,7 @@ export default function CommercialGroundsMaintenancePage() {
         <div className="mt-12 grid gap-5 lg:grid-cols-3">
           {audiences.map((audience, i) => (
             <article key={audience.title} className="to-card to-card-lift p-8">
-              <span className="to-icon">
-                <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  {audienceIcons[i]}
-                </svg>
-              </span>
+              <Icon name={audienceIcons[i]} />
               <h3 className="to-display to-h3 mt-6">{audience.title}</h3>
               <p className="mt-3 text-[1.08rem] leading-relaxed text-muted">{audience.desc}</p>
             </article>

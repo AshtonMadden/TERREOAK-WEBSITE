@@ -150,7 +150,7 @@ export const projectDetails: Record<string, ProjectDetail> = {
     hero: "/projects/commercial-rock-beds/aerial-commercial-plaza.jpg",
     heroAlt: "Aerial view of a Calgary commercial plaza with rock beds running the length of the parking lot",
     breakdown: [
-      "CMS Real Estate Ltd. brought us in to deal with 14 landscape beds running along the walkway and parking lot of one of their commercial properties. The beds were filled with mulch that had broken down over the years, leaving them tired, weedy and hard to keep tidy.",
+      "A commercial property manager brought us in to deal with 14 landscape beds running along the walkway and parking lot of one of their properties. The beds were filled with mulch that had broken down over the years, leaving them tired, weedy and hard to keep tidy.",
       "Over three days in August, our crew stripped the beds back to bare ground and rebuilt them as low-maintenance rock beds. Washed rock doesn’t break down, blow away or need topping up every spring, which makes it a good fit for a busy commercial site.",
     ],
     scope: [

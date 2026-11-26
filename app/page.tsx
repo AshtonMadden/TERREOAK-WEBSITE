@@ -1,4 +1,5 @@
 import Image from "next/image";
+import ServiceIcon from "./components/ServiceIcon";
 import Link from "next/link";
 import JobberLeadForm from "./components/JobberLeadForm";
 import { Band, BlogCta, Button, Container, FounderQuote, GoogleMark, Tick } from "./components/ds";
@@ -62,7 +63,8 @@ export default function HomePage() {
         <div className="mt-8 grid gap-3 sm:grid-cols-2 md:mt-12 md:gap-5 lg:grid-cols-4">
           {services.map((service) => (
             <Link key={service.href} href={service.href} className="to-card to-card-lift to-focus group flex flex-col p-5 md:p-7">
-              <h3 className="to-display to-h3">{service.title}</h3>
+              <ServiceIcon href={service.href} className="!h-11 !w-11 md:!h-[3.4rem] md:!w-[3.4rem]" />
+              <h3 className="to-display to-h3 mt-4 md:mt-6">{service.title}</h3>
               <p className="mt-1.5 text-[1rem] leading-relaxed text-muted md:mt-3 md:text-[1.05rem]">{service.description}</p>
               <span className="mt-auto flex items-center gap-2 pt-3 text-[1.02rem] font-semibold text-accent md:pt-6">
                 Learn more <Arrow />

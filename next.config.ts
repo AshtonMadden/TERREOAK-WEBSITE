@@ -58,6 +58,11 @@ const nextConfig: NextConfig = {
       { source: "/snow-removal", destination: "/residential-snow-removal", permanent: true },
       // The old pricing page now goes to the snow removal page.
       { source: "/snow-removal-cost-calgary", destination: "/residential-snow-removal", permanent: true },
+      // Pages from the previous site that were replaced by new ones.
+      { source: "/hardscaping/paving-stones-calgary", destination: "/hardscaping/paver-patios-artificial-turf", permanent: true },
+      { source: "/hardscaping/retaining-walls-calgary", destination: "/hardscaping/retaining-walls", permanent: true },
+      { source: "/landscape-design-calgary", destination: "/landscape-installs", permanent: true },
+      { source: "/landscape-lighting-calgary", destination: "/landscape-installs/landscape-lighting", permanent: true },
       // The referral program now lives on the snow removal page.
       { source: "/snow-referral", destination: "/residential-snow-removal#referral", permanent: true },
       // The shop was removed; send its old addresses to the homepage.

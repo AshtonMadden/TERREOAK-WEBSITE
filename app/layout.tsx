@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   ...pageMeta({ title: homeTitle, description: homeDescription, path: "/" }),
   applicationName: site.name,
-  icons: { icon: "/icon.png", apple: "/icon.png" },
+  icons: { icon: [{ url: "/favicon.ico", sizes: "48x48" }, { url: "/icon.png", type: "image/png", sizes: "512x512" }], apple: "/apple-icon.png" },
   formatDetection: { telephone: true, email: true, address: true },
 };
 

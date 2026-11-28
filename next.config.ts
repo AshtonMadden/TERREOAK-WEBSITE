@@ -34,6 +34,11 @@ const nextConfig: NextConfig = {
         source: "/:path(.+\\.(?:jpg|jpeg|JPG|png|webp|avif|svg|ico|mp4|woff2))",
         headers: [{ key: "Cache-Control", value: "public, max-age=31536000" }],
       },
+      {
+        // The clips are decorative backgrounds, not videos to watch, so keep them out of video search.
+        source: "/videos/:file*",
+        headers: [{ key: "X-Robots-Tag", value: "noindex" }],
+      },
     ];
   },
   async rewrites() {
